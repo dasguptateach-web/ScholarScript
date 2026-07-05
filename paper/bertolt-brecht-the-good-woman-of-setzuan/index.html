@@ -62,32 +62,7 @@
   </div>
 
 
-  <!-- AI Read (TTS) — English only; reads translated page too -->
-  <div class="tts-bar" id="ttsBar">
-    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
-    <div class="tts-controls">
-      <span class="tts-lang-label"><i class="fas fa-globe"></i> English</span>
-      <select class="tts-voice" id="ttsVoice" title="Choose voice">
-        <option value="">Auto (best match)</option>
-      </select>
-      <select class="tts-gender" id="ttsGender" title="Voice gender">
-        <option value="">Any voice</option>
-        <option value="female">♀ Female</option>
-        <option value="male">♂ Male</option>
-      </select>
-      <select class="tts-speed" id="ttsSpeed">
-        <option value="0.5">0.5x</option>
-        <option value="0.75">0.75x</option>
-        <option value="1" selected>1x</option>
-        <option value="1.25">1.25x</option>
-        <option value="1.5">1.5x</option>
-        <option value="2">2x</option>
-      </select>
-    </div>
-    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
-  </div>
-
-  <!-- AI Translation — translates page in-place; TTS follows -->
+  <!-- AI Translation — translates page in-place -->
   <div class="translate-bar" id="translateBar">
     <label><i class="fas fa-language"></i> Translate to:</label>
     <select class="translate-select" id="translateSelect">
@@ -386,49 +361,14 @@ function googleTranslateElementInit() {
 
 (function() {
   var sel = document.getElementById('translateSelect');
-  var ttsLangLabel = document.querySelector('.tts-lang-label');
   if (!sel) return;
-
-  /* Map Google Translate lang codes → SpeechSynthesis BCP 47 tags */
-  var ttsLangMap = {
-    'hi':'hi-IN','bn':'bn-IN','te':'te-IN','mr':'mr-IN',
-    'ta':'ta-IN','gu':'gu-IN','ur':'ur-PK','kn':'kn-IN',
-    'ml':'ml-IN','or':'or-IN','pa':'pa-IN','as':'as-IN',
-    'mai':'mai','ne':'ne-NP',
-    'es':'es-ES','fr':'fr-FR','de':'de-DE','it':'it-IT',
-    'pt':'pt-PT','ru':'ru-RU','ja':'ja-JP','zh-CN':'zh-CN',
-    'zh-TW':'zh-TW','ar':'ar-SA','ko':'ko-KR','nl':'nl-NL',
-    'tr':'tr-TR','pl':'pl-PL','sv':'sv-SE','el':'el-GR',
-    'cs':'cs-CZ','ro':'ro-RO','hu':'hu-HU','th':'th-TH',
-    'vi':'vi-VN','id':'id-ID','he':'he-IL','da':'da-DK',
-    'fi':'fi-FI','nb':'nb-NO','uk':'uk-UA','ms':'ms-MY',
-    'tl':'tl-PH','sw':'sw-KE','hr':'hr-HR','sr':'sr-RS',
-    'lt':'lt-LT','lv':'lv-LV','et':'et-EE','sk':'sk-SK',
-    'sl':'sl-SI','bg':'bg-BG','ka':'ka-GE','hy':'hy-AM',
-    'km':'km-KH','lo':'lo-LA','my':'my-MM','mn':'mn-MN',
-    'si':'si-LK','am':'am-ET'
-  };
 
   sel.addEventListener('change', function() {
     var lang = sel.value;
     if (!lang) return;
 
-    /* Update TTS lang label with selected language name */
-    var selectedText = sel.options[sel.selectedIndex].text;
-    if (ttsLangLabel) {
-      ttsLangLabel.innerHTML = '<i class="fas fa-globe"></i> ' + selectedText;
-    }
-
-    /* Stop any active TTS before translating */
-    if (window.__ttsCancel) window.__ttsCancel();
-
-    /* Set proper BCP 47 lang for speech synthesis */
-    window.__ttsLang = ttsLangMap[lang] || lang || 'en-US';
-
-    /* Reset dropdown so same language can be re-selected */
     sel.value = '';
 
-    /* Try Google Translate widget immediately, fall back if not ready */
     var combo = document.querySelector('.goog-te-combo');
     if (combo) {
       combo.value = lang;
@@ -453,103 +393,6 @@ function googleTranslateElementInit() {
     }
     setTimeout(waitForCombo, 600);
   });
-})();
-
-/* TTS — AI Read (English by default, follows translate) */
-(function() {
-  var btn = document.getElementById('ttsPlayBtn');
-  var voiceEl = document.getElementById('ttsVoice');
-  var speedEl = document.getElementById('ttsSpeed');
-  var statusEl = document.getElementById('ttsStatus');
-  var body = document.getElementById('contentBody');
-  var ss = window.speechSynthesis;
-
-  if (!btn) return;
-  if (!body) { if (statusEl) statusEl.innerHTML = 'No content'; return; }
-  if (!ss || typeof ss.speak !== 'function') {
-    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> No TTS';
-    return;
-  }
-
-  var speaking = false;
-  var paused = false;
-  window.__ttsLang = 'en-US';
-
-  /* Pre-warm Chrome speech engine */
-  ss.getVoices();
-  if (ss.onvoiceschanged !== undefined) ss.addEventListener('voiceschanged', function() { ss.getVoices(); });
-
-  function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
-
-  /* Expose cancel so translate can stop TTS */
-  window.__ttsCancel = function() {
-    if (speaking || paused) { ss.cancel(); ui('stopped'); }
-  };
-
-  function play() {
-    if (paused) { ss.resume(); ui('playing'); return; }
-    if (speaking) { ss.cancel(); ui('stopped'); return; }
-
-    var text = getText();
-    if (!text) { ui('error'); return; }
-
-    /* Refresh voices (priming Chrome engine) */
-    ss.getVoices();
-
-    var u = new SpeechSynthesisUtterance(text);
-    u.lang = window.__ttsLang || 'en-US';
-    u.rate = parseFloat(speedEl ? speedEl.value : '1');
-
-    if (voiceEl && voiceEl.value) {
-      var matches = ss.getVoices().filter(function(v) { return v.name === voiceEl.value; });
-      if (matches.length) u.voice = matches[0];
-    }
-
-    u.onstart = function() { ui('playing'); };
-    u.onend = function() { ui('done'); };
-    u.onerror = function(e) {
-      if (statusEl) statusEl.textContent = e.error || 'Error';
-      ui('error');
-    };
-
-    ss.cancel();
-    ss.resume();
-    ss.speak(u);
-  }
-
-  function playOrPause(e) { play(); }
-
-  function ui(mode) {
-    if (mode === 'playing') {
-      btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-      btn.className = 'tts-btn stop';
-      if (statusEl) { statusEl.textContent = 'Reading...'; statusEl.style.color = '#059669'; }
-      speaking = true; paused = false;
-    } else if (mode === 'paused') {
-      btn.innerHTML = '<i class="fas fa-play"></i> Resume';
-      btn.className = 'tts-btn';
-      if (statusEl) { statusEl.textContent = 'Paused'; statusEl.style.color = '#d97706'; }
-      paused = true;
-    } else if (mode === 'done') {
-      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
-      btn.className = 'tts-btn';
-      if (statusEl) { statusEl.textContent = 'Done'; statusEl.style.color = '#059669'; }
-      speaking = false; paused = false;
-    } else if (mode === 'stopped') {
-      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
-      btn.className = 'tts-btn';
-      if (statusEl) { statusEl.textContent = 'Stopped'; statusEl.style.color = '#059669'; }
-      speaking = false; paused = false;
-    } else {
-      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
-      btn.className = 'tts-btn';
-      if (statusEl) { statusEl.textContent = 'Error'; statusEl.style.color = '#dc2626'; }
-      speaking = false; paused = false;
-    }
-  }
-
-  btn.addEventListener('click', playOrPause);
-  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { ss.cancel(); ui('stopped'); } });
 })();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
