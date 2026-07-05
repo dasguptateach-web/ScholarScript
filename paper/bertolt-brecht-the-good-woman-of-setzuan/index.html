@@ -401,8 +401,6 @@ function googleTranslateElementInit() {
       if (combo) {
         combo.value = lang;
         combo.dispatchEvent(new Event('change'));
-        /* Update TTS language to match translation */
-        window.__ttsLang = lang;
         return;
       }
       attempts++;
@@ -432,20 +430,21 @@ function googleTranslateElementInit() {
     return;
   }
 
-  var synth = window.speechSynthesis;
   var speaking = false;
   var paused = false;
-  /* Track language: English default, updated by translate */
-  window.__ttsLang = 'en';
 
-  /* Warm up speech engine (Chrome needs this) */
-  synth.getVoices();
+  /* Track language: reads <html lang> set by Google Translate */
+  window.__ttsLang = document.documentElement.lang || 'en';
+  new MutationObserver(function() {
+    var l = document.documentElement.lang;
+    if (l) window.__ttsLang = l;
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
   function play() {
-    if (paused) { synth.resume(); ui('playing'); return; }
-    if (speaking) { synth.cancel(); ui('stopped'); return; }
+    if (paused) { window.speechSynthesis.resume(); ui('playing'); return; }
+    if (speaking) { window.speechSynthesis.cancel(); ui('stopped'); return; }
 
     var text = getText();
     if (!text) { ui('error'); return; }
@@ -455,7 +454,7 @@ function googleTranslateElementInit() {
     u.rate = parseFloat(speedEl ? speedEl.value : '1');
 
     if (voiceEl && voiceEl.value) {
-      var vl = synth.getVoices().filter(function(v) { return v.name === voiceEl.value; });
+      var vl = window.speechSynthesis.getVoices().filter(function(v) { return v.name === voiceEl.value; });
       if (vl.length) u.voice = vl[0];
     }
 
@@ -463,8 +462,10 @@ function googleTranslateElementInit() {
     u.onend = function() { ui('done'); };
     u.onerror = function() { ui('error'); };
 
-    synth.cancel();
-    synth.speak(u);
+    /* Chrome workaround: resume + cancel before speak */
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.resume();
+    window.speechSynthesis.speak(u);
   }
 
   function ui(mode) {
@@ -497,7 +498,7 @@ function googleTranslateElementInit() {
   }
 
   btn.addEventListener('click', play);
-  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); ui('stopped'); } });
+  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { window.speechSynthesis.cancel(); ui('stopped'); } });
 })();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
