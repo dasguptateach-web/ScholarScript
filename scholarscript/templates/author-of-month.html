@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header">
+  <h2>Author of the Month</h2>
+</div>
+{% if author %}
+<div class="aom-card">
+  <h3>{{ author.author }}</h3>
+  <p class="meta">{{ author.month | replace("-", " ") }} &middot; {{ author.views }} pageviews</p>
+  <p style="font-size:1.5rem;font-weight:700;color:#92400e;margin:1rem 0;">Prize: ${{ author.prize }}</p>
+  <p style="color:#78350f;">Congratulations! The prize will be sent via PayPal.</p>
+</div>
+{% else %}
+<p style="text-align:center;padding:4rem 0;color:var(--color-text-secondary);">No winner announced yet. Check back next month!</p>
+{% endif %}
+{% endblock %}

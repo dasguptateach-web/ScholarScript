@@ -1,0 +1,11 @@
+public/
+Lib/
+Scripts/
+scholarscript.egg-info/
+__pycache__/
+*.pyc
+uploads/
+clone_profiles/
+cloned_sites/
+.github_token
+.github_repo

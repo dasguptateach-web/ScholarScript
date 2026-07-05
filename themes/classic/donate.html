@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header" data-aos="fade-up">
+  <h2><i class="fas fa-heart"></i> {{ page_title }}</h2>
+</div>
+
+<div style="max-width:640px;margin:0 auto;padding:2rem 0;text-align:center;" data-aos="fade-up">
+  <i class="fas fa-hand-holding-heart" style="font-size:4rem;color:var(--primary-light);display:block;margin-bottom:1.5rem;"></i>
+  <p style="font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-bottom:2rem;">
+    ScholarScript is a free, open platform dedicated to scholarly publishing and creative writing.
+    Your support helps us maintain the server, run the monthly Author of the Month prize,
+    and continue developing new features for the community.
+  </p>
+
+  <div style="display:flex;flex-direction:column;gap:1rem;max-width:360px;margin:0 auto;">
+    <a href="https://www.patreon.com/scholarscript" target="_blank" rel="noopener" class="btn" style="justify-content:center;">
+      <i class="fab fa-patreon"></i> Support on Patreon
+    </a>
+    <a href="https://ko-fi.com/scholarscript" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center;">
+      <i class="fas fa-mug-hot"></i> Buy us a Coffee
+    </a>
+  </div>
+
+  <p style="margin-top:2rem;font-size:0.82rem;color:var(--text-muted);">
+    <i class="fas fa-lock"></i> Secure transactions via Patreon &amp; Ko-fi
+  </p>
+</div>
+{% endblock %}

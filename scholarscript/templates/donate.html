@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header">
+  <h2>Support ScholarScript</h2>
+</div>
+<div class="content-page">
+  <p>ScholarScript is a free, open-source platform for English Literature scholars. Your support keeps the site running and funds our monthly <strong>${{ site.prize_amount }} Best Contributor Prize</strong>.</p>
+
+  <h3 style="margin-top:2rem;">How You Can Help</h3>
+  <ul>
+    <li><strong>Submit your work</strong> — Share papers, videos, and creative writing</li>
+    <li><strong>Spread the word</strong> — Tell your colleagues and students</li>
+    <li><strong>Use our affiliate links</strong> — Every purchase helps fund the prize</li>
+  </ul>
+
+  <h3 style="margin-top:2rem;">Affiliate Book Shopping</h3>
+{% if site.affiliate_amazon_tag %}
+  <p><a href="https://www.amazon.com/?tag={{ site.affiliate_amazon_tag }}" target="_blank" rel="nofollow" class="btn">Shop on Amazon</a></p>
+{% endif %}
+{% if site.affiliate_bookshop_id %}
+  <p><a href="https://bookshop.org/shop/{{ site.affiliate_bookshop_id }}" target="_blank" rel="nofollow" class="btn">Shop on Bookshop.org</a></p>
+{% endif %}
+</div>
+{% endblock %}

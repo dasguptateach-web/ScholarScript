@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header" data-aos="fade-up">
+  <h2><i class="fas fa-archive"></i> {{ page_title }}</h2>
+</div>
+{% if items %}
+<div class="card-grid">
+  {% for item in items %}
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+    <span class="card-type {{ item.type }}"><i class="fas fa-{% if item.type == 'paper' %}file-alt{% elif item.type == 'video' %}video{% elif item.type == 'creative-writing' %}pen-fancy{% elif item.type == 'external-link' %}link{% endif %}"></i> {{ item.type | replace('-', ' ') | title }}</span>
+    <h3><a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}{% if item.reading_time %} &middot; <i class="fas fa-clock"></i> {{ item.reading_time }} min read{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p style="text-align:center;padding:5rem 0;color:var(--text-muted);" data-aos="fade-up">
+  <i class="fas fa-inbox" style="font-size:2rem;display:block;margin-bottom:0.5rem;"></i>
+  Nothing here yet. Check back soon.
+</p>
+{% endif %}
+{% endblock %}

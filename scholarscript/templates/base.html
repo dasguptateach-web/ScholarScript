@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ page_description | default(site.tagline) }}">
+  <meta name="generator" content="ScholarScript">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ base_url }}/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base_url }}/rss.xml">
+{% if site.adsense_client_id and site.adsense_enabled %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client_id }}" crossorigin="anonymous"></script>
+{% endif %}
+{% if site.goatcounter_code %}
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{{ base_url }}/" class="logo">
+        <h1>{{ site.title }}</h1>
+        <p class="tagline">{{ site.tagline }}</p>
+      </a>
+      <nav class="main-nav">
+        <a href="{{ base_url }}/">Home</a>
+        <a href="{{ base_url }}/papers/">Papers</a>
+        <a href="{{ base_url }}/videos/">Videos</a>
+        <a href="{{ base_url }}/creative-writing/">Writing</a>
+        <a href="{{ base_url }}/external-links/">Links</a>
+        <a href="{{ base_url }}/tags/">Tags</a>
+        <a href="{{ base_url }}/author-of-month/">AotM</a>
+        <a href="{{ base_url }}/donate/">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; {{ now.year }} {{ site.title }}. Published with ScholarScript.</p>
+{% if site.social_twitter or site.social_facebook or site.social_linkedin %}
+      <div class="social-links">
+{% if site.social_twitter %}        <a href="https://twitter.com/{{ site.social_twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
+{% if site.social_facebook %}        <a href="https://facebook.com/{{ site.social_facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+{% if site.social_linkedin %}        <a href="https://linkedin.com/in/{{ site.social_linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+      </div>
+{% endif %}
+    </div>
+  </footer>
+</body>
+</html>

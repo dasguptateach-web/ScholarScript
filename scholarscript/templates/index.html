@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h2>Where Literature Meets<br>Intelligent Curation</h2>
+  <p>{{ site.tagline }} — scholarly papers, critical analysis, and creative writing from the global academic community.</p>
+</section>
+
+{% if author_of_month %}
+<section class="author-spotlight">
+  <h3>Author of the Month</h3>
+  <p><strong>{{ author_of_month.author }}</strong> &mdash; {{ author_of_month.views }} pageviews this month</p>
+  <a href="{{ base_url }}/author-of-month/" class="btn">Meet the Winner</a>
+</section>
+{% endif %}
+
+{% if papers %}
+<h3 class="section-title">Latest Papers</h3>
+<div class="card-grid">
+  {% for item in papers %}
+  <article class="card">
+    <h4><a href="{{ base_url }}/paper/{{ item.slug }}/">{{ item.title }}</a></h4>
+    <p class="meta">{{ item.date }}{% if item.author %} &middot; {{ item.author }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    <div class="tags">{% for tag in item.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if creative %}
+<h3 class="section-title">Creative Writing</h3>
+<div class="card-grid">
+  {% for item in creative %}
+  <article class="card">
+    <h4><a href="{{ base_url }}/creative-writing/{{ item.slug }}/">{{ item.title }}</a></h4>
+    <p class="meta">{{ item.date }} &middot; {{ item.pen_name or item.author }}{% if item.genre %} &middot; {{ item.genre }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

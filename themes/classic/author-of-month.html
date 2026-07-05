@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header" data-aos="fade-up">
+  <h2><i class="fas fa-star"></i> Author of the Month</h2>
+</div>
+
+{% if author %}
+<div class="aom-card" data-aos="fade-up">
+  <i class="fas fa-crown" style="font-size:3rem;color:#d97706;display:block;margin-bottom:0.5rem;"></i>
+  <h3>{{ author.author }}</h3>
+  <p class="meta"><i class="fas fa-eye"></i> {{ author.views }} pageviews this month</p>
+  <p style="color:#78350f;">This author's work resonated most with our readers this month. Congratulations!</p>
+</div>
+{% else %}
+<div class="aom-card" data-aos="fade-up">
+  <i class="fas fa-star" style="font-size:3rem;color:var(--primary-light);display:block;margin-bottom:0.5rem;"></i>
+  <h3>Author of the Month</h3>
+  <p style="color:var(--text-secondary);">The first Author of the Month will be announced soon.</p>
+</div>
+{% endif %}
+
+
+{% endblock %}

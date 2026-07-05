@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <i class="fas fa-scroll hero-icon"></i>
+  <h2 data-aos="fade-up">Where Literature Meets<br><span class="highlight">Intelligent Curation</span></h2>
+  <p data-aos="fade-up" data-aos-delay="100">{{ site.tagline }} — scholarly papers, critical analysis, and creative writing from the global academic community.</p>
+
+  <div class="hero-search" data-aos="fade-up" data-aos-delay="150">
+    <i class="fas fa-search hero-search-icon"></i>
+    <input type="text" id="heroSearchInput" class="hero-search-input" placeholder="Search all content..." autocomplete="off">
+  </div>
+
+  <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+    <div class="hero-stat">
+      <span class="num">{{ papers|length + creative|length + videos|length + links|length }}</span>
+      <span class="label"><i class="fas fa-book"></i> Works</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">{{ papers|length }}</span>
+      <span class="label"><i class="fas fa-scroll"></i> Papers</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">{{ creative|length }}</span>
+      <span class="label"><i class="fas fa-feather"></i> Creative</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">{{ videos|length }}</span>
+      <span class="label"><i class="fas fa-video"></i> Videos</span>
+    </div>
+  </div>
+</section>
+
+{% if author_of_month %}
+<section class="author-spotlight" data-aos="fade-up">
+  <h3><i class="fas fa-crown"></i> Author of the Month</h3>
+  <p><strong>{{ author_of_month.author }}</strong> — {{ author_of_month.views }} pageviews this month</p>
+  <a href="{{ base_url }}/author-of-month/" class="btn"><i class="fas fa-trophy"></i> Meet the Winner</a>
+</section>
+{% endif %}
+
+{% if papers %}
+<h3 class="section-title" data-aos="fade-up"><i class="fas fa-scroll"></i> Latest Papers</h3>
+<div class="card-grid">
+  {% for item in papers %}
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+    <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
+    <h3><a href="{{ base_url }}/paper/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if videos %}
+<h3 class="section-title" data-aos="fade-up"><i class="fas fa-video"></i> Latest Videos</h3>
+<div class="card-grid">
+  {% for item in videos %}
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+    <span class="card-type video"><i class="fas fa-play"></i> Video</span>
+    <h3><a href="{{ base_url }}/video/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if creative %}
+<h3 class="section-title" data-aos="fade-up"><i class="fas fa-feather"></i> Creative Writing</h3>
+<div class="card-grid">
+  {% for item in creative %}
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+    <span class="card-type creative-writing"><i class="fas fa-pen-fancy"></i> Creative</span>
+    <h3><a href="{{ base_url }}/creative-writing/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }} &middot; <i class="fas fa-user"></i> {{ item.pen_name or item.author }}{% if item.genre %} &middot; <i class="fas fa-bookmark"></i> {{ item.genre }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if links %}
+<h3 class="section-title" data-aos="fade-up"><i class="fas fa-external-link-alt"></i> External Links</h3>
+<div class="card-grid">
+  {% for item in links %}
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+    <span class="card-type external-link"><i class="fas fa-link"></i> Resource</span>
+    <h3><a href="{{ base_url }}/external-link/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

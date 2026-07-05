@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholarscript"
+version = "1.0.0"
+description = "Scripted for Scholars. Powered by Automation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "ScholarScript Team", email = "team@scholarscript.org"},
+]
+
+dependencies = [
+    "click>=8.1",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "python-frontmatter>=1.1",
+    "markdown>=3.5",
+    "beautifulsoup4>=4.12",
+    "requests>=2.31",
+    "watchdog>=3.0",
+]
+
+[project.optional-dependencies]
+ingestion = [
+    "python-docx>=1.1",
+    "pdfplumber>=0.10",
+    "pillow>=10.0",
+    "pytesseract>=0.3",
+    "pdf2image>=1.16",
+    "striprtf>=0.0.20",
+    "odfpy>=1.4",
+]
+all = [
+    "scholarscript[ingestion]",
+    "pyinstaller>=6.0",
+]
+
+[project.scripts]
+scholarscript = "scholarscript.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["scholarscript*"]
+
+[tool.setuptools.package-data]
+scholarscript = ["templates/*.html"]

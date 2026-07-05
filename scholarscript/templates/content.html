@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="content-page">
+  <h2>{{ item.title }}</h2>
+  <p class="meta">
+    {{ item.date }}
+{% if item.author %} &middot; {{ item.author }}{% endif %}
+{% if item.pen_name %} &middot; {{ item.pen_name }}{% endif %}
+    &middot; {{ item.reading_time }} min read
+  </p>
+
+{% if item.summary %}
+  <blockquote class="summary">{{ item.summary }}</blockquote>
+{% endif %}
+
+  <div class="content-body">
+    {{ item.body_html | safe }}
+  </div>
+
+  <div class="tags">{% for tag in item.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+
+{% if item.paper_url %}
+  <p style="margin-top:1.5rem;"><a href="{{ item.paper_url }}" target="_blank" rel="noopener" class="btn">View Original Paper</a></p>
+{% endif %}
+{% if item.video_url %}
+  <p style="margin-top:1.5rem;"><a href="{{ item.video_url }}" target="_blank" rel="noopener" class="btn">Watch Video</a></p>
+{% endif %}
+{% if item.external_url %}
+  <p style="margin-top:1.5rem;"><a href="{{ item.external_url }}" target="_blank" rel="noopener" class="btn">Visit Resource</a></p>
+{% endif %}
+
+{% if related %}
+  <section class="related">
+    <h3>Related Posts</h3>
+    <ul>
+    {% for r in related %}
+      <li><a href="{{ base_url }}/{{ r.type }}/{{ r.slug }}/">{{ r.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+</article>
+{% endblock %}

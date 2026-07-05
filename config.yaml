@@ -1,0 +1,35 @@
+site:
+  title: ScholarScript
+  tagline: Scripted for Scholars. Powered by Automation.
+  domain: dasguptateach-web.github.io
+  base_url: https://dasguptateach-web.github.io/ScholarScript
+  author: ScholarScript Team
+  language: en
+  locale: en_US
+theme: classic
+adsense:
+  client_id: ''
+  enabled: true
+goatcounter:
+  code: ''
+resend:
+  api_key: ''
+  owner_email: ''
+prize:
+  amount: 25
+ingestion:
+  auto_ingest: true
+  schedule: every 5 minutes
+submissions:
+  auto_mode: true
+plugins:
+  enabled: []
+affiliate:
+  amazon_tag: ''
+  bookshop_id: ''
+social:
+  twitter: ''
+  facebook: ''
+  linkedin: ''
+  youtube: ''
+hreflang: {}

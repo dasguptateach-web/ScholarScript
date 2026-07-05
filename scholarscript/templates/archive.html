@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header">
+  <h2>{{ page_title }}</h2>
+</div>
+{% if items %}
+<div class="card-grid">
+  {% for item in items %}
+  <article class="card">
+    <h3><a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a></h3>
+    <p class="meta">{{ item.date }}{% if item.author %} &middot; {{ item.author }}{% endif %}{% if item.reading_time %} &middot; {{ item.reading_time }} min read{% endif %}</p>
+    <p>{{ item.summary }}</p>
+    <div class="tags">{% for tag in item.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p style="text-align:center;padding:4rem 0;color:var(--color-text-secondary);">Nothing here yet. Check back soon.</p>
+{% endif %}
+{% endblock %}
