@@ -1,35 +1,55 @@
 site:
   title: ScholarScript
-  tagline: Scripted for Scholars. Powered by Automation.
+  tagline: "Scripted for Scholars. Powered by Automation."
   domain: dasguptateach-web.github.io
   base_url: https://dasguptateach-web.github.io/ScholarScript
-  author: ScholarScript Team
+  author: "ScholarScript Team"
   language: en
   locale: en_US
+
 theme: classic
+
+# ─── MONETIZATION ───────────────────────────────────────────
+# Get your AdSense code from https://adsense.google.com
 adsense:
-  client_id: ''
+  client_id: ""              # ← FILL THIS: looks like ca-pub-1234567890123456
   enabled: true
+
+# Free analytics at https://www.goatcounter.com
 goatcounter:
-  code: ''
+  code: ""                   # ← FILL THIS: your GoatCounter site code
+
+# Email service for prize notifications (free tier at https://resend.com)
 resend:
-  api_key: ''
-  owner_email: ''
+  api_key: ""                # ← FILL THIS: re_xxxxxxx
+  owner_email: ""            # ← FILL THIS: your email
+
 prize:
-  amount: 25
+  amount: 25                 # Monthly Best Contributor prize in USD
+
+# Affiliate programs (earn commission on book links)
+affiliate:
+  amazon_tag: ""             # ← FILL THIS: your Amazon affiliate tag
+  bookshop_id: ""            # ← FILL THIS: your Bookshop.org affiliate ID
+
+# ─── SOCIAL MEDIA HANDLES (for footer links & Twitter Card) ──
+social:
+  twitter: ""                # ← FILL THIS: your Twitter handle (without @)
+  facebook: ""               # ← FILL THIS: your Facebook page slug
+  linkedin: ""               # ← FILL THIS: your LinkedIn profile name
+  youtube: ""                # ← FILL THIS: your YouTube channel name
+
+# ─── CONTENT INGESTION ──────────────────────────────────────
 ingestion:
   auto_ingest: true
-  schedule: every 5 minutes
+  schedule: "every 5 minutes"
+
 submissions:
   auto_mode: true
+
 plugins:
-  enabled: []
-affiliate:
-  amazon_tag: ''
-  bookshop_id: ''
-social:
-  twitter: ''
-  facebook: ''
-  linkedin: ''
-  youtube: ''
+  enabled:
+    - reading_time
+    - latex_renderer
+
 hreflang: {}

@@ -134,6 +134,8 @@ class Engine:
             "links": external[:3],
             "author_of_month": aom,
             "page_title": "Home",
+            "page_url": self.config.get_base_url() + "/",
+            "page_ogtype": "website",
         }
         self._render("index.html", ctx, public_dir / "index.html")
 
@@ -142,15 +144,24 @@ class Engine:
             "items": items,
             "page_title": title,
             "content_type": content_type,
+            "page_url": self.config.get_base_url() + "/" + content_type + "/",
+            "page_ogtype": "website",
         }
         self._render("archive.html", ctx, public_dir / content_type / "index.html")
 
     def _render_content(self, public_dir, item, tag_map):
         related = tag_map.get(item.slug, [])[:3]
+        base = self.config.get_base_url()
+        page_url = f"{base}/{item.type}/{item.slug}/"
         ctx = {
             "item": item,
             "related": related,
             "page_title": item.title,
+            "page_description": item.summary,
+            "page_url": page_url,
+            "page_image": item.og_image,
+            "page_canonical": item.canonical_url,
+            "page_ogtype": "article",
         }
         self._render("content.html", ctx, public_dir / item.type / item.slug / "index.html")
 
@@ -161,7 +172,12 @@ class Engine:
                 if tag not in all_tags:
                     all_tags[tag] = []
                 all_tags[tag].append(item)
-        ctx = {"tags": all_tags, "page_title": "Tags"}
+        ctx = {
+            "tags": all_tags,
+            "page_title": "Tags",
+            "page_url": self.config.get_base_url() + "/tags/",
+            "page_ogtype": "website",
+        }
         self._render("tags.html", ctx, public_dir / "tags" / "index.html")
 
     def _build_tag_map(self) -> dict:
@@ -187,11 +203,20 @@ class Engine:
         return None
 
     def _render_author_of_month(self, public_dir, aom):
-        ctx = {"author": aom, "page_title": "Author of the Month"}
+        ctx = {
+            "author": aom,
+            "page_title": "Author of the Month",
+            "page_url": self.config.get_base_url() + "/author-of-month/",
+            "page_ogtype": "website",
+        }
         self._render("author-of-month.html", ctx, public_dir / "author-of-month" / "index.html")
 
     def _render_donate(self, public_dir):
-        ctx = {"page_title": "Support ScholarScript"}
+        ctx = {
+            "page_title": "Support ScholarScript",
+            "page_url": self.config.get_base_url() + "/donate/",
+            "page_ogtype": "website",
+        }
         self._render("donate.html", ctx, public_dir / "donate" / "index.html")
 
     def _generate_search_index(self, public_dir):
@@ -216,5 +241,7 @@ class Engine:
             "page_title": "Financial Health",
             "prize_amount": self.config.site.prize_amount,
             "hidden": True,
+            "page_url": self.config.get_base_url() + "/health/",
+            "page_ogtype": "website",
         }
         self._render("health.html", ctx, public_dir / "health" / "index.html")
