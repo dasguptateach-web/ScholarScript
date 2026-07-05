@@ -391,6 +391,13 @@ img { max-width: 100%; height: auto; }
 .content-page .article-meta i { font-size: 0.7rem; }
 .content-page .article-meta .card-type { font-size: 0.65rem; margin: 0; }
 
+/* Hide Google Translate Element UI (use our own dropdown) */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+.goog-te-gadget-simple,
+.skiptranslate iframe { display: none !important; }
+body { top: 0px !important; }
+
 /* TTS & Translate Bars */
 .tts-bar, .translate-bar {
   display: flex; align-items: center; gap: 0.75rem;
@@ -419,13 +426,18 @@ img { max-width: 100%; height: auto; }
 .tts-btn.stop { background: linear-gradient(135deg, #ef4444, #f87171); }
 .tts-btn.stop:hover { box-shadow: 0 4px 16px rgba(239,68,68,0.3); }
 .tts-controls { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-.tts-lang, .tts-voice, .tts-gender, .tts-speed, .translate-select {
+.tts-lang-label {
+  font-size: 0.75rem; font-weight: 600; color: var(--text);
+  display: flex; align-items: center; gap: 0.25rem;
+  padding: 0.25rem 0.5rem; white-space: nowrap;
+}
+.tts-voice, .tts-gender, .tts-speed, .translate-select {
   font-size: 0.75rem; font-family: var(--font-body);
   padding: 0.25rem 0.5rem; border: 1px solid var(--border);
   border-radius: 6px; background: var(--surface); color: var(--text);
   cursor: pointer; outline: none;
 }
-.tts-lang:focus, .tts-speed:focus { border-color: #10b981; }
+.tts-speed:focus { border-color: #10b981; }
 .translate-select { min-width: 170px; }
 .translate-select:focus { border-color: var(--primary); }
 .tts-status {

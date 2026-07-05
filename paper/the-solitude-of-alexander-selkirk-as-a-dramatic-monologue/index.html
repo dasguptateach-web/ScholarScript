@@ -62,59 +62,11 @@
   </div>
 
 
-  <!-- AI Read (TTS) -->
+  <!-- AI Read (TTS) — English only; reads translated page too -->
   <div class="tts-bar" id="ttsBar">
     <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
     <div class="tts-controls">
-      <select class="tts-lang" id="ttsLang">
-        <optgroup label="— Indian Languages —">
-          <option value="hi">हिन्दी (Hindi)</option>
-          <option value="bn">বাংলা (Bengali)</option>
-          <option value="te">తెలుగు (Telugu)</option>
-          <option value="mr">मराठी (Marathi)</option>
-          <option value="ta">தமிழ் (Tamil)</option>
-          <option value="gu">ગુજરાતી (Gujarati)</option>
-          <option value="ur">اردو (Urdu)</option>
-          <option value="kn">ಕನ್ನಡ (Kannada)</option>
-          <option value="ml">മലയാളം (Malayalam)</option>
-          <option value="or">ଓଡ଼ିଆ (Odia)</option>
-          <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-          <option value="as">অসমীয়া (Assamese)</option>
-          <option value="mai">मैथिली (Maithili)</option>
-          <option value="ne">नेपाली (Nepali)</option>
-        </optgroup>
-        <optgroup label="— World Languages —">
-          <option value="en" selected>English (International)</option>
-          <option value="en-US">English (US)</option>
-          <option value="en-GB">English (UK)</option>
-          <option value="es">Español (Spanish)</option>
-          <option value="fr">Français (French)</option>
-          <option value="de">Deutsch (German)</option>
-          <option value="it">Italiano (Italian)</option>
-          <option value="pt">Português (Portuguese)</option>
-          <option value="ru">Русский (Russian)</option>
-          <option value="ja">日本語 (Japanese)</option>
-          <option value="zh-CN">中文 (Chinese Simplified)</option>
-          <option value="ar">العربية (Arabic)</option>
-          <option value="ko">한국어 (Korean)</option>
-          <option value="nl">Nederlands (Dutch)</option>
-          <option value="tr">Türkçe (Turkish)</option>
-          <option value="pl">Polski (Polish)</option>
-          <option value="sv">Svenska (Swedish)</option>
-          <option value="el">Ελληνικά (Greek)</option>
-          <option value="cs">Čeština (Czech)</option>
-          <option value="ro">Română (Romanian)</option>
-          <option value="hu">Magyar (Hungarian)</option>
-          <option value="th">ไทย (Thai)</option>
-          <option value="vi">Tiếng Việt (Vietnamese)</option>
-          <option value="id">Bahasa Indonesia (Indonesian)</option>
-          <option value="he">עברית (Hebrew)</option>
-          <option value="da">Dansk (Danish)</option>
-          <option value="fi">Suomi (Finnish)</option>
-          <option value="nb">Norsk (Norwegian)</option>
-          <option value="uk">Українська (Ukrainian)</option>
-        </optgroup>
-      </select>
+      <span class="tts-lang-label"><i class="fas fa-globe"></i> English</span>
       <select class="tts-voice" id="ttsVoice" title="Choose voice">
         <option value="">Auto (best match)</option>
       </select>
@@ -135,7 +87,7 @@
     <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
   </div>
 
-  <!-- AI Translation -->
+  <!-- AI Translation — translates page in-place; TTS follows -->
   <div class="translate-bar" id="translateBar">
     <label><i class="fas fa-language"></i> Translate to:</label>
     <select class="translate-select" id="translateSelect">
@@ -206,6 +158,7 @@
       </optgroup>
     </select>
   </div>
+  <div id="google_translate_element" style="display:none;"></div>
 
 
 
@@ -254,23 +207,51 @@
   
 
 <script>
-/* Translate */
+/* Google Translate Element — in-page translation (hidden UI) */
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,es,fr,de,it,pt,ru,ja,zh-CN,zh-TW,ar,ko,nl,tr,pl,sv,el,cs,ro,hu,th,vi,id,he,da,fi,nb,uk,ms,tl,sw,hr,sr,lt,lv,et,sk,sl,bg,ka,hy,km,lo,my,mn,si,am',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
 (function() {
   var sel = document.getElementById('translateSelect');
   if (!sel) return;
-  var url = encodeURIComponent(window.location.href);
+
   sel.addEventListener('change', function() {
     var lang = sel.value;
-    if (!lang) return;
-    window.open('https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + url, '_blank');
+    if (!lang) { sel.value = ''; return; }
     sel.value = '';
+
+    var attempts = 0;
+    var maxAttempts = 30;
+
+    function doTranslate() {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        var ttsLang = document.getElementById('ttsLang');
+        if (ttsLang) { ttsLang.value = lang; ttsLang.dispatchEvent(new Event('change')); }
+        return;
+      }
+      attempts++;
+      if (attempts < maxAttempts) { setTimeout(doTranslate, 400); }
+      else {
+        var url = encodeURIComponent(window.location.href);
+        window.open('https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + url, '_blank');
+      }
+    }
+
+    setTimeout(doTranslate, 600);
   });
 })();
 
-/* TTS — AI Read with voice selection & gender */
+/* TTS — AI Read with voice selection & gender (English by default, follows translate) */
 (function() {
   var btn = document.getElementById('ttsPlayBtn');
-  var langEl = document.getElementById('ttsLang');
   var voiceEl = document.getElementById('ttsVoice');
   var genderEl = document.getElementById('ttsGender');
   var speedEl = document.getElementById('ttsSpeed');
@@ -286,10 +267,10 @@
   var utterance = null;
   var speaking = false;
   var paused = false;
+  var activeLang = 'en';
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
-  /* Guess gender from voice name */
   function guessGender(name) {
     var n = name.toLowerCase();
     if (/female|zira|samantha|sara|karen|moira|tessa|veena|lekha|nati|alice|elena|aisha|silvia|susan|amira|marta|catherine|hazel|emily|lisa|mariska|anu/i.test(n)) return 'female';
@@ -297,7 +278,6 @@
     return 'unknown';
   }
 
-  /* Get display name for voice */
   function voiceDisplay(v) {
     var g = guessGender(v.name);
     var icon = g === 'female' ? '♀' : g === 'male' ? '♂' : '⚤';
@@ -308,11 +288,10 @@
   function populateVoices() {
     allVoices = synth.getVoices() || [];
     if (!voiceEl) return;
-    var currentLang = langEl.value;
     var currentGender = genderEl ? genderEl.value : '';
     voiceEl.innerHTML = '<option value="">Auto (best match)</option>';
 
-    var matches = allVoices.filter(function(v) { return v.lang.startsWith(currentLang) || v.lang.startsWith(currentLang.split('-')[0]); });
+    var matches = allVoices.filter(function(v) { return v.lang.startsWith(activeLang) || v.lang.startsWith(activeLang.split('-')[0]); });
     if (currentGender) matches = matches.filter(function(v) { return guessGender(v.name) === currentGender; });
 
     matches.forEach(function(v) {
@@ -367,17 +346,15 @@
     if (!text) { updateUI('error'); return; }
 
     utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = langEl.value;
+    utterance.lang = activeLang;
     utterance.rate = parseFloat(speedEl.value);
 
-    /* Select matching voice */
     var selectedName = voiceEl ? voiceEl.value : '';
     if (selectedName) {
       var match = allVoices.filter(function(v) { return v.name === selectedName; });
       if (match.length > 0) utterance.voice = match[0];
     } else {
-      /* Auto: prefer Google voices (most natural), then Microsoft */
-      var langBase = langEl.value.split('-')[0];
+      var langBase = activeLang.split('-')[0];
       var ranked = allVoices.filter(function(v) { return v.lang.startsWith(langBase); });
       var google = ranked.filter(function(v) { return v.name.indexOf('Google') >= 0; });
       var microsoft = ranked.filter(function(v) { return v.name.indexOf('Microsoft') >= 0; });
@@ -396,18 +373,17 @@
   }
 
   btn.addEventListener('click', speak);
-  langEl.addEventListener('change', populateVoices);
   if (genderEl) genderEl.addEventListener('change', populateVoices);
   voiceEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
   speedEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
 
-  /* Load voices (async in Chrome) */
   populateVoices();
   if (synth.onvoiceschanged !== undefined) {
     synth.addEventListener('voiceschanged', populateVoices);
   }
 })();
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
