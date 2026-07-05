@@ -27,20 +27,21 @@
       </a>
       <div class="header-right">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
-        <div class="header-search">
+        <div class="header-search" id="headerSearch">
           <i class="fas fa-search header-search-icon"></i>
           <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
           <kbd class="header-search-kbd">Ctrl+K</kbd>
+          <div class="search-dropdown" id="searchDropdown"></div>
         </div>
         <nav class="main-nav">
-          <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i>Home</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/papers/"><i class="fas fa-scroll"></i>Papers</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/videos/"><i class="fas fa-video"></i>Videos</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/"><i class="fas fa-feather"></i>Writing</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/"><i class="fas fa-external-link-alt"></i>Links</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i>Tags</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/"><i class="fas fa-star"></i>AotM</a>
-          <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i>Support</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i><span>Home</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/papers/"><i class="fas fa-scroll"></i><span>Papers</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/videos/"><i class="fas fa-video"></i><span>Videos</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/"><i class="fas fa-feather"></i><span>Writing</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/"><i class="fas fa-external-link-alt"></i><span>Links</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i><span>Tags</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/"><i class="fas fa-star"></i><span>AotM</span></a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i><span>Support</span></a>
         </nav>
       </div>
     </div>
@@ -96,188 +97,110 @@ summary: &#34;A c...</p>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <!-- Search Overlay -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-panel">
-      <div class="container">
-        <i class="fas fa-search" style="color:var(--text-muted);font-size:1rem;"></i>
-        <input type="text" id="searchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
-        <button class="search-close" id="searchClose" aria-label="Close search"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="search-results" id="searchResults">
-      <div class="search-results-inner"></div>
-    </div>
-  </div>
-
   
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    /* === Init === */
     AOS.init({ duration: 600, once: true, offset: 80 });
 
+    /* Reading progress */
     (function() {
-      var progress = document.getElementById('readingProgress');
-      if (progress) {
-        window.addEventListener('scroll', function() {
-          var max = document.documentElement.scrollHeight - window.innerHeight;
-          progress.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
-        });
-      }
-      var btn = document.getElementById('backToTop');
-      if (btn) {
-        window.addEventListener('scroll', function() {
-          btn.classList.toggle('visible', window.scrollY > 400);
-        });
-        btn.addEventListener('click', function() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
+      var el = document.getElementById('readingProgress');
+      if (!el) return;
+      window.addEventListener('scroll', function() {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        el.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
+      });
     })();
+
+    /* Back to top */
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() { btn.classList.toggle('visible', window.scrollY > 400); });
+      btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    })();
+
+    /* Dark mode */
     (function() {
       var toggle = document.getElementById('themeToggle');
       if (!toggle) return;
       var icon = toggle.querySelector('i');
-      function setTheme(dark) {
-        if (dark) {
-          document.documentElement.style.setProperty('--bg', '#1c1917');
-          document.documentElement.style.setProperty('--bg-alt', '#292524');
-          document.documentElement.style.setProperty('--surface', '#292524');
-          document.documentElement.style.setProperty('--surface-hover', '#33302e');
-          document.documentElement.style.setProperty('--text', '#f5f5f4');
-          document.documentElement.style.setProperty('--text-soft', '#a8a29e');
-          document.documentElement.style.setProperty('--text-muted', '#78716c');
-          document.documentElement.style.setProperty('--border', '#3f3d3b');
-          document.documentElement.style.setProperty('--shadow-sm', '0 1px 2px rgba(0,0,0,0.2)');
-          document.documentElement.style.setProperty('--shadow-md', '0 4px 16px rgba(0,0,0,0.3)');
-          document.documentElement.style.setProperty('--shadow-lg', '0 12px 40px rgba(0,0,0,0.4)');
-          document.documentElement.style.setProperty('--header-bg', 'rgba(41,37,36,0.92)');
-          if (icon) { icon.className = 'fas fa-sun'; }
-        } else {
-          document.documentElement.style.setProperty('--bg', '#faf8f5');
-          document.documentElement.style.setProperty('--bg-alt', '#f5f0eb');
-          document.documentElement.style.setProperty('--surface', '#ffffff');
-          document.documentElement.style.setProperty('--surface-hover', '#faf8f5');
-          document.documentElement.style.setProperty('--text', '#1c1917');
-          document.documentElement.style.setProperty('--text-soft', '#57534e');
-          document.documentElement.style.setProperty('--text-muted', '#a8a29e');
-          document.documentElement.style.setProperty('--border', '#e7e5e4');
-          document.documentElement.style.setProperty('--shadow-sm', '0 1px 2px rgba(28,25,23,0.05)');
-          document.documentElement.style.setProperty('--shadow-md', '0 4px 16px rgba(28,25,23,0.06)');
-          document.documentElement.style.setProperty('--shadow-lg', '0 12px 40px rgba(28,25,23,0.08)');
-          document.documentElement.style.setProperty('--header-bg', 'rgba(255,255,255,0.88)');
-          if (icon) { icon.className = 'fas fa-moon'; }
-        }
-      }
-      var stored = localStorage.getItem('scholar-dark');
-      if (stored === 'true') setTheme(true);
+      var html = document.documentElement;
+      var stored = localStorage.getItem('ss-theme');
+      if (stored === 'dark') { html.classList.add('dark'); if (icon) icon.className = 'fas fa-sun'; }
       toggle.addEventListener('click', function() {
-        var isDark = !document.documentElement.style.getPropertyValue('--bg').includes('faf8f5');
-        if (document.documentElement.style.getPropertyValue('--bg') === '') isDark = false;
-        setTheme(!isDark);
-        localStorage.setItem('scholar-dark', !isDark);
+        var isDark = html.classList.toggle('dark');
+        localStorage.setItem('ss-theme', isDark ? 'dark' : 'light');
+        if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       });
     })();
 
-    /* SEARCH */
+    /* Search */
     (function() {
       var index = [];
-      var overlay = document.getElementById('searchOverlay');
-      var headerInput = document.getElementById('headerSearchInput');
+      var input = document.getElementById('headerSearchInput');
+      var dropdown = document.getElementById('searchDropdown');
       var heroInput = document.getElementById('heroSearchInput');
-      var close = document.getElementById('searchClose');
-      var overlayInput = document.getElementById('searchInput');
-      var resultsEl = document.querySelector('#searchResults .search-results-inner');
-
-      if (!overlay) return;
+      if (!input || !dropdown) return;
 
       fetch('https://dasguptateach-web.github.io/ScholarScript/search-index.json')
         .then(function(r) { return r.json(); })
-        .then(function(data) { index = data; })
+        .then(function(d) { index = d; })
         .catch(function() { index = []; });
 
-      function openSearch(query) {
-        if (overlayInput) overlayInput.value = query || '';
-        overlay.classList.add('active');
-        setTimeout(function() { if (overlayInput) overlayInput.focus(); }, 350);
-        document.body.style.overflow = 'hidden';
-        if (query) doSearch(query);
-      }
-      function closeSearch() {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        if (overlayInput) overlayInput.value = '';
-        if (resultsEl) resultsEl.innerHTML = '';
-      }
-
-      function onSearchFocus(el) { openSearch(el.value); }
-      if (headerInput) { headerInput.addEventListener('focus', function() { onSearchFocus(headerInput); }); }
-      if (heroInput) { heroInput.addEventListener('focus', function() { onSearchFocus(heroInput); }); }
-      if (close) close.addEventListener('click', closeSearch);
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closeSearch();
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeSearch();
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
-      });
-
-      function doSearch(query) {
-        if (!resultsEl) return;
-        var q = query.toLowerCase().trim();
-        if (!q || index.length === 0) {
-          resultsEl.innerHTML = q ? '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>' : '';
-          return;
-        }
-        var scored = [];
+      function render(q) {
+        var query = (q || '').toLowerCase().trim();
+        if (!query || index.length === 0) { dropdown.innerHTML = ''; dropdown.classList.remove('active'); return; }
+        var results = [];
         for (var i = 0; i < index.length; i++) {
-          var item = index[i];
-          var score = 0;
-          if (item.title.toLowerCase().includes(q)) score += 10;
-          if ((item.summary || '').toLowerCase().includes(q)) score += 3;
-          if ((item.author || '').toLowerCase().includes(q)) score += 4;
+          var item = index[i]; var score = 0;
+          if (item.title.toLowerCase().includes(query)) score += 10;
+          if ((item.summary || '').toLowerCase().includes(query)) score += 3;
+          if ((item.author || '').toLowerCase().includes(query)) score += 4;
           for (var t = 0; t < (item.tags || []).length; t++) {
-            if (item.tags[t].toLowerCase().includes(q)) score += 5;
+            if (item.tags[t].toLowerCase().includes(query)) score += 5;
           }
-          if (score > 0) scored.push({ item: item, score: score });
+          if (score > 0) results.push({ item: item, score: score });
         }
-        scored.sort(function(a, b) { return b.score - a.score; });
-        if (scored.length === 0) {
-          resultsEl.innerHTML = '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>';
-          return;
+        results.sort(function(a, b) { return b.score - a.score; });
+        if (results.length === 0) {
+          dropdown.innerHTML = '<div class="sd-empty"><i class="fas fa-search"></i> No results found</div>';
+          dropdown.classList.add('active'); return;
         }
-        var types = { paper: 'Paper', video: 'Video', 'creative-writing': 'Creative', 'external-link': 'Resource' };
-        var typeColors = { paper: 'paper', video: 'video', 'creative-writing': 'creative-writing', 'external-link': 'external-link' };
-        var typeIcons = { paper: 'fa-file-alt', video: 'fa-video', 'creative-writing': 'fa-feather', 'external-link': 'fa-link' };
         var html = '';
-        for (var i = 0; i < scored.length; i++) {
-          var r = scored[i].item;
-          html += '<div class="search-result-item">';
-          html += '<div class="result-info">';
-          html += '<h4><a href="https://dasguptateach-web.github.io/ScholarScript' + r.url + '">' + r.title + '</a></h4>';
-          html += '<div class="result-meta"><span class="card-type ' + (typeColors[r.type] || '') + '"><i class="fas ' + (typeIcons[r.type] || 'fa-file') + '"></i> ' + (types[r.type] || r.type) + '</span>';
-          if (r.date) html += '<span><i class="fas fa-calendar-alt"></i> ' + r.date + '</span>';
-          if (r.author) html += '<span><i class="fas fa-user"></i> ' + r.author + '</span>';
-          html += '</div>';
-          if (r.summary) html += '<div class="result-summary">' + r.summary.substring(0, 200) + '</div>';
-          html += '</div></div>';
+        for (var i = 0; i < Math.min(results.length, 8); i++) {
+          var r = results[i].item;
+          var typeLabel = { paper: 'Paper', video: 'Video', 'creative-writing': 'Creative', 'external-link': 'Resource' }[r.type] || r.type;
+          html += '<a href="https://dasguptateach-web.github.io/ScholarScript' + r.url + '" class="sd-item" onclick="document.getElementById(\'headerSearchInput\').blur();">' +
+            '<span class="sd-type ' + r.type + '">' + typeLabel + '</span>' +
+            '<span class="sd-title">' + r.title + '</span>' +
+            (r.date ? '<span class="sd-date">' + r.date + '</span>' : '') +
+          '</a>';
         }
-        resultsEl.innerHTML = html;
-
-        resultsEl.querySelectorAll('.search-result-item').forEach(function(el, idx) {
-          el.addEventListener('click', function() {
-            var link = el.querySelector('h4 a');
-            if (link) window.location.href = link.getAttribute('href');
-          });
-        });
+        if (results.length > 8) html += '<div class="sd-more">+' + (results.length - 8) + ' more results</div>';
+        dropdown.innerHTML = html;
+        dropdown.classList.add('active');
       }
 
-      var debounceTimer;
-      if (overlayInput) {
-        overlayInput.addEventListener('input', function() {
-          clearTimeout(debounceTimer);
-          debounceTimer = setTimeout(function() { doSearch(overlayInput.value); }, 200);
-        });
+      var timer;
+      input.addEventListener('input', function() { clearTimeout(timer); timer = setTimeout(function() { render(input.value); }, 100); });
+      input.addEventListener('focus', function() { render(input.value); });
+      input.addEventListener('blur', function() { setTimeout(function() { dropdown.classList.remove('active'); }, 200); });
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); input.focus(); }
+        if (e.key === 'Escape') { input.blur(); dropdown.classList.remove('active'); }
+      });
+
+      if (heroInput) {
+        heroInput.addEventListener('focus', function() { input.focus(); input.value = heroInput.value; render(heroInput.value); });
       }
+
+      /* Close dropdown on click outside */
+      document.addEventListener('click', function(e) {
+        var h = document.getElementById('headerSearch');
+        if (h && !h.contains(e.target)) dropdown.classList.remove('active');
+      });
     })();
   </script>
 </body>
