@@ -62,6 +62,30 @@
   </div>
 
 
+  <!-- AI Read — realistic neural TTS -->
+  <div class="tts-bar notranslate" id="ttsBar">
+    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
+    <div class="tts-controls">
+      <select class="tts-voice" id="ttsVoice" title="Voice">
+        <option value="">Loading voices...</option>
+      </select>
+      <select class="tts-gender" id="ttsGender" title="Voice gender">
+        <option value="">♀ Any</option>
+        <option value="female">♀ Female</option>
+        <option value="male">♂ Male</option>
+      </select>
+      <select class="tts-speed" id="ttsSpeed">
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
+  </div>
+
   <!-- AI Translation — translates page in-place -->
   <div class="translate-bar notranslate" id="translateBar">
     <label><i class="fas fa-language"></i> Translate to:</label>
@@ -217,6 +241,124 @@ function googleTranslateElementInit() {
     autoDisplay: false
   }, 'google_translate_element');
 }
+
+/* AI Read — high-quality neural TTS */
+(function() {
+  var btn = document.getElementById('ttsPlayBtn');
+  var voiceEl = document.getElementById('ttsVoice');
+  var genderEl = document.getElementById('ttsGender');
+  var speedEl = document.getElementById('ttsSpeed');
+  var statusEl = document.getElementById('ttsStatus');
+  var body = document.getElementById('contentBody');
+  var ss = window.speechSynthesis;
+
+  if (!btn || !body || !ss || typeof ss.speak !== 'function') {
+    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Unavailable';
+    return;
+  }
+
+  var speaking = false, paused = false, allVoices = [], utt = null;
+
+  function txt() { return body.textContent.replace(/\s+/g, ' ').trim(); }
+
+  function gender(name) {
+    var n = name.toLowerCase();
+    if (/\b(female|girl|woman|samantha|zira|libby|hazel|emma|olivia|sophia|mia|joanna|kendra|kimberly|ivy|susan|nancy|victoria|veena|tessa|seoyeon|hiujin|yuna)\b/.test(n)) return 'female';
+    if (/\b(male|boy|man|david|mark|daniel|michael|james|john|robert|william|richard|joseph|thomas|christopher|brian|kevin|henry|oliver|noah|liam|ethan)\b/.test(n)) return 'male';
+    return '';
+  }
+
+  function isHQ(name) {
+    var n = name.toLowerCase();
+    return n.indexOf('wavenet') !== -1 || n.indexOf('neural') !== -1 || n.indexOf('premium') !== -1 || n.indexOf('google') !== -1;
+  }
+
+  function loadVoices() {
+    allVoices = ss.getVoices();
+    if (!allVoices.length) return;
+    var gen = genderEl ? genderEl.value : '';
+    var prev = voiceEl.value;
+    voiceEl.innerHTML = '';
+    var list = allVoices.filter(function(v) { return !gen || gender(v.name) === gen; });
+    list.sort(function(a, b) {
+      var ah = isHQ(a.name) ? 0 : 1, bh = isHQ(b.name) ? 0 : 1;
+      return ah !== bh ? ah - bh : a.name.localeCompare(b.name);
+    });
+    if (!list.length) {
+      voiceEl.innerHTML = '<option value="">No voices</option>';
+      return;
+    }
+    list.forEach(function(v) {
+      var o = document.createElement('option');
+      o.value = v.name;
+      o.textContent = v.name + (isHQ(v.name) ? ' ⚡' : '');
+      voiceEl.appendChild(o);
+    });
+    if (prev && voiceEl.querySelector('[value="' + prev.replace(/"/g, '&quot;') + '"]')) voiceEl.value = prev;
+    if (!voiceEl.value) {
+      var best = list.find(function(v) { return isHQ(v.name); }) || list.find(function(v) { return gen !== '' && gender(v.name) === gen; }) || list[0];
+      voiceEl.value = best.name;
+    }
+  }
+
+  loadVoices();
+  if (ss.onvoiceschanged !== undefined) ss.addEventListener('voiceschanged', loadVoices);
+  if (genderEl) genderEl.addEventListener('change', loadVoices);
+
+  function play() {
+    if (paused && utt) { ss.resume(); ui('playing'); return; }
+    if (speaking) { ss.cancel(); ui('stopped'); utt = null; return; }
+    var text = txt();
+    if (!text) { ui('error'); return; }
+    ss.getVoices();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = parseFloat(speedEl ? speedEl.value : '1');
+    if (voiceEl && voiceEl.value) {
+      var m = allVoices.filter(function(v) { return v.name === voiceEl.value; });
+      if (m.length) { u.voice = m[0]; u.lang = m[0].lang; }
+    }
+    utt = u;
+    u.onstart = function() { ui('playing'); };
+    u.onend = function() { ui('done'); utt = null; };
+    u.onerror = function(e) {
+      if (e.error !== 'canceled' && e.error !== 'interrupted') {
+        if (statusEl) statusEl.textContent = e.error || 'Error';
+        ui('error');
+      }
+      utt = null;
+    };
+    ss.cancel(); ss.speak(u);
+  }
+
+  function ui(m) {
+    if (m === 'playing') {
+      btn.innerHTML = '<i class="fas fa-pause"></i> Pause'; btn.className = 'tts-btn stop';
+      if (statusEl) { statusEl.textContent = 'Reading...'; statusEl.style.color = '#059669'; }
+      speaking = true; paused = false;
+    } else if (m === 'paused') {
+      btn.innerHTML = '<i class="fas fa-play"></i> Resume'; btn.className = 'tts-btn';
+      if (statusEl) { statusEl.textContent = 'Paused'; statusEl.style.color = '#d97706'; }
+      paused = true;
+    } else if (m === 'done') {
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen'; btn.className = 'tts-btn';
+      if (statusEl) { statusEl.textContent = 'Done'; statusEl.style.color = '#059669'; }
+      speaking = false; paused = false;
+    } else if (m === 'stopped') {
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen'; btn.className = 'tts-btn';
+      if (statusEl) { statusEl.textContent = 'Stopped'; statusEl.style.color = '#059669'; }
+      speaking = false; paused = false;
+    } else {
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen'; btn.className = 'tts-btn';
+      if (statusEl) { statusEl.textContent = 'Error'; statusEl.style.color = '#dc2626'; }
+      speaking = false; paused = false;
+    }
+  }
+
+  btn.addEventListener('click', play);
+  if (speedEl) speedEl.addEventListener('change', function() {
+    if (speaking || paused) { ss.cancel(); ui('stopped'); utt = null; }
+  });
+})();
 
 (function() {
   var sel = document.getElementById('translateSelect');
