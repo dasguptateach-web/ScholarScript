@@ -17,7 +17,7 @@ adsense:
 
 # Free analytics at https://www.goatcounter.com
 goatcounter:
-  code: ""                   # ← FILL THIS: your GoatCounter site code
+  code: "scholar"            # ← DONE: GoatCounter site code
 
 # Email service for prize notifications (free tier at https://resend.com)
 resend:
