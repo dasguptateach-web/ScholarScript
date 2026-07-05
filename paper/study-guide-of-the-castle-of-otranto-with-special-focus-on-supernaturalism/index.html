@@ -8,48 +8,95 @@
   <meta name="generator" content="ScholarScript">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://dasguptateach-web.github.io/ScholarScript/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="ScholarScript" href="https://dasguptateach-web.github.io/ScholarScript/rss.xml">
 
 
 </head>
 <body>
+  <div class="reading-progress" id="readingProgress"></div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="https://dasguptateach-web.github.io/ScholarScript/" class="logo">
         <h1>ScholarScript</h1>
         <p class="tagline">Scripted for Scholars. Powered by Automation.</p>
       </a>
-      <nav class="main-nav">
-        <a href="https://dasguptateach-web.github.io/ScholarScript/">Home</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/papers/">Papers</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/videos/">Videos</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/">Writing</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/">Links</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/tags/">Tags</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/">AotM</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/donate/">Support</a>
-      </nav>
+      <div style="display:flex;align-items:center;gap:0.25rem;">
+        <button class="search-trigger" id="searchTrigger" aria-label="Search">
+          <i class="fas fa-search"></i><span>Search</span>
+        </button>
+        <nav class="main-nav">
+          <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i>Home</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/papers/"><i class="fas fa-scroll"></i>Papers</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/videos/"><i class="fas fa-video"></i>Videos</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/"><i class="fas fa-feather"></i>Writing</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/"><i class="fas fa-external-link-alt"></i>Links</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i>Tags</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/"><i class="fas fa-star"></i>AotM</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i>Support</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main>
     
-<article class="content-page">
+<article class="content-page" data-aos="fade-up">
   <h2>[Study Guide Of The Castle Of Otranto With Special Focus On Supernaturalism</h2>
   <p class="meta">
-    2026-04-17
+    <i class="fas fa-calendar-alt"></i> 2026-04-17
 
 
-    &middot; 6 min read
+ &middot; <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
+    &middot; <i class="fas fa-clock"></i> 6 min read
   </p>
 
 
-  <blockquote class="summary">April 17, 2026 [Study Guide of The Castle of Otranto with Special Focus on Supernaturalism] Introduction: The Birth of Gothic Fiction Critic Edmund Burke, in his theory of the sublime, argues that ter...</blockquote>
+  <!-- AI Read (TTS) -->
+  <div class="tts-bar" id="ttsBar">
+    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
+    <div class="tts-controls">
+      <select class="tts-lang" id="ttsLang">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+        <option value="bn">বাংলা (Bengali)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="mr">मराठी (Marathi)</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="gu">ગુજરાતી (Gujarati)</option>
+        <option value="ur">اردو (Urdu)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="or">ଓଡ଼ିଆ (Odia)</option>
+        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+        <option value="as">অসমীয়া (Assamese)</option>
+      </select>
+      <select class="tts-speed" id="ttsSpeed">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
+  </div>
+
+  <!-- AI Translation -->
+  <div class="translate-bar">
+    <label><i class="fas fa-language"></i> Translate:</label>
+    <div id="google_translate_element"></div>
+  </div>
 
 
-  <div class="content-body">
+
+  <blockquote class="summary" data-aos="fade-up">April 17, 2026 [Study Guide of The Castle of Otranto with Special Focus on Supernaturalism] Introduction: The Birth of Gothic Fiction Critic Edmund Burke, in his theory of the sublime, argues that ter...</blockquote>
+
+
+  <div class="content-body" id="contentBody" data-aos="fade-up">
     <p>April 17, 2026 [Study Guide of The Castle of Otranto with Special Focus on Supernaturalism] Introduction: The Birth of Gothic Fiction Critic Edmund Burke, in his theory of the sublime, argues that terror is a key source of aesthetic pleasure. Walpole’s The Castle of Otranto (1764) by Horace Walpole is widely supernatural spectacles—gigantic armor, walking portraits, regarded as the first Gothic novel in English literature. and ghostly apparitions—create this sense of awe and terror, Subtitled “A Gothic Story,” it inaugurates a new literary aligning the novel with the aesthetics of the sublime. mode that blends medieval romance with elements of horror, mystery, and the supernatural. Walpole himself claimed in 2. Supernatural as a Tool of Divine Justice the preface that the novel was an attempt to combine “the two kinds of romance, the ancient and the modern.” The Beyond mere spectacle, the supernatural in Otranto serves a result is a narrative where realistic characterization moral and symbolic function. The mysterious events are coexists with extraordinary supernatural occurrences, not random; they are instruments of divine retribution making the text foundational for later Gothic writers such as against Manfred’s tyranny and illegitimate rule. The Ann Radcliffe and Mary Shelley. prophecy that frames the narrative states: At the heart of the novel lies the theme of supernaturalism, “That the castle and lordship of Otranto should pass from which not only drives the plot but also creates an the present family, whenever the real owner should be atmosphere of terror, suspense, and moral retribution. grown too large to inhabit it.” Walpole’s use of supernatural elements is bold, often extravagant, and symbolic, reflecting both psychological This prophecy is fulfilled through supernatural anxieties and divine justice. manifestations, particularly the appearance of Alfonso’s ghost, which ultimately reveals the truth about the rightful Plot Overview (Brief) heir. The supernatural thus acts as a corrective force, restoring moral and social order. The story is set in a medieval castle ruled by Manfred, a tyrannical prince. On the day of his son Conrad’s wedding, a Critic David Punter notes that early Gothic fiction often uses gigantic helmet mysteriously falls from the sky and crushes the supernatural to “encode anxieties about legitimacy and him to death. This bizarre and supernatural event sets the authority.” In Walpole’s novel, the supernatural exposes the tone for the rest of the narrative. Manfred, desperate to illegitimacy of Manfred’s power and ensures justice. secure his lineage, attempts to divorce his wife Hippolita and marry Isabella, his son’s fiancée. Isabella escapes, 3. Atmosphere of Fear and Gothic Setting leading to a series of supernatural encounters involving ghosts, moving portraits, giant limbs, and prophetic The supernatural elements are deeply intertwined with the apparitions. Ultimately, the truth emerges: Manfred’s family setting of the castle, which itself becomes a character in the has usurped the rightful ownership of the castle, and narrative. Dark corridors, subterranean passages, and hidden Theodore, the true heir, is restored to his position. Manfred, recognizing divine punishment, repents. chambers create a sense of claustrophobia and भय (fear). Isabella’s flight through the underground vaults is particularly significant:</p>
 <p>Supernaturalism in The Castle of Otranto “She knew not whither she was going… surrounded by 1. The Supernatural as Shock and Spectacle darkness.” One of the most striking aspects of Walpole’s novel is the The castle is not merely a backdrop; it is a haunted space sheer extravagance of its supernatural elements. The where supernatural forces manifest. The moving portrait of very first incident—the طوق(cid:1127)(cid:1127)(cid:1127)(cid:1127)(cid:1127)(cid:1127)(cid:1127)س of a gigantic helmet—defies Manfred’s grandfather stepping out of its frame is one of the logic and immediately destabilizes the reader’s sense of most iconic Gothic images: reality: “The portrait… he saw it quit its panel, and descend on the “The helmet was one hundred times more large than any floor with a grave and melancholy air.” casque ever made for human being.” Such scenes blur the boundary between the animate and This event is not explained rationally; instead, it introduces inanimate, heightening the sense of uncanny terror. a world governed by mysterious and supernatural forces. Unlike later Gothic writers like Ann Radcliffe, who often provided rational explanations for seemingly supernatural 4. Psychological Dimensions of the Supernatural events, Walpole embraces the irrational and marvelous without hesitation. While the supernatural events are external, they also reflect the internal psychological states of the characters, especially Manfred. His increasing paranoia and guilt are mirrored in the strange occurrences around him. The</p>
 <h2 id="d-dasgupta-page-1">D. DASGUPTA Page 1</h2>
@@ -66,7 +113,7 @@
 <h2 id="d-dasgupta-page-2">D. DASGUPTA Page 2</h2>
   </div>
 
-  <div class="tags"><span class="tag">supernatural</span> <span class="tag">gothic</span> <span class="tag">walpole</span> <span class="tag">manfred</span> <span class="tag">castle</span> </div>
+  <div class="tags" style="margin-top:2rem;" data-aos="fade-up"><span class="tag"><i class="fas fa-tag"></i> supernatural</span> <span class="tag"><i class="fas fa-tag"></i> gothic</span> <span class="tag"><i class="fas fa-tag"></i> walpole</span> <span class="tag"><i class="fas fa-tag"></i> manfred</span> <span class="tag"><i class="fas fa-tag"></i> castle</span> </div>
 
 
 
@@ -79,9 +126,252 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 ScholarScript. Published with ScholarScript.</p>
+      <div class="footer-brand">
+        <h3>ScholarScript</h3>
+        <p>&copy; 2026 &middot; Published with <i class="fas fa-scroll"></i> ScholarScript</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i> Home</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i> Tags</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/archive/"><i class="fas fa-archive"></i> Archive</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i> Support</a>
+      </div>
+      <div class="social-links">
 
+
+
+
+      </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-panel">
+      <div class="container">
+        <i class="fas fa-search" style="color:var(--text-muted);font-size:1rem;"></i>
+        <input type="text" id="searchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-results-inner"></div>
+    </div>
+  </div>
+
+  
+
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,sat,ks,sd,kok,mni,brx,dgo',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false,
+    multilanguagePage: true
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- TTS: AI Read Aloud -->
+<script>
+(function() {
+  var btn = document.getElementById('ttsPlayBtn');
+  var lang = document.getElementById('ttsLang');
+  var speed = document.getElementById('ttsSpeed');
+  var status = document.getElementById('ttsStatus');
+  var body = document.getElementById('contentBody');
+  var synth = window.speechSynthesis;
+  var utterance = null;
+  var isPlaying = false;
+
+  if (!btn || !body) return;
+
+  function getText() {
+    return body.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function stop() {
+    if (synth) synth.cancel();
+    isPlaying = false;
+    btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+    btn.className = 'tts-btn';
+    status.innerHTML = '<i class="fas fa-info-circle"></i> Stopped';
+  }
+
+  function speak() {
+    if (!synth) {
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> TTS not supported';
+      return;
+    }
+    if (isPlaying) { stop(); return; }
+
+    var text = getText();
+    if (!text) {
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> No content';
+      return;
+    }
+
+    utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang.value;
+    utterance.rate = parseFloat(speed.value);
+
+    utterance.onstart = function() {
+      isPlaying = true;
+      btn.innerHTML = '<i class="fas fa-stop"></i> Stop';
+      btn.className = 'tts-btn stop';
+      status.innerHTML = '<i class="fas fa-volume-up"></i> Reading...';
+    };
+    utterance.onend = function() {
+      isPlaying = false;
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+      btn.className = 'tts-btn';
+      status.innerHTML = '<i class="fas fa-info-circle"></i> Done';
+    };
+    utterance.onerror = function() {
+      isPlaying = false;
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+      btn.className = 'tts-btn';
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
+    };
+
+    synth.speak(utterance);
+  }
+
+  btn.addEventListener('click', speak);
+  lang.addEventListener('change', function() {
+    if (isPlaying) { stop(); }
+  });
+  speed.addEventListener('change', function() {
+    if (isPlaying) { stop(); }
+  });
+})();
+</script>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 80 });
+
+    (function() {
+      var progress = document.getElementById('readingProgress');
+      if (progress) {
+        window.addEventListener('scroll', function() {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          progress.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
+        });
+      }
+      var btn = document.getElementById('backToTop');
+      if (btn) {
+        window.addEventListener('scroll', function() {
+          btn.classList.toggle('visible', window.scrollY > 400);
+        });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+
+    /* SEARCH */
+    (function() {
+      var index = [];
+      var overlay = document.getElementById('searchOverlay');
+      var trigger = document.getElementById('searchTrigger');
+      var close = document.getElementById('searchClose');
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.querySelector('#searchResults .search-results-inner');
+
+      if (!overlay || !trigger) return;
+
+      fetch('https://dasguptateach-web.github.io/ScholarScript/search-index.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) { index = data; })
+        .catch(function() { index = []; });
+
+      function openSearch() {
+        overlay.classList.add('active');
+        setTimeout(function() { if (input) input.focus(); }, 350);
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSearch() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (input) input.value = '';
+        if (resultsEl) resultsEl.innerHTML = '';
+      }
+
+      trigger.addEventListener('click', openSearch);
+      if (close) close.addEventListener('click', closeSearch);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSearch();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSearch();
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+      });
+
+      function doSearch(query) {
+        if (!resultsEl) return;
+        var q = query.toLowerCase().trim();
+        if (!q || index.length === 0) {
+          resultsEl.innerHTML = q ? '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>' : '';
+          return;
+        }
+        var scored = [];
+        for (var i = 0; i < index.length; i++) {
+          var item = index[i];
+          var score = 0;
+          if (item.title.toLowerCase().includes(q)) score += 10;
+          if ((item.summary || '').toLowerCase().includes(q)) score += 3;
+          if ((item.author || '').toLowerCase().includes(q)) score += 4;
+          for (var t = 0; t < (item.tags || []).length; t++) {
+            if (item.tags[t].toLowerCase().includes(q)) score += 5;
+          }
+          if (score > 0) scored.push({ item: item, score: score });
+        }
+        scored.sort(function(a, b) { return b.score - a.score; });
+        if (scored.length === 0) {
+          resultsEl.innerHTML = '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>';
+          return;
+        }
+        var types = { paper: 'Paper', video: 'Video', 'creative-writing': 'Creative', 'external-link': 'Resource' };
+        var typeColors = { paper: 'paper', video: 'video', 'creative-writing': 'creative-writing', 'external-link': 'external-link' };
+        var typeIcons = { paper: 'fa-file-alt', video: 'fa-video', 'creative-writing': 'fa-feather', 'external-link': 'fa-link' };
+        var html = '';
+        for (var i = 0; i < scored.length; i++) {
+          var r = scored[i].item;
+          html += '<div class="search-result-item">';
+          html += '<div class="result-info">';
+          html += '<h4><a href="https://dasguptateach-web.github.io/ScholarScript' + r.url + '">' + r.title + '</a></h4>';
+          html += '<div class="result-meta"><span class="card-type ' + (typeColors[r.type] || '') + '"><i class="fas ' + (typeIcons[r.type] || 'fa-file') + '"></i> ' + (types[r.type] || r.type) + '</span>';
+          if (r.date) html += '<span><i class="fas fa-calendar-alt"></i> ' + r.date + '</span>';
+          if (r.author) html += '<span><i class="fas fa-user"></i> ' + r.author + '</span>';
+          html += '</div>';
+          if (r.summary) html += '<div class="result-summary">' + r.summary.substring(0, 200) + '</div>';
+          html += '</div></div>';
+        }
+        resultsEl.innerHTML = html;
+
+        resultsEl.querySelectorAll('.search-result-item').forEach(function(el, idx) {
+          el.addEventListener('click', function() {
+            var link = el.querySelector('h4 a');
+            if (link) window.location.href = link.getAttribute('href');
+          });
+        });
+      }
+
+      var debounceTimer;
+      if (input) {
+        input.addEventListener('input', function() {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(function() { doSearch(input.value); }, 200);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

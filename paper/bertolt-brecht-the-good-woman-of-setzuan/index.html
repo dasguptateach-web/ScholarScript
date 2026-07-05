@@ -8,48 +8,95 @@
   <meta name="generator" content="ScholarScript">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://dasguptateach-web.github.io/ScholarScript/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="ScholarScript" href="https://dasguptateach-web.github.io/ScholarScript/rss.xml">
 
 
 </head>
 <body>
+  <div class="reading-progress" id="readingProgress"></div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="https://dasguptateach-web.github.io/ScholarScript/" class="logo">
         <h1>ScholarScript</h1>
         <p class="tagline">Scripted for Scholars. Powered by Automation.</p>
       </a>
-      <nav class="main-nav">
-        <a href="https://dasguptateach-web.github.io/ScholarScript/">Home</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/papers/">Papers</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/videos/">Videos</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/">Writing</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/">Links</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/tags/">Tags</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/">AotM</a>
-        <a href="https://dasguptateach-web.github.io/ScholarScript/donate/">Support</a>
-      </nav>
+      <div style="display:flex;align-items:center;gap:0.25rem;">
+        <button class="search-trigger" id="searchTrigger" aria-label="Search">
+          <i class="fas fa-search"></i><span>Search</span>
+        </button>
+        <nav class="main-nav">
+          <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i>Home</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/papers/"><i class="fas fa-scroll"></i>Papers</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/videos/"><i class="fas fa-video"></i>Videos</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/"><i class="fas fa-feather"></i>Writing</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/external-links/"><i class="fas fa-external-link-alt"></i>Links</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i>Tags</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/author-of-month/"><i class="fas fa-star"></i>AotM</a>
+          <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i>Support</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main>
     
-<article class="content-page">
+<article class="content-page" data-aos="fade-up">
   <h2>Bertolt Brecht The Good Woman Of Setzuan</h2>
   <p class="meta">
-    2026-05-18
+    <i class="fas fa-calendar-alt"></i> 2026-05-18
 
 
-    &middot; 41 min read
+ &middot; <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
+    &middot; <i class="fas fa-clock"></i> 41 min read
   </p>
 
 
-  <blockquote class="summary">May 18, 2026 [MODULE V: BERTOLT BRECHT -THE GOOD WOMAN OF SETZUAN] 1. Introduction: Background and Context Let&#39;s begin with a vivid snapshot. Imagine a world where the gods themselves come down to ear...</blockquote>
+  <!-- AI Read (TTS) -->
+  <div class="tts-bar" id="ttsBar">
+    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
+    <div class="tts-controls">
+      <select class="tts-lang" id="ttsLang">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+        <option value="bn">বাংলা (Bengali)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="mr">मराठी (Marathi)</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="gu">ગુજરાતી (Gujarati)</option>
+        <option value="ur">اردو (Urdu)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="or">ଓଡ଼ିଆ (Odia)</option>
+        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+        <option value="as">অসমীয়া (Assamese)</option>
+      </select>
+      <select class="tts-speed" id="ttsSpeed">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
+  </div>
+
+  <!-- AI Translation -->
+  <div class="translate-bar">
+    <label><i class="fas fa-language"></i> Translate:</label>
+    <div id="google_translate_element"></div>
+  </div>
 
 
-  <div class="content-body">
+
+  <blockquote class="summary" data-aos="fade-up">May 18, 2026 [MODULE V: BERTOLT BRECHT -THE GOOD WOMAN OF SETZUAN] 1. Introduction: Background and Context Let&#39;s begin with a vivid snapshot. Imagine a world where the gods themselves come down to ear...</blockquote>
+
+
+  <div class="content-body" id="contentBody" data-aos="fade-up">
     <p>May 18, 2026 [MODULE V: BERTOLT BRECHT -THE GOOD WOMAN OF SETZUAN] 1. Introduction: Background and Context Let's begin with a vivid snapshot. Imagine a world where the gods themselves come down to earth, only to be turned away from every door because no one is willing to share a night's lodging. The only person who says "yes" is Shen Te, a prostitute. So begins The Good Woman of Setzuan, a play that is both deceptively simple and philosophically profound.</p>
 <h2 id="composition-and-collaboration">Composition and Collaboration</h2>
 <p>Bertolt Brecht (1898–1956) began writing the play in 1938 while in exile from Nazi Germany. He completed it in 1941 during his stay in the United States. The final version owes a great deal to two of his closest collaborators: Margarete Steffin and Ruth Berlau, who worked with him on the dialogue and structure. The play was first performed in 1943 at the Schauspielhaus Zürich in Switzerland, with an original musical score by the Swiss composer Huldreich Georg Früh. A revised version with music by Paul Dessau – the version more commonly heard today – appeared in 1947–1948. It was published in 1953 as Der gute Mensch von Sezuan.</p>
@@ -222,7 +269,7 @@
 <p>The play has been revived frequently, from the Berliner Ensemble in the 1950s to major productions in London, New York, and Tokyo. Each production must confront the central interpretive question: should the gods be played as absurd, tragic, or comedic? There is no single answer, which is exactly how Brecht wanted it. 9. Sample Essay Questions for Master's-Level Study 1. "The problem of goodness in The Good Woman of Setzuan is not a moral problem but an economic one." Discuss, with close reference to the play's text and structure. 2. Analyze the function of the doppelgänger (Shen Te/Shui Ta) in the play. How does Brecht use this device to critique capitalism rather than to explore psychology? 3. "Brecht's gods are not characters but bureaucrats." Explore how the representation of divinity in the play functions as a critique of institutional religion's relationship to economic injustice. 4. Discuss the role of gender in the play. Why must Shen Te adopt a male persona to be taken seriously in business? What does this reveal about Brecht's view of patriarchy? 5. Compare the original proposed title Die Ware Liebe ("The Product Love") with the published title. Which title better captures the play's central concerns? 6. Analyze the Epilogue as a Brechtian device. Does it succeed in turning the audience from passive spectators to active agents of change? 7. Select three alienation effects used in the play and analyze their specific function in preventing emotional identification and encouraging critical thought. 10. Final Thoughts: Why This Play Still Matters Brecht's The Good Woman of Setzuan was written in the shadow of Nazi Germany, but its questions feel painfully contemporary. We live in an era of growing economic inequality, where "goodness" is often framed as a luxury the poor cannot afford. The homeless family that moves into Shen Te's shop – are they villains or victims? Yang Sun – is he a monster or a desperate young man? The gods – are they fools or simply honest about their own limitations? Brecht forces us to sit with these questions without resolution. The Epilogue says: "It is for you to find a way." And that is the highest compliment a play can offer its audience – the assumption that we are not passive consumers of moral parables, but active participants in the unfinished project of creating a just world. 20 DASGUPTA</p>
   </div>
 
-  <div class="tags"><span class="tag">shen</span> <span class="tag">she</span> <span class="tag">shui</span> <span class="tag">good</span> <span class="tag">gods</span> </div>
+  <div class="tags" style="margin-top:2rem;" data-aos="fade-up"><span class="tag"><i class="fas fa-tag"></i> shen</span> <span class="tag"><i class="fas fa-tag"></i> she</span> <span class="tag"><i class="fas fa-tag"></i> shui</span> <span class="tag"><i class="fas fa-tag"></i> good</span> <span class="tag"><i class="fas fa-tag"></i> gods</span> </div>
 
 
 
@@ -235,9 +282,252 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 ScholarScript. Published with ScholarScript.</p>
+      <div class="footer-brand">
+        <h3>ScholarScript</h3>
+        <p>&copy; 2026 &middot; Published with <i class="fas fa-scroll"></i> ScholarScript</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i> Home</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/tags/"><i class="fas fa-tags"></i> Tags</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/archive/"><i class="fas fa-archive"></i> Archive</a>
+        <a href="https://dasguptateach-web.github.io/ScholarScript/donate/"><i class="fas fa-heart"></i> Support</a>
+      </div>
+      <div class="social-links">
 
+
+
+
+      </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-panel">
+      <div class="container">
+        <i class="fas fa-search" style="color:var(--text-muted);font-size:1rem;"></i>
+        <input type="text" id="searchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-results-inner"></div>
+    </div>
+  </div>
+
+  
+
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,sat,ks,sd,kok,mni,brx,dgo',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false,
+    multilanguagePage: true
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- TTS: AI Read Aloud -->
+<script>
+(function() {
+  var btn = document.getElementById('ttsPlayBtn');
+  var lang = document.getElementById('ttsLang');
+  var speed = document.getElementById('ttsSpeed');
+  var status = document.getElementById('ttsStatus');
+  var body = document.getElementById('contentBody');
+  var synth = window.speechSynthesis;
+  var utterance = null;
+  var isPlaying = false;
+
+  if (!btn || !body) return;
+
+  function getText() {
+    return body.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function stop() {
+    if (synth) synth.cancel();
+    isPlaying = false;
+    btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+    btn.className = 'tts-btn';
+    status.innerHTML = '<i class="fas fa-info-circle"></i> Stopped';
+  }
+
+  function speak() {
+    if (!synth) {
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> TTS not supported';
+      return;
+    }
+    if (isPlaying) { stop(); return; }
+
+    var text = getText();
+    if (!text) {
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> No content';
+      return;
+    }
+
+    utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang.value;
+    utterance.rate = parseFloat(speed.value);
+
+    utterance.onstart = function() {
+      isPlaying = true;
+      btn.innerHTML = '<i class="fas fa-stop"></i> Stop';
+      btn.className = 'tts-btn stop';
+      status.innerHTML = '<i class="fas fa-volume-up"></i> Reading...';
+    };
+    utterance.onend = function() {
+      isPlaying = false;
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+      btn.className = 'tts-btn';
+      status.innerHTML = '<i class="fas fa-info-circle"></i> Done';
+    };
+    utterance.onerror = function() {
+      isPlaying = false;
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+      btn.className = 'tts-btn';
+      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
+    };
+
+    synth.speak(utterance);
+  }
+
+  btn.addEventListener('click', speak);
+  lang.addEventListener('change', function() {
+    if (isPlaying) { stop(); }
+  });
+  speed.addEventListener('change', function() {
+    if (isPlaying) { stop(); }
+  });
+})();
+</script>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 80 });
+
+    (function() {
+      var progress = document.getElementById('readingProgress');
+      if (progress) {
+        window.addEventListener('scroll', function() {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          progress.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
+        });
+      }
+      var btn = document.getElementById('backToTop');
+      if (btn) {
+        window.addEventListener('scroll', function() {
+          btn.classList.toggle('visible', window.scrollY > 400);
+        });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+
+    /* SEARCH */
+    (function() {
+      var index = [];
+      var overlay = document.getElementById('searchOverlay');
+      var trigger = document.getElementById('searchTrigger');
+      var close = document.getElementById('searchClose');
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.querySelector('#searchResults .search-results-inner');
+
+      if (!overlay || !trigger) return;
+
+      fetch('https://dasguptateach-web.github.io/ScholarScript/search-index.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) { index = data; })
+        .catch(function() { index = []; });
+
+      function openSearch() {
+        overlay.classList.add('active');
+        setTimeout(function() { if (input) input.focus(); }, 350);
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSearch() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (input) input.value = '';
+        if (resultsEl) resultsEl.innerHTML = '';
+      }
+
+      trigger.addEventListener('click', openSearch);
+      if (close) close.addEventListener('click', closeSearch);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeSearch();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSearch();
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+      });
+
+      function doSearch(query) {
+        if (!resultsEl) return;
+        var q = query.toLowerCase().trim();
+        if (!q || index.length === 0) {
+          resultsEl.innerHTML = q ? '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>' : '';
+          return;
+        }
+        var scored = [];
+        for (var i = 0; i < index.length; i++) {
+          var item = index[i];
+          var score = 0;
+          if (item.title.toLowerCase().includes(q)) score += 10;
+          if ((item.summary || '').toLowerCase().includes(q)) score += 3;
+          if ((item.author || '').toLowerCase().includes(q)) score += 4;
+          for (var t = 0; t < (item.tags || []).length; t++) {
+            if (item.tags[t].toLowerCase().includes(q)) score += 5;
+          }
+          if (score > 0) scored.push({ item: item, score: score });
+        }
+        scored.sort(function(a, b) { return b.score - a.score; });
+        if (scored.length === 0) {
+          resultsEl.innerHTML = '<div class="search-result-empty"><i class="fas fa-search"></i><p>No results found</p></div>';
+          return;
+        }
+        var types = { paper: 'Paper', video: 'Video', 'creative-writing': 'Creative', 'external-link': 'Resource' };
+        var typeColors = { paper: 'paper', video: 'video', 'creative-writing': 'creative-writing', 'external-link': 'external-link' };
+        var typeIcons = { paper: 'fa-file-alt', video: 'fa-video', 'creative-writing': 'fa-feather', 'external-link': 'fa-link' };
+        var html = '';
+        for (var i = 0; i < scored.length; i++) {
+          var r = scored[i].item;
+          html += '<div class="search-result-item">';
+          html += '<div class="result-info">';
+          html += '<h4><a href="https://dasguptateach-web.github.io/ScholarScript' + r.url + '">' + r.title + '</a></h4>';
+          html += '<div class="result-meta"><span class="card-type ' + (typeColors[r.type] || '') + '"><i class="fas ' + (typeIcons[r.type] || 'fa-file') + '"></i> ' + (types[r.type] || r.type) + '</span>';
+          if (r.date) html += '<span><i class="fas fa-calendar-alt"></i> ' + r.date + '</span>';
+          if (r.author) html += '<span><i class="fas fa-user"></i> ' + r.author + '</span>';
+          html += '</div>';
+          if (r.summary) html += '<div class="result-summary">' + r.summary.substring(0, 200) + '</div>';
+          html += '</div></div>';
+        }
+        resultsEl.innerHTML = html;
+
+        resultsEl.querySelectorAll('.search-result-item').forEach(function(el, idx) {
+          el.addEventListener('click', function() {
+            var link = el.querySelector('h4 a');
+            if (link) window.location.href = link.getAttribute('href');
+          });
+        });
+      }
+
+      var debounceTimer;
+      if (input) {
+        input.addEventListener('input', function() {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(function() { doSearch(input.value); }, 200);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
