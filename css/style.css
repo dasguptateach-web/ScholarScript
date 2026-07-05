@@ -437,7 +437,9 @@ body { top: 0px !important; }
   border-radius: 6px; background: var(--surface); color: var(--text);
   cursor: pointer; outline: none;
 }
+.tts-voice { min-width: 200px; max-width: 300px; }
 .tts-speed:focus { border-color: #10b981; }
+.tts-voice option { font-size: 0.72rem; }
 .translate-select { min-width: 170px; }
 .translate-select:focus { border-color: var(--primary); }
 .tts-status {
