@@ -74,102 +74,67 @@
   </div>
 
 
-  <!-- AI Read — realistic neural TTS -->
-  <div class="tts-bar notranslate" id="ttsBar">
-    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
+  <!-- Read Aloud — English TTS with Indian voice -->
+  <div class="tts-bar notranslate">
+    <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Read</button>
     <div class="tts-controls">
-      <select class="tts-voice" id="ttsVoice" title="Voice">
-        <option value="">Loading voices...</option>
+      <select id="ttsGender" title="Voice gender">
+        <option value="">Default</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
       </select>
-      <select class="tts-gender" id="ttsGender" title="Voice gender">
-        <option value="">♀ Any</option>
-        <option value="female">♀ Female</option>
-        <option value="male">♂ Male</option>
-      </select>
-      <select class="tts-speed" id="ttsSpeed">
-        <option value="0.5">0.5x</option>
+      <select id="ttsSpeed">
         <option value="0.75">0.75x</option>
         <option value="1" selected>1x</option>
         <option value="1.25">1.25x</option>
         <option value="1.5">1.5x</option>
-        <option value="2">2x</option>
       </select>
     </div>
-    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
+    <span class="tts-status" id="ttsStatus">Ready</span>
   </div>
 
-  <!-- AI Translation — translates page in-place -->
-  <div class="translate-bar notranslate" id="translateBar">
-    <label><i class="fas fa-language"></i> Translate to:</label>
-    <select class="translate-select" id="translateSelect">
-      <option value="">English</option>
-      <optgroup label="🇮🇳 Indian Languages">
-        <option value="hi">हिन्दी (Hindi)</option>
-        <option value="bn">বাংলা (Bengali)</option>
-        <option value="te">తెలుగు (Telugu)</option>
-        <option value="mr">मराठी (Marathi)</option>
-        <option value="ta">தமிழ் (Tamil)</option>
-        <option value="gu">ગુજરાતી (Gujarati)</option>
-        <option value="ur">اردو (Urdu)</option>
-        <option value="kn">ಕನ್ನಡ (Kannada)</option>
-        <option value="ml">മലയാളം (Malayalam)</option>
-        <option value="or">ଓଡ଼ିଆ (Odia)</option>
-        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-        <option value="as">অসমীয়া (Assamese)</option>
-        <option value="mai">मैथिली (Maithili)</option>
-        <option value="ne">नेपाली (Nepali)</option>
+  <!-- Translate — Indian & World languages -->
+  <div class="translate-bar notranslate">
+    <label><i class="fas fa-language"></i> Translate:</label>
+    <select id="translateSelect">
+      <option value="">English (original)</option>
+      <optgroup label="Indian Languages">
+        <option value="hi">हिन्दी</option>
+        <option value="bn">বাংলা</option>
+        <option value="te">తెలుగు</option>
+        <option value="mr">मराठी</option>
+        <option value="ta">தமிழ்</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="ur">اردو</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="ml">മലയാളം</option>
+        <option value="or">ଓଡ଼ିଆ</option>
+        <option value="pa">ਪੰਜਾਬੀ</option>
+        <option value="as">অসমীয়া</option>
+        <option value="mai">मैथिली</option>
+        <option value="ne">नेपाली</option>
+        <option value="sd">سنڌي</option>
+        <option value="ks">कॉशुर</option>
+        <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ</option>
+        <option value="kok">कोंकणी</option>
+        <option value="doi">डोगरी</option>
+        <option value="mni">মৈতৈলোন্</option>
+        <option value="brx">बर'</option>
       </optgroup>
-      <optgroup label="🌍 World Languages">
-        <option value="es">Español (Spanish)</option>
-        <option value="fr">Français (French)</option>
-        <option value="de">Deutsch (German)</option>
-        <option value="it">Italiano (Italian)</option>
-        <option value="pt">Português (Portuguese)</option>
-        <option value="ru">Русский (Russian)</option>
-        <option value="ja">日本語 (Japanese)</option>
-        <option value="zh-CN">中文 (Chinese Simplified)</option>
-        <option value="zh-TW">中文 (Chinese Traditional)</option>
-        <option value="ar">العربية (Arabic)</option>
-        <option value="ko">한국어 (Korean)</option>
-        <option value="nl">Nederlands (Dutch)</option>
-        <option value="tr">Türkçe (Turkish)</option>
-        <option value="pl">Polski (Polish)</option>
-        <option value="sv">Svenska (Swedish)</option>
-        <option value="el">Ελληνικά (Greek)</option>
-        <option value="cs">Čeština (Czech)</option>
-        <option value="ro">Română (Romanian)</option>
-        <option value="hu">Magyar (Hungarian)</option>
-        <option value="th">ไทย (Thai)</option>
-        <option value="vi">Tiếng Việt (Vietnamese)</option>
-        <option value="id">Bahasa Indonesia (Indonesian)</option>
-        <option value="he">עברית (Hebrew)</option>
-        <option value="da">Dansk (Danish)</option>
-        <option value="fi">Suomi (Finnish)</option>
-        <option value="nb">Norsk (Norwegian)</option>
-        <option value="uk">Українська (Ukrainian)</option>
-        <option value="ms">Bahasa Melayu (Malay)</option>
-        <option value="tl">Filipino (Tagalog)</option>
-        <option value="sw">Kiswahili (Swahili)</option>
-        <option value="hr">Hrvatski (Croatian)</option>
-        <option value="sr">Српски (Serbian)</option>
-        <option value="lt">Lietuvių (Lithuanian)</option>
-        <option value="lv">Latviešu (Latvian)</option>
-        <option value="et">Eesti (Estonian)</option>
-        <option value="sk">Slovenčina (Slovak)</option>
-        <option value="sl">Slovenščina (Slovenian)</option>
-        <option value="bg">Български (Bulgarian)</option>
-        <option value="ka">ქართული (Georgian)</option>
-        <option value="hy">Հայերեն (Armenian)</option>
-        <option value="km">ភាសាខ្មែរ (Khmer)</option>
-        <option value="lo">ລາວ (Lao)</option>
-        <option value="my">မြန်မာဘာသာ (Myanmar)</option>
-        <option value="mn">Монгол (Mongolian)</option>
-        <option value="si">සිංහල (Sinhala)</option>
-        <option value="am">አማርኛ (Amharic)</option>
+      <optgroup label="World Languages">
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="ru">Русский</option>
+        <option value="ja">日本語</option>
+        <option value="zh-CN">中文</option>
+        <option value="ar">العربية</option>
+        <option value="ko">한국어</option>
       </optgroup>
     </select>
   </div>
-  <div id="google_translate_element" class="notranslate" style="position:absolute;left:-9999px;top:-9999px;width:0;height:0;overflow:hidden;"></div>
+  <div id="google_translate_element" class="notranslate" style="position:fixed;top:-9999px;left:0;width:1px;height:1px;overflow:hidden;z-index:-1;"></div>
 
 
 
@@ -230,247 +195,154 @@
   
 
 <script>
-/* Google Translate Element — in-page translation (hidden UI) */
+/* Google Translate Element Init */
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
-    includedLanguages: 'hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,es,fr,de,it,pt,ru,ja,zh-CN,zh-TW,ar,ko,nl,tr,pl,sv,el,cs,ro,hu,th,vi,id,he,da,fi,nb,uk,ms,tl,sw,hr,sr,lt,lv,et,sk,sl,bg,ka,hy,km,lo,my,mn,si,am',
+    includedLanguages: 'hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,sd,ks,sat,kok,doi,mni,brx,es,fr,de,pt,ru,ja,zh-CN,ar,ko',
     autoDisplay: false
   }, 'google_translate_element');
 }
 
-/* AI Read — neural TTS (cross-browser, mobile-friendly) */
+/* Read Aloud — TTS */
 (function(){
   var btn=document.getElementById('ttsPlayBtn');
-  var voiceEl=document.getElementById('ttsVoice');
   var genderEl=document.getElementById('ttsGender');
   var speedEl=document.getElementById('ttsSpeed');
   var statusEl=document.getElementById('ttsStatus');
   var body=document.getElementById('contentBody');
   var ss=window.speechSynthesis;
-  var speaking=false, paused=false, allVoices=[], utt=null;
-  var primed=false, startTimer=null;
+  var speaking=false, paused=false, allVoices=[], utt=null, startTimer=null;
 
-  if(!btn||!body)return;
-  if(!ss||typeof ss.speak!=='function'){
-    if(statusEl)statusEl.innerHTML='<i class="fas fa-exclamation-circle"></i> TTS unavailable';
+  if(!btn||!body||!ss||typeof ss.speak!=='function'){
+    if(statusEl)statusEl.textContent='Not available';
     return;
   }
 
   function txt(){return body.textContent.replace(/\s+/g,' ').trim();}
-  function setStatus(t,c){if(statusEl){statusEl.textContent=t;statusEl.style.color=c;}}
+  function setStatus(t,c){if(statusEl){statusEl.textContent=t;if(c)statusEl.style.color=c;}}
   function resetBtn(){
-    btn.innerHTML='<i class="fas fa-headphones"></i> Listen';
+    btn.innerHTML='<i class="fas fa-headphones"></i> Read';
     btn.className='tts-btn';
     speaking=false;paused=false;utt=null;
     if(startTimer){clearTimeout(startTimer);startTimer=null;}
   }
 
-  function loadVoices(){
+  function pickVoice(gen){
     var v=ss.getVoices();
-    if(!v||!v.length)return;
+    if(!v||!v.length)return null;
     allVoices=v;
-    var gen=genderEl?genderEl.value:'';
-    var pv=voiceEl.value;
-    voiceEl.innerHTML='';
-    var list=v.filter(function(x){
-      if(!gen)return true;
-      var n=x.name.toLowerCase();
-      if(gen==='female')return/\b(female|girl|woman|samantha|zira|hazel|emma|mia|joanna|kendra|susan|victoria|veena|tessa|sara)\b/.test(n);
-      return/\b(male|boy|man|david|mark|daniel|michael|james|john|robert|william|richard|thomas|henry|oliver|noah|liam|ethan)\b/.test(n);
-    });
-    list.sort(function(a,b){
-      var ha=a.name.toLowerCase().indexOf('wavenet')!==-1||a.name.toLowerCase().indexOf('neural')!==-1?0:1;
-      var hb=b.name.toLowerCase().indexOf('wavenet')!==-1||b.name.toLowerCase().indexOf('neural')!==-1?0:1;
-      return ha!==hb?ha-hb:a.name.localeCompare(b.name);
-    });
-    if(!list.length){voiceEl.innerHTML='<option value="">Default voice</option>';return;}
-    list.forEach(function(x){
-      var o=document.createElement('option');
-      o.value=x.name;
-      var hq=x.name.toLowerCase().indexOf('wavenet')!==-1||x.name.toLowerCase().indexOf('neural')!==-1;
-      o.textContent=x.name+(hq?' \u26a1':'');
-      voiceEl.appendChild(o);
-    });
-    if(pv){try{voiceEl.value=pv;}catch(e){}}
-    if(!voiceEl.value&&list.length)voiceEl.value=list[0].name;
+    var best=null;
+    for(var i=0;i<v.length;i++){
+      var name=v[i].name.toLowerCase();
+      var lang=v[i].lang||'';
+      if(lang.indexOf('hi')===0||lang.indexOf('en-in')===0||name.indexOf('hindi')!==-1||name.indexOf('india')!==-1){
+        if(!best||lang.indexOf('hi')===0)best=v[i];
+      }
+    }
+    if(!best){
+      for(var i=0;i<v.length;i++){
+        var lang=v[i].lang||'';
+        if(lang.indexOf('en')===0){best=v[i];break;}
+      }
+    }
+    if(!best&&v.length)best=v[0];
+    if(best&&gen){
+      var isFemale=/\b(female|samantha|zira|hazel|emma|mia|joanna|kendra|susan|victoria|veena|tessa|sara|google हिन्दी)\b/i;
+      var isMale=/\b(male|david|mark|daniel|michael|james|john|robert|richard|thomas|henry)\b/i;
+      if(gen==='female'&&!isFemale.test(best.name)){
+        for(var i=0;i<v.length;i++){
+          if(isFemale.test(v[i].name)){best=v[i];break;}
+        }
+      }else if(gen==='male'&&!isMale.test(best.name)){
+        for(var i=0;i<v.length;i++){
+          if(isMale.test(v[i].name)){best=v[i];break;}
+        }
+      }
+    }
+    return best;
   }
-
-  function prime(){
-    if(primed)return;
-    try{
-      ss.cancel();
-      var d=new SpeechSynthesisUtterance(' ');
-      d.volume=0;
-      ss.speak(d);
-      primed=true;
-    }catch(e){}
-  }
-
-  loadVoices();
-  if(ss.addEventListener)ss.addEventListener('voiceschanged',loadVoices);
-  setTimeout(loadVoices,600);
-  if(genderEl)genderEl.addEventListener('change',loadVoices);
 
   btn.addEventListener('click',function(){
     if(paused&&utt){
-      try{ss.resume();setStatus('Reading...','#059669');
+      try{ss.resume();setStatus('Reading');speaking=true;paused=false;
         btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
-        paused=false;speaking=true;
-      }catch(e){resetBtn();setStatus('Error','#dc2626');}
+      }catch(e){resetBtn();}
       return;
     }
     if(speaking){
-      try{ss.pause();setStatus('Paused','#d97706');
+      try{ss.pause();setStatus('Paused');paused=true;
         btn.innerHTML='<i class="fas fa-play"></i> Resume';btn.className='tts-btn';
-        paused=true;
-      }catch(e){resetBtn();setStatus('Error','#dc2626');}
+      }catch(e){resetBtn();}
       return;
     }
 
     var text=txt();
-    if(!text){resetBtn();setStatus('Empty','#dc2626');return;}
+    if(!text){resetBtn();return;}
 
     try{ss.cancel();}catch(e){}
 
     var u=new SpeechSynthesisUtterance(text);
     u.rate=parseFloat(speedEl?speedEl.value:'1');
     u.volume=1;
-
-    if(voiceEl&&voiceEl.value&&allVoices.length){
-      for(var i=0;i<allVoices.length;i++){
-        if(allVoices[i].name===voiceEl.value){u.voice=allVoices[i];u.lang=allVoices[i].lang;break;}
-      }
-    }
-    if(!u.lang)u.lang='en-US';
+    var voice=pickVoice(genderEl?genderEl.value:'');
+    if(voice){u.voice=voice;u.lang=voice.lang||'en-US';}else{u.lang='en-US';}
 
     utt=u;speaking=true;paused=false;
-    btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Starting...';btn.className='tts-btn';
-    setStatus('Starting...','#d97706');
+    btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Starting';btn.className='tts-btn';
+    setStatus('Starting');
 
     var started=false;
-    u.onstart=function(){
-      started=true;
+    u.onstart=function(){started=true;
       if(startTimer){clearTimeout(startTimer);startTimer=null;}
       btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
-      setStatus('Reading...','#059669');
+      setStatus('Reading');
     };
-    u.onend=function(){
-      resetBtn();setStatus('Done','#059669');
-    };
+    u.onend=function(){resetBtn();setStatus('Done');};
     u.onerror=function(e){
       if(started)return;
-      if(e.error==='canceled'||e.error==='interrupted'){resetBtn();setStatus('Stopped','#059669');return;}
-      resetBtn();
-      if(e.error==='not-allowed'||e.error==='synthesis-failed'||e.error=='interrupted'){
-        setStatus('Playback starting...','#d97706');
-        setTimeout(function(){
-          if(!speaking)return;
-          try{
-            ss.cancel();
-            var u2=new SpeechSynthesisUtterance(text);
-            u2.rate=u.rate;u2.volume=1;u2.voice=u.voice;u2.lang=u.lang;
-            u2.onstart=u.onstart;u2.onend=u.onend;
-            u2.onerror=function(e2){
-              if(e2.error==='canceled'||e2.error==='interrupted'){resetBtn();setStatus('Stopped','#059669');return;}
-              resetBtn();setStatus(e2.error||'Error','#dc2626');
-              if(statusEl)statusEl.innerHTML='<i class="fas fa-exclamation-circle"></i> '+(e2.error||'Error');
-            };
-            utt=u2;
-            ss.speak(u2);
-            startTimer=setTimeout(function(){
-              if(speaking&&!started){resetBtn();setStatus('Unavailable','#dc2626');}
-            },3000);
-          }catch(e2){resetBtn();setStatus('Unavailable','#dc2626');}
-        },200);
-      }else{
-        setStatus(e.error||'Error','#dc2626');
-        if(statusEl)statusEl.innerHTML='<i class="fas fa-exclamation-circle"></i> '+(e.error||'Error');
-      }
+      if(e.error==='canceled'||e.error==='interrupted'){resetBtn();setStatus('Stopped');return;}
+      resetBtn();setStatus('Tap to start','#d97706');
     };
 
-    try{
-      ss.speak(u);
+    try{ss.speak(u);
       startTimer=setTimeout(function(){
-        if(speaking&&!started){
-          resetBtn();setStatus('Unavailable','#a8a29e');
-          if(statusEl)statusEl.innerHTML='<i class="fas fa-exclamation-circle"></i> Not supported';
-        }
+        if(speaking&&!started){resetBtn();setStatus('Not supported');}
       },3000);
-    }catch(e){
-      resetBtn();
-      setStatus('Retrying...','#d97706');
-      setTimeout(function(){
-        try{
-          ss.cancel();
-          var u2=new SpeechSynthesisUtterance(text);
-          u2.rate=u.rate;u2.volume=1;u2.voice=u.voice;u2.lang=u.lang;
-          u2.onstart=function(){btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';setStatus('Reading...','#059669');};
-          u2.onend=function(){resetBtn();setStatus('Done','#059669');};
-          u2.onerror=function(e2){
-            if(e2.error==='canceled'||e2.error==='interrupted'){resetBtn();setStatus('Stopped','#059669');return;}
-            resetBtn();setStatus(e2.error||'Error','#dc2626');
-            if(statusEl)statusEl.innerHTML='<i class="fas fa-exclamation-circle"></i> '+(e2.error||'Error');
-          };
-          utt=u2;
-          ss.speak(u2);
-        }catch(e2){resetBtn();setStatus('Unavailable','#dc2626');}
-      },100);
-    }
-  });
-
-  if(speedEl)speedEl.addEventListener('change',function(){
-    if(speaking||paused){
-      try{ss.cancel();}catch(e){}
-      resetBtn();setStatus('Stopped','#059669');
-    }
+    }catch(e){resetBtn();setStatus('Tap to start','#d97706');}
   });
 })();
 
-(function() {
-  var sel = document.getElementById('translateSelect');
-  if (!sel) return;
+/* Translate */
+(function(){
+  var sel=document.getElementById('translateSelect');
+  if(!sel)return;
 
-  sel.addEventListener('change', function() {
-    var lang = sel.value;
-    if (!lang) { sel.value = ''; return; }
+  var translateReady=false;
+  var mo=new MutationObserver(function(){
+    if(document.querySelector('.goog-te-combo')){translateReady=true;mo.disconnect();}
+  });
+  mo.observe(document.body,{childList:true,subtree:true});
 
-    // Keep the selected language visible in the dropdown
-    var displayLang = sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '';
-    sel.title = 'Translating to: ' + displayLang;
+  function waitAndTranslate(lang){
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=lang;combo.dispatchEvent(new Event('change'));return true;}
+    return false;
+  }
 
-    function triggerTranslate(l) {
-      var combo = document.querySelector('.goog-te-combo');
-      if (combo) {
-        combo.value = l;
-        // Google Translate widget uses its own event system
-        if (combo.fireEvent) {
-          combo.fireEvent('onchange');
-        } else {
-          combo.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        return true;
-      }
-      return false;
-    }
-
-    if (triggerTranslate(lang)) return;
-
-    var attempts = 0;
-    function waitForCombo() {
-      if (triggerTranslate(lang)) return;
-      attempts++;
-      if (attempts < 30) { setTimeout(waitForCombo, 500); }
-      else {
-        // Fallback: redirect to Google Translate page
-        window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + encodeURIComponent(window.location.href.split('#')[0]);
-      }
-    }
-    setTimeout(waitForCombo, 1000);
+  sel.addEventListener('change',function(){
+    var lang=sel.value;
+    if(!lang)return;
+    if(waitAndTranslate(lang))return;
+    var n=0;
+    (function poll(){
+      if(waitAndTranslate(lang))return;
+      n++;if(n<20)setTimeout(poll,250);
+    })();
   });
 })();
 </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
