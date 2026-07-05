@@ -8,7 +8,7 @@
   <meta name="generator" content="ScholarScript">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://dasguptateach-web.github.io/ScholarScript/css/style.css">
@@ -25,7 +25,8 @@
         <h1>ScholarScript</h1>
         <p class="tagline">Scripted for Scholars. Powered by Automation.</p>
       </a>
-      <div style="display:flex;align-items:center;gap:0.5rem;flex:1;justify-content:flex-end;">
+      <div class="header-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
         <div class="header-search">
           <i class="fas fa-search header-search-icon"></i>
           <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
@@ -48,14 +49,16 @@
   <main>
     
 <article class="content-page" data-aos="fade-up">
-  <h2>Structuralism</h2>
-  <p class="meta">
-    <i class="fas fa-calendar-alt"></i> 2026-05-16
+  <div class="article-header">
+    <h2>Structuralism</h2>
+    <p class="article-meta">
+      <i class="fas fa-calendar-alt"></i> 2026-05-16
 
 
  &middot; <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
-    &middot; <i class="fas fa-clock"></i> 9 min read
-  </p>
+      &middot; <i class="fas fa-clock"></i> 9 min read
+    </p>
+  </div>
 
 
   <!-- AI Read (TTS) -->
@@ -288,6 +291,50 @@ Saussure criticism because texts began to be understood as systems of signs prod
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
+    })();
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+      var icon = toggle.querySelector('i');
+      function setTheme(dark) {
+        if (dark) {
+          document.documentElement.style.setProperty('--bg', '#1c1917');
+          document.documentElement.style.setProperty('--bg-alt', '#292524');
+          document.documentElement.style.setProperty('--surface', '#292524');
+          document.documentElement.style.setProperty('--surface-hover', '#33302e');
+          document.documentElement.style.setProperty('--text', '#f5f5f4');
+          document.documentElement.style.setProperty('--text-soft', '#a8a29e');
+          document.documentElement.style.setProperty('--text-muted', '#78716c');
+          document.documentElement.style.setProperty('--border', '#3f3d3b');
+          document.documentElement.style.setProperty('--shadow-sm', '0 1px 2px rgba(0,0,0,0.2)');
+          document.documentElement.style.setProperty('--shadow-md', '0 4px 16px rgba(0,0,0,0.3)');
+          document.documentElement.style.setProperty('--shadow-lg', '0 12px 40px rgba(0,0,0,0.4)');
+          document.documentElement.style.setProperty('--header-bg', 'rgba(41,37,36,0.92)');
+          if (icon) { icon.className = 'fas fa-sun'; }
+        } else {
+          document.documentElement.style.setProperty('--bg', '#faf8f5');
+          document.documentElement.style.setProperty('--bg-alt', '#f5f0eb');
+          document.documentElement.style.setProperty('--surface', '#ffffff');
+          document.documentElement.style.setProperty('--surface-hover', '#faf8f5');
+          document.documentElement.style.setProperty('--text', '#1c1917');
+          document.documentElement.style.setProperty('--text-soft', '#57534e');
+          document.documentElement.style.setProperty('--text-muted', '#a8a29e');
+          document.documentElement.style.setProperty('--border', '#e7e5e4');
+          document.documentElement.style.setProperty('--shadow-sm', '0 1px 2px rgba(28,25,23,0.05)');
+          document.documentElement.style.setProperty('--shadow-md', '0 4px 16px rgba(28,25,23,0.06)');
+          document.documentElement.style.setProperty('--shadow-lg', '0 12px 40px rgba(28,25,23,0.08)');
+          document.documentElement.style.setProperty('--header-bg', 'rgba(255,255,255,0.88)');
+          if (icon) { icon.className = 'fas fa-moon'; }
+        }
+      }
+      var stored = localStorage.getItem('scholar-dark');
+      if (stored === 'true') setTheme(true);
+      toggle.addEventListener('click', function() {
+        var isDark = !document.documentElement.style.getPropertyValue('--bg').includes('faf8f5');
+        if (document.documentElement.style.getPropertyValue('--bg') === '') isDark = false;
+        setTheme(!isDark);
+        localStorage.setItem('scholar-dark', !isDark);
+      });
     })();
 
     /* SEARCH */
