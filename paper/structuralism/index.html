@@ -399,7 +399,8 @@ Saussure criticism because texts began to be understood as systems of signs prod
     utterance.onend = function() { updateUI('done'); };
     utterance.onerror = function(e) { updateUI('error'); };
 
-    synth.speak(utterance);
+    synth.cancel();
+    try { synth.speak(utterance); } catch(e) { updateUI('error'); }
   }
 
   btn.addEventListener('click', speak);

@@ -416,7 +416,8 @@ psychology, revealing the inner lives of city dwellers.</p>
     utterance.onend = function() { updateUI('done'); };
     utterance.onerror = function(e) { updateUI('error'); };
 
-    synth.speak(utterance);
+    synth.cancel();
+    try { synth.speak(utterance); } catch(e) { updateUI('error'); }
   }
 
   btn.addEventListener('click', speak);
