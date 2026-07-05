@@ -34,7 +34,7 @@ affiliate:
 
 # ─── SOCIAL MEDIA HANDLES (for footer links & Twitter Card) ──
 social:
-  twitter: ""                # ← FILL THIS: your Twitter handle (without @)
+  twitter: "ScholarScript73" # ← DONE: Twitter handle (without @)
   facebook: ""               # ← FILL THIS: your Facebook page slug
   linkedin: ""               # ← FILL THIS: your LinkedIn profile name
   youtube: ""                # ← FILL THIS: your YouTube channel name
