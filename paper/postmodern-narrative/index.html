@@ -245,33 +245,72 @@ function googleTranslateElementInit() {
 
 (function() {
   var sel = document.getElementById('translateSelect');
+  var ttsLangLabel = document.querySelector('.tts-lang-label');
   if (!sel) return;
+
+  /* Map Google Translate lang codes → SpeechSynthesis BCP 47 tags */
+  var ttsLangMap = {
+    'hi':'hi-IN','bn':'bn-IN','te':'te-IN','mr':'mr-IN',
+    'ta':'ta-IN','gu':'gu-IN','ur':'ur-PK','kn':'kn-IN',
+    'ml':'ml-IN','or':'or-IN','pa':'pa-IN','as':'as-IN',
+    'mai':'mai','ne':'ne-NP',
+    'es':'es-ES','fr':'fr-FR','de':'de-DE','it':'it-IT',
+    'pt':'pt-PT','ru':'ru-RU','ja':'ja-JP','zh-CN':'zh-CN',
+    'zh-TW':'zh-TW','ar':'ar-SA','ko':'ko-KR','nl':'nl-NL',
+    'tr':'tr-TR','pl':'pl-PL','sv':'sv-SE','el':'el-GR',
+    'cs':'cs-CZ','ro':'ro-RO','hu':'hu-HU','th':'th-TH',
+    'vi':'vi-VN','id':'id-ID','he':'he-IL','da':'da-DK',
+    'fi':'fi-FI','nb':'nb-NO','uk':'uk-UA','ms':'ms-MY',
+    'tl':'tl-PH','sw':'sw-KE','hr':'hr-HR','sr':'sr-RS',
+    'lt':'lt-LT','lv':'lv-LV','et':'et-EE','sk':'sk-SK',
+    'sl':'sl-SI','bg':'bg-BG','ka':'ka-GE','hy':'hy-AM',
+    'km':'km-KH','lo':'lo-LA','my':'my-MM','mn':'mn-MN',
+    'si':'si-LK','am':'am-ET'
+  };
 
   sel.addEventListener('change', function() {
     var lang = sel.value;
-    if (!lang) { sel.value = ''; return; }
+    if (!lang) return;
+
+    /* Update TTS lang label with selected language name */
+    var selectedText = sel.options[sel.selectedIndex].text;
+    if (ttsLangLabel) {
+      ttsLangLabel.innerHTML = '<i class="fas fa-globe"></i> ' + selectedText;
+    }
+
+    /* Stop any active TTS before translating */
+    if (window.__ttsCancel) window.__ttsCancel();
+
+    /* Set proper BCP 47 lang for speech synthesis */
+    window.__ttsLang = ttsLangMap[lang] || lang || 'en-US';
+
+    /* Reset dropdown so same language can be re-selected */
     sel.value = '';
 
-    var attempts = 0;
-    var maxAttempts = 30;
+    /* Try Google Translate widget immediately, fall back if not ready */
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+      return;
+    }
 
-    function doTranslate() {
-      var combo = document.querySelector('.goog-te-combo');
+    var attempts = 0;
+    function waitForCombo() {
+      combo = document.querySelector('.goog-te-combo');
       if (combo) {
         combo.value = lang;
         combo.dispatchEvent(new Event('change'));
-        window.__ttsLang = lang;
         return;
       }
       attempts++;
-      if (attempts < maxAttempts) { setTimeout(doTranslate, 400); }
+      if (attempts < 20) { setTimeout(waitForCombo, 300); }
       else {
         var url = encodeURIComponent(window.location.href);
         window.open('https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + url, '_blank');
       }
     }
-
-    setTimeout(doTranslate, 600);
+    setTimeout(waitForCombo, 600);
   });
 })();
 
@@ -293,13 +332,18 @@ function googleTranslateElementInit() {
 
   var speaking = false;
   var paused = false;
-  window.__ttsLang = 'en';
+  window.__ttsLang = 'en-US';
 
   /* Pre-warm Chrome speech engine */
   ss.getVoices();
   if (ss.onvoiceschanged !== undefined) ss.addEventListener('voiceschanged', function() { ss.getVoices(); });
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
+
+  /* Expose cancel so translate can stop TTS */
+  window.__ttsCancel = function() {
+    if (speaking || paused) { ss.cancel(); ui('stopped'); }
+  };
 
   function play() {
     if (paused) { ss.resume(); ui('playing'); return; }
