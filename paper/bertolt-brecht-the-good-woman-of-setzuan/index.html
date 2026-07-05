@@ -25,10 +25,12 @@
         <h1>ScholarScript</h1>
         <p class="tagline">Scripted for Scholars. Powered by Automation.</p>
       </a>
-      <div style="display:flex;align-items:center;gap:0.25rem;">
-        <button class="search-trigger" id="searchTrigger" aria-label="Search">
-          <i class="fas fa-search"></i><span>Search</span>
-        </button>
+      <div style="display:flex;align-items:center;gap:0.5rem;flex:1;justify-content:flex-end;">
+        <div class="header-search">
+          <i class="fas fa-search header-search-icon"></i>
+          <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Search papers, videos, writing..." autocomplete="off">
+          <kbd class="header-search-kbd">Ctrl+K</kbd>
+        </div>
         <nav class="main-nav">
           <a href="https://dasguptateach-web.github.io/ScholarScript/"><i class="fas fa-home"></i>Home</a>
           <a href="https://dasguptateach-web.github.io/ScholarScript/papers/"><i class="fas fa-scroll"></i>Papers</a>
@@ -436,31 +438,36 @@ function googleTranslateElementInit() {
     (function() {
       var index = [];
       var overlay = document.getElementById('searchOverlay');
-      var trigger = document.getElementById('searchTrigger');
+      var headerInput = document.getElementById('headerSearchInput');
+      var heroInput = document.getElementById('heroSearchInput');
       var close = document.getElementById('searchClose');
-      var input = document.getElementById('searchInput');
+      var overlayInput = document.getElementById('searchInput');
       var resultsEl = document.querySelector('#searchResults .search-results-inner');
 
-      if (!overlay || !trigger) return;
+      if (!overlay) return;
 
       fetch('https://dasguptateach-web.github.io/ScholarScript/search-index.json')
         .then(function(r) { return r.json(); })
         .then(function(data) { index = data; })
         .catch(function() { index = []; });
 
-      function openSearch() {
+      function openSearch(query) {
+        if (overlayInput) overlayInput.value = query || '';
         overlay.classList.add('active');
-        setTimeout(function() { if (input) input.focus(); }, 350);
+        setTimeout(function() { if (overlayInput) overlayInput.focus(); }, 350);
         document.body.style.overflow = 'hidden';
+        if (query) doSearch(query);
       }
       function closeSearch() {
         overlay.classList.remove('active');
         document.body.style.overflow = '';
-        if (input) input.value = '';
+        if (overlayInput) overlayInput.value = '';
         if (resultsEl) resultsEl.innerHTML = '';
       }
 
-      trigger.addEventListener('click', openSearch);
+      function onSearchFocus(el) { openSearch(el.value); }
+      if (headerInput) { headerInput.addEventListener('focus', function() { onSearchFocus(headerInput); }); }
+      if (heroInput) { heroInput.addEventListener('focus', function() { onSearchFocus(heroInput); }); }
       if (close) close.addEventListener('click', closeSearch);
       overlay.addEventListener('click', function(e) {
         if (e.target === overlay) closeSearch();
@@ -521,10 +528,10 @@ function googleTranslateElementInit() {
       }
 
       var debounceTimer;
-      if (input) {
-        input.addEventListener('input', function() {
+      if (overlayInput) {
+        overlayInput.addEventListener('input', function() {
           clearTimeout(debounceTimer);
-          debounceTimer = setTimeout(function() { doSearch(input.value); }, 200);
+          debounceTimer = setTimeout(function() { doSearch(overlayInput.value); }, 200);
         });
       }
     })();
