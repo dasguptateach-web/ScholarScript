@@ -282,78 +282,89 @@ function googleTranslateElementInit() {
   var speedEl = document.getElementById('ttsSpeed');
   var statusEl = document.getElementById('ttsStatus');
   var body = document.getElementById('contentBody');
+  var ss = window.speechSynthesis;
 
   if (!btn) return;
   if (!body) { if (statusEl) statusEl.innerHTML = 'No content'; return; }
-  if (!window.speechSynthesis || typeof window.speechSynthesis.speak !== 'function') {
+  if (!ss || typeof ss.speak !== 'function') {
     if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> No TTS';
     return;
   }
 
   var speaking = false;
   var paused = false;
-
   window.__ttsLang = 'en';
+
+  /* Pre-warm Chrome speech engine */
+  ss.getVoices();
+  if (ss.onvoiceschanged !== undefined) ss.addEventListener('voiceschanged', function() { ss.getVoices(); });
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
   function play() {
-    if (paused) { window.speechSynthesis.resume(); ui('playing'); return; }
-    if (speaking) { window.speechSynthesis.cancel(); ui('stopped'); return; }
+    if (paused) { ss.resume(); ui('playing'); return; }
+    if (speaking) { ss.cancel(); ui('stopped'); return; }
 
     var text = getText();
     if (!text) { ui('error'); return; }
 
+    /* Refresh voices (priming Chrome engine) */
+    ss.getVoices();
+
     var u = new SpeechSynthesisUtterance(text);
-    u.lang = window.__ttsLang || 'en';
+    u.lang = window.__ttsLang || 'en-US';
     u.rate = parseFloat(speedEl ? speedEl.value : '1');
 
     if (voiceEl && voiceEl.value) {
-      var vl = window.speechSynthesis.getVoices().filter(function(v) { return v.name === voiceEl.value; });
-      if (vl.length) u.voice = vl[0];
+      var matches = ss.getVoices().filter(function(v) { return v.name === voiceEl.value; });
+      if (matches.length) u.voice = matches[0];
     }
 
     u.onstart = function() { ui('playing'); };
     u.onend = function() { ui('done'); };
-    u.onerror = function() { ui('error'); };
+    u.onerror = function(e) {
+      if (statusEl) statusEl.textContent = e.error || 'Error';
+      ui('error');
+    };
 
-    /* Chrome workaround: resume + cancel before speak */
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.resume();
-    window.speechSynthesis.speak(u);
+    ss.cancel();
+    ss.resume();
+    ss.speak(u);
   }
+
+  function playOrPause(e) { play(); }
 
   function ui(mode) {
     if (mode === 'playing') {
       btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
       btn.className = 'tts-btn stop';
-      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-volume-up"></i> Reading...'; statusEl.style.color = '#059669'; }
+      if (statusEl) { statusEl.textContent = 'Reading...'; statusEl.style.color = '#059669'; }
       speaking = true; paused = false;
     } else if (mode === 'paused') {
       btn.innerHTML = '<i class="fas fa-play"></i> Resume';
       btn.className = 'tts-btn';
-      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-pause"></i> Paused'; statusEl.style.color = '#d97706'; }
+      if (statusEl) { statusEl.textContent = 'Paused'; statusEl.style.color = '#d97706'; }
       paused = true;
     } else if (mode === 'done') {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
-      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Done'; statusEl.style.color = '#059669'; }
+      if (statusEl) { statusEl.textContent = 'Done'; statusEl.style.color = '#059669'; }
       speaking = false; paused = false;
     } else if (mode === 'stopped') {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
-      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-info-circle"></i> Stopped'; statusEl.style.color = '#059669'; }
+      if (statusEl) { statusEl.textContent = 'Stopped'; statusEl.style.color = '#059669'; }
       speaking = false; paused = false;
     } else {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
-      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error'; statusEl.style.color = '#dc2626'; }
+      if (statusEl) { statusEl.textContent = 'Error'; statusEl.style.color = '#dc2626'; }
       speaking = false; paused = false;
     }
   }
 
-  btn.addEventListener('click', play);
-  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { window.speechSynthesis.cancel(); ui('stopped'); } });
+  btn.addEventListener('click', playOrPause);
+  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { ss.cancel(); ui('stopped'); } });
 })();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
