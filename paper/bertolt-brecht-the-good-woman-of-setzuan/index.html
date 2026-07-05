@@ -383,7 +383,7 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-/* AI Read — high-quality neural TTS */
+/* AI Read — neural TTS */
 (function() {
   var btn = document.getElementById('ttsPlayBtn');
   var voiceEl = document.getElementById('ttsVoice');
@@ -392,93 +392,92 @@ function googleTranslateElementInit() {
   var statusEl = document.getElementById('ttsStatus');
   var body = document.getElementById('contentBody');
   var ss = window.speechSynthesis;
+  var speaking = false, paused = false, allVoices = [], utt = null;
 
-  if (!btn || !body || !ss || typeof ss.speak !== 'function') {
-    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Unavailable';
+  if (!btn || !body) return;
+  if (!ss || typeof ss.speak !== 'function') {
+    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> TTS unavailable';
     return;
   }
 
-  var speaking = false, paused = false, allVoices = [], utt = null;
-
   function txt() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
-  /* Chrome: cancel+resume+timeout workaround for speak bug */
-  function chromeSpeak(u) {
-    ss.cancel();
-    ss.resume();
-    setTimeout(function() { ss.speak(u); }, 30);
-  }
-
-  function gender(name) {
-    var n = name.toLowerCase();
+  function gender(n) {
+    n = n.toLowerCase();
     if (/\b(female|girl|woman|samantha|zira|libby|hazel|emma|olivia|sophia|mia|joanna|kendra|kimberly|ivy|susan|nancy|victoria|veena|tessa|seoyeon|hiujin|yuna)\b/.test(n)) return 'female';
     if (/\b(male|boy|man|david|mark|daniel|michael|james|john|robert|william|richard|joseph|thomas|christopher|brian|kevin|henry|oliver|noah|liam|ethan)\b/.test(n)) return 'male';
     return '';
   }
 
-  function isHQ(name) {
-    var n = name.toLowerCase();
+  function isHQ(n) {
+    n = n.toLowerCase();
     return n.indexOf('wavenet') !== -1 || n.indexOf('neural') !== -1 || n.indexOf('premium') !== -1 || n.indexOf('google') !== -1;
   }
 
   function loadVoices() {
-    var voices = ss.getVoices();
-    if (!voices.length) return;
-    allVoices = voices;
+    var v = ss.getVoices();
+    if (!v.length) return;
+    allVoices = v;
     var gen = genderEl ? genderEl.value : '';
     var prev = voiceEl.value;
     voiceEl.innerHTML = '';
-    var list = allVoices.filter(function(v) { return !gen || gender(v.name) === gen; });
+    var list = allVoices.filter(function(x) { return !gen || gender(x.name) === gen; });
     list.sort(function(a, b) {
       var ah = isHQ(a.name) ? 0 : 1, bh = isHQ(b.name) ? 0 : 1;
       return ah !== bh ? ah - bh : a.name.localeCompare(b.name);
     });
-    if (!list.length) {
-      voiceEl.innerHTML = '<option value="">No voices</option>';
-      return;
-    }
-    list.forEach(function(v) {
+    if (!list.length) { voiceEl.innerHTML = '<option value="">Default (system)</option>'; return; }
+    list.forEach(function(x) {
       var o = document.createElement('option');
-      o.value = v.name;
-      o.textContent = v.name + (isHQ(v.name) ? ' ⚡' : '');
+      o.value = x.name;
+      o.textContent = x.name + (isHQ(x.name) ? ' ⚡' : '');
       voiceEl.appendChild(o);
     });
     if (prev) { for (var i = 0; i < voiceEl.options.length; i++) { if (voiceEl.options[i].value === prev) { voiceEl.value = prev; break; } } }
     if (!voiceEl.value) {
-      var best = list.find(function(v) { return isHQ(v.name); }) || list.find(function(v) { return gen && gender(v.name) === gen; }) || list[0];
-      voiceEl.value = best.name;
+      var best = list.find(function(x) { return isHQ(x.name); }) || list.find(function(x) { return gen && gender(x.name) === gen; }) || list[0];
+      if (best) voiceEl.value = best.name;
     }
   }
 
   loadVoices();
   ss.addEventListener('voiceschanged', loadVoices);
-  setTimeout(loadVoices, 500);
+  ss.onvoiceschanged = loadVoices;
+  setTimeout(loadVoices, 1000);
   if (genderEl) genderEl.addEventListener('change', loadVoices);
 
   function play() {
-    if (paused && utt) { ss.resume(); ui('playing'); return; }
-    if (speaking) { ss.cancel(); ui('stopped'); utt = null; return; }
+    if (paused && utt) { try { ss.resume(); ui('playing'); } catch(e) {} return; }
+    if (speaking) { try { ss.cancel(); } catch(e) {} ui('stopped'); utt = null; return; }
+
     var text = txt();
     if (!text) { ui('error'); return; }
+
+    try { ss.cancel(); ss.resume(); } catch(e) {}
+
     var u = new SpeechSynthesisUtterance(text);
     u.rate = parseFloat(speedEl ? speedEl.value : '1');
     u.volume = 1;
-    if (voiceEl && voiceEl.value) {
+    u.lang = 'en-US';
+
+    if (voiceEl && voiceEl.value && allVoices.length) {
       for (var i = 0; i < allVoices.length; i++) {
         if (allVoices[i].name === voiceEl.value) { u.voice = allVoices[i]; u.lang = allVoices[i].lang; break; }
       }
     }
+
     utt = u;
     u.onstart = function() { ui('playing'); };
     u.onend = function() { ui('done'); utt = null; };
     u.onerror = function(e) {
       if (e.error !== 'canceled' && e.error !== 'interrupted') {
-        if (statusEl) statusEl.textContent = e.error || 'Error';
+        if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + (e.error || 'Error');
         ui('error');
       }
       utt = null;
     };
-    chromeSpeak(u);
+
+    setTimeout(function() { try { ss.speak(u); } catch(e) { if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error'; ui('error'); } }, 100);
   }
 
   function ui(m) {
@@ -507,7 +506,7 @@ function googleTranslateElementInit() {
 
   btn.addEventListener('click', play);
   if (speedEl) speedEl.addEventListener('change', function() {
-    if (speaking || paused) { ss.cancel(); ui('stopped'); utt = null; }
+    if (speaking || paused) { try { ss.cancel(); } catch(e) {} ui('stopped'); utt = null; }
   });
 })();
 
