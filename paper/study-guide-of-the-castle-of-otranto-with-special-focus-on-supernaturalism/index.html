@@ -245,8 +245,8 @@ function googleTranslateElementInit() {
       if (combo) {
         combo.value = lang;
         combo.dispatchEvent(new Event('change'));
-        var ttsLang = document.getElementById('ttsLang');
-        if (ttsLang) { ttsLang.value = lang; ttsLang.dispatchEvent(new Event('change')); }
+        /* Update TTS language to match translation */
+        window.__ttsLang = lang;
         return;
       }
       attempts++;
@@ -261,67 +261,57 @@ function googleTranslateElementInit() {
   });
 })();
 
-/* TTS — AI Read with voice selection & gender (English by default, follows translate) */
+/* TTS — AI Read (English by default, follows translate) */
 (function() {
   var btn = document.getElementById('ttsPlayBtn');
   var voiceEl = document.getElementById('ttsVoice');
-  var genderEl = document.getElementById('ttsGender');
   var speedEl = document.getElementById('ttsSpeed');
   var statusEl = document.getElementById('ttsStatus');
   var body = document.getElementById('contentBody');
-  if (!btn || !body || !window.speechSynthesis) {
-    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Not supported';
+
+  if (!btn) return;
+  if (!body) { if (statusEl) statusEl.innerHTML = 'No content'; return; }
+  if (!window.speechSynthesis || typeof window.speechSynthesis.speak !== 'function') {
+    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> No TTS';
     return;
   }
 
   var synth = window.speechSynthesis;
-  var allVoices = [];
-  var utterance = null;
   var speaking = false;
   var paused = false;
-  var activeLang = 'en';
+  /* Track language: English default, updated by translate */
+  window.__ttsLang = 'en';
+
+  /* Warm up speech engine (Chrome needs this) */
+  synth.getVoices();
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
-  function guessGender(name) {
-    var n = name.toLowerCase();
-    if (/female|zira|samantha|sara|karen|moira|tessa|veena|lekha|nati|alice|elena|aisha|silvia|susan|amira|marta|catherine|hazel|emily|lisa|mariska|anu/i.test(n)) return 'female';
-    if (/male|david|daniel|mark|paul|oliver|george|michael|henry|alex|tom|john|james|arthur|rishi|arvind|prabhat|vijay/i.test(n)) return 'male';
-    return 'unknown';
-  }
+  function play() {
+    if (paused) { synth.resume(); ui('playing'); return; }
+    if (speaking) { synth.cancel(); ui('stopped'); return; }
 
-  function voiceDisplay(v) {
-    var g = guessGender(v.name);
-    var icon = g === 'female' ? '♀' : g === 'male' ? '♂' : '⚤';
-    var name = v.name.replace(/Microsoft |Google |\s*-\s*(English|US|UK|Indian|French|German|Spanish|Italian|Portuguese|Japanese|Korean|Chinese|Arabic|Dutch|Polish|Swedish|Turkish|Russian|Danish|Finnish|Norwegian)/gi, '').trim();
-    return icon + ' ' + name + ' (' + v.lang + ')';
-  }
+    var text = getText();
+    if (!text) { ui('error'); return; }
 
-  function populateVoices() {
-    allVoices = synth.getVoices() || [];
-    if (!voiceEl) return;
-    var currentGender = genderEl ? genderEl.value : '';
-    voiceEl.innerHTML = '<option value="">Auto (best match)</option>';
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = window.__ttsLang || 'en';
+    u.rate = parseFloat(speedEl ? speedEl.value : '1');
 
-    var matches = allVoices.filter(function(v) { return v.lang.startsWith(activeLang) || v.lang.startsWith(activeLang.split('-')[0]); });
-    if (currentGender) matches = matches.filter(function(v) { return guessGender(v.name) === currentGender; });
-
-    matches.forEach(function(v) {
-      var opt = document.createElement('option');
-      opt.value = v.name;
-      opt.textContent = voiceDisplay(v);
-      voiceEl.appendChild(opt);
-    });
-    if (matches.length === 0) {
-      var opt = document.createElement('option');
-      opt.value = '';
-      opt.textContent = '— No voices available —';
-      opt.disabled = true;
-      voiceEl.appendChild(opt);
+    if (voiceEl && voiceEl.value) {
+      var vl = synth.getVoices().filter(function(v) { return v.name === voiceEl.value; });
+      if (vl.length) u.voice = vl[0];
     }
+
+    u.onstart = function() { ui('playing'); };
+    u.onend = function() { ui('done'); };
+    u.onerror = function() { ui('error'); };
+
+    synth.cancel();
+    synth.speak(u);
   }
 
-  function updateUI(mode) {
+  function ui(mode) {
     if (mode === 'playing') {
       btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
       btn.className = 'tts-btn stop';
@@ -336,63 +326,22 @@ function googleTranslateElementInit() {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
       if (statusEl) { statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Done'; statusEl.style.color = '#059669'; }
-      speaking = false; paused = false; utterance = null;
+      speaking = false; paused = false;
     } else if (mode === 'stopped') {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
       if (statusEl) { statusEl.innerHTML = '<i class="fas fa-info-circle"></i> Stopped'; statusEl.style.color = '#059669'; }
-      speaking = false; paused = false; utterance = null;
+      speaking = false; paused = false;
     } else {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
       if (statusEl) { statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error'; statusEl.style.color = '#dc2626'; }
-      speaking = false; paused = false; utterance = null;
+      speaking = false; paused = false;
     }
   }
 
-  function speak() {
-    if (paused && synth) { synth.resume(); updateUI('playing'); return; }
-    if (speaking) { synth.cancel(); updateUI('stopped'); return; }
-
-    var text = getText();
-    if (!text) { updateUI('error'); return; }
-
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = activeLang;
-    utterance.rate = parseFloat(speedEl.value);
-
-    var selectedName = voiceEl ? voiceEl.value : '';
-    if (selectedName) {
-      var match = allVoices.filter(function(v) { return v.name === selectedName; });
-      if (match.length > 0) utterance.voice = match[0];
-    } else {
-      var langBase = activeLang.split('-')[0];
-      var ranked = allVoices.filter(function(v) { return v.lang.startsWith(langBase); });
-      var google = ranked.filter(function(v) { return v.name.indexOf('Google') >= 0; });
-      var microsoft = ranked.filter(function(v) { return v.name.indexOf('Microsoft') >= 0; });
-      var preferred = google.length > 0 ? google[0] : (microsoft.length > 0 ? microsoft[0] : (ranked.length > 0 ? ranked[0] : null));
-      if (preferred) utterance.voice = preferred;
-    }
-
-    utterance.onstart = function() { updateUI('playing'); };
-    utterance.onpause = function() { updateUI('paused'); };
-    utterance.onresume = function() { updateUI('playing'); };
-    utterance.onend = function() { updateUI('done'); };
-    utterance.onerror = function(e) { updateUI('error'); };
-
-    synth.cancel();
-    try { synth.speak(utterance); } catch(e) { updateUI('error'); }
-  }
-
-  btn.addEventListener('click', speak);
-  if (genderEl) genderEl.addEventListener('change', populateVoices);
-  voiceEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
-  speedEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
-
-  populateVoices();
-  if (synth.onvoiceschanged !== undefined) {
-    synth.addEventListener('voiceschanged', populateVoices);
-  }
+  btn.addEventListener('click', play);
+  if (speedEl) speedEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); ui('stopped'); } });
 })();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
