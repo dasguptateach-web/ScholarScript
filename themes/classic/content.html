@@ -235,15 +235,9 @@ function googleTranslateElementInit() {
   var sel=document.getElementById('translateSelect');
   if(!sel)return;
 
-  var mo=new MutationObserver(function(){
-    if(document.querySelector('.goog-te-combo')){mo.disconnect();}
-  });
-  mo.observe(document.body,{childList:true,subtree:true});
-
   function triggerCombo(lang){
     var combo=document.querySelector('.goog-te-combo');
     if(!combo)return false;
-    // Find option with matching value
     for(var i=0;i<combo.options.length;i++){
       if(combo.options[i].value===lang){
         combo.selectedIndex=i;
@@ -255,9 +249,8 @@ function googleTranslateElementInit() {
   }
 
   function resetToEnglish(){
-    // Try the combo first
-    if(triggerCombo(''))return;
-    // Fallback: delete cookie and reload
+    // Clear Google Translate cookie and reload
+    document.cookie='googtrans=;path=/;domain='+location.hostname+';expires=Thu,01 Jan 1970 00:00:00 GMT';
     document.cookie='googtrans=;path=/;expires=Thu,01 Jan 1970 00:00:00 GMT';
     location.reload();
   }
