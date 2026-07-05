@@ -92,28 +92,6 @@ def make_post_text(item, site_title):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-def post_to_twitter(text):
-    api_key = os.environ.get("TWITTER_API_KEY")
-    api_secret = os.environ.get("TWITTER_API_SECRET")
-    access_token = os.environ.get("TWITTER_ACCESS_TOKEN")
-    access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
-    if not all([api_key, api_secret, access_token, access_secret]):
-        print("Twitter credentials not configured, skipping")
-        return False
-    import httpx
-    try:
-        resp = httpx.post(
-            "https://api.twitter.com/2/tweets",
-            json={"text": text[:280]},
-            auth=(access_token, access_secret),
-            timeout=30,
-        )
-        print(f"Twitter response: {resp.status_code}")
-        return resp.status_code == 201
-    except Exception as e:
-        print(f"Twitter post failed: {e}")
-        return False
-
 def post_to_bluesky(text):
     handle = os.environ.get("BLUESKY_HANDLE")
     password = os.environ.get("BLUESKY_PASSWORD")
@@ -152,6 +130,7 @@ def post_to_bluesky(text):
         return False
 
 def post_to_mastodon(text):
+    return False
     instance = os.environ.get("MASTODON_INSTANCE", "").rstrip("/")
     token = os.environ.get("MASTODON_TOKEN")
     if not instance or not token:
@@ -190,20 +169,16 @@ def main():
         iid = item_id(item)
         text = make_post_text(item, site_title)
         print(f"\nPosting: {item['title']}")
-        posted_tw = post_to_twitter(text)
         posted_bs = post_to_bluesky(text)
-        posted_mast = post_to_mastodon(text)
-        if posted_tw or posted_bs or posted_mast:
+        if posted_bs:
             posted[iid] = {
                 "title": item["title"],
                 "slug": item["slug"],
                 "date": item["date"],
                 "posted_at": datetime.now(timezone.utc).isoformat(),
-                "twitter": posted_tw,
-                "bluesky": posted_bs,
-                "mastodon": posted_mast,
+                "bluesky": True,
             }
-            print(f"  Posted to: {['twitter' if posted_tw else '' ,'bluesky' if posted_bs else '' ,'mastodon' if posted_mast else '']}")
+            print(f"  Posted to Bluesky")
         else:
             print(f"  Skipped (no platform configured)")
             posted[iid] = {
