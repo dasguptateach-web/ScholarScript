@@ -484,13 +484,13 @@ body {
   font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);
   display: flex; align-items: center; gap: 0.35rem; white-space: nowrap;
 }
-.translate-bar select {
+.translate-select {
   font-size: 0.8rem; font-family: var(--font);
-  padding: 0.3rem 0.6rem; border: 1px solid var(--border);
+  padding: 0.35rem 0.7rem; border: 1px solid var(--border);
   border-radius: 6px; background: var(--surface); color: var(--text);
-  cursor: pointer; outline: none;
+  cursor: pointer; outline: none; min-width: 180px;
 }
-.translate-bar select:focus { border-color: var(--primary); }
+.translate-select:focus { border-color: var(--primary); }
 
 /* TTS (AI READ) */
 .tts-bar {

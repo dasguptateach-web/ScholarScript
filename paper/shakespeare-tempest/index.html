@@ -88,9 +88,25 @@
   </div>
 
   <!-- AI Translation -->
-  <div class="translate-bar">
+  <div class="translate-bar" id="translateBar">
     <label><i class="fas fa-language"></i> Translate:</label>
-    <div id="google_translate_element"></div>
+    <select class="translate-select" id="translateSelect">
+      <option value="">— Select language —</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="bn">বাংলা (Bengali)</option>
+      <option value="te">తెలుగు (Telugu)</option>
+      <option value="mr">मराठी (Marathi)</option>
+      <option value="ta">தமிழ் (Tamil)</option>
+      <option value="gu">ગુજરાતી (Gujarati)</option>
+      <option value="ur">اردو (Urdu)</option>
+      <option value="kn">ಕನ್ನಡ (Kannada)</option>
+      <option value="ml">മലയാളം (Malayalam)</option>
+      <option value="or">ଓଡ଼ିଆ (Odia)</option>
+      <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+      <option value="as">অসমীয়া (Assamese)</option>
+      <option value="mai">मैथिली (Maithili)</option>
+      <option value="ne">नेपाली (Nepali)</option>
+    </select>
   </div>
 
 
@@ -180,21 +196,21 @@ a weapon of resistance.</p>
 
   
 
-<!-- Google Translate -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,hi,bn,te,mr,ta,gu,ur,kn,ml,or,pa,as,mai,ne,sat,ks,sd,kok,mni,brx,dgo',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false,
-    multilanguagePage: true
-  }, 'google_translate_element');
-}
+<!-- Translate & TTS -->
+<script>
+(function() {
+  var sel = document.getElementById('translateSelect');
+  var url = encodeURIComponent(window.location.href);
+  if (sel) {
+    sel.addEventListener('change', function() {
+      var lang = sel.value;
+      if (!lang) return;
+      window.open('https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + url, '_blank');
+      sel.value = '';
+    });
+  }
+})();
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<!-- TTS: AI Read Aloud -->
 <script>
 (function() {
   var btn = document.getElementById('ttsPlayBtn');
