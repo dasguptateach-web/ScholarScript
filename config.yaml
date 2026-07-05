@@ -38,6 +38,7 @@ social:
   facebook: ""               # ← FILL THIS: your Facebook page slug
   linkedin: ""               # ← FILL THIS: your LinkedIn profile name
   youtube: ""                # ← FILL THIS: your YouTube channel name
+  bluesky: "scholarscript.bsky.social"  # ← DONE: Bluesky handle
 
 # ─── CONTENT INGESTION ──────────────────────────────────────
 ingestion:

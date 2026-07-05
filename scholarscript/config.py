@@ -49,6 +49,7 @@ DEFAULT_CONFIG = {
         "facebook": "",
         "linkedin": "",
         "youtube": "",
+        "bluesky": "",
     },
     "hreflang": {},
 }
@@ -112,6 +113,7 @@ class Config:
         self.site.social_facebook = soc.get("facebook", "")
         self.site.social_linkedin = soc.get("linkedin", "")
         self.site.social_youtube = soc.get("youtube", "")
+        self.site.social_bluesky = soc.get("bluesky", "")
         self.site.hreflang_alternates = raw.get("hreflang", {})
 
         # Load clone profiles

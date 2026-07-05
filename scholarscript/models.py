@@ -55,6 +55,7 @@ class SiteConfig:
     social_facebook: str = ""
     social_linkedin: str = ""
     social_youtube: str = ""
+    social_bluesky: str = ""
     hreflang_alternates: dict = field(default_factory=dict)
 
 
