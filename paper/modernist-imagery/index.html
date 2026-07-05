@@ -67,7 +67,80 @@
     <button class="tts-btn" id="ttsPlayBtn"><i class="fas fa-headphones"></i> Listen</button>
     <div class="tts-controls">
       <select class="tts-lang" id="ttsLang">
-        <option value="en">English</option>
+        <optgroup label="— Indian Languages —">
+          <option value="hi">हिन्दी (Hindi)</option>
+          <option value="bn">বাংলা (Bengali)</option>
+          <option value="te">తెలుగు (Telugu)</option>
+          <option value="mr">मराठी (Marathi)</option>
+          <option value="ta">தமிழ் (Tamil)</option>
+          <option value="gu">ગુજરાતી (Gujarati)</option>
+          <option value="ur">اردو (Urdu)</option>
+          <option value="kn">ಕನ್ನಡ (Kannada)</option>
+          <option value="ml">മലയാളം (Malayalam)</option>
+          <option value="or">ଓଡ଼ିଆ (Odia)</option>
+          <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+          <option value="as">অসমীয়া (Assamese)</option>
+          <option value="mai">मैथिली (Maithili)</option>
+          <option value="ne">नेपाली (Nepali)</option>
+        </optgroup>
+        <optgroup label="— World Languages —">
+          <option value="en" selected>English (International)</option>
+          <option value="en-US">English (US)</option>
+          <option value="en-GB">English (UK)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="fr">Français (French)</option>
+          <option value="de">Deutsch (German)</option>
+          <option value="it">Italiano (Italian)</option>
+          <option value="pt">Português (Portuguese)</option>
+          <option value="ru">Русский (Russian)</option>
+          <option value="ja">日本語 (Japanese)</option>
+          <option value="zh-CN">中文 (Chinese Simplified)</option>
+          <option value="ar">العربية (Arabic)</option>
+          <option value="ko">한국어 (Korean)</option>
+          <option value="nl">Nederlands (Dutch)</option>
+          <option value="tr">Türkçe (Turkish)</option>
+          <option value="pl">Polski (Polish)</option>
+          <option value="sv">Svenska (Swedish)</option>
+          <option value="el">Ελληνικά (Greek)</option>
+          <option value="cs">Čeština (Czech)</option>
+          <option value="ro">Română (Romanian)</option>
+          <option value="hu">Magyar (Hungarian)</option>
+          <option value="th">ไทย (Thai)</option>
+          <option value="vi">Tiếng Việt (Vietnamese)</option>
+          <option value="id">Bahasa Indonesia (Indonesian)</option>
+          <option value="he">עברית (Hebrew)</option>
+          <option value="da">Dansk (Danish)</option>
+          <option value="fi">Suomi (Finnish)</option>
+          <option value="nb">Norsk (Norwegian)</option>
+          <option value="uk">Українська (Ukrainian)</option>
+        </optgroup>
+      </select>
+      <select class="tts-voice" id="ttsVoice" title="Choose voice">
+        <option value="">Auto (best match)</option>
+      </select>
+      <select class="tts-gender" id="ttsGender" title="Voice gender">
+        <option value="">Any voice</option>
+        <option value="female">♀ Female</option>
+        <option value="male">♂ Male</option>
+      </select>
+      <select class="tts-speed" id="ttsSpeed">
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
+  </div>
+
+  <!-- AI Translation -->
+  <div class="translate-bar" id="translateBar">
+    <label><i class="fas fa-language"></i> Translate to:</label>
+    <select class="translate-select" id="translateSelect">
+      <option value="">— Select language —</option>
+      <optgroup label="🇮🇳 Indian Languages">
         <option value="hi">हिन्दी (Hindi)</option>
         <option value="bn">বাংলা (Bengali)</option>
         <option value="te">తెలుగు (Telugu)</option>
@@ -80,36 +153,57 @@
         <option value="or">ଓଡ଼ିଆ (Odia)</option>
         <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
         <option value="as">অসমীয়া (Assamese)</option>
-      </select>
-      <select class="tts-speed" id="ttsSpeed">
-        <option value="0.75">0.75x</option>
-        <option value="1" selected>1x</option>
-        <option value="1.5">1.5x</option>
-        <option value="2">2x</option>
-      </select>
-    </div>
-    <span class="tts-status" id="ttsStatus"><i class="fas fa-info-circle"></i> Ready</span>
-  </div>
-
-  <!-- AI Translation -->
-  <div class="translate-bar" id="translateBar">
-    <label><i class="fas fa-language"></i> Translate:</label>
-    <select class="translate-select" id="translateSelect">
-      <option value="">— Select language —</option>
-      <option value="hi">हिन्दी (Hindi)</option>
-      <option value="bn">বাংলা (Bengali)</option>
-      <option value="te">తెలుగు (Telugu)</option>
-      <option value="mr">मराठी (Marathi)</option>
-      <option value="ta">தமிழ் (Tamil)</option>
-      <option value="gu">ગુજરાતી (Gujarati)</option>
-      <option value="ur">اردو (Urdu)</option>
-      <option value="kn">ಕನ್ನಡ (Kannada)</option>
-      <option value="ml">മലയാളം (Malayalam)</option>
-      <option value="or">ଓଡ଼ିଆ (Odia)</option>
-      <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-      <option value="as">অসমীয়া (Assamese)</option>
-      <option value="mai">मैथिली (Maithili)</option>
-      <option value="ne">नेपाली (Nepali)</option>
+        <option value="mai">मैथिली (Maithili)</option>
+        <option value="ne">नेपाली (Nepali)</option>
+      </optgroup>
+      <optgroup label="🌍 World Languages">
+        <option value="es">Español (Spanish)</option>
+        <option value="fr">Français (French)</option>
+        <option value="de">Deutsch (German)</option>
+        <option value="it">Italiano (Italian)</option>
+        <option value="pt">Português (Portuguese)</option>
+        <option value="ru">Русский (Russian)</option>
+        <option value="ja">日本語 (Japanese)</option>
+        <option value="zh-CN">中文 (Chinese Simplified)</option>
+        <option value="zh-TW">中文 (Chinese Traditional)</option>
+        <option value="ar">العربية (Arabic)</option>
+        <option value="ko">한국어 (Korean)</option>
+        <option value="nl">Nederlands (Dutch)</option>
+        <option value="tr">Türkçe (Turkish)</option>
+        <option value="pl">Polski (Polish)</option>
+        <option value="sv">Svenska (Swedish)</option>
+        <option value="el">Ελληνικά (Greek)</option>
+        <option value="cs">Čeština (Czech)</option>
+        <option value="ro">Română (Romanian)</option>
+        <option value="hu">Magyar (Hungarian)</option>
+        <option value="th">ไทย (Thai)</option>
+        <option value="vi">Tiếng Việt (Vietnamese)</option>
+        <option value="id">Bahasa Indonesia (Indonesian)</option>
+        <option value="he">עברית (Hebrew)</option>
+        <option value="da">Dansk (Danish)</option>
+        <option value="fi">Suomi (Finnish)</option>
+        <option value="nb">Norsk (Norwegian)</option>
+        <option value="uk">Українська (Ukrainian)</option>
+        <option value="ms">Bahasa Melayu (Malay)</option>
+        <option value="tl">Filipino (Tagalog)</option>
+        <option value="sw">Kiswahili (Swahili)</option>
+        <option value="hr">Hrvatski (Croatian)</option>
+        <option value="sr">Српски (Serbian)</option>
+        <option value="lt">Lietuvių (Lithuanian)</option>
+        <option value="lv">Latviešu (Latvian)</option>
+        <option value="et">Eesti (Estonian)</option>
+        <option value="sk">Slovenčina (Slovak)</option>
+        <option value="sl">Slovenščina (Slovenian)</option>
+        <option value="bg">Български (Bulgarian)</option>
+        <option value="ka">ქართული (Georgian)</option>
+        <option value="hy">Հայերեն (Armenian)</option>
+        <option value="km">ភាសាខ្មែរ (Khmer)</option>
+        <option value="lo">ລາວ (Lao)</option>
+        <option value="my">မြန်မာဘာသာ (Myanmar)</option>
+        <option value="mn">Монгол (Mongolian)</option>
+        <option value="si">සිංහල (Sinhala)</option>
+        <option value="am">አማርኛ (Amharic)</option>
+      </optgroup>
     </select>
   </div>
 
@@ -178,45 +272,94 @@ Modernist poets like T.S. Eliot and Ezra Pound revolutionised the use of imagery
   });
 })();
 
-/* TTS — AI Read Aloud */
+/* TTS — AI Read with voice selection & gender */
 (function() {
   var btn = document.getElementById('ttsPlayBtn');
-  var lang = document.getElementById('ttsLang');
-  var speed = document.getElementById('ttsSpeed');
-  var status = document.getElementById('ttsStatus');
+  var langEl = document.getElementById('ttsLang');
+  var voiceEl = document.getElementById('ttsVoice');
+  var genderEl = document.getElementById('ttsGender');
+  var speedEl = document.getElementById('ttsSpeed');
+  var statusEl = document.getElementById('ttsStatus');
   var body = document.getElementById('contentBody');
   if (!btn || !body || !window.speechSynthesis) {
-    if (status) status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Not available';
+    if (statusEl) statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Not supported';
     return;
   }
 
   var synth = window.speechSynthesis;
+  var allVoices = [];
   var utterance = null;
   var speaking = false;
   var paused = false;
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
+  /* Guess gender from voice name */
+  function guessGender(name) {
+    var n = name.toLowerCase();
+    if (/female|zira|samantha|sara|karen|moira|tessa|veena|lekha|nati|alice|elena|aisha|silvia|susan|amira|marta|catherine|hazel|emily|lisa|mariska|anu/i.test(n)) return 'female';
+    if (/male|david|daniel|mark|paul|oliver|george|michael|henry|alex|tom|john|james|arthur|rishi|arvind|prabhat|vijay/i.test(n)) return 'male';
+    return 'unknown';
+  }
+
+  /* Get display name for voice */
+  function voiceDisplay(v) {
+    var g = guessGender(v.name);
+    var icon = g === 'female' ? '♀' : g === 'male' ? '♂' : '⚤';
+    var name = v.name.replace(/Microsoft |Google |\s*-\s*(English|US|UK|Indian|French|German|Spanish|Italian|Portuguese|Japanese|Korean|Chinese|Arabic|Dutch|Polish|Swedish|Turkish|Russian|Danish|Finnish|Norwegian)/gi, '').trim();
+    return icon + ' ' + name + ' (' + v.lang + ')';
+  }
+
+  function populateVoices() {
+    allVoices = synth.getVoices() || [];
+    if (!voiceEl) return;
+    var currentLang = langEl.value;
+    var currentGender = genderEl ? genderEl.value : '';
+    voiceEl.innerHTML = '<option value="">Auto (best match)</option>';
+
+    var matches = allVoices.filter(function(v) { return v.lang.startsWith(currentLang) || v.lang.startsWith(currentLang.split('-')[0]); });
+    if (currentGender) matches = matches.filter(function(v) { return guessGender(v.name) === currentGender; });
+
+    matches.forEach(function(v) {
+      var opt = document.createElement('option');
+      opt.value = v.name;
+      opt.textContent = voiceDisplay(v);
+      voiceEl.appendChild(opt);
+    });
+    if (matches.length === 0) {
+      var opt = document.createElement('option');
+      opt.value = '';
+      opt.textContent = '— No voices available —';
+      opt.disabled = true;
+      voiceEl.appendChild(opt);
+    }
+  }
+
   function updateUI(mode) {
     if (mode === 'playing') {
       btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
       btn.className = 'tts-btn stop';
-      status.innerHTML = '<i class="fas fa-volume-up"></i> Reading...';
+      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-volume-up"></i> Reading...'; statusEl.style.color = '#059669'; }
       speaking = true; paused = false;
     } else if (mode === 'paused') {
       btn.innerHTML = '<i class="fas fa-play"></i> Resume';
       btn.className = 'tts-btn';
-      status.innerHTML = '<i class="fas fa-pause"></i> Paused';
+      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-pause"></i> Paused'; statusEl.style.color = '#d97706'; }
       paused = true;
-    } else if (mode === 'stopped' || mode === 'done') {
+    } else if (mode === 'done') {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
-      status.innerHTML = '<i class="fas fa-info-circle"></i> ' + (mode === 'done' ? 'Done' : 'Stopped');
+      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Done'; statusEl.style.color = '#059669'; }
       speaking = false; paused = false; utterance = null;
-    } else if (mode === 'error') {
+    } else if (mode === 'stopped') {
       btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
       btn.className = 'tts-btn';
-      status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
+      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-info-circle"></i> Stopped'; statusEl.style.color = '#059669'; }
+      speaking = false; paused = false; utterance = null;
+    } else {
+      btn.innerHTML = '<i class="fas fa-headphones"></i> Listen';
+      btn.className = 'tts-btn';
+      if (statusEl) { statusEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error'; statusEl.style.color = '#dc2626'; }
       speaking = false; paused = false; utterance = null;
     }
   }
@@ -229,21 +372,44 @@ Modernist poets like T.S. Eliot and Ezra Pound revolutionised the use of imagery
     if (!text) { updateUI('error'); return; }
 
     utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang.value;
-    utterance.rate = parseFloat(speed.value);
+    utterance.lang = langEl.value;
+    utterance.rate = parseFloat(speedEl.value);
+
+    /* Select matching voice */
+    var selectedName = voiceEl ? voiceEl.value : '';
+    if (selectedName) {
+      var match = allVoices.filter(function(v) { return v.name === selectedName; });
+      if (match.length > 0) utterance.voice = match[0];
+    } else {
+      /* Auto: prefer Google voices (most natural), then Microsoft */
+      var langBase = langEl.value.split('-')[0];
+      var ranked = allVoices.filter(function(v) { return v.lang.startsWith(langBase); });
+      var google = ranked.filter(function(v) { return v.name.indexOf('Google') >= 0; });
+      var microsoft = ranked.filter(function(v) { return v.name.indexOf('Microsoft') >= 0; });
+      var preferred = google.length > 0 ? google[0] : (microsoft.length > 0 ? microsoft[0] : (ranked.length > 0 ? ranked[0] : null));
+      if (preferred) utterance.voice = preferred;
+    }
 
     utterance.onstart = function() { updateUI('playing'); };
     utterance.onpause = function() { updateUI('paused'); };
     utterance.onresume = function() { updateUI('playing'); };
     utterance.onend = function() { updateUI('done'); };
-    utterance.onerror = function() { updateUI('error'); };
+    utterance.onerror = function(e) { updateUI('error'); };
 
     synth.speak(utterance);
   }
 
   btn.addEventListener('click', speak);
-  lang.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
-  speed.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
+  langEl.addEventListener('change', populateVoices);
+  if (genderEl) genderEl.addEventListener('change', populateVoices);
+  voiceEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
+  speedEl.addEventListener('change', function() { if (speaking || paused) { synth.cancel(); updateUI('stopped'); } });
+
+  /* Load voices (async in Chrome) */
+  populateVoices();
+  if (synth.onvoiceschanged !== undefined) {
+    synth.addEventListener('voiceschanged', populateVoices);
+  }
 })();
 </script>
 

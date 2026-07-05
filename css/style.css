@@ -419,7 +419,7 @@ img { max-width: 100%; height: auto; }
 .tts-btn.stop { background: linear-gradient(135deg, #ef4444, #f87171); }
 .tts-btn.stop:hover { box-shadow: 0 4px 16px rgba(239,68,68,0.3); }
 .tts-controls { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-.tts-lang, .tts-speed, .translate-select {
+.tts-lang, .tts-voice, .tts-gender, .tts-speed, .translate-select {
   font-size: 0.75rem; font-family: var(--font-body);
   padding: 0.25rem 0.5rem; border: 1px solid var(--border);
   border-radius: 6px; background: var(--surface); color: var(--text);
