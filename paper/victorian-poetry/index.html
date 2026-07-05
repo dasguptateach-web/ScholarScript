@@ -258,6 +258,7 @@ function googleTranslateElementInit() {
       if (combo) {
         combo.value = lang;
         combo.dispatchEvent(new Event('change'));
+        window.__ttsLang = lang;
         return;
       }
       attempts++;
@@ -290,12 +291,7 @@ function googleTranslateElementInit() {
   var speaking = false;
   var paused = false;
 
-  /* Track language: reads <html lang> set by Google Translate */
-  window.__ttsLang = document.documentElement.lang || 'en';
-  new MutationObserver(function() {
-    var l = document.documentElement.lang;
-    if (l) window.__ttsLang = l;
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  window.__ttsLang = 'en';
 
   function getText() { return body.textContent.replace(/\s+/g, ' ').trim(); }
 
