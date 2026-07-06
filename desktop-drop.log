@@ -71,3 +71,18 @@
 [13:26:49]   Run 'scholarscript build' to rebuild the site.
 [13:26:49]   
 [13:26:49] Pushing to GitHub...
+[2026-07-06 15:11:08] TIMEOUT The Elizabethan Age.docx (still in use)
+[2026-07-06 15:15:06] STAGE The Elizabethan Age.docx
+[2026-07-06 15:15:06] Processing: The Elizabethan Age.docx
+[2026-07-06 15:15:06] COPY The Elizabethan Age.docx
+[2026-07-06 15:15:06] Ingesting...
+[2026-07-06 15:15:07]   Checking uploads folder...
+[2026-07-06 15:15:07]   Processed 1 file(s):
+[2026-07-06 15:15:07]     Success: 1
+[2026-07-06 15:15:07]     Errors:  0
+[2026-07-06 15:15:07]     [OK] The Elizabethan Age.docx -> C:\Users\81\ScholarScript\content\papers\the-elizabethan-age.md (paper)
+[2026-07-06 15:15:07]   
+[2026-07-06 15:15:07]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 15:15:07]   
+[2026-07-06 15:15:07] Building site...
+[2026-07-06 15:15:09] Committing and pushing to GitHub...
