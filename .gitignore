@@ -9,3 +9,6 @@ clone_profiles/
 cloned_sites/
 .github_token
 .github_repo
+desktop-drop.log
+.watcher.lock
+.processed_index.txt
