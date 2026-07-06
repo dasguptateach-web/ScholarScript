@@ -393,6 +393,7 @@ class IngestionEngine:
         PDF text extraction typically breaks each physical line with \n.
         This heuristic re-joins lines that belong to the same paragraph
         and inserts blank lines between logical paragraphs.
+        Preserves question-answer patterns and intentional line structure.
         """
         lines = text.split("\n")
         blocks = []
@@ -415,24 +416,23 @@ class IngestionEngine:
             is_very_short = len(stripped) < 25
             starts_upper = stripped[0].isupper() if stripped else False
             previous_short = current and all(len(w) < 40 for w in current)
+            ends_with_question = stripped.rstrip().endswith("?")
+            looks_numbered = bool(re.match(r'^[\d\s\.\)\[\]QX]+$', stripped[:8]))
 
             if not current:
                 current = [stripped]
-            elif is_very_short and starts_upper:
-                # Very short line starting uppercase = heading or standalone label
+            elif ends_with_question:
+                current.append(stripped)
+            elif is_very_short and starts_upper and not looks_numbered:
                 blocks.append(" ".join(current))
                 current = [stripped]
             elif previous_short and not is_short and starts_upper:
-                # Current block is all short lines, next line is long prose
-                # -> flush current as heading and start paragraph
                 blocks.append(" ".join(current))
                 current = [stripped]
-            elif is_short and starts_upper:
-                # Short uppercase = new heading/subheading
+            elif is_short and starts_upper and not looks_numbered:
                 blocks.append(" ".join(current))
                 current = [stripped]
             else:
-                # Continuation of current paragraph
                 current.append(stripped)
 
         if current:
@@ -446,6 +446,7 @@ class IngestionEngine:
         Handles two cases:
         - Proper paragraph text (each line = one paragraph, e.g. from docx)
         - Reflowable text (lines within a paragraph broken by newlines, e.g. from PDF)
+        Preserves question-answer patterns, poetry line breaks, and list structure.
         """
         raw_blocks = re.split(r'\n\n+', text.strip())
         md_blocks = []
@@ -455,17 +456,20 @@ class IngestionEngine:
             if not lines:
                 continue
 
+            first_line = lines[0]
             joined = " ".join(lines)
             joined = re.sub(r'\s+', ' ', joined).strip()
             total_words = len(joined.split())
-            first_line = lines[0]
             ends_with_period = joined.rstrip().endswith(('.', '!', '?'))
+            starts_with_q = bool(re.match(r'^(?:Q|Question|Ans|Answer|Solution)[\.\:\s]', first_line, re.IGNORECASE))
+            has_numbered_lines = all(bool(re.match(r'^[\d\(\)\[\]\.\s]{1,6}\S', l) or l.startswith(('Q.', 'A.', 'Q:', 'A:'))) for l in lines[:5])
 
             # Detect heading: short, all-caps, numbered, or standalone title-like line
             is_heading = (
                 total_words <= 12
                 and first_line == first_line.upper()
                 and total_words >= 2
+                and not ends_with_period
             ) or (
                 total_words <= 15
                 and re.match(r'^(?:CHAPTER|Chapter|SECTION|Section|\d+[\.\)])\s', first_line, re.IGNORECASE)
@@ -486,9 +490,24 @@ class IngestionEngine:
                 md_blocks.append("")
                 continue
 
+            # Preserve QA pairs, numbered lists, and multi-line structure
+            if starts_with_q or has_numbered_lines:
+                md_blocks.append("\n".join(lines))
+                md_blocks.append("")
+                continue
+
             # Sub-heading: bold lead-in (e.g. "Introduction." at start)
             if total_words <= 20 and ends_with_period and joined.count(' ') <= 6:
-                md_blocks.append(f"**{joined}**")
+                if not ends_with_period or joined.rstrip().endswith('?'):
+                    md_blocks.append(joined)
+                else:
+                    md_blocks.append(f"**{joined}**")
+                md_blocks.append("")
+                continue
+
+            # Preserve multi-line structure if lines are short or start with dashes/numbers
+            if len(lines) > 1 and any(len(l) < 60 for l in lines):
+                md_blocks.append("\n".join(lines))
                 md_blocks.append("")
                 continue
 
