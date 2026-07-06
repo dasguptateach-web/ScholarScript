@@ -144,3 +144,81 @@
 [2026-07-06 18:58:46]   
 [2026-07-06 18:58:46] FAILED
 [2026-07-06 18:58:46] Archived to _Processed
+[2026-07-06 19:46:08] STAGE test_algo_paper.pdf
+[2026-07-06 19:46:08] COPY test_algo_paper.pdf
+[2026-07-06 19:46:08] Ingesting...
+[2026-07-06 19:46:09]   Checking uploads folder...
+[2026-07-06 19:46:09]   Processed 1 file(s):
+[2026-07-06 19:46:09]     Success: 1
+[2026-07-06 19:46:09]     Errors:  0
+[2026-07-06 19:46:09]     [OK] test_algo_paper.pdf -> C:\Users\81\ScholarScript\content\papers\test-algo-paper.md (paper)
+[2026-07-06 19:46:09]   
+[2026-07-06 19:46:09]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 19:46:09]   
+[2026-07-06 19:46:09] Building site...
+[2026-07-06 19:46:11]   Building site...
+[2026-07-06 19:46:11]   Built 36 items in 0.95s
+[2026-07-06 19:46:11]   Output: C:\Users\81\ScholarScript\public
+[2026-07-06 19:46:11]   
+[2026-07-06 19:46:11] Committing and pushing to GitHub...
+[2026-07-06 19:46:11]   PULL ISSUE (may still push):
+[2026-07-06 19:46:11]   git : error: cannot pull with rebase: You have unstaged changes.
+[2026-07-06 19:46:11]   At line:1 char:1
+[2026-07-06 19:46:11]   + git pull --rebase origin main 2>&1
+[2026-07-06 19:46:11]   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-07-06 19:46:11]       + CategoryInfo          : NotSpecified: (error: cannot p...staged changes.:String) [], RemoteException
+[2026-07-06 19:46:11]       + FullyQualifiedErrorId : NativeCommandError
+[2026-07-06 19:46:11]    
+[2026-07-06 19:46:11]   error: Please commit or stash them.
+[2026-07-06 19:46:11]   
+[2026-07-06 19:46:16]   ADD FAILED
+[2026-07-06 19:46:16]   git : warning: in the working copy of 'ScholarScriptApp/app.py', LF will be replaced by CRLF the next time Git touches 
+[2026-07-06 19:46:16]   it
+[2026-07-06 19:46:16]   At line:1 char:1
+[2026-07-06 19:46:16]   + git add -A 2>&1
+[2026-07-06 19:46:16]   + ~~~~~~~~~~~~~~~
+[2026-07-06 19:46:16]       + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+[2026-07-06 19:46:16]       + FullyQualifiedErrorId : NativeCommandError
+[2026-07-06 19:46:16]    
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/build_app.ps1', LF will be replaced by CRLF the next time Git 
+[2026-07-06 19:46:16]   touches it
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/config_manager.py', LF will be replaced by CRLF the next time Git 
+[2026-07-06 19:46:16]   touches it
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/deploy_github.py', LF will be replaced by CRLF the next time Git 
+[2026-07-06 19:46:16]   touches it
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/gen_icon.py', LF will be replaced by CRLF the next time Git touches 
+[2026-07-06 19:46:16]   it
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/main.py', LF will be replaced by CRLF the next time Git touches it
+[2026-07-06 19:46:16]   warning: in the working copy of 'ScholarScriptApp/version_info.txt', LF will be replaced by CRLF the next time Git 
+[2026-07-06 19:46:16]   touches it
+[2026-07-06 19:46:16]   
+[2026-07-06 19:46:16] FAILED
+[2026-07-06 19:46:16] Archived to _Processed
+[2026-07-06 19:46:20] STAGE test_bio_paper.docx
+[2026-07-06 19:46:20] COPY test_bio_paper.docx
+[2026-07-06 19:46:20] Ingesting...
+[2026-07-06 19:46:21]   Checking uploads folder...
+[2026-07-06 19:46:21]   Processed 1 file(s):
+[2026-07-06 19:46:21]     Success: 1
+[2026-07-06 19:46:21]     Errors:  0
+[2026-07-06 19:46:21]     [OK] test_bio_paper.docx -> C:\Users\81\ScholarScript\content\papers\test-bio-paper.md (paper)
+[2026-07-06 19:46:21]   
+[2026-07-06 19:46:21]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 19:46:21]   
+[2026-07-06 19:46:21] Building site...
+[2026-07-06 19:46:23]   Building site...
+[2026-07-06 19:46:23]   Built 37 items in 1.10s
+[2026-07-06 19:46:23]   Output: C:\Users\81\ScholarScript\public
+[2026-07-06 19:46:23]   
+[2026-07-06 19:46:23] Committing and pushing to GitHub...
+[2026-07-06 19:46:24]   PULL ISSUE (may still push):
+[2026-07-06 19:46:24]   git : error: cannot pull with rebase: You have unstaged changes.
+[2026-07-06 19:46:24]   At line:1 char:1
+[2026-07-06 19:46:24]   + git pull --rebase origin main 2>&1
+[2026-07-06 19:46:24]   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-07-06 19:46:24]       + CategoryInfo          : NotSpecified: (error: cannot p...staged changes.:String) [], RemoteException
+[2026-07-06 19:46:24]       + FullyQualifiedErrorId : NativeCommandError
+[2026-07-06 19:46:24]    
+[2026-07-06 19:46:24]   error: additionally, your index contains uncommitted changes.
+[2026-07-06 19:46:24]   error: Please commit or stash them.
+[2026-07-06 19:46:24]   
