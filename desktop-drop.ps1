@@ -8,6 +8,7 @@ $lockFile = "$env:TEMP\scholarscript-drop.lock"
 
 Set-Location $projectDir
 $env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
+$pythonExe = "$env:PYTHONHOME\python.exe"
 
 $tokenFile = "$projectDir\.github_token"
 if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -76,6 +77,7 @@ function Run-WithTimeout {
     $psi.CreateNoWindow = $true
     $psi.WorkingDirectory = $projectDir
     $psi.EnvironmentVariables["PYTHONHOME"] = $env:PYTHONHOME
+    $psi.EnvironmentVariables["PATH"] = "$env:PYTHONHOME;$env:PYTHONHOME\Scripts;$env:PATH"
     if ($env:GITHUB_TOKEN) { $psi.EnvironmentVariables["GITHUB_TOKEN"] = $env:GITHUB_TOKEN }
     $p = [System.Diagnostics.Process]::Start($psi)
     if ($p.WaitForExit($TimeoutSeconds * 1000)) {
@@ -124,13 +126,13 @@ function Process-Batch {
 
     $ok = $true
     Log "Ingesting..."
-    $r, $ok = Run-WithTimeout "python -m scholarscript ingest 2>&1" 120
+    $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript ingest 2>&1" 120
     if (-not $ok) { Log "  FAILED or TIMEOUT" }
     foreach ($l in $r) { Log "  $l" }
 
     if ($ok) {
         Log "Building site..."
-        $r, $ok = Run-WithTimeout "python -m scholarscript build 2>&1" 60
+        $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
         if (-not $ok) { Log "  BUILD FAILED or TIMEOUT" }
         foreach ($l in $r) { Log "  $l" }
     }
@@ -138,26 +140,35 @@ function Process-Batch {
     if ($ok) {
         $ts = Get-Timestamp
         Log "Committing and pushing to GitHub..."
-        $r, $ok1 = Run-WithTimeout "git pull --rebase origin main 2>&1" 60
-        if ($ok1) { Log "  Pulled latest" }
-        else { Log "  PULL ISSUE (may still push):"; foreach ($l in $r) { Log "  $l" } }
-
         $r, $ok2 = Run-WithTimeout "git add -A 2>&1" 30
         if ($ok2) {
             $r, $ok3 = Run-WithTimeout "git commit -m 'Auto-deploy $ts' 2>&1" 30
             if ($ok3) {
-                $r, $ok4 = Run-WithTimeout "git push origin main 2>&1" 120
-                if ($ok4) {
-                    Log "Pushed! Workflow will deploy."
-                    $ok = $true
-                } else {
-                    $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
-                    if ($skip) { Log "  Already up-to-date"; $ok = $true }
-                    else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
+                $r, $ok1 = Run-WithTimeout "git pull --rebase origin main 2>&1" 60
+                if ($ok1) { Log "  Synced with remote" }
+                else {
+                    $conflict = $r | Where-Object { $_ -match 'conflict|CONFLICT|merge failed' }
+                    if ($conflict) {
+                        Log "  REBASE CONFLICT - aborting"; foreach ($l in $r) { Log "  $l" }
+                        Run-WithTimeout "git rebase --abort 2>&1" 10 | Out-Null
+                        $ok = $false
+                    } else {
+                        Log "  Pull issue (continuing):"; foreach ($l in $r) { Log "  $l" }
+                    }
+                }
+                if ($ok) {
+                    $r, $ok4 = Run-WithTimeout "git push origin main 2>&1" 120
+                    if ($ok4) {
+                        Log "Pushed! Workflow will deploy."
+                    } else {
+                        $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
+                        if ($skip) { Log "  Already up-to-date" }
+                        else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
+                    }
                 }
             } else {
                 $skip = $r | Where-Object { $_ -match 'nothing to commit' -or $_ -match 'nothing changed' }
-                if ($skip) { Log "  Nothing new to push"; $ok = $true }
+                if ($skip) { Log "  Nothing new to push" }
                 else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
             }
         } else {
