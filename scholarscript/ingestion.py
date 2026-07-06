@@ -150,7 +150,8 @@ class IngestionEngine:
 
         if ext == ".txt":
             with open(filepath, "r", encoding="utf-8", errors="replace") as f:
-                return f.read(), metadata
+                from .cleaners import clean_text as ct
+                return ct(f.read()), metadata
 
         elif ext == ".docx" and _HAS_DOCX:
             doc = Document(str(filepath))
@@ -183,6 +184,8 @@ class IngestionEngine:
             text = "\n\n".join(paras)
             if table_texts:
                 text = text + "\n\n" + "\n".join(table_texts)
+            from .cleaners import clean_text as ct
+            text = ct(text)
             # Extract metadata
             props = doc.core_properties
             if props:
@@ -194,15 +197,19 @@ class IngestionEngine:
 
         elif ext == ".pdf":
             text = ""
+            from .cleaners import clean_pdf_pages, clean_text as ct
             # Try pdfplumber with page-granularity paragraph preservation
             if not text.strip() and _HAS_PDF:
                 try:
                     import pdfplumber
                     with pdfplumber.open(str(filepath)) as pdf:
-                        page_texts = []
+                        raw_pages = []
                         for page in pdf.pages:
                             raw = page.extract_text() or ""
-                            # Reflow indented/lines within each page
+                            raw_pages.append(raw)
+                        raw_pages = clean_pdf_pages(raw_pages)
+                        page_texts = []
+                        for raw in raw_pages:
                             page_texts.append(self._reflow_pdf_text(raw))
                         text = "\n\n".join(page_texts)
                 except Exception:
@@ -213,9 +220,13 @@ class IngestionEngine:
                     import PyPDF2
                     with open(filepath, "rb") as f:
                         reader = PyPDF2.PdfReader(f)
-                        page_texts = []
+                        raw_pages = []
                         for page in reader.pages:
                             raw = page.extract_text() or ""
+                            raw_pages.append(raw)
+                        raw_pages = clean_pdf_pages(raw_pages)
+                        page_texts = []
+                        for raw in raw_pages:
                             page_texts.append(self._reflow_pdf_text(raw))
                         text = "\n\n".join(page_texts)
                 except Exception:
@@ -230,7 +241,8 @@ class IngestionEngine:
                     import pytesseract
                     images = convert_from_path(str(filepath))
                     text = "\n\n".join(pytesseract.image_to_string(img) for img in images)
-                    return text, metadata
+                    from .cleaners import clean_text as ct
+                    return ct(text), metadata
                 except Exception:
                     pass
 
@@ -240,7 +252,8 @@ class IngestionEngine:
             try:
                 doc = odf_load(str(filepath))
                 texts = [str(node) for node in doc.getElementsByType(P)]
-                return "\n".join(texts), metadata
+                from .cleaners import clean_text as ct
+                return ct("\n".join(texts)), metadata
             except Exception:
                 pass
 
@@ -249,14 +262,16 @@ class IngestionEngine:
                 with open(filepath, "r", encoding="utf-8", errors="replace") as f:
                     text = rtf_parser.rtf_to_text(f.read())
                 if text:
-                    return text, metadata
+                    from .cleaners import clean_text as ct
+                    return ct(text), metadata
             except Exception:
                 pass
 
         elif ext == ".tex" and _HAS_TEX:
             try:
                 text = parse_latex(filepath.read_text(encoding="utf-8"))
-                return text, metadata
+                from .cleaners import clean_text as ct
+                return ct(text), metadata
             except Exception:
                 # Fallback: extract text between { and } in \section{}, \subsection{}, etc.
                 raw = filepath.read_text(encoding="utf-8")
@@ -264,7 +279,8 @@ class IngestionEngine:
                 text = re.sub(r"\\[a-zA-Z]+(\{[^}]*\})?", "", text)
                 text = re.sub(r"[{}]", "", text)
                 text = re.sub(r"%.*", "", text)
-                return text.strip(), metadata
+                from .cleaners import clean_text as ct
+                return ct(text.strip()), metadata
 
         elif ext == ".doc":
             # .doc files require antiword or catdoc - try system call
@@ -272,14 +288,16 @@ class IngestionEngine:
                 import subprocess
                 result = subprocess.run(["antiword", str(filepath)], capture_output=True, text=True, timeout=10)
                 if result.returncode == 0 and result.stdout.strip():
-                    return result.stdout, metadata
+                    from .cleaners import clean_text as ct
+                    return ct(result.stdout), metadata
             except Exception:
                 pass
             try:
                 import subprocess
                 result = subprocess.run(["catdoc", str(filepath)], capture_output=True, text=True, timeout=10)
                 if result.returncode == 0 and result.stdout.strip():
-                    return result.stdout, metadata
+                    from .cleaners import clean_text as ct
+                    return ct(result.stdout), metadata
             except Exception:
                 pass
 
