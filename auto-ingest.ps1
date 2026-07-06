@@ -1,6 +1,9 @@
 $projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
 $uploadsDir = "$projectDir\uploads"
 
+# Fix Python stdlib path warning
+$env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
+
 Write-Host "ScholarScript Auto-Ingest" -ForegroundColor Cyan
 Write-Host "========================" -ForegroundColor Cyan
 Write-Host ""

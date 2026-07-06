@@ -4,6 +4,9 @@ $repoFile = "$projectDir\.github_repo"
 
 Set-Location $projectDir
 
+# Fix Python stdlib path warning
+$env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
+
 # First-time setup check
 if (-not (Test-Path $tokenFile) -or -not (Test-Path $repoFile)) {
     Write-Host "First-time setup required." -ForegroundColor Yellow
