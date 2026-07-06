@@ -1,5 +1,5 @@
 ---
-title: "Marxism ( Study Guide )"
+title: "Marxism (Study Guide)"
 date: 2026-06-04
 type: paper
 tags: [marxism, its, marx, class, marxist]

@@ -1,5 +1,5 @@
 ﻿---
-title: "Colonial Discourse in The Tempest"
+title: "Colonial Discourse in the Tempest"
 date: 2025-06-15
 type: paper
 author: Dr. Eleanor Chase

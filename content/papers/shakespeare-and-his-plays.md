@@ -1,5 +1,5 @@
----
-title: "Shakespeare And His Plays"
+﻿---
+title: "Shakespeare and His Plays"
 date: 2019-02-28
 type: paper
 author: "ScholarScript Team"

@@ -1,5 +1,5 @@
----
-title: "The Rape Of The Lock (Cantos 1–3)"
+﻿---
+title: "The Rape of the Lock (Cantos 1–3)"
 date: 2026-05-29
 type: paper
 tags: [pope, belinda, epic, canto, lock]

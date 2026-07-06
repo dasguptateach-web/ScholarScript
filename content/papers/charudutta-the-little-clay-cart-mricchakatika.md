@@ -1,5 +1,5 @@
 ---
-title: "Charudutta (The Little Clay Cart Mricchakatika)"
+title: "Charudatta (The Little Clay Cart Mricchakatika)"
 date: 2026-05-17
 type: paper
 tags: [charudatta, his, him, moral, because]

@@ -1,5 +1,5 @@
----
-title: "[Study Guide Of The Castle Of Otranto With Special Focus On Supernaturalism"
+﻿---
+title: "Study Guide of the Castle of Otranto: With Special Focus on Supernaturalism"
 date: 2026-04-17
 type: paper
 tags: [supernatural, gothic, walpole, manfred, castle]
@@ -28,4 +28,3 @@ Fear and Terror atmosphere 5. Blend of Medievalism and Supernatural Romance
 Walpole deliberately sets the novel in a medieval Catholic
 
 Limits of human control in face of world, filled with monks, convents, and feudal hierarchies. Human vs Divine higher forces This setting enhances the plausibility of supernatural events, as the medieval period was associated with belief in miracles and divine intervention. The presence of Friar Jerome and religious symbolism reinforces the idea that the Conclusion supernatural is linked to divine will. In The Castle of Otranto, supernaturalism is not merely The novel thus combines romance and supernaturalism, decorative; it is structural, thematic, and symbolic. creating a hybrid genre. As Walpole himself wrote, his aim Walpole uses supernatural elements to evoke terror, advance was to allow “the imagination and improbability” of ancient the plot, and convey moral lessons about justice and romance to coexist with modern realism. legitimacy. While his methods may appear excessive to modern readers, they were revolutionary in the eighteenth century context, laying the groundwork for the Gothic 6. Criticism of Walpole’s Supernaturalism tradition. Despite its pioneering role, Walpole’s use of the The novel’s enduring significance lies in its ability to supernatural has been criticized for being excessive and transform the supernatural into a powerful literary device— lacking subtlety. Critics argue that the gigantic limbs and one that reveals both the external world and the darkness exaggerated apparitions verge on the absurd rather than the within the human psyche. As a result, Otranto remains a terrifying. cornerstone of Gothic fiction, demonstrating how the supernatural can serve as both a source of terror and a For instance, Samuel Taylor Coleridge later emphasized the vehicle of truth. need for a “willing suspension of disbelief” in supernatural literature. In Otranto, this suspension is sometimes strained
-

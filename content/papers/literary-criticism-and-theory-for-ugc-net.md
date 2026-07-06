@@ -1,5 +1,5 @@
 ---
-title: "Literary Criticism And Theory For Ugc Net"
+title: "Literary Criticism and Theory for UGC NET"
 date: 2026-05-18
 type: paper
 tags: [criticism, literary, theory, poetry, text]

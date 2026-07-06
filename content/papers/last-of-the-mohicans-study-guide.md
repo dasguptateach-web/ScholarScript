@@ -1,5 +1,5 @@
 ---
-title: "Last Of The Mohicans Study Guide"
+title: "The Last of the Mohicans Study Guide"
 date: 2019-04-06
 type: paper
 tags: [his, hawkeye, magua, him, uncas]
