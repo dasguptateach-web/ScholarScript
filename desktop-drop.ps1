@@ -1,4 +1,4 @@
-$projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
+$projectDir = "C:\Users\81\ScholarScript"
 $uploadsDir = "$projectDir\uploads"
 $desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
@@ -25,7 +25,7 @@ $pid | Out-File $lockFile -Encoding utf8 -Force
 
 function Log {
     param([string]$Msg)
-    $line = "[$(Get-Date -Format 'HH:mm:ss')] $Msg"
+    $line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $Msg"
     try { Add-Content -Path $logFile -Value $line -ErrorAction Stop } catch {}
 }
 
@@ -91,6 +91,7 @@ function Run-WithTimeout {
 function Get-Timestamp { return Get-Date -Format "yyyyMMdd-HHmmss" }
 
 function Process-Batch {
+    $allFileNames = @()
     $staged = @()
     Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' } | ForEach-Object {
         $f = $_.FullName
@@ -105,6 +106,7 @@ function Process-Batch {
             if (Safe-Move $f "$stagingDir\$name") {
                 Log "STAGE $name"
                 $staged += "$stagingDir\$name"
+                $allFileNames += $name
             }
         } else {
             Log "TIMEOUT $name (still in use)"
@@ -127,33 +129,44 @@ function Process-Batch {
     foreach ($l in $r) { Log "  $l" }
 
     if ($ok) {
+        Log "Building site..."
+        $r, $ok = Run-WithTimeout "python -m scholarscript build 2>&1" 60
+        if (-not $ok) { Log "  BUILD FAILED or TIMEOUT" }
+        foreach ($l in $r) { Log "  $l" }
+    }
+
+    if ($ok) {
         $ts = Get-Timestamp
-        Log "Pushing to GitHub..."
-        $ok = $false
-        $r, $ok1 = Run-WithTimeout "git add -A" 30
-        if ($ok1) {
-            $r, $ok2 = Run-WithTimeout "git commit -m 'Auto-deploy $ts'" 30
-            if ($ok2) {
-                $r, $ok3 = Run-WithTimeout "git push origin main" 120
-                if ($ok3) {
+        Log "Committing and pushing to GitHub..."
+        $r, $ok1 = Run-WithTimeout "git pull --rebase origin main 2>&1" 60
+        if ($ok1) { Log "  Pulled latest" }
+        else { Log "  PULL ISSUE (may still push):"; foreach ($l in $r) { Log "  $l" } }
+
+        $r, $ok2 = Run-WithTimeout "git add -A 2>&1" 30
+        if ($ok2) {
+            $r, $ok3 = Run-WithTimeout "git commit -m 'Auto-deploy $ts' 2>&1" 30
+            if ($ok3) {
+                $r, $ok4 = Run-WithTimeout "git push origin main 2>&1" 120
+                if ($ok4) {
                     Log "Pushed! Workflow will deploy."
                     $ok = $true
                 } else {
                     $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
                     if ($skip) { Log "  Already up-to-date"; $ok = $true }
-                    else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" } }
+                    else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
                 }
             } else {
-                $skip = $r | Where-Object { $_ -match 'nothing to commit' }
+                $skip = $r | Where-Object { $_ -match 'nothing to commit' -or $_ -match 'nothing changed' }
                 if ($skip) { Log "  Nothing new to push"; $ok = $true }
-                else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" } }
+                else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
             }
         } else {
             Log "  ADD FAILED"; foreach ($l in $r) { Log "  $l" }
+            $ok = $false
         }
     }
 
-    if ($ok) { Log "Done!" } else { Log "FAILED" }
+    if ($ok) { Log "Done! Files: $($allFileNames -join ', ')" } else { Log "FAILED" }
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf
@@ -162,7 +175,7 @@ function Process-Batch {
     Log "Archived to _Processed"
 }
 
-Log "Watcher started"
+Log "Watcher started (project: $projectDir)"
 
 while ($true) {
     $files = Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' }
