@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% block body_class %}home-page{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-badge">Free Resource Hub for English Literature</div>
+    <h1 class="hero-title">
+      Master English Literature<br>
+      <span class="hero-title-gradient">with ScholarScript</span>
+    </h1>
+    <p class="hero-subtitle">
+      Your free gateway to comprehensive study guides, scholarly papers, video lectures, 
+      creative writing resources, and curated external links — all crafted for 
+      undergraduate, postgraduate students, and researchers.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ base_url }}/papers/" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Browse Papers
+      </a>
+      <a href="{{ base_url }}/videos/" class="btn btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        Watch Lectures
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">{{ papers|length + creative|length + videos|length + links|length }}</span>
+        <span class="hero-stat-label">Total Resources</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">{{ papers|length }}</span>
+        <span class="hero-stat-label">Scholarly Papers</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">{{ videos|length }}</span>
+        <span class="hero-stat-label">Video Lectures</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">{{ creative|length }}</span>
+        <span class="hero-stat-label">Creative Works</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">{{ links|length }}</span>
+        <span class="hero-stat-label">External Links</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE CATEGORIES -->
+<section class="section categories-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        Explore Resources
+        <span class="section-title-line"></span>
+      </h2>
+      <p class="section-desc">Dive into curated content across every format</p>
+    </div>
+    <div class="categories-grid">
+      <a href="{{ base_url }}/papers/" class="category-card">
+        <div class="category-icon" style="background: rgba(124,58,237,0.1); color: #7c3aed;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Papers</h3>
+        <p>Scholarly articles &amp; research papers on English literature</p>
+        <span class="category-count">{{ papers|length }} papers</span>
+      </a>
+      <a href="{{ base_url }}/videos/" class="category-card">
+        <div class="category-icon" style="background: rgba(239,68,68,0.1); color: #dc2626;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>Videos</h3>
+        <p>Curated video lectures &amp; literary discussions</p>
+        <span class="category-count">{{ videos|length }} videos</span>
+      </a>
+      <a href="{{ base_url }}/creative-writing/" class="category-card">
+        <div class="category-icon" style="background: rgba(217,119,6,0.1); color: #d97706;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <h3>Creative Writing</h3>
+        <p>Poetry, prose, and original literary works</p>
+        <span class="category-count">{{ creative|length }} works</span>
+      </a>
+      <a href="{{ base_url }}/external-links/" class="category-card">
+        <div class="category-icon" style="background: rgba(16,185,129,0.1); color: #059669;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <h3>External Links</h3>
+        <p>Hand-picked resources from around the web</p>
+        <span class="category-count">{{ links|length }} links</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% if author_of_month %}
+<!-- AUTHOR OF THE MONTH -->
+<section class="section">
+  <div class="container">
+    <div class="aom-banner">
+      <div class="aom-banner-content">
+        <span class="aom-banner-tag">Monthly Spotlight</span>
+        <h3>Author of the Month</h3>
+        <p><strong>{{ author_of_month.name }}</strong> — top contributor with {{ author_of_month.pageviews }} pageviews this month</p>
+        <a href="{{ base_url }}/author-of-month/" class="btn btn-primary btn-sm">Read their work</a>
+      </div>
+      <div class="aom-banner-icon">&#9733;</div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% set recent = (papers[:3] + videos[:2] + creative[:2]) | sort(attribute='date', reverse=True) %}
+{% if recent %}
+<!-- RECENT CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        Recently Added
+        <span class="section-title-line"></span>
+      </h2>
+      <p class="section-desc">The latest resources added to the library</p>
+    </div>
+    <div class="recent-grid">
+      {% for item in recent %}
+      <article class="content-card">
+        <div class="content-card-top">
+          <span class="content-card-type type-{{ item.type }}">{{ item.type | replace('-', ' ') }}</span>
+          <span class="content-card-date">{{ item.date }}</span>
+        </div>
+        <h3 class="content-card-title">
+          <a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a>
+        </h3>
+        {% if item.summary %}
+        <p class="content-card-summary">{{ item.summary[:150] }}{% if item.summary|length > 150 %}...{% endif %}</p>
+        {% endif %}
+        <div class="content-card-bottom">
+          {% if item.tags %}
+          <div class="content-card-tags">
+            {% for tag in item.tags[:2] %}
+            <span class="mini-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <span class="content-card-read">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- WHY SCHOLARSCRIPT -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        Why ScholarScript?
+        <span class="section-title-line"></span>
+      </h2>
+      <p class="section-desc">Everything you need to excel in English Literature</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>100% Free</h3>
+        <p>All resources, papers, and guides are completely free — no paywalls, no subscriptions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Student-Focused</h3>
+        <p>Designed for undergraduate and postgraduate English Literature students, with curated academic content.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Curated Quality</h3>
+        <p>Every paper, video, and resource is hand-picked and organized for maximum learning value.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Community Driven</h3>
+        <p>Join a growing community of literature scholars. Monthly prizes for top contributors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Start Your Literary Journey Today</h2>
+      <p>Explore hundreds of free resources — from Shakespeare to postcolonial theory, from poetry to academic writing.</p>
+      <div class="cta-actions">
+        <a href="{{ base_url }}/papers/" class="btn btn-primary btn-lg">Browse All Resources</a>
+        <a href="{{ base_url }}/donate/" class="btn btn-ghost btn-lg">Support the Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
