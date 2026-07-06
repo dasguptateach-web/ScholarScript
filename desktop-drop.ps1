@@ -1,4 +1,4 @@
-$projectDir = "C:\Users\81\ScholarScript"
+﻿$projectDir = "C:\Users\81\ScholarScript"
 $uploadsDir = "$projectDir\uploads"
 $desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
@@ -140,40 +140,35 @@ function Process-Batch {
     if ($ok) {
         $ts = Get-Timestamp
         Log "Committing and pushing to GitHub..."
-        $r, $ok2 = Run-WithTimeout "git add -A 2>&1" 30
+        $ok2 = $true
+        try { git add -A 2>&1 | Out-Null; $ok2 = $LASTEXITCODE -eq 0 } catch { Log "  ADD EX: $_"; $ok2 = $false }
+        Log "  add exit=$($LASTEXITCODE)"
         if ($ok2) {
-            $r, $ok3 = Run-WithTimeout "git commit -m 'Auto-deploy $ts' 2>&1" 30
-            if ($ok3) {
-                $r, $ok1 = Run-WithTimeout "git pull --rebase origin main 2>&1" 60
-                if ($ok1) { Log "  Synced with remote" }
-                else {
-                    $conflict = $r | Where-Object { $_ -match 'conflict|CONFLICT|merge failed' }
-                    if ($conflict) {
-                        Log "  REBASE CONFLICT - aborting"; foreach ($l in $r) { Log "  $l" }
-                        Run-WithTimeout "git rebase --abort 2>&1" 10 | Out-Null
-                        $ok = $false
-                    } else {
-                        Log "  Pull issue (continuing):"; foreach ($l in $r) { Log "  $l" }
-                    }
-                }
-                if ($ok) {
-                    $r, $ok4 = Run-WithTimeout "git push origin main 2>&1" 120
-                    if ($ok4) {
-                        Log "Pushed! Workflow will deploy."
-                    } else {
-                        $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
-                        if ($skip) { Log "  Already up-to-date" }
-                        else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
-                    }
-                }
-            } else {
-                $skip = $r | Where-Object { $_ -match 'nothing to commit' -or $_ -match 'nothing changed' }
-                if ($skip) { Log "  Nothing new to push" }
-                else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" }; $ok = $false }
+            $out = ""
+            try { $out = git commit -m "Auto-deploy $ts" 2>&1; $ok3 = $LASTEXITCODE -eq 0 } catch { Log "  COMMIT EX: $_"; $ok3 = $false }
+            Log "  commit exit=$($LASTEXITCODE)"
+            if (-not $ok3) {
+                if ($out -match 'nothing to commit|nothing changed') { Log "  Nothing new to push"; $ok3 = $true }
+                else { foreach ($l in $out) { Log "  $l" } }
             }
-        } else {
-            Log "  ADD FAILED"; foreach ($l in $r) { Log "  $l" }
-            $ok = $false
+            if ($ok3) {
+                try { $out = git pull --rebase origin main 2>&1; $ok1 = $LASTEXITCODE -eq 0 } catch { Log "  PULL EX: $_"; $ok1 = $false }
+                Log "  pull exit=$($LASTEXITCODE)"
+                if (-not $ok1) {
+                    if ($out -match 'conflict|CONFLICT') {
+                        Log "  CONFLICT"; foreach ($l in $out) { Log "  $l" }
+                        git rebase --abort 2>$null
+                        $ok = $false
+                    } else { foreach ($l in $out) { Log "  $l" } }
+                } else { Log "  Synced with remote" }
+                if ($ok) {
+                    try { $out = git push origin main 2>&1; $ok4 = $LASTEXITCODE -eq 0 } catch { Log "  PUSH EX: $_"; $ok4 = $false }
+                    Log "  push exit=$($LASTEXITCODE)"
+                    if ($ok4) { Log "Pushed! Workflow will deploy." }
+                    elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date" }
+                    else { foreach ($l in $out) { Log "  $l" }; $ok = $false }
+                }
+            }
         }
     }
 
