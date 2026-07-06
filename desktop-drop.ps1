@@ -74,6 +74,7 @@ function Run-WithTimeout {
     $psi.RedirectStandardOutput = $true
     $psi.RedirectStandardError = $true
     $psi.CreateNoWindow = $true
+    $psi.WorkingDirectory = $projectDir
     $psi.EnvironmentVariables["PYTHONHOME"] = $env:PYTHONHOME
     if ($env:GITHUB_TOKEN) { $psi.EnvironmentVariables["GITHUB_TOKEN"] = $env:GITHUB_TOKEN }
     $p = [System.Diagnostics.Process]::Start($psi)
@@ -128,18 +129,27 @@ function Process-Batch {
     if ($ok) {
         $ts = Get-Timestamp
         Log "Pushing to GitHub..."
-        $r, $ok = Run-WithTimeout "git add -A; if (`$?) { git commit -m 'Auto-deploy $ts'; if (`$?) { git push origin main } } 2>&1" 120
-        if ($ok) {
-            Log "Pushed! Workflow will deploy."
-        } else {
-            $skip = $r | Where-Object { $_ -match 'nothing to commit' -or $_ -match 'Everything up-to-date' }
-            if ($skip) {
-                Log "  Nothing new to push"
-                $ok = $true
+        $ok = $false
+        $r, $ok1 = Run-WithTimeout "git add -A" 30
+        if ($ok1) {
+            $r, $ok2 = Run-WithTimeout "git commit -m 'Auto-deploy $ts'" 30
+            if ($ok2) {
+                $r, $ok3 = Run-WithTimeout "git push origin main" 120
+                if ($ok3) {
+                    Log "Pushed! Workflow will deploy."
+                    $ok = $true
+                } else {
+                    $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
+                    if ($skip) { Log "  Already up-to-date"; $ok = $true }
+                    else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" } }
+                }
             } else {
-                Log "  PUSH FAILED"
-                foreach ($l in $r) { Log "  $l" }
+                $skip = $r | Where-Object { $_ -match 'nothing to commit' }
+                if ($skip) { Log "  Nothing new to push"; $ok = $true }
+                else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" } }
             }
+        } else {
+            Log "  ADD FAILED"; foreach ($l in $r) { Log "  $l" }
         }
     }
 

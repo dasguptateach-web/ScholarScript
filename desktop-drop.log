@@ -1,0 +1,15 @@
+[12:58:27] Restarting test
+[12:58:27] Watcher started
+[12:58:31] STAGE test-prose.txt
+[12:58:31] COPY test-prose.txt
+[12:58:31] Ingesting...
+[12:58:32]   Checking uploads folder...
+[12:58:32]   Processed 2 file(s):
+[12:58:32]     Success: 1
+[12:58:32]     Errors:  1
+[12:58:32]     [OK] test-prose.txt -> C:\Users\81\AppData\Local\Temp\opencode\ScholarScript\content\creative-writing\test-prose.md (creative-writing)
+[12:58:32]     [ERR] STRUCTURALISM CONCEPTS AND NOTES.docx: No text could be extracted
+[12:58:32]   
+[12:58:32]   Run 'scholarscript build' to rebuild the site.
+[12:58:32]   
+[12:58:32] Pushing to GitHub...
