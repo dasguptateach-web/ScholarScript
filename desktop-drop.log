@@ -86,3 +86,19 @@
 [2026-07-06 15:15:07]   
 [2026-07-06 15:15:07] Building site...
 [2026-07-06 15:15:09] Committing and pushing to GitHub...
+[2026-07-06 15:15:13] Pushed! Workflow will deploy.
+[2026-07-06 15:15:18] Done! Files: The Elizabethan Age.docx
+[2026-07-06 15:36:56] STAGE Last of the Mohicans Study Guide.docx
+[2026-07-06 15:36:56] Processing: Last of the Mohicans Study Guide.docx
+[2026-07-06 15:36:56] COPY Last of the Mohicans Study Guide.docx
+[2026-07-06 15:36:56] Ingesting...
+[2026-07-06 15:36:57]   Checking uploads folder...
+[2026-07-06 15:36:57]   Processed 1 file(s):
+[2026-07-06 15:36:57]     Success: 1
+[2026-07-06 15:36:57]     Errors:  0
+[2026-07-06 15:36:57]     [OK] Last of the Mohicans Study Guide.docx -> C:\Users\81\ScholarScript\content\papers\last-of-the-mohicans-study-guide.md (paper)
+[2026-07-06 15:36:57]   
+[2026-07-06 15:36:57]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 15:36:57]   
+[2026-07-06 15:36:57] Building site...
+[2026-07-06 15:36:58] Committing and pushing to GitHub...
