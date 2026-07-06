@@ -37,6 +37,12 @@
         <a href="{{ base_url }}/author-of-month/">AotM</a>
         <a href="{{ base_url }}/donate/">Support</a>
       </nav>
+      <div class="header-search" id="headerSearch">
+        <i class="fas fa-search header-search-icon"></i>
+        <input type="text" class="header-search-input" id="searchInput" placeholder="Search..." autocomplete="off" spellcheck="false">
+        <kbd class="header-search-kbd">/</kbd>
+        <div class="search-dropdown" id="searchDropdown"></div>
+      </div>
       <div class="header-right">
         {% if site.social_bluesky %}
         <a href="https://bsky.app/profile/{{ site.social_bluesky }}" target="_blank" rel="noopener" class="theme-toggle" title="Bluesky" aria-label="Bluesky">
@@ -57,6 +63,143 @@
     {% block content %}{% endblock %}
   </main>
 
+<script>
+(function(){
+  var idxUrl = "{{ base_url }}/search-index.json";
+  var searchIndex = [];
+  var searchInput = document.getElementById("searchInput");
+  var dropdown = document.getElementById("searchDropdown");
+  var wrapper = document.getElementById("headerSearch");
+  var isOpen = false, selectedIdx = -1;
+
+  function fetchIndex(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", idxUrl + "?t=" + Date.now(), true);
+    xhr.onload = function(){ if(xhr.status === 200) searchIndex = JSON.parse(xhr.responseText); };
+    xhr.send();
+  }
+  fetchIndex();
+
+  function filterItems(q){
+    if(!q || q.length < 1) return [];
+    q = q.toLowerCase();
+    var out = [];
+    for(var i=0; i<searchIndex.length; i++){
+      var item = searchIndex[i];
+      if(item.title.toLowerCase().indexOf(q) !== -1 ||
+         (item.summary && item.summary.toLowerCase().indexOf(q) !== -1) ||
+         (item.author && item.author.toLowerCase().indexOf(q) !== -1) ||
+         (item.tags && item.tags.some(function(t){ return t.toLowerCase().indexOf(q) !== -1; }))){
+        out.push(item);
+        if(out.length >= 10) break;
+      }
+    }
+    return out;
+  }
+
+  function typeLabel(t){
+    var map = {"papers":"Paper","videos":"Video","creative-writing":"Writing","external-links":"Link"};
+    return map[t] || t;
+  }
+
+  function typeClass(t){
+    return t;
+  }
+
+  function formatDate(d){
+    if(!d) return "";
+    var p = d.split("-");
+    if(p.length < 3) return d;
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return months[parseInt(p[1],10)-1] + " " + p[2] + ", " + p[0];
+  }
+
+  function renderDropdown(results){
+    dropdown.innerHTML = "";
+    if(results.length === 0){
+      var empty = document.createElement("div");
+      empty.className = "sd-empty";
+      empty.innerHTML = '<i class="fas fa-search"></i> No results found';
+      dropdown.appendChild(empty);
+    } else {
+      for(var i=0; i<results.length; i++){
+        var item = results[i];
+        var el = document.createElement("a");
+        el.className = "sd-item" + (i === selectedIdx ? " sd-item-active" : "");
+        el.href = "{{ base_url }}" + item.url;
+        var typeSpan = document.createElement("span");
+        typeSpan.className = "sd-type " + typeClass(item.type);
+        typeSpan.textContent = typeLabel(item.type);
+        var titleSpan = document.createElement("span");
+        titleSpan.className = "sd-title";
+        titleSpan.textContent = item.title;
+        var dateSpan = document.createElement("span");
+        dateSpan.className = "sd-date";
+        dateSpan.textContent = formatDate(item.date);
+        el.appendChild(typeSpan);
+        el.appendChild(titleSpan);
+        el.appendChild(dateSpan);
+        dropdown.appendChild(el);
+      }
+    }
+  }
+
+  function openDropdown(){
+    if(!isOpen){ isOpen = true; dropdown.classList.add("active"); }
+  }
+
+  function closeDropdown(){
+    if(isOpen){ isOpen = false; dropdown.classList.remove("active"); selectedIdx = -1; }
+  }
+
+  function doSearch(q){
+    selectedIdx = -1;
+    var results = filterItems(q);
+    renderDropdown(results);
+    openDropdown();
+  }
+
+  searchInput.addEventListener("input", function(){
+    var val = this.value.trim();
+    if(val.length > 0) doSearch(val);
+    else { closeDropdown(); dropdown.innerHTML = ""; }
+  });
+
+  searchInput.addEventListener("focus", function(){
+    var val = this.value.trim();
+    if(val.length > 0) doSearch(val);
+  });
+
+  searchInput.addEventListener("keydown", function(e){
+    var items = dropdown.querySelectorAll(".sd-item");
+    if(e.key === "ArrowDown"){
+      e.preventDefault();
+      selectedIdx = Math.min(selectedIdx + 1, items.length - 1);
+      items.forEach(function(el,i){ el.classList.toggle("sd-item-active", i === selectedIdx); });
+      if(items[selectedIdx]) items[selectedIdx].scrollIntoView({block:"nearest"});
+    } else if(e.key === "ArrowUp"){
+      e.preventDefault();
+      selectedIdx = Math.max(selectedIdx - 1, -1);
+      items.forEach(function(el,i){ el.classList.toggle("sd-item-active", i === selectedIdx); });
+      if(items[selectedIdx]) items[selectedIdx].scrollIntoView({block:"nearest"});
+    } else if(e.key === "Enter" && selectedIdx >= 0 && items[selectedIdx]){
+      window.location.href = items[selectedIdx].href;
+    } else if(e.key === "Escape"){
+      closeDropdown(); searchInput.blur();
+    }
+  });
+
+  document.addEventListener("click", function(e){
+    if(!wrapper.contains(e.target)) closeDropdown();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "/" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA" && !e.ctrlKey && !e.metaKey){
+      e.preventDefault(); searchInput.focus();
+    }
+  });
+})();
+</script>
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">

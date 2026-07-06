@@ -995,7 +995,7 @@ body { top: 0px !important; }
   transition: background 0.12s; cursor: pointer; text-decoration: none;
 }
 .sd-item:last-child { border-bottom: none; }
-.sd-item:hover { background: var(--primary-glow); }
+.sd-item:hover, .sd-item-active { background: var(--primary-glow); }
 .sd-type {
   font-size: 0.58rem; font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.06em; padding: 0.12rem 0.35rem;
