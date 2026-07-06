@@ -753,3 +753,212 @@ input, textarea, select { font-size: 16px !important; }  /* prevent iOS zoom */
   .footer-links { gap: 0.75rem; flex-direction: column; align-items: center; }
   .search-dropdown { max-height: 300px; }
 }
+
+/* ============ GOOGLE HOME ============ */
+body.google-home {
+  --bg: #fff;
+  background: var(--bg);
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+body.google-home .container {
+  max-width: none;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.google-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.google-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: -10vh;
+}
+.google-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.google-logo-main {
+  font-family: 'Inter', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1.1;
+}
+html.dark .google-logo-main {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.google-logo-sub {
+  display: block;
+  font-size: 0.85rem;
+  color: #5f6368;
+  margin-top: 0.25rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+html.dark .google-logo-sub {
+  color: #9ca3af;
+}
+
+/* Google Search Bar */
+.google-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 584px;
+  height: 44px;
+  background: #fff;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  padding: 0 8px 0 14px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  gap: 8px;
+}
+html.dark .google-search {
+  background: #1f2937;
+  border-color: #374151;
+}
+.google-search:hover {
+  box-shadow: 0 1px 6px rgba(32,33,36,0.18);
+  border-color: rgba(223,225,229,0);
+}
+html.dark .google-search:hover {
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  border-color: rgba(55,65,81,0);
+}
+.google-search.focused,
+.google-search:focus-within {
+  box-shadow: 0 1px 6px rgba(32,33,36,0.18);
+  border-color: rgba(223,225,229,0);
+}
+html.dark .google-search.focused,
+html.dark .google-search:focus-within {
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  border-color: rgba(55,65,81,0);
+}
+.google-search-icon {
+  flex-shrink: 0;
+  color: #9aa0a6;
+  width: 20px;
+  height: 20px;
+}
+html.dark .google-search-icon { color: #6b7280; }
+.google-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #202124;
+  height: 100%;
+}
+html.dark .google-search-input { color: #e5e7eb; }
+.google-search-input::placeholder { color: #9aa0a6; }
+html.dark .google-search-input::placeholder { color: #6b7280; }
+.google-search-badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: #4285f4;
+  opacity: 0.7;
+}
+
+/* Shortcuts */
+.google-shortcuts {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+}
+.google-shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #202124;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: transform 0.2s;
+  padding: 4px;
+  border-radius: 8px;
+}
+html.dark .google-shortcut { color: #e5e7eb; }
+.google-shortcut:hover {
+  transform: scale(1.05);
+  background: rgba(0,0,0,0.03);
+}
+html.dark .google-shortcut:hover { background: rgba(255,255,255,0.05); }
+.google-shortcut-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f0f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5f6368;
+}
+html.dark .google-shortcut-icon {
+  background: #1e293b;
+  color: #94a3b8;
+}
+.google-shortcut-icon svg { width: 24px; height: 24px; }
+
+/* Google Footer */
+.google-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 12px 30px;
+  background: #f2f2f2;
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+html.dark .google-footer {
+  background: #111827;
+  color: #9ca3af;
+}
+.google-footer a {
+  color: #5f6368;
+  text-decoration: none;
+  padding: 0 8px;
+}
+html.dark .google-footer a { color: #9ca3af; }
+.google-footer a:hover { text-decoration: underline; }
+.google-footer-left, .google-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Override main container on home */
+body.google-home .site-footer { display: none; }
+@media (max-width: 600px) {
+  .google-logo-main { font-size: 2.8rem; }
+  .google-search { max-width: 100%; margin: 0 0.5rem; }
+  .google-footer { flex-direction: column; align-items: center; text-align: center; padding: 10px 16px; }
+  .google-shortcuts { gap: 0.5rem; }
+  .google-shortcut-icon { width: 40px; height: 40px; }
+  .google-shortcut-icon svg { width: 20px; height: 20px; }
+  .google-content { margin-top: -5vh; }
+}

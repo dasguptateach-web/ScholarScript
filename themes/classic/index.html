@@ -1,105 +1,71 @@
 {% extends "base.html" %}
+{% block body_class %}google-home{% endblock %}
+{% block header %}{% endblock %}
 {% block content %}
-<section class="hero">
-  <div class="hero-bg">
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
+<div class="google-main">
+  <div class="google-content">
+    <div class="google-logo">
+      <span class="google-logo-main">ScholarScript</span>
+      <span class="google-logo-sub">{{ site.tagline }}</span>
+    </div>
+
+    <div class="google-search" id="googleSearch" role="search">
+      <svg class="google-search-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" id="heroSearchInput" class="google-search-input" placeholder="Search papers, videos, writing..." autocomplete="off" aria-label="Search">
+      <div class="google-search-badges">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+    </div>
+
+    <div class="google-shortcuts">
+      <a href="{{ base_url }}/papers/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
+        <span>Papers</span>
+      </a>
+      <a href="{{ base_url }}/videos/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 8.64L15.27 12 10 15.36V8.64zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+        <span>Videos</span>
+      </a>
+      <a href="{{ base_url }}/creative-writing/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41z"/></svg></div>
+        <span>Writing</span>
+      </a>
+      <a href="{{ base_url }}/external-links/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg></div>
+        <span>Links</span>
+      </a>
+      <a href="{{ base_url }}/tags/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
+        <span>Tags</span>
+      </a>
+      <a href="{{ base_url }}/donate/" class="google-shortcut">
+        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <span>Support</span>
+      </a>
+    </div>
   </div>
-  <i class="fas fa-scroll hero-icon"></i>
-  <h2 data-aos="fade-up">Where Literature Meets<br><span class="highlight">Intelligent Curation</span></h2>
-  <p data-aos="fade-up" data-aos-delay="100">{{ site.tagline }} — scholarly papers, critical analysis, and creative writing from the global academic community.</p>
 
-  <div class="hero-search" data-aos="fade-up" data-aos-delay="150">
-    <i class="fas fa-search hero-search-icon"></i>
-    <input type="text" id="heroSearchInput" class="hero-search-input" placeholder="Search all content..." autocomplete="off">
-  </div>
-
-  <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
-    <div class="hero-stat">
-      <span class="num">{{ papers|length + creative|length + videos|length + links|length }}</span>
-      <span class="label"><i class="fas fa-book"></i> Works</span>
+  <div class="google-footer">
+    <div class="google-footer-left">
+      <span>{{ papers|length + creative|length + videos|length + links|length }} works &middot; {{ papers|length }} papers &middot; {{ creative|length }} creative &middot; {{ videos|length }} videos</span>
     </div>
-    <div class="hero-stat">
-      <span class="num">{{ papers|length }}</span>
-      <span class="label"><i class="fas fa-scroll"></i> Papers</span>
-    </div>
-    <div class="hero-stat">
-      <span class="num">{{ creative|length }}</span>
-      <span class="label"><i class="fas fa-feather"></i> Creative</span>
-    </div>
-    <div class="hero-stat">
-      <span class="num">{{ videos|length }}</span>
-      <span class="label"><i class="fas fa-video"></i> Videos</span>
+    <div class="google-footer-right">
+      <a href="{{ base_url }}/">Home</a>
+      <a href="{{ base_url }}/tags/">Tags</a>
+      <a href="{{ base_url }}/donate/">Support</a>
     </div>
   </div>
-</section>
-
-{% if author_of_month %}
-<section class="author-spotlight" data-aos="fade-up">
-  <h3><i class="fas fa-crown"></i> Author of the Month</h3>
-  <p><strong>{{ author_of_month.author }}</strong> — {{ author_of_month.views }} pageviews this month</p>
-  <a href="{{ base_url }}/author-of-month/" class="btn"><i class="fas fa-trophy"></i> Meet the Winner</a>
-</section>
-{% endif %}
-
-{% if papers %}
-<h3 class="section-title" data-aos="fade-up"><i class="fas fa-scroll"></i> Latest Papers</h3>
-<div class="card-grid">
-  {% for item in papers[:3] %}
-  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
-    <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
-    <h3><a href="{{ base_url }}/paper/{{ item.slug }}/">{{ item.title }}</a></h3>
-    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
-    <p>{{ item.summary }}</p>
-    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
-  </article>
-  {% endfor %}
 </div>
-{% endif %}
 
-{% if videos %}
-<h3 class="section-title" data-aos="fade-up"><i class="fas fa-video"></i> Latest Videos</h3>
-<div class="card-grid">
-  {% for item in videos[:3] %}
-  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
-    <span class="card-type video"><i class="fas fa-play"></i> Video</span>
-    <h3><a href="{{ base_url }}/video/{{ item.slug }}/">{{ item.title }}</a></h3>
-    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
-    <p>{{ item.summary }}</p>
-    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
-  </article>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if creative %}
-<h3 class="section-title" data-aos="fade-up"><i class="fas fa-feather"></i> Creative Writing</h3>
-<div class="card-grid">
-  {% for item in creative[:3] %}
-  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
-    <span class="card-type creative-writing"><i class="fas fa-pen-fancy"></i> Creative</span>
-    <h3><a href="{{ base_url }}/creative-writing/{{ item.slug }}/">{{ item.title }}</a></h3>
-    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }} &middot; <i class="fas fa-user"></i> {{ item.pen_name or item.author }}{% if item.genre %} &middot; <i class="fas fa-bookmark"></i> {{ item.genre }}{% endif %}</p>
-    <p>{{ item.summary }}</p>
-    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
-  </article>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if links %}
-<h3 class="section-title" data-aos="fade-up"><i class="fas fa-external-link-alt"></i> External Links</h3>
-<div class="card-grid">
-  {% for item in links[:3] %}
-  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
-    <span class="card-type external-link"><i class="fas fa-link"></i> Resource</span>
-    <h3><a href="{{ base_url }}/external-link/{{ item.slug }}/">{{ item.title }}</a></h3>
-    <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}</p>
-    <p>{{ item.summary }}</p>
-    {% if item.tags %}<div class="tags">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
-  </article>
-  {% endfor %}
-</div>
-{% endif %}
+<script>
+const input = document.getElementById('heroSearchInput');
+const container = document.getElementById('googleSearch');
+input.addEventListener('focus', () => container.classList.add('focused'));
+input.addEventListener('blur', () => container.classList.remove('focused'));
+input.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && this.value.trim()) {
+    window.location.href = '{{ base_url }}/?q=' + encodeURIComponent(this.value.trim());
+  }
+});
+</script>
 {% endblock %}
