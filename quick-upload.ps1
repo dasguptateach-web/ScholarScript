@@ -2,7 +2,7 @@ param(
     [string[]]$Paths
 )
 
-$projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
+$projectDir = "C:\Users\81\ScholarScript"
 $uploadsDir = "$projectDir\uploads"
 
 Set-Location $projectDir

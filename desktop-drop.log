@@ -71,3 +71,20 @@
 [13:26:49]   Run 'scholarscript build' to rebuild the site.
 [13:26:49]   
 [13:26:49] Pushing to GitHub...
+[2026-07-06 14:44:23] Watcher started (PID: 4180)
+[2026-07-06 14:44:23] Watching: C:\Users\81\Desktop\ScholarScript Drop
+[2026-07-06 14:45:14] TIMEOUT auto-test.txt (still in use)
+[2026-07-06 14:46:18] STAGE auto-test.txt
+[2026-07-06 14:46:18] Processing: auto-test.txt
+[2026-07-06 14:46:18] COPY auto-test.txt
+[2026-07-06 14:46:18] Ingesting...
+[2026-07-06 14:46:19]   Checking uploads folder...
+[2026-07-06 14:46:19]   Processed 1 file(s):
+[2026-07-06 14:46:19]     Success: 1
+[2026-07-06 14:46:19]     Errors:  0
+[2026-07-06 14:46:19]     [OK] auto-test.txt -> C:\Users\81\ScholarScript\content\papers\auto-test.md (paper)
+[2026-07-06 14:46:19]   
+[2026-07-06 14:46:19]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 14:46:19]   
+[2026-07-06 14:46:19] Building site...
+[2026-07-06 14:46:21] Committing and pushing to GitHub...
