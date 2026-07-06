@@ -104,3 +104,31 @@
 [2026-07-06 15:36:58] Committing and pushing to GitHub...
 [2026-07-06 15:37:02] Pushed! Workflow will deploy.
 [2026-07-06 15:37:07] Done! Files: Last of the Mohicans Study Guide.docx
+[2026-07-06 18:52:16] Watcher started (project: C:\Users\81\ScholarScript)
+[2026-07-06 18:58:40] STAGE Shakespeare and His Plays.docx
+[2026-07-06 18:58:40] COPY Shakespeare and His Plays.docx
+[2026-07-06 18:58:40] Ingesting...
+[2026-07-06 18:58:41]   Checking uploads folder...
+[2026-07-06 18:58:41]   Processed 1 file(s):
+[2026-07-06 18:58:41]     Success: 1
+[2026-07-06 18:58:41]     Errors:  0
+[2026-07-06 18:58:41]     [OK] Shakespeare and His Plays.docx -> C:\Users\81\ScholarScript\content\creative-writing\shakespeare-and-his-plays.md (creative-writing)
+[2026-07-06 18:58:41]   
+[2026-07-06 18:58:41]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 18:58:41]   
+[2026-07-06 18:58:41] Building site...
+[2026-07-06 18:58:43]   Building site...
+[2026-07-06 18:58:43]   Built 35 items in 0.53s
+[2026-07-06 18:58:43]   Output: C:\Users\81\ScholarScript\public
+[2026-07-06 18:58:43]   
+[2026-07-06 18:58:43] Committing and pushing to GitHub...
+[2026-07-06 18:58:43]   PULL ISSUE (may still push):
+[2026-07-06 18:58:43]   git : error: cannot pull with rebase: You have unstaged changes.
+[2026-07-06 18:58:43]   At line:1 char:1
+[2026-07-06 18:58:43]   + git pull --rebase origin main 2>&1
+[2026-07-06 18:58:43]   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-07-06 18:58:43]       + CategoryInfo          : NotSpecified: (error: cannot p...staged changes.:String) [], RemoteException
+[2026-07-06 18:58:43]       + FullyQualifiedErrorId : NativeCommandError
+[2026-07-06 18:58:43]    
+[2026-07-06 18:58:43]   error: Please commit or stash them.
+[2026-07-06 18:58:43]   
