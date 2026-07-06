@@ -167,8 +167,22 @@ class IngestionEngine:
                     paras.append(f"{prefix} {t}")
                 else:
                     paras.append(t)
+            # Extract text from ALL tables
+            table_texts = []
+            for table in doc.tables:
+                table_rows = []
+                for row in table.rows:
+                    cells = [cell.text.strip() for cell in row.cells]
+                    if any(c for c in cells):
+                        table_rows.append(" | ".join(cells))
+                if table_rows:
+                    table_texts.append("")
+                    for line in table_rows:
+                        table_texts.append(line)
             # Preserve paragraph breaks (double newline = paragraph boundary)
             text = "\n\n".join(paras)
+            if table_texts:
+                text = text + "\n\n" + "\n".join(table_texts)
             # Extract metadata
             props = doc.core_properties
             if props:
