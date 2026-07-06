@@ -149,16 +149,29 @@ function Process-Batch {
             if ($attempt -gt 0) { Start-Sleep -Seconds 3; Log "  Retry $($attempt+1)..." }
             try {
                 $out = git fetch origin 2>&1
-                $out = git merge origin/main --no-edit 2>&1
-                if ($LASTEXITCODE -ne 0 -and $out -match 'conflict|CONFLICT|merge failed') {
-                    Log "  CONFLICT"; foreach ($l in $out) { Log "  $l" }
-                    git merge --abort 2>$null
-                    break
+                $out = git merge -X ours origin/main --no-edit 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                    if ($out -match 'conflict|CONFLICT|merge failed') {
+                        Log "  Conflict - resolving with ours..."; foreach ($l in $out) { Log "  $l" }
+                        git merge --abort 2>$null
+                        git merge -X theirs origin/main --no-edit 2>$null
+                        if ($LASTEXITCODE -ne 0) { git merge --abort 2>$null }
+                    } else { foreach ($l in $out) { Log "  $l" } }
                 }
                 $out = git push origin main 2>&1
                 if ($LASTEXITCODE -eq 0) { Log "Pushed! Workflow will deploy."; $pushed = $true }
                 elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date"; $pushed = $true }
-                else { foreach ($l in $out) { Log "  $l" } }
+                else {
+                    foreach ($l in $out) { Log "  $l" }
+                    if ($out -match 'rejected|non-fast-forward') {
+                        Log "  Behind remote - merging and retrying..."
+                        git pull --no-rebase origin main --no-edit 2>$null
+                        if ($LASTEXITCODE -ne 0) {
+                            git merge -X ours origin/main --no-edit 2>$null
+                            if ($LASTEXITCODE -ne 0) { git merge --abort 2>$null }
+                        }
+                    }
+                }
             } catch { Log "  GIT EX: $_" }
         }
         if (-not $pushed) { $ok = $false }
