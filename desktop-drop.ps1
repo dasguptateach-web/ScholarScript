@@ -139,45 +139,29 @@ function Process-Batch {
 
     if ($ok) {
         $ts = Get-Timestamp
+        $pushed = $false
         Log "Committing and pushing to GitHub..."
-        $ok2 = $true
-        try { git add -A 2>&1 | Out-Null; $ok2 = $LASTEXITCODE -eq 0 } catch { Log "  ADD EX: $_"; $ok2 = $false }
-        Log "  add exit=$($LASTEXITCODE)"
-        if ($ok2) {
-            $out = ""
-            try { $out = git commit -m "Auto-deploy $ts" 2>&1; $ok3 = $LASTEXITCODE -eq 0 } catch { Log "  COMMIT EX: $_"; $ok3 = $false }
-            Log "  commit exit=$($LASTEXITCODE)"
-            if (-not $ok3) {
-                if ($out -match 'nothing to commit|nothing changed') { Log "  Nothing new to push"; $ok3 = $true }
-                else { foreach ($l in $out) { Log "  $l" } }
-            }
-            if ($ok3) {
-                try { $out = git pull --rebase --autostash origin main 2>&1; $ok1 = $LASTEXITCODE -eq 0 } catch { Log "  PULL EX: $_"; $ok1 = $false }
-                Log "  pull exit=$($LASTEXITCODE)"
-                if (-not $ok1) {
-                    if ($out -match 'conflict|CONFLICT') {
-                        Log "  CONFLICT"; foreach ($l in $out) { Log "  $l" }
-                        git rebase --abort 2>$null
-                        $ok = $false
-                    } else { foreach ($l in $out) { Log "  $l" } }
-                } else { Log "  Synced with remote" }
-                if ($ok) {
-                    try { $out = git push origin main 2>&1; $ok4 = $LASTEXITCODE -eq 0 } catch { Log "  PUSH EX: $_"; $ok4 = $false }
-                    Log "  push exit=$($LASTEXITCODE)"
-                    if ($ok4) { Log "Pushed! Workflow will deploy." }
-                    elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date" }
-                    else {
-                        foreach ($l in $out) { Log "  $l" }
-                        Log "  Push rejected - retrying with fetch + rebase..."
-                        try { $out2 = git fetch origin 2>&1; Log "  fetch exit=$($LASTEXITCODE)" } catch { Log "  FETCH EX: $_" }
-                        try { $out2 = git rebase origin/main 2>&1; $ok5 = $LASTEXITCODE -eq 0 } catch { Log "  REBASE EX: $_"; $ok5 = $false }
-                        if ($ok5) {
-                            try { $out2 = git push origin main 2>&1; if ($LASTEXITCODE -eq 0) { Log "Pushed after rebase!" } else { foreach ($l in $out2) { Log "  $l" }; $ok = $false } } catch { Log "  PUSH2 EX: $_"; $ok = $false }
-                        } else { Log "  Rebase also failed"; $ok = $false }
-                    }
+        try { git add -A 2>&1 | Out-Null } catch { Log "  ADD EX: $_" }
+        try { $out = git commit -m "Auto-deploy $ts" 2>&1 } catch { Log "  COMMIT EX: $_" }
+        if ($out -match 'nothing to commit|nothing changed') { Log "  Nothing new to push" }
+
+        for ($attempt = 0; $attempt -lt 3 -and -not $pushed; $attempt++) {
+            if ($attempt -gt 0) { Start-Sleep -Seconds 3; Log "  Retry $($attempt+1)..." }
+            try {
+                $out = git fetch origin 2>&1
+                $out = git merge origin/main --no-edit 2>&1
+                if ($LASTEXITCODE -ne 0 -and $out -match 'conflict|CONFLICT|merge failed') {
+                    Log "  CONFLICT"; foreach ($l in $out) { Log "  $l" }
+                    git merge --abort 2>$null
+                    break
                 }
-            }
+                $out = git push origin main 2>&1
+                if ($LASTEXITCODE -eq 0) { Log "Pushed! Workflow will deploy."; $pushed = $true }
+                elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date"; $pushed = $true }
+                else { foreach ($l in $out) { Log "  $l" } }
+            } catch { Log "  GIT EX: $_" }
         }
+        if (-not $pushed) { $ok = $false }
     }
 
     if ($ok) { Log "Done! Files: $($allFileNames -join ', ')" } else { Log "FAILED" }
