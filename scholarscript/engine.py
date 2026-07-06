@@ -128,10 +128,10 @@ class Engine:
 
     def _render_index(self, public_dir, papers, videos, creative, external, aom):
         ctx = {
-            "papers": papers[:3],
-            "videos": videos[:3],
-            "creative": creative[:3],
-            "links": external[:3],
+            "papers": papers,
+            "videos": videos,
+            "creative": creative,
+            "links": external,
             "author_of_month": aom,
             "page_title": "Home",
             "page_url": self.config.get_base_url() + "/",

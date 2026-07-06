@@ -46,7 +46,7 @@
 {% if papers %}
 <h3 class="section-title" data-aos="fade-up"><i class="fas fa-scroll"></i> Latest Papers</h3>
 <div class="card-grid">
-  {% for item in papers %}
+  {% for item in papers[:3] %}
   <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
     <span class="card-type paper"><i class="fas fa-file-alt"></i> Paper</span>
     <h3><a href="{{ base_url }}/paper/{{ item.slug }}/">{{ item.title }}</a></h3>
@@ -61,7 +61,7 @@
 {% if videos %}
 <h3 class="section-title" data-aos="fade-up"><i class="fas fa-video"></i> Latest Videos</h3>
 <div class="card-grid">
-  {% for item in videos %}
+  {% for item in videos[:3] %}
   <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
     <span class="card-type video"><i class="fas fa-play"></i> Video</span>
     <h3><a href="{{ base_url }}/video/{{ item.slug }}/">{{ item.title }}</a></h3>
@@ -76,7 +76,7 @@
 {% if creative %}
 <h3 class="section-title" data-aos="fade-up"><i class="fas fa-feather"></i> Creative Writing</h3>
 <div class="card-grid">
-  {% for item in creative %}
+  {% for item in creative[:3] %}
   <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
     <span class="card-type creative-writing"><i class="fas fa-pen-fancy"></i> Creative</span>
     <h3><a href="{{ base_url }}/creative-writing/{{ item.slug }}/">{{ item.title }}</a></h3>
@@ -91,7 +91,7 @@
 {% if links %}
 <h3 class="section-title" data-aos="fade-up"><i class="fas fa-external-link-alt"></i> External Links</h3>
 <div class="card-grid">
-  {% for item in links %}
+  {% for item in links[:3] %}
   <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
     <span class="card-type external-link"><i class="fas fa-link"></i> Resource</span>
     <h3><a href="{{ base_url }}/external-link/{{ item.slug }}/">{{ item.title }}</a></h3>
