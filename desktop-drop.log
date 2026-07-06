@@ -13,3 +13,17 @@
 [12:58:32]   Run 'scholarscript build' to rebuild the site.
 [12:58:32]   
 [12:58:32] Pushing to GitHub...
+[12:58:35] Pushed! Workflow will deploy.
+[12:58:35] Done!
+[12:58:35] Archived to _Processed
+[13:19:47] STAGE UGC NET ENGLISH PAPER II.docx
+[13:19:47] COPY UGC NET ENGLISH PAPER II.docx
+[13:19:47] Ingesting...
+[13:19:48]   Checking uploads folder...
+[13:19:48]   Processed 2 file(s):
+[13:19:48]     Success: 0
+[13:19:48]     Errors:  2
+[13:19:48]     [ERR] STRUCTURALISM CONCEPTS AND NOTES.docx: No text could be extracted
+[13:19:48]     [ERR] UGC NET ENGLISH PAPER II.docx: No text could be extracted
+[13:19:48]   
+[13:19:48] Pushing to GitHub...
