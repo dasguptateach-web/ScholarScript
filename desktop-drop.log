@@ -17,3 +17,28 @@
 [2026-07-07 00:44:43]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 00:44:43]   
 [2026-07-07 00:44:43] Committing and pushing to GitHub...
+[2026-07-07 00:44:47]   To https://github.com/dasguptateach-web/ScholarScript.git
+[2026-07-07 00:44:47]    ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at d8bb337219b20205e99ec74d6805011f000e1f1e but expected eaf411b86dbbb4825e4ce3d33a72425b0a06afb9)
+[2026-07-07 00:44:47]   error: failed to push some refs to 'https://github.com/dasguptateach-web/ScholarScript.git'
+[2026-07-07 00:44:47]   Behind remote - merging and retrying...
+[2026-07-07 00:44:52]   Retry 2...
+[2026-07-07 00:44:55] Pushed! Workflow will deploy.
+[2026-07-07 00:44:55] Done! Files: ECOCRITICISM A STUDY.pdf
+[2026-07-07 00:44:55] Archived to _Processed
+[2026-07-07 01:10:04] STAGE Blood and Betrayal in Mumbai Vishal Bhardwaj’s Maqbool as a Cinematic Reinvention of Macbeth.pdf
+[2026-07-07 01:10:04] COPY Blood and Betrayal in Mumbai Vishal Bhardwaj’s Maqbool as a Cinematic Reinvention of Macbeth.pdf
+[2026-07-07 01:10:04] Ingesting...
+[2026-07-07 01:10:07]   Checking uploads folder...
+[2026-07-07 01:10:07]   Processed 1 file(s):
+[2026-07-07 01:10:07]     Success: 1
+[2026-07-07 01:10:07]     Errors:  0
+[2026-07-07 01:10:07]     [OK] Blood and Betrayal in Mumbai Vishal BhardwajÆs Maqbool as a Cinematic Reinvention of Macbeth.pdf -> C:\Users\81\ScholarScript\content\papers\blood-and-betrayal-in-mumbai-vishal-bhardwajs-maqbool-as-a-cinematic-reinvention-of-macbeth.md (paper)
+[2026-07-07 01:10:07]   
+[2026-07-07 01:10:07]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 01:10:07]   
+[2026-07-07 01:10:07] Building site...
+[2026-07-07 01:10:10]   Building site...
+[2026-07-07 01:10:10]   Built 40 items in 0.98s
+[2026-07-07 01:10:10]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 01:10:10]   
+[2026-07-07 01:10:10] Committing and pushing to GitHub...
