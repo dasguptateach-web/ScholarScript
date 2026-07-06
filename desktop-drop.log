@@ -16,3 +16,48 @@
 [2026-07-06 23:47:47]   Output: C:\Users\81\ScholarScript\public
 [2026-07-06 23:47:47]   
 [2026-07-06 23:47:47] Committing and pushing to GitHub...
+<<<<<<< Updated upstream
+=======
+[2026-07-06 23:47:47]   add exit=0
+[2026-07-06 23:47:47]   commit exit=0
+[2026-07-06 23:47:47]   pull exit=128
+[2026-07-06 23:47:47]   error: cannot pull with rebase: You have unstaged changes.
+[2026-07-06 23:47:47]   error: Please commit or stash them.
+[2026-07-06 23:47:50]   push exit=0
+[2026-07-06 23:47:50] Pushed! Workflow will deploy.
+[2026-07-06 23:47:50] Done! Files: elizabethan-sonnet.txt
+[2026-07-06 23:47:50] Archived to _Processed
+[2026-07-06 23:51:22] STAGE HARRY SATQA.pdf
+[2026-07-06 23:51:22] COPY HARRY SATQA.pdf
+[2026-07-06 23:51:22] Ingesting...
+[2026-07-06 23:51:26]   Checking uploads folder...
+[2026-07-06 23:51:26]   Processed 1 file(s):
+[2026-07-06 23:51:26]     Success: 1
+[2026-07-06 23:51:26]     Errors:  0
+[2026-07-06 23:51:26]     [OK] HARRY SATQA.pdf -> C:\Users\81\ScholarScript\content\papers\harry-satqa.md (paper)
+[2026-07-06 23:51:26]   
+[2026-07-06 23:51:26]   Run 'scholarscript build' to rebuild the site.
+[2026-07-06 23:51:26]   
+[2026-07-06 23:51:26] Building site...
+[2026-07-06 23:51:28]   Building site...
+[2026-07-06 23:51:28]   Built 48 items in 0.81s
+[2026-07-06 23:51:28]   Output: C:\Users\81\ScholarScript\public
+[2026-07-06 23:51:28]   
+[2026-07-06 23:51:28] Committing and pushing to GitHub...
+[2026-07-06 23:51:28]   add exit=0
+[2026-07-06 23:51:29]   commit exit=0
+[2026-07-06 23:51:29]   pull exit=128
+[2026-07-06 23:51:29]   error: cannot pull with rebase: You have unstaged changes.
+[2026-07-06 23:51:29]   error: Please commit or stash them.
+[2026-07-06 23:51:31]   push exit=1
+[2026-07-06 23:51:31]   To https://github.com/dasguptateach-web/ScholarScript.git
+[2026-07-06 23:51:31]    ! [rejected]        main -> main (fetch first)
+[2026-07-06 23:51:31]   error: failed to push some refs to 'https://github.com/dasguptateach-web/ScholarScript.git'
+[2026-07-06 23:51:31]   hint: Updates were rejected because the remote contains work that you do not
+[2026-07-06 23:51:31]   hint: have locally. This is usually caused by another repository pushing to
+[2026-07-06 23:51:31]   hint: the same ref. If you want to integrate the remote changes, use
+[2026-07-06 23:51:31]   hint: 'git pull' before pushing again.
+[2026-07-06 23:51:31]   hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[2026-07-06 23:51:31] FAILED
+[2026-07-06 23:51:31] Archived to _Processed
+>>>>>>> Stashed changes

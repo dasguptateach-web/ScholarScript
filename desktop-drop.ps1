@@ -152,7 +152,7 @@ function Process-Batch {
                 else { foreach ($l in $out) { Log "  $l" } }
             }
             if ($ok3) {
-                try { $out = git pull --rebase origin main 2>&1; $ok1 = $LASTEXITCODE -eq 0 } catch { Log "  PULL EX: $_"; $ok1 = $false }
+                try { $out = git pull --rebase --autostash origin main 2>&1; $ok1 = $LASTEXITCODE -eq 0 } catch { Log "  PULL EX: $_"; $ok1 = $false }
                 Log "  pull exit=$($LASTEXITCODE)"
                 if (-not $ok1) {
                     if ($out -match 'conflict|CONFLICT') {
@@ -166,7 +166,15 @@ function Process-Batch {
                     Log "  push exit=$($LASTEXITCODE)"
                     if ($ok4) { Log "Pushed! Workflow will deploy." }
                     elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date" }
-                    else { foreach ($l in $out) { Log "  $l" }; $ok = $false }
+                    else {
+                        foreach ($l in $out) { Log "  $l" }
+                        Log "  Push rejected - retrying with fetch + rebase..."
+                        try { $out2 = git fetch origin 2>&1; Log "  fetch exit=$($LASTEXITCODE)" } catch { Log "  FETCH EX: $_" }
+                        try { $out2 = git rebase origin/main 2>&1; $ok5 = $LASTEXITCODE -eq 0 } catch { Log "  REBASE EX: $_"; $ok5 = $false }
+                        if ($ok5) {
+                            try { $out2 = git push origin main 2>&1; if ($LASTEXITCODE -eq 0) { Log "Pushed after rebase!" } else { foreach ($l in $out2) { Log "  $l" }; $ok = $false } } catch { Log "  PUSH2 EX: $_"; $ok = $false }
+                        } else { Log "  Rebase also failed"; $ok = $false }
+                    }
                 }
             }
         }
