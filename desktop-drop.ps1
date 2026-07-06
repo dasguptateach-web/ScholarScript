@@ -1,11 +1,10 @@
-$projectDir = "C:\Users\81\ScholarScript"
+$projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
 $uploadsDir = "$projectDir\uploads"
 $desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
 $processedDir = "$desktopDrop\_Processed"
 $logFile = "$projectDir\desktop-drop.log"
-$lockFile = "$projectDir\.watcher.lock"
-$processedIndex = "$projectDir\.processed_index.txt"
+$lockFile = "$env:TEMP\scholarscript-drop.lock"
 
 Set-Location $projectDir
 $env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
@@ -26,25 +25,8 @@ $pid | Out-File $lockFile -Encoding utf8 -Force
 
 function Log {
     param([string]$Msg)
-    $line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $Msg"
+    $line = "[$(Get-Date -Format 'HH:mm:ss')] $Msg"
     try { Add-Content -Path $logFile -Value $line -ErrorAction Stop } catch {}
-}
-
-function Notify {
-    param([string]$Title, [string]$Text, [string]$Type = "Info")
-    try {
-        Add-Type -AssemblyName System.Windows.Forms
-        $icon = [System.Windows.Forms.ToolTipIcon]::$Type
-        $tip = New-Object System.Windows.Forms.NotifyIcon
-        $tip.Icon = [System.Drawing.SystemIcons]::Information
-        $tip.BalloonTipTitle = $Title
-        $tip.BalloonTipText = $Text
-        $tip.Visible = $true
-        $tip.ShowBalloonTip(5000)
-        Start-Sleep -Seconds 5
-        $tip.Visible = $false
-        $tip.Dispose()
-    } catch {}
 }
 
 function Wait-FileReady {
@@ -65,7 +47,8 @@ function Wait-FileReady {
     return $false
 }
 
-function Safe-Copy { param([string]$Src, [string]$Dst)
+function Safe-Copy {
+    param([string]$Src, [string]$Dst)
     for ($i = 0; $i -lt 10; $i++) {
         try { Copy-Item -LiteralPath $Src -Destination $Dst -Force -ErrorAction Stop; return $true }
         catch { Start-Sleep -Seconds 1 }
@@ -73,7 +56,8 @@ function Safe-Copy { param([string]$Src, [string]$Dst)
     return $false
 }
 
-function Safe-Move { param([string]$Src, [string]$Dst)
+function Safe-Move {
+    param([string]$Src, [string]$Dst)
     for ($i = 0; $i -lt 10; $i++) {
         try { Move-Item -LiteralPath $Src -Destination $Dst -Force -ErrorAction Stop; return $true }
         catch { Start-Sleep -Seconds 1 }
@@ -106,40 +90,11 @@ function Run-WithTimeout {
 
 function Get-Timestamp { return Get-Date -Format "yyyyMMdd-HHmmss" }
 
-function Get-FileFingerprint {
-    param([string]$Path)
-    $name = (Get-Item $Path -ErrorAction SilentlyContinue).Name
-    $len = (Get-Item $Path -ErrorAction SilentlyContinue).Length
-    $modified = (Get-Item $Path -ErrorAction SilentlyContinue).LastWriteTimeUtc.ToString("o")
-    return "$name|$len|$modified"
-}
-
-function Was-FileProcessed {
-    param([string]$Fingerprint)
-    if (-not (Test-Path $processedIndex)) { return $false }
-    $index = Get-Content $processedIndex -ErrorAction SilentlyContinue
-    return $fingerprint -in $index
-}
-
-function Mark-FileProcessed {
-    param([string]$Fingerprint)
-    try { Add-Content -Path $processedIndex -Value $Fingerprint -ErrorAction Stop } catch {}
-}
-
 function Process-Batch {
     $staged = @()
-    $newFiles = @()
     Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' } | ForEach-Object {
         $f = $_.FullName
         $name = $_.Name
-        $fp = Get-FileFingerprint $f
-
-        if (Was-FileProcessed $fp) {
-            Log "SKIP $name (already processed)"
-            Safe-Move $f "$stagingDir\$name" | Out-Null
-            return
-        }
-
         $ext = [IO.Path]::GetExtension($name).ToLower()
         if ($ext -notin '.pdf','.doc','.docx','.txt','.tex','.odt','.rtf') {
             Safe-Move $f "$stagingDir\$name" | Out-Null
@@ -150,7 +105,6 @@ function Process-Batch {
             if (Safe-Move $f "$stagingDir\$name") {
                 Log "STAGE $name"
                 $staged += "$stagingDir\$name"
-                $newFiles += $name
             }
         } else {
             Log "TIMEOUT $name (still in use)"
@@ -158,9 +112,6 @@ function Process-Batch {
     }
 
     if ($staged.Count -eq 0) { return }
-
-    $names = $newFiles -join ", "
-    Log "Processing: $names"
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf
@@ -172,25 +123,13 @@ function Process-Batch {
     $ok = $true
     Log "Ingesting..."
     $r, $ok = Run-WithTimeout "python -m scholarscript ingest 2>&1" 120
-    if (-not $ok) {
-        Log "INGEST FAILED"
-        foreach ($l in $r) { Log "  $l" }
-        Log "Skipping build/push due to ingest failure"
-    } else {
-        foreach ($l in $r) { Log "  $l" }
-
-        Log "Building site..."
-        $r, $ok = Run-WithTimeout "python -m scholarscript build 2>&1" 120
-        if (-not $ok) {
-            Log "BUILD FAILED"
-            foreach ($l in $r) { Log "  $l" }
-            Log "Skipping push due to build failure"
-        }
-    }
+    if (-not $ok) { Log "  FAILED or TIMEOUT" }
+    foreach ($l in $r) { Log "  $l" }
 
     if ($ok) {
         $ts = Get-Timestamp
-        Log "Committing and pushing to GitHub..."
+        Log "Pushing to GitHub..."
+        $ok = $false
         $r, $ok1 = Run-WithTimeout "git add -A" 30
         if ($ok1) {
             $r, $ok2 = Run-WithTimeout "git commit -m 'Auto-deploy $ts'" 30
@@ -198,46 +137,32 @@ function Process-Batch {
                 $r, $ok3 = Run-WithTimeout "git push origin main" 120
                 if ($ok3) {
                     Log "Pushed! Workflow will deploy."
-                    Notify "ScholarScript" "Published: $names" "Info"
+                    $ok = $true
                 } else {
                     $skip = $r | Where-Object { $_ -match 'Everything up-to-date' }
-                    if ($skip) { Log "  Already up-to-date" }
-                    else {
-                        Log "PUSH FAILED"
-                        foreach ($l in $r) { Log "  $l" }
-                        Notify "ScholarScript" "Push failed for: $names" "Error"
-                        $ok = $false
-                    }
+                    if ($skip) { Log "  Already up-to-date"; $ok = $true }
+                    else { Log "  PUSH FAILED"; foreach ($l in $r) { Log "  $l" } }
                 }
             } else {
                 $skip = $r | Where-Object { $_ -match 'nothing to commit' }
-                if ($skip) { Log "  Nothing new to push" }
-                else {
-                    Log "COMMIT FAILED"
-                    foreach ($l in $r) { Log "  $l" }
-                }
+                if ($skip) { Log "  Nothing new to push"; $ok = $true }
+                else { Log "  COMMIT FAILED"; foreach ($l in $r) { Log "  $l" } }
             }
         } else {
-            Log "ADD FAILED"
-            foreach ($l in $r) { Log "  $l" }
+            Log "  ADD FAILED"; foreach ($l in $r) { Log "  $l" }
         }
     }
 
+    if ($ok) { Log "Done!" } else { Log "FAILED" }
+
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf
-        $fp = Get-FileFingerprint $s
-        Mark-FileProcessed $fp
         Safe-Move $s "$processedDir\$name" | Out-Null
     }
-    if ($ok) {
-        Log "Done! Files: $names"
-    } else {
-        Log "FAILED for: $names"
-    }
+    Log "Archived to _Processed"
 }
 
-Log "Watcher started (PID: $pid)"
-Log "Watching: $desktopDrop"
+Log "Watcher started"
 
 while ($true) {
     $files = Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' }

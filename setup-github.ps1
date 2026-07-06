@@ -1,4 +1,4 @@
-$projectDir = "C:\Users\81\ScholarScript"
+$projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
 Set-Location $projectDir
 
 Write-Host "================================================" -ForegroundColor Cyan
