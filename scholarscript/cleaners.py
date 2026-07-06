@@ -1,9 +1,11 @@
 import re
 from collections import Counter
-from typing import List, Optional, Set, Tuple
+from typing import List, Set, Tuple
 
 
-
+def _strip_prefix(s: str) -> str:
+    """Strip markdown heading/bold prefixes before pattern checking."""
+    return re.sub(r'^(?:#+\s|\*\*\s*)+', '', s).strip()
 
 
 PAGE_NUMBER_PATTERNS = [
@@ -14,7 +16,6 @@ PAGE_NUMBER_PATTERNS = [
     re.compile(r'^\s*\d+\s*/\s*\d+\s*$'),
     re.compile(r'^\s*p\.?\s*\d+\s*$', re.IGNORECASE),
     re.compile(r'^\s*pp\.?\s*\d+[–\-]\d+\s*$', re.IGNORECASE),
-    re.compile(r'^\s*[-—–*•·■]\s*\d+\s*[-—–*•·■]\s*$'),
 ]
 
 HEADER_FOOTER_PATTERNS = [
@@ -27,7 +28,7 @@ HEADER_FOOTER_PATTERNS = [
 
 
 def is_page_number(line: str) -> bool:
-    s = line.strip()
+    s = _strip_prefix(line)
     if not s:
         return False
     for pat in PAGE_NUMBER_PATTERNS:
@@ -35,19 +36,19 @@ def is_page_number(line: str) -> bool:
             return True
     if len(s) <= 6 and s.isdigit():
         return True
+    # Author-name header pattern: "DASGUPTA Page 1" or "D. DASGUPTA Page 2"
+    if re.match(r'(?i)^[\s\w.]+page\s+\d+\s*$', s) and not re.match(r'[A-Z][a-z]{2,}', s.split()[-3] if len(s.split()) >= 3 else ''):
+        return True
+    # "DASGUPTA 1" or "NAME 42" where second token is a number
+    parts = s.strip().split()
+    if len(parts) == 2 and len(parts[0]) >= 2 and parts[0].isalpha() and re.match(r'^\d+$', parts[1]):
+        return True
     return False
 
 
 def strip_inline_page_number(line: str) -> str:
     if is_page_number(line):
         return ""
-    s = line.strip()
-    m = re.match(r'^(\d{1,4})\s+(.{15,})', s)
-    if m:
-        return m.group(2).strip()
-    m = re.match(r'^(.{15,})\s+(\d{1,4})$', s)
-    if m:
-        return m.group(1).strip()
     return line
 
 
