@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="text-align:center;padding:6rem 0;">
+  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 1rem;color:var(--primary-light);"><circle cx="12" cy="12" r="10"/><path d="M12 6v2"/><path d="M12 12v4"/></svg>
+  <h2 style="font-size:2.5rem;font-weight:800;font-family:var(--font-display);margin-bottom:0.5rem;">404</h2>
+  <p style="color:var(--text-soft);font-size:1.1rem;margin-bottom:1.5rem;">This page wandered off into the stacks.</p>
+  <a href="{{ base_url }}/" class="btn btn-primary">Return Home</a>
+</div>
+{% endblock %}

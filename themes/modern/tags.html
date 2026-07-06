@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        Tags
+        <span class="section-title-line"></span>
+      </h2>
+    </div>
+    <div class="tag-cloud">
+    {% for tag, items in tags.items() %}
+      <a href="#{{ tag }}" class="tag" style="font-size: {{ [0.82 + (items|length * 0.12), 1.8] | min }}em">{{ tag }} ({{ items|length }})</a>
+    {% endfor %}
+    </div>
+    {% for tag, items in tags.items() %}
+    <section id="{{ tag }}" style="margin-bottom:2rem;">
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--primary-dark);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.4rem;">
+        {{ tag }}
+      </h3>
+      <ul style="list-style:none;margin:0;">
+      {% for item in items %}
+        <li style="padding:0.45rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;">
+          <a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/" style="font-weight:500;color:var(--text);">{{ item.title }}</a>
+          <span style="font-size:0.72rem;color:var(--text-muted);white-space:nowrap;">{{ item.date }}</span>
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

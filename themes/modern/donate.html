@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        {{ page_title }}
+        <span class="section-title-line"></span>
+      </h2>
+    </div>
+    <div style="max-width:640px;margin:0 auto;padding:1rem 0;text-align:center;">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 1.5rem;color:var(--primary-light);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <p style="font-size:1.05rem;color:var(--text-soft);line-height:1.8;margin-bottom:2rem;">
+        ScholarScript is a free, open platform dedicated to scholarly publishing and creative writing.
+        Your support helps us maintain the server, run the monthly Author of the Month prize,
+        and continue developing new features for the community.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:1rem;max-width:360px;margin:0 auto;">
+        <a href="https://www.patreon.com/scholarscript" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">
+          Support on Patreon
+        </a>
+        <a href="https://ko-fi.com/scholarscript" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center;">
+          Buy us a Coffee
+        </a>
+      </div>
+      <p style="margin-top:2rem;font-size:0.82rem;color:var(--text-muted);">Secure transactions via Patreon &amp; Ko-fi</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

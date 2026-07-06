@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        {{ page_title }}
+        <span class="section-title-line"></span>
+      </h2>
+    </div>
+    <div style="max-width:640px;margin:0 auto;padding:1rem 0;">
+      <p style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin-bottom:2rem;">Private financial dashboard</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.8rem;font-weight:800;color:var(--primary-dark);">${{ prize_amount }}</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);">Monthly Prize</div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.8rem;font-weight:800;color:var(--primary-dark);">Monthly</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);">Payout Cycle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

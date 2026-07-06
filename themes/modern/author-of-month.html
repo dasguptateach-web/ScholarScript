@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        Author of the Month
+        <span class="section-title-line"></span>
+      </h2>
+    </div>
+    {% if author %}
+    <div style="background:linear-gradient(135deg, #fef3c7, #fde68a);border-radius:var(--radius-xl);padding:3rem 2rem;text-align:center;border:1px solid rgba(184,134,11,0.12);">
+      <div style="font-size:4rem;margin-bottom:1rem;color:#d97706;">&#9733;</div>
+      <h3 style="font-family:var(--font-display);font-size:1.8rem;color:#92400e;margin-bottom:0.5rem;">{{ author.author }}</h3>
+      <p style="color:#78350f;font-size:0.9rem;">{{ author.views }} pageviews this month</p>
+      <p style="color:#92400e;margin-top:0.75rem;">Prize: ${{ author.prize }}</p>
+    </div>
+    {% else %}
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:4rem 2rem;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:1rem;color:var(--primary-light);">&#9733;</div>
+      <p style="color:var(--text-muted);">No winner announced yet. Check back next month!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

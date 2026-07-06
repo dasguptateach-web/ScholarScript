@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body_class %}archive-page{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title-line"></span>
+        {{ page_title }}
+        <span class="section-title-line"></span>
+      </h2>
+    </div>
+    {% if items %}
+    <div class="recent-grid">
+      {% for item in items %}
+      <article class="content-card">
+        <div class="content-card-top">
+          <span class="content-card-type type-{{ item.type }}">{{ item.type | replace('-', ' ') }}</span>
+          <span class="content-card-date">{{ item.date }}</span>
+        </div>
+        <h3 class="content-card-title">
+          <a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a>
+        </h3>
+        {% if item.summary %}
+        <p class="content-card-summary">{{ item.summary[:200] }}{% if item.summary|length > 200 %}...{% endif %}</p>
+        {% endif %}
+        <div class="content-card-bottom">
+          {% if item.tags %}
+          <div class="content-card-tags">
+            {% for tag in item.tags[:3] %}
+            <span class="mini-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <span class="content-card-read">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center;padding:4rem 0;color:var(--text-muted);">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 1rem;opacity:0.4;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <p>Nothing here yet. Check back soon.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
