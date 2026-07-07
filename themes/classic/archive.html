@@ -4,9 +4,17 @@
   <h2><i class="fas fa-archive"></i> {{ page_title }}</h2>
 </div>
 {% if items %}
-<div class="card-grid">
+<div class="archive-filter" data-aos="fade-up">
+  <div class="archive-search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" id="archiveFilter" placeholder="Filter {{ page_title | lower }}..." autocomplete="off" aria-label="Filter">
+    <button class="archive-filter-clear" id="archiveFilterClear" aria-label="Clear filter"><i class="fas fa-times"></i></button>
+  </div>
+  <span class="archive-count" id="archiveCount">{{ items|length }} items</span>
+</div>
+<div class="card-grid" id="cardGrid">
   {% for item in items %}
-  <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+  <article class="card" data-aos="fade-up" data-aos-delay="{{ [50 * loop.index0, 400] | min }}" data-title="{{ item.title | lower }}" data-tags="{{ item.tags | join(' ') | lower }}" data-author="{{ item.author | default('') | lower }}">
     <span class="card-type {{ item.type }}"><i class="fas fa-{% if item.type == 'paper' %}file-alt{% elif item.type == 'video' %}video{% elif item.type == 'creative-writing' %}pen-fancy{% elif item.type == 'external-link' %}link{% endif %}"></i> {{ item.type | replace('-', ' ') | title }}</span>
 {% if item.type == 'video' and item.video_url %}
     {% set vid_id = item.video_url.split('v=')[1].split('&')[0] if 'v=' in item.video_url else item.video_url.split('/')[-1] %}
@@ -24,10 +32,43 @@
   </article>
   {% endfor %}
 </div>
+<div class="archive-no-results" id="archiveNoResults" style="display:none;">
+  <i class="fas fa-search"></i>
+  <p>No results found. Try a different search term.</p>
+</div>
 {% else %}
 <p style="text-align:center;padding:5rem 0;color:var(--text-muted);" data-aos="fade-up">
   <i class="fas fa-inbox" style="font-size:2rem;display:block;margin-bottom:0.5rem;"></i>
   Nothing here yet. Check back soon.
 </p>
 {% endif %}
+<script>
+(function(){
+  var input = document.getElementById('archiveFilter');
+  if (!input) return;
+  var grid = document.getElementById('cardGrid');
+  var cards = grid ? grid.querySelectorAll('.card') : [];
+  var clearBtn = document.getElementById('archiveFilterClear');
+  var countEl = document.getElementById('archiveCount');
+  var noResults = document.getElementById('archiveNoResults');
+  var total = cards.length;
+  function filter(q) {
+    q = q.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card) {
+      var title = card.getAttribute('data-title') || '';
+      var tags = card.getAttribute('data-tags') || '';
+      var author = card.getAttribute('data-author') || '';
+      var match = !q || title.indexOf(q) !== -1 || tags.indexOf(q) !== -1 || author.indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (countEl) countEl.textContent = visible + (visible === 1 ? ' item' : ' items');
+    if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    if (clearBtn) clearBtn.style.opacity = q ? '1' : '0';
+  }
+  input.addEventListener('input', function() { filter(this.value); });
+  if (clearBtn) clearBtn.addEventListener('click', function() { input.value = ''; filter(''); input.focus(); });
+})();
+</script>
 {% endblock %}

@@ -7,6 +7,7 @@ tags: [belinda, pope, mock-epic, rape-of-the-lock, women]
 video_url: "https://www.youtube.com/watch?v=M-CZ5CyyVPg"
 summary: "A detailed analysis of Alexander Pope's The Rape of the Lock and Belinda's character in the mock-epic tradition."
 ---
+
 # Belinda
 
 Alexander Pope's The Rape of the Lock | POEM ANALYSIS | Mock-Epic Genre, Scale, and Analysis of Belinda's character in the context of eighteenth-century women.

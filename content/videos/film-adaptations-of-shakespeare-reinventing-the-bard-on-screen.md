@@ -7,6 +7,7 @@ tags: [shakespeare, adaptation, film, notes, slide]
 video_url: "https://www.youtube.com/watch?v=2KZgIOje85Q"
 summary: "A video lecture on Film Adaptations Of Shakespeare Reinventing The Bard On Screen"
 ---
+
 # Film Adaptations Of Shakespeare Reinventing The Bard On Screen
 
 When Shakespeare Got Cool

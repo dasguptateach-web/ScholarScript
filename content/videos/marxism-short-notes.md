@@ -7,6 +7,7 @@ tags: [literature, literary, criticism, marxist, social]
 video_url: "https://www.youtube.com/watch?v=wxVcWUd8vWc"
 summary: "A video lecture on Marxism Short Notes"
 ---
+
 # Marxism Short Notes
 
 What is Marxist Theory? ||Writers List || NTA UGC NET English Literature - Sunaina Jethani

@@ -7,6 +7,7 @@ tags: [pope, belinda, epic, canto, lock]
 video_url: "https://www.youtube.com/watch?v=kaZHqNHw7Uo"
 summary: "A video lecture on The Rape of the Lock (Cantos 1–3)"
 ---
+
 # The Rape of the Lock (Cantos 1–3)
 
 The Rape of the Lock by Alexander Pope | Simple Summary in less than 10 Minutes

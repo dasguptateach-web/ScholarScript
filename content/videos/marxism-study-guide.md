@@ -7,6 +7,7 @@ tags: [marxism, study, guide]
 video_url: "https://www.youtube.com/watch?v=69LeOQIHpio"
 summary: ""
 ---
+
 # Marxist Criticism | Base and superstructure | Literary Theory #studylovers #kapilgangwani
 
 

@@ -81,7 +81,7 @@ function Run-WithTimeout {
     $psi.RedirectStandardError = $true
     $psi.CreateNoWindow = $true
     $psi.WorkingDirectory = $projectDir
-    $psi.EnvironmentVariables["PATH"] = $env:PATH
+    $psi.EnvironmentVariables["PATH"] = [Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [Environment]::GetEnvironmentVariable("PATH", "User")
     if ($env:GITHUB_TOKEN) { $psi.EnvironmentVariables["GITHUB_TOKEN"] = $env:GITHUB_TOKEN }
     $p = [System.Diagnostics.Process]::Start($psi)
     if ($p.WaitForExit($TimeoutSeconds * 1000)) {
@@ -119,31 +119,24 @@ function Process-Batch {
     # ── STEP 1: INGEST ──────────────────────────────────────
     $ok = $true
     Log "=== STEP 1/5: Ingesting documents ==="
-    try {
-        $ingestOut = & $pythonExe -m scholarscript ingest 2>&1
-        foreach ($l in $ingestOut) { Log "  $l" }
-        $ok = $LASTEXITCODE -eq 0
-    } catch { Log "  INGEST EXCEPTION: $_"; $ok = $false }
-    if (-not $ok) { Log "  INGEST FAILED" }
+    $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript ingest 2>&1" 120
+    if (-not $ok) { Log "  INGEST FAILED or TIMEOUT" }
+    foreach ($l in $r) { Log "  $l" }
 
     # ── STEP 2: YOUTUBE MATCH ───────────────────────────────
     if ($ok) {
         Log "=== STEP 2/5: Matching YouTube videos ==="
-        try {
-            $ytOut = & $pythonExe "$projectDir\youtube_agent.py" 2>&1
-            foreach ($l in $ytOut) { Log "  $l" }
-        } catch { Log "  YouTube step error: $_" }
+        $r, $ytOk = Run-WithTimeout "& '$pythonExe' youtube_agent.py 2>&1" 180
+        foreach ($l in $r) { Log "  $l" }
+        if (-not $ytOk) { Log "  YouTube step had issues (non-fatal, continuing)" }
     }
 
     # ── STEP 3: BUILD ───────────────────────────────────────
     if ($ok) {
         Log "=== STEP 3/5: Building site ==="
-        try {
-            $buildOut = & $pythonExe -m scholarscript build 2>&1
-            foreach ($l in $buildOut) { Log "  $l" }
-            $ok = $LASTEXITCODE -eq 0
-        } catch { Log "  BUILD EXCEPTION: $_"; $ok = $false }
+        $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
         if (-not $ok) { Log "  BUILD FAILED" }
+        foreach ($l in $r) { Log "  $l" }
     }
 
     # ── STEP 4: COMMIT & PUSH ───────────────────────────────

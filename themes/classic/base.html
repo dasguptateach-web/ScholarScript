@@ -2,7 +2,12 @@
 <html lang="{{ site.language }}">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <title>{{ page_title }} — {{ site.title }}</title>
   <meta name="description" content="{{ page_description | default(site.tagline) }}">
   <meta name="generator" content="ScholarScript">
@@ -17,9 +22,11 @@
   <meta name="twitter:description" content="{{ page_description | default(site.tagline) }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ base_url }}/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base_url }}/rss.xml">
 {% if site.adsense_client_id and site.adsense_enabled %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client_id }}" crossorigin="anonymous"></script>
@@ -138,8 +145,17 @@
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '{{ base_url }}/search-index.json', true);
     xhr.onload = function() {
-      if (xhr.status === 200) { try { searchIndex = JSON.parse(xhr.responseText); } catch(e) {} }
+      if (xhr.status === 200) {
+        try {
+          searchIndex = JSON.parse(xhr.responseText);
+          try { sessionStorage.setItem('ss_search_idx', JSON.stringify(searchIndex)); } catch(e) {}
+        } catch(e) {}
+      }
     };
+    try {
+      var cached = sessionStorage.getItem('ss_search_idx');
+      if (cached) { searchIndex = JSON.parse(cached); }
+    } catch(e) {}
     xhr.send();
 
     function setupSearch(inputId, dropdownId) {
@@ -155,6 +171,7 @@
           var item = searchIndex[i];
           if (item.title.toLowerCase().indexOf(query) !== -1 ||
               (item.summary && item.summary.toLowerCase().indexOf(query) !== -1) ||
+              (item.author && item.author.toLowerCase().indexOf(query) !== -1) ||
               (item.tags && item.tags.some(function(t) { return t.toLowerCase().indexOf(query) !== -1; }))) {
             results.push(item);
             if (results.length >= 8) break;
@@ -249,45 +266,87 @@
     drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
   })();
 
-  /* ====== READING PROGRESS ====== */
+  /* ====== READING PROGRESS (rAF-throttled) ====== */
   (function(){
     var bar = document.getElementById('readingProgress');
     var body = document.getElementById('contentBody');
-    if (!bar || !body) return;
-    bar.style.display = 'block';
-    window.addEventListener('scroll', function() {
+    if (!bar) return;
+    if (body) bar.style.display = 'block';
+    var ticking = false;
+    function update() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       bar.style.width = progress + '%';
-    });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
   })();
 
-  /* ====== BACK TO TOP ====== */
+  /* ====== BACK TO TOP (rAF-throttled) ====== */
   (function(){
     var btn = document.getElementById('backToTop');
     if (!btn) return;
-    window.addEventListener('scroll', function() {
+    var ticking = false;
+    function onScroll() {
       btn.classList.toggle('visible', window.pageYOffset > 400);
-    });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
 
-  /* ====== AOS REPLACEMENT ====== */
+  /* ====== AOS — CSS-first, no-FOUC animation system ====== */
   (function(){
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var aosEls = document.querySelectorAll('[data-aos]');
+    if (prefersReduced || aosEls.length === 0) return;
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('aos-visible');
-          observer.unobserve(entry.target);
+          var el = entry.target;
+          var delay = parseInt(el.getAttribute('data-aos-delay') || '0', 10);
+          if (delay > 0) {
+            setTimeout(function() { el.classList.add('aos-in'); }, Math.min(delay, 600));
+          } else {
+            el.classList.add('aos-in');
+          }
+          observer.unobserve(el);
         }
       });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('[data-aos]').forEach(function(el) {
-      el.classList.add('aos-hidden');
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    aosEls.forEach(function(el) {
+      el.classList.add('aos-animate');
       observer.observe(el);
+    });
+  })();
+
+  /* ====== CARD CLICK-THROUGH — make entire card clickable ====== */
+  (function(){
+    document.querySelectorAll('.card').forEach(function(card) {
+      var link = card.querySelector('h3 a, h4 a');
+      if (!link) return;
+      card.style.cursor = 'pointer';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', link.textContent.trim());
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('a, button, select, input, .tag')) return;
+        window.location.href = link.href;
+      });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = link.href;
+        }
+      });
     });
   })();
   </script>

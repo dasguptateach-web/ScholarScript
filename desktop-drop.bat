@@ -1,11 +1,10 @@
 @echo off
-title ScholarScript Auto-Pipeline
+REM ScholarScript Auto-Pipeline Launcher
+REM Double-click this to start the full auto pipeline
 cd /d "%~dp0"
-echo Starting ScholarScript Auto-Pipeline...
+start powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0desktop-drop.ps1"
+echo ScholarScript Auto-Pipeline started in background window.
 echo.
-echo Pipeline: Ingest -> YouTube Match -> Build -> Deploy
-echo Drop files into: %USERPROFILE%\Desktop\ScholarScript Drop
-echo.
-start /B powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "%~dp0desktop-drop.ps1"
-echo Pipeline started!
-timeout /t 3 /nobreak >nul
+echo Drop .docx, .pdf, .txt files into your "Desktop\ScholarScript Drop" folder.
+echo The pipeline will: Ingest ^> YouTube Match ^> Build ^> Deploy
+pause
