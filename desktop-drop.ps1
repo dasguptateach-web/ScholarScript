@@ -118,31 +118,38 @@ function Process-Batch {
 
     # ── STEP 1: INGEST ──────────────────────────────────────
     $ok = $true
-    Log "=== STEP 1/5: Ingesting documents ==="
+    Log "=== STEP 1/6: Ingesting documents ==="
     $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript ingest 2>&1" 120
     if (-not $ok) { Log "  INGEST FAILED or TIMEOUT" }
     foreach ($l in $r) { Log "  $l" }
 
-    # ── STEP 2: YOUTUBE MATCH ───────────────────────────────
+    # ── STEP 2: FIX TABLES ──────────────────────────────────
     if ($ok) {
-        Log "=== STEP 2/5: Matching YouTube videos ==="
+        Log "=== STEP 2/6: Fixing table formatting ==="
+        $r, $tblOk = Run-WithTimeout "& '$pythonExe' fix_tables.py 2>&1" 30
+        foreach ($l in $r) { Log "  $l" }
+    }
+
+    # ── STEP 3: YOUTUBE MATCH ───────────────────────────────
+    if ($ok) {
+        Log "=== STEP 3/6: Matching YouTube videos ==="
         $r, $ytOk = Run-WithTimeout "& '$pythonExe' youtube_agent.py 2>&1" 180
         foreach ($l in $r) { Log "  $l" }
         if (-not $ytOk) { Log "  YouTube step had issues (non-fatal, continuing)" }
     }
 
-    # ── STEP 3: BUILD ───────────────────────────────────────
+    # ── STEP 4: BUILD ───────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 3/5: Building site ==="
+        Log "=== STEP 4/6: Building site ==="
         $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
         if (-not $ok) { Log "  BUILD FAILED" }
         foreach ($l in $r) { Log "  $l" }
     }
 
-    # ── STEP 4: COMMIT & PUSH ───────────────────────────────
+    # ── STEP 5: COMMIT & PUSH ───────────────────────────────
     if ($ok) {
         $ts = Get-Timestamp; $pushed = $false
-        Log "=== STEP 4/5: Committing and pushing to GitHub ==="
+        Log "=== STEP 5/6: Committing and pushing to GitHub ==="
         
         # Configure git auth for scripted use
         if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -185,9 +192,9 @@ function Process-Batch {
         if (-not $pushed) { $ok = $false }
     }
 
-    # ── STEP 5: FINALIZE ────────────────────────────────────
+    # ── STEP 6: FINALIZE ────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 5/5: Done! ==="
+        Log "=== STEP 6/6: Done! ==="
         Log "Files: $($allFileNames -join ', ')"
     } else { Log "FAILED - check log above" }
 
