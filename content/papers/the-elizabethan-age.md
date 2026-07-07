@@ -7,8 +7,8 @@ date: 2019-02-04
 type: paper
 
 tags: [his, drama, marlowe, were, plays]
+summary: "The term ‘the Elizabethan Age’ is a very vague and flexible one. Strictly speaking, it may be said to be even misleading. Although titles like ‘Jacobean Age’ ar"---
 
----
 ## The Elizabethan Age
 
 ## Nomenclature
@@ -476,4 +476,3 @@ Shakespeare's history plays are in a class apart from his tragedies and comedies
 ## Essays on Kingly Prerogatives:
 
 Shakespeare's history plays are, broadly speaking, so many essays on kingly prerogatives. The king is vested with near divine privileges, but he is also saddled with an onerous responsibility which he is called upon to perform for indicating himself. All along, from King John to Henry VIII, we find kingship fraught with temptations, dangers, and insecurity (the, insecurity of life also). Sometimes this kingship is euologised to the extent reminiscent of the doctrine of the Divine Rights of Kings which envisaged a king to be the deputy of God on earth.
-

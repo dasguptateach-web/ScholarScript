@@ -7,8 +7,8 @@ date: 2026-06-11
 type: paper
 
 tags: [shakespeare, adaptation, film, notes, slide]
+summary: "Film Adaptations of Shakespeare: Reinventing the Bard on Screen"---
 
----
 ## Slide 1: Title
 
 Film Adaptations of Shakespeare: Reinventing the Bard on Screen
@@ -94,4 +94,3 @@ Lang, 2010.  Shakespeare, William. Macbeth. The Arden Shakespeare.  Shakes
 ## Speaker Notes:
 
 These references provide the critical and textual backbone for the term paper. The handwritten submission should include a full bibliography following MLA format, with the films themselves cited properly. The oral presentation will draw directly on the slides above, with each case study illustrated by short clips (where permitted) to demonstrate the visual arguments made in the critical literature. The 1500-word limit has been distributed across the slides and notes, ensuring a balanced, thoroughly evidenced discussion.
-

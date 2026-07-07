@@ -7,8 +7,8 @@ date: 2026-06-25
 type: paper
 
 tags: [maqbool, film, bhardwaj, its, macbeth]
+summary: "[Your Name] [Instructor's Name] [Course Number] [Date]"---
 
----
 [Your Name] [Instructor's Name] [Course Number] [Date]
 
 Blood and Betrayal in Mumbai: Vishal Bhardwaj’s Maqbool as a Cinematic Reinvention of Macbeth
@@ -50,4 +50,3 @@ Gold, Jack, director. Macbeth. BBC, 1983. Maqbool. Directed by Vishal Bhardwaj, 
 **Entertainment, 2003.**
 
 Nunn, Trevor, director. Macbeth. Royal Shakespeare Company, 1976. Shakespeare, William. Macbeth. Edited by Kenneth Muir, Arden Shakespeare, 1984. Trivedi, Poonam. “‘Filmi’ Shakespeare: Vishal Bhardwaj’s Maqbool and Omkara.” Shakespeare in Bollywood, edited by Craig Dionne and Parmita Kapadia, Routledge, 2014, pp. 123–142. Welles, Orson, director. Macbeth. Federal Theatre Project, 1936.
-

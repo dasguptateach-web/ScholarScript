@@ -7,8 +7,8 @@ date: 2019-04-06
 type: paper
 
 tags: [his, hawkeye, magua, him, uncas]
+summary: "The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was"---
 
----
 ## Last of the Mohicans Study Guide
 
 The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was the last and most important conflict over French and British possessions in North America. Unlike the earlier wars, which began in Europe and spread to America, this struggle broke out solely in America in 1754, and was not settled until 1763. For this reason, Indian involvement in the conflict was incredibly high.
@@ -624,4 +624,3 @@ The society that Cooper depicts in the Leatherstocking tales in The Last of the 
 A white man does not need a woman fighting by his side, to inspire him, still less a woman mediating between him and the Indian enemy; he needs a woman to fight for and to fight about. White women best serve the white nation by sacrificing their dangerous dreams of independent selfhood, reining their sexual fantasies, and recognizing that they are most useful to civilization as protected possessions of white men. [ix]
 
 This statement also explains why Cora neither matches the gender expectations of the 18th century nor those of a 19th-century readership. She is too independent, too eloquent, too strong willed and too self-reliant. In fact, she crosses gender boundaries throughout the novel by acting wisely and rationally in the face of imminent danger instead of begging for the protection and help of her male companions. To the male characters of The Last of the Mohicans, Cora’s character traits are threatening. If manhood is predicated on the successful defence of white women, no masculine character will marry a woman who embodies virtues such as courage, firmness and self-reliance. The fact that Cora is relatively independent endangers the concept of manhood of a society in which men are valued for their skill at rescuing or protecting the weaker sex, and in which ‘this skill is an important source of … pride and self-respect’[x]. In short, Cora’s refusal to conform to gender norms and expectations makes her socially useless for white man, that is, inapt for matrimony.
-

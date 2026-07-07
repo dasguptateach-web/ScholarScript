@@ -7,8 +7,8 @@ date: 2026-05-18
 type: paper
 
 tags: [criticism, literary, theory, poetry, text]
+summary: "May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET] INTRODUCTION: LITERARY CRITICISM AND THEORY FOR UGC NET"---
 
----
 May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET] INTRODUCTION: LITERARY CRITICISM AND THEORY FOR UGC NET
 
 ## Why This Section Determines Your Rank
@@ -1000,4 +1000,3 @@ May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET]
 ## Practice Integrated Questions
 
 The UGC NET increasingly asks questions that require comparison across theorists. For example:  "How does Derrida's différance differ from Saussure's concept of difference?"  "Compare the role of the reader in Iser vs. Fish."  "How does Gramsci's hegemony differ from Althusser's ideology?" Prepare for these by tracing connections between thinkers as you revise. 62 DASGUPTA
-

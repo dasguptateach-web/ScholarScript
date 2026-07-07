@@ -7,8 +7,8 @@ date: 2026-07-06
 type: paper
 
 tags: [line, iambic, spondee, sonnet, rhyme]
+summary: "(50 MCQs Ã-- 2 marks = 100 marks)"---
 
----
 ## UGC NET ENGLISH PAPER II aEUR" ADVANCED PRACTICE TEST
 
 ## RHETORIC, PROSODY & STANZA PATTERNS
@@ -152,4 +152,3 @@ Q33: GrayaEUR™s aEURœElegyaEUR line: aEURœThe lowing herd wind slowly oaEU
 Q48: MiltonaEUR™s Paradise Lost is famous for its frequent trochaic inversions and spondaic substitutions, used to create solemnity and emphasis on theological concepts. PopeaEUR™s heroic couplets are much more regular; WordsworthaEUR™s Lyrical Ballads use varied metres but not predominantly this profile; TennysonaEUR™s In Memoriam uses iambic tetrameter with occasional variations. So (B) is correct.
 
 Q50: Enjambment that undermines the closure of the ABAB rhyme scheme is most typical of the Shakespearean sonnet quatrains, where the sense often runs across the quatrain boundary, despite the rhyme giving a false sense of pause. Heroic couplets tend to be endstopped; rhyme royal and ottava rima have different structural logics. Thus (A) is correct.
-
