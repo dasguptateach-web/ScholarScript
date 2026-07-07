@@ -269,3 +269,24 @@
 [2026-07-07 20:05:04]   Retry 3...
 [2026-07-07 20:05:07] FAILED - check log above
 [2026-07-07 20:05:07] Archived to _Processed
+[2026-07-07 20:28:30] STAGE JONATHAN SWIFT, GULLIVER’S TRAVELS BOOKS I & II.docx
+[2026-07-07 20:28:30] COPY JONATHAN SWIFT, GULLIVER’S TRAVELS BOOKS I & II.docx
+[2026-07-07 20:28:30] === STEP 1/5: Ingesting documents ===
+[2026-07-07 20:28:31]   Checking uploads folder...
+[2026-07-07 20:28:31]   Processed 1 file(s):
+[2026-07-07 20:28:31]     Success: 1
+[2026-07-07 20:28:31]     Errors:  0
+[2026-07-07 20:28:31]     [OK] JONATHAN SWIFT, GULLIVERÆS TRAVELS BOOKS I & II.docx -> C:\Users\81\ScholarScript\content\papers\jonathan-swift-gullivers-travels-books-i-ii.md (paper)
+[2026-07-07 20:28:31]   
+[2026-07-07 20:28:31]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 20:28:31] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 20:28:51]   Found 33 papers
+[2026-07-07 20:28:51]   
+[2026-07-07 20:28:51]     [jonathan-swift-gullivers-travels-books-i-ii] -> ohl5b65Iz2Q (Gulliver's Travels by Jonathan Swift | Summary & Analysis) [161,838 views]
+[2026-07-07 20:28:51]   
+[2026-07-07 20:28:51]   Done! Created: 1, Skipped: 32, Failed: 0
+[2026-07-07 20:28:51] === STEP 3/5: Building site ===
+[2026-07-07 20:28:54]   Building site...
+[2026-07-07 20:28:54]   Built 75 items in 1.13s
+[2026-07-07 20:28:54]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 20:28:54] === STEP 4/5: Committing and pushing to GitHub ===
