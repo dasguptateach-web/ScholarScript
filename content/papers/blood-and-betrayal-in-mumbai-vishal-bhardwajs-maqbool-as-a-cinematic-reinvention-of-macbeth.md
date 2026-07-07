@@ -1,8 +1,12 @@
 ---
 title: "Blood And Betrayal In Mumbai Vishal Bhardwaj’S Maqbool As A Cinematic Reinvention Of Macbeth"
+
 date: 2026-06-25
+
 type: paper
+
 tags: [maqbool, film, bhardwaj, its, macbeth]
+summary: "[Your Name] [Instructor's Name] [Course Number] [Date]"
 ---
 [Your Name] [Instructor's Name] [Course Number] [Date]
 

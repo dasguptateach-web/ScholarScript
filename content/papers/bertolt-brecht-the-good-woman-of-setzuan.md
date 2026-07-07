@@ -1,8 +1,12 @@
 ---
 title: "Bertolt Brecht The Good Woman Of Setzuan"
+
 date: 2026-05-18
+
 type: paper
+
 tags: [shen, she, shui, good, gods]
+summary: "May 18, 2026 [MODULE V: BERTOLT BRECHT -THE GOOD WOMAN OF SETZUAN] 1. Introduction: Background and Context Let's begin with a vivid snapshot. Imagine a world wh"
 ---
 May 18, 2026 [MODULE V: BERTOLT BRECHT -THE GOOD WOMAN OF SETZUAN] 1. Introduction: Background and Context Let's begin with a vivid snapshot. Imagine a world where the gods themselves come down to earth, only to be turned away from every door because no one is willing to share a night's lodging. The only person who says "yes" is Shen Te, a prostitute. So begins The Good Woman of Setzuan, a play that is both deceptively simple and philosophically profound.
 

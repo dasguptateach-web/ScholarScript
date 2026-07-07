@@ -1,8 +1,12 @@
 ---
 title: "Indian Classical Literature (The Little Clay Cart Mricchakatika) Sat"
+
 date: 2026-05-25
+
 type: paper
+
 tags: [charudatta, social, his, act, because]
+summary: "[Indian Classical Literature (The Little Clay Cart / Mricchakatika)Short Answer"
 ---
 [Indian Classical Literature (The Little Clay Cart / Mricchakatika)Short Answer
 

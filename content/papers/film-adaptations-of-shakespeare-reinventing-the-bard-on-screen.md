@@ -1,8 +1,12 @@
 ---
 title: "Film Adaptations Of Shakespeare Reinventing The Bard On Screen"
+
 date: 2026-06-11
+
 type: paper
+
 tags: [shakespeare, adaptation, film, notes, slide]
+summary: "Film Adaptations of Shakespeare: Reinventing the Bard on Screen"
 ---
 ## Slide 1: Title
 

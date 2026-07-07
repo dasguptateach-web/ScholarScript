@@ -1,4 +1,4 @@
-﻿---
+---
 title: "The City in Victorian Poetry"
 date: 2025-06-10
 type: paper
@@ -6,7 +6,6 @@ author: Dr. Mark Rivera
 tags: [victorian, poetry, urban, industrial, tennyson, arnold]
 summary: "Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning."
 ---
-
 # The City in Victorian Poetry
 
 ## Introduction
@@ -27,4 +26,4 @@ as a metaphor for a receding spiritual certainty in an increasingly mechanised w
 ## Browning's Dramatic Monologues
 
 Robert Browning's dramatic monologues give voice to the urban experience through the lens of individual
-psychology, revealing the inner lives of city dwellers.
+psychology, revealing the inner lives of city dwellers.

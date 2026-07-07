@@ -1,8 +1,12 @@
 ---
 title: "The Last of the Mohicans Study Guide"
+
 date: 2019-04-06
+
 type: paper
+
 tags: [his, hawkeye, magua, him, uncas]
+summary: "The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was"
 ---
 ## Last of the Mohicans Study Guide
 

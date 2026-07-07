@@ -1,8 +1,12 @@
 ---
 title: "Marxism Short Notes"
+
 date: 2026-06-04
+
 type: paper
+
 tags: [literature, literary, criticism, marxist, social]
+summary: "Antonio Gramsci’s distinction between “rule” (domination) and “hegemony” is one of the most fertile concepts in twentieth-century Marxist thought, and it fundam"
 ---
 ## 1. Gramsci – Rule vs Hegemony
 

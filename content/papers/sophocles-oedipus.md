@@ -1,8 +1,12 @@
 ---
 title: "Sophocles’ Oedipus"
+
 date: 2026-06-04
+
 type: paper
+
 tags: [oedipus, his, who, man, creon]
+summary: "The entry of the blind prophet Teiresias into Oedipus Rex is the hinge upon which the entire tragedy swings. Before his arrival, Oedipus is the confident, belov"
 ---
 ## 1. Role of Teiresias
 

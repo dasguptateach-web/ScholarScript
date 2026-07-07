@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="archive-header" data-aos="fade-up">
+  <h2><i class="fas fa-pen-fancy"></i> Submit Your Creative Writing</h2>
+</div>
+
+<div class="submit-layout" data-aos="fade-up">
+  <div class="submit-info">
+    <i class="fas fa-envelope-open-text" style="font-size:3rem;color:var(--primary-light);display:block;margin-bottom:1rem;"></i>
+    <h3>Submit via Email</h3>
+    <p>Send your original poetry, prose, fiction, or non-fiction directly to our editorial team. Selected works are published on ScholarScript and eligible for the monthly <strong>$25 Best Contributor Prize</strong>.</p>
+
+    <div class="submit-email-card">
+      <div class="submit-email-icon"><i class="fas fa-envelope"></i></div>
+      <div class="submit-email-details">
+        <strong>Send to:</strong>
+        <a href="mailto:dasguptateach@gmail.com?subject=Creative%20Writing%20Submission&body=Title%3A%0AGenre%3A%0APen%20Name%3A%0A%0AAttach%20your%20work%20below." class="submit-email-link">
+          dasguptateach@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <ul class="submit-guidelines">
+      <li><i class="fas fa-check-circle"></i> Original, unpublished work only</li>
+      <li><i class="fas fa-check-circle"></i> Any genre: poetry, short stories, essays, criticism</li>
+      <li><i class="fas fa-check-circle"></i> Attach PDF, DOCX, or TXT files</li>
+      <li><i class="fas fa-check-circle"></i> You retain full copyright</li>
+      <li><i class="fas fa-check-circle"></i> Auto-deleted after 3 days if not selected</li>
+    </ul>
+  </div>
+
+  <div class="submit-tips">
+    <i class="fas fa-lightbulb" style="font-size:2rem;color:var(--gold);display:block;margin-bottom:0.75rem;"></i>
+    <h3>What to Include in Your Email</h3>
+    <div class="tip-item"><span class="tip-label">Subject:</span> Creative Writing Submission</div>
+    <div class="tip-item"><span class="tip-label">Your Name:</span> As you want it displayed</div>
+    <div class="tip-item"><span class="tip-label">Pen Name:</span> (Optional) If different</div>
+    <div class="tip-item"><span class="tip-label">Title:</span> Title of your work</div>
+    <div class="tip-item"><span class="tip-label">Genre:</span> Poetry, Prose, Fiction, etc.</div>
+    <div class="tip-item"><span class="tip-label">Attachment:</span> PDF, DOCX, or TXT file</div>
+
+    <div class="submit-cta">
+      <a href="mailto:dasguptateach@gmail.com?subject=Creative%20Writing%20Submission&body=Title%3A%0AGenre%3A%0APen%20Name%3A%0A%0AAttach%20your%20work%20below." class="btn btn-primary btn-lg" style="justify-content:center;">
+        <i class="fas fa-paper-plane"></i> Send Your Submission
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

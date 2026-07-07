@@ -1,8 +1,12 @@
 ---
 title: "Classical Drama"
+
 date: 2026-07-06
+
 type: paper
+
 tags: [classical, english, drama, elizabethan, native]
+summary: "﻿## The Influence of Classical Drama on Elizabethan Theatre"
 ---
 ﻿## The Influence of Classical Drama on Elizabethan Theatre
 

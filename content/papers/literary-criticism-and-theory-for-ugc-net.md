@@ -1,8 +1,12 @@
 ---
 title: "Literary Criticism and Theory for UGC NET"
+
 date: 2026-05-18
+
 type: paper
+
 tags: [criticism, literary, theory, poetry, text]
+summary: "May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET] INTRODUCTION: LITERARY CRITICISM AND THEORY FOR UGC NET"
 ---
 May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET] INTRODUCTION: LITERARY CRITICISM AND THEORY FOR UGC NET
 

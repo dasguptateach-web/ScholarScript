@@ -44,6 +44,12 @@ class Engine:
         # Load content
         papers, videos, creative, external = load_all_content(self.config.get_content_dir())
         self.items = papers + videos + creative + external
+        self.env.globals.update({
+            "papers": papers,
+            "videos": videos,
+            "creative": creative,
+            "links": external,
+        })
 
         # Plugin: on_content_loaded
         for p in self.plugins:
@@ -84,6 +90,7 @@ class Engine:
         self._render_tags(public_dir, tag_map)
         self._render_author_of_month(public_dir, author_of_month)
         self._render_donate(public_dir)
+        self._render_submit(public_dir)
         self._render_health(public_dir)
 
         # Render individual content pages
@@ -183,12 +190,16 @@ class Engine:
     def _build_tag_map(self) -> dict:
         tag_map = {}
         for item in self.items:
+            seen = set()
             related = []
             for other in self.items:
                 if other.slug == item.slug:
                     continue
+                if other.slug in seen:
+                    continue
                 if set(other.tags) & set(item.tags):
                     related.append(other)
+                    seen.add(other.slug)
             tag_map[item.slug] = related
         return tag_map
 
@@ -218,6 +229,14 @@ class Engine:
             "page_ogtype": "website",
         }
         self._render("donate.html", ctx, public_dir / "donate" / "index.html")
+
+    def _render_submit(self, public_dir):
+        ctx = {
+            "page_title": "Submit Creative Writing",
+            "page_url": self.config.get_base_url() + "/creative-writing/submit/",
+            "page_ogtype": "website",
+        }
+        self._render("submit-writing.html", ctx, public_dir / "creative-writing" / "submit" / "index.html")
 
     def _generate_search_index(self, public_dir):
         idx = []

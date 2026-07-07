@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Fractured Selves: Narrative Identity in Postmodern Fiction"
 date: 2025-06-05
 type: paper
@@ -6,7 +6,6 @@ author: Prof. Sarah Chen
 tags: [postmodern, narrative, identity, theory, pynchon, delillo]
 summary: "An examination of how postmodern narrative techniques reflect contemporary theories of fragmented identity."
 ---
-
 # Fractured Selves: Narrative Identity in Postmodern Fiction
 
 ## Introduction
@@ -29,4 +28,4 @@ The characters define themselves through brand names, television images, and aca
 ## Conclusion
 
 Postmodern narrative techniques do more than experiment with form; they enact the very
-fragmentation they describe, making the reader experience the instability of identity.
+fragmentation they describe, making the reader experience the instability of identity.

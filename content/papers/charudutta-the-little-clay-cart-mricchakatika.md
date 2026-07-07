@@ -1,8 +1,12 @@
 ---
 title: "Charudatta (The Little Clay Cart Mricchakatika)"
+
 date: 2026-05-17
+
 type: paper
+
 tags: [charudatta, his, him, moral, because]
+summary: "['Charudatta, the hero of Sudraka’s Mricchakotika, is less a dynamic agent of action and more a stoic emblem of faded nobility and inherent virtue. His poverty "
 ---
 ["Charudatta, the hero of Sudraka’s Mricchakotika, is less a dynamic agent of action and more a stoic emblem of faded nobility and inherent virtue. His poverty is not a flaw but a moral credential."In light of this observation, critically examine the
 

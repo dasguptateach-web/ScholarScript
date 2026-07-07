@@ -1,8 +1,12 @@
 ---
 title: "The Elizabethan Age"
+
 date: 2019-02-04
+
 type: paper
+
 tags: [his, drama, marlowe, were, plays]
+summary: "The term ‘the Elizabethan Age’ is a very vague and flexible one. Strictly speaking, it may be said to be even misleading. Although titles like ‘Jacobean Age’ ar"
 ---
 ## The Elizabethan Age
 

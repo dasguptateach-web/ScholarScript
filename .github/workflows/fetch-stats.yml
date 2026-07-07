@@ -1,0 +1,77 @@
+# Visitor Stats Fetcher
+# Runs every hour to fetch real GoatCounter analytics and cache them in the repo.
+# The site displays these stats on the homepage.
+# Requires: GOATCOUNTER_TOKEN secret (get from https://scholar.goatcounter.com/settings/api)
+name: Fetch Visitor Stats
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+  workflow_dispatch:       # manual trigger
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch stats from GoatCounter API
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+        run: |
+          python -c "
+import json, os, urllib.request
+from datetime import datetime
+
+token = os.environ.get('GOATCOUNTER_TOKEN', '')
+headers = {'Authorization': 'Bearer ' + token} if token else {}
+
+def get(path):
+    req = urllib.request.Request('https://scholar.goatcounter.com/api/v0' + path, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read())
+    except: return None
+
+now = datetime.now()
+today = now.strftime('%Y-%m-%d')
+month_start = now.replace(day=1).strftime('%Y-%m-%d')
+year_start = now.replace(month=1, day=1).strftime('%Y-%m-%d')
+
+total = get('/stats/total') or {}
+today_data = get('/stats?period=' + today) or {}
+month_data = get('/stats?period=' + month_start) or {}
+
+total_count = total.get('count')
+today_count = today_data.get('count')
+month_count = month_data.get('count')
+
+day_of_month = now.day
+days_in_month = (now.replace(month=now.month+1, day=1) - now.replace(day=1)).days if now.month < 12 else 31
+day_of_year = (now - now.replace(month=1, day=1)).days + 1
+days_in_year = 366 if now.year % 4 == 0 and (now.year % 100 != 0 or now.year % 400 == 0) else 365
+avg = round(month_count / day_of_month) if month_count and day_of_month > 0 else 0
+
+stats = {
+    'today': today_count or 0,
+    'month': month_count or 0,
+    'year': round(month_count / day_of_year * days_in_year) if month_count and day_of_year > 0 else 0,
+    'total': total_count or 0,
+    'daily_average': avg,
+    'month_projection': avg * days_in_month,
+    'updated': now.isoformat(),
+}
+
+os.makedirs('data', exist_ok=True)
+with open('data/visitor-stats.json', 'w', encoding='utf-8') as f:
+    json.dump(stats, f, indent=2)
+print('Stats saved:', json.dumps(stats, indent=2))
+"
+      - name: Commit and push
+        run: |
+          git config user.name 'ScholarScript Bot'
+          git config user.email 'bot@scholarscript.org'
+          git add data/visitor-stats.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update visitor stats [skip ci]" && git push)
