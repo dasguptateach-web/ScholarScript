@@ -12,6 +12,27 @@
     </p>
   </div>
 
+{% if item.type == 'paper' and related %}
+  {% set related_videos = related | selectattr('type', 'equalto', 'video') | list %}
+  {% if related_videos %}
+  <section class="related related-video" data-aos="fade-up">
+    <h3><i class="fas fa-video"></i> Related Video</h3>
+    {% for rv in related_videos[:1] %}
+    {% set rv_id = rv.video_url.split('v=')[1].split('&')[0] if rv.video_url and 'v=' in rv.video_url else (rv.video_url.split('/')[-1] if rv.video_url else '') %}
+    {% if rv_id %}
+    <div class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ rv_id }}?rel=0&modestbranding=1"
+              title="{{ rv.title }}" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+    </div>
+    {% endif %}
+    <p><a href="{{ base_url }}/video/{{ rv.slug }}/">{{ rv.title }}</a></p>
+    {% endfor %}
+  </section>
+  {% endif %}
+{% endif %}
+
 {% if item.type == 'paper' %}
   <!-- Read Aloud — English TTS with Indian voice -->
   <div class="tts-bar notranslate">
@@ -76,9 +97,28 @@
   <div id="google_translate_element" class="notranslate" style="position:fixed;top:-9999px;left:0;width:1px;height:1px;overflow:hidden;z-index:-1;"></div>
 {% endif %}
 
+{% if item.video_url %}
+  {% set video_id = item.video_url.split('v=')[1].split('&')[0] if 'v=' in item.video_url else item.video_url.split('/')[-1] %}
+  <div class="video-embed" data-aos="fade-up">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ video_id }}?rel=0&modestbranding=1" 
+            title="{{ item.title }}" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="notranslate" style="margin-top:0.75rem;" data-aos="fade-up"><a href="{{ item.video_url }}" target="_blank" rel="noopener" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Watch on YouTube</a></p>
+{% endif %}
+
 {% if item.summary %}
   <blockquote class="summary" data-aos="fade-up">{{ item.summary }}</blockquote>
 {% endif %}
+
+  <nav class="toc" id="toc" aria-label="Table of Contents" style="display:none;">
+    <div class="toc-header">
+      <i class="fas fa-list-ul"></i> Contents
+      <button class="toc-toggle" id="tocToggle" aria-label="Toggle contents"><i class="fas fa-chevron-up"></i></button>
+    </div>
+    <ol class="toc-list" id="tocList"></ol>
+  </nav>
 
   <div class="content-body" id="contentBody" data-aos="fade-up">
     {{ item.body_html | safe }}
@@ -88,9 +128,6 @@
 
 {% if item.paper_url %}
   <p class="notranslate" style="margin-top:1.5rem;" data-aos="fade-up"><a href="{{ item.paper_url }}" target="_blank" rel="noopener" class="btn"><i class="fas fa-external-link-alt"></i> View Original Paper</a></p>
-{% endif %}
-{% if item.video_url %}
-  <p class="notranslate" style="margin-top:1.5rem;" data-aos="fade-up"><a href="{{ item.video_url }}" target="_blank" rel="noopener" class="btn"><i class="fas fa-play"></i> Watch Video</a></p>
 {% endif %}
 {% if item.external_url %}
   <p class="notranslate" style="margin-top:1.5rem;" data-aos="fade-up"><a href="{{ item.external_url }}" target="_blank" rel="noopener" class="btn"><i class="fas fa-external-link-alt"></i> Visit Resource</a></p>
@@ -110,6 +147,62 @@
 {% endblock %}
 
 {% block scripts_extra %}
+<script>
+/* ====== TABLE OF CONTENTS ====== */
+(function(){
+  var body = document.getElementById('contentBody');
+  var toc = document.getElementById('toc');
+  var tocList = document.getElementById('tocList');
+  var tocToggle = document.getElementById('tocToggle');
+  if (!body || !toc || !tocList) return;
+  var headings = body.querySelectorAll('h2, h3');
+  if (headings.length < 3) return;
+  toc.style.display = 'block';
+  var items = [];
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'sec-' + i;
+    var li = document.createElement('li');
+    li.className = 'toc-item toc-' + h.tagName.toLowerCase();
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim();
+    a.setAttribute('data-target', h.id);
+    li.appendChild(a);
+    tocList.appendChild(li);
+    items.push({ link: a, heading: h });
+  });
+  if (tocToggle) {
+    tocToggle.addEventListener('click', function() {
+      toc.classList.toggle('toc-collapsed');
+      var icon = tocToggle.querySelector('i');
+      if (icon) icon.className = toc.classList.contains('toc-collapsed') ? 'fas fa-chevron-down' : 'fas fa-chevron-up';
+    });
+  }
+  var ticking = false;
+  function spy() {
+    var scrollY = window.pageYOffset + 120;
+    var current = null;
+    items.forEach(function(item) {
+      if (item.heading.offsetTop <= scrollY) current = item.link;
+    });
+    items.forEach(function(item) {
+      item.link.classList.toggle('toc-active', item.link === current);
+    });
+    if (current && tocList) {
+      var listRect = tocList.getBoundingClientRect();
+      var linkRect = current.getBoundingClientRect();
+      if (linkRect.top < listRect.top || linkRect.bottom > listRect.bottom) {
+        tocList.scrollTop = current.offsetTop - tocList.clientHeight / 2;
+      }
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(spy); ticking = true; }
+  }, { passive: true });
+  spy();
+})();
+</script>
 {% if item.type == 'paper' %}
 <script>
 /* Google Translate Element Init */

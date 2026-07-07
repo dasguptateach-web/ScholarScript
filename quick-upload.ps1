@@ -2,13 +2,10 @@ param(
     [string[]]$Paths
 )
 
-$projectDir = "C:\Users\81\AppData\Local\Temp\opencode\scholarscript"
+$projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $uploadsDir = "$projectDir\uploads"
 
 Set-Location $projectDir
-
-# Fix Python stdlib path warning
-$env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
 
 function Show-FilePicker {
     Add-Type -AssemblyName System.Windows.Forms
@@ -75,7 +72,7 @@ Write-Host "    Copied $($copied.Count) file(s)" -ForegroundColor Green
 Write-Host ""
 
 # Step 2: Ingest
-Write-Host "[2/4] Ingesting documents..." -ForegroundColor Yellow
+Write-Host "[2/5] Ingesting documents..." -ForegroundColor Yellow
 python -m scholarscript ingest 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Ingestion failed. Check errors above." -ForegroundColor Red
@@ -84,8 +81,14 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host ""
 
-# Step 3: Build
-Write-Host "[3/4] Building site..." -ForegroundColor Yellow
+# Step 3: YouTube Auto-Match
+Write-Host "[3/5] Matching YouTube videos..." -ForegroundColor Yellow
+pip install yt-dlp -q 2>$null
+python youtube_agent.py 2>&1
+Write-Host ""
+
+# Step 4: Build
+Write-Host "[4/5] Building site..." -ForegroundColor Yellow
 python -m scholarscript build 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Build failed. Check errors above." -ForegroundColor Red
@@ -94,8 +97,8 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host ""
 
-# Step 4: Deploy
-Write-Host "[4/4] Deploying to GitHub Pages..." -ForegroundColor Yellow
+# Step 5: Deploy
+Write-Host "[5/5] Deploying to GitHub Pages..." -ForegroundColor Yellow
 
     # Load saved token/repo if available
     $tokenFile = "$projectDir\.github_token"

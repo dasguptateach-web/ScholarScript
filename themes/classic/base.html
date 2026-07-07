@@ -2,14 +2,31 @@
 <html lang="{{ site.language }}">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <title>{{ page_title }} — {{ site.title }}</title>
   <meta name="description" content="{{ page_description | default(site.tagline) }}">
   <meta name="generator" content="ScholarScript">
+  <link rel="icon" type="image/svg+xml" href="{{ base_url }}/img/favicon.svg">
+  <meta property="og:title" content="{{ page_title }} — {{ site.title }}">
+  <meta property="og:description" content="{{ page_description | default(site.tagline) }}">
+  <meta property="og:url" content="{{ page_url | default(base_url) }}">
+  <meta property="og:type" content="{{ page_ogtype | default('website') }}">
+  {% if page_image %}<meta property="og:image" content="{{ page_image }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }} — {{ site.title }}">
+  <meta name="twitter:description" content="{{ page_description | default(site.tagline) }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ base_url }}/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base_url }}/rss.xml">
 {% if site.adsense_client_id and site.adsense_enabled %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client_id }}" crossorigin="anonymous"></script>
@@ -18,7 +35,9 @@
   <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {% endif %}
 </head>
-<body{% if self.body_class() %} class="{% block body_class %}{% endblock %}"{% endif %}>
+<body class="{% block body_class %}{% endblock %}">
+  <div class="reading-progress" id="readingProgress" style="display:none"></div>
+
   {% block header %}
   <header class="site-header">
     <div class="container header-inner">
@@ -26,18 +45,57 @@
         <h1>{{ site.title }}</h1>
         <p class="tagline">{{ site.tagline }}</p>
       </a>
-      <nav class="main-nav">
-        <a href="{{ base_url }}/">Home</a>
-        <a href="{{ base_url }}/papers/">Papers</a>
-        <a href="{{ base_url }}/videos/">Videos</a>
-        <a href="{{ base_url }}/creative-writing/">Writing</a>
-        <a href="{{ base_url }}/external-links/">Links</a>
-        <a href="{{ base_url }}/tags/">Tags</a>
-        <a href="{{ base_url }}/author-of-month/">AotM</a>
-        <a href="{{ base_url }}/donate/">Support</a>
-      </nav>
+
+      <div class="header-right">
+        <!-- Desktop Search -->
+        <div class="header-search" id="headerSearch">
+          <i class="fas fa-search header-search-icon"></i>
+          <input type="text" class="header-search-input" id="headerSearchInput"
+                 placeholder="Search..." autocomplete="off" aria-label="Search">
+          <span class="header-search-kbd">Ctrl+K</span>
+          <div class="search-dropdown" id="headerSearchDropdown">
+            <div class="sd-empty"><i class="fas fa-search"></i> Type to search...</div>
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <a href="{{ base_url }}/"><i class="fas fa-home"></i> Home</a>
+          <a href="{{ base_url }}/papers/"><i class="fas fa-file-alt"></i> Papers</a>
+          <a href="{{ base_url }}/videos/"><i class="fas fa-video"></i> Videos</a>
+          <a href="{{ base_url }}/creative-writing/"><i class="fas fa-pen-fancy"></i> Writing</a>
+          <a href="{{ base_url }}/creative-writing/submit/"><i class="fas fa-upload"></i> Submit</a>
+          <a href="{{ base_url }}/external-links/"><i class="fas fa-link"></i> Links</a>
+          <a href="{{ base_url }}/tags/"><i class="fas fa-tags"></i> Tags</a>
+          <a href="{{ base_url }}/donate/"><i class="fas fa-heart"></i> Support</a>
+        </nav>
+
+        <!-- Mobile Trigger -->
+        <button class="nav-trigger" id="navTrigger" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="{{ base_url }}/"><i class="fas fa-home"></i> Home</a>
+    <a href="{{ base_url }}/papers/"><i class="fas fa-file-alt"></i> Papers</a>
+    <a href="{{ base_url }}/videos/"><i class="fas fa-video"></i> Videos</a>
+    <a href="{{ base_url }}/creative-writing/"><i class="fas fa-pen-fancy"></i> Creative Writing</a>
+    <a href="{{ base_url }}/creative-writing/submit/"><i class="fas fa-upload"></i> Submit Your Work</a>
+    <a href="{{ base_url }}/external-links/"><i class="fas fa-link"></i> External Links</a>
+    <a href="{{ base_url }}/tags/"><i class="fas fa-tags"></i> Tags</a>
+    <a href="{{ base_url }}/author-of-month/"><i class="fas fa-trophy"></i> Author of the Month</a>
+    <a href="{{ base_url }}/donate/"><i class="fas fa-heart"></i> Support Us</a>
+  </div>
   {% endblock %}
 
   <main class="container">
@@ -45,16 +103,253 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; {{ now.year }} {{ site.title }}. Published with ScholarScript.</p>
-{% if site.social_twitter or site.social_facebook or site.social_linkedin %}
-      <div class="social-links">
-{% if site.social_twitter %}        <a href="https://twitter.com/{{ site.social_twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
-{% if site.social_facebook %}        <a href="https://facebook.com/{{ site.social_facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
-{% if site.social_linkedin %}        <a href="https://linkedin.com/in/{{ site.social_linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>{{ site.title }}</h3>
+          <p>{{ site.tagline }}</p>
+          <div class="social-links">
+{% if site.social_youtube %}  <a href="https://youtube.com/@{{ site.social_youtube }}" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>{% endif %}
+{% if site.social_twitter %}  <a href="https://twitter.com/{{ site.social_twitter }}" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>{% endif %}
+{% if site.social_bluesky %}  <a href="https://bsky.app/profile/{{ site.social_bluesky }}" target="_blank" rel="noopener" title="Bluesky"><i class="fab fa-bluesky"></i></a>{% endif %}
+{% if site.social_facebook %}  <a href="https://facebook.com/{{ site.social_facebook }}" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>{% endif %}
+{% if site.social_linkedin %}  <a href="https://linkedin.com/in/{{ site.social_linkedin }}" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="{{ base_url }}/"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="{{ base_url }}/papers/"><i class="fas fa-chevron-right"></i> Papers</a>
+          <a href="{{ base_url }}/videos/"><i class="fas fa-chevron-right"></i> Videos</a>
+          <a href="{{ base_url }}/tags/"><i class="fas fa-chevron-right"></i> Tags</a>
+          <a href="{{ base_url }}/donate/"><i class="fas fa-chevron-right"></i> Support</a>
+          <a href="{{ base_url }}/rss.xml"><i class="fas fa-chevron-right"></i> RSS</a>
+          <a href="{{ base_url }}/sitemap.xml"><i class="fas fa-chevron-right"></i> Sitemap</a>
+        </div>
+        <div class="footer-info">
+          <p><i class="fas fa-database"></i> {{ papers|length + videos|length + creative|length + links|length }} resources &middot; {{ papers|length }} papers &middot; {{ videos|length }} videos &middot; {{ creative|length }} creative works</p>
+          <p>&copy; {{ now.year }} Published with ScholarScript.<br>Free for everyone. Forever.</p>
+        </div>
       </div>
-{% endif %}
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+  /* ====== SEARCH ====== */
+  (function(){
+    var searchIndex = [];
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '{{ base_url }}/search-index.json', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        try {
+          searchIndex = JSON.parse(xhr.responseText);
+          try { sessionStorage.setItem('ss_search_idx', JSON.stringify(searchIndex)); } catch(e) {}
+        } catch(e) {}
+      }
+    };
+    try {
+      var cached = sessionStorage.getItem('ss_search_idx');
+      if (cached) { searchIndex = JSON.parse(cached); }
+    } catch(e) {}
+    xhr.send();
+
+    function setupSearch(inputId, dropdownId) {
+      var input = document.getElementById(inputId);
+      var dropdown = document.getElementById(dropdownId);
+      if (!input || !dropdown) return;
+
+      function render(q) {
+        if (!q || q.length < 1) { dropdown.classList.remove('active'); return; }
+        var query = q.toLowerCase();
+        var results = [];
+        for (var i = 0; i < searchIndex.length; i++) {
+          var item = searchIndex[i];
+          if (item.title.toLowerCase().indexOf(query) !== -1 ||
+              (item.summary && item.summary.toLowerCase().indexOf(query) !== -1) ||
+              (item.author && item.author.toLowerCase().indexOf(query) !== -1) ||
+              (item.tags && item.tags.some(function(t) { return t.toLowerCase().indexOf(query) !== -1; }))) {
+            results.push(item);
+            if (results.length >= 8) break;
+          }
+        }
+        if (results.length === 0) {
+          dropdown.innerHTML = '<div class="sd-empty"><i class="fas fa-search"></i> No results</div>';
+        } else {
+          var html = '';
+          for (var j = 0; j < results.length; j++) {
+            var r = results[j];
+            var tc = r.type === 'paper' ? 'paper' : r.type === 'video' ? 'video' : 'creative-writing';
+            html += '<a href="{{ base_url }}/' + r.type + '/' + r.slug + '/" class="sd-item">';
+            html += '<span class="sd-type ' + tc + '">' + r.type.replace('-', ' ') + '</span>';
+            html += '<span class="sd-title">' + r.title + '</span>';
+            if (r.date) html += '<span class="sd-date">' + r.date + '</span>';
+            html += '</a>';
+          }
+          html += '<div class="sd-more">' + results.length + ' results</div>';
+          dropdown.innerHTML = html;
+        }
+        dropdown.classList.add('active');
+      }
+
+      input.addEventListener('input', function() { render(this.value); });
+      input.addEventListener('focus', function() { if (this.value) render(this.value); });
+      input.addEventListener('blur', function() { setTimeout(function() { dropdown.classList.remove('active'); }, 200); });
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && this.value.trim()) {
+          window.location.href = '{{ base_url }}/papers/?q=' + encodeURIComponent(this.value.trim());
+        }
+      });
+    }
+
+    setupSearch('headerSearchInput', 'headerSearchDropdown');
+    setupSearch('heroSearchInput', 'searchDropdown');
+
+    // Ctrl+K / Cmd+K
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        var inp = document.getElementById('headerSearchInput') || document.getElementById('heroSearchInput');
+        if (inp) inp.focus();
+      }
+    });
+  })();
+
+  
+  // Parse ?q= query param on page load
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q && q.trim()) {
+      var input = document.getElementById('heroSearchInput') || document.getElementById('headerSearchInput');
+      if (input) {
+        input.value = q;
+        input.dispatchEvent(new Event('input'));
+        input.focus();
+        setTimeout(function() { input.dispatchEvent(new Event('input')); }, 500);
+      }
+    }
+  })();
+
+/* ====== THEME TOGGLE ====== */
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    var icon = btn ? btn.querySelector('i') : null;
+    if (!btn || !icon) return;
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      icon.className = 'fas fa-sun';
+    }
+    btn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      var isDark = document.documentElement.classList.contains('dark');
+      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  })();
+
+  /* ====== MOBILE DRAWER ====== */
+  (function(){
+    var trigger = document.getElementById('navTrigger');
+    var drawer = document.getElementById('navDrawer');
+    var overlay = document.getElementById('navOverlay');
+    if (!trigger || !drawer || !overlay) return;
+    function open() { drawer.classList.add('active'); overlay.classList.add('active'); document.body.classList.add('nav-open'); }
+    function close() { drawer.classList.remove('active'); overlay.classList.remove('active'); document.body.classList.remove('nav-open'); }
+    trigger.addEventListener('click', open);
+    overlay.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
+  })();
+
+  /* ====== READING PROGRESS (rAF-throttled) ====== */
+  (function(){
+    var bar = document.getElementById('readingProgress');
+    var body = document.getElementById('contentBody');
+    if (!bar) return;
+    if (body) bar.style.display = 'block';
+    var ticking = false;
+    function update() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = progress + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  })();
+
+  /* ====== BACK TO TOP (rAF-throttled) ====== */
+  (function(){
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    var ticking = false;
+    function onScroll() {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  /* ====== AOS — CSS-first, no-FOUC animation system ====== */
+  (function(){
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var aosEls = document.querySelectorAll('[data-aos]');
+    if (prefersReduced || aosEls.length === 0) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = parseInt(el.getAttribute('data-aos-delay') || '0', 10);
+          if (delay > 0) {
+            setTimeout(function() { el.classList.add('aos-in'); }, Math.min(delay, 600));
+          } else {
+            el.classList.add('aos-in');
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    aosEls.forEach(function(el) {
+      el.classList.add('aos-animate');
+      observer.observe(el);
+    });
+  })();
+
+  /* ====== CARD CLICK-THROUGH — make entire card clickable ====== */
+  (function(){
+    document.querySelectorAll('.card').forEach(function(card) {
+      var link = card.querySelector('h3 a, h4 a');
+      if (!link) return;
+      card.style.cursor = 'pointer';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', link.textContent.trim());
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('a, button, select, input, .tag')) return;
+        window.location.href = link.href;
+      });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = link.href;
+        }
+      });
+    });
+  })();
+  </script>
+{% block scripts_extra %}{% endblock %}
 </body>
 </html>

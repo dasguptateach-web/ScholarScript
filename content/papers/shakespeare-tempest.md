@@ -4,7 +4,7 @@ date: 2025-06-15
 type: paper
 author: Dr. Eleanor Chase
 tags: [shakespeare, postcolonial, renaissance, tempest]
-paper_url: "https://doi.org/10.1234/example"
+paper_url: ""
 summary: "An analysis of colonial power structures in Shakespeare's The Tempest."
 ---
 
