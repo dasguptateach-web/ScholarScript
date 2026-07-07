@@ -60,3 +60,23 @@
 [2026-07-07 11:40:46]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 11:40:46]   
 [2026-07-07 11:40:46] Committing and pushing to GitHub...
+[2026-07-07 11:40:55] Pushed! Workflow will deploy.
+[2026-07-07 11:40:55] Done! Files: Test_Paper_Postmodernism.txt
+[2026-07-07 11:40:55] Archived to _Processed
+[2026-07-07 11:42:48] STAGE Test_Romantic_Poetry.txt
+[2026-07-07 11:42:48] COPY Test_Romantic_Poetry.txt
+[2026-07-07 11:42:48] Ingesting...
+[2026-07-07 11:42:51]   Checking uploads folder...
+[2026-07-07 11:42:51]   Processed 1 file(s):
+[2026-07-07 11:42:51]     Success: 1
+[2026-07-07 11:42:51]     Errors:  0
+[2026-07-07 11:42:51]     [OK] Test_Romantic_Poetry.txt -> C:\Users\81\ScholarScript\content\papers\test-romantic-poetry.md (paper)
+[2026-07-07 11:42:51]   
+[2026-07-07 11:42:51]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 11:42:51]   
+[2026-07-07 11:42:51] Building site...
+[2026-07-07 11:42:58]   Building site...
+[2026-07-07 11:42:58]   Built 72 items in 2.62s
+[2026-07-07 11:42:58]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 11:42:58]   
+[2026-07-07 11:42:58] Committing and pushing to GitHub...

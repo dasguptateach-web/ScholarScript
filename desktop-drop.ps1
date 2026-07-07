@@ -81,7 +81,7 @@ function Run-WithTimeout {
     $psi.RedirectStandardError = $true
     $psi.CreateNoWindow = $true
     $psi.WorkingDirectory = $projectDir
-    $psi.EnvironmentVariables["PATH"] = [Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [Environment]::GetEnvironmentVariable("PATH", "User")
+    $psi.EnvironmentVariables["PATH"] = $env:PATH
     if ($env:GITHUB_TOKEN) { $psi.EnvironmentVariables["GITHUB_TOKEN"] = $env:GITHUB_TOKEN }
     $p = [System.Diagnostics.Process]::Start($psi)
     if ($p.WaitForExit($TimeoutSeconds * 1000)) {
