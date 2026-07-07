@@ -49,6 +49,7 @@ PAPER_TOPIC_MAP = {
     "bertolt-brecht-the-good-woman-of-setzuan": "Bertolt Brecht Good Woman of Setzuan epic theatre analysis English",
     "belinda": "Belinda character Pope Rape of the Lock analysis English literature",
     "the-british-essay-origin-trends-practitioners": "British essay origin Francis Bacon Addison Steele periodical essay English literature history",
+    "addison": "Addison Sir Roger at Home Spectator Goldsmith Parliamentary Elections periodical essay English literature",
 }
 
 TEST_PAPERS = {"auto-deploy-final-test", "final-integrated-test", "ppt"}

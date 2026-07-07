@@ -1,5 +1,5 @@
 ---
-title: "Addison"
+title: "Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections"
 date: 2026-07-07
 type: paper
 tags: [his, sir, roger, goldsmith, addison]
