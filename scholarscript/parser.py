@@ -98,8 +98,9 @@ def load_all_content(content_dir: Path) -> Tuple[List[ContentItem], List[Content
                             ("creative-writing", creative), ("external-links", external)]:
         d = content_dir / subdir
         if d.exists():
-            for f in sorted(d.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True):
+            for f in d.glob("*.md"):
                 item = parse_content_file(f)
                 if item:
                     bucket.append(item)
+            bucket.sort(key=lambda i: i.date, reverse=True)
     return papers, videos, creative, external
