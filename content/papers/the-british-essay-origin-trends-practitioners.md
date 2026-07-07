@@ -1,4 +1,4 @@
----
+﻿---
 title: "The British Essay Origin, Trends, Practitioners"
 date: 2026-07-07
 type: paper
@@ -69,7 +69,7 @@ Introduced the scientific temper into non-fiction prose – the essays reflect B
 Influenced subsequent moralists and prose stylists up to Addison and Johnson.
 
 Key essays to remember:
-Of Truth, Of Death, Of Revenge, Of Marriage and Single Life, Of Studies, Of Ambition, Of Friendship.
+Of Truth, Of Death, Of Revenge, Of Marriage and Single Life, Of Studies, Of Ambition, Of Friendship.
 
 ## 3. The Seventeenth Century: Character Writers, Cowley, Dryden, and Temple
 
@@ -319,29 +319,29 @@ The following questions have been compiled from memory, expert analysis, and exa
 
 9.1 Match the Following
 
-Q1. Match the essay collections with their authors:
-(A) Microcosmography
-(B) The Citizen of the World
-(C) The Spirit of the Age
-(D) Sesame and Lilies
+Q1. Match the essay collections with their authors:
+(A) Microcosmography
+(B) The Citizen of the World
+(C) The Spirit of the Age
+(D) Sesame and Lilies
 
 (1) Oliver Goldsmith
 (2) William Hazlitt
 (3) John Earle
 (4) John Ruskin
 
-Q2. Match the essayists with the periodicals they are chiefly associated with:
+Q2. Match the essayists with the periodicals they are chiefly associated with:
 (A) Richard Steele
 (B) Samuel Johnson
 (C) Joseph Addison
 (D) Oliver Goldsmith
 
-(1) The Rambler
-(2) The Tatler
-(3) The Public Ledger / The Bee
-(4) The Spectator
+(1) The Rambler
+(2) The Tatler
+(3) The Public Ledger / The Bee
+(4) The Spectator
 
-Q3. Match the essayists with their characteristic style/term:
+Q3. Match the essayists with their characteristic style/term:
 (A) Francis Bacon
 (B) Charles Lamb
 (C) Walter Pater
@@ -354,75 +354,75 @@ Q3. Match the essayists with their characteristic style/term:
 
 9.2 Chronological Sequencing
 
-Q4. Arrange the following essay collections chronologically:
-(1) Essays of Elia
-(2) The Rambler
-(3) Studies in the Renaissance
-(4) Essays (Bacon’s final edition)
+Q4. Arrange the following essay collections chronologically:
+(1) Essays of Elia
+(2) The Rambler
+(3) Studies in the Renaissance
+(4) Essays (Bacon’s final edition)
 
-Q5. Arrange these periodicals in order of their first publication:
-(1) The Tatler
-(2) The Idler
-(3) The Spectator
-(4) The Rambler
+Q5. Arrange these periodicals in order of their first publication:
+(1) The Tatler
+(2) The Idler
+(3) The Spectator
+(4) The Rambler
 
 9.3 Identification / Fact-based
 
-Q6. Who called his essays “dispersed meditations”?
+Q6. Who called his essays “dispersed meditations”?
 (a) Abraham Cowley
 (b) Francis Bacon
 (c) Charles Lamb
 (d) William Hazlitt
 
-Q7. The character Sir Roger de Coverley appears in:
-(a) The Tatler
-(b) The Spectator
-(c) The Guardian
-(d) The Rambler
+Q7. The character Sir Roger de Coverley appears in:
+(a) The Tatler
+(b) The Spectator
+(c) The Guardian
+(d) The Rambler
 
-Q8. “To burn always with this hard, gem-like flame” is a phrase from:
-(a) Carlyle’s Sartor Resartus
-(b) Pater’s Studies in the Renaissance
-(c) Ruskin’s Unto This Last
-(d) Arnold’s Culture and Anarchy
+Q8. “To burn always with this hard, gem-like flame” is a phrase from:
+(a) Carlyle’s Sartor Resartus
+(b) Pater’s Studies in the Renaissance
+(c) Ruskin’s Unto This Last
+(d) Arnold’s Culture and Anarchy
 
-Q9. The “Conclusion” to The Renaissance was suppressed in the second edition because it was considered:
+Q9. The “Conclusion” to The Renaissance was suppressed in the second edition because it was considered:
 (a) politically seditious
 (b) an incitement to hedonism
 (c) too technical
 (d) plagiarised
 
-Q10. Who introduced the term “familiar style” and wrote the essay “On Familiar Style”?
+Q10. Who introduced the term “familiar style” and wrote the essay “On Familiar Style”?
 (a) Charles Lamb
 (b) Matthew Arnold
 (c) William Hazlitt
 (d) Robert Louis Stevenson
 
-Q11. The Citizen of the World assumes the persona of:
+Q11. The Citizen of the World assumes the persona of:
 (a) a Turkish merchant
 (b) a Chinese philosopher
 (c) an Indian traveller
 (d) an American loyalist
 
-Q12. Samuel Johnson’s The Idler appeared in:
-(a) The Gentleman’s Magazine
-(b) The Universal Chronicle
-(c) The Edinburgh Review
-(d) The London Magazine
+Q12. Samuel Johnson’s The Idler appeared in:
+(a) The Gentleman’s Magazine
+(b) The Universal Chronicle
+(c) The Edinburgh Review
+(d) The London Magazine
 
-Q13. Which essayist distinguished between “literature of knowledge” and “literature of power”?
+Q13. Which essayist distinguished between “literature of knowledge” and “literature of power”?
 (a) Coleridge
 (b) De Quincey
 (c) Hazlitt
 (d) Lamb
 
-Q14. The essay Dream Children: A Reverie is notable for its:
+Q14. The essay Dream Children: A Reverie is notable for its:
 (a) satire on education
 (b) political allegory
 (c) blend of dream and waking, humour and pathos
 (d) defence of the Romantic imagination
 
-Q15. Sartor Resartus means:
+Q15. Sartor Resartus means:
 (a) The Hero Redeemed
 (b) The Tailor Re-tailored
 (c) The Stone Rejected
@@ -460,23 +460,23 @@ Q19. Assertion (A): Arnold’s “touchstone method” was first proposed in The
 
 9.5 Multiple Correct / All Except
 
-Q20. Which of the following are periodical essays founded/co-founded by Richard Steele?
-(a) The Rambler
-(b) The Tatler
-(c) The Spectator
-(d) The Guardian
+Q20. Which of the following are periodical essays founded/co-founded by Richard Steele?
+(a) The Rambler
+(b) The Tatler
+(c) The Spectator
+(d) The Guardian
 
 Options: (i) (b) and (c) only; (ii) (b), (c), and (d); (iii) (a), (b), (c); (iv) all four
 
-Q21. Which of the following essays were written by Charles Lamb?
-(a) The Superannuated Man
-(b) The Indian Jugglers
-(c) Dream Children: A Reverie
-(d) A Dissertation upon Roast Pig
+Q21. Which of the following essays were written by Charles Lamb?
+(a) The Superannuated Man
+(b) The Indian Jugglers
+(c) Dream Children: A Reverie
+(d) A Dissertation upon Roast Pig
 
 Options: (i) (a) and (c); (ii) (a), (c) and (d); (iii) (b) and (d); (iv) all four
 
-Q22. The character Sir Roger de Coverley was created by:
+Q22. The character Sir Roger de Coverley was created by:
 (a) Addison alone
 (b) Steele alone
 (c) Addison and Steele jointly
@@ -484,32 +484,32 @@ Q22. The character Sir Roger de Coverley was created by:
 
 ## Answer Key
 
-Q1. (A)-3, (B)-1, (C)-2, (D)-4
-Q2. (A)-2, (B)-1, (C)-4, (D)-3
-Q3. (A)-2, (B)-3, (C)-4, (D)-1
+Q1. (A)-3, (B)-1, (C)-2, (D)-4
+Q2. (A)-2, (B)-1, (C)-4, (D)-3
+Q3. (A)-2, (B)-3, (C)-4, (D)-1
 
 Q4. Correct order: (4) Bacon’s Essays 1625 → (2) The Rambler 1750–52 → (1) Essays of Elia 1823 → (3) Studies in the Renaissance 1873.
 
 Q5. (1) The Tatler 1709 → (3) The Spectator 1711 → (4) The Rambler 1750 → (2) The Idler 1758.
 
-Q6. (b) Francis Bacon
-Q7. (b) The Spectator
-Q8. (b) Pater’s Studies in the Renaissance
-Q9. (b) an incitement to hedonism
-Q10. (c) William Hazlitt
-Q11. (b) a Chinese philosopher
-Q12. (b) The Universal Chronicle
-Q13. (b) De Quincey
-Q14. (c) blend of dream and waking, humour and pathos
-Q15. (b) The Tailor Re-tailored
+Q6. (b) Francis Bacon
+Q7. (b) The Spectator
+Q8. (b) Pater’s Studies in the Renaissance
+Q9. (b) an incitement to hedonism
+Q10. (c) William Hazlitt
+Q11. (b) a Chinese philosopher
+Q12. (b) The Universal Chronicle
+Q13. (b) De Quincey
+Q14. (c) blend of dream and waking, humour and pathos
+Q15. (b) The Tailor Re-tailored
 
-Q16. (c) (A) true; (R) false — Bacon’s essays are secular, not scriptural.
-Q17. (a) Both true and (R) explains (A).
-Q18. (a) Both true and (R) explains (A).
-Q19. (b) (A) false, (R) true — “touchstone method” is introduced in The Study of Poetry, not The Function of Criticism.
-Q20. (ii) (b), (c), and (d) — Steele co-founded Tatler, Spectator, Guardian. The Rambler is Johnson’s sole venture.
-Q21. (ii) (a), (c) and (d) — The Indian Jugglers is by Hazlitt.
-Q22. (c) Addison and Steele jointly
+Q16. (c) (A) true; (R) false — Bacon’s essays are secular, not scriptural.
+Q17. (a) Both true and (R) explains (A).
+Q18. (a) Both true and (R) explains (A).
+Q19. (b) (A) false, (R) true — “touchstone method” is introduced in The Study of Poetry, not The Function of Criticism.
+Q20. (ii) (b), (c), and (d) — Steele co-founded Tatler, Spectator, Guardian. The Rambler is Johnson’s sole venture.
+Q21. (ii) (a), (c) and (d) — The Indian Jugglers is by Hazlitt.
+Q22. (c) Addison and Steele jointly
 
 ## 10. Tips and Final Words
 
@@ -527,58 +527,88 @@ Read one or two representative essays from each major figure; it helps with pros
 
 Revise the character sketch tradition (Overbury, Earle) and the periodical essay’s social agenda; these are frequently tested distinguishing features.
 
-Edition | Year | Number of Essays | Character
-First | 1597 | 10 | Brief, aphoristic notes
-Second | 1612 | 38 | Expanded, more polished
-Third | 1625 | 58 | Final form; complete and fully developed
+| Edition | Year | Number of Essays | Character |
+|---------|------|-----------------|-----------|
+| First | 1597 | 10 | Brief, aphoristic notes |
+| Second | 1612 | 38 | Expanded, more polished |
+| Third | 1625 | 58 | Final form; complete and fully developed |
 
-Author | Periodical | Dates | Features
-Richard Steele | The Tatler | 1709–1711 | Established the periodical essay as a genre. Introduced the persona of “Isaac Bickerstaff.”
-Joseph Addison & Steele | The Spectator | 1711–1712, 1714 (daily) | Most famous periodical. Persona: Mr. Spectator, a silent observer of London life. Aim: “to enliven morality with wit, and to temper wit with morality.”
-Addison & Steele | The Guardian | 1713 | Continuation of the same spirit.
+| Author | Periodical | Dates | Features |
+|--------|------------|-------|----------|
+| Richard Steele | The Tatler | 1709–1711 | Established the periodical essay as a genre. Introduced the persona of "Isaac Bickerstaff." |
+| Joseph Addison & Steele | The Spectator | 1711–1712, 1714 (daily) | Most famous periodical. Persona: Mr. Spectator, a silent observer of London life. Aim: "to enliven morality with wit, and to temper wit with morality." |
+| Addison & Steele | The Guardian | 1713 | Continuation of the same spirit. |
 
-Periodical | Dates | Frequency | Note
-The Rambler | 1750–1752 | Twice a week | Sole author; grave, moral, Latinate style. 208 essays.
-The Idler | 1758–1760 | Weekly (in Universal Chronicle) | Lighter, more relaxed than The Rambler. 103 essays.
-The Adventurer | 1753–1754 |  | Contributed essays alongside John Hawkesworth.
+| Periodical | Dates | Frequency | Note |
+|------------|-------|-----------|------|
+| The Rambler | 1750–1752 | Twice a week | Sole author; grave, moral, Latinate style. 208 essays. |
+| The Idler | 1758–1760 | Weekly (in Universal Chronicle) | Lighter, more relaxed than The Rambler. 103 essays. |
+| The Adventurer | 1753–1754 | | Contributed essays alongside John Hawkesworth. |
 
-Practitioner | Century | Notable Essay Collections / Works | Style & Dominant Feature | Major Contribution Francis Bacon | 16th–17th C. | Essays (1597, 1612, 1625) | Aphoristic, impersonal, antithetical | Father of English essay; secular, worldly wisdom John Earle | 17th C. | Microcosmography (1628) | Character sketch, witty, ironic | Perfected the Theophrastan character Abraham Cowley | 17th C. | Essays in Verse and Prose (1668) | Personal, meditative, middle style | Revived the intimate Montaignesque essay John Dryden | 17th C. | Essay of Dramatic Poesy (1668), Prefaces | Clear, urbane, conversational | Founder of English critical essay; modern prose Joseph Addison | 18th C. | The Spectator (1711–12, 1714) | Middle style, polished, witty | Created the periodical essay as literary art; Sir Roger de Coverley Richard Steele | 18th C. | The Tatler (1709–11), Spectator, Guardian | Warm, impulsive, humane | Launched the periodical essay; Isaac Bickerstaff Samuel Johnson | 18th C. | The Rambler (1750–52), The Idler (1758–60) | Latinate, periodic, moral gravity | Raised essay to moral philosophy; classic formal essay Oliver Goldsmith | 18th C. | The Citizen of the World (1762), The Bee | Gentle irony, sentimental comedy | Chinese letters; blend of Addison and sentiment Charles Lamb | 19th C. (Romantic) | Essays of Elia (1823), Last Essays (1833) | Quaint, nostalgic, pathos + humour | Perfected the familiar personal essay as lyrical art William Hazlitt | 19th C. (Romantic) | Table-Talk, The Spirit of the Age, The Plain Speaker | Plain, forceful, “gusto” | Unified personal, political, and critical essay Thomas De Quincey | 19th C. (Romantic) | Confessions of an English Opium-Eater, Suspiria, Murder as Fine Art | Impassioned prose, rhapsodic, psychological | Invented prose-poetry essay; literature of power Thomas Carlyle | 19th C. (Victorian) | Sartor Resartus, Past and Present, Heroes and Hero-Worship | Prophetic, Germanic, symbolist | Transformed essay into social prophecy; “Carlylese” Thomas Babington Macaulay | 19th C. (Victorian) | Critical and Historical Essays (1843) | Antithetical, oratorical, lucid | Popularised critical essay; Whig perspective John Ruskin | 19th C. (Victorian) | Unto This Last, Sesame and Lilies, The Stones of Venice | Descriptive brilliance, moral passion | Fused art criticism with social reform Matthew Arnold | 19th C. (Victorian) | Essays in Criticism (1865, 1888), Culture and Anarchy (1869) | Ironic, elegant, cultural authoritative | Defined modern criticism; “sweetness and light,” “touchstone” Walter Pater | 19th C. (Victorian) | Studies in the Renaissance (1873), Appreciations | Jewelled, aesthetic, sensuous | Aesthetic criticism; art-for-art’s-sake in essay form R. L. Stevenson | 19th C. (Late Victorian) | Virginibus Puerisque (1881), Familiar Studies | Graceful, personal, nostalgic | Reinvigorated the familiar essay for a new generation
+| Practitioner | Century | Notable Essay Collections / Works | Style & Dominant Feature | Major Contribution |
+|-------------|--------|-------------------------------|-------------------------|-------------------|
+| Francis Bacon | 16th–17th C. | Essays (1597, 1612, 1625) | Aphoristic, impersonal, antithetical | Father of English essay; secular, worldly wisdom| |
+| John Earle | 17th C. | Microcosmography (1628) | Character sketch, witty, ironic | Perfected the Theophrastan character| |
+| Abraham Cowley | 17th C. | Essays in Verse and Prose (1668) | Personal, meditative, middle style | Revived the intimate Montaignesque essay| |
+| John Dryden | 17th C. | Essay of Dramatic Poesy (1668), Prefaces | Clear, urbane, conversational | Founder of English critical essay; modern prose| |
+| Joseph Addison | 18th C. | The Spectator (1711–12, 1714) | Middle style, polished, witty | Created the periodical essay as literary art; Sir Roger de Coverley| |
+| Richard Steele | 18th C. | The Tatler (1709–11), Spectator, Guardian | Warm, impulsive, humane | Launched the periodical essay; Isaac Bickerstaff| |
+| Samuel Johnson | 18th C. | The Rambler (1750–52), The Idler (1758–60) | Latinate, periodic, moral gravity | Raised essay to moral philosophy; classic formal essay| |
+| Oliver Goldsmith | 18th C. | The Citizen of the World (1762), The Bee | Gentle irony, sentimental comedy | Chinese letters; blend of Addison and sentiment| |
+| Charles Lamb | 19th C. (Romantic) | Essays of Elia (1823), Last Essays (1833) | Quaint, nostalgic, pathos + humour | Perfected the familiar personal essay as lyrical art| |
+| William Hazlitt | 19th C. (Romantic) | Table-Talk, The Spirit of the Age, The Plain Speaker | Plain, forceful, “gusto” | Unified personal, political, and critical essay| |
+| Thomas De Quincey | 19th C. (Romantic) | Confessions of an English Opium-Eater, Suspiria, Murder as Fine Art | Impassioned prose, rhapsodic, psychological | Invented prose-poetry essay; literature of power| |
+| Thomas Carlyle | 19th C. (Victorian) | Sartor Resartus, Past and Present, Heroes and Hero-Worship | Prophetic, Germanic, symbolist | Transformed essay into social prophecy; “Carlylese”| |
+| Thomas Babington Macaulay | 19th C. (Victorian) | Critical and Historical Essays (1843) | Antithetical, oratorical, lucid | Popularised critical essay; Whig perspective| |
+| John Ruskin | 19th C. (Victorian) | Unto This Last, Sesame and Lilies, The Stones of Venice | Descriptive brilliance, moral passion | Fused art criticism with social reform| |
+| Matthew Arnold | 19th C. (Victorian) | Essays in Criticism (1865, 1888), Culture and Anarchy (1869) | Ironic, elegant, cultural authoritative | Defined modern criticism; “sweetness and light,” “touchstone”| |
+| Walter Pater | 19th C. (Victorian) | Studies in the Renaissance (1873), Appreciations | Jewelled, aesthetic, sensuous | Aesthetic criticism; art-for-art’s-sake in essay form| |
+| R. L. Stevenson | 19th C. (Late Victorian) | Virginibus Puerisque (1881), Familiar Studies | Graceful, personal, nostalgic | Reinvigorated the familiar essay for a new generation |
 
-Essay / Collection | Author | Year(s) | Type / Significance
-Essays | Francis Bacon | 1597 (10), 1612 (38), 1625 (58) | First English essay collection; aphoristic, worldly
-Characters | Sir Thomas Overbury | 1614 | Theophrastan character sketches
-Microcosmography | John Earle | 1628 | Finest 17th-century character book
-Essay of Dramatic Poesy | John Dryden | 1668 | First major English critical essay; dialogue form
-Essays in Verse and Prose | Abraham Cowley | 1668 | Revival of the personal familiar essay
-The Tatler (271 numbers) | Richard Steele (mainly) | 1709–1711 | First successful periodical essay
-The Spectator (635 numbers) | Addison & Steele | 1711–1712, 1714 | Greatest periodical essay series; Mr. Spectator
-The Rambler (208 numbers) | Samuel Johnson | 1750–1752 | Grave moral essays, formal style
-The Idler (103 numbers) | Samuel Johnson | 1758–1760 | Lighter periodical essays
-The Citizen of the World | Oliver Goldsmith | 1762 | Chinese observer; satire of English society
-The Man in Black (in Citizen) | Goldsmith | 1762 | Portrait of a benevolent misanthrope
-Essays of Elia | Charles Lamb | 1823 | Landmark familiar essays; Elia persona
-Last Essays of Elia | Charles Lamb | 1833 | Sequel, including “Superannuated Man,” “Old China”
-Table-Talk | William Hazlitt | 1821–22 | Platonic conversations turned into essays
-The Spirit of the Age | William Hazlitt | 1825 | Gallery of contemporary portraits
-Confessions of an English Opium-Eater | Thomas De Quincey | 1821 (expanded 1856) | Autobiographical, psychological essay
-On Murder Considered as One of the Fine Arts | De Quincey | 1827, 1839, 1854 | Satirical lecture–essay
-Suspiria de Profundis | De Quincey | 1845 | Prose-poetic dreams
-Sartor Resartus | Thomas Carlyle | 1833–34 | Fictional philosophical essay / anti-novel
-Heroes and Hero-Worship | Thomas Carlyle | 1841 | Series of six lectures–essays
-Past and Present | Thomas Carlyle | 1843 | Social criticism in essayistic chapters
-Critical and Historical Essays | T.B. Macaulay | 1843 | Collection from Edinburgh Review; includes Milton, Machiavelli
-Modern Painters (5 vols) | John Ruskin | 1843–1860 | Art criticism essays
-Unto This Last | John Ruskin | 1860 | Four essays on political economy
-Sesame and Lilies | John Ruskin | 1865 | Two lectures–essays on reading and women’s education
-Essays in Criticism (First Series) | Matthew Arnold | 1865 | Includes Function of Criticism, Heine, Wordsworth
-Culture and Anarchy | Matthew Arnold | 1869 | Cultural criticism essays
-Essays in Criticism (Second Series) | Matthew Arnold | 1888 | Includes The Study of Poetry
-Studies in the History of the Renaissance | Walter Pater | 1873 | Aesthetic essays; Conclusion famous
-Appreciations | Walter Pater | 1889 | Collected literary essays, incl. Style
-Virginibus Puerisque | R. L. Stevenson | 1881 | Familiar essays for youth
-Familiar Studies of Men and Books | R. L. Stevenson | 1882 | Critical and personal essays
-The Idea of a University | J. H. Newman | 1852, 1858 | Discourses/essays on liberal education
-Lay Sermons, Addresses and Reviews | T. H. Huxley | 1870 | Essays on science and agnosticism
-Obiter Dicta | Augustine Birrell | 1884, 1887 | Charming late Victorian familiar essays
+| Essay / Collection | Author | Year(s) | Type / Significance |
+|------------------|--------|--------|-------------------|
+| Essays | Francis Bacon | 1597 (10), 1612 (38), 1625 (58) | First English essay collection; aphoristic, worldly |
+| Characters | Sir Thomas Overbury | 1614 | Theophrastan character sketches |
+| Microcosmography | John Earle | 1628 | Finest 17th-century character book |
+| Essay of Dramatic Poesy | John Dryden | 1668 | First major English critical essay; dialogue form |
+| Essays in Verse and Prose | Abraham Cowley | 1668 | Revival of the personal familiar essay |
+| The Tatler (271 numbers) | Richard Steele (mainly) | 1709–1711 | First successful periodical essay |
+| The Spectator (635 numbers) | Addison & Steele | 1711–1712, 1714 | Greatest periodical essay series; Mr. Spectator |
+| The Rambler (208 numbers) | Samuel Johnson | 1750–1752 | Grave moral essays, formal style |
+| The Idler (103 numbers) | Samuel Johnson | 1758–1760 | Lighter periodical essays |
+| The Citizen of the World | Oliver Goldsmith | 1762 | Chinese observer; satire of English society |
+| The Man in Black (in Citizen) | Goldsmith | 1762 | Portrait of a benevolent misanthrope |
+| Essays of Elia | Charles Lamb | 1823 | Landmark familiar essays; Elia persona |
+| Last Essays of Elia | Charles Lamb | 1833 | Sequel, including “Superannuated Man,” “Old China” |
+| Table-Talk | William Hazlitt | 1821–22 | Platonic conversations turned into essays |
+| The Spirit of the Age | William Hazlitt | 1825 | Gallery of contemporary portraits |
+| Confessions of an English Opium-Eater | Thomas De Quincey | 1821 (expanded 1856) | Autobiographical, psychological essay |
+| On Murder Considered as One of the Fine Arts | De Quincey | 1827, 1839, 1854 | Satirical lecture–essay |
+| Suspiria de Profundis | De Quincey | 1845 | Prose-poetic dreams |
+| Sartor Resartus | Thomas Carlyle | 1833–34 | Fictional philosophical essay / anti-novel |
+| Heroes and Hero-Worship | Thomas Carlyle | 1841 | Series of six lectures–essays |
+| Past and Present | Thomas Carlyle | 1843 | Social criticism in essayistic chapters |
+| Critical and Historical Essays | T.B. Macaulay | 1843 | Collection from Edinburgh Review; includes Milton, Machiavelli |
+| Modern Painters (5 vols) | John Ruskin | 1843–1860 | Art criticism essays |
+| Unto This Last | John Ruskin | 1860 | Four essays on political economy |
+| Sesame and Lilies | John Ruskin | 1865 | Two lectures–essays on reading and women’s education |
+| Essays in Criticism (First Series) | Matthew Arnold | 1865 | Includes Function of Criticism, Heine, Wordsworth |
+| Culture and Anarchy | Matthew Arnold | 1869 | Cultural criticism essays |
+| Essays in Criticism (Second Series) | Matthew Arnold | 1888 | Includes The Study of Poetry |
+| Studies in the History of the Renaissance | Walter Pater | 1873 | Aesthetic essays; Conclusion famous |
+| Appreciations | Walter Pater | 1889 | Collected literary essays, incl. Style |
+| Virginibus Puerisque | R. L. Stevenson | 1881 | Familiar essays for youth |
+| Familiar Studies of Men and Books | R. L. Stevenson | 1882 | Critical and personal essays |
+| The Idea of a University | J. H. Newman | 1852, 1858 | Discourses/essays on liberal education |
+| Lay Sermons, Addresses and Reviews | T. H. Huxley | 1870 | Essays on science and agnosticism |
+| Obiter Dicta | Augustine Birrell | 1884, 1887 | Charming late Victorian familiar essays |
 
-Century | Dominant Form | Key Features | Representative Authors 16th | Aphoristic essay | Impersonal, brief, sententious, classical learning, worldly wisdom | Francis Bacon Early 17th | Character sketch | Theophrastan model, social types, witty prose | Hall, Overbury, Earle, Fuller Mid–Late 17th | Personal & critical essay | Revival of familiar style (Cowley); critical dialogue and prefaces (Dryden); transitional prose | Cowley, Dryden, Temple 18th | Periodical essay | Social reform, politeness, middle-class audience, coffee-house culture, serial publication, fictional persona | Addison, Steele, Johnson, Goldsmith Romantic (early 19th) | Personal/familiar essay & impassioned prose | Subjectivity, nostalgia, psychological depth, lyrical, confessional; prose-poetry | Lamb, Hazlitt, Hunt, De Quincey Victorian | Critical, social, and aesthetic essay | Moral earnestness, prophetic voice (Carlyle, Ruskin), cultural criticism (Arnold), aesthetic hedonism (Pater), familiar revival (Stevenson) | Macaulay, Carlyle, Ruskin, Arnold, Pater, Newman, Stevenson
+| Century | Dominant Form | Key Features | Representative Authors |
+|---------|---------------|-------------|----------------------|
+| 16th | Aphoristic essay | Impersonal, brief, sententious, classical learning, worldly wisdom | Francis Bacon |
+| Early 17th | Character sketch | Theophrastan model, social types, witty prose | Hall, Overbury, Earle, Fuller |
+| Mid-Late 17th | Personal & critical essay | Revival of familiar style (Cowley); critical dialogue and prefaces (Dryden); transitional prose | Cowley, Dryden, Temple |
+| 18th | Periodical essay | Social reform, politeness, middle-class audience, coffee-house culture, serial publication, fictional persona | Addison, Steele, Johnson, Goldsmith |
+| Romantic (early 19th) | Personal/familiar essay & impassioned prose | Subjectivity, nostalgia, psychological depth, lyrical, confessional; prose-poetry | Lamb, Hazlitt, Hunt, De Quincey |
+| Victorian | Critical, social, and aesthetic essay | Moral earnestness, prophetic voice (Carlyle, Ruskin), cultural criticism (Arnold), aesthetic hedonism (Pater), familiar revival (Stevenson) | Macaulay, Carlyle, Ruskin, Arnold, Pater, Newman, Stevenson |
+

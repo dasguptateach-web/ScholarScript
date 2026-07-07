@@ -48,6 +48,7 @@ PAPER_TOPIC_MAP = {
     "blood-and-betrayal-in-mumbai-vishal-bhardwajs-maqbool-as-a-cinematic-reinvention-of-macbeth": "Maqbool Vishal Bhardwaj Macbeth adaptation film analysis English",
     "bertolt-brecht-the-good-woman-of-setzuan": "Bertolt Brecht Good Woman of Setzuan epic theatre analysis English",
     "belinda": "Belinda character Pope Rape of the Lock analysis English literature",
+    "the-british-essay-origin-trends-practitioners": "British essay origin Francis Bacon Addison Steele periodical essay English literature history",
 }
 
 TEST_PAPERS = {"auto-deploy-final-test", "final-integrated-test", "ppt"}

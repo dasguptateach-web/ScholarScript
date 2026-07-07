@@ -143,6 +143,14 @@ function Process-Batch {
     if ($ok) {
         $ts = Get-Timestamp; $pushed = $false
         Log "=== STEP 4/5: Committing and pushing to GitHub ==="
+        
+        # Configure git auth for scripted use
+        if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
+        if ($env:GITHUB_TOKEN) {
+            $repoUrl = "https://dasguptateach-web:$env:GITHUB_TOKEN@github.com/dasguptateach-web/ScholarScript.git"
+            git remote set-url origin $repoUrl 2>&1 | Out-Null
+        }
+        
         try { git add -A 2>&1 | Out-Null } catch { Log "  ADD EX: $_" }
         try { $out = git commit -m "Auto-deploy $ts" 2>&1 } catch { Log "  COMMIT EX: $_" }
         if ($out -match 'nothing to commit|nothing changed') { Log "  Nothing new to push" }
@@ -166,10 +174,14 @@ function Process-Batch {
                     if ($out -match 'rejected|non-fast-forward') {
                         Log "  Behind remote - pulling..."
                         git pull --no-rebase origin main --no-edit 2>$null
-                    }
+                    } else { Log "  PUSH ERROR: $out" }
                 }
             } catch { Log "  GIT EX: $_" }
         }
+        
+        # Restore original remote URL
+        git remote set-url origin "https://github.com/dasguptateach-web/ScholarScript.git" 2>&1 | Out-Null
+        
         if (-not $pushed) { $ok = $false }
     }
 
