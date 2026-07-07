@@ -112,7 +112,7 @@
   <blockquote class="summary" data-aos="fade-up">{{ item.summary }}</blockquote>
 {% endif %}
 
-  <div class="content-body" id="contentBody" data-aos="fade-up">
+  <div class="content-body" id="contentBody">
     {{ item.body_html | safe }}
   </div>
 
@@ -158,12 +158,33 @@ function googleTranslateElementInit() {
   var statusEl=document.getElementById('ttsStatus');
   var body=document.getElementById('contentBody');
   var ss=window.speechSynthesis;
-  var speaking=false, paused=false, allVoices=[], utt=null, startTimer=null;
+  var speaking=false, paused=false, voicesReady=false, utt=null;
+  var voiceQueue=[];
 
-  if(!btn||!body||!ss||typeof ss.speak!=='function'){
+  if(!btn||!body||!ss){
     if(statusEl)statusEl.textContent='Not available';
     return;
   }
+
+  // Preload voices asynchronously
+  function loadVoices(){
+    var v=ss.getVoices();
+    if(v&&v.length){voicesReady=true;
+      if(statusEl)statusEl.textContent='Ready';
+      // Process queued speak requests
+      while(voiceQueue.length)voiceQueue.shift()();
+    }
+  }
+  loadVoices();
+  if(ss.onvoiceschanged!==undefined){
+    ss.onvoiceschanged=loadVoices;
+  }
+  // Poll for voices (fallback for browsers that don't fire onvoiceschanged)
+  var voicePoller=setInterval(function(){
+    if(!voicesReady){loadVoices();}else{clearInterval(voicePoller);}
+  },500);
+  // Stop polling after 10s
+  setTimeout(function(){clearInterval(voicePoller);},10000);
 
   function txt(){return body.textContent.replace(/\s+/g,' ').trim();}
   function setStatus(t,c){if(statusEl){statusEl.textContent=t;if(c)statusEl.style.color=c;}}
@@ -171,14 +192,13 @@ function googleTranslateElementInit() {
     btn.innerHTML='<i class="fas fa-headphones"></i> Read';
     btn.className='tts-btn';
     speaking=false;paused=false;utt=null;
-    if(startTimer){clearTimeout(startTimer);startTimer=null;}
   }
 
   function pickVoice(gen){
     var v=ss.getVoices();
     if(!v||!v.length)return null;
-    allVoices=v;
     var best=null;
+    // Prefer Indian English or Hindi voices
     for(var i=0;i<v.length;i++){
       var name=v[i].name.toLowerCase();
       var lang=v[i].lang||'';
@@ -209,6 +229,30 @@ function googleTranslateElementInit() {
     return best;
   }
 
+  function doSpeak(){
+    var text=txt();
+    if(!text){resetBtn();return;}
+    try{ss.cancel();}catch(e){}
+    var u=new SpeechSynthesisUtterance(text);
+    u.rate=parseFloat(speedEl?speedEl.value:'1');
+    u.volume=1;
+    var voice=pickVoice(genderEl?genderEl.value:'');
+    if(voice){u.voice=voice;u.lang=voice.lang||'en-US';}else{u.lang='en-US';}
+    utt=u;speaking=true;paused=false;
+    btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Starting';btn.className='tts-btn';
+    setStatus('Starting');
+    u.onstart=function(){
+      btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
+      setStatus('Reading');
+    };
+    u.onend=function(){resetBtn();setStatus('Done');};
+    u.onerror=function(e){
+      if(e.error==='canceled'||e.error==='interrupted'){resetBtn();setStatus('Stopped');return;}
+      resetBtn();setStatus('Tap to start','#d97706');
+    };
+    try{ss.speak(u);}catch(e){resetBtn();setStatus('Tap to start','#d97706');}
+  }
+
   btn.addEventListener('click',function(){
     if(paused&&utt){
       try{ss.resume();setStatus('Reading');speaking=true;paused=false;
@@ -222,40 +266,14 @@ function googleTranslateElementInit() {
       }catch(e){resetBtn();}
       return;
     }
-
-    var text=txt();
-    if(!text){resetBtn();return;}
-
-    try{ss.cancel();}catch(e){}
-
-    var u=new SpeechSynthesisUtterance(text);
-    u.rate=parseFloat(speedEl?speedEl.value:'1');
-    u.volume=1;
-    var voice=pickVoice(genderEl?genderEl.value:'');
-    if(voice){u.voice=voice;u.lang=voice.lang||'en-US';}else{u.lang='en-US';}
-
-    utt=u;speaking=true;paused=false;
-    btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Starting';btn.className='tts-btn';
-    setStatus('Starting');
-
-    var started=false;
-    u.onstart=function(){started=true;
-      if(startTimer){clearTimeout(startTimer);startTimer=null;}
-      btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
-      setStatus('Reading');
-    };
-    u.onend=function(){resetBtn();setStatus('Done');};
-    u.onerror=function(e){
-      if(started)return;
-      if(e.error==='canceled'||e.error==='interrupted'){resetBtn();setStatus('Stopped');return;}
-      resetBtn();setStatus('Tap to start','#d97706');
-    };
-
-    try{ss.speak(u);
-      startTimer=setTimeout(function(){
-        if(speaking&&!started){resetBtn();setStatus('Not supported');}
-      },3000);
-    }catch(e){resetBtn();setStatus('Tap to start','#d97706');}
+    // If voices not ready, queue and show loading
+    if(!voicesReady){
+      setStatus('Loading voices...');
+      btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Loading';
+      voiceQueue.push(doSpeak);
+      return;
+    }
+    doSpeak();
   });
 })();
 

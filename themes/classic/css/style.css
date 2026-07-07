@@ -785,6 +785,21 @@ input, textarea, select { font-size: 16px !important; }  /* prevent iOS zoom */
 }
 .card:hover .video-thumb-play { background: #ff0000; transform: translate(-50%, -50%) scale(1.1); }
 
+/* ============ AOS ANIMATION ============ */
+.aos-hidden {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-visible { opacity: 1; transform: translateY(0); }
+
+/* On content pages, skip AOS transitions for first-screen elements */
+.content-page .article-header.aos-hidden,
+.content-page .tts-bar.aos-hidden,
+.content-page .translate-bar.aos-hidden {
+  opacity: 1; transform: none;
+  transition: none;
+}
+
 /* ============ VISITOR STATS ============ */
 .stats-subtitle {
   text-align: center; color: var(--text-muted);
