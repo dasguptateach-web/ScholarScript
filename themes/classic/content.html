@@ -222,8 +222,8 @@ function googleTranslateElementInit() {
   var statusEl=document.getElementById('ttsStatus');
   var body=document.getElementById('contentBody');
   var ss=window.speechSynthesis;
-  var chunks=[], chunkIdx=0, speaking=false, paused=false, voicesReady=false;
-  var selectedVoice=null, highlightTimer=null;
+  var chunks=[], chunkIdx=0, speaking=false, paused=false, starting=false;
+  var selectedVoice=null, keepAlive=null;
   var stopBtn=document.createElement('button');
 
   if(!btn||!body||!ss||typeof ss.speak!=='function'){
@@ -232,7 +232,7 @@ function googleTranslateElementInit() {
     return;
   }
 
-  // Add a hidden Stop button
+  // Add a Stop button next to Read
   stopBtn.className='tts-btn stop';
   stopBtn.innerHTML='<i class="fas fa-stop"></i> Stop';
   stopBtn.style.display='none';
@@ -240,14 +240,17 @@ function googleTranslateElementInit() {
   btn.parentNode.insertBefore(stopBtn, btn.nextSibling);
   stopBtn.addEventListener('click', function(){ stopAll(); });
 
+  // Preload voices in background (don't block reading)
   function loadVoices(){
     var v=ss.getVoices();
-    if(v&&v.length){voicesReady=true; if(statusEl)statusEl.textContent='Ready';}
+    if(v&&v.length){ if(statusEl)statusEl.textContent='Ready'; }
   }
   loadVoices();
   if(ss.onvoiceschanged!==undefined) ss.onvoiceschanged=loadVoices;
   setTimeout(loadVoices, 500);
   setTimeout(loadVoices, 1500);
+  // Chrome: trigger voice loading by calling getVoices after user gesture
+  btn.addEventListener('focus', loadVoices);
 
   function setStatus(t,c){if(statusEl){statusEl.textContent=t;if(c)statusEl.style.color=c;}}
 
@@ -255,8 +258,9 @@ function googleTranslateElementInit() {
     btn.innerHTML='<i class="fas fa-headphones"></i> Read';
     btn.className='tts-btn';
     stopBtn.style.display='none';
-    speaking=false;paused=false;chunkIdx=0;
+    speaking=false;paused=false;starting=false;chunkIdx=0;
     clearHighlight();
+    if(keepAlive){clearInterval(keepAlive);keepAlive=null;}
   }
 
   function clearHighlight(){
@@ -272,7 +276,6 @@ function googleTranslateElementInit() {
     nodes.forEach(function(node){
       var text=node.textContent.trim();
       if(!text) return;
-      // Split long paragraphs into sentence-level chunks
       var sentences=text.split(/(?<=[.!?;:])\s+/);
       var buf='';
       sentences.forEach(function(s){
@@ -291,24 +294,20 @@ function googleTranslateElementInit() {
     var v=ss.getVoices();
     if(!v||!v.length)return null;
     var best=null;
-    // Priority 1: Indian English (en-IN) — perfect for Indian students reading English lit
     for(var i=0;i<v.length;i++){
       var lang=(v[i].lang||'').toLowerCase();
       if(lang==='en-in'||lang==='en_in'){best=v[i];break;}
     }
-    // Priority 2: any en-* voice
     if(!best){
       for(var i=0;i<v.length;i++){
         if((v[i].lang||'').indexOf('en')===0){best=v[i];break;}
       }
     }
     if(!best&&v.length)best=v[0];
-    // Gender override
     if(best&&gen){
       var isFemale=/\b(female|samantha|zira|hazel|emma|mia|joanna|kendra|susan|victoria|veena|tessa|sara|aria|jenny)\b/i;
       var isMale=/\b(male|david|mark|daniel|michael|james|john|robert|richard|thomas|henry|guy|rishi)\b/i;
       var want=gen==='female'?isFemale:(gen==='male'?isMale:null);
-      var other=gen==='female'?isMale:(gen==='male'?isFemale:null);
       if(want&&!want.test(best.name)){
         for(var i=0;i<v.length;i++){
           if(want.test(v[i].name)&&(v[i].lang||'').indexOf('en')===0){best=v[i];break;}
@@ -324,7 +323,6 @@ function googleTranslateElementInit() {
     var node=chunks[idx].node;
     if(node){
       node.classList.add('tts-highlight','tts-reading');
-      // Scroll into view (gentle)
       var rect=node.getBoundingClientRect();
       if(rect.top<80||rect.bottom>window.innerHeight-40){
         node.scrollIntoView({behavior:'smooth',block:'center'});
@@ -334,13 +332,15 @@ function googleTranslateElementInit() {
 
   function speakNext(){
     if(!speaking||paused)return;
-    if(chunkIdx>=chunks.length){resetBtn();setStatus('Done');return;}
+    if(chunkIdx>=chunks.length){stopAll();setStatus('Done');return;}
     var chunk=chunks[chunkIdx];
     highlightChunk(chunkIdx);
     setStatus('Reading ('+(chunkIdx+1)+'/'+chunks.length+')');
     var u=new SpeechSynthesisUtterance(chunk.text);
     u.rate=parseFloat(speedEl?speedEl.value:'1');
     u.volume=1;
+    // Re-pick voice each chunk in case voices loaded late
+    if(!selectedVoice) selectedVoice=pickVoice(genderEl?genderEl.value:'');
     if(selectedVoice){u.voice=selectedVoice;u.lang=selectedVoice.lang||'en-US';}else{u.lang='en-US';}
     u.onend=function(){
       chunkIdx++;
@@ -361,47 +361,55 @@ function googleTranslateElementInit() {
   }
 
   btn.addEventListener('click',function(){
+    // Guard: if currently starting, ignore clicks
+    if(starting) return;
+    // If paused, resume
     if(paused){
       try{ss.resume();setStatus('Reading');speaking=true;paused=false;
         btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
       }catch(e){stopAll();}
       return;
     }
+    // If speaking, pause
     if(speaking){
       try{ss.pause();setStatus('Paused');paused=true;
         btn.innerHTML='<i class="fas fa-play"></i> Resume';btn.className='tts-btn';
       }catch(e){stopAll();}
       return;
     }
-    // Start fresh
+    // Start fresh — IMMEDIATELY, no waiting for voices
+    starting=true;
+    btn.innerHTML='<i class="fas fa-pause"></i> Pause';
+    btn.className='tts-btn stop';
     try{ss.cancel();}catch(e){}
-    if(!voicesReady){
-      setStatus('Loading voices...');
-      btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Loading';
-      var wait=setInterval(function(){
-        if(voicesReady){clearInterval(wait);startReading();}
-      },200);
-      setTimeout(function(){clearInterval(wait);if(!speaking)startReading();},3000);
-      return;
-    }
-    startReading();
+    // Small delay after cancel to avoid Chrome race condition
+    setTimeout(function(){
+      startReading();
+    },120);
   });
 
   function startReading(){
     buildChunks();
-    if(chunks.length===0){resetBtn();return;}
+    if(chunks.length===0){resetBtn();setStatus('No content');return;}
     selectedVoice=pickVoice(genderEl?genderEl.value:'');
-    speaking=true;paused=false;chunkIdx=0;
+    speaking=true;paused=false;starting=false;chunkIdx=0;
     btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
     stopBtn.style.display='inline-flex';
     setStatus('Reading (1/'+chunks.length+')');
+    // Chrome keep-alive: call resume() every 10s to prevent silent pause
+    keepAlive=setInterval(function(){
+      if(speaking&&!paused){ try{ss.resume();}catch(e){} }
+    },10000);
     speakNext();
   }
 
   // Stop speaking if user navigates away
   window.addEventListener('beforeunload',function(){try{ss.cancel();}catch(e){}});
-  // Re-pick voice if gender changes mid-stop
-  if(genderEl)genderEl.addEventListener('change',function(){selectedVoice=pickVoice(this.value);});
+  // Re-pick voice if gender changes
+  if(genderEl)genderEl.addEventListener('change',function(){
+    selectedVoice=pickVoice(this.value);
+    if(!speaking&&!paused) setStatus('Ready');
+  });
 })();
 
 /* Translate */
