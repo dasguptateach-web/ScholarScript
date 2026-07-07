@@ -137,3 +137,24 @@
 [2026-07-07 12:07:06] === STEP 5/5: Done! ===
 [2026-07-07 12:07:06] Files: Dr. Faustus a Study.docx
 [2026-07-07 12:07:06] Archived to _Processed
+[2026-07-07 19:04:46] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-07 19:21:43] STAGE HOW TO USE.txt
+[2026-07-07 19:21:43] COPY HOW TO USE.txt
+[2026-07-07 19:21:43] === STEP 1/5: Ingesting documents ===
+[2026-07-07 19:21:45]   Checking uploads folder...
+[2026-07-07 19:21:45]   Processed 1 file(s):
+[2026-07-07 19:21:45]     Success: 1
+[2026-07-07 19:21:45]     Errors:  0
+[2026-07-07 19:21:45]     [OK] HOW TO USE.txt -> C:\Users\81\ScholarScript\content\creative-writing\how-to-use.md (creative-writing)
+[2026-07-07 19:21:45]   
+[2026-07-07 19:21:45]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 19:21:45] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 19:22:01]   Found 30 papers
+[2026-07-07 19:22:01]   
+[2026-07-07 19:22:01]   
+[2026-07-07 19:22:01]   Done! Created: 0, Skipped: 30, Failed: 0
+[2026-07-07 19:22:01] === STEP 3/5: Building site ===
+[2026-07-07 19:22:03]   Building site...
+[2026-07-07 19:22:03]   Built 69 items in 1.12s
+[2026-07-07 19:22:03]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 19:22:03] === STEP 4/5: Committing and pushing to GitHub ===
