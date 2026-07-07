@@ -3,7 +3,7 @@ title: "The Elizabethan Age"
 date: 2026-07-07
 type: video
 author: "Arpita Karwa"
-tags: [his, drama, marlowe, were, plays]
+tags: [drama, marlowe, plays]
 video_url: "https://www.youtube.com/watch?v=c21cMSmaC8g"
 summary: "A video lecture on The Elizabethan Age"
 ---

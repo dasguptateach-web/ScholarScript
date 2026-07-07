@@ -3,7 +3,7 @@ title: "Study Guide: J.K. Rowling — Harry Potter and the Philosopher's Stone"
 date: 2026-07-07
 type: video
 author: "Tea Break Academy"
-tags: [harry, stone, his, novel, potter]
+tags: [harry, stone, novel, potter]
 video_url: "https://www.youtube.com/watch?v=RSCdxiIoSlE"
 summary: "A video lecture on Study Guide: J.K. Rowling — Harry Potter and the Philosopher's Stone"
 ---

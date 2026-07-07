@@ -3,7 +3,7 @@ title: "Harry Satqa"
 date: 2026-07-07
 type: video
 author: "MovieFlame"
-tags: [harry, his, voldemort, novel, moral]
+tags: [harry, voldemort, novel, moral]
 video_url: "https://www.youtube.com/watch?v=wOTfMkCR6k8"
 summary: "A video lecture on Harry Satqa"
 ---

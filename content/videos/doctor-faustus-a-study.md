@@ -3,7 +3,7 @@ title: "Doctor Faustus: A Study"
 date: 2026-07-07
 type: video
 author: "Course Hero"
-tags: [faustus, his, him, mephostophilis, scene]
+tags: [faustus, mephostophilis, scene]
 video_url: "https://www.youtube.com/watch?v=6C8SY8UF4C0"
 summary: "A video lecture on Doctor Faustus: A Study Guide"
 ---

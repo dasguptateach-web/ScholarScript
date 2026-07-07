@@ -3,7 +3,7 @@ title: "Ecocriticism A Study"
 date: 2026-07-07
 type: video
 author: "Pradeep Hariharan"
-tags: [nature, human, its, ecology, ecological]
+tags: [nature, human, ecology, ecological]
 video_url: "https://www.youtube.com/watch?v=l2Q1uh06KvY"
 summary: "A video lecture on Ecocriticism A Study"
 ---
