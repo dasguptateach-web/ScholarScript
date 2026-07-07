@@ -2,12 +2,18 @@
 title: "The Solitude Of Alexander Selkirk As A Dramatic Monologue"
 date: 2026-07-07
 type: video
-author: "ENGLISH CARE by Nishant Gangwal Anta"
-tags: [the, solitude, of, alexander, selkirk, as, a, dramatic, monologue]
-video_url: "https://www.youtube.com/watch?v=Hgnt_mC4ikE"
-summary: "Light Shining Out Of Darkness by William Cowper | Part-1 #williamcowper #cowper #explanation #poetry English Care by Nishant ..."
+author: "Study Lovers Kapil Gangwani"
+tags: [selkirk, dramatic, cowper, speaker, solitude]
+video_url: "https://www.youtube.com/watch?v=Nf-O9G9wxFM"
+summary: "[ Analyze The Solitude of Alexander Selkirk as a dramatic monologue. How effectively April 17, 2026 does Cowper portray the psychological conflict of the speake"
 ---
 
-# Light Shining Out Of Darkness by William Cowper | Part-1 #williamcowper #cowper #explanation #poetry
+# The Solitude Of Alexander Selkirk As A Dramatic Monologue
 
-Light Shining Out Of Darkness by William Cowper | Part-1 #williamcowper #cowper #explanation #poetry English Care by Nishant ...
+Ballad | Literary Form #literature #English
+
+**Channel:** Study Lovers Kapil Gangwani  
+**Views:** 151,881  
+**Duration:** 5:42
+
+#Ballad #literature

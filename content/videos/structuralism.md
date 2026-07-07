@@ -5,7 +5,7 @@ type: video
 author: "Arpita Karwa"
 tags: [meaning, literary, saussure, structuralism, language]
 video_url: "https://www.youtube.com/watch?v=n6q_wJFtZYE"
-summary: "A video lecture on Structuralism"
+summary: "Saussure criticism because texts began to be understood as systems of signs producing meaning through convention and difference. Ferdinand de Saussure is regard"
 ---
 
 # Structuralism

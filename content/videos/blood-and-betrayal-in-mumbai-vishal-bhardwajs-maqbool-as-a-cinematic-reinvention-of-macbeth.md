@@ -2,12 +2,20 @@
 title: "Blood And Betrayal In Mumbai Vishal Bhardwaj’S Maqbool As A Cinematic Reinvention Of Macbeth"
 date: 2026-07-07
 type: video
-author: "Film Analysis"
+author: "Main Shunya Hi Sahi"
 tags: [maqbool, film, bhardwaj, its, macbeth]
-video_url: "https://www.youtube.com/watch?v=wXkTUW8CVRM"
-summary: "An analysis of Vishal Bhardwaj's Maqbool as a cinematic reinvention of Shakespeare's Macbeth."
+video_url: "https://www.youtube.com/watch?v=J7YJUf3UQxM"
+summary: "[Your Name] [Instructor's Name] [Course Number] [Date]"
 ---
 
-# Maqbool (2003) - Vishal Bhardwaj's Macbeth Adaptation | Analysis
+# Blood And Betrayal In Mumbai Vishal Bhardwaj’S Maqbool As A Cinematic Reinvention Of Macbeth
 
-An analysis of Vishal Bhardwaj's Maqbool as a cinematic reinvention of Shakespeare's Macbeth.
+Macbeth Vs Maqbool | Theory & Differences | Adaptation | Let’s Discuss Films
+
+**Channel:** Main Shunya Hi Sahi  
+**Views:** 6,044  
+**Duration:** 6:31
+
+Discussing William Shakespeare's Macbeth Vs Vishal Bhardwaj's 'Maqbool' film theory and differences. 
+ 
+Hope you will like it ...

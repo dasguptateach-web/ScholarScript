@@ -5,7 +5,7 @@ type: video
 author: "TED-Ed"
 tags: [oedipus, his, who, man, creon]
 video_url: "https://www.youtube.com/watch?v=0a9Wuz7MvUE"
-summary: "A video lecture on Sophocles’ Oedipus"
+summary: "The entry of the blind prophet Teiresias into Oedipus Rex is the hinge upon which the entire tragedy swings. Before his arrival, Oedipus is the confident, belov"
 ---
 
 # Sophocles’ Oedipus

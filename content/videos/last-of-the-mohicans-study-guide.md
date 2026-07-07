@@ -5,7 +5,7 @@ type: video
 author: "Paul Joseph Krause"
 tags: [his, hawkeye, magua, him, uncas]
 video_url: "https://www.youtube.com/watch?v=_GKRRpb98vc"
-summary: "A video lecture on The Last of the Mohicans Study Guide"
+summary: "The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was"
 ---
 
 # The Last of the Mohicans Study Guide

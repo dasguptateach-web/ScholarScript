@@ -2,18 +2,18 @@
 title: "Literary Criticism and Theory for UGC NET"
 date: 2026-07-07
 type: video
-author: "Adda247 UGC NET "
+author: "UGC NET By StudyIQ"
 tags: [criticism, literary, theory, poetry, text]
-video_url: "https://www.youtube.com/watch?v=6OvRHslEk1w"
-summary: "A video lecture on Literary Criticism and Theory for UGC NET"
+video_url: "https://www.youtube.com/watch?v=Xt1iv6Oat2Y"
+summary: "May 18, 2026 [LITERARY CRITICISM AND THEORY FOR UGC NET] INTRODUCTION: LITERARY CRITICISM AND THEORY FOR UGC NET"
 ---
 
 # Literary Criticism and Theory for UGC NET
 
-UGC NET English Literature | UGC NET English Literary Theory & Criticism By Aishwarya Ma'am
+UGC NET Dec 2025 | UGC NET English Literary Criticism By Abhay Sir
 
-**Channel:** Adda247 UGC NET   
-**Views:** 10,738  
-**Duration:** 78:21
+**Channel:** UGC NET By StudyIQ  
+**Views:** 42,935  
+**Duration:** 335:05
 
-UGC NET English Literature | UGC NET English Literary Theory & Criticism By Aishwarya Ma'am | UGC NET English | UGC NET ...
+UGC NET Dec 2025 | UGC NET English Literary Criticism By Abhay Sir In this session, you will get a complete and insightful ...

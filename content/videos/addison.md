@@ -1,19 +1,19 @@
 ---
-title: "Addison"
+title: "Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections"
 date: 2026-07-07
 type: video
-author: "Literature with Riya"
+author: "Dr. Ranjeet Singh "
 tags: [his, sir, roger, goldsmith, addison]
-video_url: "https://www.youtube.com/watch?v=IK2yyhTyYNQ"
-summary: "A video lecture on Addison"
+video_url: "https://www.youtube.com/watch?v=EzMUZ0Quq3k"
+summary: "A video lecture on Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections"
 ---
 
-# Addison
+# Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections
 
-Sir Roger at Home | Lecture on Addison's Classic Essay| 18th Century English Literature
+PERIODICAL ESSAYS (THE TTLER, THE SPECTATOR, THE RAMBLER & THE CITIZEN OF THE WORLD) ADDISON- STEELE
 
-**Channel:** Literature with Riya  
-**Views:** 297  
-**Duration:** 13:41
+**Channel:** Dr. Ranjeet Singh   
+**Views:** 3,739  
+**Duration:** 35:02
 
-Welcome to our in-depth lecture on "Sir Roger at Home," a classic essay by Joseph Addison from 'The Spectator' series.
+TGT ENGLISH , PGT ENGLISH , LT ENGLISH , GIC LECTURER ENGLISH, ASSISTANT PROFESSOR ENGLISH, UGC NET.

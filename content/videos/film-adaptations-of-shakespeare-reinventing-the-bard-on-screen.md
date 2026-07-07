@@ -2,18 +2,18 @@
 title: "Film Adaptations Of Shakespeare Reinventing The Bard On Screen"
 date: 2026-07-07
 type: video
-author: "Broey Deschanel"
+author: "Alt Shift X"
 tags: [shakespeare, adaptation, film, notes, slide]
-video_url: "https://www.youtube.com/watch?v=2KZgIOje85Q"
-summary: "A video lecture on Film Adaptations Of Shakespeare Reinventing The Bard On Screen"
+video_url: "https://www.youtube.com/watch?v=EmjWIMMtjDc"
+summary: "Film Adaptations of Shakespeare: Reinventing the Bard on Screen"
 ---
 
 # Film Adaptations Of Shakespeare Reinventing The Bard On Screen
 
-When Shakespeare Got Cool
+Hamlet – in 4 Minutes
 
-**Channel:** Broey Deschanel  
-**Views:** 390,367  
-**Duration:** 18:10
+**Channel:** Alt Shift X  
+**Views:** 1,504,932  
+**Duration:** 4:20
 
-What's so bad about "low culture" anyway? Thumbnail by Nick Woodcock Set by Hannah Raine ...
+A visual explanation of the plot of Hamlet, a play by William Shakespeare. Subscribe: ...

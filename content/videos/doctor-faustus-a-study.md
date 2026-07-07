@@ -2,17 +2,18 @@
 title: "Doctor Faustus: A Study"
 date: 2026-07-07
 type: video
-author: "Course Hero"
-tags: [faustus, mephostophilis, scene]
-video_url: "https://www.youtube.com/watch?v=6C8SY8UF4C0"
-summary: "A video lecture on Doctor Faustus: A Study Guide"
+author: "GradeSaver"
+tags: [faustus, his, him, mephostophilis, scene]
+video_url: "https://www.youtube.com/watch?v=oIlQiRqQYyc"
+summary: "While written in the Renaissance language that often challenges high school and college students,Christopher Marlowe’s Doctor Faustus is a play for the ages. In"
 ---
-# Doctor Faustus: A Study Guide
 
-Doctor Faustus by Christopher Marlowe | Summary & Analysis
+# Doctor Faustus: A Study
 
-**Channel:** Course Hero  
-**Views:** 253,600  
-**Duration:** 15:11
+Doctor Faustus Video Summary
 
-Summarize videos instantly with our Course Assistant plugin, and enjoy AI-generated quizzes: https://bit.ly/ch-ai-asst Christopher ...
+**Channel:** GradeSaver  
+**Views:** 404,978  
+**Duration:** 5:15
+
+Visit us at https://www.gradesaver.com/dr-faustus/study-guide/video-doctor-faustus-marlowe to read the full video transcript and ...

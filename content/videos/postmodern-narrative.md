@@ -1,13 +1,19 @@
 ---
-title: "Postmodern Narrative"
+title: "Fractured Selves: Narrative Identity in Postmodern Fiction"
 date: 2026-07-07
 type: video
-author: "Language and Philosophy"
-tags: [postmodern, narrative]
-video_url: "https://www.youtube.com/watch?v=fPewIqYrCU4"
-summary: "Postmodernism is an intellectual, cultural, and artistic movement that emerged in the mid-20th century. It is characterized by a ..."
+author: "Beyond books with Dr. Neha "
+tags: [postmodern, narrative, identity, theory, pynchon]
+video_url: "https://www.youtube.com/watch?v=A7ZRzOtfNAc"
+summary: "An examination of how postmodern narrative techniques reflect contemporary theories of fragmented identity."
 ---
 
-# What is Postmodernism?
+# Fractured Selves: Narrative Identity in Postmodern Fiction
 
-Postmodernism is an intellectual, cultural, and artistic movement that emerged in the mid-20th century. It is characterized by a ...
+Postmodernism in English Literature | Features, Writers & Critical Analysis | with Dr. Neha Jain
+
+**Channel:** Beyond books with Dr. Neha   
+**Views:** 145  
+**Duration:** 35:58
+
+Postmodernism is one of the most influential literary movements of the 20th century, challenging traditional ideas of truth, meaning ...

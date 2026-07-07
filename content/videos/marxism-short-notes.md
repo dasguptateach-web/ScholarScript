@@ -5,7 +5,7 @@ type: video
 author: "Sunaina Jethani"
 tags: [literature, literary, criticism, marxist, social]
 video_url: "https://www.youtube.com/watch?v=wxVcWUd8vWc"
-summary: "A video lecture on Marxism Short Notes"
+summary: "Antonio Gramsci’s distinction between “rule” (domination) and “hegemony” is one of the most fertile concepts in twentieth-century Marxist thought, and it fundam"
 ---
 
 # Marxism Short Notes

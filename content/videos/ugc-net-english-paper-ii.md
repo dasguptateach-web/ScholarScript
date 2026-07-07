@@ -1,13 +1,19 @@
 ---
-title: "Ugc Net English Paper Ii"
+title: "UGC NET English Paper II - Advanced Practice Test"
 date: 2026-07-07
 type: video
 author: "Adda247 UGC NET "
-tags: [ugc, net, english, paper, ii]
-video_url: "https://www.youtube.com/watch?v=FioAgJNypPI"
-summary: "Topics Covered: • UGC NET English Literature syllabus review • UGC NET English paper solution 2026 • UGC NET English PYQ's ..."
+tags: [line, iambic, spondee, sonnet, rhyme]
+video_url: "https://www.youtube.com/watch?v=G4LDDmWhX2Q"
+summary: "(50 MCQs Ã-- 2 marks = 100 marks)"
 ---
 
-# UGC NET English Literature | Paper Solution 2026 | PYQ's | By Aishwarya puri
+# UGC NET English Paper II - Advanced Practice Test
 
-Topics Covered: • UGC NET English Literature syllabus review • UGC NET English paper solution 2026 • UGC NET English PYQ's ...
+UGC NET English Literature | UGC NET English Mock Test | UGC NET English Practice Set By Aishwarya
+
+**Channel:** Adda247 UGC NET   
+**Views:** 15,114  
+**Duration:** 68:06
+
+UGC NET English Literature | UGC NET English Mock Test | UGC NET English Practice Set By Aishwarya Mam | UGC NET ...

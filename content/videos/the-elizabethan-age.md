@@ -5,7 +5,7 @@ type: video
 author: "Arpita Karwa"
 tags: [his, drama, marlowe, were, plays]
 video_url: "https://www.youtube.com/watch?v=c21cMSmaC8g"
-summary: "A video lecture on The Elizabethan Age"
+summary: "The term ‘the Elizabethan Age’ is a very vague and flexible one. Strictly speaking, it may be said to be even misleading. Although titles like ‘Jacobean Age’ ar"
 ---
 
 # The Elizabethan Age

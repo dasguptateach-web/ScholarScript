@@ -2,12 +2,21 @@
 title: "Mricchakatika Social Criticism"
 date: 2026-07-07
 type: video
-author: "Nibble Pop"
-tags: [mricchakatika, social, criticism]
-video_url: "https://www.youtube.com/watch?v=J354fsu4Kqg"
-summary: "Mrichhakatika Act 1 includes the benediction and the starting point of the play. This video is a line-by-line explanation of this first ..."
+author: "English Literature Guide"
+tags: [social, his, play, charudatta, man]
+video_url: "https://www.youtube.com/watch?v=fmVKZwL0EFw"
+summary: "['Mṛcchakatika has been described as a unique 'social drama' in classical Sanskrit literature. Analyze how the social realities of class, caste, gender, and eco"
 ---
 
-# Mrichhakatika | Act1 | The Gems are Left Behind | Line by Line Analysis
+# Mricchakatika Social Criticism
 
-Mrichhakatika Act 1 includes the benediction and the starting point of the play. This video is a line-by-line explanation of this first ...
+Play "Mrichchhakatikam" by Sudraka Explained in Hindi
+
+**Channel:** English Literature Guide  
+**Views:** 340,357  
+**Duration:** 26:08
+
+#mrichchhakatikam #mrichchhakatika
+
+
+At 0:37 & 25:45 - It's 1500 years ago not 2500 years.

@@ -2,12 +2,18 @@
 title: "Indian Classical Literature (The Little Clay Cart Mricchakatika) Sat"
 date: 2026-07-07
 type: video
-author: "EngLit with Manoj Bajaj"
+author: "Vidya-mitra"
 tags: [charudatta, social, his, act, because]
-video_url: "https://www.youtube.com/watch?v=08zEcBjLriU"
-summary: "Study of Sudraka's Mricchakatika: Indian classical literature overview and analysis."
+video_url: "https://www.youtube.com/watch?v=2kTs8CfcvW0"
+summary: "[Indian Classical Literature (The Little Clay Cart / Mricchakatika)Short Answer"
 ---
 
-# Mrichchhakatika The Little Clay Cart | English Literature
+# Indian Classical Literature (The Little Clay Cart Mricchakatika) Sat
 
-Study of Sudraka's Mricchakatika: Indian classical literature overview and analysis.
+Sudraka: Mrichhakatika  (ENG)
+
+**Channel:** Vidya-mitra  
+**Views:** 40,262  
+**Duration:** 31:46
+
+Subject : English Paper : Comparative Literature: Drama in India.

@@ -5,7 +5,7 @@ type: video
 author: "Inspire Education"
 tags: [classical, english, drama, elizabethan, native]
 video_url: "https://www.youtube.com/watch?v=rFDT-c6QGpk"
-summary: "A video lecture on Classical Drama"
+summary: "﻿## The Influence of Classical Drama on Elizabethan Theatre"
 ---
 
 # Classical Drama
@@ -13,7 +13,7 @@ summary: "A video lecture on Classical Drama"
 Ancient Greek Theatre and Drama
 
 **Channel:** Inspire Education  
-**Views:** 233,788  
+**Views:** 233,822  
 **Duration:** 2:22
 
 Bring Ancient Greece to life! Visit our shop for replica artefacts perfect for hands-on learning: ...

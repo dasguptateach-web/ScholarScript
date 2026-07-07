@@ -3,16 +3,17 @@ title: "Belinda"
 date: 2026-07-07
 type: video
 author: "Dr Octavia Cox"
-tags: [belinda, pope, mock-epic, rape-of-the-lock, women]
+tags: [belinda, pope, she, society, women]
 video_url: "https://www.youtube.com/watch?v=M-CZ5CyyVPg"
-summary: "A detailed analysis of Alexander Pope's The Rape of the Lock and Belinda's character in the mock-epic tradition."
+summary: "[Discuss Belinda's character in Alexander Pope's The Rape of the Lock as representative of eighteenth-century women, with close May 22, 2026 references from Can"
 ---
 
 # Belinda
 
-Alexander Pope's The Rape of the Lock | POEM ANALYSIS | Mock-Epic Genre, Scale, and Analysis of Belinda's character in the context of eighteenth-century women.
+Alexander Pope The Rape of the Lock | POEM ANALYSIS | Mock-Epic Genre, Scale, Antithesis, & Zeugma
 
 **Channel:** Dr Octavia Cox  
-**Views:** 21,359
+**Views:** 21,365  
+**Duration:** 38:26
 
-A detailed literary analysis examining Belinda as a representative of eighteenth-century women and Pope's use of the mock-epic genre.
+THE RAPE OF THE LOCK by ALEXANDER POPE | Literature Analysis | Close reading of Alexander Pope's tour de force ...
