@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<article class="content-page" data-aos="fade-up">
+<article class="content-page">
   <div class="article-header">
     <h2 class="notranslate">{{ item.title }}</h2>
     <p class="article-meta notranslate">
@@ -109,7 +109,7 @@
 {% endif %}
 
 {% if item.summary %}
-  <blockquote class="summary" data-aos="fade-up">{{ item.summary }}</blockquote>
+  <blockquote class="summary">{{ item.summary }}</blockquote>
 {% endif %}
 
   <nav class="toc" id="toc" aria-label="Table of Contents" style="display:none;">
@@ -120,7 +120,7 @@
     <ol class="toc-list" id="tocList"></ol>
   </nav>
 
-  <div class="content-body" id="contentBody" data-aos="fade-up">
+  <div class="content-body" id="contentBody">
     {{ item.body_html | safe }}
   </div>
 

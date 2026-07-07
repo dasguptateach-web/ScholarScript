@@ -1205,6 +1205,18 @@ body.google-home {
 }
 
 /* ============ AOS ANIMATION (CSS-first, no FOUC) ============ */
+/* Safety override: content page elements must NEVER be hidden by AOS */
+.content-page.aos-animate,
+.content-page .article-header.aos-animate,
+.content-page .tts-bar.aos-animate,
+.content-page .translate-bar.aos-animate,
+.content-page .summary.aos-animate,
+.content-page .content-body.aos-animate,
+.content-page .toc.aos-animate {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 .aos-animate {
   opacity: 0;
   transform: translateY(20px);
