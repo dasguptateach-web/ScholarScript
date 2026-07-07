@@ -142,8 +142,8 @@
     </div>
     <div class="showcase-video">
       <div class="video-embed">
-        <iframe src="https://www.youtube-nocookie.com/embed/eURo7I2PkTw?rel=0&modestbranding=1"
-                title="ScholarScript Overview" frameborder="0"
+        <iframe src="https://www.youtube-nocookie.com/embed/u6q7GpTBChY?rel=0&modestbranding=1"
+                title="Sample Lecture: Introduction to Literary Theory" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen loading="lazy"></iframe>
       </div>
@@ -204,119 +204,4 @@
 
 {% endblock %}
 
-{% block scripts_extra %}
-<script>
-/* ====== SEARCH ENGINE ====== */
-(function(){
-  var input = document.getElementById('heroSearchInput');
-  var dropdown = document.getElementById('searchDropdown');
-  var container = document.getElementById('heroSearch');
-  var searchIndex = [];
-  var currentQuery = '';
 
-  if (!input || !dropdown) return;
-
-  // Load search index
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '{{ base_url }}/search-index.json', true);
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      try { searchIndex = JSON.parse(xhr.responseText); } catch(e) {}
-    }
-  };
-  xhr.send();
-
-  function renderDropdown(query) {
-    if (!query || query.length < 1) {
-      dropdown.classList.remove('active');
-      return;
-    }
-    var q = query.toLowerCase();
-    var results = [];
-    for (var i = 0; i < searchIndex.length; i++) {
-      var item = searchIndex[i];
-      if (item.title.toLowerCase().indexOf(q) !== -1 ||
-          (item.summary && item.summary.toLowerCase().indexOf(q) !== -1) ||
-          (item.tags && item.tags.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; }))) {
-        results.push(item);
-        if (results.length >= 8) break;
-      }
-    }
-    if (results.length === 0) {
-      dropdown.innerHTML = '<div class="sd-empty"><i class="fas fa-search"></i> No results found</div>';
-    } else {
-      var html = '';
-      for (var j = 0; j < results.length; j++) {
-        var r = results[j];
-        var typeClass = r.type === 'paper' ? 'paper' : r.type === 'video' ? 'video' : r.type === 'creative-writing' ? 'creative-writing' : 'external-link';
-        html += '<a href="{{ base_url }}/' + r.type + '/' + r.slug + '/" class="sd-item">';
-        html += '<span class="sd-type ' + typeClass + '">' + r.type.replace('-', ' ') + '</span>';
-        html += '<span class="sd-title">' + r.title + '</span>';
-        if (r.date) html += '<span class="sd-date">' + r.date + '</span>';
-        html += '</a>';
-      }
-      html += '<div class="sd-more">Showing top ' + results.length + ' results</div>';
-      dropdown.innerHTML = html;
-    }
-    dropdown.classList.add('active');
-  }
-
-  input.addEventListener('input', function() {
-    renderDropdown(this.value);
-  });
-
-  input.addEventListener('focus', function() {
-    container.classList.add('focused');
-    if (this.value) renderDropdown(this.value);
-  });
-
-  input.addEventListener('blur', function() {
-    container.classList.remove('focused');
-    setTimeout(function() { dropdown.classList.remove('active'); }, 200);
-  });
-
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && this.value.trim()) {
-      window.location.href = '{{ base_url }}/papers/?q=' + encodeURIComponent(this.value.trim());
-    }
-  });
-
-  // Ctrl+K to focus search
-  document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      input.focus();
-    }
-  });
-})();
-
-/* ====== SMOOTH SCROLL ====== */
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-/* ====== AOS REPLACEMENT (lightweight) ====== */
-(function(){
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-aos]').forEach(function(el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-})();
-</script>
-{% endblock %}

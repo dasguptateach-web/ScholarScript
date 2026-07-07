@@ -1,14 +1,14 @@
 ---
-title: "Composed by Debojyoti Dasgupta (Mob:9874138466)"
+title: "Doctor Faustus: A Study"
 date: 2026-07-07
 type: video
 author: "Course Hero"
 tags: [faustus, his, him, mephostophilis, scene]
 video_url: "https://www.youtube.com/watch?v=6C8SY8UF4C0"
-summary: "A video lecture on Composed by Debojyoti Dasgupta (Mob:9874138466)"
+summary: "A video lecture on Doctor Faustus: A Study Guide"
 ---
 
-# Composed by Debojyoti Dasgupta (Mob:9874138466)
+# Doctor Faustus: A Study Guide
 
 Doctor Faustus by Christopher Marlowe | Summary & Analysis
 

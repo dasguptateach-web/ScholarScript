@@ -189,12 +189,16 @@ class Engine:
     def _build_tag_map(self) -> dict:
         tag_map = {}
         for item in self.items:
+            seen = set()
             related = []
             for other in self.items:
                 if other.slug == item.slug:
                     continue
+                if other.slug in seen:
+                    continue
                 if set(other.tags) & set(item.tags):
                     related.append(other)
+                    seen.add(other.slug)
             tag_map[item.slug] = related
         return tag_map
 

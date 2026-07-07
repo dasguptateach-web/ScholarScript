@@ -6,6 +6,15 @@
   <title>{{ page_title }} — {{ site.title }}</title>
   <meta name="description" content="{{ page_description | default(site.tagline) }}">
   <meta name="generator" content="ScholarScript">
+  <link rel="icon" type="image/svg+xml" href="{{ base_url }}/img/favicon.svg">
+  <meta property="og:title" content="{{ page_title }} — {{ site.title }}">
+  <meta property="og:description" content="{{ page_description | default(site.tagline) }}">
+  <meta property="og:url" content="{{ page_url | default(base_url) }}">
+  <meta property="og:type" content="{{ page_ogtype | default('website') }}">
+  {% if page_image %}<meta property="og:image" content="{{ page_image }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }} — {{ site.title }}">
+  <meta name="twitter:description" content="{{ page_description | default(site.tagline) }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +29,7 @@
 {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
-  <div class="reading-progress" id="readingProgress"></div>
+  <div class="reading-progress" id="readingProgress" style="display:none"></div>
 
   {% block header %}
   <header class="site-header">
@@ -105,6 +114,7 @@
           <a href="{{ base_url }}/tags/"><i class="fas fa-chevron-right"></i> Tags</a>
           <a href="{{ base_url }}/donate/"><i class="fas fa-chevron-right"></i> Support</a>
           <a href="{{ base_url }}/rss.xml"><i class="fas fa-chevron-right"></i> RSS</a>
+          <a href="{{ base_url }}/sitemap.xml"><i class="fas fa-chevron-right"></i> Sitemap</a>
         </div>
         <div class="footer-info">
           <p><i class="fas fa-database"></i> {{ papers|length + videos|length + creative|length + links|length }} resources &middot; {{ papers|length }} papers &middot; {{ videos|length }} videos &middot; {{ creative|length }} creative works</p>
@@ -190,7 +200,23 @@
     });
   })();
 
-  /* ====== THEME TOGGLE ====== */
+  
+  // Parse ?q= query param on page load
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q && q.trim()) {
+      var input = document.getElementById('heroSearchInput') || document.getElementById('headerSearchInput');
+      if (input) {
+        input.value = q;
+        input.dispatchEvent(new Event('input'));
+        input.focus();
+        setTimeout(function() { input.dispatchEvent(new Event('input')); }, 500);
+      }
+    }
+  })();
+
+/* ====== THEME TOGGLE ====== */
   (function(){
     var btn = document.getElementById('themeToggle');
     var icon = btn ? btn.querySelector('i') : null;
@@ -224,7 +250,9 @@
   /* ====== READING PROGRESS ====== */
   (function(){
     var bar = document.getElementById('readingProgress');
-    if (!bar) return;
+    var body = document.getElementById('contentBody');
+    if (!bar || !body) return;
+    bar.style.display = 'block';
     window.addEventListener('scroll', function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;

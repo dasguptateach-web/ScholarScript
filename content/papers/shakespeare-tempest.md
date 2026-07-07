@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Colonial Discourse in the Tempest"
 date: 2025-06-15
 type: paper
@@ -7,7 +7,6 @@ tags: [shakespeare, postcolonial, renaissance, tempest]
 paper_url: ""
 summary: "An analysis of colonial power structures in Shakespeare's The Tempest."
 ---
-
 # Colonial Discourse in *The Tempest*
 
 ## Introduction
@@ -29,4 +28,4 @@ a weapon of resistance.
 
 ## Conclusion
 
-*The Tempest* remains remarkably relevant for contemporary discussions of colonialism, power, and resistance.
+*The Tempest* remains remarkably relevant for contemporary discussions of colonialism, power, and resistance.
