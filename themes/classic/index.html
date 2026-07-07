@@ -1,71 +1,322 @@
 {% extends "base.html" %}
-{% block body_class %}google-home{% endblock %}
-{% block header %}{% endblock %}
 {% block content %}
-<div class="google-main">
-  <div class="google-content">
-    <div class="google-logo">
-      <span class="google-logo-main">ScholarScript</span>
-      <span class="google-logo-sub">{{ site.tagline }}</span>
-    </div>
 
-    <div class="google-search" id="googleSearch" role="search">
-      <svg class="google-search-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-      <input type="text" id="heroSearchInput" class="google-search-input" placeholder="Search papers, videos, writing..." autocomplete="off" aria-label="Search">
-      <div class="google-search-badges">
-        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+<!-- ====== HERO SECTION ====== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" data-aos="fade-down">
+      <i class="fas fa-graduation-cap"></i> Free Resource Hub for English Literature
+    </div>
+    <h1 data-aos="fade-up" data-aos-delay="100">
+      Master <span class="gradient-text">English Literature</span><br>
+      with ScholarScript
+    </h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+      Your free gateway to comprehensive study guides, scholarly papers, video lectures,
+      creative writing resources, and curated external links — all crafted for
+      undergraduate, postgraduate students, and researchers.
+    </p>
+
+    <!-- Hero Search -->
+    <div class="hero-search" id="heroSearch" data-aos="fade-up" data-aos-delay="300">
+      <i class="fas fa-search hero-search-icon"></i>
+      <input type="text" id="heroSearchInput" class="hero-search-input"
+             placeholder="Search papers, videos, writing..." autocomplete="off" aria-label="Search">
+      <span class="header-search-kbd">Ctrl+K</span>
+      <div class="search-dropdown" id="searchDropdown">
+        <div class="sd-empty"><i class="fas fa-search"></i> Type to search...</div>
       </div>
     </div>
 
-    <div class="google-shortcuts">
-      <a href="{{ base_url }}/papers/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
-        <span>Papers</span>
-      </a>
-      <a href="{{ base_url }}/videos/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 8.64L15.27 12 10 15.36V8.64zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
-        <span>Videos</span>
-      </a>
-      <a href="{{ base_url }}/creative-writing/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41z"/></svg></div>
-        <span>Writing</span>
-      </a>
-      <a href="{{ base_url }}/external-links/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg></div>
-        <span>Links</span>
-      </a>
-      <a href="{{ base_url }}/tags/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></div>
-        <span>Tags</span>
-      </a>
-      <a href="{{ base_url }}/donate/" class="google-shortcut">
-        <div class="google-shortcut-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-        <span>Support</span>
-      </a>
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="350">
+      <a href="{{ base_url }}/papers/" class="btn btn-primary"><i class="fas fa-book"></i> Browse Papers</a>
+      <a href="{{ base_url }}/videos/" class="btn btn-outline"><i class="fas fa-play"></i> Watch Lectures</a>
+    </div>
+
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+      {% set total = papers|length + videos|length + creative|length + links|length %}
+      <div class="hero-stat"><span class="num">{{ total }}</span><span class="label">Total Resources</span></div>
+      <div class="hero-stat"><span class="num">{{ papers|length }}</span><span class="label">Scholarly Papers</span></div>
+      <div class="hero-stat"><span class="num">{{ videos|length }}</span><span class="label">Video Lectures</span></div>
+      <div class="hero-stat"><span class="num">{{ creative|length }}</span><span class="label">Creative Works</span></div>
     </div>
   </div>
+</section>
 
-  <div class="google-footer">
-    <div class="google-footer-left">
-      <span>{{ papers|length + creative|length + videos|length + links|length }} works &middot; {{ papers|length }} papers &middot; {{ creative|length }} creative &middot; {{ videos|length }} videos</span>
+<!-- ====== WHY SCHOLARSCRIPT ====== -->
+<section class="section" id="why" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-star"></i></div>
+  <h2 class="section-title"><i class="fas fa-question-circle"></i> Why ScholarScript?</h2>
+  <div class="features-grid">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="feature-icon"><i class="fas fa-lock-open"></i></div>
+      <h3>100% Free</h3>
+      <p>All resources, papers, and guides are completely free — no paywalls, no subscriptions, no hidden fees. Quality education should be accessible to everyone.</p>
     </div>
-    <div class="google-footer-right">
-      <a href="{{ base_url }}/">Home</a>
-      <a href="{{ base_url }}/tags/">Tags</a>
-      <a href="{{ base_url }}/donate/">Support</a>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+      <h3>Student-Focused</h3>
+      <p>Designed specifically for undergraduate and postgraduate English Literature students, with carefully curated academic content that follows university curricula.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="feature-icon"><i class="fas fa-check-double"></i></div>
+      <h3>Curated Quality</h3>
+      <p>Every paper, video, and resource is hand-picked and organized for maximum learning value. No fluff, no filler — just what you need to excel.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="feature-icon"><i class="fas fa-robot"></i></div>
+      <h3>AI-Powered</h3>
+      <p>Automatically matched YouTube video lectures for every paper. Read aloud with Indian TTS voices. Translate into 20+ Indian and world languages.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="feature-icon"><i class="fas fa-users"></i></div>
+      <h3>Community Driven</h3>
+      <p>Join a growing community of literature scholars. Monthly $25 prize for top contributors. Your work can help fellow students worldwide.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+      <h3>Always Growing</h3>
+      <p>New papers and videos added automatically. Drop a document and our pipeline ingests it, finds a matching YouTube lecture, and publishes it — all without human effort.</p>
     </div>
   </div>
-</div>
+</section>
 
+<!-- ====== HOW IT WORKS ====== -->
+<section class="section" id="how-it-works" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-cog"></i></div>
+  <h2 class="section-title"><i class="fas fa-route"></i> How It Works</h2>
+  <div class="steps">
+    <div class="step" data-aos="fade-up">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Browse or Search</h3>
+        <p>Explore our library of 32+ scholarly papers on English Literature — from Shakespeare to Postmodernism, Victorian Poetry to Ecocriticism. Use the search bar to find exactly what you need.</p>
+      </div>
+    </div>
+    <div class="step" data-aos="fade-up" data-aos-delay="100">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Read & Listen</h3>
+        <p>Each paper comes with text-to-speech in natural Indian voices. Translate into Hindi, Bengali, Tamil, and 20+ other languages. Learn in your preferred language.</p>
+      </div>
+    </div>
+    <div class="step" data-aos="fade-up" data-aos-delay="200">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Watch & Learn</h3>
+        <p>Every paper has a matching YouTube video lecture automatically curated. Watch expert explanations, literary analyses, and exam-focused content without searching elsewhere.</p>
+      </div>
+    </div>
+    <div class="step" data-aos="fade-up" data-aos-delay="300">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Contribute & Earn</h3>
+        <p>Submit your own papers or creative writing. Win the monthly $25 Best Contributor prize. Help build the largest free English Literature resource library.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== USEFULNESS VIDEO ====== -->
+<section class="section" id="video-showcase" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-video"></i></div>
+  <h2 class="section-title"><i class="fas fa-info-circle"></i> What ScholarScript Offers You</h2>
+  <div class="showcase-card" data-aos="zoom-in">
+    <div class="showcase-text">
+      <h3>Your Complete English Literature Companion</h3>
+      <p>ScholarScript is more than a website — it's an intelligent study platform that grows with you. From exam preparation with UGC NET practice tests to deep dives into literary theory, from Shakespearean analysis to eco-criticism, every resource is designed to help you succeed.</p>
+      <ul class="showcase-list">
+        <li><i class="fas fa-check-circle"></i> <strong>32+ Research Papers</strong> — Covering every major period and movement</li>
+        <li><i class="fas fa-check-circle"></i> <strong>31 Video Lectures</strong> — Auto-matched to each paper by AI</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Multi-Language TTS</strong> — Read aloud in English + 20 Indian languages</li>
+        <li><i class="fas fa-check-circle"></i> <strong>UGC NET Prep</strong> — Specialized practice tests and study guides</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Creative Writing</strong> — Original poetry and prose from our community</li>
+        <li><i class="fas fa-check-circle"></i> <strong>100% Free & Open</strong> — No registration required. Ever.</li>
+      </ul>
+      <a href="{{ base_url }}/papers/" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Start Learning Now</a>
+    </div>
+    <div class="showcase-video">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/eURo7I2PkTw?rel=0&modestbranding=1"
+                title="ScholarScript Overview" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="video-caption">Watch: How ScholarScript transforms your English Literature studies</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== RECENT CONTENT ====== -->
+<section class="section" id="recent" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-clock"></i></div>
+  <h2 class="section-title"><i class="fas fa-newspaper"></i> Recently Added</h2>
+
+  {% set recent = (papers + videos + creative) | sort(attribute='date', reverse=True) %}
+  <div class="card-grid">
+  {% for item in recent[:6] %}
+    <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+      <span class="card-type {{ item.type }}">
+        <i class="fas fa-{% if item.type == 'paper' %}file-alt{% elif item.type == 'video' %}video{% elif item.type == 'creative-writing' %}pen-fancy{% endif %}"></i>
+        {{ item.type | replace('-', ' ') | title }}
+      </span>
+      {% if item.type == 'video' and item.video_url %}
+      {% set vid_id = item.video_url.split('v=')[1].split('&')[0] if 'v=' in item.video_url else item.video_url.split('/')[-1] %}
+      <div class="video-thumb">
+        <a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">
+          <img src="https://img.youtube.com/vi/{{ vid_id }}/mqdefault.jpg" alt="{{ item.title }}" loading="lazy">
+          <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+        </a>
+      </div>
+      {% endif %}
+      <h3><a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a></h3>
+      <p class="meta">
+        <i class="fas fa-calendar-alt"></i> {{ item.date }}
+        {% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}
+      </p>
+      <p>{{ item.summary }}</p>
+      {% if item.tags %}<div class="tags">{% for tag in item.tags[:4] %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
+
+  <div class="section-cta" data-aos="fade-up">
+    <a href="{{ base_url }}/papers/" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View All Resources</a>
+  </div>
+</section>
+
+<!-- ====== CTA SECTION ====== -->
+<section class="section cta-section" data-aos="fade-up">
+  <div class="cta-card">
+    <h2>Start Your Literary Journey Today</h2>
+    <p>Explore hundreds of free resources — from Shakespeare to postcolonial theory, from poetry to academic writing. No sign-up required.</p>
+    <div class="cta-actions">
+      <a href="{{ base_url }}/papers/" class="btn btn-primary btn-lg"><i class="fas fa-book-open"></i> Browse All Resources</a>
+      <a href="{{ base_url }}/donate/" class="btn btn-outline btn-lg"><i class="fas fa-heart"></i> Support the Project</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts_extra %}
 <script>
-const input = document.getElementById('heroSearchInput');
-const container = document.getElementById('googleSearch');
-input.addEventListener('focus', () => container.classList.add('focused'));
-input.addEventListener('blur', () => container.classList.remove('focused'));
-input.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && this.value.trim()) {
-    window.location.href = '{{ base_url }}/?q=' + encodeURIComponent(this.value.trim());
+/* ====== SEARCH ENGINE ====== */
+(function(){
+  var input = document.getElementById('heroSearchInput');
+  var dropdown = document.getElementById('searchDropdown');
+  var container = document.getElementById('heroSearch');
+  var searchIndex = [];
+  var currentQuery = '';
+
+  if (!input || !dropdown) return;
+
+  // Load search index
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '{{ base_url }}/search-index.json', true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      try { searchIndex = JSON.parse(xhr.responseText); } catch(e) {}
+    }
+  };
+  xhr.send();
+
+  function renderDropdown(query) {
+    if (!query || query.length < 1) {
+      dropdown.classList.remove('active');
+      return;
+    }
+    var q = query.toLowerCase();
+    var results = [];
+    for (var i = 0; i < searchIndex.length; i++) {
+      var item = searchIndex[i];
+      if (item.title.toLowerCase().indexOf(q) !== -1 ||
+          (item.summary && item.summary.toLowerCase().indexOf(q) !== -1) ||
+          (item.tags && item.tags.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; }))) {
+        results.push(item);
+        if (results.length >= 8) break;
+      }
+    }
+    if (results.length === 0) {
+      dropdown.innerHTML = '<div class="sd-empty"><i class="fas fa-search"></i> No results found</div>';
+    } else {
+      var html = '';
+      for (var j = 0; j < results.length; j++) {
+        var r = results[j];
+        var typeClass = r.type === 'paper' ? 'paper' : r.type === 'video' ? 'video' : r.type === 'creative-writing' ? 'creative-writing' : 'external-link';
+        html += '<a href="{{ base_url }}/' + r.type + '/' + r.slug + '/" class="sd-item">';
+        html += '<span class="sd-type ' + typeClass + '">' + r.type.replace('-', ' ') + '</span>';
+        html += '<span class="sd-title">' + r.title + '</span>';
+        if (r.date) html += '<span class="sd-date">' + r.date + '</span>';
+        html += '</a>';
+      }
+      html += '<div class="sd-more">Showing top ' + results.length + ' results</div>';
+      dropdown.innerHTML = html;
+    }
+    dropdown.classList.add('active');
   }
+
+  input.addEventListener('input', function() {
+    renderDropdown(this.value);
+  });
+
+  input.addEventListener('focus', function() {
+    container.classList.add('focused');
+    if (this.value) renderDropdown(this.value);
+  });
+
+  input.addEventListener('blur', function() {
+    container.classList.remove('focused');
+    setTimeout(function() { dropdown.classList.remove('active'); }, 200);
+  });
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      window.location.href = '{{ base_url }}/papers/?q=' + encodeURIComponent(this.value.trim());
+    }
+  });
+
+  // Ctrl+K to focus search
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      input.focus();
+    }
+  });
+})();
+
+/* ====== SMOOTH SCROLL ====== */
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
+
+/* ====== AOS REPLACEMENT (lightweight) ====== */
+(function(){
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-aos]').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+})();
 </script>
 {% endblock %}

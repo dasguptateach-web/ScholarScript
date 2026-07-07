@@ -44,6 +44,12 @@ class Engine:
         # Load content
         papers, videos, creative, external = load_all_content(self.config.get_content_dir())
         self.items = papers + videos + creative + external
+        self.env.globals.update({
+            "papers": papers,
+            "videos": videos,
+            "creative": creative,
+            "links": external,
+        })
 
         # Plugin: on_content_loaded
         for p in self.plugins:

@@ -785,211 +785,234 @@ input, textarea, select { font-size: 16px !important; }  /* prevent iOS zoom */
 }
 .card:hover .video-thumb-play { background: #ff0000; transform: translate(-50%, -50%) scale(1.1); }
 
-/* ============ GOOGLE HOME ============ */
-body.google-home {
-  --bg: #fff;
-  background: var(--bg);
-  display: flex; flex-direction: column; min-height: 100vh;
+/* ============ NEW HOMEPAGE STYLES ============ */
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), #d946ef, var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-body.google-home .container {
-  max-width: none;
-  padding: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(124,58,237,0.08); color: var(--primary);
+  padding: 0.4rem 1rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(124,58,237,0.12);
 }
-.google-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+
+/* Hero Contents inside the existing hero block */
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 800px; margin: 0 auto;
+  text-align: center; padding: 3rem 0 1rem;
 }
-.google-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem; font-weight: 800;
+  line-height: 1.1; margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  font-size: 1.1rem; color: var(--text-soft);
+  max-width: 620px; margin: 0 auto 1.75rem;
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex; gap: 0.75rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 2rem;
+}
+
+/* ============ SECTION ============ */
+.section {
+  padding: 4rem 0;
+}
+.section-cta {
+  text-align: center; margin-top: 1.5rem;
+}
+
+/* ============ FEATURES GRID ============ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: 2rem;
-  margin-top: -10vh;
+  transition: var(--transition-slow);
 }
-.google-logo {
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(124,58,237,0.12);
+}
+.feature-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-glow), rgba(124,58,237,0.02));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary); font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.feature-card p {
+  font-size: 0.88rem; color: var(--text-soft); line-height: 1.7;
+}
+
+/* ============ HOW IT WORKS STEPS ============ */
+.steps {
+  display: flex; flex-direction: column; gap: 1.5rem;
+  max-width: 700px; margin: 0 auto;
+}
+.step {
+  display: flex; gap: 1.25rem; align-items: flex-start;
+}
+.step-number {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(124,58,237,0.2);
+}
+.step-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.step-content p {
+  font-size: 0.9rem; color: var(--text-soft); line-height: 1.7;
+}
+
+/* ============ SHOWCASE ============ */
+.showcase-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  align-items: center;
+}
+.showcase-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.showcase-text > p {
+  font-size: 0.92rem; color: var(--text-soft);
+  line-height: 1.7; margin-bottom: 1.25rem;
+}
+.showcase-list {
+  list-style: none; margin: 0 0 1.5rem; padding: 0;
+}
+.showcase-list li {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.4rem 0; font-size: 0.88rem; color: var(--text-soft);
+}
+.showcase-list li i { color: var(--primary); font-size: 0.9rem; }
+.showcase-video {
+  position: relative;
+}
+.video-caption {
+  text-align: center; margin-top: 0.5rem;
+  font-size: 0.8rem; color: var(--text-muted);
+}
+
+/* ============ CTA SECTION ============ */
+.cta-card {
+  background: linear-gradient(135deg, var(--primary), #6d28d9);
+  border-radius: var(--radius-lg);
+  padding: 4rem 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
+  color: #fff;
 }
-.google-logo-main {
-  font-family: 'Inter', sans-serif;
-  font-size: 5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1.1;
+.cta-card h2 {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 700;
+  margin-bottom: 0.75rem;
 }
-html.dark .google-logo-main {
-  background: linear-gradient(135deg, #e2e8f0, #cbd5e1, #94a3b8);
-  -webkit-background-clip: text;
-  background-clip: text;
+.cta-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.7;
 }
-.google-logo-sub {
-  display: block;
-  font-size: 0.85rem;
-  color: #5f6368;
-  margin-top: 0.25rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-}
-html.dark .google-logo-sub {
-  color: #9ca3af;
-}
-
-/* Google Search Bar */
-.google-search {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 584px;
-  height: 44px;
-  background: #fff;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
-  padding: 0 8px 0 14px;
-  transition: box-shadow 0.2s, border-color 0.2s;
-  gap: 8px;
-}
-html.dark .google-search {
-  background: #1f2937;
-  border-color: #374151;
-}
-.google-search:hover {
-  box-shadow: 0 1px 6px rgba(32,33,36,0.18);
-  border-color: rgba(223,225,229,0);
-}
-html.dark .google-search:hover {
-  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-  border-color: rgba(55,65,81,0);
-}
-.google-search.focused,
-.google-search:focus-within {
-  box-shadow: 0 1px 6px rgba(32,33,36,0.18);
-  border-color: rgba(223,225,229,0);
-}
-html.dark .google-search.focused,
-html.dark .google-search:focus-within {
-  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-  border-color: rgba(55,65,81,0);
-}
-.google-search-icon {
-  flex-shrink: 0;
-  color: #9aa0a6;
-  width: 20px;
-  height: 20px;
-}
-html.dark .google-search-icon { color: #6b7280; }
-.google-search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  color: #202124;
-  height: 100%;
-}
-html.dark .google-search-input { color: #e5e7eb; }
-.google-search-input::placeholder { color: #9aa0a6; }
-html.dark .google-search-input::placeholder { color: #6b7280; }
-.google-search-badges {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  color: #4285f4;
-  opacity: 0.7;
-}
-
-/* Shortcuts */
-.google-shortcuts {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2.5rem;
+.cta-actions {
+  display: flex; gap: 0.75rem; justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
-  max-width: 600px;
 }
-.google-shortcut {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #202124;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: transform 0.2s;
-  padding: 4px;
-  border-radius: 8px;
+.cta-card .btn-outline {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+  box-shadow: none;
 }
-html.dark .google-shortcut { color: #e5e7eb; }
-.google-shortcut:hover {
-  transform: scale(1.05);
-  background: rgba(0,0,0,0.03);
+.cta-card .btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
 }
-html.dark .google-shortcut:hover { background: rgba(255,255,255,0.05); }
-.google-shortcut-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #f0f4ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #5f6368;
-}
-html.dark .google-shortcut-icon {
-  background: #1e293b;
-  color: #94a3b8;
-}
-.google-shortcut-icon svg { width: 24px; height: 24px; }
-
-/* Google Footer */
-.google-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 12px 30px;
-  background: #f2f2f2;
-  font-size: 0.8rem;
-  color: #5f6368;
-}
-html.dark .google-footer {
-  background: #111827;
-  color: #9ca3af;
-}
-.google-footer a {
-  color: #5f6368;
-  text-decoration: none;
-  padding: 0 8px;
-}
-html.dark .google-footer a { color: #9ca3af; }
-.google-footer a:hover { text-decoration: underline; }
-.google-footer-left, .google-footer-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.btn-lg {
+  padding: 0.7rem 1.8rem;
+  font-size: 0.95rem;
 }
 
-/* Override main container on home */
-body.google-home .site-footer { display: none; }
-@media (max-width: 600px) {
-  .google-logo-main { font-size: 2.8rem; }
-  .google-search { max-width: 100%; margin: 0 0.5rem; }
-  .google-footer { flex-direction: column; align-items: center; text-align: center; padding: 10px 16px; }
-  .google-shortcuts { gap: 0.5rem; }
-  .google-shortcut-icon { width: 40px; height: 40px; }
-  .google-shortcut-icon svg { width: 20px; height: 20px; }
-  .google-content { margin-top: -5vh; }
+/* ============ FOOTER GRID ============ */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.footer-brand { margin-bottom: 0; }
+.footer-brand h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #c4b5fd);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+.footer-brand > p {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4);
+  margin-bottom: 1rem;
+}
+.footer-info p {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+.footer-info p i { margin-right: 0.3rem; }
+
+/* Responsive overwrites for footer grid */
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+  .social-links { justify-content: center; }
+  .showcase-card { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .cta-card { padding: 2.5rem 1.5rem; }
+  .cta-card h2 { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content { padding: 1.5rem 0; }
+  .step { flex-direction: column; align-items: center; text-align: center; }
+  .section { padding: 2.5rem 0; }
+  .showcase-card { padding: 1.5rem; }
 }
