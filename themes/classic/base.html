@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ base_url }}/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base_url }}/rss.xml">
 {% if site.adsense_client_id and site.adsense_enabled %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client_id }}" crossorigin="anonymous"></script>
@@ -47,11 +48,13 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; {{ now.year }} {{ site.title }}. Published with ScholarScript.</p>
-{% if site.social_twitter or site.social_facebook or site.social_linkedin %}
+{% if site.social_twitter or site.social_facebook or site.social_linkedin or site.social_youtube or site.social_bluesky %}
       <div class="social-links">
-{% if site.social_twitter %}        <a href="https://twitter.com/{{ site.social_twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
-{% if site.social_facebook %}        <a href="https://facebook.com/{{ site.social_facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
-{% if site.social_linkedin %}        <a href="https://linkedin.com/in/{{ site.social_linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+{% if site.social_youtube %}        <a href="https://youtube.com/@{{ site.social_youtube }}" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>{% endif %}
+{% if site.social_twitter %}        <a href="https://twitter.com/{{ site.social_twitter }}" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>{% endif %}
+{% if site.social_bluesky %}        <a href="https://bsky.app/profile/{{ site.social_bluesky }}" target="_blank" rel="noopener" title="Bluesky"><i class="fab fa-bluesky"></i></a>{% endif %}
+{% if site.social_facebook %}        <a href="https://facebook.com/{{ site.social_facebook }}" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>{% endif %}
+{% if site.social_linkedin %}        <a href="https://linkedin.com/in/{{ site.social_linkedin }}" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
       </div>
 {% endif %}
     </div>

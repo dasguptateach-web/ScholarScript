@@ -20,6 +20,11 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install -e .
+      - name: Auto-discover YouTube videos for new papers
+        run: |
+          pip install yt-dlp
+          python youtube_agent.py
+        continue-on-error: true
       - run: python -m scholarscript build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3

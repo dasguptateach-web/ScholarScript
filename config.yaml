@@ -7,7 +7,7 @@ site:
   language: en
   locale: en_US
 
-theme: modern
+theme: classic
 
 # ─── MONETIZATION ───────────────────────────────────────────
 # Get your AdSense code from https://adsense.google.com

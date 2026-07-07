@@ -1,4 +1,6 @@
-﻿$projectDir = "C:\Users\81\ScholarScript"
+﻿# ScholarScript Auto-Pipeline v2.0
+# Drop any document on your Desktop → auto-ingest → YouTube match → build → deploy
+$projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $uploadsDir = "$projectDir\uploads"
 $desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
@@ -7,8 +9,11 @@ $logFile = "$projectDir\desktop-drop.log"
 $lockFile = "$env:TEMP\scholarscript-drop.lock"
 
 Set-Location $projectDir
-$env:PYTHONHOME = "C:\Users\81\AppData\Local\Programs\Python\Python311"
-$pythonExe = "$env:PYTHONHOME\python.exe"
+
+# Auto-detect Python
+$pythonExe = (Get-Command python -ErrorAction SilentlyContinue).Source
+if (-not $pythonExe) { $pythonExe = "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe" }
+if (-not $pythonExe) { $pythonExe = "C:\Python310\python.exe" }
 
 $tokenFile = "$projectDir\.github_token"
 if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -76,8 +81,7 @@ function Run-WithTimeout {
     $psi.RedirectStandardError = $true
     $psi.CreateNoWindow = $true
     $psi.WorkingDirectory = $projectDir
-    $psi.EnvironmentVariables["PYTHONHOME"] = $env:PYTHONHOME
-    $psi.EnvironmentVariables["PATH"] = "$env:PYTHONHOME;$env:PYTHONHOME\Scripts;$env:PATH"
+    $psi.EnvironmentVariables["PATH"] = [Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [Environment]::GetEnvironmentVariable("PATH", "User")
     if ($env:GITHUB_TOKEN) { $psi.EnvironmentVariables["GITHUB_TOKEN"] = $env:GITHUB_TOKEN }
     $p = [System.Diagnostics.Process]::Start($psi)
     if ($p.WaitForExit($TimeoutSeconds * 1000)) {
@@ -96,51 +100,49 @@ function Process-Batch {
     $allFileNames = @()
     $staged = @()
     Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' } | ForEach-Object {
-        $f = $_.FullName
-        $name = $_.Name
+        $f = $_.FullName; $name = $_.Name
         $ext = [IO.Path]::GetExtension($name).ToLower()
         if ($ext -notin '.pdf','.doc','.docx','.txt','.tex','.odt','.rtf') {
-            Safe-Move $f "$stagingDir\$name" | Out-Null
-            Log "SKIP $name (unsupported)"
-            return
+            Safe-Move $f "$stagingDir\$name" | Out-Null; Log "SKIP $name (unsupported)"; return
         }
         if (Wait-FileReady $f) {
-            if (Safe-Move $f "$stagingDir\$name") {
-                Log "STAGE $name"
-                $staged += "$stagingDir\$name"
-                $allFileNames += $name
-            }
-        } else {
-            Log "TIMEOUT $name (still in use)"
-        }
+            if (Safe-Move $f "$stagingDir\$name") { Log "STAGE $name"; $staged += "$stagingDir\$name"; $allFileNames += $name }
+        } else { Log "TIMEOUT $name (still in use)" }
     }
-
     if ($staged.Count -eq 0) { return }
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf
-        if (Safe-Copy $s "$uploadsDir\$name") {
-            Log "COPY $name"
-        }
+        if (Safe-Copy $s "$uploadsDir\$name") { Log "COPY $name" }
     }
 
+    # ── STEP 1: INGEST ──────────────────────────────────────
     $ok = $true
-    Log "Ingesting..."
+    Log "=== STEP 1/5: Ingesting documents ==="
     $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript ingest 2>&1" 120
-    if (-not $ok) { Log "  FAILED or TIMEOUT" }
+    if (-not $ok) { Log "  INGEST FAILED or TIMEOUT" }
     foreach ($l in $r) { Log "  $l" }
 
+    # ── STEP 2: YOUTUBE MATCH ───────────────────────────────
     if ($ok) {
-        Log "Building site..."
+        Log "=== STEP 2/5: Matching YouTube videos ==="
+        $r, $ytOk = Run-WithTimeout "& '$pythonExe' youtube_agent.py 2>&1" 180
+        foreach ($l in $r) { Log "  $l" }
+        if (-not $ytOk) { Log "  YouTube step had issues (non-fatal, continuing)" }
+    }
+
+    # ── STEP 3: BUILD ───────────────────────────────────────
+    if ($ok) {
+        Log "=== STEP 3/5: Building site ==="
         $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
-        if (-not $ok) { Log "  BUILD FAILED or TIMEOUT" }
+        if (-not $ok) { Log "  BUILD FAILED" }
         foreach ($l in $r) { Log "  $l" }
     }
 
+    # ── STEP 4: COMMIT & PUSH ───────────────────────────────
     if ($ok) {
-        $ts = Get-Timestamp
-        $pushed = $false
-        Log "Committing and pushing to GitHub..."
+        $ts = Get-Timestamp; $pushed = $false
+        Log "=== STEP 4/5: Committing and pushing to GitHub ==="
         try { git add -A 2>&1 | Out-Null } catch { Log "  ADD EX: $_" }
         try { $out = git commit -m "Auto-deploy $ts" 2>&1 } catch { Log "  COMMIT EX: $_" }
         if ($out -match 'nothing to commit|nothing changed') { Log "  Nothing new to push" }
@@ -152,24 +154,18 @@ function Process-Batch {
                 $out = git merge -X ours origin/main --no-edit 2>&1
                 if ($LASTEXITCODE -ne 0) {
                     if ($out -match 'conflict|CONFLICT|merge failed') {
-                        Log "  Conflict - resolving with ours..."; foreach ($l in $out) { Log "  $l" }
-                        git merge --abort 2>$null
+                        Log "  Conflict resolving..."; git merge --abort 2>$null
                         git merge -X theirs origin/main --no-edit 2>$null
                         if ($LASTEXITCODE -ne 0) { git merge --abort 2>$null }
-                    } else { foreach ($l in $out) { Log "  $l" } }
+                    }
                 }
                 $out = git push origin main 2>&1
-                if ($LASTEXITCODE -eq 0) { Log "Pushed! Workflow will deploy."; $pushed = $true }
-                elseif ($out -match 'Everything up-to-date') { Log "  Already up-to-date"; $pushed = $true }
+                if ($LASTEXITCODE -eq 0) { Log "  Pushed!"; $pushed = $true }
+                elseif ($out -match 'Everything up-to-date') { Log "  Up-to-date"; $pushed = $true }
                 else {
-                    foreach ($l in $out) { Log "  $l" }
                     if ($out -match 'rejected|non-fast-forward') {
-                        Log "  Behind remote - merging and retrying..."
+                        Log "  Behind remote - pulling..."
                         git pull --no-rebase origin main --no-edit 2>$null
-                        if ($LASTEXITCODE -ne 0) {
-                            git merge -X ours origin/main --no-edit 2>$null
-                            if ($LASTEXITCODE -ne 0) { git merge --abort 2>$null }
-                        }
                     }
                 }
             } catch { Log "  GIT EX: $_" }
@@ -177,7 +173,11 @@ function Process-Batch {
         if (-not $pushed) { $ok = $false }
     }
 
-    if ($ok) { Log "Done! Files: $($allFileNames -join ', ')" } else { Log "FAILED" }
+    # ── STEP 5: FINALIZE ────────────────────────────────────
+    if ($ok) {
+        Log "=== STEP 5/5: Done! ==="
+        Log "Files: $($allFileNames -join ', ')"
+    } else { Log "FAILED - check log above" }
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf
@@ -186,7 +186,7 @@ function Process-Batch {
     Log "Archived to _Processed"
 }
 
-Log "Watcher started (project: $projectDir)"
+Log "Auto-Pipeline v2.0 started (project: $projectDir)"
 
 while ($true) {
     $files = Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' }

@@ -8,6 +8,15 @@
   {% for item in items %}
   <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
     <span class="card-type {{ item.type }}"><i class="fas fa-{% if item.type == 'paper' %}file-alt{% elif item.type == 'video' %}video{% elif item.type == 'creative-writing' %}pen-fancy{% elif item.type == 'external-link' %}link{% endif %}"></i> {{ item.type | replace('-', ' ') | title }}</span>
+{% if item.type == 'video' and item.video_url %}
+    {% set vid_id = item.video_url.split('v=')[1].split('&')[0] if 'v=' in item.video_url else item.video_url.split('/')[-1] %}
+    <div class="video-thumb">
+      <a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">
+        <img src="https://img.youtube.com/vi/{{ vid_id }}/mqdefault.jpg" alt="{{ item.title }}" loading="lazy" width="320" height="180">
+        <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+      </a>
+    </div>
+{% endif %}
     <h3><a href="{{ base_url }}/{{ item.type }}/{{ item.slug }}/">{{ item.title }}</a></h3>
     <p class="meta"><i class="fas fa-calendar-alt"></i> {{ item.date }}{% if item.author %} &middot; <i class="fas fa-user"></i> {{ item.author }}{% endif %}{% if item.reading_time %} &middot; <i class="fas fa-clock"></i> {{ item.reading_time }} min read{% endif %}</p>
     <p>{{ item.summary }}</p>

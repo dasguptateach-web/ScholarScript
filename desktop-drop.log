@@ -42,3 +42,21 @@
 [2026-07-07 01:10:10]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 01:10:10]   
 [2026-07-07 01:10:10] Committing and pushing to GitHub...
+[2026-07-07 11:40:26] SKIP Test_Paper_Postmodernism.md (unsupported)
+[2026-07-07 11:40:33] STAGE Test_Paper_Postmodernism.txt
+[2026-07-07 11:40:33] COPY Test_Paper_Postmodernism.txt
+[2026-07-07 11:40:33] Ingesting...
+[2026-07-07 11:40:39]   Checking uploads folder...
+[2026-07-07 11:40:39]   Processed 1 file(s):
+[2026-07-07 11:40:39]     Success: 1
+[2026-07-07 11:40:39]     Errors:  0
+[2026-07-07 11:40:39]     [OK] Test_Paper_Postmodernism.txt -> C:\Users\81\ScholarScript\content\papers\test-paper-postmodernism.md (paper)
+[2026-07-07 11:40:39]   
+[2026-07-07 11:40:39]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 11:40:39]   
+[2026-07-07 11:40:39] Building site...
+[2026-07-07 11:40:46]   Building site...
+[2026-07-07 11:40:46]   Built 70 items in 2.85s
+[2026-07-07 11:40:46]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 11:40:46]   
+[2026-07-07 11:40:46] Committing and pushing to GitHub...
