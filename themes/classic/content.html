@@ -214,7 +214,7 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-/* Read Aloud — TTS */
+/* Read Aloud — TTS (chunked to bypass Chrome 15s cutoff) */
 (function(){
   var btn=document.getElementById('ttsPlayBtn');
   var genderEl=document.getElementById('ttsGender');
@@ -222,123 +222,186 @@ function googleTranslateElementInit() {
   var statusEl=document.getElementById('ttsStatus');
   var body=document.getElementById('contentBody');
   var ss=window.speechSynthesis;
-  var speaking=false, paused=false, voicesReady=false, utt=null;
-  var voiceQueue=[];
+  var chunks=[], chunkIdx=0, speaking=false, paused=false, voicesReady=false;
+  var selectedVoice=null, highlightTimer=null;
+  var stopBtn=document.createElement('button');
 
-  if(!btn||!body||!ss){
+  if(!btn||!body||!ss||typeof ss.speak!=='function'){
     if(statusEl)statusEl.textContent='Not available';
+    if(btn)btn.disabled=true;
     return;
   }
 
-  // Preload voices asynchronously
+  // Add a hidden Stop button
+  stopBtn.className='tts-btn stop';
+  stopBtn.innerHTML='<i class="fas fa-stop"></i> Stop';
+  stopBtn.style.display='none';
+  stopBtn.style.marginLeft='0.4rem';
+  btn.parentNode.insertBefore(stopBtn, btn.nextSibling);
+  stopBtn.addEventListener('click', function(){ stopAll(); });
+
   function loadVoices(){
     var v=ss.getVoices();
-    if(v&&v.length){voicesReady=true;
-      if(statusEl)statusEl.textContent='Ready';
-      // Process queued speak requests
-      while(voiceQueue.length)voiceQueue.shift()();
-    }
+    if(v&&v.length){voicesReady=true; if(statusEl)statusEl.textContent='Ready';}
   }
   loadVoices();
-  if(ss.onvoiceschanged!==undefined){
-    ss.onvoiceschanged=loadVoices;
-  }
-  // Poll for voices (fallback for browsers that don't fire onvoiceschanged)
-  var voicePoller=setInterval(function(){
-    if(!voicesReady){loadVoices();}else{clearInterval(voicePoller);}
-  },500);
-  // Stop polling after 10s
-  setTimeout(function(){clearInterval(voicePoller);},10000);
+  if(ss.onvoiceschanged!==undefined) ss.onvoiceschanged=loadVoices;
+  setTimeout(loadVoices, 500);
+  setTimeout(loadVoices, 1500);
 
-  function txt(){return body.textContent.replace(/\s+/g,' ').trim();}
   function setStatus(t,c){if(statusEl){statusEl.textContent=t;if(c)statusEl.style.color=c;}}
+
   function resetBtn(){
     btn.innerHTML='<i class="fas fa-headphones"></i> Read';
     btn.className='tts-btn';
-    speaking=false;paused=false;utt=null;
+    stopBtn.style.display='none';
+    speaking=false;paused=false;chunkIdx=0;
+    clearHighlight();
+  }
+
+  function clearHighlight(){
+    body.querySelectorAll('.tts-highlight,.tts-reading').forEach(function(el){
+      el.classList.remove('tts-highlight','tts-reading');
+    });
+  }
+
+  // Split text into sentence-sized chunks (~200 chars) to bypass Chrome's 15s cutoff
+  function buildChunks(){
+    var nodes=body.querySelectorAll('p, li, h2, h3, blockquote');
+    chunks=[];
+    nodes.forEach(function(node){
+      var text=node.textContent.trim();
+      if(!text) return;
+      // Split long paragraphs into sentence-level chunks
+      var sentences=text.split(/(?<=[.!?;:])\s+/);
+      var buf='';
+      sentences.forEach(function(s){
+        if((buf+s).length>200 && buf){
+          chunks.push({text:buf, node:node});
+          buf=s;
+        } else {
+          buf=buf?(buf+' '+s):s;
+        }
+      });
+      if(buf) chunks.push({text:buf, node:node});
+    });
   }
 
   function pickVoice(gen){
     var v=ss.getVoices();
     if(!v||!v.length)return null;
     var best=null;
-    // Prefer Indian English or Hindi voices
+    // Priority 1: Indian English (en-IN) — perfect for Indian students reading English lit
     for(var i=0;i<v.length;i++){
-      var name=v[i].name.toLowerCase();
-      var lang=v[i].lang||'';
-      if(lang.indexOf('hi')===0||lang.indexOf('en-in')===0||name.indexOf('hindi')!==-1||name.indexOf('india')!==-1){
-        if(!best||lang.indexOf('hi')===0)best=v[i];
-      }
+      var lang=(v[i].lang||'').toLowerCase();
+      if(lang==='en-in'||lang==='en_in'){best=v[i];break;}
     }
+    // Priority 2: any en-* voice
     if(!best){
       for(var i=0;i<v.length;i++){
-        var lang=v[i].lang||'';
-        if(lang.indexOf('en')===0){best=v[i];break;}
+        if((v[i].lang||'').indexOf('en')===0){best=v[i];break;}
       }
     }
     if(!best&&v.length)best=v[0];
+    // Gender override
     if(best&&gen){
-      var isFemale=/\b(female|samantha|zira|hazel|emma|mia|joanna|kendra|susan|victoria|veena|tessa|sara|google हिन्दी)\b/i;
-      var isMale=/\b(male|david|mark|daniel|michael|james|john|robert|richard|thomas|henry)\b/i;
-      if(gen==='female'&&!isFemale.test(best.name)){
+      var isFemale=/\b(female|samantha|zira|hazel|emma|mia|joanna|kendra|susan|victoria|veena|tessa|sara|aria|jenny)\b/i;
+      var isMale=/\b(male|david|mark|daniel|michael|james|john|robert|richard|thomas|henry|guy|rishi)\b/i;
+      var want=gen==='female'?isFemale:(gen==='male'?isMale:null);
+      var other=gen==='female'?isMale:(gen==='male'?isFemale:null);
+      if(want&&!want.test(best.name)){
         for(var i=0;i<v.length;i++){
-          if(isFemale.test(v[i].name)){best=v[i];break;}
-        }
-      }else if(gen==='male'&&!isMale.test(best.name)){
-        for(var i=0;i<v.length;i++){
-          if(isMale.test(v[i].name)){best=v[i];break;}
+          if(want.test(v[i].name)&&(v[i].lang||'').indexOf('en')===0){best=v[i];break;}
         }
       }
     }
     return best;
   }
 
-  function doSpeak(){
-    var text=txt();
-    if(!text){resetBtn();return;}
-    try{ss.cancel();}catch(e){}
-    var u=new SpeechSynthesisUtterance(text);
+  function highlightChunk(idx){
+    clearHighlight();
+    if(idx>=chunks.length)return;
+    var node=chunks[idx].node;
+    if(node){
+      node.classList.add('tts-highlight','tts-reading');
+      // Scroll into view (gentle)
+      var rect=node.getBoundingClientRect();
+      if(rect.top<80||rect.bottom>window.innerHeight-40){
+        node.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  }
+
+  function speakNext(){
+    if(!speaking||paused)return;
+    if(chunkIdx>=chunks.length){resetBtn();setStatus('Done');return;}
+    var chunk=chunks[chunkIdx];
+    highlightChunk(chunkIdx);
+    setStatus('Reading ('+(chunkIdx+1)+'/'+chunks.length+')');
+    var u=new SpeechSynthesisUtterance(chunk.text);
     u.rate=parseFloat(speedEl?speedEl.value:'1');
     u.volume=1;
-    var voice=pickVoice(genderEl?genderEl.value:'');
-    if(voice){u.voice=voice;u.lang=voice.lang||'en-US';}else{u.lang='en-US';}
-    utt=u;speaking=true;paused=false;
-    btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Starting';btn.className='tts-btn';
-    setStatus('Starting');
-    u.onstart=function(){
-      btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
-      setStatus('Reading');
+    if(selectedVoice){u.voice=selectedVoice;u.lang=selectedVoice.lang||'en-US';}else{u.lang='en-US';}
+    u.onend=function(){
+      chunkIdx++;
+      if(speaking&&!paused) speakNext();
     };
-    u.onend=function(){resetBtn();setStatus('Done');};
     u.onerror=function(e){
-      if(e.error==='canceled'||e.error==='interrupted'){resetBtn();setStatus('Stopped');return;}
-      resetBtn();setStatus('Tap to start','#d97706');
+      if(e.error==='canceled'||e.error==='interrupted'){return;}
+      chunkIdx++;
+      if(speaking&&!paused) speakNext();
     };
-    try{ss.speak(u);}catch(e){resetBtn();setStatus('Tap to start','#d97706');}
+    try{ss.speak(u);}catch(e){chunkIdx++;if(speaking&&!paused)speakNext();}
+  }
+
+  function stopAll(){
+    try{ss.cancel();}catch(e){}
+    resetBtn();
+    setStatus('Stopped');
   }
 
   btn.addEventListener('click',function(){
-    if(paused&&utt){
+    if(paused){
       try{ss.resume();setStatus('Reading');speaking=true;paused=false;
         btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
-      }catch(e){resetBtn();}
+      }catch(e){stopAll();}
       return;
     }
     if(speaking){
       try{ss.pause();setStatus('Paused');paused=true;
         btn.innerHTML='<i class="fas fa-play"></i> Resume';btn.className='tts-btn';
-      }catch(e){resetBtn();}
+      }catch(e){stopAll();}
       return;
     }
-    // If voices not ready, queue and show loading
+    // Start fresh
+    try{ss.cancel();}catch(e){}
     if(!voicesReady){
       setStatus('Loading voices...');
       btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Loading';
-      voiceQueue.push(doSpeak);
+      var wait=setInterval(function(){
+        if(voicesReady){clearInterval(wait);startReading();}
+      },200);
+      setTimeout(function(){clearInterval(wait);if(!speaking)startReading();},3000);
       return;
     }
-    doSpeak();
+    startReading();
   });
+
+  function startReading(){
+    buildChunks();
+    if(chunks.length===0){resetBtn();return;}
+    selectedVoice=pickVoice(genderEl?genderEl.value:'');
+    speaking=true;paused=false;chunkIdx=0;
+    btn.innerHTML='<i class="fas fa-pause"></i> Pause';btn.className='tts-btn stop';
+    stopBtn.style.display='inline-flex';
+    setStatus('Reading (1/'+chunks.length+')');
+    speakNext();
+  }
+
+  // Stop speaking if user navigates away
+  window.addEventListener('beforeunload',function(){try{ss.cancel();}catch(e){}});
+  // Re-pick voice if gender changes mid-stop
+  if(genderEl)genderEl.addEventListener('change',function(){selectedVoice=pickVoice(this.value);});
 })();
 
 /* Translate */
