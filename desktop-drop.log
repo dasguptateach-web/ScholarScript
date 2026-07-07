@@ -290,3 +290,7 @@
 [2026-07-07 20:28:54]   Built 75 items in 1.13s
 [2026-07-07 20:28:54]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 20:28:54] === STEP 4/5: Committing and pushing to GitHub ===
+[2026-07-07 20:29:00]   Retry 2...
+[2026-07-07 20:29:06]   Retry 3...
+[2026-07-07 20:29:08] FAILED - check log above
+[2026-07-07 20:29:08] Archived to _Processed
