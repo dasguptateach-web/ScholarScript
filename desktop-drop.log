@@ -182,3 +182,27 @@
 [2026-07-07 19:22:52]   Built 69 items in 0.95s
 [2026-07-07 19:22:52]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 19:22:52] === STEP 4/5: Committing and pushing to GitHub ===
+[2026-07-07 19:22:58]   Retry 2...
+[2026-07-07 19:23:04]   Retry 3...
+[2026-07-07 19:23:06] FAILED - check log above
+[2026-07-07 19:23:06] Archived to _Processed
+[2026-07-07 19:24:19] STAGE HOW TO USE.txt
+[2026-07-07 19:24:19] COPY HOW TO USE.txt
+[2026-07-07 19:24:19] === STEP 1/5: Ingesting documents ===
+[2026-07-07 19:24:20]   Checking uploads folder...
+[2026-07-07 19:24:20]   Processed 1 file(s):
+[2026-07-07 19:24:20]     Success: 1
+[2026-07-07 19:24:20]     Errors:  0
+[2026-07-07 19:24:20]     [OK] HOW TO USE.txt -> C:\Users\81\ScholarScript\content\creative-writing\how-to-use.md (creative-writing)
+[2026-07-07 19:24:20]   
+[2026-07-07 19:24:20]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 19:24:20] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 19:24:36]   Found 30 papers
+[2026-07-07 19:24:36]   
+[2026-07-07 19:24:36]   
+[2026-07-07 19:24:36]   Done! Created: 0, Skipped: 30, Failed: 0
+[2026-07-07 19:24:36] === STEP 3/5: Building site ===
+[2026-07-07 19:24:38]   Building site...
+[2026-07-07 19:24:38]   Built 69 items in 0.94s
+[2026-07-07 19:24:38]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 19:24:38] === STEP 4/5: Committing and pushing to GitHub ===
