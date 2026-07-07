@@ -294,3 +294,26 @@
 [2026-07-07 20:29:06]   Retry 3...
 [2026-07-07 20:29:08] FAILED - check log above
 [2026-07-07 20:29:08] Archived to _Processed
+[2026-07-07 20:33:09] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-07 20:42:08] STAGE An Impressive Study Guide Three Quintessential Elizabethan Sonnets.docx
+[2026-07-07 20:42:08] COPY An Impressive Study Guide Three Quintessential Elizabethan Sonnets.docx
+[2026-07-07 20:42:08] === STEP 1/5: Ingesting documents ===
+[2026-07-07 20:42:09]   Checking uploads folder...
+[2026-07-07 20:42:09]   Processed 1 file(s):
+[2026-07-07 20:42:09]     Success: 1
+[2026-07-07 20:42:09]     Errors:  0
+[2026-07-07 20:42:09]     [OK] An Impressive Study Guide Three Quintessential Elizabethan Sonnets.docx -> C:\Users\81\ScholarScript\content\papers\an-impressive-study-guide-three-quintessential-elizabethan-sonnets.md (paper)
+[2026-07-07 20:42:09]   
+[2026-07-07 20:42:09]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 20:42:09] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 20:42:09] TIMEOUT An Impressive Study Guide Three Quintessential Elizabethan Sonnets.docx (still in use)
+[2026-07-07 20:42:32]   Found 34 papers
+[2026-07-07 20:42:32]   
+[2026-07-07 20:42:32]     [an-impressive-study-guide-three-quintessential-elizabethan-sonnets] -> pUrqGTXEvAk (How to Choose What Books to Read) [63,628 views]
+[2026-07-07 20:42:32]   
+[2026-07-07 20:42:32]   Done! Created: 1, Skipped: 33, Failed: 0
+[2026-07-07 20:42:32] === STEP 3/5: Building site ===
+[2026-07-07 20:42:34]   Building site...
+[2026-07-07 20:42:34]   Built 77 items in 1.32s
+[2026-07-07 20:42:34]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 20:42:34] === STEP 4/5: Committing and pushing to GitHub ===
