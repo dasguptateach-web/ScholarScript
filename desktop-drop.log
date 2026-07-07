@@ -80,3 +80,31 @@
 [2026-07-07 11:42:58]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 11:42:58]   
 [2026-07-07 11:42:58] Committing and pushing to GitHub...
+[2026-07-07 11:43:04] Pushed! Workflow will deploy.
+[2026-07-07 11:43:04] Done! Files: Test_Romantic_Poetry.txt
+[2026-07-07 11:43:04] Archived to _Processed
+[TEST] Checking if YouTube step works...
+[2026-07-07 11:44:24] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-07 11:45:00] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-07 11:45:17] STAGE Test_Feminist_Criticism.txt
+[2026-07-07 11:45:17] COPY Test_Feminist_Criticism.txt
+[2026-07-07 11:45:17] === STEP 1/5: Ingesting documents ===
+[2026-07-07 11:45:20]   Checking uploads folder...
+[2026-07-07 11:45:20]   Processed 1 file(s):
+[2026-07-07 11:45:20]     Success: 1
+[2026-07-07 11:45:20]     Errors:  0
+[2026-07-07 11:45:20]     [OK] Test_Feminist_Criticism.txt -> C:\Users\81\ScholarScript\content\papers\test-feminist-criticism.md (paper)
+[2026-07-07 11:45:20]   
+[2026-07-07 11:45:20]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 11:45:20] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 11:45:43]   Found 35 papers
+[2026-07-07 11:45:43]   
+[2026-07-07 11:45:44]     [test-feminist-criticism] -> H0mQrF5gKiE (Feminism | Feminist Criticism | English Literature | Practic) [2,459 views]
+[2026-07-07 11:45:44]     [test-romantic-poetry] -> t5R0VcGXtBA (Romanticism in English Literature | 1798 to 1837 | William W) [40,776 views]
+[2026-07-07 11:45:44]   
+[2026-07-07 11:45:44]   Done! Created: 2, Skipped: 33, Failed: 0
+[2026-07-07 11:45:44] === STEP 3/5: Building site ===
+[2026-07-07 11:45:49]   Building site...
+[2026-07-07 11:45:49]   Built 75 items in 3.00s
+[2026-07-07 11:45:49]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 11:45:49] === STEP 4/5: Committing and pushing to GitHub ===
