@@ -206,3 +206,37 @@
 [2026-07-07 19:24:38]   Built 69 items in 0.94s
 [2026-07-07 19:24:38]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 19:24:38] === STEP 4/5: Committing and pushing to GitHub ===
+[2026-07-07 19:24:43]   Retry 2...
+[2026-07-07 19:24:49]   Retry 3...
+[2026-07-07 19:24:52] FAILED - check log above
+[2026-07-07 19:24:52] Archived to _Processed
+[2026-07-07 19:32:17] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:32:50] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:33:23] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:33:57] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:34:30] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:35:03] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:35:36] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:36:10] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:36:43] TIMEOUT The British Essay Origin, Trends, Practitioners.docx (still in use)
+[2026-07-07 19:37:13] STAGE The British Essay Origin, Trends, Practitioners.docx
+[2026-07-07 19:37:13] COPY The British Essay Origin, Trends, Practitioners.docx
+[2026-07-07 19:37:13] === STEP 1/5: Ingesting documents ===
+[2026-07-07 19:37:15]   Checking uploads folder...
+[2026-07-07 19:37:15]   Processed 1 file(s):
+[2026-07-07 19:37:15]     Success: 1
+[2026-07-07 19:37:15]     Errors:  0
+[2026-07-07 19:37:15]     [OK] The British Essay Origin, Trends, Practitioners.docx -> C:\Users\81\ScholarScript\content\papers\the-british-essay-origin-trends-practitioners.md (paper)
+[2026-07-07 19:37:15]   
+[2026-07-07 19:37:15]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 19:37:15] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 19:37:34]   Found 31 papers
+[2026-07-07 19:37:34]   
+[2026-07-07 19:37:34]     [the-british-essay-origin-trends-practitioners] -> pconyyFuh3w (History of English Literature : Development of English Drama) [279,570 views]
+[2026-07-07 19:37:34]   
+[2026-07-07 19:37:34]   Done! Created: 1, Skipped: 30, Failed: 0
+[2026-07-07 19:37:34] === STEP 3/5: Building site ===
+[2026-07-07 19:37:37]   Building site...
+[2026-07-07 19:37:37]   Built 71 items in 1.17s
+[2026-07-07 19:37:37]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 19:37:37] === STEP 4/5: Committing and pushing to GitHub ===
