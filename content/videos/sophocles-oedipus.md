@@ -7,7 +7,6 @@ tags: [oedipus, who, man, creon]
 video_url: "https://www.youtube.com/watch?v=0a9Wuz7MvUE"
 summary: "A video lecture on Sophocles’ Oedipus"
 ---
-
 # Sophocles’ Oedipus
 
 What really happened to Oedipus? - Stephen Esposito

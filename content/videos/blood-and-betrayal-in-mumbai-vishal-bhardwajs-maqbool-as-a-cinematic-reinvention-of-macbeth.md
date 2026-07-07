@@ -7,7 +7,6 @@ tags: [maqbool, film, bhardwaj, macbeth]
 video_url: "https://www.youtube.com/watch?v=wXkTUW8CVRM"
 summary: "An analysis of Vishal Bhardwaj's Maqbool as a cinematic reinvention of Shakespeare's Macbeth."
 ---
-
 # Maqbool (2003) - Vishal Bhardwaj's Macbeth Adaptation | Analysis
 
 An analysis of Vishal Bhardwaj's Maqbool as a cinematic reinvention of Shakespeare's Macbeth.

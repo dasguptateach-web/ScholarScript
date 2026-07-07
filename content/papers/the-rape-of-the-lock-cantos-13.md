@@ -1,5 +1,4 @@
 ---
-
 title: "The Rape of the Lock (Cantos 1–3)"
 
 date: 2026-05-29
@@ -7,8 +6,8 @@ date: 2026-05-29
 type: paper
 
 tags: [pope, belinda, epic, canto, lock]
-summary: "May 29, 2026 [: The Rape of the Lock (Cantos 1–3)Short Answer Type Questions] 2. Discuss the role of Ariel and the sylphs as the Model Question Paper supernatur"---
-
+summary: "May 29, 2026 [: The Rape of the Lock (Cantos 1–3)Short Answer Type Questions] 2. Discuss the role of Ariel and the sylphs as the Model Question Paper supernatur"
+---
 May 29, 2026 [: The Rape of the Lock (Cantos 1–3)Short Answer Type Questions] 2. Discuss the role of Ariel and the sylphs as the Model Question Paper supernatural machinery in Cantos 1 and 2.
 
 ## Semester 4, WBSU

@@ -7,7 +7,6 @@ tags: [pope, epic, society, lock, mock]
 video_url: "https://www.youtube.com/watch?v=9aEU-9MAbwY"
 summary: "A video lecture on Mock Epic"
 ---
-
 # Mock Epic
 
 The Rape of the Lock by Alexander Pope | Rape of the Lock Summary & Analysis | Part -2

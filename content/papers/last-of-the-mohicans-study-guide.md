@@ -1,5 +1,4 @@
 ---
-
 title: "The Last of the Mohicans Study Guide"
 
 date: 2019-04-06
@@ -7,8 +6,8 @@ date: 2019-04-06
 type: paper
 
 tags: [his, hawkeye, magua, him, uncas]
-summary: "The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was"---
-
+summary: "The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was"
+---
 ## Last of the Mohicans Study Guide
 
 The Last of the Mohicans takes place in the midst of the French-Indian war. Specifically, it focuses on one battle in a war that lasted for many years. This was the last and most important conflict over French and British possessions in North America. Unlike the earlier wars, which began in Europe and spread to America, this struggle broke out solely in America in 1754, and was not settled until 1763. For this reason, Indian involvement in the conflict was incredibly high.

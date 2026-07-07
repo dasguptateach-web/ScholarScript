@@ -7,7 +7,6 @@ tags: [criticism, literary, theory, poetry, text]
 video_url: "https://www.youtube.com/watch?v=6OvRHslEk1w"
 summary: "A video lecture on Literary Criticism and Theory for UGC NET"
 ---
-
 # Literary Criticism and Theory for UGC NET
 
 UGC NET English Literature | UGC NET English Literary Theory & Criticism By Aishwarya Ma'am

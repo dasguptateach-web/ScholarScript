@@ -1,5 +1,4 @@
 ---
-
 title: "Classical Drama"
 
 date: 2026-07-06
@@ -7,8 +6,8 @@ date: 2026-07-06
 type: paper
 
 tags: [classical, english, drama, elizabethan, native]
-summary: "﻿## The Influence of Classical Drama on Elizabethan Theatre"---
-
+summary: "﻿## The Influence of Classical Drama on Elizabethan Theatre"
+---
 ﻿## The Influence of Classical Drama on Elizabethan Theatre
 
 ## Abstract This paper examines the profound influence of classical Greek and Roman drama on the development of Elizabethan theatre. The University Wits, particularly Christopher Marlowe and Thomas Kyd, synthesized classical forms with native English traditions to create the romantic drama that reached its apex in Shakespeare's works.

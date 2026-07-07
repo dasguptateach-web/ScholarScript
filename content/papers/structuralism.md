@@ -1,5 +1,4 @@
 ---
-
 title: "Structuralism"
 
 date: 2026-05-16
@@ -7,8 +6,8 @@ date: 2026-05-16
 type: paper
 
 tags: [meaning, literary, saussure, structuralism, language]
-summary: "Saussure criticism because texts began to be understood as systems of signs producing meaning through convention and difference. Ferdinand de Saussure is regard"---
-
+summary: "Saussure criticism because texts began to be understood as systems of signs producing meaning through convention and difference. Ferdinand de Saussure is regard"
+---
 ## May 16, 2026 [Module IV: STRUCTURALISM]
 
 Saussure criticism because texts began to be understood as systems of signs producing meaning through convention and difference. Ferdinand de Saussure is regarded as the father of Structuralism because he revolutionized the study of language by treating it as a system of relations rather than a mere collection of words. In his influential work Course in General Linguistics, he argued that meaning arises through difference. A word means what it does because it is different from other words within the linguistic system. Saussure famously remarked, "In language there are only differences without positive terms." This insight deeply influenced twentieth-century literary criticism because critics began to see literature not as isolated artistic expression but as part of larger cultural and linguistic structures. Structuralists therefore searched for recurring patterns, oppositions, and codes underlying literary texts. Saussure's theories can be clearly applied to literary analysis. In Hamlet, the meaning of Hamlet's character emerges through a network of oppositions: action versus hesitation, appearance versus reality, sanity versus madness. Hamlet's famous statement, "Seems, madam? Nay, it is; I know not 'seems'," reflects the instability between external signs and inner truth. Structuralist critics argue that these binary oppositions generate the play's meaning. Similarly, in Pride and Prejudice, the contrast between reason and emotion, pride and humility, structures the narrative. Saussure's influence also appears in the work of Claude Lévi-Strauss, who analysed myths as systems of recurring oppositions such as life/death or nature/culture. Thus literature becomes understandable through its hidden structures rather than solely through authorial intention.

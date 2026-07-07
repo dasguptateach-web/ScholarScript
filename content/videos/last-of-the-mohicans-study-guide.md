@@ -7,7 +7,6 @@ tags: [hawkeye, magua, uncas]
 video_url: "https://www.youtube.com/watch?v=_GKRRpb98vc"
 summary: "A video lecture on The Last of the Mohicans Study Guide"
 ---
-
 # The Last of the Mohicans Study Guide
 
 LAST OF THE MOHICANS (SUMMARY & ANALYSIS)

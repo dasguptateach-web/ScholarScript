@@ -7,7 +7,6 @@ tags: [shakespeare, postcolonial, renaissance, tempest]
 video_url: "https://www.youtube.com/watch?v=UvznOeSyESU"
 summary: "An analysis of colonial power structures in Shakespeare's The Tempest."
 ---
-
 # Colonial Discourse in the Tempest
 
 Why should you read Shakespeare’s “The Tempest”? - Iseult Gillespie

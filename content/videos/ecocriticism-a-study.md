@@ -7,7 +7,6 @@ tags: [nature, human, ecology, ecological]
 video_url: "https://www.youtube.com/watch?v=l2Q1uh06KvY"
 summary: "A video lecture on Ecocriticism A Study"
 ---
-
 # Ecocriticism A Study
 
 Ecocriticism: Literary studies in the Age of Environmental Crisis by Cheryll Glotfelty Summary (ENG)

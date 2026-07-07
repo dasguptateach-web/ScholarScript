@@ -7,7 +7,6 @@ tags: [meaning, literary, saussure, structuralism, language]
 video_url: "https://www.youtube.com/watch?v=n6q_wJFtZYE"
 summary: "A video lecture on Structuralism"
 ---
-
 # Structuralism
 
 Structuralism Literary Theory: Crash Course for UGC NET English

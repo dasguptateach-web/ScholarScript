@@ -3,8 +3,8 @@ title: "Doctor Faustus: A Study"
 date: 2019-08-19
 type: paper
 tags: [faustus, his, him, mephostophilis, scene]
-summary: "While written in the Renaissance language that often challenges high school and college students,Christopher Marlowe’s Doctor Faustus is a play for the ages. In"---
-
+summary: "While written in the Renaissance language that often challenges high school and college students,Christopher Marlowe’s Doctor Faustus is a play for the ages. In"
+---
 While written in the Renaissance language that often challenges high school and college students,Christopher Marlowe’s Doctor Faustus is a play for the ages. In a culture laden with books, movies,television shows and video games about black magic, the subject matter alone will captivate
 
 contemporary young adults. And with its themes of ambition, desire, fate, and free will, Marlowe’s drama is excellent comparison material to works both old and new. As a genre study, Dr. Faustus is a morality play, a historical allegory, the tale of a hero gone bad due to the dilemmas presented by

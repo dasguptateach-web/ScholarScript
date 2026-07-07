@@ -7,7 +7,6 @@ tags: [harry, voldemort, novel, moral]
 video_url: "https://www.youtube.com/watch?v=wOTfMkCR6k8"
 summary: "A video lecture on Harry Satqa"
 ---
-
 # Harry Satqa
 
 Harry Potter: 150 Things You Wouldn't Know If You Didn't Read the Books (Mega Compilation)

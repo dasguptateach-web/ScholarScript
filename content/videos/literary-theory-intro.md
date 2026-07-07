@@ -7,7 +7,6 @@ tags: [literary-theory, introduction, criticism, guide]
 video_url: "https://www.youtube.com/watch?v=u6q7GpTBChY"
 summary: "A comprehensive NPTEL lecture on what constitutes Literary Theory and its relationship to literature. Covers major schools, key thinkers, and critical approaches."
 ---
-
 # Introduction to Literary Theory: A Visual Guide
 
 This NPTEL lecture provides a comprehensive introduction to the major schools of literary theory:

@@ -7,7 +7,6 @@ tags: [drama, marlowe, plays]
 video_url: "https://www.youtube.com/watch?v=c21cMSmaC8g"
 summary: "A video lecture on The Elizabethan Age"
 ---
-
 # The Elizabethan Age
 
 Elizabethan Age | History of English Literature | Major Writers & Works

@@ -1,5 +1,4 @@
 ---
-
 title: "Shakespeare and His Plays"
 
 date: 2019-02-28
@@ -11,7 +10,6 @@ author: "ScholarScript Team"
 tags: [shakespeare, plays, elizabethan, drama, literary-analysis]
 
 summary: "A comprehensive overview of Shakespeare's plays, their chronological order, dating controversies, authorship question, and a complete character index."
-
 ---
 Shakespeare's Plays in Chronological Order:
 

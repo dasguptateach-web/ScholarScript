@@ -1,5 +1,4 @@
 ---
-
 title: "UGC NET English Paper II - Advanced Practice Test"
 
 date: 2026-07-06
@@ -7,8 +6,8 @@ date: 2026-07-06
 type: paper
 
 tags: [line, iambic, spondee, sonnet, rhyme]
-summary: "(50 MCQs Ã-- 2 marks = 100 marks)"---
-
+summary: "(50 MCQs Ã-- 2 marks = 100 marks)"
+---
 ## UGC NET ENGLISH PAPER II aEUR" ADVANCED PRACTICE TEST
 
 ## RHETORIC, PROSODY & STANZA PATTERNS

@@ -7,7 +7,6 @@ tags: [shakespeare, hamlet, soliloquy, analysis, elizabethan]
 video_url: "https://www.youtube.com/watch?v=eURo7I2PkTw"
 summary: "An in-depth analysis of Hamlet's 'To be or not to be' soliloquy and other major soliloquies, examining rhetorical structure, thematic content, and dramatic function."
 ---
-
 # Hamlet's Soliloquies: A Line-by-Line Analysis
 
 A detailed breakdown of Hamlet's soliloquies, examining:

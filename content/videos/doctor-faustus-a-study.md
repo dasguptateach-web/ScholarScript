@@ -7,7 +7,6 @@ tags: [faustus, mephostophilis, scene]
 video_url: "https://www.youtube.com/watch?v=6C8SY8UF4C0"
 summary: "A video lecture on Doctor Faustus: A Study Guide"
 ---
-
 # Doctor Faustus: A Study Guide
 
 Doctor Faustus by Christopher Marlowe | Summary & Analysis

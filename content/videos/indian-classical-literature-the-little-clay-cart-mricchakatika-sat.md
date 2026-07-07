@@ -7,7 +7,6 @@ tags: [charudatta, social, act, because]
 video_url: "https://www.youtube.com/watch?v=08zEcBjLriU"
 summary: "Study of Sudraka's Mricchakatika: Indian classical literature overview and analysis."
 ---
-
 # Mrichchhakatika The Little Clay Cart | English Literature
 
 Study of Sudraka's Mricchakatika: Indian classical literature overview and analysis.
