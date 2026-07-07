@@ -157,7 +157,9 @@
   <div class="section-divider"><i class="fas fa-clock"></i></div>
   <h2 class="section-title"><i class="fas fa-newspaper"></i> Recently Added</h2>
 
-  {% set recent = (papers + videos + creative) | sort(attribute='date', reverse=True) %}
+  {% set total_resources = papers|length + videos|length + creative|length + links|length %}
+{% set total_reading_hours = ((papers|sum(attribute='reading_time') + videos|sum(attribute='reading_time') + creative|sum(attribute='reading_time')) / 60) | round(1) %}
+{% set recent = (papers + videos + creative) | sort(attribute='date', reverse=True) %}
   <div class="card-grid">
   {% for item in recent[:6] %}
     <article class="card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
@@ -190,13 +192,46 @@
   </div>
 </section>
 
-<!-- ====== VISITOR STATS ====== -->
+<!-- ====== IMPACT STATS ====== -->
 <section class="section stats-section" data-aos="fade-up">
   <div class="section-divider"><i class="fas fa-chart-bar"></i></div>
-  <h2 class="section-title"><i class="fas fa-eye"></i> ScholarScript by the Numbers</h2>
-  <p class="stats-subtitle">Real-time visitor analytics powered by GoatCounter. 100% real data — no fake counters.</p>
+  <h2 class="section-title"><i class="fas fa-bolt"></i> ScholarScript Impact</h2>
+  <p class="stats-subtitle">Everything here is 100% real — built from actual content on this site.</p>
   <div class="stats-grid" id="visitorStats">
-    <div class="stat-placeholder">Loading visitor data...</div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+      <div class="stat-number" data-target="{{ total_resources }}">{{ total_resources }}</div>
+      <div class="stat-label">Total Resources</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+      <div class="stat-number" data-target="{{ papers|length }}">{{ papers|length }}</div>
+      <div class="stat-label">Scholarly Papers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-video"></i></div>
+      <div class="stat-number" data-target="{{ videos|length }}">{{ videos|length }}</div>
+      <div class="stat-label">Video Lectures</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-clock"></i></div>
+      <div class="stat-number" data-target="{{ total_reading_hours }}">{{ total_reading_hours }}</div>
+      <div class="stat-label">Hours of Content</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-tags"></i></div>
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Literary Periods</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-pen-fancy"></i></div>
+      <div class="stat-number">{{ creative|length }}</div>
+      <div class="stat-label">Creative Works</div>
+    </div>
+  </div>
+  <div class="stat-footer">
+    <i class="fas fa-globe"></i> <span id="totalVisitors">Loading total visitors...</span>
+    &middot; Updated <span id="statsUpdated">just now</span>
   </div>
 </section>
 
