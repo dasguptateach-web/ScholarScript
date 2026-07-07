@@ -856,6 +856,32 @@ input, textarea, select { font-size: 16px !important; }  /* prevent iOS zoom */
   .stat-number { font-size: 1.5rem; }
 }
 
+/* ============ SUBMIT WRITING PAGE ============ */
+.submit-layout {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 2rem; max-width: 960px; margin: 0 auto; padding: 2rem 0;
+}
+.submit-info h3 {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 700; margin-bottom: 0.75rem;
+}
+.submit-info > p {
+  font-size: 0.9rem; color: var(--text-soft); line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.submit-guidelines {
+  list-style: none; margin: 0; padding: 0;
+}
+.submit-guidelines li {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0; font-size: 0.85rem; color: var(--text-soft);
+}
+.submit-guidelines li i { color: var(--primary); font-size: 0.85rem; }
+.submit-form iframe { border: 1px solid var(--border); }
+@media (max-width: 768px) {
+  .submit-layout { grid-template-columns: 1fr; }
+}
+
 /* ============ NEW HOMEPAGE STYLES ============ */
 
 /* Gradient Text */

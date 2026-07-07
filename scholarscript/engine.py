@@ -90,6 +90,7 @@ class Engine:
         self._render_tags(public_dir, tag_map)
         self._render_author_of_month(public_dir, author_of_month)
         self._render_donate(public_dir)
+        self._render_submit(public_dir)
         self._render_health(public_dir)
 
         # Render individual content pages
@@ -228,6 +229,14 @@ class Engine:
             "page_ogtype": "website",
         }
         self._render("donate.html", ctx, public_dir / "donate" / "index.html")
+
+    def _render_submit(self, public_dir):
+        ctx = {
+            "page_title": "Submit Creative Writing",
+            "page_url": self.config.get_base_url() + "/creative-writing/submit/",
+            "page_ogtype": "website",
+        }
+        self._render("submit-writing.html", ctx, public_dir / "creative-writing" / "submit" / "index.html")
 
     def _generate_search_index(self, public_dir):
         idx = []
