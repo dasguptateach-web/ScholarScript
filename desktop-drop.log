@@ -244,3 +244,24 @@
 [2026-07-07 19:37:48]   Retry 3...
 [2026-07-07 19:37:51] FAILED - check log above
 [2026-07-07 19:37:51] Archived to _Processed
+[2026-07-07 20:04:28] STAGE Addison.docx
+[2026-07-07 20:04:28] COPY Addison.docx
+[2026-07-07 20:04:28] === STEP 1/5: Ingesting documents ===
+[2026-07-07 20:04:29]   Checking uploads folder...
+[2026-07-07 20:04:29]   Processed 1 file(s):
+[2026-07-07 20:04:29]     Success: 1
+[2026-07-07 20:04:29]     Errors:  0
+[2026-07-07 20:04:29]     [OK] Addison.docx -> C:\Users\81\ScholarScript\content\papers\addison.md (paper)
+[2026-07-07 20:04:29]   
+[2026-07-07 20:04:29]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 20:04:29] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 20:04:49]   Found 32 papers
+[2026-07-07 20:04:49]   
+[2026-07-07 20:04:49]     [addison] -> IK2yyhTyYNQ (Sir Roger at Home | Lecture on Addison's Classic Essay| 18th) [297 views]
+[2026-07-07 20:04:49]   
+[2026-07-07 20:04:49]   Done! Created: 1, Skipped: 31, Failed: 0
+[2026-07-07 20:04:49] === STEP 3/5: Building site ===
+[2026-07-07 20:04:51]   Building site...
+[2026-07-07 20:04:51]   Built 73 items in 1.06s
+[2026-07-07 20:04:51]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 20:04:51] === STEP 4/5: Committing and pushing to GitHub ===
