@@ -50,6 +50,7 @@ PAPER_TOPIC_MAP = {
     "belinda": "Belinda character Pope Rape of the Lock analysis English literature",
     "the-british-essay-origin-trends-practitioners": "British essay origin Francis Bacon Addison Steele periodical essay English literature history",
     "addison": "Addison Sir Roger at Home Spectator Goldsmith Parliamentary Elections periodical essay English literature",
+    "jonathan-swift-gullivers-travels-books-i-ii": "Gulliver's Travels Jonathan Swift summary analysis Books 1 2 Lilliput Brobdingnag English literature",
 }
 
 TEST_PAPERS = {"auto-deploy-final-test", "final-integrated-test", "ppt"}

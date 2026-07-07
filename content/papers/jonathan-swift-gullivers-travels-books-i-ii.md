@@ -1,4 +1,4 @@
----
+﻿---
 title: "Jonathan Swift, Gulliver’S Travels Books I & Ii"
 date: 2026-07-07
 type: paper
@@ -192,3 +192,4 @@ Gulliver’s reliability cracks most tellingly when his patriotic fervour collid
 This passage is a masterclass in ironic narration. The reader understands that the King’s “narrowness of thinking” is in fact a profound moral clarity, while Gulliver’s cosmopolitan “allowances” are the very prejudices that justify colonialism, warfare, and exploitation. Swift does not need to step onto the page to condemn Gulliver; he simply lets the narrator’s own words damn him. Gulliver emerges as an unreliable narrator not because he lies, but because he is incapable of moral self-awareness.
 
 Yet Gulliver is not merely a satiric butt; he also serves as an everyman whose gradual diminishment mirrors the reader’s own journey. In Lilliput, he is a confident giant, certain of his benevolent power. In Brobdingnag, he is reduced to a squeaking insect, batted about by wasps and dropped into bowls of cream. His physical humiliations erode the complacency he brought from England, preparing the ground for the darker misanthropy of the later voyages. Even so, within Books I and II, Gulliver never fully connects his personal humbling to a larger critique of human vanity; he simply records the distress and soldiers on. That partial blindness makes him the perfect satiric conduit, because it forces the active reader to make the connections that the narrator cannot. Swift, through Gulliver, thus delivers a double blow: he shows a civilisation rotten to its core, and he simultaneously indicts the kind of mind—earnest, patriotic, incurious—that sustains such a civilisation by refusing to see it plain.
+
