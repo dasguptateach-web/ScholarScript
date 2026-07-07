@@ -112,3 +112,24 @@
 [2026-07-07 11:45:55] === STEP 5/5: Done! ===
 [2026-07-07 11:45:55] Files: Test_Feminist_Criticism.txt
 [2026-07-07 11:45:55] Archived to _Processed
+[2026-07-07 12:06:38] STAGE Dr. Faustus a Study.docx
+[2026-07-07 12:06:38] COPY Dr. Faustus a Study.docx
+[2026-07-07 12:06:38] === STEP 1/5: Ingesting documents ===
+[2026-07-07 12:06:40]   Checking uploads folder...
+[2026-07-07 12:06:40]   Processed 1 file(s):
+[2026-07-07 12:06:40]     Success: 1
+[2026-07-07 12:06:40]     Errors:  0
+[2026-07-07 12:06:40]     [OK] Dr. Faustus a Study.docx -> C:\Users\81\ScholarScript\content\papers\composed-by-debojyoti-dasgupta-mob9874138466.md (paper)
+[2026-07-07 12:06:40]   
+[2026-07-07 12:06:40]   Run 'scholarscript build' to rebuild the site.
+[2026-07-07 12:06:40] === STEP 2/5: Matching YouTube videos ===
+[2026-07-07 12:07:00]   Found 33 papers
+[2026-07-07 12:07:00]   
+[2026-07-07 12:07:00]     [composed-by-debojyoti-dasgupta-mob9874138466] -> 6C8SY8UF4C0 (Doctor Faustus by Christopher Marlowe | Summary & Analysis) [253,600 views]
+[2026-07-07 12:07:00]   
+[2026-07-07 12:07:00]   Done! Created: 1, Skipped: 32, Failed: 0
+[2026-07-07 12:07:00] === STEP 3/5: Building site ===
+[2026-07-07 12:07:02]   Building site...
+[2026-07-07 12:07:02]   Built 71 items in 1.07s
+[2026-07-07 12:07:02]   Output: C:\Users\81\ScholarScript\public
+[2026-07-07 12:07:02] === STEP 4/5: Committing and pushing to GitHub ===
