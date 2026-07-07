@@ -767,36 +767,39 @@ B – A proto-Romantic privileging of authentic interiority over studied imitati
 
 B – Accurate comparative summation of the three different strategies for immortalisation.
 
-Line | Text | Analysis
-1 | Loving in truth, and fain in verse my love to show | The poet asserts his sincerity (“in truth”) and his desire (“fain”) to manifest love in poetry. The conjunction of emotional truth with literary ambition sets up the central tension.
-2 | That she, dear she, might take some pleasure of my pain | The beloved (“dear she”) is the reader he hopes to please. The paradox “pleasure of my pain” encapsulates the Petrarchan love-suffering trope.
-3–4 | Pleasure might cause her read, reading might make her know; / Knowledge might pity win, and pity grace obtain | A rhetorical gradatio (climax): pleasure → reading → knowledge → pity → grace. The desired chain of effects shows that poetry is instrumental—a means to win her favour.
-5–6 | I sought fit words to paint the blackest face of woe, / Studying inventions fine, her wits to entertain | He adopts the stance of a studious poet, seeking “fit words” to depict extreme sorrow. “Inventions fine” suggests both rhetorical ornaments and intellectual conceits.
-7–8 | Oft turning others’ leaves, to see if thence would flow / Some fresh and fruitful showers upon my sunburned brain | He reads other poets (“others’ leaves”) for inspiration. The metaphor of “fresh and fruitful showers” on his “sunburned brain” pictures his intellect as parched and infertile.
-9–10 | But words came halting forth, wanting Invention’s stay; / Invention, Nature’s child, fled step-dame Study’s blows | The failure: words limp, lacking the support (“stay”) of true creative invention. Personification: Invention is “Nature’s child,” opposed to the cruel stepmother “Study.” Artifice has driven away authentic creativity.
-11 | And others’ feet still seemed but strangers in my way | “Feet” puns on metrical feet; the poetic forms of others feel alien, blocking his own expression.
-12 | Thus great with child to speak, and helpless in my throes | A startling male-pregnancy metaphor: he is labouring to give birth to verse but is helpless. Conveys creative agony.
-13 | Biting my truant pen, beating myself for spite | Physical gestures of frustration and self-punishment; “truant” pen implies it has neglected its duty.
-14 | “Fool,” said my Muse to me, “look in thy heart and write.” | The volta: the Muse breaks in. The solution is not imitation but introspection. The final line is one of the most famous injunctions in English poetry—sincerity of feeling outweighs all learned ornament.
+| Line | Text | Analysis |
+|---|---|---|
+| 1 | Loving in truth, and fain in verse my love to show | The poet asserts his sincerity (“in truth”) and his desire (“fain”) to manifest love in poetry. The conjunction of emotional truth with literary ambition sets up the central tension. |
+| 2 | That she, dear she, might take some pleasure of my pain | The beloved (“dear she”) is the reader he hopes to please. The paradox “pleasure of my pain” encapsulates the Petrarchan love-suffering trope. |
+| 3–4 | Pleasure might cause her read, reading might make her know; / Knowledge might pity win, and pity grace obtain | A rhetorical gradatio (climax): pleasure → reading → knowledge → pity → grace. The desired chain of effects shows that poetry is instrumental—a means to win her favour. |
+| 5–6 | I sought fit words to paint the blackest face of woe, / Studying inventions fine, her wits to entertain | He adopts the stance of a studious poet, seeking “fit words” to depict extreme sorrow. “Inventions fine” suggests both rhetorical ornaments and intellectual conceits. |
+| 7–8 | Oft turning others’ leaves, to see if thence would flow / Some fresh and fruitful showers upon my sunburned brain | He reads other poets (“others’ leaves”) for inspiration. The metaphor of “fresh and fruitful showers” on his “sunburned brain” pictures his intellect as parched and infertile. |
+| 9–10 | But words came halting forth, wanting Invention’s stay; / Invention, Nature’s child, fled step-dame Study’s blows | The failure: words limp, lacking the support (“stay”) of true creative invention. Personification: Invention is “Nature’s child,” opposed to the cruel stepmother “Study.” Artifice has driven away authentic creativity. |
+| 11 | And others’ feet still seemed but strangers in my way | “Feet” puns on metrical feet; the poetic forms of others feel alien, blocking his own expression. |
+| 12 | Thus great with child to speak, and helpless in my throes | A startling male-pregnancy metaphor: he is labouring to give birth to verse but is helpless. Conveys creative agony. |
+| 13 | Biting my truant pen, beating myself for spite | Physical gestures of frustration and self-punishment; “truant” pen implies it has neglected its duty. |
+| 14 | “Fool,” said my Muse to me, “look in thy heart and write.” | The volta: the Muse breaks in. The solution is not imitation but introspection. The final line is one of the most famous injunctions in English poetry—sincerity of feeling outweighs all learned ornament. |
 
-Line | Text | Analysis
-1 | One day I wrote her name upon the strand | Setting: a seaside. Writing the beloved’s name in sand is a gesture of devotion but also an emblem of ephemerality.
-2 | But came the waves and washed it away | Nature’s agency undoes human inscription instantly.
-3–4 | Again I wrote it with a second hand, / But came the tide, and made my pains his prey | Persistence: a second attempt, but the tide personified as a predator (“his prey”) devours his effort. The repetition enacts the cyclical struggle.
-5–6 | “Vain man,” said she, “that dost in vain assay, / A mortal thing so to immortalize” | The beloved speaks: she calls him “vain” (foolish, prideful) for attempting to immortalise something inherently mortal. “Assay” means attempt; the double “vain” underscores futility.
-7–8 | “For I myself shall like to this decay, / And eke my name be wiped out likewise” | She reasons that just as the writing vanishes, so too will her physical self and her earthly name. Eke = also.
-9–10 | “Not so,” (quod I) “let baser things devise / To die in dust, but you shall live by fame” | The volta: the poet refutes her. “Quod” = said. Lower, material things may perish, but she will achieve immortal fame.
-11–12 | “My verse your virtues rare shall eternize, / And in the heavens write your glorious name” | His poetry will confer eternity; note the shift from “strand” to “heavens” — from mutable earth to transcendent permanence. “Eternize” is a characteristically Spenserian coinage.
-13–14 | “Where whenas death shall all the world subdue, / Our love shall live, and later life renew” | The couplet expands the victory: even after the eschaton (“whenas death shall all the world subdue”), their love will participate in the resurrection and renewal of life. This is a triumphant Christian resolution unique in Elizabethan love sonnets.
+| Line | Text | Analysis |
+|---|---|---|
+| 1 | One day I wrote her name upon the strand | Setting: a seaside. Writing the beloved’s name in sand is a gesture of devotion but also an emblem of ephemerality. |
+| 2 | But came the waves and washed it away | Nature’s agency undoes human inscription instantly. |
+| 3–4 | Again I wrote it with a second hand, / But came the tide, and made my pains his prey | Persistence: a second attempt, but the tide personified as a predator (“his prey”) devours his effort. The repetition enacts the cyclical struggle. |
+| 5–6 | “Vain man,” said she, “that dost in vain assay, / A mortal thing so to immortalize” | The beloved speaks: she calls him “vain” (foolish, prideful) for attempting to immortalise something inherently mortal. “Assay” means attempt; the double “vain” underscores futility. |
+| 7–8 | “For I myself shall like to this decay, / And eke my name be wiped out likewise” | She reasons that just as the writing vanishes, so too will her physical self and her earthly name. Eke = also. |
+| 9–10 | “Not so,” (quod I) “let baser things devise / To die in dust, but you shall live by fame” | The volta: the poet refutes her. “Quod” = said. Lower, material things may perish, but she will achieve immortal fame. |
+| 11–12 | “My verse your virtues rare shall eternize, / And in the heavens write your glorious name” | His poetry will confer eternity; note the shift from “strand” to “heavens” — from mutable earth to transcendent permanence. “Eternize” is a characteristically Spenserian coinage. |
+| 13–14 | “Where whenas death shall all the world subdue, / Our love shall live, and later life renew” | The couplet expands the victory: even after the eschaton (“whenas death shall all the world subdue”), their love will participate in the resurrection and renewal of life. This is a triumphant Christian resolution unique in Elizabethan love sonnets. |
 
-Line | Text | Analysis
-1 | Shall I compare thee to a summer’s day? | A rhetorical question that proposes a conventional Petrarchan comparison — but the poem will subvert it.
-2 | Thou art more lovely and more temperate | Immediate answer: the beloved surpasses summer. “Temperate” suggests steadiness and moderation vs. summer’s extremes.
-3–4 | Rough winds do shake the darling buds of May, / And summer’s lease hath all too short a date | Summer’s flaws: destructive winds, short duration. The legal/financial metaphor “lease” and “date” imply a contract with a terminal limit.
-5–6 | Sometime too hot the eye of heaven shines, / And often is his gold complexion dimm’d | The sun (“eye of heaven”) is excessive or obscured; “gold complexion” suggests both brightness and regal beauty, but it is inconstant.
-7–8 | And every fair from fair sometime declines, / By chance or nature’s changing course untrimm’d | Universal law: all beautiful things lose their beauty, stripped (“untrimm’d”) by accident or natural mutability. “Fair from fair” is a polyptoton (repetition of a root word in different forms).
-9 | But thy eternal summer shall not fade | The turn: the beloved’s “eternal summer” contrasts with the literal summer. Volta pivots on “But.”
-10 | Nor lose possession of that fair thou ow’st | He will not forfeit (“lose possession”) his beauty; “ow’st” means both ownest and owest (as a debt), playing on possession and obligation.
-11 | Nor shall death brag thou wander’st in his shade | Death is personified as a braggart; the poet denies him victory. “Shade” = the underworld’s darkness.
-12 | When in eternal lines to time thou grow’st | “Lines” may denote both poetic lines and lineage (family lines). The beloved’s growth is into and against Time itself; he is grafted onto eternity through verse.
-13–14 | So long as men can breathe or eyes can see, / So long lives this, and this gives life to thee | Couplet: the poem’s existence and its effects are coterminous with humanity’s sensory life. “This” = the sonnet; the beloved’s immortality is purely textual, yet absolute.
+| Line | Text | Analysis |
+|---|---|---|
+| 1 | Shall I compare thee to a summer’s day? | A rhetorical question that proposes a conventional Petrarchan comparison — but the poem will subvert it. |
+| 2 | Thou art more lovely and more temperate | Immediate answer: the beloved surpasses summer. “Temperate” suggests steadiness and moderation vs. summer’s extremes. |
+| 3–4 | Rough winds do shake the darling buds of May, / And summer’s lease hath all too short a date | Summer’s flaws: destructive winds, short duration. The legal/financial metaphor “lease” and “date” imply a contract with a terminal limit. |
+| 5–6 | Sometime too hot the eye of heaven shines, / And often is his gold complexion dimm’d | The sun (“eye of heaven”) is excessive or obscured; “gold complexion” suggests both brightness and regal beauty, but it is inconstant. |
+| 7–8 | And every fair from fair sometime declines, / By chance or nature’s changing course untrimm’d | Universal law: all beautiful things lose their beauty, stripped (“untrimm’d”) by accident or natural mutability. “Fair from fair” is a polyptoton (repetition of a root word in different forms). |
+| 9 | But thy eternal summer shall not fade | The turn: the beloved’s “eternal summer” contrasts with the literal summer. Volta pivots on “But.” |
+| 10 | Nor lose possession of that fair thou ow’st | He will not forfeit (“lose possession”) his beauty; “ow’st” means both ownest and owest (as a debt), playing on possession and obligation. |
+| 11 | Nor shall death brag thou wander’st in his shade | Death is personified as a braggart; the poet denies him victory. “Shade” = the underworld’s darkness. |
+| 12 | When in eternal lines to time thou grow’st | “Lines” may denote both poetic lines and lineage (family lines). The beloved’s growth is into and against Time itself; he is grafted onto eternity through verse. |
+| 13–14 | So long as men can breathe or eyes can see, / So long lives this, and this gives life to thee | Couplet: the poem’s existence and its effects are coterminous with humanity’s sensory life. “This” = the sonnet; the beloved’s immortality is purely textual, yet absolute. |
