@@ -1,0 +1,10 @@
+{
+  "today": 0,
+  "month": 0,
+  "year": 0,
+  "total": 0,
+  "daily_average": 0,
+  "month_projection": 0,
+  "updated": "2026-07-07T00:00:00",
+  "note": "Stats will update when the GitHub Action runs. Enable public stats in GoatCounter for live data."
+}

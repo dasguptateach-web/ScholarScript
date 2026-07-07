@@ -190,6 +190,16 @@
   </div>
 </section>
 
+<!-- ====== VISITOR STATS ====== -->
+<section class="section stats-section" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-chart-bar"></i></div>
+  <h2 class="section-title"><i class="fas fa-eye"></i> ScholarScript by the Numbers</h2>
+  <p class="stats-subtitle">Real-time visitor analytics powered by GoatCounter. 100% real data — no fake counters.</p>
+  <div class="stats-grid" id="visitorStats">
+    <div class="stat-placeholder">Loading visitor data...</div>
+  </div>
+</section>
+
 <!-- ====== CTA SECTION ====== -->
 <section class="section cta-section" data-aos="fade-up">
   <div class="cta-card">
@@ -202,6 +212,10 @@
   </div>
 </section>
 
+{% endblock %}
+
+{% block scripts_extra %}
+<script src="{{ base_url }}/js/visitor-stats.js" defer></script>
 {% endblock %}
 
 

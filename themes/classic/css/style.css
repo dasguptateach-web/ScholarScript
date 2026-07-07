@@ -785,6 +785,77 @@ input, textarea, select { font-size: 16px !important; }  /* prevent iOS zoom */
 }
 .card:hover .video-thumb-play { background: #ff0000; transform: translate(-50%, -50%) scale(1.1); }
 
+/* ============ VISITOR STATS ============ */
+.stats-subtitle {
+  text-align: center; color: var(--text-muted);
+  font-size: 0.9rem; margin: -1rem 0 2rem;
+}
+.stats-grid {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  justify-content: center;
+}
+.stat-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  min-width: 140px;
+  flex: 1;
+  max-width: 200px;
+  transition: var(--transition);
+}
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+.stat-icon {
+  font-size: 1.3rem;
+  color: var(--primary-light);
+  margin-bottom: 0.4rem;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stat-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  background: var(--gold-glow);
+  color: var(--gold);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+.stat-footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+.stat-placeholder {
+  color: var(--text-muted);
+  padding: 2rem;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .stat-item { min-width: 100px; max-width: 160px; padding: 1rem 1.25rem; }
+  .stat-number { font-size: 1.5rem; }
+}
+
 /* ============ NEW HOMEPAGE STYLES ============ */
 
 /* Gradient Text */
