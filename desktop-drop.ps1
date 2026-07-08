@@ -118,38 +118,45 @@ function Process-Batch {
 
     # ── STEP 1: INGEST ──────────────────────────────────────
     $ok = $true
-    Log "=== STEP 1/6: Ingesting documents ==="
+    Log "=== STEP 1/7: Ingesting documents ==="
     $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript ingest 2>&1" 120
     if (-not $ok) { Log "  INGEST FAILED or TIMEOUT" }
     foreach ($l in $r) { Log "  $l" }
 
     # ── STEP 2: FIX TABLES ──────────────────────────────────
     if ($ok) {
-        Log "=== STEP 2/6: Fixing table formatting ==="
+        Log "=== STEP 2/7: Fixing table formatting ==="
         $r, $tblOk = Run-WithTimeout "& '$pythonExe' fix_tables.py 2>&1" 30
         foreach ($l in $r) { Log "  $l" }
     }
 
-    # ── STEP 3: YOUTUBE MATCH ───────────────────────────────
+    # ── STEP 3: FIX MCQ FORMATTING ──────────────────────────
     if ($ok) {
-        Log "=== STEP 3/6: Matching YouTube videos ==="
+        Log "=== STEP 3/7: Formatting MCQs ==="
+        $r, $mcqOk = Run-WithTimeout "& '$pythonExe' format_mcqs.py 2>&1" 30
+        foreach ($l in $r) { Log "  $l" }
+    }
+
+    # ── STEP 4: YOUTUBE MATCH ───────────────────────────────
+    if ($ok) {
+        Log "=== STEP 4/7: Matching YouTube videos ==="
         $r, $ytOk = Run-WithTimeout "& '$pythonExe' youtube_agent.py 2>&1" 180
         foreach ($l in $r) { Log "  $l" }
         if (-not $ytOk) { Log "  YouTube step had issues (non-fatal, continuing)" }
     }
 
-    # ── STEP 4: BUILD ───────────────────────────────────────
+    # ── STEP 5: BUILD ───────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 4/6: Building site ==="
+        Log "=== STEP 5/7: Building site ==="
         $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
         if (-not $ok) { Log "  BUILD FAILED" }
         foreach ($l in $r) { Log "  $l" }
     }
 
-    # ── STEP 5: COMMIT & PUSH ───────────────────────────────
+    # ── STEP 6: COMMIT & PUSH ───────────────────────────────
     if ($ok) {
         $ts = Get-Timestamp; $pushed = $false
-        Log "=== STEP 5/6: Committing and pushing to GitHub ==="
+        Log "=== STEP 6/7: Committing and pushing to GitHub ==="
         
         # Configure git auth for scripted use
         if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -192,9 +199,9 @@ function Process-Batch {
         if (-not $pushed) { $ok = $false }
     }
 
-    # ── STEP 6: FINALIZE ────────────────────────────────────
+    # ── STEP 7: FINALIZE ────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 6/6: Done! ==="
+        Log "=== STEP 7/7: Done! ==="
         Log "Files: $($allFileNames -join ', ')"
     } else { Log "FAILED - check log above" }
 
