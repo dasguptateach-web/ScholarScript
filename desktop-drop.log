@@ -66,3 +66,32 @@
 [2026-07-08 09:31:49] === STEP 6/6: Done! ===
 [2026-07-08 09:31:49] Files: SUGGESTIVE QUESTION PAPER AUGUST 2026 DS 7.docx
 [2026-07-08 09:31:49] Archived to _Processed
+[2026-07-08 12:21:19] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-08 12:28:42] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-08 18:08:44] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-08 18:31:39] STAGE UGC NET ENGLISH (Code 30) – PAPER 2.pdf
+[2026-07-08 18:31:39] COPY UGC NET ENGLISH (Code 30) – PAPER 2.pdf
+[2026-07-08 18:31:39] === STEP 1/6: Ingesting documents ===
+[2026-07-08 18:31:47]   Checking uploads folder...
+[2026-07-08 18:31:47]   Processed 1 file(s):
+[2026-07-08 18:31:47]     Success: 1
+[2026-07-08 18:31:47]     Errors:  0
+[2026-07-08 18:31:47]     [OK] UGC NET ENGLISH (Code 30) û PAPER 2.pdf -> C:\Users\81\ScholarScript\content\papers\ugc-net-english-code-30-paper-2.md (paper)
+[2026-07-08 18:31:47]   
+[2026-07-08 18:31:47]   Run 'scholarscript build' to rebuild the site.
+[2026-07-08 18:31:47]   
+[2026-07-08 18:31:47] === STEP 2/6: Fixing table formatting ===
+[2026-07-08 18:31:48]     No tables needed fixing.
+[2026-07-08 18:31:48]   
+[2026-07-08 18:31:48] === STEP 3/6: Matching YouTube videos ===
+[2026-07-08 18:32:09]   Found 37 papers
+[2026-07-08 18:32:09]   
+[2026-07-08 18:32:09]   
+[2026-07-08 18:32:09]   Done! Created: 0, Skipped: 36, Failed: 1
+[2026-07-08 18:32:09]   
+[2026-07-08 18:32:09] === STEP 4/6: Building site ===
+[2026-07-08 18:32:12]   Building site...
+[2026-07-08 18:32:12]   Built 81 items in 1.51s
+[2026-07-08 18:32:12]   Output: C:\Users\81\ScholarScript\public
+[2026-07-08 18:32:12]   
+[2026-07-08 18:32:12] === STEP 5/6: Committing and pushing to GitHub ===
