@@ -187,6 +187,14 @@ img { max-width: 100%; height: auto; }
 }
 .nav-drawer a:hover { background: var(--primary-glow); color: var(--primary); }
 .nav-drawer a i { width: 1.2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+.nav-drawer a.nav-tests-link { background: var(--primary-glow); border-radius: var(--radius); }
+.nav-drawer a.nav-tests-link i { color: var(--primary); }
+.nav-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--primary); color: #fff; font-size: 0.65rem; font-weight: 700;
+  min-width: 1.25rem; height: 1.25rem; border-radius: 10px;
+  padding: 0 0.3rem; margin-left: auto;
+}
 body.nav-open { overflow: hidden; }
 
 /* ============ HERO ============ */
@@ -375,6 +383,13 @@ body.nav-open { overflow: hidden; }
 .card-type.video { background: rgba(239,68,68,0.06); color: #dc2626; }
 .card-type.creative-writing { background: rgba(217,119,6,0.06); color: #d97706; }
 .card-type.external-link { background: rgba(16,185,129,0.06); color: #059669; }
+.card-type.test { background: rgba(5,150,105,0.06); color: #059669; }
+
+.test-card-stats {
+  display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-muted);
+  margin: 0.25rem 0 0; flex-wrap: wrap;
+}
+.test-card-stats i { width: 0.9rem; text-align: center; }
 
 .card h3, .card h4 {
   font-family: var(--font-display);
@@ -1493,6 +1508,11 @@ body.google-home {
 .btn-lg {
   font-size: 0.95rem; padding: 0.75rem 1.85rem; border-radius: 10px;
 }
+.btn-accent {
+  background: linear-gradient(135deg, #059669, #10b981);
+  box-shadow: 0 4px 16px rgba(5,150,105,0.25);
+}
+.btn-accent:hover { box-shadow: 0 8px 28px rgba(5,150,105,0.35); transform: translateY(-2px); color: #fff; }
 
 /* Impact Stats Section */
 .stats-section { padding: 3.5rem 0; }

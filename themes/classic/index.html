@@ -35,6 +35,7 @@
 
     <div class="hero-actions" data-aos="fade-up" data-aos-delay="350">
       <a href="{{ base_url }}/papers/" class="btn btn-primary"><i class="fas fa-book"></i> Browse Papers</a>
+      <a href="{{ base_url }}/tests/" class="btn btn-accent"><i class="fas fa-check-circle"></i> Practice Tests</a>
       <a href="{{ base_url }}/videos/" class="btn btn-outline"><i class="fas fa-play"></i> Watch Lectures</a>
     </div>
 
@@ -191,6 +192,31 @@
     <a href="{{ base_url }}/papers/" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View All Resources</a>
   </div>
 </section>
+
+<!-- ====== LATEST TESTS ====== -->
+{% if tests %}
+<section class="section" id="home-tests" data-aos="fade-up">
+  <div class="section-divider"><i class="fas fa-check-circle"></i></div>
+  <h2 class="section-title"><i class="fas fa-check-circle"></i> Practice Tests</h2>
+  <div class="card-grid">
+  {% for test in tests[:4] %}
+    <article class="card test-card" data-aos="fade-up" data-aos-delay="{{ 50 * loop.index0 }}">
+      <span class="card-type test"><i class="fas fa-check-circle"></i> Practice Test</span>
+      <h3><a href="{{ base_url }}/test/{{ test.slug }}/">{{ test.title }}</a></h3>
+      <p class="meta"><i class="fas fa-calendar-alt"></i> {{ test.date }}</p>
+      <p class="test-card-stats">
+        <span><i class="fas fa-list"></i> {{ test.total_questions }} questions</span>
+        <span><i class="fas fa-check"></i> {{ test.marked_answers }} with answers</span>
+      </p>
+      <a href="{{ base_url }}/test/{{ test.slug }}/" class="btn btn-accent" style="margin-top:0.5rem"><i class="fas fa-play"></i> Take Test</a>
+    </article>
+  {% endfor %}
+  </div>
+  <div class="section-cta" data-aos="fade-up">
+    <a href="{{ base_url }}/tests/" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View All Tests</a>
+  </div>
+</section>
+{% endif %}
 
 <!-- ====== IMPACT STATS ====== -->
 <section class="section stats-section" data-aos="fade-up">
