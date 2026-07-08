@@ -29,3 +29,36 @@
 [2026-07-07 20:56:05]   Output: C:\Users\81\ScholarScript\public
 [2026-07-07 20:56:05]   
 [2026-07-07 20:56:05] === STEP 5/6: Committing and pushing to GitHub ===
+[2026-07-07 20:56:11]   Pushed!
+[2026-07-07 20:56:11] === STEP 6/6: Done! ===
+[2026-07-07 20:56:11] Files: Girish Karnad’s Tughlaq (1964).docx
+[2026-07-07 20:56:11] Archived to _Processed
+[2026-07-08 08:43:32] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-08 09:31:08] STAGE SUGGESTIVE QUESTION PAPER AUGUST 2026 DS 7.docx
+[2026-07-08 09:31:08] COPY SUGGESTIVE QUESTION PAPER AUGUST 2026 DS 7.docx
+[2026-07-08 09:31:08] === STEP 1/6: Ingesting documents ===
+[2026-07-08 09:31:15]   Checking uploads folder...
+[2026-07-08 09:31:15]   Processed 1 file(s):
+[2026-07-08 09:31:15]     Success: 1
+[2026-07-08 09:31:15]     Errors:  0
+[2026-07-08 09:31:15]     [OK] SUGGESTIVE QUESTION PAPER AUGUST 2026 DS 7.docx -> C:\Users\81\ScholarScript\content\papers\suggestive-question-paper-august-2026-ds-7.md (paper)
+[2026-07-08 09:31:15]   
+[2026-07-08 09:31:15]   Run 'scholarscript build' to rebuild the site.
+[2026-07-08 09:31:15]   
+[2026-07-08 09:31:15] === STEP 2/6: Fixing table formatting ===
+[2026-07-08 09:31:16]     [FIXED] an-impressive-study-guide-three-quintessential-elizabethan-sonnets.md
+[2026-07-08 09:31:16]     [FIXED] girish-karnads-tughlaq-1964.md
+[2026-07-08 09:31:16]   
+[2026-07-08 09:31:16] === STEP 3/6: Matching YouTube videos ===
+[2026-07-08 09:31:37]   Found 36 papers
+[2026-07-08 09:31:37]   
+[2026-07-08 09:31:37]     [suggestive-question-paper-august-2026-ds-7] -> 6Bv1iOhJtG4 (9th English sa 2 2026 exam dsert model question paper with a) [97,181 views]
+[2026-07-08 09:31:37]   
+[2026-07-08 09:31:37]   Done! Created: 1, Skipped: 35, Failed: 0
+[2026-07-08 09:31:37]   
+[2026-07-08 09:31:37] === STEP 4/6: Building site ===
+[2026-07-08 09:31:41]   Building site...
+[2026-07-08 09:31:41]   Built 81 items in 2.82s
+[2026-07-08 09:31:41]   Output: C:\Users\81\ScholarScript\public
+[2026-07-08 09:31:41]   
+[2026-07-08 09:31:41] === STEP 5/6: Committing and pushing to GitHub ===
