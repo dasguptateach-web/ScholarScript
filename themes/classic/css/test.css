@@ -83,8 +83,59 @@
 
 .test-email-status { text-align: center; padding: 0.75rem; font-size: 0.85rem; color: var(--text-soft); background: var(--bg-alt); border-radius: 8px; margin-top: 0.5rem; }
 
+/* Question Navigator Palette */
+.test-palette-btn {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100;
+  width: 3rem; height: 3rem; border-radius: 50%; border: none;
+  background: var(--primary); color: #fff; font-size: 1.1rem;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.test-palette-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(124,58,237,0.45); }
+.test-palette-btn:active { transform: scale(0.95); }
+
+.test-palette {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--surface); display: none;
+  flex-direction: column; padding: calc(var(--header-h) + 0.5rem) 1rem 1rem;
+  overflow-y: auto;
+}
+.test-palette.active { display: flex; }
+.test-palette-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 700; font-size: 1rem; color: var(--text);
+  padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); margin-bottom: 0.75rem;
+}
+.test-palette-close {
+  background: none; border: none; color: var(--text-muted); font-size: 1.2rem;
+  cursor: pointer; padding: 0.25rem; line-height: 1;
+}
+.test-palette-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(2.5rem, 1fr));
+  gap: 0.5rem;
+}
+.test-palette-num {
+  display: flex; align-items: center; justify-content: center;
+  height: 2.5rem; border-radius: 6px; border: 1px solid var(--border);
+  font-size: 0.8rem; font-weight: 600; cursor: pointer;
+  background: var(--bg-alt); color: var(--text-soft);
+  transition: all 0.15s; -webkit-tap-highlight-color: transparent;
+}
+.test-palette-num.qp-answered {
+  background: rgba(5,150,105,0.1); border-color: rgba(5,150,105,0.3);
+  color: #059669;
+}
+.test-palette-num.qp-unanswered {
+  background: var(--bg-alt); border-color: var(--border);
+  color: var(--text-muted);
+}
+.test-palette-num:active { transform: scale(0.92); }
+
 @media (max-width: 600px) {
   .test-score-card { flex-direction: column; text-align: center; }
   .test-actions { flex-direction: column; align-items: stretch; }
   .test-actions .btn { justify-content: center; }
+  .test-palette-btn { bottom: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; font-size: 1rem; }
+  .test-palette-grid { grid-template-columns: repeat(6, 1fr); }
 }

@@ -40,7 +40,7 @@
       var q = qs[i];
       var answered = state.answers[q.id] || '';
       var labels = ['A', 'B', 'C', 'D'];
-      html += '<div class="test-question" data-qid="' + q.id + '" data-aos="fade-up">';
+      html += '<div class="test-question" id="q-' + q.id + '" data-qid="' + q.id + '" data-aos="fade-up">';
       html += '<div class="test-q-header"><span class="test-q-num">' + q.id + '.</span>';
       html += '<div class="test-q-text">' + escapeHtml(q.question) + '</div></div>';
       html += '<div class="test-options">';
@@ -60,6 +60,19 @@
     html += '<button type="submit" class="btn btn-primary test-submit-btn"><i class="fas fa-check-circle"></i> Submit &amp; See Results</button>';
     html += '</div>';
     html += '</form>';
+
+    // Add palette
+    html += '<button class="test-palette-btn" id="testPaletteBtn" title="Question Navigator"><i class="fas fa-th"></i></button>';
+    html += '<div class="test-palette" id="testPalette">';
+    html += '<div class="test-palette-header"><span>Question Navigator</span><button id="testPaletteClose" class="test-palette-close"><i class="fas fa-times"></i></button></div>';
+    html += '<div class="test-palette-grid" id="testPaletteGrid">';
+    for (var i = 0; i < qs.length; i++) {
+      var q = qs[i];
+      var statusClass = state.answers[q.id] ? 'qp-answered' : 'qp-unanswered';
+      html += '<button class="test-palette-num ' + statusClass + '" data-qid="' + q.id + '">' + q.id + '</button>';
+    }
+    html += '</div></div>';
+
     app.innerHTML = html;
 
     var form = document.getElementById('testForm');
@@ -70,7 +83,7 @@
         var qid = parseInt(name.split('_')[1], 10);
         state.answers[qid] = e.target.value;
         updateProgress();
-        var labels = form.querySelectorAll('.test-option');
+        updatePalette();
         var parent = e.target.closest('.test-options');
         if (parent) {
           parent.querySelectorAll('.test-option').forEach(function(lbl) {
@@ -85,7 +98,49 @@
       submitTest();
     });
 
+    setupPalette();
     updateProgress();
+  }
+
+  function setupPalette() {
+    var btn = document.getElementById('testPaletteBtn');
+    var panel = document.getElementById('testPalette');
+    var closeBtn = document.getElementById('testPaletteClose');
+    var grid = document.getElementById('testPaletteGrid');
+    if (!btn || !panel) return;
+
+    btn.addEventListener('click', function() {
+      panel.classList.toggle('active');
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        panel.classList.remove('active');
+      });
+    }
+
+    if (grid) {
+      grid.addEventListener('click', function(e) {
+        var target = e.target.closest('.test-palette-num');
+        if (!target) return;
+        var qid = target.getAttribute('data-qid');
+        var el = document.getElementById('q-' + qid);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          panel.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  function updatePalette() {
+    var grid = document.getElementById('testPaletteGrid');
+    if (!grid) return;
+    var btns = grid.querySelectorAll('.test-palette-num');
+    for (var i = 0; i < btns.length; i++) {
+      var qid = btns[i].getAttribute('data-qid');
+      btns[i].className = 'test-palette-num ' + (state.answers[qid] ? 'qp-answered' : 'qp-unanswered');
+    }
   }
 
   function updateProgress() {
