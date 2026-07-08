@@ -189,47 +189,71 @@
 
     html += '<div class="test-actions">';
     html += '<button class="btn btn-secondary" onclick="location.reload()"><i class="fas fa-redo"></i> Retake Test</button>';
-    if (testData.marked_answers > 0) {
-      html += '<button class="btn btn-primary" id="emailResultsBtn"><i class="fas fa-envelope"></i> Email Results</button>';
-    }
     html += '</div>';
+    html += '<div id="emailStatus" class="test-email-status"></div>';
     html += '</div>';
 
     app.innerHTML = html;
-
-    var emailBtn = document.getElementById('emailResultsBtn');
-    if (emailBtn) {
-      emailBtn.addEventListener('click', function() {
-        emailResults();
-      });
-    }
-
     app.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    sendResultsEmail();
   }
 
-  function emailResults() {
-    var subject = 'Test Results: ' + testData.title;
-    var body = 'Test Results\n';
-    body += '=============\n';
-    body += 'Test: ' + testData.title + '\n';
-    body += 'Date: ' + new Date().toLocaleDateString() + '\n';
-    body += 'Score: ' + state.score + '/' + state.total + ' (' + Math.round((state.score/state.total)*100) + '%)\n';
-    body += 'Attempted: ' + state.attempted + '\n';
-    body += 'Correct: ' + state.score + '\n';
-    body += 'Incorrect: ' + (state.attempted - state.score) + '\n';
-    body += 'Unanswered: ' + (state.total - state.attempted) + '\n\n';
-    body += 'Detailed Results:\n';
+  function sendResultsEmail() {
+    var email = app.getAttribute('data-email');
+    if (!email) {
+      document.getElementById('emailStatus').innerHTML = '<i class="fas fa-info-circle"></i> No email configured for test results. Set owner_email in config.yaml.';
+      return;
+    }
+
+    var pct = Math.round((state.score / state.total) * 100);
+    var message = 'Test Results\n';
+    message += '=============\n';
+    message += 'Test: ' + testData.title + '\n';
+    message += 'URL: ' + window.location.href + '\n';
+    message += 'Date: ' + new Date().toLocaleDateString() + '\n';
+    message += 'Score: ' + state.score + '/' + state.total + ' (' + pct + '%)\n';
+    message += 'Attempted: ' + state.attempted + '\n';
+    message += 'Correct: ' + state.score + '\n';
+    message += 'Incorrect: ' + (state.attempted - state.score) + '\n';
+    message += 'Unanswered: ' + (state.total - state.attempted) + '\n\n';
+    message += 'Detailed Results:\n';
     for (var i = 0; i < state.results.length; i++) {
       var r = state.results[i];
-      body += r.id + '. ' + r.question + '\n';
-      body += '   Your answer: ' + (r.userAnswer || '—') + '\n';
-      if (r.hasAnswer) body += '   Correct: ' + r.correctAnswer + '\n';
-      body += '   ' + (r.isCorrect ? '✓ Correct' : (r.userAnswer ? '✗ Incorrect' : '— Unanswered')) + '\n\n';
+      message += r.id + '. ' + r.question + '\n';
+      message += '   Your answer: ' + (r.userAnswer || '—') + '\n';
+      if (r.hasAnswer) message += '   Correct: ' + r.correctAnswer + '\n';
+      message += '   ' + (r.isCorrect ? 'Correct' : (r.userAnswer ? 'Incorrect' : 'Unanswered')) + '\n\n';
     }
-    body += '— Sent from ScholarScript';
+    message += '— Sent from ScholarScript';
 
-    var mailto = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.open(mailto);
+    var statusEl = document.getElementById('emailStatus');
+    statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending results to ' + email + '...';
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://formsubmit.co/ajax/' + encodeURIComponent(email), true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        statusEl.innerHTML = '<i class="fas fa-check-circle" style="color:var(--green)"></i> Results sent to ' + email;
+      } else {
+        statusEl.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--gold)"></i> Could not auto-send. Please copy your score: ' + pct + '% (' + state.score + '/' + state.total + ')';
+      }
+    };
+    xhr.onerror = function() {
+      statusEl.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--gold)"></i> Could not auto-send. ' +
+        'Please email your score manually: ' + pct + '% (' + state.score + '/' + state.total + ')';
+    };
+    xhr.send(JSON.stringify({
+      _subject: 'Test Results: ' + testData.title,
+      _captcha: 'false',
+      name: 'ScholarScript Test Taker',
+      email: email,
+      message: message,
+      score: state.score + '/' + state.total,
+      percentage: pct + '%',
+    }));
   }
 
   function escapeHtml(text) {

@@ -22,7 +22,7 @@ goatcounter:
 # Email service for prize notifications (free tier at https://resend.com)
 resend:
   api_key: ""                # ← FILL THIS: re_xxxxxxx
-  owner_email: ""            # ← FILL THIS: your email
+  owner_email: dasguptateach@gmail.com
 
 prize:
   amount: 25                 # Monthly Best Contributor prize in USD

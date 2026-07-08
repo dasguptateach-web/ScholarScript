@@ -81,6 +81,8 @@
 .btn-secondary { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
 .btn-secondary:hover { background: var(--surface-hover); }
 
+.test-email-status { text-align: center; padding: 0.75rem; font-size: 0.85rem; color: var(--text-soft); background: var(--bg-alt); border-radius: 8px; margin-top: 0.5rem; }
+
 @media (max-width: 600px) {
   .test-score-card { flex-direction: column; text-align: center; }
   .test-actions { flex-direction: column; align-items: stretch; }

@@ -303,6 +303,7 @@ class Engine:
         ctx = {
             "test_slug": slug,
             "test_json": json.dumps(test_data, ensure_ascii=False),
+            "test_email": self.config.site.owner_email or "",
             "page_title": test_data.get("title", "Test"),
             "page_description": test_data.get("description", f"Practice test with {test_data.get('total_questions', 0)} questions"),
             "page_url": self.config.get_base_url() + "/test/" + slug + "/",
