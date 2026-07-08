@@ -99,3 +99,37 @@
 [2026-07-08 18:32:19] === STEP 6/6: Done! ===
 [2026-07-08 18:32:19] Files: UGC NET ENGLISH (Code 30) – PAPER 2.pdf
 [2026-07-08 18:32:19] Archived to _Processed
+[2026-07-08 19:43:10] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-08 19:51:04] STAGE 200-question UGC NET English (Paper 2) model test.pdf
+[2026-07-08 19:51:05] COPY 200-question UGC NET English (Paper 2) model test.pdf
+[2026-07-08 19:51:05] === STEP 1/7: Ingesting documents ===
+[2026-07-08 19:51:12]   Checking uploads folder...
+[2026-07-08 19:51:12]   Processed 1 file(s):
+[2026-07-08 19:51:12]     Success: 1
+[2026-07-08 19:51:12]     Errors:  0
+[2026-07-08 19:51:12]     [OK] 200-question UGC NET English (Paper 2) model test.pdf -> C:\Users\81\ScholarScript\content\papers\200-question-ugc-net-english-paper-2-model-test.md (paper)
+[2026-07-08 19:51:12]   
+[2026-07-08 19:51:12]   Run 'scholarscript build' to rebuild the site.
+[2026-07-08 19:51:12]   
+[2026-07-08 19:51:12] === STEP 2/7: Fixing table formatting ===
+[2026-07-08 19:51:12]     [FIXED] ugc-net-english-code-30-paper-2.md
+[2026-07-08 19:51:12]   
+[2026-07-08 19:51:12] === STEP 3/8: Formatting MCQs ===
+[2026-07-08 19:51:14]     [FIXED] 200-question-ugc-net-english-paper-2-model-test.md
+[2026-07-08 19:51:14]     [FIXED] the-british-essay-origin-trends-practitioners.md
+[2026-07-08 19:51:14]   
+[2026-07-08 19:51:14] === STEP 4/8: Building interactive tests ===
+[2026-07-08 19:51:14]     No new tests created (no MCQ papers with answer keys found)
+[2026-07-08 19:51:14]   
+[2026-07-08 19:51:14] === STEP 5/8: Matching YouTube videos ===
+[2026-07-08 19:51:34]   Found 38 papers
+[2026-07-08 19:51:34]   
+[2026-07-08 19:51:34]   
+[2026-07-08 19:51:34]   Done! Created: 0, Skipped: 36, Failed: 2
+[2026-07-08 19:51:34]   
+[2026-07-08 19:51:34] === STEP 6/8: Building site ===
+[2026-07-08 19:51:36]   Building site...
+[2026-07-08 19:51:36]   Built 82 items in 1.57s
+[2026-07-08 19:51:36]   Output: C:\Users\81\ScholarScript\public
+[2026-07-08 19:51:36]   
+[2026-07-08 19:51:36] === STEP 7/8: Committing and pushing to GitHub ===

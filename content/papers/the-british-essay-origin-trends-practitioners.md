@@ -30,7 +30,7 @@ UGC NET Previous Year Questions (2004–2024) on the British Essay
 
 ## **1.** Introduction: The Essay as a Literary Form
 
-The word “essay” derives from the French essai, meaning “attempt” or “trial,” and was popularised by the French writer Michel de Montaigne (1533–1592), who published his Essais in 1580. Montaigne’s essays were personal, digressive, sceptical and conversational, establishing the familiar essay tradition that values intimate self-revelation and informal style. In England, the form was first naturalised by Francis Bacon, whose Essays appeared in 1597. Unlike Montaigne’s expansive self-portraits, Bacon’s essays were concise, aphoristic, and dense with worldly wisdom. Thus, from the very beginning, the English essay branched into two major traditions:
+The word “essay” derives from the French essai, meaning “attempt” or “trial,” and was popularised by the French writer Michel de Montaigne (1533–1592), who published his Essais in **1580.** Montaigne’s essays were personal, digressive, sceptical and conversational, establishing the familiar essay tradition that values intimate self-revelation and informal style. In England, the form was first naturalised by Francis Bacon, whose Essays appeared in 1597. Unlike Montaigne’s expansive self-portraits, Bacon’s essays were concise, aphoristic, and dense with worldly wisdom. Thus, from the very beginning, the English essay branched into two major traditions:
 
 The impersonal / aphoristic essay (Baconian) – objective, analytical, didactic.
 
