@@ -1,14 +1,14 @@
----
-title: "Girish Karnad’S Tughlaq (1964)"
+﻿---
+title: "Girish Karnad's Tughlaq (1964)"
 date: 2026-07-07
 type: video
 author: "Happy-Literature"
 tags: [tughlaq, his, karnad, idealism, play]
 video_url: "https://www.youtube.com/watch?v=xIrOw8NkSwQ"
-summary: "A video lecture on Girish Karnad’S Tughlaq (1964)"
+summary: "A video lecture on Girish Karnad's Tughlaq (1964)"
 ---
 
-# Girish Karnad’S Tughlaq (1964)
+# Girish Karnad's Tughlaq (1964)
 
 Tughlaq, play by Girish Karnad/Complete summary@Happy-Literature  #englishliterature
 
@@ -17,3 +17,4 @@ Tughlaq, play by Girish Karnad/Complete summary@Happy-Literature  #englishlitera
 **Duration:** 16:06
 
 Tughlaq, play by Girish Karnad/Complete summary @HappyLiterature #englishliterature Meg 14 Contemporary Indian Literature ...
+

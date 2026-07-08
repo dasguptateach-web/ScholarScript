@@ -1,4 +1,4 @@
-"""
+﻿"""
 YouTube Agent for ScholarScript — v2.0 (Auto-Pipeline)
 Auto-discovers best English YouTube video for papers.
 Usage:
@@ -52,9 +52,10 @@ PAPER_TOPIC_MAP = {
     "addison": "Addison Sir Roger at Home Spectator Goldsmith Parliamentary Elections periodical essay English literature",
     "jonathan-swift-gullivers-travels-books-i-ii": "Gulliver's Travels Jonathan Swift summary analysis Books 1 2 Lilliput Brobdingnag English literature",
     "an-impressive-study-guide-three-quintessential-elizabethan-sonnets": "Elizabethan sonnets Shakespeare Sidney Spenser Wyatt analysis English literature study guide",
+    "suggestive-question-paper-august-2026-ds-7": "West Bengal State University English literature question paper suggestive"
 }
 
-TEST_PAPERS = {"auto-deploy-final-test", "final-integrated-test", "ppt"}
+TEST_PAPERS = {"auto-deploy-final-test", "final-integrated-test", "ppt", "suggestive-question-paper-august-2026-ds-7"}
 NON_EN_PATTERNS = re.compile(r'(in hindi|in bengali|in tamil|in telugu|in marathi|in urdu|in malayalam|in kannada|in gujarati|in punjabi|हिंदी|বাংলা|தமிழ்|hindi\s|bengali\s|coaching|adda247)', re.I)
 EN_KEYWORDS = ["lecture", "analysis", "english", "explained", "introduction", "study", "guide", "literature", "criticism", "summary", "history", "course", "university", "college", "lesson"]
 
@@ -235,3 +236,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
