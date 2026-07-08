@@ -18,19 +18,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Hamlet
     (D) Macbeth
 
-**2.** The term "comedy of menace" is best applied to the early plays of:
+**2.** The term "comedy of menace" is best applied to the early plays of
     (A) Tom Stoppard
     (B) Harold Pinter
     (C) Joe Orton
     (D) Caryl Churchill
 
-**3.** The character of Eilif appears in Brecht's:
+**3.** The character of Eilif appears in Brecht's
     (A) The Good Person of Szechwan
     (B) Mother Courage and Her Children
     (C) The Caucasian Chalk Circle
     (D) Galileo
 
-**4.** The play *Silence! The Court is in Session* was written by:
+**4.** The play *Silence! The Court is in Session* was written by
     (A) Badal Sircar
     (B) Mohan Rakesh
     (C) Vijay Tendulkar
@@ -42,19 +42,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Shudraka
     (D) Bhavabhuti
 
-**6.** In Beckett's *Waiting for Godot*, the character Lucky delivers a long, seemingly nonsensical monologue. This speech is a parody of:
+**6.** In Beckett's *Waiting for Godot*, the character Lucky delivers a long, seemingly nonsensical monologue. This speech is a parody of
     (A) Political rhetoric
     (B) Academic and philosophical discourse
     (C) Religious sermons
     (D) Romantic love poetry
 
-**7.** The character of Volpone in Ben Jonson's play is a:
+**7.** The character of Volpone in Ben Jonson's play is a
     (A) Miser
     (B) Usurer
     (C) Conman who feigns illness
     (D) Jealous husband
 
-**8.** The term "fourth wall" refers to:
+**8.** The term "fourth wall" refers to
     (A) The back wall of the stage
     (B) The imaginary wall between actors and audience
     (C) The division between acts
@@ -62,19 +62,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 2: Poetry
 
-**9.** "The sea is calm tonight. / The tide is full, the moon lies fair" – these are the opening lines of:
+**9.** "The sea is calm tonight. / The tide is full, the moon lies fair" – these are the opening lines of
     (A) "The Waste Land"
     (B) "Dover Beach"
     (C) "Ode to a Nightingale"
     (D) "Ulysses"
 
-**10.** The rhyme scheme of a Shakespearean sonnet is:
+**10.** The rhyme scheme of a Shakespearean sonnet is
     (A) ABBA ABBA CDE CDE
     (B) ABAB BCBC CDCD EE
     (C) ABAB CDCD EFEF GG
     (D) AABB CCDD EEFF GG
 
-**11.** The phrase "the still, sad music of humanity" occurs in Wordsworth's:
+**11.** The phrase "the still, sad music of humanity" occurs in Wordsworth's
     (A) "Tintern Abbey"
     (B) "Ode: Intimations of Immortality"
     (C) *The Prelude*
@@ -86,19 +86,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Robert Frost
     (D) Wallace Stevens
 
-**13.** Philip Larkin's "Church Going" ends with the line:
+**13.** Philip Larkin's "Church Going" ends with the line
     (A) "A serious house on serious earth it is"
     (B) "What will survive of us is love"
     (C) "The deep and primal lead"
     (D) "Never such innocence again"
 
-**14.** The poem "Lady Lazarus" is by:
+**14.** The poem "Lady Lazarus" is by
     (A) Adrienne Rich
     (B) Sylvia Plath
     (C) Anne Sexton
     (D) Kamala Das
 
-**15.** The Indian English poet who wrote *The Exact Name* and *Hymns in Darkness* is:
+**15.** The Indian English poet who wrote *The Exact Name* and *Hymns in Darkness* is
     (A) Nissim Ezekiel
     (B) A.K. Ramanujan
     (C) Jayanta Mahapatra
@@ -106,7 +106,7 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 3: Fiction, Short Story & Graphic Narratives
 
-**16.** The novel *The French Lieutenant's Woman* by John Fowles is a notable example of:
+**16.** The novel *The French Lieutenant's Woman* by John Fowles is a notable example of
     (A) Magical realism
     (B) Stream of consciousness
     (C) Historiographic metafiction
@@ -118,37 +118,37 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Zora Neale Hurston
     (D) Maya Angelou
 
-**18.** The phrase "only connect" is the epigraph to E.M. Forster's:
+**18.** The phrase "only connect" is the epigraph to E.M. Forster's
     (A) *A Passage to India*
     (B) *Howards End*
     (C) *A Room with a View*
     (D) *Maurice*
 
-**19.** The short story "The Lottery", a chilling tale of ritualistic violence in a small town, was written by:
+**19.** The short story "The Lottery", a chilling tale of ritualistic violence in a small town, was written by
     (A) Shirley Jackson
     (B) Flannery O'Connor
     (C) Katherine Mansfield
     (D) Eudora Welty
 
-**20.** In *Maus* by Art Spiegelman, the mice represent:
+**20.** In *Maus* by Art Spiegelman, the mice represent
     (A) Germans
     (B) Poles
     (C) Jews
     (D) Americans
 
-**21.** The narrative technique of *Wuthering Heights* is characterized by:
+**21.** The narrative technique of *Wuthering Heights* is characterized by
     (A) An omniscient third-person narrator
     (B) A first-person narrator with no frame story
     (C) Nested narratives with Lockwood and Nelly Dean
     (D) Stream of consciousness
 
-**22.** *The White Tiger* by Aravind Adiga uses the form of:
+**22.** *The White Tiger* by Aravind Adiga uses the form of
     (A) A diary
     (B) A series of letters to the Chinese Premier
     (C) An oral history
     (D) A third-person political satire
 
-**23.** The novel *The Remains of the Day* by Kazuo Ishiguro is narrated by:
+**23.** The novel *The Remains of the Day* by Kazuo Ishiguro is narrated by
     (A) A young artist
     (B) An aging butler
     (C) A clone
@@ -156,37 +156,37 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 4: Non-Fictional Prose
 
-**24.** "I have a dream" is a famous speech delivered by:
+**24.** "I have a dream" is a famous speech delivered by
     (A) Mahatma Gandhi
     (B) Martin Luther King Jr.
     (C) Abraham Lincoln
     (D) Nelson Mandela
 
-**25.** *The Essays of Elia* begins with the essay:
+**25.** *The Essays of Elia* begins with the essay
     (A) "Dream Children"
     (B) "The Superannuated Man"
     (C) "The South-Sea House"
     (D) "A Dissertation upon Roast Pig"
 
-**26.** Francis Bacon's essay "Of Truth" opens with:
+**26.** Francis Bacon's essay "Of Truth" opens with
     (A) "What is truth? said jesting Pilate…"
     (B) "Men fear death as children fear to go in the dark…"
     (C) "Revenge is a kind of wild justice…"
     (D) "He that hath wife and children hath given hostages to fortune…"
 
-**27.** *Unto This Last*, a critique of capitalist economics, was written by:
+**27.** *Unto This Last*, a critique of capitalist economics, was written by
     (A) Thomas Carlyle
     (B) Matthew Arnold
     (C) John Ruskin
     (D) William Morris
 
-**28.** The biography *The Life of Samuel Johnson* was written by:
+**28.** The biography *The Life of Samuel Johnson* was written by
     (A) Oliver Goldsmith
     (B) Edmund Burke
     (C) James Boswell
     (D) Hester Thrale
 
-**29.** *The Communist Manifesto* (1848) was authored by:
+**29.** *The Communist Manifesto* (1848) was authored by
     (A) Karl Marx and Friedrich Engels
     (B) Vladimir Lenin
     (C) Leon Trotsky
@@ -194,13 +194,13 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 5: Language & Linguistics
 
-**30.** The process of word formation in which a word of one grammatical class is used as another without any change in form (e.g., 'email' as noun → verb) is called:
+**30.** The process of word formation in which a word of one grammatical class is used as another without any change in form (e.g., 'email' as noun → verb) is called
     (A) Back-formation
     (B) Conversion
     (C) Clipping
     (D) Compounding
 
-**31.** The study of the physical properties of speech sounds is:
+**31.** The study of the physical properties of speech sounds is
     (A) Articulatory phonetics
     (B) Acoustic phonetics
     (C) Auditory phonetics
@@ -212,31 +212,31 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) /θ/
     (D) /ð/
 
-**33.** In Chomsky's transformational-generative grammar, deep structure refers to:
+**33.** In Chomsky's transformational-generative grammar, deep structure refers to
     (A) The superficial arrangement of words
     (B) The phonetic representation
     (C) The underlying abstract syntactic representation of meaning
     (D) The final spoken form
 
-**34.** The term "isogloss" is used in:
+**34.** The term "isogloss" is used in
     (A) Semantics
     (B) Dialectology
     (C) Phonology
     (D) Pragmatics
 
-**35.** The co-existence of two distinct varieties of a language in a speech community, one for formal use (H) and one for informal use (L), is called:
+**35.** The co-existence of two distinct varieties of a language in a speech community, one for formal use (H) and one for informal use (L), is called
     (A) Bilingualism
     (B) Code-switching
     (C) Diglossia
     (D) Pidginization
 
-**36.** The loss of the middle syllable in "library" → "libry" is an example of:
+**36.** The loss of the middle syllable in "library" → "libry" is an example of
     (A) Aphesis
     (B) Syncope
     (C) Apocope
     (D) Epenthesis
 
-**37.** The term "etymology" is the study of:
+**37.** The term "etymology" is the study of
     (A) Speech sounds
     (B) Word origins and history
     (C) Sentence structure
@@ -244,43 +244,43 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 6: English in India
 
-**38.** The first book of poems in English by an Indian, *Poems* (1827), was published by:
+**38.** The first book of poems in English by an Indian, *Poems* (1827), was published by
     (A) Henry Derozio
     (B) Kashiprasad Ghosh
     (C) Michael Madhusudan Dutt
     (D) Toru Dutt
 
-**39.** R.K. Narayan's novel *The Guide* is primarily about:
+**39.** R.K. Narayan's novel *The Guide* is primarily about
     (A) A tour guide who becomes a revolutionary
     (B) A railway guide who transforms into a spiritual guide
     (C) A political guide during the freedom movement
     (D) A cricket coach
 
-**40.** *The God of Small Things* is set in:
+**40.** *The God of Small Things* is set in
     (A) Delhi
     (B) Calcutta
     (C) Ayemenem, Kerala
     (D) Bombay
 
-**41.** Mahatma Gandhi's *The Story of My Experiments with Truth* was originally written in:
+**41.** Mahatma Gandhi's *The Story of My Experiments with Truth* was originally written in
     (A) Hindi
     (B) Gujarati
     (C) English
     (D) Marathi
 
-**42.** The Sahitya Akademi Award-winning novel *That Long Silence* was written by:
+**42.** The Sahitya Akademi Award-winning novel *That Long Silence* was written by
     (A) Anita Desai
     (B) Shashi Deshpande
     (C) Githa Hariharan
     (D) Kamala Markandaya
 
-**43.** The poet who translated the Sangam classical Tamil poems into English in *The Interior Landscape* is:
+**43.** The poet who translated the Sangam classical Tamil poems into English in *The Interior Landscape* is
     (A) A.K. Ramanujan
     (B) R. Parthasarathy
     (C) Keki N. Daruwalla
     (D) Arvind Krishna Mehrotra
 
-**44.** The first official demand for English education in India was made through:
+**44.** The first official demand for English education in India was made through
     (A) The Charter Act of 1813
     (B) Macaulay's Minute of 1835
     (C) Wood's Despatch of 1854
@@ -288,13 +288,13 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 7: Cultural Studies
 
-**45.** Raymond Williams' *Culture and Society* (1958) traces the development of the idea of culture from:
+**45.** Raymond Williams' *Culture and Society* (1958) traces the development of the idea of culture from
     (A) 1780 to 1950
     (B) The Renaissance to the Victorian age
     (C) Classical Greece to the present
     (D) 1800 to 1900
 
-**46.** The concept of "Orientalism" as a Western style for dominating, restructuring, and having authority over the Orient is argued in a book by:
+**46.** The concept of "Orientalism" as a Western style for dominating, restructuring, and having authority over the Orient is argued in a book by
     (A) Frantz Fanon
     (B) Homi Bhabha
     (C) Edward Said
@@ -306,25 +306,25 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Herbert Marcuse
     (D) Raymond Williams
 
-**48.** The term "interpellation" (the process by which ideology constitutes individuals as subjects) was introduced by:
+**48.** The term "interpellation" (the process by which ideology constitutes individuals as subjects) was introduced by
     (A) Antonio Gramsci
     (B) Louis Althusser
     (C) Pierre Bourdieu
     (D) Michel Foucault
 
-**49.** The essay "Encoding/Decoding" in television discourse is by:
+**49.** The essay "Encoding/Decoding" in television discourse is by
     (A) John Fiske
     (B) Stuart Hall
     (C) Marshall McLuhan
     (D) Jean Baudrillard
 
-**50.** *The History of Sexuality*, a multi-volume work examining the relationship between power, knowledge, and sexuality, is by:
+**50.** *The History of Sexuality*, a multi-volume work examining the relationship between power, knowledge, and sexuality, is by
     (A) Roland Barthes
     (B) Jacques Lacan
     (C) Michel Foucault
     (D) Judith Butler
 
-**51.** "The medium is the message" is a famous phrase coined by:
+**51.** "The medium is the message" is a famous phrase coined by
     (A) Roland Barthes
     (B) Marshall McLuhan
     (C) Walter Benjamin
@@ -332,19 +332,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 8: Literary Criticism
 
-**52.** The concept of "hamartia" in Aristotle's *Poetics* refers to:
+**52.** The concept of "hamartia" in Aristotle's *Poetics* refers to
     (A) The hero's excessive pride
     (B) An error of judgment or tragic flaw
     (C) The reversal of fortune
     (D) The moment of recognition
 
-**53.** John Dryden's *An Essay of Dramatic Poesy* presents a debate among four speakers. The speaker who defends the superiority of modern English drama over classical French drama is:
+**53.** John Dryden's *An Essay of Dramatic Poesy* presents a debate among four speakers. The speaker who defends the superiority of modern English drama over classical French drama is
     (A) Crites
     (B) Eugenius
     (C) Lisideius
     (D) Neander
 
-**54.** The phrase "touchstone method" was used by Matthew Arnold to:
+**54.** The phrase "touchstone method" was used by Matthew Arnold to
     (A) Evaluate the moral seriousness of a poem
     (B) Identify genuine high poetic quality by comparing with lines from great masters
     (C) Examine the historical context of a work
@@ -356,19 +356,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Heresy of paraphrase
     (D) Defamiliarization
 
-**56.** William Wordsworth's famous statement that "Poetry is the spontaneous overflow of powerful feelings: it takes its origin from emotion recollected in tranquillity" appears in:
+**56.** William Wordsworth's famous statement that "Poetry is the spontaneous overflow of powerful feelings: it takes its origin from emotion recollected in tranquillity" appears in
     (A) *The Prelude*
     (B) Preface to *Lyrical Ballads* (1800)
     (C) *Biographia Literaria*
     (D) *The Excursion*
 
-**57.** Longinus identifies the principal source of the sublime as:
+**57.** Longinus identifies the principal source of the sublime as
     (A) Grandeur of thought
     (B) Powerful emotion
     (C) Skillful arrangement of figures
     (D) Nobility of diction
 
-**58.** T.S. Eliot's theory of "impersonality" of poetry is elaborated in:
+**58.** T.S. Eliot's theory of "impersonality" of poetry is elaborated in
     (A) "The Metaphysical Poets"
     (B) "Hamlet and His Problems"
     (C) "Tradition and the Individual Talent"
@@ -376,49 +376,49 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 9: Literary Theory
 
-**59.** The term "signified" in Saussurean linguistics refers to:
+**59.** The term "signified" in Saussurean linguistics refers to
     (A) The sound-image
     (B) The concept or meaning
     (C) The actual object in the world
     (D) The written word
 
-**60.** Roland Barthes' *Mythologies* is primarily concerned with:
+**60.** Roland Barthes' *Mythologies* is primarily concerned with
     (A) Classical Greek myths
     (B) The semiological analysis of contemporary bourgeois culture
     (C) Structural analysis of folk tales
     (D) Archetypal patterns in literature
 
-**61.** The concept of the "chronotope" (the intrinsic connectedness of temporal and spatial relationships in narrative) was developed by:
+**61.** The concept of the "chronotope" (the intrinsic connectedness of temporal and spatial relationships in narrative) was developed by
     (A) Mikhail Bakhtin
     (B) Gérard Genette
     (C) Tzvetan Todorov
     (D) Vladimir Propp
 
-**62.** *The Laugh of the Medusa*, which advocates "écriture féminine", is by:
+**62.** *The Laugh of the Medusa*, which advocates "écriture féminine", is by
     (A) Simone de Beauvoir
     (B) Hélène Cixous
     (C) Julia Kristeva
     (D) Luce Irigaray
 
-**63.** "There is nothing outside the text" (Il n'y a pas de hors-texte) is a famous proposition by:
+**63.** "There is nothing outside the text" (Il n'y a pas de hors-texte) is a famous proposition by
     (A) Michel Foucault
     (B) Jacques Derrida
     (C) Roland Barthes
     (D) Paul de Man
 
-**64.** Fredric Jameson's *Postmodernism, or, The Cultural Logic of Late Capitalism* characterizes postmodernism as:
+**64.** Fredric Jameson's *Postmodernism, or, The Cultural Logic of Late Capitalism* characterizes postmodernism as
     (A) The return to realism
     (B) The cultural dominant of multinational capitalism
     (C) A form of romantic revival
     (D) The end of ideology
 
-**65.** Judith Butler's concept of gender performativity suggests that gender is:
+**65.** Judith Butler's concept of gender performativity suggests that gender is
     (A) A biological fact
     (B) An innate inner truth
     (C) A social construct produced through repeated stylized acts
     (D) A psychological archetype
 
-**66.** *The Empire Writes Back* (1989), a seminal text in postcolonial studies, was authored by:
+**66.** *The Empire Writes Back* (1989), a seminal text in postcolonial studies, was authored by
     (A) Edward Said
     (B) Homi Bhabha
     (C) Bill Ashcroft, Gareth Griffiths, and Helen Tiffin
@@ -426,13 +426,13 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 10: Research Methods
 
-**67.** The abbreviation "et al." is used in citations to indicate:
+**67.** The abbreviation "et al." is used in citations to indicate
     (A) The work is anonymous
     (B) There are multiple authors, and only the first is named followed by "et al."
     (C) The source is a journal article
     (D) The year of publication is unknown
 
-**68.** In research, a "variable" is defined as:
+**68.** In research, a "variable" is defined as
     (A) A consistent finding
     (B) A characteristic or attribute that can assume different values
     (C) The central argument of a thesis
@@ -444,7 +444,7 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) In-depth interview
     (D) Statistical hypothesis testing
 
-**70.** The section of a research paper that interprets the findings and links them to the research question is:
+**70.** The section of a research paper that interprets the findings and links them to the research question is
     (A) Abstract
     (B) Methodology
     (C) Results
@@ -458,13 +458,13 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) *The Waste Land* – Virginia Woolf
     (D) *A Passage to India* – George Orwell
 
-**72.** Identify the correct chronological order of publication:
+**72.** Identify the correct chronological order of publication
     (A) *Lyrical Ballads*, *In Memoriam*, *The Waste Land*, *Birthday Letters*
     (B) *In Memoriam*, *Lyrical Ballads*, *The Waste Land*, *Birthday Letters*
     (C) *The Waste Land*, *Lyrical Ballads*, *In Memoriam*, *Birthday Letters*
     (D) *Lyrical Ballads*, *The Waste Land*, *In Memoriam*, *Birthday Letters*
 
-**73.** "Sweetness and light" is a phrase Matthew Arnold took from:
+**73.** "Sweetness and light" is a phrase Matthew Arnold took from
     (A) John Ruskin
     (B) Jonathan Swift
     (C) Thomas Carlyle
@@ -476,43 +476,43 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Structuralism
     (D) New Historicism
 
-**75.** The term "metaphysical conceit" is best exemplified by:
+**75.** The term "metaphysical conceit" is best exemplified by
     (A) A comparison of two highly dissimilar things using elaborate logic
     (B) A simple simile drawn from nature
     (C) A direct address to an inanimate object
     (D) A recurring mythological allusion
 
-**76.** The statement "The history of all hitherto existing society is the history of class struggles" opens:
+**76.** The statement "The history of all hitherto existing society is the history of class struggles" opens
     (A) *Capital*
     (B) *The German Ideology*
     (C) *The Communist Manifesto*
     (D) *The Eighteenth Brumaire of Louis Bonaparte*
 
-**77.** "Can the Subaltern Speak?" examines the practice of:
+**77.** "Can the Subaltern Speak?" examines the practice of
     (A) Widow remarriage in colonial India
     (B) Sati (widow immolation) and colonial discourse
     (C) The Indian freedom movement
     (D) Linguistic nationalism in India
 
-**78.** The aesthetic principle "art for art's sake" is associated with:
+**78.** The aesthetic principle "art for art's sake" is associated with
     (A) The Pre-Raphaelites
     (B) The Aesthetic Movement (Walter Pater, Oscar Wilde)
     (C) The Romantic poets
     (D) The Metaphysical poets
 
-**79.** The figure of speech in which a part represents the whole is:
+**79.** The figure of speech in which a part represents the whole is
     (A) Metaphor
     (B) Metonymy
     (C) Synecdoche
     (D) Irony
 
-**80.** The Bhagavad Gita forms a part of the larger epic:
+**80.** The Bhagavad Gita forms a part of the larger epic
     (A) Ramayana
     (B) Mahabharata
     (C) Silappadikaram
     (D) Manimekalai
 
-**81.** The term "diaspora" refers to:
+**81.** The term "diaspora" refers to
     (A) A utopian society
     (B) The dispersion of a people from their original homeland
     (C) A literary genre
@@ -524,43 +524,43 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) Robert Louis Stevenson
     (D) Bram Stoker
 
-**83.** The "Graveyard Poets" include:
+**83.** The "Graveyard Poets" include
     (A) Thomas Gray and Edward Young
     (B) William Blake and Robert Burns
     (C) John Dryden and Alexander Pope
     (D) William Wordsworth and S.T. Coleridge
 
-**84.** The term "aporia" in deconstruction means:
+**84.** The term "aporia" in deconstruction means
     (A) A moment of authorial inspiration
     (B) An irresolvable internal contradiction in a text
     (C) A figure of speech involving repetition
     (D) The emotional climax of a narrative
 
-**85.** The statement "For God's sake hold your tongue, and let me love" is the opening line of:
+**85.** The statement "For God's sake hold your tongue, and let me love" is the opening line of
     (A) "The Good-Morrow"
     (B) "The Canonization"
     (C) "The Flea"
     (D) "A Valediction: Forbidding Mourning"
 
-**86.** Amitav Ghosh's *The Glass Palace* is set against the backdrop of:
+**86.** Amitav Ghosh's *The Glass Palace* is set against the backdrop of
     (A) The Partition of India
     (B) The Burmese invasion and British colonialism in Southeast Asia
     (C) The Kargil War
     (D) The Green Revolution
 
-**87.** The protagonist of *Things Fall Apart* is:
+**87.** The protagonist of *Things Fall Apart* is
     (A) Obi Okonkwo
     (B) Ezeulu
     (C) Okonkwo
     (D) Ikemefuna
 
-**88.** The figure of speech that involves a direct address to an absent person or abstract entity is:
+**88.** The figure of speech that involves a direct address to an absent person or abstract entity is
     (A) Apostrophe
     (B) Personification
     (C) Hyperbole
     (D) Alliteration
 
-**89.** The New Critics considered a poem as:
+**89.** The New Critics considered a poem as
     (A) An expression of the author's emotions
     (B) A historical document
     (C) A self-contained, autonomous verbal object
@@ -572,37 +572,37 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) *Tess of the d'Urbervilles*
     (D) *Jude the Obscure*
 
-**91.** The concept of "heteroglossia" (the diversity of voices and social languages in the novel) is associated with:
+**91.** The concept of "heteroglossia" (the diversity of voices and social languages in the novel) is associated with
     (A) Roland Barthes
     (B) Mikhail Bakhtin
     (C) Julia Kristeva
     (D) Northrop Frye
 
-**92.** The poem "The Love Song of J. Alfred Prufrock" begins with an epigraph from:
+**92.** The poem "The Love Song of J. Alfred Prufrock" begins with an epigraph from
     (A) The Bible
     (B) Shakespeare
     (C) Dante's *Inferno*
     (D) Homer's *Odyssey*
 
-**93.** The phrase "willing suspension of disbelief" was introduced in the context of:
+**93.** The phrase "willing suspension of disbelief" was introduced in the context of
     (A) The reader's engagement with drama
     (B) The poet's use of supernatural characters in *Lyrical Ballads*
     (C) The writing of prose fiction
     (D) The performance of Shakespearean tragedy
 
-**94.** The critical approach that emphasizes how a literary text reflects or reinforces patriarchal ideology is:
+**94.** The critical approach that emphasizes how a literary text reflects or reinforces patriarchal ideology is
     (A) Psychoanalytic criticism
     (B) Feminist criticism
     (C) Marxist criticism
     (D) Archetypal criticism
 
-**95.** The novel *The Inheritance of Loss* won the Man Booker Prize in:
+**95.** The novel *The Inheritance of Loss* won the Man Booker Prize in
     (A) 2005
     (B) 2006
     (C) 2007
     (D) 2008
 
-**96.** The term "phoneme" is defined as:
+**96.** The term "phoneme" is defined as
     (A) The smallest unit of meaning
     (B) The smallest unit of sound that distinguishes meaning
     (C) A group of letters
@@ -614,19 +614,19 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (C) *Remains of the Day*
     (D) *The French Lieutenant's Woman*
 
-**98.** "Nature never did betray / The heart that loved her" is a line from:
+**98.** "Nature never did betray / The heart that loved her" is a line from
     (A) "Tintern Abbey"
     (B) "Ode to a Nightingale"
     (C) "The Prelude"
     (D) "Dover Beach"
 
-**99.** The author of the collection of short stories *Interpreter of Maladies* is:
+**99.** The author of the collection of short stories *Interpreter of Maladies* is
     (A) Rohinton Mistry
     (B) Jhumpa Lahiri
     (C) Aravind Adiga
     (D) Kiran Desai
 
-**100.** The MLA citation format for a book with one author includes:
+**100.** The MLA citation format for a book with one author includes
     (A) Author's last name, first name. *Title*. Publisher, Year.
     (B) Author's last name, first name. *Title*, Publisher, Year.
     (C) Author's first name, last name. *Title*. Publisher, Year.

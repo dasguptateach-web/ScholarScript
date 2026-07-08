@@ -1,6 +1,7 @@
 """
 ScholarScript Test Parser — detects MCQ papers with answer keys
 and generates interactive test JSON data + content/tests/ entries.
+Supports both table format (| Q | Ans |) and inline format (1. B 2. C ...)
 """
 import json
 import re
@@ -22,14 +23,15 @@ ANSWER_KEY_RE = re.compile(
     re.DOTALL,
 )
 
-TABLE_ROW_RE = re.compile(r'^\|\s*(\d+)\s*\|\s*([A-D])\s*\|')
-
 def try_parse_answer_key(text):
     answers = {}
     m = ANSWER_KEY_RE.search(text)
     if not m:
         return answers
     section = m.group(1)
+
+    # Try table format: | Q | Ans | ...
+    table_answers = {}
     for line in section.splitlines():
         line = line.strip()
         cells = [c.strip() for c in line.split("|") if c.strip()]
@@ -38,10 +40,18 @@ def try_parse_answer_key(text):
         if cells[0] == "Q" and len(cells) >= 2:
             continue
         if cells[0].isdigit() and re.match(r'^[A-D]$', cells[1], re.IGNORECASE):
-            answers[int(cells[0])] = cells[1].upper()
+            table_answers[int(cells[0])] = cells[1].upper()
         for i in range(0, len(cells) - 1, 2):
             if cells[i].isdigit() and re.match(r'^[A-D]$', cells[i+1], re.IGNORECASE):
-                answers[int(cells[i])] = cells[i+1].upper()
+                table_answers[int(cells[i])] = cells[i+1].upper()
+    if table_answers:
+        return table_answers
+
+    # Fallback: inline format — 1. B 2. B 3. C ... (possibly with ** markers)
+    cleaned = re.sub(r'\*\*', '', section)
+    inline_pat = re.compile(r'(\d+)\s*\.\s*([A-D])\s*')
+    for m_ in inline_pat.finditer(cleaned):
+        answers[int(m_.group(1))] = m_.group(2).upper()
     return answers
 
 def try_parse_questions(text):
@@ -68,7 +78,10 @@ def slugify(title):
 
 def process_paper(filepath):
     text = filepath.read_text(encoding="utf-8")
-    questions = try_parse_questions(text)
+    # Only parse questions from the body BEFORE the answer key
+    key_idx = text.find("## ANSWER KEY")
+    body_text = text[:key_idx] if key_idx > 0 else text
+    questions = try_parse_questions(body_text)
     if not questions:
         return None
     answers = try_parse_answer_key(text)

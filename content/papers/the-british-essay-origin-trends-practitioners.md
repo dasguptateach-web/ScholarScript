@@ -28,9 +28,11 @@ UGC NET Previous Year Questions (2004–2024) on the British Essay
 
 ## Tips and Final Words
 
-## **1.** Introduction: The Essay as a Literary Form
+## 
+**1.** Introduction: The Essay as a Literary Form
 
-The word “essay” derives from the French essai, meaning “attempt” or “trial,” and was popularised by the French writer Michel de Montaigne (1533–1592), who published his Essais in **1580.** Montaigne’s essays were personal, digressive, sceptical and conversational, establishing the familiar essay tradition that values intimate self-revelation and informal style. In England, the form was first naturalised by Francis Bacon, whose Essays appeared in 1597. Unlike Montaigne’s expansive self-portraits, Bacon’s essays were concise, aphoristic, and dense with worldly wisdom. Thus, from the very beginning, the English essay branched into two major traditions:
+The word “essay” derives from the French essai, meaning “attempt” or “trial,” and was popularised by the French writer Michel de Montaigne (1533–1592), who published his Essais in 
+**1580.** Montaigne’s essays were personal, digressive, sceptical and conversational, establishing the familiar essay tradition that values intimate self-revelation and informal style. In England, the form was first naturalised by Francis Bacon, whose Essays appeared in 1597. Unlike Montaigne’s expansive self-portraits, Bacon’s essays were concise, aphoristic, and dense with worldly wisdom. Thus, from the very beginning, the English essay branched into two major traditions:
 
 The impersonal / aphoristic essay (Baconian) – objective, analytical, didactic.
 
@@ -319,7 +321,7 @@ The following questions have been compiled from memory, expert analysis, and exa
 
 9.1 Match the Following
 
-Q1. Match the essay collections with their authors:
+Q1. Match the essay collections with their authors
     (A) Microcosmography
     (B) The Citizen of the World
     (C) The Spirit of the Age
@@ -330,7 +332,8 @@ Q1. Match the essay collections with their authors:
 (3) John Earle
 (4) John Ruskin
 
-Q**2.** Match the essayists with the periodicals they are chiefly associated with:
+Q
+**2.** Match the essayists with the periodicals they are chiefly associated with
     (A) Richard Steele
     (B) Samuel Johnson
     (C) Joseph Addison
@@ -341,7 +344,8 @@ Q**2.** Match the essayists with the periodicals they are chiefly associated wit
 (3) The Public Ledger / The Bee
 (4) The Spectator
 
-Q**3.** Match the essayists with their characteristic style/term:
+Q
+**3.** Match the essayists with their characteristic style/term
     (A) Francis Bacon
     (B) Charles Lamb
     (C) Walter Pater
