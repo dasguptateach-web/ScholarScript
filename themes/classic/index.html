@@ -40,9 +40,11 @@
 
     <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
       {% set total = papers|length + videos|length + creative|length + links|length %}
+      {% set total = papers|length + videos|length + creative|length + links|length %}
       <div class="hero-stat"><span class="num">{{ total }}</span><span class="label">Total Resources</span></div>
       <div class="hero-stat"><span class="num">{{ papers|length }}</span><span class="label">Scholarly Papers</span></div>
       <div class="hero-stat"><span class="num">{{ videos|length }}</span><span class="label">Video Lectures</span></div>
+      <div class="hero-stat"><span class="num">{{ tests|length }}</span><span class="label">Practice Tests</span></div>
       <div class="hero-stat"><span class="num">{{ creative|length }}</span><span class="label">Creative Works</span></div>
     </div>
   </div>

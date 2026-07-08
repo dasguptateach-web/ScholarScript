@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body_class %}test-page{% endblock %}
+{% block head_extra %}
+<link rel="stylesheet" href="{{ base_url }}/css/test.css">
+{% endblock %}
+{% block content %}
+<div id="testApp" data-test-slug="{{ test_slug }}">
+  <div class="test-loading" id="testLoading">
+    <i class="fas fa-spinner fa-spin"></i> Loading test...
+  </div>
+</div>
+
+<script id="testData" type="application/json">{{ test_json | safe }}</script>
+<script src="{{ base_url }}/js/test.js"></script>
+{% endblock %}

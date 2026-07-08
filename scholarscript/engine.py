@@ -44,11 +44,13 @@ class Engine:
         # Load content
         papers, videos, creative, external = load_all_content(self.config.get_content_dir())
         self.items = papers + videos + creative + external
+        tests = self._load_tests()
         self.env.globals.update({
             "papers": papers,
             "videos": videos,
             "creative": creative,
             "links": external,
+            "tests": tests,
         })
 
         # Plugin: on_content_loaded
@@ -92,10 +94,15 @@ class Engine:
         self._render_donate(public_dir)
         self._render_submit(public_dir)
         self._render_health(public_dir)
+        self._render_tests_archive(public_dir, tests)
 
         # Render individual content pages
         for item in self.items:
             self._render_content(public_dir, item, tag_map)
+
+        # Render test pages
+        for test in tests:
+            self._render_test_page(public_dir, test)
 
         # SEO files
         generate_sitemap(self.items, self.config.get_base_url(),
@@ -251,6 +258,17 @@ class Engine:
                 "author": item.author or "",
                 "url": f"/{item.type}/{item.slug}/",
             })
+        for test in self.env.globals.get("tests", []):
+            idx.append({
+                "title": test.get("title", ""),
+                "slug": test.get("slug", ""),
+                "type": "test",
+                "summary": test.get("description", "")[:300],
+                "tags": ["test", "mcq", "practice"],
+                "date": test.get("date", ""),
+                "author": "",
+                "url": f"/test/{test.get('slug', '')}/",
+            })
         path = public_dir / "search-index.json"
         with open(path, "w", encoding="utf-8") as f:
             json.dump(idx, f, ensure_ascii=False)
@@ -264,3 +282,39 @@ class Engine:
             "page_ogtype": "website",
         }
         self._render("health.html", ctx, public_dir / "health" / "index.html")
+
+    def _load_tests(self) -> list:
+        tests_dir = self.config.get_data_dir() / "tests"
+        tests = []
+        if not tests_dir.exists():
+            return tests
+        for f in sorted(tests_dir.glob("*.json")):
+            try:
+                with open(f, "r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+                tests.append(data)
+            except Exception:
+                pass
+        tests.sort(key=lambda t: t.get("date", ""), reverse=True)
+        return tests
+
+    def _render_test_page(self, public_dir, test_data):
+        slug = test_data.get("slug", "unknown")
+        ctx = {
+            "test_slug": slug,
+            "test_json": json.dumps(test_data, ensure_ascii=False),
+            "page_title": test_data.get("title", "Test"),
+            "page_description": test_data.get("description", f"Practice test with {test_data.get('total_questions', 0)} questions"),
+            "page_url": self.config.get_base_url() + "/test/" + slug + "/",
+            "page_ogtype": "website",
+        }
+        self._render("test.html", ctx, public_dir / "test" / slug / "index.html")
+
+    def _render_tests_archive(self, public_dir, tests):
+        ctx = {
+            "tests": tests,
+            "page_title": "Interactive Tests",
+            "page_url": self.config.get_base_url() + "/tests/",
+            "page_ogtype": "website",
+        }
+        self._render("tests.html", ctx, public_dir / "tests" / "index.html")

@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base_url }}/rss.xml">
+{% block head_extra %}{% endblock %}
 {% if site.adsense_client_id and site.adsense_enabled %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client_id }}" crossorigin="anonymous"></script>
 {% endif %}
@@ -71,6 +72,7 @@
           <a href="{{ base_url }}/creative-writing/"><i class="fas fa-pen-fancy"></i> Writing</a>
           <a href="{{ base_url }}/creative-writing/submit/"><i class="fas fa-upload"></i> Submit</a>
           <a href="{{ base_url }}/external-links/"><i class="fas fa-link"></i> Links</a>
+          <a href="{{ base_url }}/tests/"><i class="fas fa-check-circle"></i> Tests</a>
           <a href="{{ base_url }}/tags/"><i class="fas fa-tags"></i> Tags</a>
           <a href="{{ base_url }}/donate/"><i class="fas fa-heart"></i> Support</a>
         </nav>
@@ -91,6 +93,7 @@
     <a href="{{ base_url }}/videos/"><i class="fas fa-video"></i> Videos</a>
     <a href="{{ base_url }}/creative-writing/"><i class="fas fa-pen-fancy"></i> Creative Writing</a>
     <a href="{{ base_url }}/creative-writing/submit/"><i class="fas fa-upload"></i> Submit Your Work</a>
+    <a href="{{ base_url }}/tests/"><i class="fas fa-check-circle"></i> Tests</a>
     <a href="{{ base_url }}/external-links/"><i class="fas fa-link"></i> External Links</a>
     <a href="{{ base_url }}/tags/"><i class="fas fa-tags"></i> Tags</a>
     <a href="{{ base_url }}/author-of-month/"><i class="fas fa-trophy"></i> Author of the Month</a>
@@ -126,7 +129,7 @@
           <a href="{{ base_url }}/sitemap.xml"><i class="fas fa-chevron-right"></i> Sitemap</a>
         </div>
         <div class="footer-info">
-          <p><i class="fas fa-database"></i> {{ papers|length + videos|length + creative|length + links|length }} resources &middot; {{ papers|length }} papers &middot; {{ videos|length }} videos &middot; {{ creative|length }} creative works</p>
+          <p><i class="fas fa-database"></i> {{ papers|length + videos|length + creative|length + links|length }} resources &middot; {{ papers|length }} papers &middot; {{ videos|length }} videos &middot; {{ tests|length }} tests &middot; {{ creative|length }} creative works</p>
           <p>&copy; {{ now.year }} Published with ScholarScript.<br>Free for everyone. Forever.</p>
         </div>
       </div>

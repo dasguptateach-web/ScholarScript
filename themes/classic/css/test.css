@@ -1,0 +1,88 @@
+/* Interactive Test Styles */
+.test-page .container { max-width: 800px; }
+
+.test-header { text-align: center; padding: 2rem 0 1rem; }
+.test-header h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--text); margin-bottom: 0.25rem; }
+.test-header h2 i { color: var(--primary); }
+.test-meta { color: var(--text-muted); font-size: 0.9rem; }
+
+.test-progress-bar { height: 4px; background: var(--border); border-radius: 2px; margin: 0.5rem 0 1.5rem; overflow: hidden; }
+.test-progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); border-radius: 2px; transition: width 0.3s ease; }
+
+.test-question { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+.test-q-header { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.test-q-num { font-weight: 700; color: var(--primary); min-width: 2rem; font-size: 1rem; }
+.test-q-text { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+
+.test-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.test-option { display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 0.875rem; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.15s ease; }
+.test-option:hover { border-color: var(--primary-light); background: var(--primary-glow); }
+.test-option.selected { border-color: var(--primary); background: var(--primary-glow); }
+.test-option input[type="radio"] { display: none; }
+.test-opt-letter { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; font-size: 0.8rem; font-weight: 700; background: var(--bg-alt); color: var(--text-soft); flex-shrink: 0; }
+.test-option.selected .test-opt-letter { background: var(--primary); color: #fff; }
+.test-opt-text { font-size: 0.9rem; color: var(--text); }
+
+.test-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 1.5rem 0; }
+.test-submit-btn { padding: 0.875rem 2rem; font-size: 1.05rem; }
+
+/* Results */
+.test-results { max-width: 700px; margin: 0 auto; }
+.test-results-header { text-align: center; padding: 1rem 0; }
+.test-results-header h2 { font-family: var(--font-display); font-size: 1.75rem; }
+.test-results-header h2 i { color: var(--primary); }
+
+.test-score-card { display: flex; gap: 2rem; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.test-score-card.grade-pass { border-color: var(--green, #16a34a); }
+.test-score-card.grade-average { border-color: var(--gold); }
+.test-score-card.grade-fail { border-color: var(--red, #dc2626); }
+
+.test-score-circle { display: flex; flex-direction: column; align-items: center; }
+.test-score-pct { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+.grade-pass .test-score-pct { color: var(--green, #16a34a); }
+.grade-average .test-score-pct { color: var(--gold); }
+.grade-fail .test-score-pct { color: var(--red, #dc2626); }
+.test-score-grade { font-size: 1rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 600; }
+
+.test-score-details { display: flex; flex-direction: column; gap: 0.375rem; }
+.test-score-row { display: flex; justify-content: space-between; gap: 2rem; font-size: 0.9rem; }
+.test-score-total { font-weight: 700; border-top: 1px solid var(--border); padding-top: 0.375rem; }
+.score-green { color: var(--green, #16a34a); font-weight: 600; }
+.score-red { color: var(--red, #dc2626); font-weight: 600; }
+.score-gray { color: var(--text-muted); font-weight: 600; }
+
+.test-review { margin-top: 1.5rem; }
+.test-review h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; }
+.test-review h3 i { color: var(--primary); }
+
+.test-review-q { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; margin-bottom: 0.75rem; }
+.test-review-q.q-correct { border-left: 4px solid var(--green, #16a34a); }
+.test-review-q.q-incorrect { border-left: 4px solid var(--red, #dc2626); }
+.test-review-q.q-unanswered { border-left: 4px solid var(--text-muted); }
+.test-review-q-header { display: flex; gap: 0.5rem; align-items: flex-start; }
+.test-review-q-num { font-weight: 700; color: var(--primary); min-width: 1.5rem; }
+.test-review-q-text { font-size: 0.9rem; line-height: 1.5; flex: 1; }
+.test-review-status { color: var(--text-muted); font-size: 1rem; }
+.q-correct .test-review-status { color: var(--green, #16a34a); }
+.q-incorrect .test-review-status { color: var(--red, #dc2626); }
+
+.test-review-options { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.5rem; padding-left: 2rem; }
+.test-review-opt { font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 4px; }
+.test-review-opt.opt-correct { background: rgba(22, 163, 74, 0.08); color: var(--green, #16a34a); }
+.test-review-opt.opt-wrong { background: rgba(220, 38, 38, 0.08); color: var(--red, #dc2626); }
+
+.test-loading { text-align: center; padding: 4rem 0; color: var(--text-muted); }
+.test-error { text-align: center; padding: 4rem 0; color: var(--red, #dc2626); }
+
+/* Button styles for test page */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease; text-decoration: none; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124,58,237,0.3); }
+.btn-secondary { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--surface-hover); }
+
+@media (max-width: 600px) {
+  .test-score-card { flex-direction: column; text-align: center; }
+  .test-actions { flex-direction: column; align-items: stretch; }
+  .test-actions .btn { justify-content: center; }
+}

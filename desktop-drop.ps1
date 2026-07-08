@@ -132,31 +132,38 @@ function Process-Batch {
 
     # ── STEP 3: FIX MCQ FORMATTING ──────────────────────────
     if ($ok) {
-        Log "=== STEP 3/7: Formatting MCQs ==="
+        Log "=== STEP 3/8: Formatting MCQs ==="
         $r, $mcqOk = Run-WithTimeout "& '$pythonExe' format_mcqs.py 2>&1" 30
         foreach ($l in $r) { Log "  $l" }
     }
 
-    # ── STEP 4: YOUTUBE MATCH ───────────────────────────────
+    # ── STEP 4: BUILD INTERACTIVE TESTS ─────────────────────
     if ($ok) {
-        Log "=== STEP 4/7: Matching YouTube videos ==="
+        Log "=== STEP 4/8: Building interactive tests ==="
+        $r, $testOk = Run-WithTimeout "& '$pythonExe' -m scholarscript.test_parser 2>&1" 30
+        foreach ($l in $r) { Log "  $l" }
+    }
+
+    # ── STEP 5: YOUTUBE MATCH ───────────────────────────────
+    if ($ok) {
+        Log "=== STEP 5/8: Matching YouTube videos ==="
         $r, $ytOk = Run-WithTimeout "& '$pythonExe' youtube_agent.py 2>&1" 180
         foreach ($l in $r) { Log "  $l" }
         if (-not $ytOk) { Log "  YouTube step had issues (non-fatal, continuing)" }
     }
 
-    # ── STEP 5: BUILD ───────────────────────────────────────
+    # ── STEP 6: BUILD ───────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 5/7: Building site ==="
+        Log "=== STEP 6/8: Building site ==="
         $r, $ok = Run-WithTimeout "& '$pythonExe' -m scholarscript build 2>&1" 60
         if (-not $ok) { Log "  BUILD FAILED" }
         foreach ($l in $r) { Log "  $l" }
     }
 
-    # ── STEP 6: COMMIT & PUSH ───────────────────────────────
+    # ── STEP 7: COMMIT & PUSH ───────────────────────────────
     if ($ok) {
         $ts = Get-Timestamp; $pushed = $false
-        Log "=== STEP 6/7: Committing and pushing to GitHub ==="
+        Log "=== STEP 7/8: Committing and pushing to GitHub ==="
         
         # Configure git auth for scripted use
         if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -199,9 +206,9 @@ function Process-Batch {
         if (-not $pushed) { $ok = $false }
     }
 
-    # ── STEP 7: FINALIZE ────────────────────────────────────
+    # ── STEP 8: FINALIZE ────────────────────────────────────
     if ($ok) {
-        Log "=== STEP 7/7: Done! ==="
+        Log "=== STEP 8/8: Done! ==="
         Log "Files: $($allFileNames -join ', ')"
     } else { Log "FAILED - check log above" }
 
