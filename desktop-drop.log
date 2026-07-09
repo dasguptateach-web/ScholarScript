@@ -220,3 +220,38 @@
 [2026-07-09 21:11:08] === STEP 8/8: Done! ===
 [2026-07-09 21:11:08] Files: French Influence on the English Language.docx
 [2026-07-09 21:11:08] Archived to _Processed
+[2026-07-09 21:32:44] STAGE The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers.docx
+[2026-07-09 21:32:44] COPY The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers.docx
+[2026-07-09 21:32:44] === STEP 1/7: Ingesting documents ===
+[2026-07-09 21:32:45]   Checking uploads folder...
+[2026-07-09 21:32:45]   Processed 1 file(s):
+[2026-07-09 21:32:45]     Success: 1
+[2026-07-09 21:32:45]     Errors:  0
+[2026-07-09 21:32:45]     [OK] The Murder of Roger Ackroyd û 10 Most Important Short Answer Type Questions & Answers.docx -> C:\Users\81\ScholarScript\content\papers\the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers.md (paper)
+[2026-07-09 21:32:45]   
+[2026-07-09 21:32:45]   Run 'scholarscript build' to rebuild the site.
+[2026-07-09 21:32:45]   
+[2026-07-09 21:32:45] === STEP 2/7: Fixing table formatting ===
+[2026-07-09 21:32:46]     [FIXED] french-influence-on-the-english-language.md
+[2026-07-09 21:32:46]     [FIXED] the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers.md
+[2026-07-09 21:32:46]   
+[2026-07-09 21:32:46] === STEP 3/8: Formatting MCQs ===
+[2026-07-09 21:32:46]     No MCQs needed reformatting.
+[2026-07-09 21:32:46]   
+[2026-07-09 21:32:46] === STEP 4/8: Building interactive tests ===
+[2026-07-09 21:32:46]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-09 21:32:46]     Created 1 test(s)
+[2026-07-09 21:32:46]   
+[2026-07-09 21:32:46] === STEP 5/8: Matching YouTube videos ===
+[2026-07-09 21:33:11]   Found 41 papers
+[2026-07-09 21:33:11]   
+[2026-07-09 21:33:11]     [the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers] -> QVdOf6qN7J0 (Murder of Roger Ackroyd Main Themes || Answer Writing for EX) [3,470 views]
+[2026-07-09 21:33:11]   
+[2026-07-09 21:33:11]   Done! Created: 1, Skipped: 40, Failed: 0
+[2026-07-09 21:33:11]   
+[2026-07-09 21:33:11] === STEP 6/8: Building site ===
+[2026-07-09 21:33:14]   Building site...
+[2026-07-09 21:33:14]   Built 87 items in 1.26s
+[2026-07-09 21:33:14]   Output: C:\Users\81\ScholarScript\public
+[2026-07-09 21:33:14]   
+[2026-07-09 21:33:14] === STEP 7/8: Committing and pushing to GitHub ===

@@ -84,22 +84,8 @@ The influence of French on English is not merely historical; it is linguisticall
 - Millward, C.M. A Biography of the English Language
 - Crystal, David. The Stories of English
 
-| Period | Sociolinguistic Context | Domains of Borrowing | Representative Loanwords |
-|---|---|---|---|
-| 1066-1200 (Early Middle English) | Norman French elite in power | Governance, Law, Feudalism | justice, court, crown, fealty |
-| 1200-1400 (Late Middle English) | French-English bilingualism; Chancery English rising | Domestic Life, Literature, Fashion | beauty, mirror, dance, gown |
-| 1400-1600 (Early Modern English) | Decline of French as native speech, rise in borrowing for prestige | Scholarly terms, Aesthetics | virtue, poet, courage, grammar |
-| 1600-1800 (Late Modern English) | French as cultural language of diplomacy, fashion | Politeness, Cuisine, Social Prestige | etiquette, cuisine, ballet |
-| 1800-Present (Modern English) | French seen as aesthetic, literary | Artistic, Philosophical, Luxury | genre, memoir, avant-garde |
+| Period | Sociolinguistic Context | Domains of Borrowing | Representative Loanwords | |---|---|---|---| | 1066-1200 (Early Middle English) | Norman French elite in power | Governance, Law, Feudalism | justice, court, crown, fealty | | 1200-1400 (Late Middle English) | French-English bilingualism; Chancery English rising | Domestic Life, Literature, Fashion | beauty, mirror, dance, gown | | 1400-1600 (Early Modern English) | Decline of French as native speech, rise in borrowing for prestige | Scholarly terms, Aesthetics | virtue, poet, courage, grammar | | 1600-1800 (Late Modern English) | French as cultural language of diplomacy, fashion | Politeness, Cuisine, Social Prestige | etiquette, cuisine, ballet | | 1800-Present (Modern English) | French seen as aesthetic, literary | Artistic, Philosophical, Luxury | genre, memoir, avant-garde |
 
-| Anglo-Saxon | French | Latin/Greek | Meaning |
-|---|---|---|---|
-| ask | inquire | interrogate | to question |
-| kingly | royal | regal | monarchical |
-| help | aid | assist | support |
+| Anglo-Saxon | French | Latin/Greek | Meaning | |---|---|---|---| | ask | inquire | interrogate | to question | | kingly | royal | regal | monarchical | | help | aid | assist | support |
 
-| Informal (Anglo-Saxon) | Formal (French) |
-|---|---|
-| begin | commence |
-| end | terminate |
-| fire | conflagration |
+| Informal (Anglo-Saxon) | Formal (French) | |---|---| | begin | commence | | end | terminate | | fire | conflagration |
