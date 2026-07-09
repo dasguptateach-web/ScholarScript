@@ -259,3 +259,36 @@
 [2026-07-09 21:33:21] === STEP 8/8: Done! ===
 [2026-07-09 21:33:21] Files: The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers.docx
 [2026-07-09 21:33:21] Archived to _Processed
+[2026-07-09 23:15:36] STAGE MACBETH MCQ TEST.docx
+[2026-07-09 23:15:36] COPY MACBETH MCQ TEST.docx
+[2026-07-09 23:15:36] === STEP 1/7: Ingesting documents ===
+[2026-07-09 23:15:38]   Checking uploads folder...
+[2026-07-09 23:15:38]   Processed 1 file(s):
+[2026-07-09 23:15:38]     Success: 1
+[2026-07-09 23:15:38]     Errors:  0
+[2026-07-09 23:15:38]     [OK] MACBETH MCQ TEST.docx -> C:\Users\81\ScholarScript\content\creative-writing\macbeth-mcq-test.md (creative-writing)
+[2026-07-09 23:15:38]   
+[2026-07-09 23:15:38]   Run 'scholarscript build' to rebuild the site.
+[2026-07-09 23:15:38]   
+[2026-07-09 23:15:38] === STEP 2/7: Fixing table formatting ===
+[2026-07-09 23:15:39]     No tables needed fixing.
+[2026-07-09 23:15:39]   
+[2026-07-09 23:15:39] === STEP 3/8: Formatting MCQs ===
+[2026-07-09 23:15:39]     No MCQs needed reformatting.
+[2026-07-09 23:15:39]   
+[2026-07-09 23:15:39] === STEP 4/8: Building interactive tests ===
+[2026-07-09 23:15:39]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-09 23:15:39]     Created 1 test(s)
+[2026-07-09 23:15:39]   
+[2026-07-09 23:15:39] === STEP 5/8: Matching YouTube videos ===
+[2026-07-09 23:16:00]   Found 41 papers
+[2026-07-09 23:16:00]   
+[2026-07-09 23:16:00]   
+[2026-07-09 23:16:00]   Done! Created: 0, Skipped: 41, Failed: 0
+[2026-07-09 23:16:00]   
+[2026-07-09 23:16:00] === STEP 6/8: Building site ===
+[2026-07-09 23:16:03]   Building site...
+[2026-07-09 23:16:03]   Built 88 items in 1.45s
+[2026-07-09 23:16:03]   Output: C:\Users\81\ScholarScript\public
+[2026-07-09 23:16:03]   
+[2026-07-09 23:16:03] === STEP 7/8: Committing and pushing to GitHub ===
