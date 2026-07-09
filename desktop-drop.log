@@ -177,3 +177,42 @@
 [2026-07-09 19:26:58]   Output: C:\Users\81\ScholarScript\public
 [2026-07-09 19:26:58]   
 [2026-07-09 19:26:58] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-07-09 19:27:08]   Pushed!
+[2026-07-09 19:27:08] === STEP 8/8: Done! ===
+[2026-07-09 19:27:08] Files: Scandinavian Influence on the English Language.docx
+[2026-07-09 19:27:08] Archived to _Processed
+[2026-07-09 21:10:31] STAGE French Influence on the English Language.docx
+[2026-07-09 21:10:31] COPY French Influence on the English Language.docx
+[2026-07-09 21:10:31] === STEP 1/7: Ingesting documents ===
+[2026-07-09 21:10:32]   Checking uploads folder...
+[2026-07-09 21:10:32]   Processed 1 file(s):
+[2026-07-09 21:10:32]     Success: 1
+[2026-07-09 21:10:32]     Errors:  0
+[2026-07-09 21:10:32]     [OK] French Influence on the English Language.docx -> C:\Users\81\ScholarScript\content\papers\french-influence-on-the-english-language.md (paper)
+[2026-07-09 21:10:32]   
+[2026-07-09 21:10:32]   Run 'scholarscript build' to rebuild the site.
+[2026-07-09 21:10:32]   
+[2026-07-09 21:10:32] === STEP 2/7: Fixing table formatting ===
+[2026-07-09 21:10:33]     [FIXED] french-influence-on-the-english-language.md
+[2026-07-09 21:10:33]     [FIXED] scandinavian-influence-on-the-english-language.md
+[2026-07-09 21:10:33]   
+[2026-07-09 21:10:33] === STEP 3/8: Formatting MCQs ===
+[2026-07-09 21:10:33]     No MCQs needed reformatting.
+[2026-07-09 21:10:33]   
+[2026-07-09 21:10:33] === STEP 4/8: Building interactive tests ===
+[2026-07-09 21:10:33]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-09 21:10:33]     Created 1 test(s)
+[2026-07-09 21:10:33]   
+[2026-07-09 21:10:33] === STEP 5/8: Matching YouTube videos ===
+[2026-07-09 21:10:58]   Found 40 papers
+[2026-07-09 21:10:58]   
+[2026-07-09 21:10:58]     [french-influence-on-the-english-language] -> DjMrx_HrjKM (French Influence on English Language | Philology Lecture 6) [17,995 views]
+[2026-07-09 21:10:58]   
+[2026-07-09 21:10:58]   Done! Created: 1, Skipped: 39, Failed: 0
+[2026-07-09 21:10:58]   
+[2026-07-09 21:10:58] === STEP 6/8: Building site ===
+[2026-07-09 21:11:01]   Building site...
+[2026-07-09 21:11:01]   Built 85 items in 1.25s
+[2026-07-09 21:11:01]   Output: C:\Users\81\ScholarScript\public
+[2026-07-09 21:11:01]   
+[2026-07-09 21:11:01] === STEP 7/8: Committing and pushing to GitHub ===

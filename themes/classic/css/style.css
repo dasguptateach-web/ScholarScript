@@ -1532,6 +1532,17 @@ body.google-home {
   transition: var(--transition);
 }
 .stat-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.chart-container {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.chart-container canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
 .stat-icon {
   width: 40px; height: 40px; border-radius: 10px;
   background: var(--primary-glow); color: var(--primary);
@@ -1591,6 +1602,7 @@ body.google-home {
   .footer-brand .social-links { justify-content: center; }
 }
 @media (max-width: 480px) {
+  .chart-container { padding: 1rem; }
   .hero h1 { font-size: 1.5rem; }
   .hero-subtitle { font-size: 0.85rem; }
   .stats-grid { grid-template-columns: 1fr; }

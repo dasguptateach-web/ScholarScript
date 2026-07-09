@@ -227,22 +227,22 @@
     {% set total = papers|length + videos|length + creative|length + links|length %}
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-      <div class="stat-number">{{ total }}</div>
+      <div class="stat-number" data-target="{{ total }}">0</div>
       <div class="stat-label">Total Resources</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
-      <div class="stat-number">{{ papers|length }}</div>
+      <div class="stat-number" data-target="{{ papers|length }}">0</div>
       <div class="stat-label">Scholarly Papers</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-video"></i></div>
-      <div class="stat-number">{{ videos|length }}</div>
+      <div class="stat-number" data-target="{{ videos|length }}">0</div>
       <div class="stat-label">Video Lectures</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-pen-fancy"></i></div>
-      <div class="stat-number">{{ creative|length }}</div>
+      <div class="stat-number" data-target="{{ creative|length }}">0</div>
       <div class="stat-label">Creative Works</div>
     </div>
   </div>

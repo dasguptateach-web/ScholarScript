@@ -148,6 +148,40 @@
 
 {% block scripts_extra %}
 <script>
+/* ====== CHART RENDERER ====== */
+(function() {
+  var canvas = document.getElementById('chartLoanwords');
+  if (!canvas || typeof Chart === 'undefined') return;
+  new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: ['Daily Life', 'Verbs', 'Pronouns', 'Adjectives', 'Legal/Admin', 'Place Names', 'Family', 'Nature/Weather'],
+      datasets: [{
+        label: 'Loanword Examples',
+        data: [6, 6, 3, 4, 5, 4, 3, 4],
+        backgroundColor: ['#7c3aed', '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899'],
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: true }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 8,
+          ticks: { stepSize: 2 }
+        }
+      }
+    }
+  });
+})();
+</script>
+<script>
 /* ====== TABLE OF CONTENTS ====== */
 (function(){
   var body = document.getElementById('contentBody');

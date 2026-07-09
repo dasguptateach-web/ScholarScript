@@ -12,7 +12,10 @@ The evolution of the English language is a narrative of continuous transformatio
 
 The most visible aspect of Scandinavian influence is in the English vocabulary. Norse loanwords often replaced or coexisted with native Old English terms. These words were largely everyday, functional terms—a testament to how deeply the two language communities had integrated through trade, farming, governance, and intermarriage.
 
-📊 Chart 1: Scandinavian Loanwords in English by Category
+<div class="chart-container" style="max-width:700px;margin:2rem auto;">
+  <h3 style="text-align:center;">Chart 1: Scandinavian Loanwords in English by Category</h3>
+  <canvas id="chartLoanwords" width="700" height="400"></canvas>
+</div>
 
 Many of these loanwords reflect shared experiences of Norse and Anglo-Saxon people living together. The use of Norse-origin words such as sky (instead of the OE heofon), knife (cnif), or window (literally “wind-eye” from vindauga) demonstrates how Norse terms supplanted or complemented native equivalents through practicality and convenience.
 
@@ -80,13 +83,4 @@ The Scandinavian influence on the English language represents one of the most pr
 
 Modern English owes much of its flexibility, directness, and simplicity to this early contact with Scandinavian settlers. The story of Norse influence is thus not merely one of loanwords, but of linguistic transformation through cultural integration, making it a cornerstone in the history of the English language.
 
-| Category | Examples | Notes |
-|---|---|---|
-| Daily Life | sky, egg, knife, window, husband, leg | Replaced older Anglo-Saxon equivalents |
-| Verbs | take, give, die, cast, call, get | More action-oriented and common verbs |
-| Pronouns | they, them, their | Replaced Old English hie, hira, him |
-| Adjectives | low, ill, weak, wrong | Basic descriptive terms |
-| Legal/Administrative | law, outlaw, moot, thing, husting | Norse legal traditions left a lasting mark |
-| Place Names | Derby, Grimsby, Whitby, Scunthorpe | -by = village, -thorpe = hamlet |
-| Family/Relationship | fellow, husband, sister-in-law | Denotes domestic and social integration |
-| Nature/Weather | sky, rain, fog, frost | Shared northern environment reflected in vocabulary |
+| Category | Examples | Notes | |---|---|---| | Daily Life | sky, egg, knife, window, husband, leg | Replaced older Anglo-Saxon equivalents | | Verbs | take, give, die, cast, call, get | More action-oriented and common verbs | | Pronouns | they, them, their | Replaced Old English hie, hira, him | | Adjectives | low, ill, weak, wrong | Basic descriptive terms | | Legal/Administrative | law, outlaw, moot, thing, husting | Norse legal traditions left a lasting mark | | Place Names | Derby, Grimsby, Whitby, Scunthorpe | -by = village, -thorpe = hamlet | | Family/Relationship | fellow, husband, sister-in-law | Denotes domestic and social integration | | Nature/Weather | sky, rain, fog, frost | Shared northern environment reflected in vocabulary |
