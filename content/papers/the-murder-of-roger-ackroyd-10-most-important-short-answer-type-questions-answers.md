@@ -6,11 +6,6 @@ tags: [sheppard, christie, ackroyd, novel, poirot]
 ---
 The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
 
-| (WBSU English Honours SEM 6 | 5 Marks Each | Exam Ready Answers) |
-|---|---|---|
-
-## With textual quotations, critical opinions, and human-like style
-
 ## 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
 
 Dr. James Sheppard, the narrator of The Murder of Roger Ackroyd, is considered one of the most remarkable narrators in detective fiction because he appears reliable, rational, and observant, yet eventually turns out to be the murderer himself. Throughout the novel, he presents the events of King’s Abbot in a calm and factual tone, encouraging the reader to trust him. Since he is a doctor and a close associate of Poirot, readers naturally assume his honesty. Christie cleverly uses the first-person narrative to manipulate this trust. Sheppard himself says, “I am rather pleased with myself as a writer,” which becomes ironic later, because his writing is actually a carefully designed confession.
