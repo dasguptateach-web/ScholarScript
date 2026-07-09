@@ -19,7 +19,7 @@
     },
     {
       "id": 2,
-      "question": "The phrase “comedy of humours” is associated with",
+      "question": "The phrase \"comedy of humours\" is associated with",
       "options": [
         "William Congreve",
         "Ben Jonson",
@@ -63,7 +63,7 @@
     },
     {
       "id": 6,
-      "question": "The term “epic theatre” was coined by",
+      "question": "The term \"epic theatre\" was coined by",
       "options": [
         "Antonin Artaud",
         "Augusto Boal",
@@ -96,7 +96,7 @@
     },
     {
       "id": 9,
-      "question": "Shakespeare’s The Tempest is generally classified as a",
+      "question": "Shakespeare's The Tempest is generally classified as a",
       "options": [
         "Tragedy",
         "History",
@@ -107,7 +107,7 @@
     },
     {
       "id": 10,
-      "question": "The protagonist of Marlowe’s Doctor Faustus is a scholar from",
+      "question": "The protagonist of Marlowe's Doctor Faustus is a scholar from",
       "options": [
         "Oxford",
         "Cambridge",
@@ -118,7 +118,7 @@
     },
     {
       "id": 11,
-      "question": "The term “obligatory scene” (scène à faire) is associated with the dramatic theory of",
+      "question": "The term \"obligatory scene\" (scène à faire) is associated with the dramatic theory of",
       "options": [
         "Aristotle",
         "Francis Fergusson",
@@ -140,7 +140,7 @@
     },
     {
       "id": 13,
-      "question": "In Sophocles’ Oedipus Rex, the murder of Laius takes place at",
+      "question": "In Sophocles' Oedipus Rex, the murder of Laius takes place at",
       "options": [
         "Colonus",
         "Thebes",
@@ -151,7 +151,7 @@
     },
     {
       "id": 14,
-      "question": "The term “alienation effect” (Verfremdungseffekt) was introduced to make the audience",
+      "question": "The term \"alienation effect\" (Verfremdungseffekt) was introduced to make the audience",
       "options": [
         "Emotionally identify with characters",
         "Critically distance themselves from the action",
@@ -162,7 +162,7 @@
     },
     {
       "id": 15,
-      "question": "Samuel Beckett’s Waiting for Godot was originally written in",
+      "question": "Samuel Beckett's Waiting for Godot was originally written in",
       "options": [
         "English",
         "German",
@@ -173,7 +173,7 @@
     },
     {
       "id": 16,
-      "question": "The Restoration “she-tragedy” is best represented by",
+      "question": "The Restoration \"she-tragedy\" is best represented by",
       "options": [
         "The Orphan by Thomas Otway",
         "The Mourning Bride by William Congreve",
@@ -217,18 +217,18 @@
     },
     {
       "id": 20,
-      "question": "Eugène Ionesco’s The Chairs is an example of",
+      "question": "Eugène Ionesco's The Chairs is an example of",
       "options": [
         "Epic theatre",
         "Theatre of Cruelty",
         "Absurdist drama",
-        "Problem play\n\nUNIT 2 – POETRY (Questions 21–40)"
+        "Problem play\n\nUNIT 2 - POETRY (Questions 21-40)"
       ],
       "answer": "C"
     },
     {
       "id": 21,
-      "question": "Which poem by T.S. Eliot ends with the line “Not with a bang but a whimper”?",
+      "question": "Which poem by T.S. Eliot ends with the line \"Not with a bang but a whimper\"?",
       "options": [
         "The Love Song of J. Alfred Prufrock",
         "The Waste Land",
@@ -250,7 +250,7 @@
     },
     {
       "id": 23,
-      "question": "The term “negative capability” was coined by",
+      "question": "The term \"negative capability\" was coined by",
       "options": [
         "William Wordsworth",
         "Samuel Taylor Coleridge",
@@ -272,18 +272,18 @@
     },
     {
       "id": 25,
-      "question": "The line “Things fall apart; the centre cannot hold” is from",
+      "question": "The line \"Things fall apart; the centre cannot hold\" is from",
       "options": [
-        "“The Second Coming” by W.B. Yeats",
-        "“The Waste Land” by T.S. Eliot",
-        "“Dover Beach” by Matthew Arnold",
-        "“Lapis Lazuli” by W.B. Yeats"
+        "\"The Second Coming\" by W.B. Yeats",
+        "\"The Waste Land\" by T.S. Eliot",
+        "\"Dover Beach\" by Matthew Arnold",
+        "\"Lapis Lazuli\" by W.B. Yeats"
       ],
       "answer": "A"
     },
     {
       "id": 26,
-      "question": "Walt Whitman’s Leaves of Grass is best known for its use of",
+      "question": "Walt Whitman's Leaves of Grass is best known for its use of",
       "options": [
         "Iambic pentameter",
         "Free verse",
@@ -294,7 +294,7 @@
     },
     {
       "id": 27,
-      "question": "The phrase “dissociation of sensibility” was used to describe the separation of thought and feeling after",
+      "question": "The phrase \"dissociation of sensibility\" was used to describe the separation of thought and feeling after",
       "options": [
         "The Renaissance",
         "The Metaphysical poets",
@@ -327,7 +327,7 @@
     },
     {
       "id": 30,
-      "question": "The term “Chaucerian stanza” is also known as",
+      "question": "The term \"Chaucerian stanza\" is also known as",
       "options": [
         "Spenserian stanza",
         "Rhyme royal",
@@ -340,27 +340,27 @@
       "id": 31,
       "question": "Which of the following poems is NOT by John Donne?",
       "options": [
-        "“The Flea”",
-        "“The Good-Morrow”",
-        "“To His Coy Mistress”",
-        "“A Valediction: Forbidding Mourning”"
+        "\"The Flea\"",
+        "\"The Good-Morrow\"",
+        "\"To His Coy Mistress\"",
+        "\"A Valediction: Forbidding Mourning\""
       ],
       "answer": "C"
     },
     {
       "id": 32,
-      "question": "The line “Stone walls do not a prison make, / Nor iron bars a cage” is from the poem",
+      "question": "The line \"Stone walls do not a prison make, / Nor iron bars a cage\" is from the poem",
       "options": [
-        "“To Althea, from Prison” by Richard Lovelace",
-        "“To Lucasta, Going to the Wars” by Richard Lovelace",
-        "“The Retreat” by Henry Vaughan",
-        "“The Collar” by George Herbert"
+        "\"To Althea, from Prison\" by Richard Lovelace",
+        "\"To Lucasta, Going to the Wars\" by Richard Lovelace",
+        "\"The Retreat\" by Henry Vaughan",
+        "\"The Collar\" by George Herbert"
       ],
       "answer": "A"
     },
     {
       "id": 33,
-      "question": "The Daffodils (“I wandered lonely as a cloud”) was written by",
+      "question": "The Daffodils (\"I wandered lonely as a cloud\") was written by",
       "options": [
         "William Blake",
         "William Wordsworth",
@@ -371,7 +371,7 @@
     },
     {
       "id": 34,
-      "question": "The “Movement” poets of the 1950s included",
+      "question": "The \"Movement\" poets of the 1950s included",
       "options": [
         "W.H. Auden and Louis MacNeice",
         "Philip Larkin and Kingsley Amis",
@@ -382,7 +382,7 @@
     },
     {
       "id": 35,
-      "question": "G.M. Hopkins’s term for the individual essence of a thing is",
+      "question": "G.M. Hopkins's term for the individual essence of a thing is",
       "options": [
         "Sprung rhythm",
         "Inscape",
@@ -393,12 +393,12 @@
     },
     {
       "id": 36,
-      "question": "The line “If winter comes, can spring be far behind?” occurs in",
+      "question": "The line \"If winter comes, can spring be far behind?\" occurs in",
       "options": [
-        "“Ode to the West Wind”",
-        "“Ode to a Nightingale”",
-        "“To Autumn”",
-        "“Adonais”"
+        "\"Ode to the West Wind\"",
+        "\"Ode to a Nightingale\"",
+        "\"To Autumn\"",
+        "\"Adonais\""
       ],
       "answer": "A"
     },
@@ -426,7 +426,7 @@
     },
     {
       "id": 39,
-      "question": "Who among the following Indian English poets wrote “Night of the Scorpion”?",
+      "question": "Who among the following Indian English poets wrote \"Night of the Scorpion\"?",
       "options": [
         "A.K. Ramanujan",
         "Nissim Ezekiel",
@@ -442,16 +442,16 @@
         "Verse drama",
         "Autobiographical epic in blank verse",
         "Sonnet sequence",
-        "Pastoral elegy UNIT 3 – FICTION, SHORT STORY AND GRAPHIC NARRATIVES (Questions 41–60)"
+        "Pastoral elegy UNIT 3 - FICTION, SHORT STORY AND GRAPHIC NARRATIVES (Questions 41-60)"
       ],
       "answer": "B"
     },
     {
       "id": 41,
-      "question": "The novel Midnight’s Children opens with the birth of the protagonist at the exact moment of",
+      "question": "The novel Midnight's Children opens with the birth of the protagonist at the exact moment of",
       "options": [
         "The Quit India Movement",
-        "India’s independence",
+        "India's independence",
         "The assassination of Mahatma Gandhi",
         "The Emergency"
       ],
@@ -459,7 +459,7 @@
     },
     {
       "id": 42,
-      "question": "Joseph Conrad’s Heart of Darkness is primarily set in",
+      "question": "Joseph Conrad's Heart of Darkness is primarily set in",
       "options": [
         "South America",
         "The Caribbean",
@@ -470,7 +470,7 @@
     },
     {
       "id": 43,
-      "question": "The term “stream of consciousness” was first used in a literary context by",
+      "question": "The term \"stream of consciousness\" was first used in a literary context by",
       "options": [
         "Sigmund Freud",
         "William James",
@@ -495,7 +495,7 @@
       "question": "Things Fall Apart by Chinua Achebe is a response to the colonial representation of\n\nAfrica in",
       "options": [
         "Heart of Darkness",
-        "King Solomon’s Mines",
+        "King Solomon's Mines",
         "Burmese Days",
         "The Congo Diary"
       ],
@@ -525,7 +525,7 @@
     },
     {
       "id": 48,
-      "question": "The phrase “magic realism” is often used to describe the work of",
+      "question": "The phrase \"magic realism\" is often used to describe the work of",
       "options": [
         "Charles Dickens",
         "Fyodor Dostoevsky",
@@ -549,10 +549,10 @@
       "id": 50,
       "question": "The novel A Passage to India ends with the question",
       "options": [
-        "“What is truth?”",
-        "“Why can’t we be friends now?”",
-        "“Is it possible?”",
-        "“No, not yet,” and the sky says, “No, not there.”"
+        "\"What is truth?\"",
+        "\"Why can't we be friends now?\"",
+        "\"Is it possible?\"",
+        "\"No, not yet,\" and the sky says, \"No, not there.\""
       ],
       "answer": "D"
     },
@@ -569,7 +569,7 @@
     },
     {
       "id": 52,
-      "question": "The short story “The Gift of the Magi” is by",
+      "question": "The short story \"The Gift of the Magi\" is by",
       "options": [
         "Anton Chekhov",
         "Guy de Maupassant",
@@ -591,7 +591,7 @@
     },
     {
       "id": 54,
-      "question": "The term “Bildungsroman” refers to a novel about",
+      "question": "The term \"Bildungsroman\" refers to a novel about",
       "options": [
         "A family saga",
         "The moral and psychological growth of the protagonist",
@@ -615,10 +615,10 @@
       "id": 56,
       "question": "Pride and Prejudice opens with the sentence",
       "options": [
-        "“All happy families are alike…”",
-        "“It is a truth universally acknowledged…”",
-        "“Call me Ishmael.”",
-        "“Last night I dreamt I went to Manderley again.”"
+        "\"All happy families are alike...\"",
+        "\"It is a truth universally acknowledged...\"",
+        "\"Call me Ishmael.\"",
+        "\"Last night I dreamt I went to Manderley again.\""
       ],
       "answer": "B"
     },
@@ -662,24 +662,24 @@
         "Mulk Raj Anand",
         "Raja Rao",
         "Bhabani Bhattacharya",
-        "Manohar Malgonkar UNIT 4 – NON-FICTIONAL PROSE (Questions 61–80)"
+        "Manohar Malgonkar UNIT 4 - NON-FICTIONAL PROSE (Questions 61-80)"
       ],
       "answer": "A"
     },
     {
       "id": 61,
-      "question": "The essay “Of Studies” opens with the line",
+      "question": "The essay \"Of Studies\" opens with the line",
       "options": [
-        "“Some books are to be tasted, others to be swallowed…”",
-        "“Studies serve for delight, for ornament, and for ability.”",
-        "“Reading maketh a full man…”",
-        "“Histories make men wise…”"
+        "\"Some books are to be tasted, others to be swallowed...\"",
+        "\"Studies serve for delight, for ornament, and for ability.\"",
+        "\"Reading maketh a full man...\"",
+        "\"Histories make men wise...\""
       ],
       "answer": "B"
     },
     {
       "id": 62,
-      "question": "Matthew Arnold’s Culture and Anarchy presents culture as",
+      "question": "Matthew Arnold's Culture and Anarchy presents culture as",
       "options": [
         "Anarchy",
         "The pursuit of perfection",
@@ -712,7 +712,7 @@
     },
     {
       "id": 65,
-      "question": "The essay “The Death of the Moth” is by",
+      "question": "The essay \"The Death of the Moth\" is by",
       "options": [
         "E.M. Forster",
         "Virginia Woolf",
@@ -728,13 +728,13 @@
         "The Battle of the Books",
         "A Tale of a Tub",
         "A Modest Proposal",
-        "Gulliver’s Travels"
+        "Gulliver's Travels"
       ],
       "answer": "D"
     },
     {
       "id": 67,
-      "question": "The phrase “dissociation of sensibility” was first used in an essay on",
+      "question": "The phrase \"dissociation of sensibility\" was first used in an essay on",
       "options": [
         "John Donne",
         "The Metaphysical Poets",
@@ -756,11 +756,11 @@
     },
     {
       "id": 69,
-      "question": "Charles Lamb’s Essays of Elia first appeared in",
+      "question": "Charles Lamb's Essays of Elia first appeared in",
       "options": [
         "The Examiner",
         "The London Magazine",
-        "Blackwood’s Magazine",
+        "Blackwood's Magazine",
         "The Tatler"
       ],
       "answer": "B"
@@ -778,7 +778,7 @@
     },
     {
       "id": 71,
-      "question": "Dr. Johnson’s Lives of the Poets is best described as",
+      "question": "Dr. Johnson's Lives of the Poets is best described as",
       "options": [
         "A collection of critical biographies",
         "A dictionary of literary terms",
@@ -789,7 +789,7 @@
     },
     {
       "id": 72,
-      "question": "Who wrote the essay “The Philosophy of Composition”, explaining the method of writing “The Raven”?",
+      "question": "Who wrote the essay \"The Philosophy of Composition\", explaining the method of writing \"The Raven\"?",
       "options": [
         "Ralph Waldo Emerson",
         "Henry Wadsworth Longfellow",
@@ -800,7 +800,7 @@
     },
     {
       "id": 73,
-      "question": "Areopagitica is Milton’s prose work advocating",
+      "question": "Areopagitica is Milton's prose work advocating",
       "options": [
         "The execution of Charles I",
         "Freedom of the press",
@@ -811,7 +811,7 @@
     },
     {
       "id": 74,
-      "question": "The phrase “The greatest happiness of the greatest number” is associated with",
+      "question": "The phrase \"The greatest happiness of the greatest number\" is associated with",
       "options": [
         "John Stuart Mill",
         "Jeremy Bentham",
@@ -833,7 +833,7 @@
     },
     {
       "id": 76,
-      "question": "Sir Thomas Browne’s Religio Medici is a",
+      "question": "Sir Thomas Browne's Religio Medici is a",
       "options": [
         "Scientific treatise",
         "Religious confession and meditation",
@@ -844,7 +844,7 @@
     },
     {
       "id": 77,
-      "question": "The essay “Shooting an Elephant” by George Orwell is set in",
+      "question": "The essay \"Shooting an Elephant\" by George Orwell is set in",
       "options": [
         "Spain",
         "India",
@@ -882,13 +882,13 @@
         "Communal farming",
         "Urban solitude",
         "Simple living in natural surroundings",
-        "Political activism UNIT 5 – LANGUAGE: BASIC CONCEPTS, THEORIES, AND\n\nPEDAGOGY (Questions 81–100)"
+        "Political activism UNIT 5 - LANGUAGE: BASIC CONCEPTS, THEORIES, AND\n\nPEDAGOGY (Questions 81-100)"
       ],
       "answer": "C"
     },
     {
       "id": 81,
-      "question": "The International Phonetic Alphabet (IPA) representation of the first sound in the word “church” is",
+      "question": "The International Phonetic Alphabet (IPA) representation of the first sound in the word \"church\" is",
       "options": [
         "/tʃ/",
         "/ʃ/",
@@ -910,7 +910,7 @@
     },
     {
       "id": 83,
-      "question": "The term “morpheme” is defined as",
+      "question": "The term \"morpheme\" is defined as",
       "options": [
         "The smallest unit of sound",
         "The smallest meaningful unit of language",
@@ -923,16 +923,16 @@
       "id": 84,
       "question": "The Great Vowel Shift took place approximately between",
       "options": [
-        "1000–1200",
-        "1350–1600",
-        "1700–1800",
-        "1900–1950"
+        "1000-1200",
+        "1350-1600",
+        "1700-1800",
+        "1900-1950"
       ],
       "answer": "B"
     },
     {
       "id": 85,
-      "question": "Noam Chomsky’s distinction between “competence” and “performance” is analogous to Saussure’s",
+      "question": "Noam Chomsky's distinction between \"competence\" and \"performance\" is analogous to Saussure's",
       "options": [
         "Signifier and signified",
         "Paradigmatic and syntagmatic",
@@ -943,7 +943,7 @@
     },
     {
       "id": 86,
-      "question": "The study of meaning in context, including speaker’s intention, is called",
+      "question": "The study of meaning in context, including speaker's intention, is called",
       "options": [
         "Semantics",
         "Syntax",
@@ -987,7 +987,7 @@
     },
     {
       "id": 90,
-      "question": "The term “register” in sociolinguistics refers to",
+      "question": "The term \"register\" in sociolinguistics refers to",
       "options": [
         "The total vocabulary of a speaker",
         "A variety of language used in a specific social setting",
@@ -1009,7 +1009,7 @@
     },
     {
       "id": 92,
-      "question": "A child says “goed” instead of “went”. This is an example of",
+      "question": "A child says \"goed\" instead of \"went\". This is an example of",
       "options": [
         "Code-switching",
         "Overgeneralization",
@@ -1020,7 +1020,7 @@
     },
     {
       "id": 93,
-      "question": "The phoneme /ŋ/ as in “sing” is classified as a",
+      "question": "The phoneme /ŋ/ as in \"sing\" is classified as a",
       "options": [
         "Bilabial nasal",
         "Alveolar nasal",
@@ -1042,7 +1042,7 @@
     },
     {
       "id": 95,
-      "question": "The plural morpheme “-s” in “cats”, “dogs”, and “horses” is an example of",
+      "question": "The plural morpheme \"-s\" in \"cats\", \"dogs\", and \"horses\" is an example of",
       "options": [
         "Free morpheme",
         "Allomorph",
@@ -1053,7 +1053,7 @@
     },
     {
       "id": 96,
-      "question": "Ferdinand de Saussure’s model of the sign consists of",
+      "question": "Ferdinand de Saussure's model of the sign consists of",
       "options": [
         "Symbol and referent",
         "Signifier and signified",
@@ -1102,13 +1102,13 @@
         "Consonants and vowels",
         "Voicing and aspiration",
         "Stress, pitch, and intonation",
-        "Place and manner of articulation UNIT 6 – ENGLISH IN INDIA: HISTORY, EVOLUTION, AND\n\nFUTURES (Questions 101–120)"
+        "Place and manner of articulation UNIT 6 - ENGLISH IN INDIA: HISTORY, EVOLUTION, AND\n\nFUTURES (Questions 101-120)"
       ],
       "answer": "C"
     },
     {
       "id": 101,
-      "question": "Macaulay’s Minute on English education was presented in the year",
+      "question": "Macaulay's Minute on English education was presented in the year",
       "options": [
         "1813",
         "1835",
@@ -1119,7 +1119,7 @@
     },
     {
       "id": 102,
-      "question": "The first Indian novel in English, Rajmohan’s Wife, was written by",
+      "question": "The first Indian novel in English, Rajmohan's Wife, was written by",
       "options": [
         "Rabindranath Tagore",
         "Bankim Chandra Chatterjee",
@@ -1174,7 +1174,7 @@
     },
     {
       "id": 107,
-      "question": "The term “Indian English” is used to describe",
+      "question": "The term \"Indian English\" is used to describe",
       "options": [
         "English spoken only by Indians in India",
         "English used as a native language by Indians",
@@ -1200,7 +1200,7 @@
       "options": [
         "Pulitzer Prize",
         "Man Booker Prize",
-        "Commonwealth Writers’ Prize",
+        "Commonwealth Writers' Prize",
         "Sahitya Akademi Award"
       ],
       "answer": "B"
@@ -1212,13 +1212,13 @@
         "A.K. Ramanujan",
         "Arshia Sattar",
         "P. Lal",
-        "Tulsidas (not translation) – (Correct answer: P. Lal or F.S. Growse) – I’ll pick F.S.\n\nGrowse. Actually, a well-known English translation of Ramcharitmanas is by Growse. I’ll put F.S. Growse. But typical UGC NET: they might ask “The English translation of Tulsidas’s\n\nRamcharitmanas by F.S. Growse…” I’ll set: Who translated Tulsidas’s Ramcharitmanas into English? (A) A.K. Ramanujan (B) F.S. Growse (C) R.K. Narayan (D) C. Rajagopalachari\n\nAnswer: (B). Good."
+        "Tulsidas (not translation) - (Correct answer: P. Lal or F.S. Growse) - I'll pick F.S.\n\nGrowse. Actually, a well-known English translation of Ramcharitmanas is by Growse. I'll put F.S. Growse. But typical UGC NET: they might ask \"The English translation of Tulsidas's\n\nRamcharitmanas by F.S. Growse...\" I'll set: Who translated Tulsidas's Ramcharitmanas into English? (A) A.K. Ramanujan (B) F.S. Growse (C) R.K. Narayan (D) C. Rajagopalachari\n\nAnswer: (B). Good."
       ],
       "answer": "B"
     },
     {
       "id": 111,
-      "question": "The concept of “Bhasha” (vernacular) literatures versus English writing was famously debated by",
+      "question": "The concept of \"Bhasha\" (vernacular) literatures versus English writing was famously debated by",
       "options": [
         "Salman Rushdie and Arundhati Roy",
         "Namvar Singh and Harish Trivedi",
@@ -1262,7 +1262,7 @@
     },
     {
       "id": 115,
-      "question": "In postcolonial theory, “mimicry” as a concept is associated with",
+      "question": "In postcolonial theory, \"mimicry\" as a concept is associated with",
       "options": [
         "Edward Said",
         "Gayatri Chakravorty Spivak",
@@ -1284,18 +1284,18 @@
     },
     {
       "id": 117,
-      "question": "The phrase “chutnification of history” appears in",
+      "question": "The phrase \"chutnification of history\" appears in",
       "options": [
         "The Satanic Verses",
-        "Midnight’s Children",
+        "Midnight's Children",
         "Shame",
-        "The Moor’s Last Sigh"
+        "The Moor's Last Sigh"
       ],
       "answer": "B"
     },
     {
       "id": 118,
-      "question": "Who wrote An Introduction, the famous poem that begins “I am Indian, very brown, born in Malabar…”?",
+      "question": "Who wrote An Introduction, the famous poem that begins \"I am Indian, very brown, born in Malabar...\"?",
       "options": [
         "Kamala Das",
         "Meena Alexander",
@@ -1322,7 +1322,7 @@
         "The Kerala backwaters",
         "The Sundarbans",
         "The Sunderbans (Sundarbans is correct)",
-        "Chilika Lake UNIT 7 – CULTURAL STUDIES (Questions 121–140)"
+        "Chilika Lake UNIT 7 - CULTURAL STUDIES (Questions 121-140)"
       ],
       "answer": "B"
     },
@@ -1339,7 +1339,7 @@
     },
     {
       "id": 122,
-      "question": "The term “cultural materialism” in literary studies is associated with",
+      "question": "The term \"cultural materialism\" in literary studies is associated with",
       "options": [
         "Raymond Williams and Alan Sinfield",
         "Stephen Greenblatt",
@@ -1350,7 +1350,7 @@
     },
     {
       "id": 123,
-      "question": "The concept of “hegemony” was developed by",
+      "question": "The concept of \"hegemony\" was developed by",
       "options": [
         "Karl Marx",
         "Antonio Gramsci",
@@ -1387,14 +1387,14 @@
       "options": [
         "Accurate and objective",
         "A complex mix of curiosity and admiration only",
-        "A discourse of power that constructs the “Orient” as inferior",
+        "A discourse of power that constructs the \"Orient\" as inferior",
         "Based purely on fictional travelogues"
       ],
       "answer": "C"
     },
     {
       "id": 127,
-      "question": "The phrase “the personal is political” is a central slogan of",
+      "question": "The phrase \"the personal is political\" is a central slogan of",
       "options": [
         "Modernist poetry",
         "Second-wave feminism",
@@ -1416,7 +1416,7 @@
     },
     {
       "id": 129,
-      "question": "In visual culture, Laura Mulvey’s concept of the “male gaze” refers to",
+      "question": "In visual culture, Laura Mulvey's concept of the \"male gaze\" refers to",
       "options": [
         "The way men look at art",
         "The depiction of the world from a masculine point of view in film",
@@ -1432,13 +1432,13 @@
         "Aimé Césaire",
         "Frantz Fanon",
         "Albert Memmi",
-        "Ngũgĩ wa Thiong’o"
+        "Ngũgĩ wa Thiong'o"
       ],
       "answer": "B"
     },
     {
       "id": 131,
-      "question": "Stuart Hall’s model of communication, focusing on encoding and decoding, is a foundational text of",
+      "question": "Stuart Hall's model of communication, focusing on encoding and decoding, is a foundational text of",
       "options": [
         "Structuralist linguistics",
         "Reception theory and media studies",
@@ -1449,7 +1449,7 @@
     },
     {
       "id": 132,
-      "question": "“Third space” is a key concept in postcolonial theory proposed by",
+      "question": "\"Third space\" is a key concept in postcolonial theory proposed by",
       "options": [
         "Gayatri Chakravorty Spivak",
         "Homi K. Bhabha",
@@ -1460,7 +1460,7 @@
     },
     {
       "id": 133,
-      "question": "The term “queer theory” developed largely from the work of",
+      "question": "The term \"queer theory\" developed largely from the work of",
       "options": [
         "Sigmund Freud and Jacques Lacan",
         "Michel Foucault and Eve Kosofsky Sedgwick",
@@ -1471,7 +1471,7 @@
     },
     {
       "id": 134,
-      "question": "The “culture industry” thesis, which argues that mass culture is produced like a factory commodity, was advanced by",
+      "question": "The \"culture industry\" thesis, which argues that mass culture is produced like a factory commodity, was advanced by",
       "options": [
         "Walter Benjamin",
         "Theodor Adorno and Max Horkheimer",
@@ -1493,7 +1493,7 @@
     },
     {
       "id": 136,
-      "question": "The concept of “simulacrum” (a copy without an original) is central to the work of",
+      "question": "The concept of \"simulacrum\" (a copy without an original) is central to the work of",
       "options": [
         "Michel Foucault",
         "Jean Baudrillard",
@@ -1515,7 +1515,7 @@
     },
     {
       "id": 138,
-      "question": "The term “ecocriticism” primarily studies the relationship between",
+      "question": "The term \"ecocriticism\" primarily studies the relationship between",
       "options": [
         "Psychology and literature",
         "Literature and the physical environment",
@@ -1537,18 +1537,18 @@
     },
     {
       "id": 140,
-      "question": "The concept of “hybridity” in postcolonial theory challenges the notion of",
+      "question": "The concept of \"hybridity\" in postcolonial theory challenges the notion of",
       "options": [
         "Pure, essential cultural identities",
         "Economic globalization",
         "The nation-state only",
-        "Marxist class struggle UNIT 8 – LITERARY CRITICISM (Questions 141–160)"
+        "Marxist class struggle UNIT 8 - LITERARY CRITICISM (Questions 141-160)"
       ],
       "answer": "A"
     },
     {
       "id": 141,
-      "question": "Aristotle defines tragedy as “an imitation of an action that is serious, complete, and of a certain magnitude… effecting the purgation of these emotions,” referring to",
+      "question": "Aristotle defines tragedy as \"an imitation of an action that is serious, complete, and of a certain magnitude... effecting the purgation of these emotions,\" referring to",
       "options": [
         "Pity and anger",
         "Pity and fear",
@@ -1559,18 +1559,18 @@
     },
     {
       "id": 142,
-      "question": "Philip Sidney’s An Apology for Poetry was written in response to",
+      "question": "Philip Sidney's An Apology for Poetry was written in response to",
       "options": [
-        "Plato’s banishment of poets from the Republic",
-        "Aristotle’s Poetics",
-        "Stephen Gosson’s The School of Abuse",
-        "Horace’s Ars Poetica"
+        "Plato's banishment of poets from the Republic",
+        "Aristotle's Poetics",
+        "Stephen Gosson's The School of Abuse",
+        "Horace's Ars Poetica"
       ],
       "answer": "C"
     },
     {
       "id": 143,
-      "question": "Dr. Johnson’s Preface to Shakespeare defends Shakespeare’s violation of",
+      "question": "Dr. Johnson's Preface to Shakespeare defends Shakespeare's violation of",
       "options": [
         "The three unities",
         "Poetic justice",
@@ -1581,7 +1581,7 @@
     },
     {
       "id": 144,
-      "question": "Coleridge’s Biographia Literaria distinguishes between",
+      "question": "Coleridge's Biographia Literaria distinguishes between",
       "options": [
         "Metaphor and simile",
         "Imagination and fancy",
@@ -1592,7 +1592,7 @@
     },
     {
       "id": 145,
-      "question": "Who coined the phrase “the willing suspension of disbelief”?",
+      "question": "Who coined the phrase \"the willing suspension of disbelief\"?",
       "options": [
         "William Wordsworth",
         "Samuel Taylor Coleridge",
@@ -1603,7 +1603,7 @@
     },
     {
       "id": 146,
-      "question": "Matthew Arnold’s critical method is often described as",
+      "question": "Matthew Arnold's critical method is often described as",
       "options": [
         "Touchstone method",
         "Psychological criticism",
@@ -1614,7 +1614,7 @@
     },
     {
       "id": 147,
-      "question": "T.S. Eliot’s concept of “objective correlative” means",
+      "question": "T.S. Eliot's concept of \"objective correlative\" means",
       "options": [
         "A set of objects, a situation, a chain of events which shall be the formula of a particular emotion",
         "The biography of the poet hidden in the poem",
@@ -1625,11 +1625,11 @@
     },
     {
       "id": 148,
-      "question": "I.A. Richards’ Practical Criticism is based on an experiment where students analyzed",
+      "question": "I.A. Richards' Practical Criticism is based on an experiment where students analyzed",
       "options": [
         "Classic Greek texts",
-        "Poems without knowing the author’s name",
-        "Shakespeare’s sonnets",
+        "Poems without knowing the author's name",
+        "Shakespeare's sonnets",
         "Contemporary novels"
       ],
       "answer": "B"
@@ -1647,18 +1647,18 @@
     },
     {
       "id": 150,
-      "question": "Northrop Frye’s Anatomy of Criticism classifies literature according to",
+      "question": "Northrop Frye's Anatomy of Criticism classifies literature according to",
       "options": [
         "Historical periods",
         "Archetypal myths and modes",
         "Linguistic structures",
-        "Author’s gender"
+        "Author's gender"
       ],
       "answer": "B"
     },
     {
       "id": 151,
-      "question": "The Russian Formalist concept of “defamiliarization” (ostranenie) was developed by",
+      "question": "The Russian Formalist concept of \"defamiliarization\" (ostranenie) was developed by",
       "options": [
         "Mikhail Bakhtin",
         "Viktor Shklovsky",
@@ -1669,7 +1669,7 @@
     },
     {
       "id": 152,
-      "question": "Which critic famously described poetry as “emotion recollected in tranquillity”?",
+      "question": "Which critic famously described poetry as \"emotion recollected in tranquillity\"?",
       "options": [
         "Matthew Arnold",
         "William Wordsworth",
@@ -1680,7 +1680,7 @@
     },
     {
       "id": 153,
-      "question": "The term “catharsis” in the Poetics is best understood as",
+      "question": "The term \"catharsis\" in the Poetics is best understood as",
       "options": [
         "The fall of the hero",
         "The purification or purgation of emotions",
@@ -1713,10 +1713,10 @@
     },
     {
       "id": 156,
-      "question": "The “heresy of paraphrase” refers to the New Critical view that",
+      "question": "The \"heresy of paraphrase\" refers to the New Critical view that",
       "options": [
         "A poem can be fully understood through its paraphrase",
-        "A poem’s meaning cannot be reduced to a prose paraphrase",
+        "A poem's meaning cannot be reduced to a prose paraphrase",
         "Paraphrase is the only legitimate form of criticism",
         "Poems should be translated into other languages"
       ],
@@ -1724,7 +1724,7 @@
     },
     {
       "id": 157,
-      "question": "Horace’s dictum “dulce et utile” suggests that poetry should",
+      "question": "Horace's dictum \"dulce et utile\" suggests that poetry should",
       "options": [
         "Delight and instruct",
         "Be simple and direct",
@@ -1735,7 +1735,7 @@
     },
     {
       "id": 158,
-      "question": "F.R. Leavis’s The Great Tradition argues that the great English novelists are",
+      "question": "F.R. Leavis's The Great Tradition argues that the great English novelists are",
       "options": [
         "Austen, George Eliot, James, Conrad",
         "Dickens, Thackeray, Hardy, Lawrence",
@@ -1746,7 +1746,7 @@
     },
     {
       "id": 159,
-      "question": "The concept of “architextuality” (the generic expectations a text evokes) is associated with",
+      "question": "The concept of \"architextuality\" (the generic expectations a text evokes) is associated with",
       "options": [
         "Roland Barthes",
         "Gérard Genette",
@@ -1757,18 +1757,18 @@
     },
     {
       "id": 160,
-      "question": "Longinus’ On the Sublime identifies five sources of sublimity, the most important being",
+      "question": "Longinus' On the Sublime identifies five sources of sublimity, the most important being",
       "options": [
         "Grandiose diction",
         "Dignified and elevated composition",
         "Noble diction and elevated word arrangement",
-        "The power of forming great conceptions\n\nUNIT 9 – LITERARY THEORY post-World War II (Questions 161– 180)"
+        "The power of forming great conceptions\n\nUNIT 9 - LITERARY THEORY post-World War II (Questions 161- 180)"
       ],
       "answer": "D"
     },
     {
       "id": 161,
-      "question": "Jacques Derrida’s term “différance” implies",
+      "question": "Jacques Derrida's term \"différance\" implies",
       "options": [
         "A fixed structural difference",
         "The endless deferral of meaning and the play of differences",
@@ -1790,7 +1790,7 @@
     },
     {
       "id": 163,
-      "question": "The term “écriture féminine” is closely associated with",
+      "question": "The term \"écriture féminine\" is closely associated with",
       "options": [
         "Simone de Beauvoir",
         "Hélène Cixous",
@@ -1801,7 +1801,7 @@
     },
     {
       "id": 164,
-      "question": "Louis Althusser’s concept of “Ideological State Apparatuses” includes all except",
+      "question": "Louis Althusser's concept of \"Ideological State Apparatuses\" includes all except",
       "options": [
         "The family",
         "The education system",
@@ -1823,7 +1823,7 @@
     },
     {
       "id": 166,
-      "question": "The concept of the “carnivalesque”, emphasizing subversion of authority through laughter and the body, is the work of",
+      "question": "The concept of the \"carnivalesque\", emphasizing subversion of authority through laughter and the body, is the work of",
       "options": [
         "Mikhail Bakhtin",
         "Roland Barthes",
@@ -1834,7 +1834,7 @@
     },
     {
       "id": 167,
-      "question": "In psychoanalytic theory, the “mirror stage” occurs when an infant",
+      "question": "In psychoanalytic theory, the \"mirror stage\" occurs when an infant",
       "options": [
         "Recognises itself in a mirror, leading to the formation of the ego",
         "Enters the Oedipal complex",
@@ -1845,10 +1845,10 @@
     },
     {
       "id": 168,
-      "question": "Elaine Showalter’s “gynocriticism” focuses on",
+      "question": "Elaine Showalter's \"gynocriticism\" focuses on",
       "options": [
         "The study of women as readers of male texts",
-        "The construction of a female framework for the analysis of women’s literature",
+        "The construction of a female framework for the analysis of women's literature",
         "Deconstructing female characters in novels",
         "Psychoanalyzing female authors"
       ],
@@ -1878,7 +1878,7 @@
     },
     {
       "id": 171,
-      "question": "The phrase “the anxiety of influence” was coined by",
+      "question": "The phrase \"the anxiety of influence\" was coined by",
       "options": [
         "Northrop Frye",
         "Harold Bloom",
@@ -1889,9 +1889,9 @@
     },
     {
       "id": 172,
-      "question": "Wolfgang Iser’s theory of reading emphasizes",
+      "question": "Wolfgang Iser's theory of reading emphasizes",
       "options": [
-        "The author’s intention",
+        "The author's intention",
         "The historical context",
         "The implied reader and gaps in the text",
         "The psychological state of the author"
@@ -1911,7 +1911,7 @@
     },
     {
       "id": 174,
-      "question": "Which theorist introduced the concept of the “horizon of expectation” in reader response criticism?",
+      "question": "Which theorist introduced the concept of the \"horizon of expectation\" in reader response criticism?",
       "options": [
         "Wolfgang Iser",
         "Hans Robert Jauss",
@@ -1933,7 +1933,7 @@
     },
     {
       "id": 176,
-      "question": "The essay “Visual Pleasure and Narrative Cinema” introduced the concept of the male gaze. The author is",
+      "question": "The essay \"Visual Pleasure and Narrative Cinema\" introduced the concept of the male gaze. The author is",
       "options": [
         "Judith Butler",
         "Laura Mulvey",
@@ -1944,7 +1944,7 @@
     },
     {
       "id": 177,
-      "question": "Postmodernism is often characterized by “incredulity toward metanarratives,” a phrase coined by",
+      "question": "Postmodernism is often characterized by \"incredulity toward metanarratives,\" a phrase coined by",
       "options": [
         "Michel Foucault",
         "Jean Baudrillard",
@@ -1955,7 +1955,7 @@
     },
     {
       "id": 178,
-      "question": "The term “rhizome” as a metaphor for a non-hierarchical, networked structure of knowledge comes from",
+      "question": "The term \"rhizome\" as a metaphor for a non-hierarchical, networked structure of knowledge comes from",
       "options": [
         "Michel Foucault and Roland Barthes",
         "Gilles Deleuze and Félix Guattari",
@@ -1966,7 +1966,7 @@
     },
     {
       "id": 179,
-      "question": "A Room of One’s Own by Virginia Woolf argues that a woman needs money and a room of her own in order to",
+      "question": "A Room of One's Own by Virginia Woolf argues that a woman needs money and a room of her own in order to",
       "options": [
         "Write fiction",
         "Enter politics",
@@ -1982,7 +1982,7 @@
         "Vandana Shiva",
         "Arundhati Roy",
         "Gayatri Spivak",
-        "Chandra Talpade Mohanty UNIT 10 – RESEARCH METHODS AND MATERIALS IN ENGLISH (Questions 181–200)"
+        "Chandra Talpade Mohanty UNIT 10 - RESEARCH METHODS AND MATERIALS IN ENGLISH (Questions 181-200)"
       ],
       "answer": "A"
     },
@@ -2010,7 +2010,7 @@
     },
     {
       "id": 183,
-      "question": "Which of the following is a primary source for studying Shakespeare’s Hamlet?",
+      "question": "Which of the following is a primary source for studying Shakespeare's Hamlet?",
       "options": [
         "A critical essay on Hamlet from 1990",
         "The First Folio edition of Hamlet",
@@ -2021,10 +2021,10 @@
     },
     {
       "id": 184,
-      "question": "The term “plagiarism” refers to",
+      "question": "The term \"plagiarism\" refers to",
       "options": [
         "Paraphrasing a source with proper citation",
-        "Using someone else’s work or ideas without proper acknowledgment",
+        "Using someone else's work or ideas without proper acknowledgment",
         "Summarizing a text with in-text references",
         "Quoting a source with quotation marks and citation"
       ],
@@ -2057,7 +2057,7 @@
       "question": "A literature review in a thesis primarily serves to",
       "options": [
         "Repeat previous research without change",
-        "Display the author’s personal opinions",
+        "Display the author's personal opinions",
         "Situate the research within existing scholarship and identify gaps",
         "List all possible sources on a topic"
       ],
@@ -2113,7 +2113,7 @@
       "options": [
         "In the order they appear in the paper",
         "Chronologically by date of publication",
-        "Alphabetically by the author’s last name",
+        "Alphabetically by the author's last name",
         "By the title of the work"
       ],
       "answer": "C"
@@ -2136,7 +2136,7 @@
         "Corpus linguistics",
         "Quantitative linguistics",
         "Computational linguistics",
-        "All of these can be involved, but typically quantitative corpus linguistics – I’ll set (D) All of these, but they might ask for the term “quantitative linguistics” or “corpus linguistics”. A common UGC NET question: “The use of statistical and computational methods to study language is called:” (A) Corpus Linguistics (B) Computational Linguistics (C) Quantitative Linguistics (D) All of these. I’ll make (D) All of these. Actually, more precise: “Quantitative linguistics” directly refers to using statistical methods. But “corpus linguistics” often uses quantitative methods. So I’ll phrase: “The branch of linguistics that employs large electronic collections of texts and statistical analysis is known as:” Answer: Corpus linguistics. So I’ll ask: The branch of linguistics that employs large electronic collections of texts and quantitative analysis is known as: (A) Comparative linguistics (B) Corpus linguistics (C) Sociolinguistics (D) Psycholinguistics\n\nAnswer: (B). That's better."
+        "All of these can be involved, but typically quantitative corpus linguistics - I'll set (D) All of these, but they might ask for the term \"quantitative linguistics\" or \"corpus linguistics\". A common UGC NET question: \"The use of statistical and computational methods to study language is called:\" (A) Corpus Linguistics (B) Computational Linguistics (C) Quantitative Linguistics (D) All of these. I'll make (D) All of these. Actually, more precise: \"Quantitative linguistics\" directly refers to using statistical methods. But \"corpus linguistics\" often uses quantitative methods. So I'll phrase: \"The branch of linguistics that employs large electronic collections of texts and statistical analysis is known as:\" Answer: Corpus linguistics. So I'll ask: The branch of linguistics that employs large electronic collections of texts and quantitative analysis is known as: (A) Comparative linguistics (B) Corpus linguistics (C) Sociolinguistics (D) Psycholinguistics\n\nAnswer: (B). That's better."
       ],
       "answer": null
     },
@@ -2153,7 +2153,7 @@
     },
     {
       "id": 196,
-      "question": "The “theoretical framework” of a study refers to",
+      "question": "The \"theoretical framework\" of a study refers to",
       "options": [
         "The personal opinion of the researcher",
         "The set of concepts and theories that guide the research",
@@ -2166,7 +2166,7 @@
       "id": 197,
       "question": "In humanities research, peer review means that before publication",
       "options": [
-        "The author’s friends read the paper",
+        "The author's friends read the paper",
         "The paper is reviewed by other experts in the field",
         "The public comments on a draft",
         "The author presents it at a conference"
@@ -2175,7 +2175,7 @@
     },
     {
       "id": 198,
-      "question": "The term “archive” in literary research can refer to",
+      "question": "The term \"archive\" in literary research can refer to",
       "options": [
         "Only physical repositories of manuscripts",
         "Any collection of historical records, documents, or digital repositories",
@@ -2186,7 +2186,7 @@
     },
     {
       "id": 199,
-      "question": "The function of a “research proposal” is to",
+      "question": "The function of a \"research proposal\" is to",
       "options": [
         "Serve as the final dissertation",
         "Outline the objectives, methodology, and significance of a planned study",

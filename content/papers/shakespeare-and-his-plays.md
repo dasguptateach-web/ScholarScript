@@ -19,7 +19,7 @@ The chronology of Shakespeare's plays remains a matter of some scholarly debate.
 
 Further complicating the matter is the fact that many of Shakespeare's plays exist in multiple editions, making it even more difficult to determine when the authoritative versions were completed. For example, there are several surviving versions of "Hamlet," three of which were printed in the First Quarto, Second Quarto, and First Folio, respectively. The version printed in the Second Quarto is the longest version of "Hamlet," though it does not include over 50 lines that appear in the First Folio version. Modern scholarly editions of the play contain material from multiple sources.
 
-The exact order of the composition and performances of Shakespeare’s plays is difficult to prove—and therefore often disputed. The dates listed below are approximate and are based on the general consensus of when the plays were first performed:
+The exact order of the composition and performances of Shakespeare's plays is difficult to prove--and therefore often disputed. The dates listed below are approximate and are based on the general consensus of when the plays were first performed:
 
 "Henry VI Part I" (1589-1590)
 
@@ -37,13 +37,13 @@ The exact order of the composition and performances of Shakespeare’s plays i
 
 "The Two Gentlemen of Verona" (1594-1595)
 
-"Love’s Labour’s Lost" (1594-1595)
+"Love's Labour's Lost" (1594-1595)
 
 "Romeo and Juliet" (1594-1595)
 
 "Richard II" (1595-1596)
 
-"A Midsummer Night’s Dream" (1595-1596)
+"A Midsummer Night's Dream" (1595-1596)
 
 "King John" (1596-1597)
 
@@ -69,7 +69,7 @@ The exact order of the composition and performances of Shakespeare’s plays i
 
 "Troilus and Cressida" (1601-1602)
 
-"All’s Well That Ends Well" (1602-1603)
+"All's Well That Ends Well" (1602-1603)
 
 "Measure for Measure" (1604-1605)
 
@@ -89,7 +89,7 @@ The exact order of the composition and performances of Shakespeare’s plays i
 
 "Cymbeline" (1609-1610)
 
-35"The Winter’s Tale" (1610-1611)
+35"The Winter's Tale" (1610-1611)
 
 36"The Tempest" (1611-1612)
 
@@ -99,7 +99,7 @@ The exact order of the composition and performances of Shakespeare’s plays i
 
 Authorship Controversy
 
-Another controversial question regarding Shakespeare's bibliography is whether the Bard actually authored all of the plays assigned to his name. In the 19th century, a number of literary historians popularized the so-called anti-Stratfordian theory, which held that Shakespeare's plays were actually the work of Francis Bacon, Christopher Marlowe, or possibly a group of playwrights. Subsequent scholars, however, have dismissed this theory, and the current consensus is that Shakespeare—the man born in Stratford-upon-Avon in 1564—did in fact write all of the plays that bear his name.
+Another controversial question regarding Shakespeare's bibliography is whether the Bard actually authored all of the plays assigned to his name. In the 19th century, a number of literary historians popularized the so-called anti-Stratfordian theory, which held that Shakespeare's plays were actually the work of Francis Bacon, Christopher Marlowe, or possibly a group of playwrights. Subsequent scholars, however, have dismissed this theory, and the current consensus is that Shakespeare--the man born in Stratford-upon-Avon in 1564--did in fact write all of the plays that bear his name.
 
 Nevertheless, there is strong evidence that some of Shakespeare's plays were collaborations. In 2016, a group of scholars performed an analysis of all three parts of "Henry VI" and came to the conclusion that the play includes the work of Christopher Marlowe. Future editions of the play published by Oxford University Press will credit Marlowe as co-author.
 
@@ -107,7 +107,7 @@ Another play, "The Two Noble Kinsmen," was co-written with John Fletcher, who al
 
 Complete List of Shakespeare's Characters
 
-There are many lists out there that purport to be "complete," but none of them have done what we've done—actually compile each and every character, including every servant, messenger, page, and every follower, into the most complete list ever created. Sort the character list below by name, play or number of lines.
+There are many lists out there that purport to be "complete," but none of them have done what we've done--actually compile each and every character, including every servant, messenger, page, and every follower, into the most complete list ever created. Sort the character list below by name, play or number of lines.
 
 ## Complete List of Shakespeare's Characters
 
@@ -2879,7 +2879,7 @@ There are many lists out there that purport to be "complete," but none of them h
 
 | Messenger (MESS.) | 8 | The Taming of the Shrew |
 
-| Baptista’s Servant (BAP. SERV.) | 0 | The Taming of the Shrew |
+| Baptista's Servant (BAP. SERV.) | 0 | The Taming of the Shrew |
 
 | Officer (OFF.) | 0 | The Taming of the Shrew |
 

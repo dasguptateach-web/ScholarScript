@@ -10,7 +10,7 @@ summary: "Exploring representations of the Victorian city in the poetry of Tenny
 
 ## Introduction
 
-The Victorian city was a space of contradiction—both a symbol of progress and a site of profound alienation.
+The Victorian city was a space of contradiction--both a symbol of progress and a site of profound alienation.
 This paper examines how three major Victorian poets grappled with urban modernity.
 
 ## Tennyson's London
@@ -26,4 +26,5 @@ as a metaphor for a receding spiritual certainty in an increasingly mechanised w
 ## Browning's Dramatic Monologues
 
 Robert Browning's dramatic monologues give voice to the urban experience through the lens of individual
-psychology, revealing the inner lives of city dwellers.
+psychology, revealing the inner lives of city dwellers.
+

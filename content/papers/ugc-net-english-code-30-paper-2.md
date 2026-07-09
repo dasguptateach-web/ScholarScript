@@ -1,12 +1,12 @@
 ---
-title: "Ugc Net English (Code 30) – Paper 2"
+title: "Ugc Net English (Code 30) - Paper 2"
 date: 2026-07-08
 type: paper
 tags: [unit, who, english, term, author]
 ---
-## UGC NET ENGLISH (Code 30) – PAPER 2
+## UGC NET ENGLISH (Code 30) - PAPER 2
 
-Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
 
 **Choose the correct option.**
 
@@ -62,7 +62,7 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ### Unit 2: Poetry
 
-**9.** "The sea is calm tonight. / The tide is full, the moon lies fair" – these are the opening lines of
+**9.** "The sea is calm tonight. / The tide is full, the moon lies fair" - these are the opening lines of
     (A) "The Waste Land"
     (B) "Dover Beach"
     (C) "Ode to a Nightingale"
@@ -169,10 +169,10 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
     (D) "A Dissertation upon Roast Pig"
 
 **26.** Francis Bacon's essay "Of Truth" opens with
-    (A) "What is truth? said jesting Pilate…"
-    (B) "Men fear death as children fear to go in the dark…"
-    (C) "Revenge is a kind of wild justice…"
-    (D) "He that hath wife and children hath given hostages to fortune…"
+    (A) "What is truth? said jesting Pilate..."
+    (B) "Men fear death as children fear to go in the dark..."
+    (C) "Revenge is a kind of wild justice..."
+    (D) "He that hath wife and children hath given hostages to fortune..."
 
 **27.** *Unto This Last*, a critique of capitalist economics, was written by
     (A) Thomas Carlyle
@@ -453,10 +453,10 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 ### Mixed/Cross-Unit Questions
 
 **71.** Which of the following pairs is correctly matched?
-    (A) *The Wasteland* – W.B. Yeats
-    (B) *Ulysses* – James Joyce
-    (C) *The Waste Land* – Virginia Woolf
-    (D) *A Passage to India* – George Orwell
+    (A) *The Wasteland* - W.B. Yeats
+    (B) *Ulysses* - James Joyce
+    (C) *The Waste Land* - Virginia Woolf
+    (D) *A Passage to India* - George Orwell
 
 **72.** Identify the correct chronological order of publication
     (A) *Lyrical Ballads*, *In Memoriam*, *The Waste Land*, *Birthday Letters*
@@ -642,11 +642,11 @@ Model Question Paper (100 MCQs × 2 Marks = 200 Marks)
 
 ## ANALYSIS: Patterns from 20 Years of UGC NET English Papers
 
-This 100-question mock test reflects the deeply repetitive and patterned nature of the UGC NET English exam. Here's what a careful analysis of the last two decades reveals — and how this paper embodies those trends.
+This 100-question mock test reflects the deeply repetitive and patterned nature of the UGC NET English exam. Here's what a careful analysis of the last two decades reveals -- and how this paper embodies those trends.
 
-### 1. Author–Work Matching Dominates
+### 1. Author-Work Matching Dominates
 
-Roughly **40–45%** of any paper consists of direct "Who wrote what?" or "Which work contains this line?" questions. The test covers the core canon:
+Roughly **40-45%** of any paper consists of direct "Who wrote what?" or "Which work contains this line?" questions. The test covers the core canon:
 
 - **Drama:** Shakespeare, Marlowe, Congreve, Pinter, Beckett, Tendulkar
 - **Poetry:** Wordsworth, Keats, Yeats, Eliot, Plath, Ezekiel, Frost
@@ -658,7 +658,7 @@ You must know first lines, famous lines, epigraphs, and characters' names (see Q
 
 ### 2. Critical Concepts and Terminology
 
-Nearly **25–30%** of questions ask for definitions, coiners of terms, or explanation of critical phrases.
+Nearly **25-30%** of questions ask for definitions, coiners of terms, or explanation of critical phrases.
 
 - Hamartia, catharsis, negative capability, objective correlative, dissociation of sensibility, intentional fallacy, écriture féminine, différance, heteroglossia, magic realism, stream of consciousness, gynocriticism, etc.
 
@@ -670,42 +670,42 @@ Years, chronological orders, and historical events appear consistently (Q44, Q45
 
 - Macaulay's Minute (1835), Wood's Despatch (1854)
 - Publication dates of major works: *Lyrical Ballads* (1798), *The Waste Land* (1922), *Midnight's Children* (1981)
-- Booker winners (e.g., *The Inheritance of Loss* – 2006; *The God of Small Things* – 1997)
+- Booker winners (e.g., *The Inheritance of Loss* - 2006; *The God of Small Things* - 1997)
 
 ### 4. Language & Linguistics: Predictable and High-Scoring
 
 Linguistics questions rarely deviate from:
 
-- **Phonetics:** classification of speech sounds (bilabial, velar, fricatives) – Q32
-- **Morphology:** morphemes, conversion, syncope – Q30, Q36
-- **Saussure and Chomsky's basic distinctions** – Q33, Q59
-- **Sociolinguistics:** diglossia, register, pidgin/creole – Q34, Q35
+- **Phonetics:** classification of speech sounds (bilabial, velar, fricatives) - Q32
+- **Morphology:** morphemes, conversion, syncope - Q30, Q36
+- **Saussure and Chomsky's basic distinctions** - Q33, Q59
+- **Sociolinguistics:** diglossia, register, pidgin/creole - Q34, Q35
 
 This section can be mastered with a standard introductory textbook.
 
 ### 5. Theory and Cultural Studies: Increased Weightage
 
-Over the last 10 years, questions from Units 7 and 9 have risen to about **15–20%**. The focus is on:
+Over the last 10 years, questions from Units 7 and 9 have risen to about **15-20%**. The focus is on:
 
-- Identification of theorists with core ideas (Barthes – death of the author, Althusser – ISA, Butler – performativity, Bakhtin – carnivalesque/chronotope)
+- Identification of theorists with core ideas (Barthes - death of the author, Althusser - ISA, Butler - performativity, Bakhtin - carnivalesque/chronotope)
 - Key postcolonial terms: hybridity, subaltern, Orientalism
 - Frankfurt School and Cultural Studies pioneers (Raymond Williams, Stuart Hall)
 
-Questions 45–51 and 59–66 are representative.
+Questions 45-51 and 59-66 are representative.
 
 ### 6. Indian English Literature: A Fixed Slot
 
-Every paper has at least **5–7 questions** from Unit 6. The same names recur:
+Every paper has at least **5-7 questions** from Unit 6. The same names recur:
 
 - Derozio, Tagore, Narayan, Anand, Ezekiel, Ramanujan, Kamala Das, Spivak, Bhabha, Rushdie, Roy, Ghosh, Adiga, Lahiri, Deshpande
 - Historical context: Macaulay, Gandhi, Ambedkar
 
-Questions 38–44 sample this.
+Questions 38-44 sample this.
 
 ### How to Use This Test for Maximum Benefit
 
 - Attempt the paper in one sitting (2 hours).
-- For every question you get wrong, write down the correct author–work–concept triplet in a notebook.
+- For every question you get wrong, write down the correct author-work-concept triplet in a notebook.
 - Notice cross-references: a poet who is also a critic (Arnold, Eliot, Wordsworth) is often tested from both angles.
 - Revise all terms in their exact wording; the exam tests precision ("metonymy" vs. "synecdoche", "syncope" vs. "aphesis").
 
