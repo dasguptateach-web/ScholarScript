@@ -41,7 +41,6 @@
 
     <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
       {% set total = papers|length + videos|length + creative|length + links|length %}
-      {% set total = papers|length + videos|length + creative|length + links|length %}
       <div class="hero-stat"><span class="num">{{ total }}</span><span class="label">Total Resources</span></div>
       <div class="hero-stat"><span class="num">{{ papers|length }}</span><span class="label">Scholarly Papers</span></div>
       <div class="hero-stat"><span class="num">{{ videos|length }}</span><span class="label">Video Lectures</span></div>
@@ -227,22 +226,22 @@
     {% set total = papers|length + videos|length + creative|length + links|length %}
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-      <div class="stat-number" data-target="{{ total }}">0</div>
+      <div class="stat-number" data-target="{{ total }}">{{ total }}</div>
       <div class="stat-label">Total Resources</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
-      <div class="stat-number" data-target="{{ papers|length }}">0</div>
+      <div class="stat-number" data-target="{{ papers|length }}">{{ papers|length }}</div>
       <div class="stat-label">Scholarly Papers</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-video"></i></div>
-      <div class="stat-number" data-target="{{ videos|length }}">0</div>
+      <div class="stat-number" data-target="{{ videos|length }}">{{ videos|length }}</div>
       <div class="stat-label">Video Lectures</div>
     </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-pen-fancy"></i></div>
-      <div class="stat-number" data-target="{{ creative|length }}">0</div>
+      <div class="stat-number" data-target="{{ creative|length }}">{{ creative|length }}</div>
       <div class="stat-label">Creative Works</div>
     </div>
   </div>
@@ -260,6 +259,34 @@
   </div>
 </section>
 
+{% block scripts_extra %}
+<script>
+/* ====== STAT COUNTER ANIMATION ====== */
+(function(){
+  var els = document.querySelectorAll('.stat-number[data-target]');
+  if (!els.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        if (isNaN(target) || target <= 0) return;
+        var current = 0;
+        var step = Math.max(1, Math.ceil(target / 40));
+        var timer = setInterval(function() {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          } else {
+            el.textContent = current;
+          }
+        }, 30);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function(el) { observer.observe(el); });
+})();
+</script>
 {% endblock %}
-
-
