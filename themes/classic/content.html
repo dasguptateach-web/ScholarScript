@@ -124,6 +124,18 @@
     {{ item.body_html | safe }}
   </div>
 
+  {% set share_url = page_url | default(base_url ~ '/' ~ item.type ~ '/' ~ item.slug ~ '/') %}
+  {% set share_text = page_title ~ ' — ' ~ site.title %}
+  <div class="share-buttons notranslate" data-aos="fade-up">
+    <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+    <a href="https://twitter.com/intent/tweet?text={{ share_text | urlencode }}&url={{ share_url | urlencode }}" target="_blank" rel="noopener" class="share-btn share-twitter" title="Share on X"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://bsky.app/intent/compose?text={{ share_text | urlencode }}%20{{ share_url | urlencode }}" target="_blank" rel="noopener" class="share-btn share-bluesky" title="Share on Bluesky"><i class="fab fa-bluesky"></i></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | urlencode }}" target="_blank" rel="noopener" class="share-btn share-linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | urlencode }}" target="_blank" rel="noopener" class="share-btn share-facebook" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://reddit.com/submit?url={{ share_url | urlencode }}&title={{ share_text | urlencode }}" target="_blank" rel="noopener" class="share-btn share-reddit" title="Share on Reddit"><i class="fab fa-reddit-alien"></i></a>
+    <button class="share-btn share-copy" title="Copy link" onclick="navigator.clipboard.writeText('{{ share_url }}').then(function(){this.innerHTML='<i class=\"fas fa-check\"></i>';setTimeout(function(){this.innerHTML='<i class=\"fas fa-link\"></i>';}.bind(this),2000);}.bind(this))"><i class="fas fa-link"></i></button>
+  </div>
+
   {% if item.tags %}<div class="tags notranslate" style="margin-top:2rem;" data-aos="fade-up">{% for tag in item.tags %}<span class="tag"><i class="fas fa-tag"></i> {{ tag }}</span> {% endfor %}</div>{% endif %}
 
 {% if item.paper_url %}
