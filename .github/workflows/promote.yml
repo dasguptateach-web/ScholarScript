@@ -1,7 +1,7 @@
-name: Daily Social Media Promotion
+name: Daily Massive Promotion
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '30 6 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install httpx pyyaml
-      - name: Auto-post to Bluesky & Twitter
+      - name: Auto-post new content to Bluesky & Twitter
         env:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
@@ -27,10 +27,26 @@ jobs:
         run: python .github/scripts/social_post.py
       - name: Generate copy-paste posts for Reddit/LinkedIn/Facebook/Newsletter
         run: python .github/scripts/generate_posts.py
-      - name: Commit generated posts
+      - name: Ping search engines for faster indexing
+        run: |
+          pip install httpx
+          python .github/scripts/ping_search_engines.py
+      - name: Submit site to free educational directories
+        run: python .github/scripts/submit_directories.py
+      - name: Re-promote popular existing content
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          SITE_URL: "https://dasguptateach-web.github.io/ScholarScript"
+        run: python .github/scripts/repeat_promote.py
+      - name: Commit generated posts & promotion logs
         run: |
           git config user.email "scholarscript@users.noreply.github.com"
           git config user.name "ScholarScript Bot"
-          git add social-posts/
-          git diff --staged --quiet || git commit -m "Update social media post drafts"
+          git add social-posts/ .promotion-logs/
+          git diff --staged --quiet || git commit -m "Daily promotion update $(date +'%Y-%m-%d')"
           git push
