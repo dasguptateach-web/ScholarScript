@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-07-11 08:21:48 UTC",
+  "results": [
+    {
+      "service": "OER Commons (search presence)",
+      "status": 403,
+      "message": "403"
+    },
+    {
+      "service": "Base (Bielefeld Academic Search)",
+      "status": 200,
+      "message": "Reached"
+    },
+    {
+      "service": "UK Web Archive",
+      "status": 0,
+      "message": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate ("
+    },
+    {
+      "service": "Feedly",
+      "status": 200,
+      "message": "Reached"
+    },
+    {
+      "service": "The Old Reader",
+      "status": 200,
+      "message": "Reached"
+    },
+    {
+      "service": "Pinboard",
+      "status": 200,
+      "message": "Reached"
+    },
+    {
+      "service": "StudentVIP",
+      "status": 200,
+      "message": "Reached"
+    },
+    {
+      "service": "Lekture",
+      "status": 0,
+      "message": "[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)"
+    }
+  ]
+}

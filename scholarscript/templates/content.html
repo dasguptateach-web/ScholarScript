@@ -17,6 +17,15 @@
     {{ item.body_html | safe }}
   </div>
 
+  {% set share_url = page_url | default(base_url ~ '/' ~ item.type ~ '/' ~ item.slug ~ '/') %}
+  <div class="share-buttons">
+    <span>Share:</span>
+    <a href="https://twitter.com/intent/tweet?text={{ share_text | default(page_title ~ ' — ' ~ site.title) | urlencode }}&url={{ share_url | urlencode }}" target="_blank" rel="noopener">Twitter</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | urlencode }}" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | urlencode }}" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://reddit.com/submit?url={{ share_url | urlencode }}&title={{ page_title | urlencode }}" target="_blank" rel="noopener">Reddit</a>
+  </div>
+
   <div class="tags">{% for tag in item.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</div>
 
 {% if item.paper_url %}

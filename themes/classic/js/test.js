@@ -183,6 +183,18 @@
     state.total = total;
     state.attempted = attempted;
     state.results = results;
+
+    // Track test attempt in GoatCounter
+    try {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          event: true,
+          path: '/test/' + slug + '/submit',
+          title: testData.title + ' — Score: ' + correct + '/' + total,
+        });
+      }
+    } catch(e) {}
+
     renderResults();
   }
 

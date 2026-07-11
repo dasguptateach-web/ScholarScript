@@ -6,6 +6,15 @@
   <title>{{ page_title }} — {{ site.title }}</title>
   <meta name="description" content="{{ page_description | default(site.tagline) }}">
   <meta name="generator" content="ScholarScript">
+  <meta property="og:title" content="{{ page_title }} — {{ site.title }}">
+  <meta property="og:description" content="{{ page_description | default(site.tagline) }}">
+  <meta property="og:url" content="{{ page_url | default(base_url) }}">
+  <meta property="og:type" content="{{ page_ogtype | default('website') }}">
+  <meta property="og:image" content="{{ page_image | default(base_url ~ '/img/og-default.jpg') }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }} — {{ site.title }}">
+  <meta name="twitter:description" content="{{ page_description | default(site.tagline) }}">
+  {% if page_canonical %}<link rel="canonical" href="{{ page_canonical }}">{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +26,28 @@
 {% if site.goatcounter_code %}
   <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if page_ogtype == 'article' %}Article{% else %}WebSite{% endif %}",
+    "name": "{{ site.title }}",
+    "url": "{{ base_url }}",
+    "description": "{{ page_description | default(site.tagline) }}",
+    "inLanguage": "{{ site.language }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}"
+    }
+    {% if page_ogtype == 'article' %},
+    "headline": "{{ page_title }}",
+    "datePublished": "{{ item.date if item else '' }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ item.author if item else site.author }}"
+    }
+    {% endif %}
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">

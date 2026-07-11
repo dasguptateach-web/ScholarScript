@@ -1618,6 +1618,51 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-radius: 4px;
 }
 
+/* ============ SHARE BUTTONS ============ */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.share-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-right: 0.25rem;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.share-btn:hover {
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+.share-btn.share-twitter:hover { background: #000; color: #fff; }
+.share-btn.share-bluesky:hover { background: #0285ff; color: #fff; }
+.share-btn.share-linkedin:hover { background: #0a66c2; color: #fff; }
+.share-btn.share-facebook:hover { background: #1877f2; color: #fff; }
+.share-btn.share-reddit:hover { background: #ff4500; color: #fff; }
+.share-btn.share-copy:hover { background: var(--primary); color: #fff; }
+
+html.dark .share-btn { border-color: var(--border); }
+html.dark .share-btn.share-twitter:hover { background: #fff; color: #000; }
+
 /* ============ PRINT STYLES ============ */
 @media print {
   .site-header, .site-footer, .back-to-top, .reading-progress,

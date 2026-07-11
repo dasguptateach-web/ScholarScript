@@ -129,6 +129,41 @@ def post_to_bluesky(text):
         print(f"Bluesky post failed: {e}")
         return False
 
+def post_to_twitter(text):
+    api_key = os.environ.get("TWITTER_API_KEY")
+    api_secret = os.environ.get("TWITTER_API_SECRET")
+    access_token = os.environ.get("TWITTER_ACCESS_TOKEN")
+    access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
+    if not all([api_key, api_secret, access_token, access_secret]):
+        print("Twitter credentials not configured, skipping")
+        return False
+    try:
+        import httpx
+        import base64
+        # OAuth 1.0a — simplified; use tweepy for production
+        bearer = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
+        token_resp = httpx.post(
+            "https://api.twitter.com/oauth2/token",
+            headers={"Authorization": f"Basic {bearer}"},
+            data={"grant_type": "client_credentials"},
+            timeout=30,
+        )
+        if token_resp.status_code != 200:
+            print(f"Twitter auth failed: {token_resp.status_code}")
+            return False
+        token = token_resp.json().get("access_token")
+        post_resp = httpx.post(
+            "https://api.twitter.com/2/tweets",
+            headers={"Authorization": f"Bearer {token}"},
+            json={"text": text[:280]},
+            timeout=30,
+        )
+        print(f"Twitter response: {post_resp.status_code}")
+        return post_resp.status_code == 201
+    except Exception as e:
+        print(f"Twitter post failed: {e}")
+        return False
+
 def post_to_mastodon(text):
     return False
     instance = os.environ.get("MASTODON_INSTANCE", "").rstrip("/")
@@ -170,15 +205,19 @@ def main():
         text = make_post_text(item, site_title)
         print(f"\nPosting: {item['title']}")
         posted_bs = post_to_bluesky(text)
-        if posted_bs:
+        posted_tw = post_to_twitter(text)
+        posted_any = posted_bs or posted_tw
+        if posted_any:
             posted[iid] = {
                 "title": item["title"],
                 "slug": item["slug"],
                 "date": item["date"],
                 "posted_at": datetime.now(timezone.utc).isoformat(),
-                "bluesky": True,
+                "bluesky": posted_bs,
+                "twitter": posted_tw,
             }
-            print(f"  Posted to Bluesky")
+            platforms = "Bluesky" + (" + Twitter" if posted_tw else "")
+            print(f"  Posted to {platforms}")
         else:
             print(f"  Skipped (no platform configured)")
             posted[iid] = {
