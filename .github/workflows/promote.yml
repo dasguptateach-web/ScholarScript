@@ -31,6 +31,12 @@ jobs:
           LINKEDIN_AUTHOR: ${{ secrets.LINKEDIN_AUTHOR }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: python .github/scripts/marketing_agent.py
+      - name: Post to Facebook
+        env:
+          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          SITE_URL: "https://dasguptateach-web.github.io/ScholarScript"
+        run: python .github/scripts/facebook_poster.py
+
       - name: Generate copy-paste posts for Reddit/LinkedIn/Facebook
         run: python .github/scripts/generate_posts.py
       - name: Commit marketing state and drafts
