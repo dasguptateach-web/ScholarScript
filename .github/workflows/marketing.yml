@@ -41,6 +41,12 @@ jobs:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: python .github/scripts/marketing_agent.py
 
+      - name: Post to Facebook
+        env:
+          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          SITE_URL: "https://dasguptateach-web.github.io/ScholarScript"
+        run: python .github/scripts/facebook_poster.py
+
       - name: Generate social post drafts
         run: python .github/scripts/generate_posts.py
 
@@ -48,6 +54,6 @@ jobs:
         run: |
           git config user.email "scholarscript@users.noreply.github.com"
           git config user.name "ScholarScript Bot"
-          git add .marketing-state.json social-posts/ .github/marketing-config.yml
+          git add .marketing-state.json social-posts/ .facebook-state.json .github/marketing-config.yml
           git diff --staged --quiet || git commit -m "Marketing agent update [skip ci]"
           git push
