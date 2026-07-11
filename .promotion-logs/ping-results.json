@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-07-11 08:18:20 UTC",
+  "results": [
+    {
+      "service": "IndexNow",
+      "status": 202,
+      "message": "OK"
+    },
+    {
+      "service": "Bing IndexNow",
+      "status": 202,
+      "message": "OK"
+    },
+    {
+      "service": "Yandex",
+      "status": 200,
+      "message": "OK"
+    },
+    {
+      "service": "Qwant",
+      "status": 200,
+      "message": "OK"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript",
+      "status": 200,
+      "message": "Saved"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript/papers/",
+      "status": 200,
+      "message": "Saved"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript/videos/",
+      "status": 0,
+      "message": "The read operation timed out"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript/tests/",
+      "status": 0,
+      "message": "The read operation timed out"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript/sitemap.xml",
+      "status": 0,
+      "message": "[Errno 111] Connection refused"
+    },
+    {
+      "service": "Wayback: https://dasguptateach-web.github.io/ScholarScript/rss.xml",
+      "status": 0,
+      "message": "[Errno 111] Connection refused"
+    },
+    {
+      "service": "CommonCrawl",
+      "status": 307,
+      "message": ""
+    }
+  ]
+}
