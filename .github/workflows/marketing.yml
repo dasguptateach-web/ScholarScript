@@ -1,8 +1,11 @@
-name: Daily Social Media Promotion
+# ScholarScript Marketing Agent
+# Runs every 6 hours to autonomously promote new content.
+# Configure platform secrets in Settings → Secrets → Actions.
+name: Marketing Agent
 on:
   schedule:
-    - cron: '0 10 * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:         # manual trigger
 permissions:
   contents: write
 jobs:
@@ -15,25 +18,33 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install httpx pyyaml
+
       - name: Run marketing agent
         env:
           SITE_URL: "https://dasguptateach-web.github.io/ScholarScript"
           SITE_NAME: "ScholarScript"
+
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+
           LINKEDIN_TOKEN: ${{ secrets.LINKEDIN_TOKEN }}
           LINKEDIN_AUTHOR: ${{ secrets.LINKEDIN_AUTHOR }}
+
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: python .github/scripts/marketing_agent.py
-      - name: Generate copy-paste posts for Reddit/LinkedIn/Facebook
+
+      - name: Generate social post drafts
         run: python .github/scripts/generate_posts.py
-      - name: Commit marketing state and drafts
+
+      - name: Commit marketing state
         run: |
           git config user.email "scholarscript@users.noreply.github.com"
           git config user.name "ScholarScript Bot"
