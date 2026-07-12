@@ -2,6 +2,20 @@
 
 **Scripted for Scholars. Powered by Automation.**
 
+## &#9733; Featured Creative Work
+
+### [The Shadow Cup](https://dasguptateach-web.github.io/ScholarScript/ebooks/the-shadow-cup.html) — by Debojyoti Dasgupta
+
+> A grieving footballer. A girl who draws the future. A tournament for nations that never existed.
+
+A free, fully illustrated 9-chapter story blending magical realism, quantum physics, and football. When Luka Morozov — a retired striker shattered by tragedy — is recruited to play for a nation that doesn't exist on any map, he enters the **Shadow Cup**: a tournament played in a stadium woven from mist and memory, where belief is physics and every goal pulls a thread between worlds.
+
+- [&#9733; Read the Illustrated eBook](https://dasguptateach-web.github.io/ScholarScript/ebooks/the-shadow-cup.html)
+- [&#9733; Read on ScholarScript](https://dasguptateach-web.github.io/ScholarScript/creative-writing/the-shadow-cup/)
+- [&#9733; eBooks Section](https://dasguptateach-web.github.io/ScholarScript/ebooks/)
+
+---
+
 ScholarScript is a fully autonomous static‑site generator, document ingestion engine, website cloner, and literary community manager — laser‑focused on English Literature scholars (undergraduate, postgraduate, researchers).
 
 ## Features
