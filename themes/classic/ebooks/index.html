@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eBooks — ScholarScript</title>
+<meta name="description" content="Free illustrated eBooks from ScholarScript community writers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--card:#11182b;--text:#e6e2dc;--muted:#9ba3b5;--gold:#c9a84c;--gold-bright:#e8c965;--border:rgba(201,168,76,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1100px;margin:0 auto;padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.header-inner h1{font-size:1.1rem;font-weight:700;letter-spacing:.02em}
+.header-inner h1 a{color:var(--text);text-decoration:none}
+.header-inner nav a{color:var(--muted);text-decoration:none;font-size:.8rem;margin-left:1.5rem;letter-spacing:.05em;text-transform:uppercase;transition:color .3s}
+.header-inner nav a:hover,.header-inner nav a.active{color:var(--gold)}
+.hero{text-align:center;padding:4rem 2rem 3rem;max-width:800px;margin:0 auto}
+.hero .label{font-size:.7rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.hero h2{font-family:Cinzel,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:1rem}
+.hero p{color:var(--muted);font-size:1.15rem}
+.grid{max-width:1100px;margin:0 auto;padding:1rem 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+.book-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .3s,border-color .3s;text-decoration:none;color:inherit;display:block}
+.book-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.book-cover{height:200px;position:relative;overflow:hidden}
+.book-cover svg{width:100%;height:100%;display:block}
+.book-info{padding:1.5rem}
+.book-info h3{font-family:Cinzel,serif;font-size:1.3rem;font-weight:600;margin-bottom:.5rem;color:var(--text)}
+.book-info .author{color:var(--gold);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem}
+.book-info .summary{color:var(--muted);font-size:.95rem;line-height:1.6}
+.book-info .meta{margin-top:1rem;display:flex;gap:1rem;font-size:.8rem;color:var(--muted)}
+.book-info .meta span::before{content:"";display:inline-block;width:4px;height:4px;background:var(--gold);border-radius:50%;margin-right:.4rem;vertical-align:middle}
+.footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+@media(max-width:600px){.header-inner nav a{margin-left:.8rem;font-size:.7rem}.grid{padding:1rem 1.2rem 3rem}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-inner">
+<h1><a href="/ScholarScript/">&#9830; ScholarScript</a></h1>
+<nav>
+<a href="/ScholarScript/">Home</a>
+<a href="/ScholarScript/papers/">Papers</a>
+<a href="/ScholarScript/creative-writing/">Writing</a>
+<a href="/ScholarScript/ebooks/" class="active">eBooks</a>
+<a href="/ScholarScript/tests/">Tests</a>
+<a href="/ScholarScript/donate/">Support</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="label">Illustrated eBooks</div>
+<h2>The eBook Library</h2>
+<p>Full-length illustrated literary works from our community of writers. Read online, free, forever.</p>
+</section>
+
+<div class="grid">
+<a class="book-card" href="/ScholarScript/ebooks/the-shadow-cup.html">
+<div class="book-cover">
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="bc1" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#1a2540"/><stop offset="100%" stop-color="#070b16"/></radialGradient>
+<linearGradient id="bcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8c965"/><stop offset="100%" stop-color="#8a6d2a"/></linearGradient>
+<filter id="bglow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="320" height="200" fill="url(#bc1)"/>
+<circle cx="50" cy="30" r=".8" fill="#e6e2dc" opacity=".5"/><circle cx="100" cy="20" r="1" fill="#e6e2dc" opacity=".4"/><circle cx="200" cy="25" r=".8" fill="#e6e2dc" opacity=".5"/><circle cx="270" cy="35" r="1" fill="#e6e2dc" opacity=".4"/>
+<g transform="translate(160,80)" filter="url(#bglow)">
+<circle r="40" fill="none" stroke="url(#bcg)" stroke-width="1" opacity=".4"/>
+<g fill="url(#bcg)" opacity=".8"><path d="M0,-40L5,-7L0,0L-5,-7Z"/><path d="M0,40L5,7L0,0L-5,7Z"/><path d="M40,0L7,5L0,0L7,-5Z"/><path d="M-40,0L-7,5L0,0L-7,-5Z"/></g>
+<circle r="3" fill="#e8c965"/>
+</g>
+<path d="M0,150Q80,140 160,150T320,150L320,200L0,200Z" fill="#2a4d75" opacity=".15"/>
+<path d="M0,165Q80,158 160,165T320,165L320,200L0,200Z" fill="#1a2540" opacity=".2"/>
+</svg>
+</div>
+<div class="book-info">
+<h3>The Shadow Cup</h3>
+<div class="author">By Debojyoti Dasgupta</div>
+<div class="summary">A story of belief, memory, and the nations that exist between worlds. A grieving footballer, a girl who draws the future, and a tournament for nations that were never meant to exist.</div>
+<div class="meta">
+<span>9 Chapters</span>
+<span>11 Illustrations</span>
+<span>Fiction</span>
+</div>
+</div>
+</a>
+</div>
+
+<footer class="footer">
+&copy; 2026 ScholarScript &middot; Free for everyone. Forever.
+</footer>
+</body>
+</html>
