@@ -37,6 +37,28 @@
   <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {% endif %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if page_ogtype == 'article' %}Article{% else %}WebSite{% endif %}",
+    "name": "{{ site.title }}",
+    "url": "{{ base_url }}",
+    "description": "{{ page_description | default(site.tagline) }}",
+    "inLanguage": "{{ site.language }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}"
+    }
+    {% if page_ogtype == 'article' and item %},
+    "headline": "{{ item.title }}",
+    "datePublished": "{{ item.date }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ item.author or site.author }}"
+    }
+    {% endif %}
+  }
+  </script>
 </head>
 <body class="{% block body_class %}{% endblock %}">
   <div class="reading-progress" id="readingProgress" style="display:none"></div>

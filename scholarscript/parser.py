@@ -16,7 +16,7 @@ def slugify(text: str) -> str:
 def parse_content_file(filepath: Path) -> Optional[ContentItem]:
     """Parse a single .md file with YAML front matter into a ContentItem."""
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(filepath, "r", encoding="utf-8-sig") as f:
             post = frontmatter.load(f)
     except Exception:
         return None

@@ -1,0 +1,37 @@
+# ScholarScript Marketing Agent Configuration
+# ──────────────────────────────────────────
+# The marketing agent runs automatically on schedule.
+# To activate each platform, add the corresponding secrets to
+# GitHub → Settings → Secrets and variables → Actions
+
+site:
+  name: "ScholarScript"
+  url: "https://dasguptateach-web.github.io/ScholarScript"
+
+# Platform credentials — set as GitHub Secrets (not here!)
+# Required secrets per platform:
+#
+# Bluesky:
+#   BLUESKY_HANDLE: "yourhandle.bsky.social"
+#   BLUESKY_PASSWORD: "your-app-password"
+#
+# Twitter / X:
+#   TWITTER_API_KEY: "your-api-key"
+#   TWITTER_API_SECRET: "your-api-secret"
+#   TWITTER_ACCESS_TOKEN: "your-access-token"
+#   TWITTER_ACCESS_SECRET: "your-access-secret"
+#
+# Mastodon:
+#   MASTODON_INSTANCE: "https://mastodon.social"
+#   MASTODON_TOKEN: "your-access-token"
+#
+# LinkedIn:
+#   LINKEDIN_TOKEN: "your-access-token"
+#   LINKEDIN_AUTHOR: "urn:li:person:your-id"
+#
+# IndexNow (search engine instant indexing):
+#   INDEXNOW_KEY: "your-verification-key"
+
+limits:
+  max_posts_per_run: 5    # max items to promote per run
+  min_hours_between: 6    # min hours between runs for same item

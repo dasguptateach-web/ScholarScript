@@ -1,6 +1,6 @@
 public/
 Lib/
-Scripts/
+/Scripts/
 scholarscript.egg-info/
 __pycache__/
 *.pyc
