@@ -292,3 +292,45 @@
 [2026-07-09 23:16:03]   Output: C:\Users\81\ScholarScript\public
 [2026-07-09 23:16:03]   
 [2026-07-09 23:16:03] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-07-09 23:16:08]   Pushed!
+[2026-07-09 23:16:08] === STEP 8/8: Done! ===
+[2026-07-09 23:16:08] Files: MACBETH MCQ TEST.docx
+[2026-07-09 23:16:08] Archived to _Processed
+[2026-07-11 17:59:39] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-11 18:54:09] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-11 19:15:42] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-12 21:22:21] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-12 21:46:58] STAGE SUGGESTIVE QUESTION PAPER.docx
+[2026-07-12 21:46:58] COPY SUGGESTIVE QUESTION PAPER.docx
+[2026-07-12 21:46:58] === STEP 1/7: Ingesting documents ===
+[2026-07-12 21:47:05]   Checking uploads folder...
+[2026-07-12 21:47:05]   Processed 1 file(s):
+[2026-07-12 21:47:05]     Success: 1
+[2026-07-12 21:47:05]     Errors:  0
+[2026-07-12 21:47:05]     [OK] SUGGESTIVE QUESTION PAPER.docx -> C:\Users\81\ScholarScript\content\papers\suggestive-question-paper.md (paper)
+[2026-07-12 21:47:05]   
+[2026-07-12 21:47:05]   Run 'scholarscript build' to rebuild the site.
+[2026-07-12 21:47:05]   
+[2026-07-12 21:47:05] === STEP 2/7: Fixing table formatting ===
+[2026-07-12 21:47:06]     No tables needed fixing.
+[2026-07-12 21:47:06]   
+[2026-07-12 21:47:06] === STEP 3/8: Formatting MCQs ===
+[2026-07-12 21:47:06]     No MCQs needed reformatting.
+[2026-07-12 21:47:06]   
+[2026-07-12 21:47:06] === STEP 4/8: Building interactive tests ===
+[2026-07-12 21:47:07]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-12 21:47:07]     Created 1 test(s)
+[2026-07-12 21:47:07]   
+[2026-07-12 21:47:07] === STEP 5/8: Matching YouTube videos ===
+[2026-07-12 21:47:31]   Found 42 papers
+[2026-07-12 21:47:31]   
+[2026-07-12 21:47:31]     [suggestive-question-paper] -> dlE1fefgl9c (How to prepare for English literature exams? How to study? H) [122 views]
+[2026-07-12 21:47:31]   
+[2026-07-12 21:47:31]   Done! Created: 1, Skipped: 41, Failed: 0
+[2026-07-12 21:47:31]   
+[2026-07-12 21:47:31] === STEP 6/8: Building site ===
+[2026-07-12 21:47:37]   Building site...
+[2026-07-12 21:47:37]   Built 90 items in 2.98s
+[2026-07-12 21:47:37]   Output: C:\Users\81\ScholarScript\public
+[2026-07-12 21:47:37]   
+[2026-07-12 21:47:37] === STEP 7/8: Committing and pushing to GitHub ===
