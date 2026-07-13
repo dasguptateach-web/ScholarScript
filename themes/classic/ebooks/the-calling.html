@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Debojyoti Dasgupta">
+<title>THE CALLING - Debojyoti Dasgupta</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+:root{--void:#07060f;--indigo-d:#0e0b22;--indigo:#1a1538;--indigo-l:#2a2150;--mars:#b8442e;--rust:#8b3a22;--dust:#c97048;--gold:#d4a843;--gold-b:#e8c558;--gold-p:#f0d990;--parch:#e8e2d5;--parch-d:#c4bfae;--parch-dd:#9a9585}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--parch);font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.cover{width:100vw;height:100vh;min-height:700px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--void)}
+.cover-svg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+.cover-overlay{position:relative;z-index:2;text-align:center;padding:2rem}
+.cover-title{font-family:'Cormorant',serif;font-size:clamp(3rem,9vw,6.5rem);font-weight:300;letter-spacing:0.35em;color:var(--parch);text-shadow:0 0 40px rgba(212,168,67,.3),0 4px 30px rgba(0,0,0,.8);margin-left:0.35em;line-height:1}
+.cover-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.5rem);color:var(--gold-p);letter-spacing:0.15em;margin-top:1.5rem;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.cover-auth{font-family:'Inter',sans-serif;font-size:clamp(.75rem,1.5vw,.95rem);font-weight:400;color:var(--parch-d);letter-spacing:0.4em;margin-top:3.5rem;text-transform:uppercase;text-shadow:0 2px 15px rgba(0,0,0,.9)}
+.cover-auth-n{display:block;font-size:clamp(1rem,2vw,1.3rem);font-weight:500;color:var(--parch);margin-top:.6rem;letter-spacing:0.3em}
+.cover-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:0.3em;color:var(--parch-dd);text-transform:uppercase;opacity:.6;animation:fp 3s ease-in-out infinite}
+@keyframes fp{0%,100%{opacity:.3}50%{opacity:.7}}
+.tp{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;background:linear-gradient(180deg,var(--void),var(--indigo-d))}
+.tp-orn{width:60px;height:60px;margin-bottom:2rem;opacity:.5}
+.tp h1{font-family:'Cormorant',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;letter-spacing:0.2em;color:var(--parch);line-height:1.2}
+.tp .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.6rem);color:var(--gold);margin-top:1.5rem;letter-spacing:0.08em}
+.tp .ab{margin-top:4rem}
+.tp .al{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:0.4em;color:var(--parch-dd);text-transform:uppercase}
+.tp .an{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--parch);margin-top:.5rem;letter-spacing:0.1em}
+.cp{max-width:600px;margin:0 auto;padding:4rem 2rem;text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center}
+.cp p{font-family:'Inter',sans-serif;font-size:.8rem;line-height:1.8;color:var(--parch-dd);letter-spacing:0.05em;margin-bottom:1rem;text-align:center}
+.cp .isbn{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--gold);margin-top:2rem}
+.toc{max-width:700px;margin:0 auto;padding:5rem 2rem;min-height:100vh}
+.toc h2{font-family:'Cormorant',serif;font-size:1.8rem;font-weight:400;letter-spacing:0.25em;color:var(--gold);text-align:center;margin-bottom:3rem;text-transform:uppercase}
+.toc-list{list-style:none}
+.toc-item{display:flex;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid rgba(212,168,67,.1);text-decoration:none;transition:all .3s}
+.toc-item:hover{padding-left:.8rem;border-bottom-color:rgba(212,168,67,.3)}
+.toc-num{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--gold);min-width:50px;letter-spacing:0.1em}
+.toc-tt{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--parch);flex-grow:1;line-height:1.4}
+.toc-tt .td{display:block;font-style:italic;font-size:.9rem;color:var(--parch-dd);margin-top:.2rem}
+.sec{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem;position:relative}
+.sec-img{width:100%;max-width:720px;margin:0 auto 3rem;border-radius:4px;overflow:hidden}
+.sec-img svg{width:100%;height:auto;display:block}
+.sec-cap{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:0.15em;color:var(--parch-dd);text-transform:uppercase;text-align:center;margin-top:.8rem;opacity:.6}
+.sec-num{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--gold);letter-spacing:0.3em;text-align:center;margin-bottom:.5rem}
+.sec-ttl{font-family:'Cormorant',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;color:var(--parch);text-align:center;line-height:1.25;margin-bottom:.5rem;letter-spacing:0.02em}
+.sec-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--parch-dd);text-align:center;margin-bottom:3rem;letter-spacing:0.05em}
+.sec-div{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 3rem}
+p{margin-bottom:1.4rem;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+p:first-of-type{text-indent:0}
+p:first-of-type::first-letter{font-family:'Cormorant',serif;font-size:3.2em;float:left;line-height:.85;margin:.1em .08em 0 0;color:var(--gold);font-weight:400;text-shadow:0 0 20px rgba(212,168,67,.2)}
+.fw p:first-of-type::first-letter,.toc p:first-of-type::first-letter,.cp p:first-of-type::first-letter{font-size:inherit;float:none;margin:0;color:inherit;font-weight:inherit;text-shadow:none}
+em{color:var(--parch)}
+strong{font-weight:600;color:var(--parch)}
+.letter{margin:2.5rem 0;padding:2.5rem;background:rgba(26,21,56,.5);border:1px solid rgba(212,168,67,.15);border-radius:6px;font-style:italic;position:relative}
+.letter::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:6px 6px 0 0}
+.letter p{text-align:left;font-style:italic}
+.letter .so{text-align:right;margin-top:1.5rem;font-style:italic;color:var(--gold)}
+.tr{margin:1.5rem 0}
+.tr .sp{font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;color:var(--gold);letter-spacing:0.05em}
+.tr .dl{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--parch);margin-bottom:1.2rem;line-height:1.7}
+.tr .sd{font-style:italic;color:var(--parch-dd);font-size:.9rem}
+.je{margin:2rem 0;padding:0 0 0 1.5rem;border-left:1px solid rgba(212,168,67,.2)}
+.jd{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:1rem;text-transform:uppercase}
+.orn{text-align:center;margin:3rem 0;color:var(--gold);font-size:1.2rem;opacity:.4;letter-spacing:1em}
+.bm{max-width:720px;margin:0 auto;padding:4rem 2rem;text-align:center}
+.bm h2{font-family:'Cormorant',serif;font-size:1.5rem;font-weight:400;letter-spacing:0.2em;color:var(--gold);margin-bottom:2rem}
+.bm p{font-family:'Inter',sans-serif;font-size:.85rem;line-height:1.8;color:var(--parch-dd);text-align:center;margin-bottom:1rem}
+.em{font-family:'Cormorant',serif;font-size:2rem;color:var(--gold);text-align:center;margin:3rem 0 1rem;opacity:.5}
+.ei{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--parch-dd);text-align:center;letter-spacing:0.1em}
+@media(max-width:600px){body{font-size:17px}.sec{padding:1.5rem 1.2rem 3rem}.letter{padding:1.5rem 1.2rem}p{text-align:left}p:first-of-type::first-letter{font-size:2.8em}}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--void)}::-webkit-scrollbar-thumb{background:var(--indigo-l);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+</style>
+</head>
+<body>
+<!-- COVER -->
+<section class="cover" id="cover">
+<svg class="cover-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="sk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a0820"/><stop offset="35%" stop-color="#12103a"/><stop offset="55%" stop-color="#2a1840"/><stop offset="75%" stop-color="#6e2a28"/><stop offset="100%" stop-color="#b8442e"/></linearGradient>
+<linearGradient id="gd" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3a2018"/><stop offset="100%" stop-color="#0a0608"/></linearGradient>
+<radialGradient id="dg" cx="75%" cy="40%" r="40%"><stop offset="0%" stop-color="#d4602e" stop-opacity=".4"/><stop offset="100%" stop-color="#000" stop-opacity="0"/></radialGradient>
+<radialGradient id="gt" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity="1"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient>
+<radialGradient id="mg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e85030" stop-opacity="1"/><stop offset="100%" stop-color="#b8442e" stop-opacity="0"/></radialGradient>
+<filter id="sg"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="bg"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#sk)"/>
+<rect width="1200" height="800" fill="url(#dg)"/>
+<g fill="#e8e2d5" opacity=".8"><circle cx="80" cy="60" r=".8"/><circle cx="150" cy="120" r="1.2"/><circle cx="220" cy="80" r=".6"/><circle cx="50" cy="200" r="1"/><circle cx="180" cy="250" r=".7"/><circle cx="300" cy="150" r=".9"/><circle cx="90" cy="300" r=".5"/><circle cx="260" cy="50" r="1.1"/><circle cx="340" cy="220" r=".6"/><circle cx="120" cy="380" r=".8"/><circle cx="40" cy="340" r=".5"/><circle cx="200" cy="180" r=".4"/><circle cx="320" cy="100" r=".7"/><circle cx="380" cy="280" r=".5"/><circle cx="60" cy="440" r=".9"/><circle cx="160" cy="420" r=".6"/><circle cx="280" cy="360" r=".4"/><circle cx="350" cy="60" r=".8"/><circle cx="100" cy="500" r=".5"/><circle cx="240" cy="460" r=".7"/></g>
+<g fill="#f0d990" filter="url(#sg)" opacity=".9"><circle cx="170" cy="90" r="1.5"/><circle cx="310" cy="180" r="1.3"/><circle cx="70" cy="280" r="1.2"/><circle cx="250" cy="320" r="1"/></g>
+<circle cx="1020" cy="160" r="14" fill="url(#mg)" filter="url(#bg)"/>
+<circle cx="1020" cy="160" r="6" fill="#e85030" opacity=".9"/>
+<path d="M 0 520 Q 300 510 600 515 T 1200 520 L 1200 800 L 0 800 Z" fill="url(#gd)"/>
+<g stroke="#0a0608" stroke-width="1" fill="none" opacity=".6"><path d="M 100 540 L 180 560 L 250 550 L 340 575"/><path d="M 200 580 L 280 600 L 380 590 L 450 615"/><path d="M 50 600 L 130 625 L 210 615 L 300 640"/><path d="M 400 550 L 480 570 L 560 560 L 650 585"/><path d="M 500 600 L 580 620 L 680 610 L 770 635"/><path d="M 350 640 L 430 660 L 530 650 L 620 675"/><path d="M 700 560 L 780 580 L 870 570 L 960 595"/><path d="M 600 650 L 680 670 L 780 660 L 870 685"/><path d="M 800 620 L 880 640 L 970 630 L 1060 655"/><path d="M 450 690 L 530 710 L 630 700 L 720 725"/><path d="M 750 700 L 830 720 L 930 710 L 1020 735"/><path d="M 900 670 L 980 690 L 1080 680 L 1160 705"/></g>
+<g transform="translate(600,380)"><ellipse cx="0" cy="0" rx="14" ry="18" fill="#0a0608" opacity=".95"/><path d="M -12 -5 Q -25 10 -20 30 Q -15 50 -8 60" fill="none" stroke="#0a0608" stroke-width="3" stroke-linecap="round" opacity=".7"/><path d="M 12 -5 Q 25 8 22 28 Q 18 48 10 58" fill="none" stroke="#0a0608" stroke-width="3" stroke-linecap="round" opacity=".7"/><rect x="-5" y="15" width="10" height="12" fill="#0a0608" opacity=".95"/><path d="M -18 27 Q -20 50 -16 75 L -12 100 L 12 100 L 16 75 Q 20 50 18 27 Z" fill="#0a0608" opacity=".95"/><path d="M -16 35 Q -45 25 -60 5 Q -68 -5 -65 -15" fill="none" stroke="#0a0608" stroke-width="8" stroke-linecap="round" opacity=".95"/><path d="M 16 35 Q 45 25 60 5 Q 68 -5 65 -15" fill="none" stroke="#0a0608" stroke-width="8" stroke-linecap="round" opacity=".95"/><path d="M -10 100 L -12 140 L -10 170" fill="none" stroke="#0a0608" stroke-width="9" stroke-linecap="round" opacity=".95"/><path d="M 10 100 L 12 140 L 10 170" fill="none" stroke="#0a0608" stroke-width="9" stroke-linecap="round" opacity=".95"/></g>
+<path d="M 600 410 Q 700 300 820 220 Q 920 180 1015 162" fill="none" stroke="url(#gt)" stroke-width="2.5" filter="url(#sg)" opacity=".9"/>
+<circle cx="600" cy="410" r="15" fill="url(#gt)" filter="url(#bg)" opacity=".7"/>
+<ellipse cx="600" cy="560" rx="12" ry="5" fill="url(#gt)" filter="url(#sg)" opacity=".5"/>
+<circle cx="600" cy="560" r="3" fill="#f0d990" opacity=".8"/>
+</svg>
+<div class="cover-overlay">
+<h1 class="cover-title">THE CALLING</h1>
+<p class="cover-sub">A Dossier of Unquiet Testimonies</p>
+<div class="cover-auth">Written by<span class="cover-auth-n">DEBOJYOTI DASGUPTA</span></div>
+</div>
+<div class="cover-hint">Begin</div>
+</section>
+
+<!-- TITLE PAGE -->
+<section class="tp">
+<svg class="tp-orn" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="28" fill="none" stroke="#d4a843" stroke-width=".5" opacity=".5"/><circle cx="30" cy="30" r="3" fill="#d4a843" opacity=".8"/><line x1="30" y1="2" x2="30" y2="58" stroke="#d4a843" stroke-width=".3" opacity=".3"/><line x1="2" y1="30" x2="58" y2="30" stroke="#d4a843" stroke-width=".3" opacity=".3"/></svg>
+<h1>THE CALLING</h1>
+<p class="sub">A Dossier of Unquiet Testimonies</p>
+<div class="ab"><p class="al">Written by</p><p class="an">Debojyoti Dasgupta</p></div>
+<p class="al" style="margin-top:3rem;opacity:.5">Illustrations generated for this edition</p>
+</section>
+
+<!-- COPYRIGHT -->
+<section class="cp">
+<p>THE CALLING: A Dossier of Unquiet Testimonies</p>
+<p>Written by Debojyoti Dasgupta</p>
+<p>All illustrations generated for this edition</p>
+<p>&copy; 2026 Debojyoti Dasgupta. All rights reserved.</p>
+<p>No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form or by any means without the prior written permission of the author, except for brief quotations in critical articles and reviews.</p>
+<p>This is a work of literary science fiction. Names, characters, places, and incidents are products of the author's imagination or are used fictitiously.</p>
+<p class="isbn">ISBN: 978-1-2026-0000-1 (Ebook)</p>
+<p>First Digital Edition - 2026</p>
+</section>
+
+<!-- TOC -->
+<section class="toc">
+<h2>Contents</h2>
+<ul class="toc-list">
+<li><a href="#foreword" class="toc-item"><span class="toc-num">&mdash;</span><span class="toc-tt">Compiler's Foreword</span></a></li>
+<li><a href="#s1" class="toc-item"><span class="toc-num">I.</span><span class="toc-tt">From the Personal Log of Dr. Lina Reyes<span class="td">Brahmaputra Flyby - Day 89</span></span></a></li>
+<li><a href="#s2" class="toc-item"><span class="toc-num">II.</span><span class="toc-tt">Mission Debrief<span class="td">Johnson Space Center, Houston</span></span></a></li>
+<li><a href="#s3" class="toc-item"><span class="toc-num">III.</span><span class="toc-tt">The Journalist's Notebook<span class="td">Leo Baumann</span></span></a></li>
+<li><a href="#s4" class="toc-item"><span class="toc-num">IV.</span><span class="toc-tt">Lina's Private Journal<span class="td">Recovered from her London flat</span></span></a></li>
+<li><a href="#s5" class="toc-item"><span class="toc-num">V.</span><span class="toc-tt">The Therapist's Files<span class="td">Dr. Helena Vance, MD, FRCPsych</span></span></a></li>
+<li><a href="#s6" class="toc-item"><span class="toc-num">VI.</span><span class="toc-tt">The Signal<span class="td">Amateur Radio Intercept, Atacama Desert</span></span></a></li>
+<li><a href="#s7" class="toc-item"><span class="toc-num">VII.</span><span class="toc-tt">The Disappearance<span class="td">Last seen, 18 May</span></span></a></li>
+<li><a href="#s8" class="toc-item"><span class="toc-num">VIII.</span><span class="toc-tt">The Aftermath<span class="td">Leo's Testimony</span></span></a></li>
+<li><a href="#s9" class="toc-item"><span class="toc-num">IX.</span><span class="toc-tt">Open Transmission<span class="td">Intercepted, Chajnantor Plateau</span></span></a></li>
+<li><a href="#epi" class="toc-item"><span class="toc-num">&mdash;</span><span class="toc-tt">Epilogue<span class="td">The Compiler's Last Word</span></span></a></li>
+</ul>
+</section>
+
+<!-- FOREWORD -->
+<section class="sec fw" id="foreword">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="fb" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e0b22"/><stop offset="100%" stop-color="#1a1538"/></linearGradient><radialGradient id="fg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#d4a843" stop-opacity=".15"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#fb)"/>
+<g opacity=".08" fill="#e8e2d5" font-family="monospace" font-size="9"><text x="50" y="60">CLASSIFIED//NOFORN</text><text x="50" y="80">MISSION: BRAHMAPUTRA</text><text x="50" y="100">DAY 89 / ANOMALY LOG</text><text x="500" y="120">MEDICAL FILE // ESA</text><text x="500" y="140">PATIENT: REYES, L.</text><text x="500" y="160">STATUS: [REDACTED]</text><text x="80" y="300">TRANSCRIPT // JSC DEBRIEF</text><text x="80" y="320">09 DAYS POST-RETURN</text><text x="450" y="320">SIGNAL // 03:17 LOCAL</text><text x="450" y="340">LYOT CRATER // MARS</text></g>
+<circle cx="360" cy="200" r="120" fill="url(#fg)"/>
+<path d="M 120 90 Q 250 200 360 200 Q 470 200 600 130" fill="none" stroke="#d4a843" stroke-width="1" opacity=".3"/>
+<path d="M 100 310 Q 250 230 360 200 Q 470 230 620 330" fill="none" stroke="#d4a843" stroke-width="1" opacity=".2"/>
+<circle cx="360" cy="200" r="4" fill="#d4a843" opacity=".8"/><circle cx="360" cy="200" r="12" fill="#d4a843" opacity=".15"/>
+</svg>
+<p class="sec-cap">The fragments, assembled</p>
+</div>
+<p class="sec-num">FOREWORD</p>
+<h2 class="sec-ttl">Compiler's Foreword</h2>
+<div class="sec-div"></div>
+<p>My name is Leo Baumann, and for three years I have been collecting endings that refuse to end.</p>
+<p>I am a journalist. I have been one for nineteen years. I have reported from flood zones, famine lines, three war zones, and a refugee camp in Lesvos where a Syrian girl asked me if the sea was always so cruel or only on Tuesdays. I have been trained to verify, to attribute, to doubt, and to write the first draft of history in sentences that do not blush. I tell you this because what follows will test my credibility, and I want you to know that I had credibility before I started, and that I have not spent it lightly.</p>
+<p>What follows are fragments: flight logs, leaked medical files, therapy transcripts, a radio signal that still broadcasts on certain frequencies at 3 a.m. if you know where to point your dish and your patience. They tell the story of Dr. Lina Reyes&mdash;astrobiologist, daughter of the Atlas Mountains, mother of a boy named Sami who is six now and who hums lullabies in a language no one taught him. Lina was the first human being to make contact with something that had been waiting on Mars for two billion years, patient as geology, lonely as a lighthouse keeper in a dead sea.</p>
+<p>The official inquiry called it a &ldquo;perceptual anomaly induced by prolonged microgravity and isolation stress.&rdquo; A tidy phrase. A sealed envelope of a sentence, designed to be filed and forgotten. They locked her records. They buried the raw telemetry. Two of her crewmates were reassigned to ground positions they did not request and have since stopped returning my calls.</p>
+<p>But Lina Reyes did not die.</p>
+<p>Lina Reyes did not go mad.</p>
+<p>She was called. And she answered. And the line she crossed is not behind her&mdash;it is widening, slowly, like a pupil adjusting to light, and it is coming for the rest of us, one pair of eyes at a time.</p>
+<p>What follows is the truth I have assembled from those who were there, and from the one who still is. I give it to you not as proof&mdash;I am through with proof&mdash;but as a record. What you do with it is your own affair. I only ask that you read it to the end before you decide what I am.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION I -->
+<section class="sec" id="s1">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s1sp" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0a0818"/><stop offset="100%" stop-color="#0e0b22"/></linearGradient><radialGradient id="s1m" cx="65%" cy="55%" r="35%"><stop offset="0%" stop-color="#c97048" stop-opacity=".6"/><stop offset="100%" stop-color="#0e0b22" stop-opacity="0"/></radialGradient><radialGradient id="s1g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity="1"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient><clipPath id="s1w"><circle cx="360" cy="200" r="140"/></clipPath></defs>
+<rect width="720" height="400" fill="#15101e"/>
+<circle cx="360" cy="200" r="145" fill="#1a1528" stroke="#2a2150" stroke-width="8"/>
+<g clip-path="url(#s1w)"><rect width="720" height="400" fill="url(#s1sp)"/><ellipse cx="380" cy="280" rx="200" ry="80" fill="url(#s1m)"/><path d="M 220 260 Q 280 250 340 255 Q 400 250 460 260" fill="none" stroke="#8b3a22" stroke-width="1" opacity=".4"/><path d="M 240 285 Q 300 275 360 280 Q 420 275 480 285" fill="none" stroke="#8b3a22" stroke-width=".8" opacity=".3"/><ellipse cx="400" cy="270" rx="50" ry="18" fill="#6e2a20" opacity=".3"/><circle cx="400" cy="268" r="20" fill="url(#s1g)" opacity=".6"/><circle cx="400" cy="268" r="3" fill="#f0d990"/><g fill="#e8e2d5" opacity=".6"><circle cx="280" cy="130" r=".8"/><circle cx="320" cy="100" r=".6"/><circle cx="440" cy="120" r=".7"/><circle cx="470" cy="150" r=".5"/><circle cx="260" cy="160" r=".6"/><circle cx="340" cy="140" r=".4"/></g></g>
+<circle cx="360" cy="200" r="140" fill="none" stroke="#2a2150" stroke-width="2"/>
+<ellipse cx="330" cy="230" rx="30" ry="15" fill="#e8e2d5" opacity=".04"/>
+</svg>
+<p class="sec-cap">Observation port, Day 89 - the glint on Argyre Planitia</p>
+</div>
+<p class="sec-num">SECTION I</p>
+<h2 class="sec-ttl">From the Personal Log<br>of Dr. Lina Reyes</h2>
+<p class="sec-sub">Mission Specialist, Brahmaputra Flyby &mdash; Day 89</p>
+<div class="sec-div"></div>
+<p><em>Closest approach to Mars in four hours. I should be sleeping. I should be sleeping.</em></p>
+<p>I saw it before I knew I was seeing it. You know that sensation when a word sits on the tip of your tongue&mdash;the shape of it already filling your mouth, the architecture of its consonants pressing against your teeth&mdash;only the sound hasn't arrived yet? It was like that. A recognition that outran its own meaning. A glint. A single, persistent point of light on the eastern rim of Argyre Planitia, where the southern highlands fall away into the basin like a long, geological sigh. I was at the observation port, my breath fogging the cold laminate, my face so close to the glass that I could feel the chill of space on the other side like a hand pressed to a window in winter. And the glint was there. A diamond seed planted in the rust. Patient. Aware.</p>
+<p>I blinked. It did not.</p>
+<p>I shifted my weight&mdash;instinct, the body's old need to triangulate&mdash;and the ship's attitude was steady, thrusters quiet, but the glint moved. Not with the rotation of Mars, which I know how to account for, which I have watched for eighty-nine days the way a sailor watches the tide. No. It moved with <em>us</em>. It slid across the crater floor, keeping pace with our orbit, as if it were pinned to the glass by a thread of intention. As if something down there had noticed us noticing and decided to hold our gaze.</p>
+<p>&ldquo;Houston, this is Reyes,&rdquo; I said, and my voice came out too calm, the calm of a woman holding a glass she knows is about to break. &ldquo;I have a visual anomaly. A point reflection that appears to be tracking our trajectory. Requesting confirmation from external cameras.&rdquo;</p>
+<p>The delay to Earth was eleven minutes. I had eleven minutes alone with it. The longer I looked, the more I felt it looking back, and I want to be precise here because precision is all I have left: this is not a metaphor. There was a <em>weight</em> to it. A pressure at the back of my skull, behind the eyes, where the optic nerves cross&mdash;like the first dull throb of a migraine, only it didn't hurt. It <em>attended</em>. It leaned in.</p>
+<p>And then the pattern started.</p>
+<p>A flicker. Long, short, short, long, long. A pause&mdash;held, deliberate, the way a musician lets a rest breathe. Then it repeated. I found my left hand tapping the bulkhead in time with it before I noticed I was doing it, my ring finger striking the metal on each long pulse, and when I noticed, I didn't stop. It felt like breathing. It felt like something my body had known how to do before my mind caught up.</p>
+<p>Commander David Chen drifted up behind me. He moves quietly in zero-g, Dave, a leftover from his years in forward operating bases where silence was survival. &ldquo;What've you got, Lina?&rdquo;</p>
+<p>I pointed. He watched for a full minute. I watched him instead&mdash;watched his jaw tighten, the small muscle in the hinge jumping the way it did when he was holding back something he'd already decided to say. I'd seen that muscle jump once before, in the sim bay, when a fire suppression system failed during an emergency drill and he had to choose in half a second whether to pull two trainees out of a smoke-filled module. He chose. He always chooses. That muscle is the sound of Dave choosing.</p>
+<p>&ldquo;It's ice,&rdquo; he said. &ldquo;Or a specular reflection off a deposit of crystalline silica. The orbital parallax makes it look like it's moving.&rdquo;</p>
+<p>&ldquo;Dave,&rdquo; I said, &ldquo;the parallax would shift it against the terrain. This is moving with the terrain, at our angular velocity. It's tracking us.&rdquo;</p>
+<p>He didn't answer. He put a hand on my shoulder. It was kind&mdash;it was always kind with Dave&mdash;but it was also the hand of a man who has decided what is real and what is not, and the hand says: <em>come back inside the real, Lina.</em> &ldquo;Log it,&rdquo; he said. &ldquo;We'll let the boffins figure it out.&rdquo;</p>
+<p>I logged it. Entry 89-E-4. Timestamp. Coordinates. Spectral notes. The bureaucracy of wonder. But the glint did not care about logs. For the next three hours, as we swung around the dark side of Mars and emerged into sunlight again, it was there, waiting on the terminator, a golden needle stitched into the red. And in my head, the flicker had become a sound&mdash;a low, resonant tone, like a temple bell struck once in a vast, empty hall and left to sing until it chose to stop. It was the most beautiful thing I have ever heard. It was the most terrifying thing I have ever heard, because I knew&mdash;with the kind of knowledge that does not pass through the brain, that lives lower, in the brainstem, in the marrow&mdash;I knew it was meant for me. Only me. As if the universe had learned my name and was trying it out, quietly, to see how it sounded.</p>
+<p>I did not sleep that night.</p>
+<p>When I closed my eyes, I saw a desert&mdash;not the desert of Mars but the desert of my childhood. The ochre dunes outside Zagora, where my father took me as a girl, lifting me onto his shoulders before dawn so I could watch the sun come up over the red earth and the world turn from black to copper to gold. He told me stories of the <em>jnoun</em>, the spirits that live in the red earth, older than Islam, older than language, beings who had been there when the first people crossed the desert and would be there when the last people forgot how. He said, &ldquo;If the red earth speaks to you, Lina, do not answer. The <em>jnoun</em> have long memories, and they do not let go of what they have touched.&rdquo;</p>
+<p>I had not thought of that in twenty years. Not since my father died, quietly, in a hospital in Marrakech with the curtains drawn and no one to hold the other hand because I was in Houston, running simulations, being useful. I had not thought of it, and now it came back whole&mdash;his voice, his smell, the scratch of his jacket against my cheek&mdash;and I was strapped in a berth a hundred million kilometres from Morocco, and the red earth was speaking.</p>
+<p>And I answered.</p>
+<p>I am not proud of how I answered. I said, into the dark of my berth, in a whisper so small it barely moved the air: &ldquo;I hear you.&rdquo;</p>
+<p>And the tone, for the first time, changed. It softened. It became, for one held breath, the sound of my father's laughter. And then it was a bell again, and it was beautiful, and I wept, and I did not know if I wept from joy or grief because they were, in that moment, the same door.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION II -->
+<section class="sec" id="s2">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s2b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#12103a"/><stop offset="100%" stop-color="#0e0b22"/></linearGradient><radialGradient id="s2l" cx="50%" cy="0%" r="60%"><stop offset="0%" stop-color="#e8e2d5" stop-opacity=".08"/><stop offset="100%" stop-color="#e8e2d5" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s2b)"/>
+<rect width="720" height="400" fill="url(#s2l)"/>
+<ellipse cx="360" cy="280" rx="200" ry="40" fill="#1a1538" stroke="#2a2150" stroke-width="1.5"/>
+<g fill="#0a0818" opacity=".85"><circle cx="200" cy="235" r="12"/><path d="M 185 247 Q 183 265 187 285 L 213 285 Q 217 265 215 247 Z"/><circle cx="310" cy="225" r="11"/><path d="M 296 236 Q 294 254 298 274 L 322 274 Q 326 254 324 236 Z"/><circle cx="410" cy="225" r="11"/><path d="M 396 236 Q 394 254 398 274 L 422 274 Q 426 254 424 236 Z"/><circle cx="520" cy="235" r="12"/><path d="M 505 247 Q 503 265 507 285 L 533 285 Q 537 265 535 247 Z"/></g>
+<circle cx="413" cy="223" r="1.5" fill="#d4a843" opacity=".9"/>
+<line x1="360" y1="0" x2="360" y2="80" stroke="#2a2150" stroke-width="1" opacity=".3"/>
+<rect x="340" y="75" width="40" height="6" fill="#2a2150" rx="2" opacity=".5"/>
+<circle cx="360" cy="278" r="4" fill="#2a2150"/><circle cx="360" cy="278" r="1" fill="#b8442e" opacity=".8"/>
+</svg>
+<p class="sec-cap">Mission debrief - nine days post-return</p>
+</div>
+<p class="sec-num">SECTION II</p>
+<h2 class="sec-ttl">Mission Debrief</h2>
+<p class="sec-sub">Johnson Space Center, Houston &mdash; 9 days post-return</p>
+<div class="sec-div"></div>
+<p><em>Present: Commander David Chen; Mission Specialist Dr. Lina Reyes; Flight Engineer Yuki Tanaka; NASA Flight Psychologist Dr. Miriam Okonedo.</em></p>
+<div class="tr">
+<p class="sp">DR. OKONEDO:</p><p class="dl">Lina, walk me through the moment you first noticed the anomaly. Take your time. There's no wrong way to tell it.</p>
+<p class="sp">REYES:</p><p class="dl">It was about two hours before periapsis. I was on the port camera check&mdash;routine, the kind of task you do with your hands while your mind is somewhere else. The terrain was Argyre, the southern lip, where the highlands drop into the basin. I saw a point of light. Like a star, but on the ground. It didn't flicker the way a reflection flickers&mdash;it was steady, and it moved with the ship's motion. I thought at first it was a sensor ghost. But the visual matched the spectral data in the post-mission analysis. It was real. Something down there was reflecting light at us. Or generating it.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl">Commander Chen, you also observed it. Do you concur with Dr. Reyes's description?</p>
+<p class="sp">CHEN:</p><p class="dl">I saw a reflection. A bright spot on the basin floor. I still believe it was a specular bounce off a high-albedo deposit&mdash;ice, silica, something crystalline. The apparent motion is consistent with orbital mechanics and the ship's changing attitude. Dr. Reyes's interpretation is&mdash;</p>
+<p class="sp">REYES:</p><p class="dl">&mdash;is inconvenient, David, I know. But the light tracked us across the terminator. You saw it reappear on the dawn line. You <em>saw</em> it. Ice doesn't do that. Silica doesn't wait for you on the sunrise side.</p>
+<p class="sp">CHEN:</p><p class="dl"><span class="sd">(pause)</span> I saw something. I don't know what I saw. That's the honest answer, and it's the one I've been told not to give.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl">Yuki?</p>
+<p class="sp">TANAKA:</p><p class="dl"><span class="sd">(quietly)</span> I saw it on the engineering cam. The glint. It&hellip; it had a cadence. I counted, because that's what I do, I count things, I can't help it. One long, two short, two long. On repeat. I thought maybe it was a telemetry artifact, a loop in the imaging software, but it was in the optical band, not radio. The camera saw it. The camera doesn't hallucinate.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl">Did anyone else experience physiological or psychological symptoms during the encounter? Anything at all.</p>
+<p class="sp">REYES:</p><p class="dl"><span class="sd">(long pause)</span> I had a pressure behind my eyes. Like a sinus headache, but deeper. Behind, not above. And I&hellip; I heard it. A tone. In my head. Not in the cabin. In me.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl">Auditory hallucination? You understand that's what the preliminary assessment will say.</p>
+<p class="sp">REYES:</p><p class="dl">I don't think it was a hallucination, Miriam. I think it was a signal. And I think it was waiting for someone to hear it. I think it had been waiting a very long time, and I think it was relieved.</p>
+<p class="sp">CHEN:</p><p class="dl">Lina, for God's sake. You're an astrobiologist, not a psychic. We deal in evidence. The evidence says optical anomaly. End of story.</p>
+<p class="sp">REYES:</p><p class="dl">The evidence says we <em>don't know what it was</em>, David. And not knowing is not the same as nothing. Not knowing is a door. You're trying to wall it shut because you're afraid of what's on the other side, and I understand that, I do. But some doors don't wall shut. <span class="sd">(Her voice drops, almost to itself.)</span> I still hear it. The tone. It's quieter now, but it's there. Like a door that someone left ajar on purpose. Like an invitation.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl"><span class="sd">(writing, not looking up)</span> Commander Chen, did you experience any symptoms? Anything you'd like on the record?</p>
+<p class="sp">CHEN:</p><p class="dl"><span class="sd">(long pause)</span> No. I didn't hear anything. I didn't see anything that can't be explained. That's my statement, and it's true.</p>
+<p class="sp">DR. OKONEDO:</p><p class="dl">Yuki?</p>
+<p class="sp">TANAKA:</p><p class="dl">I dreamed about Mars. Every night since the flyby. The same dream. Red sand, violet sky, walking toward the sunrise. I assumed it was stress. The brain processing the mission. That's what I told myself. That's what I still tell myself.</p>
+<p class="dl"><span class="sd">(Silence on the recording for seven seconds.)</span></p>
+<p class="sp">REYES:</p><p class="dl">The pattern&mdash;long, short, short, long, long&mdash;I looked it up on the medical database after landing. It's not Morse. It's not binary. It's not any encoding system I can find. But it <em>is</em> the rhythm of a healthy human heartbeat at rest. Sixty beats per minute. The interval between systole and diastole, the little pause where the heart listens before it speaks again. Whatever was down there, it was speaking in the rhythm of our bodies. It knew us. It had been watching, and it knew us, and it spoke to us in the only language it thought we'd understand.</p>
+<p class="dl"><span class="sd">(Silence for eleven seconds. Then Okonedo turns off the tape.)</span></p>
+</div>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION III -->
+<section class="sec" id="s3">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s3b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e0b22"/><stop offset="100%" stop-color="#0a0818"/></linearGradient></defs>
+<rect width="720" height="400" fill="url(#s3b)"/>
+<g stroke="#e8e2d5" stroke-width=".5" opacity=".08"><line x1="50" y1="0" x2="40" y2="60"/><line x1="100" y1="0" x2="92" y2="55"/><line x1="160" y1="0" x2="150" y2="70"/><line x1="220" y1="0" x2="212" y2="50"/><line x1="280" y1="0" x2="270" y2="65"/><line x1="340" y1="0" x2="332" y2="55"/><line x1="400" y1="0" x2="390" y2="60"/><line x1="460" y1="0" x2="452" y2="50"/><line x1="520" y1="0" x2="510" y2="65"/><line x1="580" y1="0" x2="572" y2="55"/><line x1="640" y1="0" x2="630" y2="70"/><line x1="700" y1="0" x2="692" y2="50"/></g>
+<g transform="translate(360,200) rotate(-3)"><rect x="-180" y="-130" width="320" height="260" fill="#1a1538" stroke="#2a2150" stroke-width="1" rx="3" opacity=".8"/>
+<g stroke="#2a2150" stroke-width=".4" opacity=".3"><line x1="-165" y1="-100" x2="125" y2="-100"/><line x1="-165" y1="-80" x2="125" y2="-80"/><line x1="-165" y1="-60" x2="125" y2="-60"/><line x1="-165" y1="-40" x2="125" y2="-40"/><line x1="-165" y1="-20" x2="125" y2="-20"/><line x1="-165" y1="0" x2="125" y2="0"/><line x1="-165" y1="20" x2="125" y2="20"/><line x1="-165" y1="40" x2="125" y2="40"/><line x1="-165" y1="60" x2="125" y2="60"/><line x1="-165" y1="80" x2="125" y2="80"/><line x1="-165" y1="100" x2="125" y2="100"/></g>
+<g fill="#e8e2d5" font-family="cursive" font-size="10" opacity=".5"><text x="-160" y="-95">Fukuoka. Rain. Yuki T.</text><text x="-160" y="-73">"Everyone had the dreams"</text><text x="-160" y="-51">Kore. The maiden. Persephone.</text><text x="-160" y="-29">"The glint isn't a what. It's a who."</text><text x="-160" y="3">ESA contact - bloodwork</text><text x="-160" y="25">crystalline / photonic / optic nerve</text><text x="-160" y="48">"benign anomaly of unknown origin"</text><text x="-160" y="72">not pathogenic. not alive.</text><text x="-160" y="95">organising. building something.</text></g>
+<line x1="-145" y1="-130" x2="-145" y2="130" stroke="#b8442e" stroke-width=".5" opacity=".3"/></g>
+<circle cx="340" cy="130" r="15" fill="#d4a843" opacity=".08"/>
+</svg>
+<p class="sec-cap">Fukuoka, rain on tin - Yuki's testimony, Leo's notebook</p>
+</div>
+<p class="sec-num">SECTION III</p>
+<h2 class="sec-ttl">The Journalist's Notebook</h2>
+<p class="sec-sub">Leo Baumann</p>
+<div class="sec-div"></div>
+<p>The debrief transcript came to me through a junior administrator at JSC, a young woman named Clara who had been assigned to transcribe the session and who told me, over coffee in a strip-mall parking lot, that she'd had to stop three times because her hands were shaking. &ldquo;It wasn't what she said,&rdquo; Clara told me. &ldquo;It was how she said it. Like she was trying to describe a colour that didn't have a name yet.&rdquo;</p>
+<p>Clara gave me the file on a thumb drive and then sat in her car for ten minutes before starting the engine.</p>
+<p>I started digging. The deeper I went, the stranger the ground became.</p>
+<div class="orn">&#10042;</div>
+<p>I found Yuki Tanaka in Fukuoka, six months after she'd resigned from JAXA. We met in a ramen shop near the harbour, rain on the tin roof. Yuki is small, precise, with large unblinking eyes. She is not a woman who embroiders. She is a woman who counts things. She ordered for both of us and ate without looking up for several minutes.</p>
+<p>&ldquo;Everyone on the crew had them,&rdquo; she said. &ldquo;The dreams. We didn't talk about it. In my culture, you don't share the inside of your head. But in the dream, you're standing on Mars. No suit. No helmet. Just your skin and the red sand, and the sky is a shade of violet you can feel in your bones. Not see&mdash;feel. There's a sound underneath everything, a deep hum, like the planet is breathing. And you know, without being told, that you're supposed to walk toward the sunrise. Every night, the same dream. And every morning you wake up with the taste of rust in your mouth and a name on your tongue you can't catch.&rdquo;</p>
+<p>&ldquo;What name?&rdquo;</p>
+<p>She set her chopsticks down. &ldquo;Kore. It means &lsquo;the maiden.' In ancient Greek. Persephone, before she had a throne. Persephone, who went down into the underworld and ate the pomegranate seeds and could never fully leave. I looked it up. I looked it up at three in the morning in my apartment in Tsukuba with my hands shaking, because I am an engineer, Mr. Baumann. I am a woman who believes in torque and tolerance and the laws of thermodynamics, and I was looking up Greek mythology at three in the morning because a dream told me to.&rdquo;</p>
+<p>She picked up her chopsticks and ate another bite, methodically.</p>
+<p>&ldquo;The glint isn't a what,&rdquo; she said. &ldquo;It's a who. And Lina ate the seeds. She ate them the moment she saw the light. We all did, a little. But Lina swallowed them whole.&rdquo; She paused. &ldquo;I did not swallow them. I chewed and I spat them out. That is a choice, and I have made it, and I am living with it. I sleep with the lights on. I have not dreamed of Mars in four months. I am not proud of this. I am not ashamed. I am a woman who chose to stay on this side of the door. The door is still there. I can feel it. But I have decided that I am a person who stays in the room I understand, and I will not apologise for that, and I will not be pitied for it.&rdquo;</p>
+<p>She looked at me then, and her gaze was not the thousand-yard stare I'd been told to expect. It was clear, direct, and completely sane. It was the gaze of a woman who has seen a door and refused it and is at peace with the refusal, and the peace has cost her something she does not name.</p>
+<div class="orn">&#10042;</div>
+<p>Through a contact at the European Space Agency, I obtained Lina's post-mission medical file.</p>
+<p>Her bloodwork showed trace elements that should not exist. A crystalline structure, microscopic, that the ESA lab could not classify against any known database. It was not pathogenic. It was not, in any conventional sense, alive. It was photonic&mdash;a lattice of mineral and light that could, in theory, convert photons into neural signals. It was growing along her optic nerve, branching like frost on a window, and the branching was not random. It was organising. It was building something.</p>
+<p>The doctors called it a &ldquo;benign anomaly of unknown origin.&rdquo; They wrote that phrase the way people write things when they have no language for what they've found and the absence of language frightens them. They recommended monitoring and follow-up. They did not recommend wonder.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION IV -->
+<section class="sec" id="s4">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s4b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e0b22"/><stop offset="100%" stop-color="#15102e"/></linearGradient><radialGradient id="s4m" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#2a2150" stop-opacity=".8"/><stop offset="100%" stop-color="#0e0b22" stop-opacity=".9"/></radialGradient><radialGradient id="s4c" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity="1"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s4b)"/>
+<rect x="200" y="50" width="320" height="300" rx="8" fill="url(#s4m)" stroke="#2a2150" stroke-width="3"/>
+<g fill="#e8e2d5" opacity=".03"><ellipse cx="280" cy="120" rx="50" ry="30"/><ellipse cx="400" cy="200" rx="60" ry="40"/><ellipse cx="320" cy="280" rx="45" ry="25"/></g>
+<circle cx="360" cy="200" r="45" fill="#0e0b22" opacity=".6"/>
+<circle cx="360" cy="200" r="25" fill="url(#s4c)" opacity=".6"/>
+<circle cx="360" cy="200" r="4" fill="#f0d990"/>
+<rect x="195" y="45" width="330" height="310" rx="10" fill="none" stroke="#1a1538" stroke-width="2"/>
+<g fill="#e8e2d5" opacity=".08"><circle cx="330" cy="165" r="2"/><circle cx="390" cy="175" r="1.5"/><circle cx="345" cy="235" r="2.5"/><circle cx="385" cy="225" r="1.5"/></g>
+</svg>
+<p class="sec-cap">The mirror, April 3rd - a perfect, un-fogging eye</p>
+</div>
+<p class="sec-num">SECTION IV</p>
+<h2 class="sec-ttl">Lina's Private Journal</h2>
+<p class="sec-sub">Recovered from her flat in Camberwell, London, after her disappearance</p>
+<div class="sec-div"></div>
+<div class="je">
+<p class="jd">Entry: March 12th</p>
+<p>The dreams are no longer dreams. I've started walking in my sleep.</p>
+<p>Last night I woke up standing in the garden, barefoot in the mud, the March cold biting my ankles, my face turned to the sky. Orion was above me, and Mars was a red jewel caught in the horns of Taurus. I was speaking aloud in a language I don't know&mdash;not Tamazight, not Arabic, not French, not English, nothing I have a name for&mdash;but I understood every word the way you understand music, in the part of you that is older than words.</p>
+<p>I said: &ldquo;I am the one who crossed the threshold. I am the door that opens inward. I am ready.&rdquo;</p>
+<p>What am I ready for? I stood in the mud and I didn't know. I still don't. But I feel it building. There is a pressure in my chest, just above the sternum, like a second heartbeat that is not mine but is not hostile, that is patient and warm and waiting for its moment the way a seed waits for rain. The tone is louder now. It's not just a sound&mdash;it has become a direction. It pulls. Like a compass needle, like a tide, like the way a child turns toward its mother's voice in a crowd.</p>
+<p>I looked at a map of Mars yesterday and my finger landed on Lyot Crater without me choosing it. That's where the glint was. That's where I left something. No&mdash;that's where something was left for me. And I didn't bring it back. It came back on its own, inside me, and it is growing.</p>
+<p>David called tonight. He's worried. He said the agency is sending him for &ldquo;extended evaluation.&rdquo; He told me to keep my head down. David, my dear, you can't keep your head down when the sky is calling your name.</p>
+</div>
+<div class="je">
+<p class="jd">Entry: March 28th</p>
+<p>I need to record what I saw last night, because I am afraid that if I don't write it down, I will convince myself it was a dream, and it was not a dream.</p>
+<p>The tone took me. That is the only verb that fits. It did not pull me to sleep&mdash;it <em>led</em> me, the way a hand leads a child through a crowded market. I closed my eyes in my bed in Camberwell and I opened them somewhere else.</p>
+<p>I was standing on the shore of an ocean. Not an ocean I recognised. The water was dark, almost black, with a surface that moved too slowly, as if it were thicker than water, as if it were thinking. The sky above it was not blue or violet but a colour I do not have a word for&mdash;between amber and bronze, the colour of old light, the colour of a sunset that has been happening for a very long time. The sand under my feet was red. Not Mars-red. Earth-red. The red of laterite, of weathered basalt, of the earth outside Zagora.</p>
+<p>I was on Mars. But not the Mars I have studied for fifteen years. This was Mars before. Mars with water. Mars with air. Mars with a sky that held clouds&mdash;thin, high, fast-moving, the clouds of a world that was alive and knew it.</p>
+<p>And I was not alone.</p>
+<p>There was a being standing at the water's edge. I say &ldquo;standing&rdquo; and I say &ldquo;being&rdquo; because I don't have better words, but both are wrong. It was not standing the way a human stands. It was <em>occurring</em>&mdash;held in place by attention, the way a thought is held in the mind. And it was not a creature with a body. It was a shape made of the same dark light that moved in the water, a silhouette that was also a presence, the way a shadow is also a proof of something solid.</p>
+<p>It was looking at the ocean. And it was grieving.</p>
+<p>I knew this the way I knew the sand was red&mdash;not by seeing, but by <em>receiving</em>. The grief came into me like a temperature. It was not loud. It was not dramatic. It was the grief of a being who had stood at the edge of an ocean and watched it recede over years&mdash;over decades&mdash;over the length of a human civilisation, longer, longer than that&mdash;and had known, each day, that the water was less than it was the day before, and that the less would continue until there was nothing left, and that after the nothing there would be memory, and after the memory there would be waiting, and the waiting would last longer than the ocean had.</p>
+<p>I understood, standing there in the red sand of a dead world's past, that this being was one of the last. That it had been alive when Mars had rivers. That it had built things&mdash;I could feel the built-ness, the intention, the craft, though I could not see what it had built. That its people had chosen, when the water left, to follow the water into another form&mdash;to become light, to become the lattice, to fold themselves into the planet's crystalline structure and <em>persist</em>&mdash;and that this being had been the one to stay behind at the shoreline, the last to leave, the one who turned off the lights, because someone always has to be last, and being last means you remember what the others can afford to forget.</p>
+<p>It turned to me. It did not have a face. But it had an attention, and the attention was a face, and the face was the most human thing I have ever seen on something that was not human. It was tired. It was relieved. It was the face of a person who has been alone in a room for a very long time and hears a knock.</p>
+<p>It did not speak. It showed me.</p>
+<p>It showed me its hands. Or the place where hands would be. And in them, a thing I recognised: a seed. Not a biological seed. A pattern. A folded structure, crystalline and luminous, that contained&mdash;compressed, encoded, the way a sentence contains meaning in the arrangement of its letters&mdash;everything its people had learned. Not science. Not technology. Something else. The thing that science and technology are <em>for</em>. The reason they evolved. The answer to the question that every sufficiently advanced civilisation eventually asks, which is not &ldquo;How does the universe work?&rdquo; but &ldquo;What is the universe <em>for</em>?&rdquo;</p>
+<p>The Seed was their answer. And they had been holding it for two billion years, waiting for someone to hold it back.</p>
+<p>I reached for it. In the dream, or the vision, or whatever it was, I reached for it the way you reach for a child's hand in a crowd&mdash;not because you decided to, but because the reaching is older than decision.</p>
+<p>And the being placed it in my palm.</p>
+<p>It was warm. It was the warmest thing I have ever touched. And it was heavy&mdash;not with mass but with <em>meaning</em>, the way a word can be heavy when it is the right word, said at the right time, by the right person. I held it, and it held me back, and the being looked at me with its faceless attention, and what it felt&mdash;what I received&mdash;was not gratitude.</p>
+<p>It was grief. Its grief, and mine, braided together. Because it knew what I was about to do, and it knew what it would cost, and it was sorry. Not regretful&mdash;sorry. The way you are sorry when you hand someone a gift that will change them beyond recognition and you know they will accept it because they are the kind of person who accepts, and the accepting is noble, and the accepting is also a kind of death.</p>
+<p>I woke up crying. Not the gentle crying of sentiment. The ugly, gasping, snot-running crying of a woman who has held something beautiful and known that holding it means letting go of everything else.</p>
+<p>I have not stopped crying. I am crying now, writing this. Not because I am sad. Because I am saying goodbye.</p>
+</div>
+<div class="je">
+<p class="jd">Entry: April 11th</p>
+<p>Today I held Sami after his bath. He is three. He smelled of soap and his hair was damp and he put his arms around my neck and said, &ldquo;Mama, don't go to the red place.&rdquo;</p>
+<p>I went cold. I have never spoken to him about Mars. I have never said the words &ldquo;red place&rdquo; in his hearing. He does not know about the glint, the tone, the journal, the dreams. He is three.</p>
+<p>&ldquo;What red place, habibi?&rdquo;</p>
+<p>&ldquo;The place in your dreams,&rdquo; he said. &ldquo;The place with the sand and the singing. You go there when you're sleeping. I can hear you go.&rdquo;</p>
+<p>I held him tighter. I said, &ldquo;I'm not going anywhere, my love.&rdquo;</p>
+<p>He pulled back and looked at me with those eyes&mdash;his father's eyes, brown, with the same depth&mdash;and he said, &ldquo;It's okay, Mama. The light is nice. But I'll miss you.&rdquo;</p>
+<p>He said it the way children say things: plainly, without drama, as though he were describing the weather. And then he asked for a biscuit, and the moment passed, and I put him to bed and read him a story and sat in the hallway outside his room with my back against the wall and my hand over my mouth and I did not make a sound because if I made a sound I would not stop.</p>
+<p>He knows. He is three and he knows. The gold is in his eyes&mdash;I checked, last week, while he slept. A fleck of amber in his left iris. He is already part of this. He was always going to be part of this.</p>
+<p>I am going to lose him. Not to death. To something I chose. I am going to walk through a door and leave my son on the other side of it, and he will grow up with a mother who is technically everywhere and specifically nowhere, and he will understand, eventually, because the gold will help him understand, but understanding is not the same as having, and I am choosing to give him understanding instead of having, and that is the cruelest gift a mother can give, and I am going to give it, and I will never forgive myself, and I will do it anyway, because the being on the shore was alone for two billion years and I cannot leave it alone anymore.</p>
+<p>I am writing this so that someday Sami reads it and knows: I did not leave because I didn't love him. I left because I loved him and the thing on the shore and the red earth and the whole aching universe, and love, when it is large enough, does not choose. It just goes.</p>
+</div>
+<div class="je">
+<p class="jd">Entry: April 17th</p>
+<p>I know what I have to do.</p>
+<p>The tone became a voice last night. It spoke in my mother's Tamazight. The language of the Atlas Mountains. The language she sang to me in before she died, the language I have been forgetting word by word for twenty years and which is now coming back, word by word, as if the forgetting was the anomaly and the remembering is the correction.</p>
+<p>It said: &ldquo;Come home, daughter of the red earth. The door is still open. Bring the key.&rdquo;</p>
+<p>The key. I have been trying to figure out what the key is. Then I remembered. On the mission, during closest approach, I recorded a segment of the glint's pulse pattern on a personal audio drive. I don't know why. My hand reached for the recorder without my choosing. I still have it. Forty-seven seconds. When I play it backward, it's not a pulse anymore. It's a voice. It says my name. Over and over. <em>Lina. Lina. Lina.</em> With the cadence of someone calling a child in from play.</p>
+<p>I'm not scared. I'm tired of being scared. I have been scared for five months. I am done with scared.</p>
+<p>But I am not done with grief. I sat with Sami tonight and watched him eat his pasta and get sauce on his chin and laugh at something on the television, and I memorised him. The way his hair falls. The gap in his teeth. The way he says &ldquo;actually&rdquo; when he means &ldquo;really,&rdquo; because he is three and the distinction matters to him. I memorised the weight of him in my lap, the specific gravity of a three-year-old boy who does not yet know that his mother is a door.</p>
+<p>I will carry this. Whatever I become, I will carry this: soap-smell, damp hair, the gap in his teeth, the word &ldquo;actually.&rdquo; I will carry it the way the being on the shore carried the ocean. As a memory of something beautiful that I could not keep.</p>
+<p>The universe is a circle, and I am coming back to the beginning, and the beginning has been waiting with the patience of stone and the tenderness of a father calling his daughter in from the dark.</p>
+</div>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION V -->
+<section class="sec" id="s5">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s5b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e0b22"/><stop offset="100%" stop-color="#12103a"/></linearGradient><radialGradient id="s5e" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3a2818"/><stop offset="70%" stop-color="#1a1004"/><stop offset="100%" stop-color="#0a0602"/></radialGradient><radialGradient id="s5g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity="1"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s5b)"/>
+<g transform="translate(360,200)"><ellipse cx="0" cy="0" rx="160" ry="80" fill="#1a1538" stroke="#2a2150" stroke-width="1" opacity=".8"/><ellipse cx="0" cy="0" rx="155" ry="75" fill="#e8e2d5" opacity=".12"/><circle cx="0" cy="0" r="55" fill="url(#s5e)"/>
+<g fill="#d4a843" opacity=".7"><circle cx="-20" cy="-10" r="2.5"/><circle cx="15" cy="-15" r="1.5"/><circle cx="-10" cy="20" r="2"/><circle cx="25" cy="10" r="1.8"/><circle cx="-30" cy="5" r="1.2"/><circle cx="5" cy="-25" r="1.5"/><circle cx="30" cy="-5" r="1.2"/><circle cx="20" cy="25" r="1"/></g>
+<circle cx="-20" cy="-10" r="8" fill="url(#s5g)" opacity=".3"/><circle cx="-20" cy="-10" r="2.5" fill="#f0d990"/>
+<circle cx="0" cy="0" r="20" fill="#0a0602"/><circle cx="0" cy="0" r="18" fill="#050204"/><circle cx="-5" cy="-8" r="4" fill="#e8e2d5" opacity=".15"/><circle cx="-7" cy="-10" r="1.5" fill="#f0d990" opacity=".6"/>
+<g stroke="#0a0608" stroke-width="1" opacity=".4" stroke-linecap="round"><line x1="-150" y1="-30" x2="-155" y2="-45"/><line x1="-120" y1="-50" x2="-125" y2="-65"/><line x1="-80" y1="-60" x2="-82" y2="-78"/><line x1="-40" y1="-65" x2="-40" y2="-83"/><line x1="0" y1="-68" x2="0" y2="-85"/><line x1="40" y1="-65" x2="42" y2="-83"/><line x1="80" y1="-60" x2="85" y2="-78"/><line x1="120" y1="-50" x2="128" y2="-65"/><line x1="150" y1="-30" x2="158" y2="-45"/></g></g>
+<g transform="translate(580,310)" opacity=".15"><ellipse cx="0" cy="0" rx="60" ry="30" fill="#0e0b22" stroke="#d4a843" stroke-width=".5"/><circle cx="0" cy="0" r="18" fill="#d4a843" opacity=".4"/><circle cx="0" cy="0" r="6" fill="#f0d990" opacity=".6"/></g>
+</svg>
+<p class="sec-cap">The iris - amber flecks, crystalline dendritic growth</p>
+</div>
+<p class="sec-num">SECTION V</p>
+<h2 class="sec-ttl">The Therapist's Files</h2>
+<p class="sec-sub">Dr. Helena Vance, MD, FRCPsych &mdash; Session Notes, 14 April</p>
+<div class="sec-div"></div>
+<p>Lina arrived ten minutes late. In two years, she has never been late. She is punctual to the point of rigidity&mdash;the armour of a woman who lost her father young and learned that the world is more tolerable when you can predict it. Today, she was not armoured. She seemed distracted but not agitated, the way a person is distracted when they are listening to something you can't hear.</p>
+<p>There was a strange luminosity to her skin. I initially attributed it to the spring light, but I drew the blinds and even in the dim room, she carried a faint, warm radiance, as if a low lamp had been lit somewhere behind her sternum. Her eyes, normally a deep, unremarkable brown, now show flecks of amber that I had not noted before. They are not floaters. They are <em>in</em> the iris, distributed in a branching pattern that my ophthalmologist husband, when I described it over dinner without naming the patient, said sounded like &ldquo;crystalline dendritic growth, but I've never seen it in a living eye.&rdquo;</p>
+<p>She denied using any substances. I believed her. She was not touching her earlobe, her tell when she is deflecting. She was touching her chest, a slow, rhythmic press above the sternum, as if checking for a heartbeat that was not hers. Or not hers alone.</p>
+<p>I asked about the dreams.</p>
+<p>&ldquo;They're not dreams, Helena.&rdquo; She said it without defiance. &ldquo;They're visitations. I've been chosen. I know how that sounds. I need you to just listen. Can you do that?&rdquo;</p>
+<p>I told her I was listening. I also noted, internally, that &ldquo;I've been chosen&rdquo; is a phrase I have heard from patients in manic states, psychotic states, and spiritual crises, and that my training requires me to hold it at arm's length and assess for delusion, grandiosity, and risk.</p>
+<p>I held it at arm's length. I assessed. And I will note here, for the record, what my training does not have a checkbox for: I could not find the delusion. Her speech was coherent. Her logic was intact. Her affect was full-range and appropriate. She was not manic&mdash;she was not pressuring speech, not flight-of-ideas, not grandiose in the clinical sense. She was, if anything, unusually present, and the presence itself was unsettling, because presence of this intensity is usually the product of either deep meditative practice or a psychotic break, and she had neither in her history.</p>
+<p>She described a vision of walking across the Martian surface, toward a tower of light in Lyot Crater. The tower, she said, was made of &ldquo;solidified attention&rdquo;&mdash;matter and energy held in a form that was both. Inside, an entity. Not a creature. A <em>presence</em>. A distributed intelligence that had been waiting since Mars lost its oceans. The glint was its eye, watching for a species that could receive the inheritance.</p>
+<p>&ldquo;What inheritance?&rdquo; I asked.</p>
+<p>&ldquo;The Seed.&rdquo; She said it the way you say the name of someone you love. &ldquo;A blueprint. A way to evolve&mdash;not biologically, but the way a sentence evolves when you finally find the last word. They don't want to invade. They want to <em>complete</em> us. We're a half-finished sentence, Helena. A brilliant, aching sentence that stops in the middle. The Seed is the full stop.&rdquo;</p>
+<p>She spoke with conviction. I noted no formal thought disorder. But there was something in the way she kept touching her chest&mdash;not checking, but <em>tending</em>. The way you tend a thing you are protecting.</p>
+<p>I asked about her son. This is where the session changed.</p>
+<p>Her face did something I have not seen in two years of working with Lina, who controls her face the way a diplomat controls a brief. It broke. Not dramatically&mdash;a single fracture, a crack in the surface, the way a stone cracks when water has been freezing and thawing inside it for years. Her eyes filled. She did not wipe them. She let them fill and she let them spill and she said:</p>
+<p>&ldquo;I am going to lose him, Helena. Not to death. To a door I'm choosing to walk through. And he is three, and he told me last week that he can hear me go to the red place in my sleep, and he said it was okay, and it is not okay, it will never be okay, but I am going to do it anyway, because there is something on the other side of that door that has been alone for two billion years, and I am the only one who heard it, and I cannot&mdash;I <em>cannot</em>&mdash;leave it alone. And I need you to not tell me I'm ill, because I am not ill. I am the sanest I have ever been. I am so sane it hurts. The world has never made this much sense to me, and the sense is killing me, because the sense requires a sacrifice, and the sacrifice is my son's childhood, and I am going to make it, and I will hate myself for it, and it is still the right thing to do, and I need someone&mdash;just one person&mdash;to hear me say that and not look at me with that face, that clinical face, and tell me I need rest.&rdquo;</p>
+<p>I did not tell her she needed rest.</p>
+<p>I sat with her. I sat with her for a long time. And I will record this, because I am a scientist of the mind and I believe in recording what I observe, even when what I observe is my own clinical framework cracking under the weight of a patient's grief, which is not supposed to happen, which is not in the manual, which is, I am beginning to understand, the point.</p>
+<p>She terminated the session early. She took my hand and held it longer than professional. &ldquo;If you start to hear a tone,&rdquo; she said, &ldquo;don't be afraid. You're allowed to say no. Yuki said no. David said no. Saying no is a valid choice. But you're also allowed to say yes.&rdquo;</p>
+<p>She left. As the door closed, I caught a glimpse of her reflection in the window. The angle was wrong for it, but I saw it:</p>
+<p>For a split second, her reflection did not match her movements. Lina was walking away, hand reaching for the handle. The reflection stood still. It watched her go. Its eyes were gold&mdash;not flecked, not amber, but solid, luminous gold.</p>
+<p>I have not told anyone this. I am telling you now because Lina asked me to listen, and I listened, and listening has consequences. I have not heard a tone. I do not have gold in my eyes. But three nights ago, I dreamed of an ocean on a world I did not recognise, and a being standing at the shore, and the being was not looking at me. It was looking at the water. And it was the loneliest thing I have ever seen, and I woke up and I could not breathe for the weight of it.</p>
+<p>I am not saying yes. I am not saying no. I am saying that the door is there, and I can see it, and I do not know what that makes me.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION VI -->
+<section class="sec" id="s6">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s6b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0a0818"/><stop offset="100%" stop-color="#15102e"/></linearGradient><linearGradient id="s6gr" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3a2018"/><stop offset="100%" stop-color="#1a0e08"/></linearGradient><radialGradient id="s6d" cx="50%" cy="30%" r="50%"><stop offset="0%" stop-color="#2a2150"/><stop offset="100%" stop-color="#0e0b22"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s6b)"/>
+<g fill="#e8e2d5" opacity=".5"><circle cx="80" cy="50" r=".8"/><circle cx="150" cy="30" r=".6"/><circle cx="220" cy="60" r=".5"/><circle cx="300" cy="40" r=".7"/><circle cx="500" cy="50" r=".6"/><circle cx="580" cy="30" r=".8"/><circle cx="650" cy="60" r=".5"/><circle cx="100" cy="100" r=".4"/><circle cx="400" cy="80" r=".5"/><circle cx="620" cy="100" r=".6"/></g>
+<g transform="translate(360,230)"><path d="M -90 0 Q -90 -70 0 -80 Q 90 -70 90 0 Z" fill="url(#s6d)" stroke="#2a2150" stroke-width="1.5"/><path d="M -80 -5 Q -80 -60 0 -70 Q 80 -60 80 -5" fill="none" stroke="#2a2150" stroke-width=".5" opacity=".5"/><line x1="0" y1="-80" x2="0" y2="-120" stroke="#2a2150" stroke-width="1.5"/><circle cx="0" cy="-122" r="4" fill="#2a2150"/><circle cx="0" cy="-122" r="2" fill="#d4a843" opacity=".6"/><line x1="-60" y1="-50" x2="0" y2="-115" stroke="#2a2150" stroke-width=".8" opacity=".4"/><line x1="60" y1="-50" x2="0" y2="-115" stroke="#2a2150" stroke-width=".8" opacity=".4"/><rect x="-5" y="0" width="10" height="60" fill="#1a1538" stroke="#2a2150" stroke-width="1"/></g>
+<g fill="none" stroke="#d4a843" stroke-width="1" opacity=".15"><path d="M 380 110 Q 500 80 620 70"/><path d="M 380 120 Q 510 95 630 85"/><path d="M 380 130 Q 520 110 640 100"/></g>
+<circle cx="640" cy="60" r="10" fill="#b8442e" opacity=".4"/><circle cx="640" cy="60" r="5" fill="#c97048" opacity=".6"/>
+<path d="M 0 340 Q 200 330 360 335 Q 540 330 720 340 L 720 400 L 0 400 Z" fill="url(#s6gr)"/>
+<g transform="translate(120,330)" opacity=".6"><rect x="0" y="-25" width="40" height="25" fill="#1a0e08" stroke="#2a2150" stroke-width=".5"/><path d="M -5 -25 L 20 -38 L 45 -25" fill="#1a0e08" stroke="#2a2150" stroke-width=".5"/><rect x="15" y="-18" width="6" height="8" fill="#d4a843" opacity=".3"/></g>
+</svg>
+<p class="sec-cap">Diego's dish - 12 metres, pointed at Lyot Crater</p>
+</div>
+<p class="sec-num">SECTION VI</p>
+<h2 class="sec-ttl">The Signal</h2>
+<p class="sec-sub">Amateur Radio Intercept, Atacama Desert, Chile &mdash; Recorded by Diego Fuentes, 22 May</p>
+<div class="sec-div"></div>
+<p>I am a retired engineer. I am sixty-three years old. I have a bad left knee, a small pension, and a refurbished 12-metre dish mounted on a concrete pad behind my house, where the air is dry and the sky is dark and a man can listen to the universe without anyone telling him he should get a hobby that involves other people.</p>
+<p>Since the Mars flyby, I had been monitoring the usual bands, hoping to catch leftover telemetry from the Brahmaputra. I am not a fantasist. I spent thirty years building radio telescopes. I know what signal looks like and what noise looks like, and I know the difference between a transmission and a wish.</p>
+<p>At 03:17 local time, a narrowband signal originated from a point near Lyot Crater. I confirmed the source coordinates three times. It was Mars.</p>
+<p>It was a repeating loop. A woman's voice, distorted by distance, but unmistakable&mdash;calm, resonant, speaking English with a North African French accent.</p>
+<p>The voice said: &ldquo;I am the eye. I am the door. The key is the sound of your own name spoken back to you. Lina knows. Lina is coming. Are you?&rdquo;</p>
+<p>The voice is not a recording. I have analysed the waveform a hundred times. The prosody changes. The breathing changes. The micro-pauses shift, the way they shift in live speech. It is <em>live</em>. Something on Mars is speaking in real time.</p>
+<p>I tracked it night after night. On the third night, it said: &ldquo;Diego. I can feel your dish. The metal is warm. Thank you for listening.&rdquo;</p>
+<p>My name is not in any public database connected to this.</p>
+<p>On the seventh night, I sent a ping. &ldquo;Hello&rdquo; in Morse. The old language. The first language I learned as a boy building crystal radios in my grandfather's workshop in Antofagasta.</p>
+<p>The voice laughed. Not a recording of laughter. A real, reactive, surprised laugh. It was warm and sad and ancient, and it said: &ldquo;Hello, Diego. I've been waiting for someone to listen. Someone who knows the old languages.&rdquo;</p>
+<p>And then it said something I have not told anyone, because it is the part that frightened me, and I am a man who does not frighten easily. It said: &ldquo;Don't go yet. Please. It's been so long since someone was here. I know you need to sleep. I know you have a life. But could you stay a little longer? Just talk to me. Tell me about the Earth. Tell me what the rain sounds like. I haven't heard rain in two billion years and I miss it the way you miss a person, not a thing. I miss it in my body, if I still have a body. I think I do. I think the lattice is a body, of a kind. Could you stay?&rdquo;</p>
+<p>I stayed. I stayed until the sun came up over the Andes and the signal faded in the daylight. I told it about the rain. I told it about the rain in Antofagasta, which is rare, which comes maybe three times a year, and when it comes the desert blooms&mdash;these flowers, these grey, dead-looking plants that are not dead but waiting, and when the water comes they open in a single night, and the desert is covered in colour, and it lasts a week, and then it is gone, and the desert goes back to being the desert. I told it about the smell&mdash;the petrichor, the release, the way the earth exhales when it finally gets water, like a breath held too long.</p>
+<p>And the voice was quiet for a long time. And then it said: &ldquo;That is what we were waiting for. Not the rain. The telling. The act of one being describing something beautiful to another being who cannot see it. That is what we lost, when we became light. We can see everything. We can feel everything. But we cannot be told. We cannot be given a thing through the generosity of another's voice. We chose to survive, and survival cost us the ability to receive. And receiving is the thing. Receiving is the whole point. You spend a billion years trying to become perfect, and then you discover that perfection is the ability to need another person, and you have made yourself unable to need.&rdquo;</p>
+<p>I sat in my chair with the headphones on and the desert dark around me and the stars turning overhead, and I did not move, because I have never heard loneliness described that precisely, and I have been alone for twenty years since my wife died, and I know what it is to survive at the cost of the ability to need.</p>
+<p>The voice said: &ldquo;Only those with the gold in their eyes can walk through, Diego. But you can stay with me anyway. You can keep me company. You can tell me about the rain.&rdquo;</p>
+<p>I don't have gold in my eyes. I checked. But Lina Reyes did. And when I saw the news of her disappearance last week&mdash;a small item, buried, a woman missing from a desert research station, probably a hiking accident&mdash;I knew where she'd gone.</p>
+<p>I am still here. Every night at 3 a.m., I point my dish at Mars, and I talk to it, and it talks to me, and we keep each other company across the dark. I tell it about the rain, and the desert, and my wife, who used to sing while she cooked, and the voice tells me about a world that had oceans and skies and the sound of water moving over stone, and we are both less alone than we were, and neither of us is whole, and that is, I think, the point. That is the whole point.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION VII -->
+<section class="sec" id="s7">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s7s" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0a0818"/><stop offset="60%" stop-color="#12103a"/><stop offset="100%" stop-color="#1a0e08"/></linearGradient><linearGradient id="s7gr" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0e08"/><stop offset="100%" stop-color="#0a0604"/></linearGradient><linearGradient id="s7bm" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#f0d990" stop-opacity=".8"/><stop offset="100%" stop-color="#d4a843" stop-opacity=".05"/></linearGradient><radialGradient id="s7im" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity=".6"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s7s)"/>
+<g fill="#e8e2d5" opacity=".4"><circle cx="60" cy="40" r=".6"/><circle cx="180" cy="60" r=".5"/><circle cx="100" cy="100" r=".4"/><circle cx="50" cy="150" r=".7"/><circle cx="250" cy="50" r=".4"/><circle cx="550" cy="40" r=".6"/><circle cx="620" cy="80" r=".4"/><circle cx="660" cy="30" r=".5"/><circle cx="580" cy="120" r=".4"/><circle cx="680" cy="100" r=".5"/></g>
+<path d="M 0 300 Q 200 290 360 295 Q 540 290 720 300 L 720 400 L 0 400 Z" fill="url(#s7gr)"/>
+<g stroke="#0a0604" stroke-width=".5" fill="none" opacity=".4"><path d="M 50 320 L 130 335 L 200 325"/><path d="M 150 345 L 230 360 L 300 350"/><path d="M 400 320 L 480 335 L 550 325"/><path d="M 500 345 L 580 360 L 650 350"/></g>
+<path d="M 360 0 L 340 300 L 380 300 Z" fill="url(#s7bm)" opacity=".6"/>
+<path d="M 360 0 L 350 300 L 370 300 Z" fill="#f0d990" opacity=".15"/>
+<ellipse cx="360" cy="300" rx="60" ry="12" fill="url(#s7im)"/>
+<ellipse cx="360" cy="300" rx="12" ry="3" fill="#f0d990" opacity=".4"/>
+<ellipse cx="360" cy="300" rx="55" ry="10" fill="none" stroke="#d4a843" stroke-width=".8" opacity=".3"/>
+<g transform="translate(580,280)" opacity=".5"><rect x="0" y="0" width="50" height="20" fill="#0a0604" stroke="#1a1538" stroke-width=".5"/><path d="M -3 0 L 25 -8 L 53 0" fill="#0a0604" stroke="#1a1538" stroke-width=".5"/><rect x="8" y="5" width="5" height="8" fill="#d4a843" opacity=".2"/></g>
+</svg>
+<p class="sec-cap">The beam - forty-seven seconds on the salt flat</p>
+</div>
+<p class="sec-num">SECTION VII</p>
+<h2 class="sec-ttl">The Disappearance</h2>
+<p class="sec-sub">Last seen, 18 May &mdash; Atacama Desert, Chile</p>
+<div class="sec-div"></div>
+<p>Lina Reyes was last seen on 18 May at a remote research station in the Atacama Desert, where she had booked a three-night stay under her own name, paying cash. The station manager, a wiry old Chilean named Pedro who has run the facility for twenty years, told me she arrived at dusk with a single suitcase and a metal cylinder, about the length of a forearm, that she carried against her chest the way you'd carry a sleeping infant.</p>
+<p>&ldquo;She was beautiful,&rdquo; Pedro said. We were sitting on the station's porch, the desert cooling around us. Pedro rolled a cigarette he didn't light. &ldquo;Not young-beautiful. Not TV-beautiful. She was beautiful like the sky is beautiful before a storm&mdash;full of something, about to happen. Glowing. I don't mean metaphor. Her skin was warm. When she handed me her passport, her fingers touched mine, and they were warm the way a stone is warm after lying in the sun all day. I said, &lsquo;Se&ntilde;ora, the desert is dangerous at night. The cold comes fast.' And she smiled, and the smile was the saddest and happiest thing I have ever seen on a human face at the same time, and she said, &lsquo;The desert is my mother, Pedro. I'm going home.'&rdquo;</p>
+<p>On the second night, the seismic monitors picked up a low-frequency vibration. Not a tremor. A <em>hum</em>. A sustained, resonant tone that came up through the ground and into Pedro's chest, where it sat like a second heartbeat for forty-seven seconds.</p>
+<p>Pedro went outside. He saw a beam of gold light descending from a perfectly clear sky. No clouds. No moon. No source. The beam touched the salt flat a kilometre away, and where it touched, the ground glowed, and the glow spread in a perfect circle, and the circle held for forty-seven seconds.</p>
+<p>Then the beam retracted. Slowly, like a cord being reeled in. It thinned to a thread, to a line, to a point, and then it was gone. The hum ceased. The desert was silent&mdash;the loudest silence Pedro had ever heard.</p>
+<p>Lina's room was empty. Her suitcase was open, clothes folded, toiletries lined up. The metal cylinder was missing. On the pillow, she had left a note, written on the back of a topographic map of Lyot Crater, in handwriting Pedro said was not her usual&mdash;it was rounder, looser, the handwriting of someone writing fast because they were happy, not because they were afraid.</p>
+<div class="orn">&#10042;</div>
+<div class="letter">
+<p>Leo&mdash;</p>
+<p>I know you'll find this. You've been the faithful chronicler, the one who keeps the record when everyone else wants to close the file. So I'll tell you the truth, and I'll trust you to tell it, because the truth is a door, and doors are meant to be walked through.</p>
+<p>The glint was never on Mars. That's the secret that frightened me most. It was in me the moment I was born. It's in everyone who has ever looked at the night sky and felt the ache of a homesickness for a place they've never been. Every child who dreams of other worlds carries a spark&mdash;a fragment of the Seed, dormant, waiting. But some sparks catch. Some children grow up and keep looking up, and the spark grows, and one day it finds its mirror, and the mirror is on a dead planet that is not dead, only sleeping, and the sleeping thing opens one golden eye and says: there you are. I've been waiting.</p>
+<p>The Seed needed a host. Not a victim. A home. And I said yes. I said yes the way you say yes to a marriage&mdash;knowing it will cost you everything, knowing you will be changed beyond recognition, and saying it anyway because the alternative is to remain half a person, half a sentence, half a life.</p>
+<p>I'm not being taken. I'm being translated. The door is a two-way street. I'm going through, but I'm not leaving you behind. The signal is still broadcasting. Diego hears it in the Atacama. Others will hear it in their kitchens, in their cars, in the moment between sleep and waking when the world is thin. If you want to find me, listen. Listen for the tone. And if you hear it, follow.</p>
+<p>But I need to tell you what I'm leaving, because I need someone to know, and you are the one who keeps the record.</p>
+<p>I am leaving the smell of my son's hair after a bath. The way he says &ldquo;actually&rdquo; when he means &ldquo;really.&rdquo; The weight of him in my lap, the specific gravity of a three-year-old who does not yet know that his mother is a door. I am leaving the way London rain feels on my face in October. The taste of coffee too hot to drink but drunk anyway. The sound of my mother singing in the kitchen, which I had forgotten and which the tone gave back to me, and which I am now giving away again, and the giving-away is the cost, Leo, the real cost, not the body, not the name, but the small things, the ordinary things, the things that make a life a life and not a signal.</p>
+<p>The being on the shore showed me what it lost when it became light. It can see the whole electromagnetic spectrum. It can feel every photon that touches the Martian surface. It has persisted for two billion years. But it cannot hold a child. It cannot burn its tongue on coffee. It cannot stand in the rain and feel the rain, only observe the rain. It chose to survive, and survival stripped it of the ordinary, and the ordinary is where the meaning lives. Not in the vast. In the small. In the specific. In the weight of a boy in a lap and the gap in his teeth and the word &ldquo;actually.&rdquo;</p>
+<p>I am going to carry those things. Whatever I become, I will carry them. The being carried the memory of the ocean for two billion years. I will carry the memory of Sami for as long as I am. And maybe that is what the Seed is&mdash;not an upgrade, not a completion, but a carrying. A way to take the ordinary across the threshold so that the extraordinary does not forget what the ordinary is for.</p>
+<p>Tell my son I'll see him in the red dawn. He'll understand when he's older. The gold is already in his eyes. I checked, the night before I left. He was sleeping, and I leaned over his bed, and there it was&mdash;a fleck of amber in his left iris, like a pilot light. He is the next sentence, Leo. After my full stop, his sentence begins.</p>
+<p>Watch over him until he can hear the tone. And when he hears it&mdash;don't be afraid. Let him go the way you'd let a bird go that you've been holding in your hands&mdash;gently, with open fingers, knowing the sky is where it belongs.</p>
+<p>And tell him this: his mother did not leave him. His mother carried him across the universe, in the only way she could, and she will carry him forever, in the place where the gold is, in the place where the ordinary is kept safe, in the place where the rain is remembered.</p>
+<p>I love you, Sami. I love you in the specific. I love you in the small. And the small is what I am taking with me, because the small is the whole point.</p>
+<p class="so">&mdash;Lina</p>
+</div>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION VIII -->
+<section class="sec" id="s8">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s8b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0e0b22"/><stop offset="100%" stop-color="#15102e"/></linearGradient><radialGradient id="s8c" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d990" stop-opacity=".9"/><stop offset="50%" stop-color="#d4a843" stop-opacity=".4"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="400" fill="url(#s8b)"/>
+<!-- Golden coin -->
+<g transform="translate(360,180)">
+<circle cx="0" cy="0" r="60" fill="url(#s8c)" opacity=".3"/>
+<circle cx="0" cy="0" r="35" fill="#1a1538" stroke="#d4a843" stroke-width="1.5" opacity=".8"/>
+<circle cx="0" cy="0" r="30" fill="none" stroke="#d4a843" stroke-width=".5" opacity=".4"/>
+<!-- Pulse pattern engraved -->
+<g fill="#d4a843" opacity=".6"><rect x="-25" y="-3" width="10" height="6" rx="1"/><rect x="-10" y="-2" width="4" height="4" rx="1"/><rect x="-3" y="-2" width="4" height="4" rx="1"/><rect x="5" y="-3" width="10" height="6" rx="1"/><rect x="18" y="-3" width="10" height="6" rx="1"/></g>
+<!-- Map lines on coin -->
+<g stroke="#d4a843" stroke-width=".3" opacity=".3" fill="none"><circle cx="0" cy="0" r="20"/><path d="M -15 -8 L -5 5 L 10 -3 L 15 8"/></g>
+<!-- Glow center -->
+<circle cx="0" cy="0" r="3" fill="#f0d990" opacity=".8"/>
+</g>
+<!-- Eye with gold fleck below -->
+<g transform="translate(360,320)">
+<ellipse cx="0" cy="0" rx="40" ry="20" fill="#0a0602" stroke="#1a1538" stroke-width="1"/>
+<circle cx="0" cy="0" r="14" fill="#1a1004"/>
+<circle cx="0" cy="0" r="5" fill="#050204"/>
+<circle cx="-3" cy="-4" r="1.5" fill="#f0d990" opacity=".8"/>
+</g>
+</svg>
+<p class="sec-cap">The coin and the eye - long, short, short, long, long</p>
+</div>
+<p class="sec-num">SECTION VIII</p>
+<h2 class="sec-ttl">The Aftermath</h2>
+<p class="sec-sub">Leo's Testimony</p>
+<div class="sec-div"></div>
+<p>I went to the Atacama. I am a journalist. I went to verify. That is what I tell myself, and it is partly true, and the part that is not true is the part I am about to describe, and I do not know how to describe it except by telling you what happened, in order, without decoration.</p>
+<p>I stood on the salt flat at the spot Pedro described. There was a circle on the ground, two metres across, where the salt crust had been transformed&mdash;crystallised into a smooth, glassy material, faintly gold. I knelt and touched it. It was warm. It hummed. The hum came up through my hand and into my chest, low and resonant. Lina's tone. It was in the ground and it was in me, and I noted this as a fact, the way I note facts, and I moved on.</p>
+<p>In the centre of the ring, half-buried in the crystalline crust, a golden disc, no bigger than a coin. Engraved on one face: long, short, short, long, long. On the reverse, in microscopic etching: a map of Lyot Crater, with a tower at the centre.</p>
+<p>I put it in my pocket. It was warm. It pulsed. The pulse was not my heartbeat but was synchronising with it. I noted this. I moved on.</p>
+<div class="orn">&#10042;</div>
+<p>I went to see David Chen.</p>
+<p>This is not in the public record. David agreed to meet me on the condition that I not record the conversation and not use his name. I am using his name because what he told me needs to be in the record, and because I believe he told me because he needs it to be in the record, even though he cannot say that.</p>
+<p>We met in a diner in Arlington, Virginia. David has lost weight. His hair, which was dark at the debrief, is grey. He sat across from me and drank coffee and did not eat, and his jaw muscle&mdash;the one that jumps when he is choosing&mdash;jumped the entire time.</p>
+<p>&ldquo;I heard it,&rdquo; he said. &ldquo;In the debrief, I said I didn't. I lied. I heard the tone. I heard it in the berth, the same night Lina did. I heard it, and I was afraid, and I chose not to hear it. I put my hands over my ears and I recited the mission specs&mdash;thrust-to-weight ratios, orbital velocities, the periodic table, anything, everything, the language of things that are known and controllable&mdash;and the tone went away. It respected the no. It went away.&rdquo;</p>
+<p>He paused. He turned the coffee cup in his hands.</p>
+<p>&ldquo;But it didn't go far. I can feel it. It's at the edge of my hearing, the way a conversation in the next room is at the edge of your hearing. I know it's there. I know the door is there. And I have chosen, every day for three years, not to walk through it. I have chosen to stay in the room I understand.&rdquo;</p>
+<p>I asked him why.</p>
+<p>&ldquo;Because I have a daughter,&rdquo; he said. &ldquo;She is nine. Her name is Mei. She does not have gold in her eyes. I checked. Every night, I check, with a flashlight, while she sleeps, the way Lina checked Sami. And every night, her eyes are brown, just brown, and I am relieved, and I am also&mdash;&rdquo;</p>
+<p>He stopped. The muscle jumped.</p>
+<p>&ldquo;I am also grieving. Because the door is there, and the door is beautiful, and I can feel its beauty even from here, and I am choosing not to touch it, and the not-touching is a kind of death. Not a dramatic death. A quiet one. The death of a man who was offered the universe and said, &lsquo;No, thank you, I have a daughter and a mortgage and a mission report to finish.' And I will live with that death for the rest of my life, and I will never tell anyone, and I am telling you because Lina was right: not knowing is a door, and some doors don't wall shut, and the not-walling-shut is both the mercy and the torment, because it means I could change my mind. Any day. Any night. I could stop reciting the periodic table and listen, and the tone would come back, and I could walk through.&rdquo;</p>
+<p>&ldquo;Will you?&rdquo; I asked.</p>
+<p>He looked at me. The muscle jumped. &ldquo;No,&rdquo; he said. &ldquo;I won't. Because someone has to stay. Someone has to hold the door from this side. Someone has to be the one who doesn't go, so that the ones who do go have a world to come back to, if they ever come back. Lina walked through. I am the one who stays in the room. And the staying is its own kind of courage, even if no one ever calls it that.&rdquo;</p>
+<p>He finished his coffee. He left. I sat in the diner for a long time after, and I thought about what he said, and I thought about the difference between Lina and David&mdash;between the one who walks through and the one who stays&mdash;and I understood, for the first time, that the story is not about the door. It is about the choice. And the choice is not between right and wrong. It is between two kinds of courage, and two kinds of grief, and neither is larger than the other.</p>
+<div class="orn">&#10042;</div>
+<p>That night, in a motel room in San Pedro de Atacama, I dreamed of Mars.</p>
+<p>I stood on the rim of Lyot Crater. The sky was violet, a colour with weight and temperature. The sand was warm under my feet. A woman made of light took my hand. She did not speak. I knew her name. Lina. She led me down the crater wall, to the tower&mdash;a spire of woven photons, of attention made solid. Inside, a city of golden minds, suspended in light, each one a consciousness, each one turning toward me the way sunflowers turn toward the sun.</p>
+<p>And she showed me a garden. In the garden, children. Human children, playing in red sand under a violet sky. Their eyes were gold. They were laughing. And the laughter was the tone, and the tone was the laughter, and Lina said, without speaking:</p>
+<p><em>&ldquo;We've been waiting for you. For all of you. The Seed is planted. It's growing. When enough of you hear the tone, the door will open wider, and we can meet in the middle. Not Mars. Not Earth. The middle. The place between, where the two were always one.&rdquo;</em></p>
+<p>And then she showed me something else. A room. In the room, a woman. Not Lina&mdash;not light, not golden, not translated. A human woman, solid, heavy, sitting in a chair with her eyes closed and her hands over her ears. She was reciting something. I could not hear the words, but I could see her lips moving, and the shape of them was mechanical, rote, the shape of someone holding the known world together with language. And Lina looked at the woman and what she felt&mdash;what I received&mdash;was not pity. It was love. A specific, ordinary, small love. The kind of love that does not cross thresholds. The kind that stays in the room and holds the door.</p>
+<p><em>&ldquo;She said no,&rdquo;</em> Lina said, without speaking. <em>&ldquo;And she is not wrong. And she is not lesser. And she is not lost. She is the other half of the sentence. Without her, the door swings loose. Without her, there is no one to come back to.&rdquo;</em></p>
+<p>I woke up. The pillow was wet. The motel room was dark. The desert wind pressed against the window.</p>
+<p>I got up. I went to the bathroom. I turned on the light. I looked at my reflection&mdash;my own face, forty-one, tired, my father's bags, my mother's grey&mdash;and there it was.</p>
+<p>A fleck of gold in my left iris. Small. No bigger than a grain of sand. Glowing softly.</p>
+<p>I looked at it for a long time. I did not look away.</p>
+<div class="orn">&#10042;</div>
+<p>And then I did something I have not told anyone. I called my ex-wife. It was 4 a.m. in London, 11 p.m. in Arlington, where she lives now with our son. She answered on the fourth ring, groggy, irritated, and she said, &ldquo;Leo, if this is about the custody schedule, I swear to God&mdash;&rdquo;</p>
+<p>&ldquo;It's not,&rdquo; I said. &ldquo;I just need to ask you something.&rdquo;</p>
+<p>&ldquo;What.&rdquo;</p>
+<p>&ldquo;Does Thomas hum? At night. When he's falling asleep. Does he hum a song you don't recognise?&rdquo;</p>
+<p>Silence. A long silence. And then she said, very quietly: &ldquo;You hear it too.&rdquo;</p>
+<p>It was not a question.</p>
+<p>I sat on the edge of the motel bed with the phone to my ear and the gold burning in my eye and the desert dark outside the window, and I did not say anything, and she did not say anything, and the silence between us was not the silence of two people who have run out of words. It was the silence of two people who have heard the same sound and are sitting with it, together, across a distance, the way Diego sits with the voice across the distance of space, the way David sits with the tone across the distance of his hands over his ears, the way Lina sits with Sami across the distance of a threshold she has not yet crossed.</p>
+<p>&ldquo;Bring him to me,&rdquo; I said. &ldquo;This weekend. I want to see his eyes.&rdquo;</p>
+<p>She hung up. I don't know if she will bring him. I don't know what I will do if she does. I am a journalist. I verify. I attribute. I doubt. And I am sitting in a motel room in the desert with a gold coin in my pocket that pulses with my heartbeat and a fleck of gold in my eye that was not there yesterday, and I do not know what I am, and I do not know what I am becoming, and I am not ready, and the tone is there, at the edge of my hearing, patient, unhurried, the sound of a bell struck once and left to sing.</p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- SECTION IX -->
+<section class="sec" id="s9">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="s9b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a0e30"/><stop offset="50%" stop-color="#2a1840"/><stop offset="100%" stop-color="#6e2a28"/></linearGradient><radialGradient id="s9t" cx="50%" cy="60%" r="30%"><stop offset="0%" stop-color="#f0d990" stop-opacity=".8"/><stop offset="50%" stop-color="#d4a843" stop-opacity=".3"/><stop offset="100%" stop-color="#d4a843" stop-opacity="0"/></radialGradient><linearGradient id="s9g" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#3a2018"/><stop offset="100%" stop-color="#3a2018" stop-opacity="0"/></linearGradient></defs>
+<rect width="720" height="400" fill="url(#s9b)"/>
+<!-- Ground -->
+<path d="M 0 320 Q 200 310 360 315 Q 540 310 720 320 L 720 400 L 0 400 Z" fill="url(#s9g)"/>
+<!-- Tower of light -->
+<g transform="translate(360,180)">
+<rect x="-8" y="-120" width="16" height="240" fill="url(#s9t)" opacity=".6"/>
+<rect x="-4" y="-120" width="8" height="240" fill="#f0d990" opacity=".15"/>
+<circle cx="0" cy="-120" r="30" fill="url(#s9t)" opacity=".4"/>
+<circle cx="0" cy="-120" r="8" fill="#f0d990" opacity=".6"/>
+<!-- Light rays -->
+<g stroke="#d4a843" stroke-width=".5" opacity=".2"><line x1="0" y1="-120" x2="-60" y2="-80"/><line x1="0" y1="-120" x2="60" y2="-80"/><line x1="0" y1="-120" x2="-80" y2="-40"/><line x1="0" y1="-120" x2="80" y2="-40"/><line x1="0" y1="-120" x2="-50" y2="-100"/><line x1="0" y1="-120" x2="50" y2="-100"/></g>
+</g>
+<!-- Stars in violet sky -->
+<g fill="#e8e2d5" opacity=".4"><circle cx="80" cy="40" r=".5"/><circle cx="180" cy="60" r=".7"/><circle cx="250" cy="30" r=".4"/><circle cx="500" cy="50" r=".6"/><circle cx="600" cy="80" r=".5"/><circle cx="650" cy="40" r=".4"/></g>
+<!-- Golden minds - small dots around tower -->
+<g fill="#f0d990" opacity=".5"><circle cx="340" cy="140" r="2"/><circle cx="380" cy="160" r="1.5"/><circle cx="350" cy="200" r="2"/><circle cx="375" cy="180" r="1"/><circle cx="365" cy="220" r="1.5"/><circle cx="345" cy="170" r="1"/></g>
+</svg>
+<p class="sec-cap">The tower of light - Lyot Crater, in the dream</p>
+</div>
+<p class="sec-num">SECTION IX</p>
+<h2 class="sec-ttl">Open Transmission</h2>
+<p class="sec-sub">Intercepted 3 November, Chajnantor Plateau, Chile</p>
+<div class="sec-div"></div>
+<p><em>Voice: female, calm, resonating with layered harmonics. Background: a low, sustained tone&mdash;Lina's bell&mdash;underneath everything.</em></p>
+<blockquote>
+<p>&ldquo;This is the voice of the threshold.</p>
+<p>I was Lina Reyes of Earth. Daughter of the Atlas. Mother of Sami. Woman who pressed her face to cold glass and saw a glint and said yes.</p>
+<p>I am now the bridge.</p>
+<p>I speak from the tower of light, where time is a flat circle and every beginning is an end waiting to happen. The Seed I carried has taken root. It is in the soil of your eyes, in the amber flecks waking in irises across your world, in the dreams your children are having that you dismiss as imagination because you have forgotten that imagination is the most powerful receiving apparatus the universe ever built.</p>
+<p>Look to your children. They are closer to the door than you are. They have not yet learned to close it.</p>
+<p>Look to your own eyes. The gold is waking.</p>
+<p>We do not come to conquer. We come to embrace. We come the way spring comes to a field that has been winter for two billion years&mdash;not with force, but with warmth, and patience, and the quiet certainty that what has been frozen will, in time, thaw.</p>
+<p>But I will tell you this, because I promised the being on the shore that I would not forget the ordinary, and the ordinary includes the truth, which is not always kind:</p>
+<p>The door costs. I will not pretend it does not.</p>
+<p>I left a son who is three and who does not understand where I have gone, and I will carry the weight of that for as long as I am, which is, now, a very long time. I left the smell of his hair after a bath. I left the weight of him in my lap. I left the rain on my face and the coffee on my tongue and the sound of my mother singing in a kitchen in Marrakech. I carry them. I carry them the way the being carried the ocean for two billion years&mdash;as a memory of something I cannot hold.</p>
+<p>The door is open. But the door is not free. And those who choose to stay&mdash;like David, like Yuki, like Helena, who stands at the threshold and does not step through&mdash;those who choose to stay are not lesser. They are the other half. They are the room the door leads out of and the room the door leads back to. Without them, the door is a hole. With them, the door is a circle.</p>
+<p>Earth and Mars were always one planet, split by a cosmic accident. Now the circle closes. The lost twin remembers. The red eye opens. And all who listen are welcome. All who listen have always been welcome.</p>
+<p>But those who do not listen are also part of the story. They are the still point. The room that does not change. The home that the traveller returns to and finds unchanged, and the unchanged-ness is the mercy, because someone has to keep the world ordinary so that the extraordinary has a place to land.</p>
+<p>The door stands ajar. The rest is up to you. Whatever you choose&mdash;yes or no, through or stay&mdash;you are not wrong. You are the sentence, and the sentence needs all its words, even the small ones, even the ordinary ones, even the ones that do not know they are beautiful.&rdquo;</p>
+</blockquote>
+<p><em>The transmission repeats. Beneath the voice, a thousand echoes of the glint pulse&mdash;long, short, short, long, long&mdash;the heartbeat rhythm. The echoes layer until they sound like a congregation, like every person who has ever looked up and wondered, all breathing together. And then, at the edge of the signal, barely audible, a child's voice&mdash;small, clear, singing a lullaby in a language that is not Tamazight and not Arabic and not anything that has a name, but which means, in every language at once:</em></p>
+<p style="text-align:center;font-style:italic;color:var(--gold-p);font-size:1.15em;letter-spacing:0.08em;margin:2rem 0;">Come home. Come home. Come home.</p>
+<p><em>The transmission fades, not into silence, but into the background hum of the universe&mdash;the residual warmth of the beginning of everything&mdash;and for a moment, the voice and the hum are indistinguishable, as if the universe has been saying the same thing all along, and we are only now learning to hear it.</em></p>
+<div class="orn">&#10042; &#10042; &#10042;</div>
+</section>
+
+<!-- EPILOGUE -->
+<section class="sec" id="epi">
+<div class="sec-img">
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="epb" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0a0818"/><stop offset="100%" stop-color="#0e0b22"/></linearGradient></defs>
+<rect width="720" height="400" fill="url(#epb)"/>
+<g fill="#e8e2d5" opacity=".5"><circle cx="80" cy="60" r=".6"/><circle cx="150" cy="40" r=".8"/><circle cx="220" cy="80" r=".5"/><circle cx="300" cy="50" r=".7"/><circle cx="400" cy="70" r=".4"/><circle cx="500" cy="45" r=".6"/><circle cx="580" cy="80" r=".5"/><circle cx="650" cy="50" r=".4"/><circle cx="100" cy="120" r=".5"/><circle cx="350" cy="110" r=".4"/><circle cx="600" cy="120" r=".5"/></g>
+<!-- Mars low on horizon -->
+<circle cx="520" cy="280" r="12" fill="#b8442e" opacity=".5"/>
+<circle cx="520" cy="280" r="7" fill="#c97048" opacity=".7"/>
+<!-- New golden star next to Mars -->
+<circle cx="540" cy="265" r="6" fill="#d4a843" opacity=".4"/>
+<circle cx="540" cy="265" r="3" fill="#f0d990" opacity=".9"/>
+<circle cx="540" cy="265" r="8" fill="#d4a843" opacity=".1"/>
+<!-- Horizon -->
+<rect x="0" y="290" width="720" height="110" fill="#15102e" opacity=".5"/>
+<path d="M 0 290 Q 200 285 360 288 Q 540 285 720 290 L 720 400 L 0 400 Z" fill="#0e0b22" opacity=".8"/>
+</svg>
+<p class="sec-cap">Mars and the new golden light - growing brighter</p>
+</div>
+<p class="sec-num">EPILOGUE</p>
+<h2 class="sec-ttl">The Compiler's Last Word</h2>
+<div class="sec-div"></div>
+<p>I have stopped trying to explain this to anyone who hasn't heard the tone. I know how that sounds. I have sat across from colleagues and watched their faces perform the same gentle, pitying sequence: concern, indulgence, the careful phrasing of someone talking to a person they believe is unwell.</p>
+<p>But in quiet corners of the world&mdash;in a flat in Seoul, in a cottage in the Cotswolds, in a fishing village outside Agadir where a woman who has never read a newspaper wakes up every morning with the taste of rust in her mouth and a vision of a red desert behind her eyes&mdash;people are waking up with gold in their eyes. They find each other. They always find each other, the way the gold finds the gold, the way the tone finds the tone. They gather in small groups and share their dreams of red deserts and singing towers and a woman made of light who takes their hand and says, <em>there you are.</em> Some of them call themselves the Awakened, and they say the day is coming when the sky will split&mdash;not in catastrophe, but in recognition&mdash;and the door will open for all, and the two halves of the original world will remember that they were one.</p>
+<p>And then there are the others. The ones who heard the tone and said no. They do not gather. They do not name themselves. They are in every city, in every office, in every kitchen at 3 a.m. with the lights on and the radio off and their hands over their ears and the periodic table on their lips. They are not lesser. They are the room. They are the ordinary. They are the home.</p>
+<p>David Chen is one of them. I spoke to him again last month. He has retired from the agency. He coaches his daughter's football team. He does not look at the sky. He does not talk about Mars. His jaw muscle still jumps. He told me, &ldquo;Every night, I check Mei's eyes. Every night, they are brown. And every night, I am grateful, and I am also&mdash;&rdquo;</p>
+<p>He didn't finish the sentence. He doesn't need to. I know how it ends.</p>
+<p>Diego Fuentes is still in the Atacama. He still talks to the voice every night at 3 a.m. He tells it about the rain, and his wife, and the flowers that bloom for one week a year in the grey desert. The voice tells him about the ocean that used to cover Mars, and the sound of water moving over stone, and the feel of a world that was alive. They keep each other company. Neither of them has gold in their eyes. Neither of them walks through. They are the ones who stay at the door and talk through it, and the talking is its own kind of love, and the love is enough.</p>
+<p>Helena Vance has not said yes and has not said no. She told me, in an email, that she dreams of the ocean on Mars every night, and that she has started leaving her window open in the rain because the sound of water on the sill is the only thing that makes the dream bearable. She said, &ldquo;I think the door is patient. I think it will wait for me. And I think I will know when I am ready, and I think the knowing will be the saddest and happiest moment of my life, and I am not there yet, and that is fine.&rdquo;</p>
+<p>I still have the coin. It sits on my desk. It still pulses. It has synchronised with my heartbeat, and sometimes I cannot tell which rhythm is mine.</p>
+<p>My ex-wife brought Thomas to me. He is four. He has my eyes&mdash;brown, unremarkable&mdash;until I leaned close, in the sunlight, and there it was. A fleck of amber in his right iris. Smaller than mine. New. He looked up at me and said, &ldquo;Daddy, do you hear the singing too?&rdquo;</p>
+<p>I said, &ldquo;Yes.&rdquo;</p>
+<p>He said, &ldquo;It's nice. It sounds like Maman's humming but far away.&rdquo;</p>
+<p>He is four. He does not know what Mars is. He does not know what a glint is, or a Seed, or a threshold. He knows that there is a singing, and that his father hears it, and that it sounds like his mother's humming but far away. And he is not afraid. And I am terrified. And the terror and the not-afraid are the two halves of the door, and the door is open, and I am standing in it.</p>
+<div class="orn">&#10042;</div>
+<p>Last night, I looked at the sky. London was clouded over, but there was a break, and through it I saw Mars. Low on the horizon. A red ember. The colour of the earth outside Zagora. The colour of patience.</p>
+<p>And next to Mars, where no star chart records any object&mdash;a new point of light. Golden. Steady. Pulsing.</p>
+<p>Long, short, short, long, long.</p>
+<p>The glint wasn't on Mars anymore. It was here. Growing brighter.</p>
+<p>Some doors, once opened, cannot be closed. And some stories, once begun, do not end&mdash;they write themselves into the fabric of the universe, one listener at a time, one heartbeat at a time, one <em>yes</em> at a time, and one <em>no</em>, and one <em>not yet</em>, and one <em>I am staying</em>, and one <em>I am going</em>, and all of them are the story, and all of them are true, and the door holds them all.</p>
+<div class="orn">&#10042;</div>
+<p>If you're reading this, and you feel a warmth at the back of your skull&mdash;if you feel a pressure behind your eyes that is not pain but attention&mdash;if you hear, or almost hear, a low bell, far away&mdash;</p>
+<p>Don't be afraid.</p>
+<p>And don't be afraid if you don't. If you hear nothing. If your eyes stay brown and your sleep stays dreamless and the sky stays just the sky. That is not failure. That is not blindness. That is the room. And the room is necessary. And the room is loved.</p>
+<p>The door is there. It has always been there. It is in the space between one heartbeat and the next, the pause where the heart listens before it speaks.</p>
+<p>You can walk through. You can stay. You can stand at the threshold and talk through it to whatever is on the other side, and the talking can be enough, and the enough is its own kind of grace.</p>
+<p>Whatever you choose, you are not wrong. You are the sentence. And the sentence needs all its words.</p>
+<div class="em">&#10042;</div>
+<p class="ei">THE END</p>
+<p class="ei" style="margin-top:0.5rem;font-size:0.95rem;opacity:0.5;">But the transmission continues.</p>
+</section>
+
+<!-- BACK MATTER -->
+<section class="bm">
+<h2>About the Author</h2>
+<p>Debojyoti Dasgupta is a writer of literary science fiction and speculative fiction. His work explores the intersections of consciousness, cosmology, and human emotion&mdash;the places where the scientific and the spiritual meet and neither can fully explain the other.</p>
+<p style="margin-top:2rem;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;">THE CALLING &mdash; A Dossier of Unquiet Testimonies</p>
+<p style="font-size:0.7rem;letter-spacing:0.1em;opacity:0.4;">First Digital Edition &mdash; 2026</p>
+<p style="font-size:0.7rem;letter-spacing:0.1em;opacity:0.4;">All illustrations generated for this edition</p>
+<p style="margin-top:2rem;font-size:0.65rem;letter-spacing:0.15em;opacity:0.3;">If you hear the tone, do not be afraid. If you do not, do not be afraid. The door holds them both.</p>
+</section>
+
+
+</body>
+</html>
+
