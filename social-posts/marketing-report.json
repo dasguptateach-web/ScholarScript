@@ -1,8 +1,8 @@
 {
-  "total_items": 98,
-  "posted_count": 10,
-  "pending": 88,
-  "last_run": "2026-07-13T12:28:27.541533+00:00",
+  "total_items": 99,
+  "posted_count": 15,
+  "pending": 84,
+  "last_run": "2026-07-14T11:23:02.834834+00:00",
   "platforms_configured": {
     "bluesky": true,
     "twitter": false,

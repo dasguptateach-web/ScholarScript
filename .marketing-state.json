@@ -129,6 +129,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "27b66d15d3c3d45bc60950d018ea123d": {
+      "title": "Sophocles' Oedipus",
+      "slug": "sophocles-oedipus",
+      "type": "paper",
+      "date": "2026-06-04",
+      "posted_at": "2026-07-14T11:22:58.263432+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "ad7ca7d70d0d3d982ad5634a41ffcdbf": {
+      "title": "Study Guide of the Castle of Otranto: With Special Focus on Supernaturalism",
+      "slug": "study-guide-of-the-castle-of-otranto-with-special-focus-on-supernaturalism",
+      "type": "paper",
+      "date": "2026-04-17",
+      "posted_at": "2026-07-14T11:22:59.223370+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "131d01bda73863c69819c71440224270": {
+      "title": "Study Guide: J.K. Rowling -- Harry Potter and the Philosopher's Stone",
+      "slug": "study-guide-jk-rowling-harry-potter-and-the-philosophers-stone",
+      "type": "paper",
+      "date": "2026-05-21",
+      "posted_at": "2026-07-14T11:23:00.046396+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "86e872ec0c09376f360110682589d412": {
+      "title": "Structuralism",
+      "slug": "structuralism",
+      "type": "paper",
+      "date": "2026-05-16",
+      "posted_at": "2026-07-14T11:23:00.867212+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "868b9b020a05c9c261db9fa0e62da728": {
+      "title": "Macbeth Mcq Test",
+      "slug": "macbeth-mcq-test",
+      "type": "paper",
+      "date": "2026-07-09",
+      "posted_at": "2026-07-14T11:23:02.424666+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
