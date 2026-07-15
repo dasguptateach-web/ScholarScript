@@ -194,6 +194,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "7c81c8fa169648237d385fbcbbc7e09d": {
+      "title": "Scandinavian Influence On The English Language",
+      "slug": "scandinavian-influence-on-the-english-language",
+      "type": "paper",
+      "date": "2026-07-09",
+      "posted_at": "2026-07-15T11:26:10.750418+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "893deb23fb779686efd1b0dffb77ff7b": {
+      "title": "Shakespeare Tempest",
+      "slug": "shakespeare-tempest",
+      "type": "paper",
+      "date": "",
+      "posted_at": "2026-07-15T11:26:11.183100+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "2f29dd79f1cec0a267c593007f58c7cf": {
+      "title": "Prakarana (The Little Clay Cart Mricchakatika)",
+      "slug": "prakarana-the-little-clay-cart-mricchakatika",
+      "type": "paper",
+      "date": "2026-05-14",
+      "posted_at": "2026-07-15T11:26:11.623863+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "dcd6b8d172b500a7b715a340e8afe084": {
+      "title": "Mricchakatika Social Criticism",
+      "slug": "mricchakatika-social-criticism",
+      "type": "paper",
+      "date": "2026-05-24",
+      "posted_at": "2026-07-15T11:26:12.089700+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "839f81985dcdb2dbd05813de06f373fb": {
+      "title": "Mock Epic",
+      "slug": "mock-epic",
+      "type": "paper",
+      "date": "2026-05-15",
+      "posted_at": "2026-07-15T11:26:12.641719+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
