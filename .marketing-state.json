@@ -259,6 +259,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "5f47ea83315262f4f4c95ce1e3102f51": {
+      "title": "Literary Criticism and Theory for UGC NET",
+      "slug": "literary-criticism-and-theory-for-ugc-net",
+      "type": "paper",
+      "date": "2026-05-18",
+      "posted_at": "2026-07-16T11:30:13.914519+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "9f55620e735c1db6ca3b64ac9aeaade2": {
+      "title": "Marxism Study Guide",
+      "slug": "marxism-study-guide",
+      "type": "paper",
+      "date": "",
+      "posted_at": "2026-07-16T11:30:14.834802+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "86a386ca07af1387a3bef0a526cc89aa": {
+      "title": "Marxism Short Notes",
+      "slug": "marxism-short-notes",
+      "type": "paper",
+      "date": "",
+      "posted_at": "2026-07-16T11:30:15.468372+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1ad53f3359a14d82256955f1cdb7ce14": {
+      "title": "Shakespeare and His Plays",
+      "slug": "shakespeare-and-his-plays",
+      "type": "paper",
+      "date": "2019-02-28",
+      "posted_at": "2026-07-16T11:30:16.121406+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "4455cd31bd97af019e47843baeba8277": {
+      "title": "Fractured Selves: Narrative Identity in Postmodern Fiction",
+      "slug": "postmodern-narrative",
+      "type": "paper",
+      "date": "2025-06-05",
+      "posted_at": "2026-07-16T11:30:16.770315+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
