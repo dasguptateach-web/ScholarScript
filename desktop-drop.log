@@ -334,3 +334,51 @@
 [2026-07-12 21:47:37]   Output: C:\Users\81\ScholarScript\public
 [2026-07-12 21:47:37]   
 [2026-07-12 21:47:37] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-07-12 21:47:43]   Pushed!
+[2026-07-12 21:47:43] === STEP 8/8: Done! ===
+[2026-07-12 21:47:43] Files: SUGGESTIVE QUESTION PAPER.docx
+[2026-07-12 21:47:43] Archived to _Processed
+[2026-07-13 18:35:47] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-13 21:25:11] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-13 22:07:39] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-15 11:01:59] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-15 12:56:37] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-16 09:54:41] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-16 10:00:18] Auto-Pipeline v2.0 started (project: C:\Users\81\ScholarScript)
+[2026-07-16 10:08:24] STAGE UGC NET ENGLISH 16726.docx
+[2026-07-16 10:08:24] COPY UGC NET ENGLISH 16726.docx
+[2026-07-16 10:08:24] === STEP 1/7: Ingesting documents ===
+[2026-07-16 10:08:45]   Checking uploads folder...
+[2026-07-16 10:08:45]   Processed 1 file(s):
+[2026-07-16 10:08:45]     Success: 1
+[2026-07-16 10:08:45]     Errors:  0
+[2026-07-16 10:08:45]     [OK] UGC NET ENGLISH 16726.docx -> C:\Users\81\ScholarScript\content\creative-writing\ugc-net-english-16726.md (creative-writing)
+[2026-07-16 10:08:45]   
+[2026-07-16 10:08:45]   Run 'scholarscript build' to rebuild the site.
+[2026-07-16 10:08:45]   
+[2026-07-16 10:08:45] === STEP 2/7: Fixing table formatting ===
+[2026-07-16 10:08:46]     [FIXED] macbeth-mcq-test.md
+[2026-07-16 10:08:46]     [FIXED] macbeth-mcq-test.md
+[2026-07-16 10:08:46]     [FIXED] ugc-net-english-16726.md
+[2026-07-16 10:08:46]   
+[2026-07-16 10:08:46] === STEP 3/8: Formatting MCQs ===
+[2026-07-16 10:08:47]     No MCQs needed reformatting.
+[2026-07-16 10:08:47]   
+[2026-07-16 10:08:47] === STEP 4/8: Building interactive tests ===
+[2026-07-16 10:08:48]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-16 10:08:48]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-07-16 10:08:48]     Created 2 test(s)
+[2026-07-16 10:08:48]   
+[2026-07-16 10:08:48] === STEP 5/8: Matching YouTube videos ===
+[2026-07-16 10:09:36]   Found 43 papers
+[2026-07-16 10:09:36]   
+[2026-07-16 10:09:36]     [macbeth-mcq-test] -> kkYbQUP1FmQ (Are You Exam Ready For Macbeth? ? ?Take This Quiz To Find Ou) [58,761 views]
+[2026-07-16 10:09:36]   
+[2026-07-16 10:09:36]   Done! Created: 1, Skipped: 42, Failed: 0
+[2026-07-16 10:09:36]   
+[2026-07-16 10:09:36] === STEP 6/8: Building site ===
+[2026-07-16 10:09:42]   Building site...
+[2026-07-16 10:09:42]   Built 93 items in 2.25s
+[2026-07-16 10:09:42]   Output: C:\Users\81\ScholarScript\public
+[2026-07-16 10:09:42]   
+[2026-07-16 10:09:42] === STEP 7/8: Committing and pushing to GitHub ===
