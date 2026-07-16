@@ -1,8 +1,14 @@
-New scholarly paper: "UGC NET English Paper II - Advanced Practice Test"
+New scholarly paper: "Macbeth Mcq Test"
 
-(50 MCQs x 2 marks = 100 marks)
+## MACBETH
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+## MCQ Test – Advanced (50 Questions)
 
-#line #iambic #spondee #sonnet #rhyme
+**1.** The phrase “valour’s minion” used to describe Macbeth in the opening paragraph means he is
+    (A) a servant who merely follows orders
+    (B)
+
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/macbeth-mcq-test/
+
+#macbeth #his #banquo #macduff #witches
 #ScholarScript #EnglishLiterature #FreeEducation

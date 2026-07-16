@@ -144,6 +144,12 @@
 {% if item.external_url %}
   <p class="notranslate" style="margin-top:1.5rem;" data-aos="fade-up"><a href="{{ item.external_url }}" target="_blank" rel="noopener" class="btn"><i class="fas fa-external-link-alt"></i> Visit Resource</a></p>
 {% endif %}
+{% if item.ebook_url %}
+  <div class="notranslate" style="margin:1.5rem 0;padding:1.2rem 1.5rem;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.03));border:1px solid rgba(201,168,76,.2);border-radius:10px;" data-aos="fade-up">
+    <p style="margin:0;font-size:1.1rem;"><i class="fas fa-book-open" style="color:#c9a84c;"></i> <strong>Illustrated eBook Edition</strong></p>
+    <p style="margin:.5rem 0 0;"><a href="{{ item.ebook_url }}" class="btn" style="background:linear-gradient(135deg,#c9a84c,#e8c965);color:#0a0e1a;font-weight:600;border:none;">&#9733; Open Full Illustrated eBook &rarr;</a></p>
+  </div>
+{% endif %}
 
 {% if related %}
   <section class="related notranslate" data-aos="fade-up">
