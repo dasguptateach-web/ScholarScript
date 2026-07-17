@@ -324,6 +324,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "81e65b526b24447da1ff6c63a1f9eb09": {
+      "title": "The Last of the Mohicans Study Guide",
+      "slug": "last-of-the-mohicans-study-guide",
+      "type": "paper",
+      "date": "2019-04-06",
+      "posted_at": "2026-07-17T11:18:40.028185+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "767512ef3b661e1e5e0c9009318637c0": {
+      "title": "Girish Karnad'S Tughlaq (1964)",
+      "slug": "girish-karnads-tughlaq-1964",
+      "type": "paper",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-17T11:18:40.754596+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "300654e00f2f38af0cb7e38e68629110": {
+      "title": "Indian Classical Literature (The Little Clay Cart Mricchakatika) Sat",
+      "slug": "indian-classical-literature-the-little-clay-cart-mricchakatika-sat",
+      "type": "paper",
+      "date": "2026-05-25",
+      "posted_at": "2026-07-17T11:18:41.219838+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "38dd84c3fbaf6a6c4942cda73833258e": {
+      "title": "Harry Satqa",
+      "slug": "harry-satqa",
+      "type": "paper",
+      "date": "2026-06-11",
+      "posted_at": "2026-07-17T11:18:41.569355+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "a9a48105662246359043e68d40e704cd": {
+      "title": "Film Adaptations Of Shakespeare Reinventing The Bard On Screen",
+      "slug": "film-adaptations-of-shakespeare-reinventing-the-bard-on-screen",
+      "type": "paper",
+      "date": "2026-06-11",
+      "posted_at": "2026-07-17T11:18:41.845568+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
