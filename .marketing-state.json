@@ -389,6 +389,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "404e4899bf5514deac2377badfec0f97": {
+      "title": "French Influence On The English Language",
+      "slug": "french-influence-on-the-english-language",
+      "type": "paper",
+      "date": "2026-07-09",
+      "posted_at": "2026-07-18T10:58:33.152837+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "e3699ea5895dc5d96fc7275417191617": {
+      "title": "Kadambari",
+      "slug": "kadambari",
+      "type": "paper",
+      "date": "2026-06-04",
+      "posted_at": "2026-07-18T10:58:33.666603+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "6a45e68e438e89fd3cea165968df0cb0": {
+      "title": "Jonathan Swift Gullivers Travels Books I Ii",
+      "slug": "jonathan-swift-gullivers-travels-books-i-ii",
+      "type": "paper",
+      "date": "",
+      "posted_at": "2026-07-18T10:58:34.099359+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "e403cd0618348ac408e84a0a16c9b03b": {
+      "title": "Charudatta (The Little Clay Cart Mricchakatika)",
+      "slug": "charudutta-the-little-clay-cart-mricchakatika",
+      "type": "paper",
+      "date": "2026-05-17",
+      "posted_at": "2026-07-18T10:58:34.985982+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "6c27eb1254a58ebc0cc0798b733d6c79": {
+      "title": "Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections",
+      "slug": "addison",
+      "type": "paper",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-18T10:58:35.746931+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
