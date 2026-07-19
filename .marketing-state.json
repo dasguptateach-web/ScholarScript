@@ -454,6 +454,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "95a0e89ccaaa8147e016a86de7693773": {
+      "title": "Doctor Faustus: A Study",
+      "slug": "doctor-faustus-a-study",
+      "type": "paper",
+      "date": "2019-08-19",
+      "posted_at": "2026-07-19T11:07:13.499746+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "6638b9a10093caa2f72c9c4c3101664f": {
+      "title": "Classical Drama",
+      "slug": "classical-drama",
+      "type": "paper",
+      "date": "2026-07-06",
+      "posted_at": "2026-07-19T11:07:14.243820+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "d10fc0bd70e9d371fb8f87203f634377": {
+      "title": "An Impressive Study Guide Three Quintessential Elizabethan Sonnets",
+      "slug": "an-impressive-study-guide-three-quintessential-elizabethan-sonnets",
+      "type": "paper",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-19T11:07:14.852822+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1dbf390420a25f617e3768c6dda8c7d7": {
+      "title": "Belinda",
+      "slug": "belinda",
+      "type": "paper",
+      "date": "2026-05-22",
+      "posted_at": "2026-07-19T11:07:15.461654+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "9b570331b249e33aab2eceb65d0945b9": {
+      "title": "Blood And Betrayal In Mumbai Vishal Bhardwaj'S Maqbool As A Cinematic Reinvention Of Macbeth",
+      "slug": "blood-and-betrayal-in-mumbai-vishal-bhardwajs-maqbool-as-a-cinematic-reinvention-of-macbeth",
+      "type": "paper",
+      "date": "2026-06-25",
+      "posted_at": "2026-07-19T11:07:16.063642+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
