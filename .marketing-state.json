@@ -519,6 +519,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "b6c0330078af27973fca744877a55d02": {
+      "title": "Bertolt Brecht The Good Woman Of Setzuan",
+      "slug": "bertolt-brecht-the-good-woman-of-setzuan",
+      "type": "paper",
+      "date": "2026-05-18",
+      "posted_at": "2026-07-20T12:13:23.978160+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "64a10a1f3d7e7d2a425647feddb9cd85": {
+      "title": "Ecocriticism A Study",
+      "slug": "ecocriticism-a-study",
+      "type": "paper",
+      "date": "",
+      "posted_at": "2026-07-20T12:13:24.590575+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "0815c2805bb1eaa6489388e68de7b564": {
+      "title": "200 Question Ugc Net English (Paper 2) Model Test",
+      "slug": "200-question-ugc-net-english-paper-2-model-test",
+      "type": "paper",
+      "date": "2026-07-08",
+      "posted_at": "2026-07-20T12:13:25.429278+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1575f6ae5aa4b6d4e11f1b1e8f892fee": {
+      "title": "Charudatta (The Little Clay Cart Mricchakatika)",
+      "slug": "charudutta-the-little-clay-cart-mricchakatika",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-20T12:13:26.140577+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "db8a0fec5569ad589283983fea072dca": {
+      "title": "Mock Epic",
+      "slug": "mock-epic",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-20T12:13:26.703792+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
