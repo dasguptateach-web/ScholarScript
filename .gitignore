@@ -12,3 +12,5 @@ cloned_sites/
 desktop-drop.log
 .watcher.lock
 .processed_index.txt
+supervisor.pid
+Start Watcher.lnk
