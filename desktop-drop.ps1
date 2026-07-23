@@ -11,10 +11,25 @@ $lockFile = "$env:TEMP\scholarscript-drop.lock"
 
 Set-Location $projectDir
 
-# Auto-detect Python
-$pythonExe = (Get-Command python -ErrorAction SilentlyContinue).Source
-if (-not $pythonExe) { $pythonExe = "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe" }
-if (-not $pythonExe) { $pythonExe = "C:\Python310\python.exe" }
+# Refresh PATH (git may have been installed after this session started)
+$machinePath = [Environment]::GetEnvironmentVariable("PATH","Machine")
+$userPath = [Environment]::GetEnvironmentVariable("PATH","User")
+$env:PATH = "$machinePath;$userPath"
+
+# Auto-detect Python (skip the Windows Store stub in WindowsApps)
+$pythonExe = $null
+$cands = @(
+  "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe",
+  "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe",
+  "$env:LOCALAPPDATA\Programs\Python\Python311\python.exe",
+  "C:\Python313\python.exe", "C:\Python312\python.exe", "C:\Python311\python.exe", "C:\Python310\python.exe"
+)
+foreach ($c in $cands) { if (Test-Path $c) { $pythonExe = $c; break } }
+if (-not $pythonExe) {
+  $found = Get-Command python -ErrorAction SilentlyContinue
+  if ($found -and $found.Source -notlike '*WindowsApps*') { $pythonExe = $found.Source }
+}
+if (-not $pythonExe) { $pythonExe = "python" }
 
 $tokenFile = "$projectDir\.github_token"
 if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
