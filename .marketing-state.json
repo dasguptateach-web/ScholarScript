@@ -714,6 +714,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "4ff53a7ae821752daf5f3b0efd29ae54": {
+      "title": "Addison's Sir Roger at Home and Goldsmith's Parliamentary Elections",
+      "slug": "addison",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-23T11:48:14.421361+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "3300ba222e54d25b8e1fe4a87f5503a4": {
+      "title": "Shakespeare and His Plays",
+      "slug": "shakespeare-and-his-plays",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-23T11:48:14.920227+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "d053749cd740aa6a2ea9926b0e4dc6f6": {
+      "title": "Doctor Faustus: A Study",
+      "slug": "doctor-faustus-a-study",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-23T11:48:15.464286+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "3e3dafa9e7a96e6cf0bdc7387bbefe05": {
+      "title": "Colonial Discourse in the Tempest",
+      "slug": "shakespeare-tempest",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-23T11:48:16.198542+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "f0d663f4eaa8fbd5f986bc65a0c5414d": {
+      "title": "Macbeth Mcq Test",
+      "slug": "macbeth-mcq-test",
+      "type": "video",
+      "date": "2026-07-16",
+      "posted_at": "2026-07-23T11:48:16.743385+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
