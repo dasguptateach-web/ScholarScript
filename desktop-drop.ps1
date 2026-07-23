@@ -5,6 +5,7 @@ $uploadsDir = "$projectDir\uploads"
 $desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
 $processedDir = "$desktopDrop\_Processed"
+$mediaDir = "$projectDir\themes\classic\media"
 $logFile = "$projectDir\desktop-drop.log"
 $lockFile = "$env:TEMP\scholarscript-drop.lock"
 
@@ -99,9 +100,18 @@ function Get-Timestamp { return Get-Date -Format "yyyyMMdd-HHmmss" }
 function Process-Batch {
     $allFileNames = @()
     $staged = @()
+    $hasMedia = $false
+    $mediaExts = '.jpg','.jpeg','.png','.gif','.webp','.svg','.bmp','.mp4','.mov','.webm','.mkv','.avi','.mpg','.mpeg','.m4v','.mp3','.wav','.aac','.flac'
     Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' } | ForEach-Object {
         $f = $_.FullName; $name = $_.Name
         $ext = [IO.Path]::GetExtension($name).ToLower()
+        if ($ext -in $mediaExts) {
+            if (Wait-FileReady $f) {
+                if (-not (Test-Path $mediaDir)) { New-Item -ItemType Directory -Path $mediaDir -Force | Out-Null }
+                if (Safe-Move $f "$mediaDir\$name") { Log "MEDIA $name -> themes\classic\media"; $allFileNames += $name; $hasMedia = $true }
+            } else { Log "TIMEOUT $name (still in use)" }
+            return
+        }
         if ($ext -notin '.pdf','.doc','.docx','.txt','.tex','.odt','.rtf') {
             Safe-Move $f "$stagingDir\$name" | Out-Null; Log "SKIP $name (unsupported)"; return
         }
@@ -109,7 +119,7 @@ function Process-Batch {
             if (Safe-Move $f "$stagingDir\$name") { Log "STAGE $name"; $staged += "$stagingDir\$name"; $allFileNames += $name }
         } else { Log "TIMEOUT $name (still in use)" }
     }
-    if ($staged.Count -eq 0) { return }
+    if ($staged.Count -eq 0 -and -not $hasMedia) { return }
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf

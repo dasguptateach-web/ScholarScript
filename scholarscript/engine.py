@@ -71,7 +71,7 @@ class Engine:
         # Copy static assets
         theme_dir = self.config.get_theme_dir()
         if theme_dir.exists():
-            for sub in ("css", "js", "img", "ebooks"):
+            for sub in ("css", "js", "img", "ebooks", "media"):
                 src = theme_dir / sub
                 if src.exists():
                     dst = public_dir / sub

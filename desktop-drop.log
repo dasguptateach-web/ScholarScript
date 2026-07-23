@@ -382,3 +382,34 @@
 [2026-07-16 10:09:42]   Output: C:\Users\81\ScholarScript\public
 [2026-07-16 10:09:42]   
 [2026-07-16 10:09:42] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-07-23 21:51:03] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-23 21:51:19] MEDIA test-image.png -> themes\classic\media
+[2026-07-23 21:51:19] === STEP 1/7: Ingesting documents ===
+[2026-07-23 21:51:21]   Checking uploads folder...
+[2026-07-23 21:51:21]   Processed 0 file(s):
+[2026-07-23 21:51:21]     Success: 0
+[2026-07-23 21:51:21]     Errors:  0
+[2026-07-23 21:51:21]   
+[2026-07-23 21:51:21] === STEP 2/7: Fixing table formatting ===
+[2026-07-23 21:51:22]     No tables needed fixing.
+[2026-07-23 21:51:22]   
+[2026-07-23 21:51:22] === STEP 3/8: Formatting MCQs ===
+[2026-07-23 21:51:24]     No MCQs needed reformatting.
+[2026-07-23 21:51:24]   
+[2026-07-23 21:51:24] === STEP 4/8: Building interactive tests ===
+[2026-07-23 21:51:25]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-07-23 21:51:25]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-07-23 21:51:25]     Created 2 test(s)
+[2026-07-23 21:51:25]   
+[2026-07-23 21:51:25] === STEP 5/8: Matching YouTube videos ===
+[2026-07-23 21:51:47]   Found 43 papers
+[2026-07-23 21:51:47]   
+[2026-07-23 21:51:47]   
+[2026-07-23 21:51:47]   Done! Created: 0, Skipped: 43, Failed: 0
+[2026-07-23 21:51:47]   
+[2026-07-23 21:51:47] === STEP 6/8: Building site ===
+[2026-07-23 21:51:51]   Building site...
+[2026-07-23 21:51:51]   Built 94 items in 1.65s
+[2026-07-23 21:51:51]   Output: D:\ScholarScript\public
+[2026-07-23 21:51:51]   
+[2026-07-23 21:51:51] === STEP 7/8: Committing and pushing to GitHub ===
