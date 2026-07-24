@@ -779,6 +779,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "dd3d056b5328899aa8e1d80a0ee03177": {
+      "title": "Structuralism",
+      "slug": "structuralism",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-24T11:38:54.728800+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "17d4b7f835ec1ee6744a97ebad91bfe6": {
+      "title": "Sophocles\u2019 Oedipus",
+      "slug": "sophocles-oedipus",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-24T11:38:55.384135+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "c03c7e3d4c4a182b49c86a979cdd46c8": {
+      "title": "Study Guide: J.K. Rowling \u2014 Harry Potter and the Philosopher's Stone",
+      "slug": "study-guide-jk-rowling-harry-potter-and-the-philosophers-stone",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-24T11:38:56.046781+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "62e8a58bb5fe3bbcd195de7db0ebb2a0": {
+      "title": "Mricchakatika Social Criticism",
+      "slug": "mricchakatika-social-criticism",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-24T11:38:56.685929+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "ac80d86c8d74d18f27b486dbfd3ecc01": {
+      "title": "Jonathan Swift, Gulliver\u2019S Travels Books I & Ii",
+      "slug": "jonathan-swift-gullivers-travels-books-i-ii",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-24T11:38:57.334450+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
