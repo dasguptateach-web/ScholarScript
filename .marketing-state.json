@@ -844,6 +844,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "7b9efb3bc2a45ad8dee64e44155208bb": {
+      "title": "Kadambari",
+      "slug": "kadambari",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-25T11:05:57.220045+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "dee1b73e515fc68417478f2d40717d19": {
+      "title": "Literary Theory Intro",
+      "slug": "literary-theory-intro",
+      "type": "video",
+      "date": "",
+      "posted_at": "2026-07-25T11:05:58.171130+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "2cd7daee94bcae551a91b28c2d3d448f": {
+      "title": "Prakarana (The Little Clay Cart Mricchakatika)",
+      "slug": "prakarana-the-little-clay-cart-mricchakatika",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-25T11:05:59.181888+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1482d47ebcda9a325534d65c6fc49284": {
+      "title": "The Last of the Mohicans Study Guide",
+      "slug": "last-of-the-mohicans-study-guide",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-25T11:06:00.242365+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "91979a7effd42413c062c2ead5a19f7f": {
+      "title": "Hamlet Analysis",
+      "slug": "hamlet-analysis",
+      "type": "video",
+      "date": "",
+      "posted_at": "2026-07-25T11:06:00.739391+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
