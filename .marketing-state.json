@@ -909,6 +909,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "c9b84f941652693853e0f499880ea04a": {
+      "title": "Classical Drama",
+      "slug": "classical-drama",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-26T11:16:20.869047+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "0ae704056c6161190427e0ffdbe7fe8d": {
+      "title": "Blood And Betrayal In Mumbai Vishal Bhardwaj\u2019S Maqbool As A Cinematic Reinvention Of Macbeth",
+      "slug": "blood-and-betrayal-in-mumbai-vishal-bhardwajs-maqbool-as-a-cinematic-reinvention-of-macbeth",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-26T11:16:21.903414+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "bbd3f470ca2985e67eb9b6a87a968b1f": {
+      "title": "Film Adaptations Of Shakespeare Reinventing The Bard On Screen",
+      "slug": "film-adaptations-of-shakespeare-reinventing-the-bard-on-screen",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-26T11:16:22.700236+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "2efb7faf05e4aee19d6dff8d161f06b2": {
+      "title": "Indian Classical Literature (The Little Clay Cart Mricchakatika) Sat",
+      "slug": "indian-classical-literature-the-little-clay-cart-mricchakatika-sat",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-26T11:16:23.335972+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "fd9faa2e6f3d11a8139812656e7773ea": {
+      "title": "French Influence On The English Language",
+      "slug": "french-influence-on-the-english-language",
+      "type": "video",
+      "date": "2026-07-09",
+      "posted_at": "2026-07-26T11:16:23.971295+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
