@@ -1,0 +1,835 @@
+{
+  "title": "UGC NET English Literature (Short Story Master Test)",
+  "slug": "ugc-net-english-literature-short-story-master-test",
+  "date": "2026-07-26",
+  "description": "Short Story Master Test - 75 MCQs covering British, American, Indian, Russian, French, and world literatures",
+  "total_questions": 75,
+  "marked_answers": 75,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which short story by Edgar Allan Poe ends with the line “In pace requiescat!” after a man is walled up alive?",
+      "options": [
+        "The Tell-Tale Heart",
+        "The Cask of Amontillado",
+        "The Pit and the Pendulum",
+        "The Black Cat"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "In James Joyce’s “The Dead,” the song that triggers Gretta Conroy’s memory of her lost love is:",
+      "options": [
+        "“The Lass of Aughrim”",
+        "“The Croppy Boy”",
+        "“She Moved Through the Fair”",
+        "“Danny Boy”"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "question": "Akaky Akakievich, the protagonist of Nikolai Gogol’s “The Overcoat,” works as a:",
+      "options": [
+        "Court clerk",
+        "Copyist",
+        "Schoolteacher",
+        "Government minister"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the name of the young girl in Saki’s “The Open Window” who fabricates a tale about the lost hunters?",
+      "options": [
+        "Vera",
+        "Mabel",
+        "Sappleton",
+        "Agnes"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "question": "In D.H. Lawrence’s “The Rocking-Horse Winner,” the phrase the house seems to whisper is:",
+      "options": [
+        "“There must be more money”",
+        "“Luck is everything”",
+        "“The horse knows”",
+        "“Win or lose”"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "question": "Jhumpa Lahiri’s “A Temporary Matter” revolves around a couple revealing secrets during:",
+      "options": [
+        "A snowstorm",
+        "A scheduled power outage",
+        "A weekend getaway",
+        "A dinner party"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "Which of the following is NOT a short story collection by Anton Chekhov?",
+      "options": [
+        "The Lady with the Dog and Other Stories",
+        "The Darling and Other Stories",
+        "The Death of Ivan Ilyich and Other Stories",
+        "Ward No. 6 and Other Stories"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question": "The epiphany in James Joyce’s “Araby” occurs when the boy:",
+      "options": [
+        "Talks to Mangan’s sister",
+        "Arrives at the bazaar as it closes",
+        "Receives a gift from his uncle",
+        "Leaves Dublin"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "In which of Flannery O’Connor’s stories does the character The Misfit appear?",
+      "options": [
+        "“Good Country People”",
+        "“A Good Man Is Hard to Find”",
+        "“Everything That Rises Must Converge”",
+        "“The Life You Save May Be Your Own”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "Who wrote the short story “The Management of Grief,” based on the Air India Flight 182 bombing?",
+      "options": [
+        "Anita Desai",
+        "Bharati Mukherjee",
+        "Jhumpa Lahiri",
+        "Shashi Deshpande"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "The object that Mathilde Loisel loses in Guy de Maupassant’s “The Necklace” is:",
+      "options": [
+        "A pearl necklace",
+        "A diamond necklace",
+        "A gold bracelet",
+        "A ruby brooch"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "Which Ernest Hemingway story features an aging writer dying of gangrene on an African safari?",
+      "options": [
+        "“The Short Happy Life of Francis Macomber”",
+        "“The Snows of Kilimanjaro”",
+        "“A Clean, Well-Lighted Place”",
+        "“The Killers”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "In Shirley Jackson’s “The Lottery,” the black box is used for:",
+      "options": [
+        "Voting",
+        "The annual stoning ritual",
+        "Drawing lots for a prize",
+        "A marriage ceremony"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "The protagonist of Herman Melville’s “Bartleby, the Scrivener” repeatedly says:",
+      "options": [
+        "“I have a headache.”",
+        "“I would prefer not to.”",
+        "“Call me Ishmael.”",
+        "“This is not my job.”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "The short story “The Yellow Wallpaper” is written in the form of:",
+      "options": [
+        "An epistolary narrative",
+        "A diary",
+        "A dramatic monologue",
+        "A third-person limited narration"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "Who wrote “The Happy Prince,” a story about a statue and a swallow that help the poor?",
+      "options": [
+        "Hans Christian Andersen",
+        "Oscar Wilde",
+        "Charles Dickens",
+        "George MacDonald"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "Which of the following short stories is set in the fictional Yoknapatawpha County?",
+      "options": [
+        "“A Rose for Emily”",
+        "“The Fall of the House of Usher”",
+        "“The Yellow Wallpaper”",
+        "“The Lottery”"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 18,
+      "question": "In “The Lady with the Dog,” the protagonist Gurov meets Anna Sergeyevna in which seaside town?",
+      "options": [
+        "Sochi",
+        "Yalta",
+        "Odessa",
+        "Sevastopol"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "The short story “Toba Tek Singh” is set in:",
+      "options": [
+        "A hospital",
+        "A prison",
+        "A lunatic asylum",
+        "A refugee camp"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 20,
+      "question": "Who wrote “The Paper Menagerie,” the first story to win the Hugo, Nebula, and World Fantasy Award?",
+      "options": [
+        "Ted Chiang",
+        "Ken Liu",
+        "Liu Cixin",
+        "Charles Yu"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "The title of Katherine Mansfield’s “The Fly” refers to:",
+      "options": [
+        "A pet fly kept by the boss’s son",
+        "A fly that the boss tortures and kills",
+        "A symbolic insect in a dream",
+        "The name of a pub"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "In “The Gift of the Magi,” Della sells her hair to buy:",
+      "options": [
+        "A watch",
+        "A chain for Jim’s watch",
+        "Combs for her hair",
+        "A ring"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "Who is the author of the short story “The Lost Child,” about a boy who gets separated from his parents at a fair?",
+      "options": [
+        "R.K. Narayan",
+        "Mulk Raj Anand",
+        "Raja Rao",
+        "Khushwant Singh"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "The short story “The Chrysanthemums” by John Steinbeck centres on the character:",
+      "options": [
+        "Ma Joad",
+        "Elisa Allen",
+        "Curley’s wife",
+        "Mary Teller"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "In “The Lottery,” which character draws the marked slip and is consequently stoned?",
+      "options": [
+        "Mr. Summers",
+        "Old Man Warner",
+        "Tessie Hutchinson",
+        "Bill Hutchinson"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 26,
+      "question": "Which collection by Jhumpa Lahiri includes “When Mr. Pirzada Came to Dine” and “The Third and Final Continent”?",
+      "options": [
+        "Unaccustomed Earth",
+        "Interpreter of Maladies",
+        "The Namesake",
+        "The Lowland"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 27,
+      "question": "“The Signal-Man,” a ghost story about a railway worker, was written by:",
+      "options": [
+        "Wilkie Collins",
+        "Charles Dickens",
+        "M.R. James",
+        "Sheridan Le Fanu"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 28,
+      "question": "The protagonist of “Where Are You Going, Where Have You Been?” by Joyce Carol Oates is:",
+      "options": [
+        "Laura",
+        "Connie",
+        "Emily",
+        "June"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 29,
+      "question": "Which of the following is a short story by Leo Tolstoy about a greedy landowner who makes a fatal deal with the Bashkirs?",
+      "options": [
+        "“The Death of Ivan Ilyich”",
+        "“How Much Land Does a Man Need?”",
+        "“Master and Man”",
+        "“The Kreutzer Sonata”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 30,
+      "question": "The short story “The Wall” by Jean-Paul Sartre is set during:",
+      "options": [
+        "The French Revolution",
+        "The Spanish Civil War",
+        "World War I",
+        "The Algerian War"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 31,
+      "question": "Who wrote “The Star,” a science fiction story about a supernova that destroys an advanced civilization?",
+      "options": [
+        "Isaac Asimov",
+        "Arthur C. Clarke",
+        "Ray Bradbury",
+        "Robert A. Heinlein"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 32,
+      "question": "In Rohinton Mistry’s “Swimming Lessons,” the narrator lives in:",
+      "options": [
+        "Toronto",
+        "London",
+        "Bombay",
+        "New York"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 33,
+      "question": "“The Lumber Room” by Saki features a clever boy named:",
+      "options": [
+        "Bertie",
+        "Nicholas",
+        "Framton",
+        "Cyril"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 34,
+      "question": "Which Russian short story features a man whose nose detaches from his face and leads an independent life?",
+      "options": [
+        "“The Overcoat”",
+        "“The Nose”",
+        "“Diary of a Madman”",
+        "“The Queen of Spades”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 35,
+      "question": "“The Blue Hotel” by Stephen Crane ends with:",
+      "options": [
+        "A wedding",
+        "A duel",
+        "A murder in a saloon",
+        "A train crash"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 36,
+      "question": "The short story “The Catbird Seat” by James Thurber centres on the mild-mannered office worker:",
+      "options": [
+        "Walter Mitty",
+        "Mr. Martin",
+        "George Babbitt",
+        "J. Alfred Prufrock"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 37,
+      "question": "Who wrote the short story “The Country of the Blind,” about a mountaineer who discovers a valley where everyone is blind?",
+      "options": [
+        "H.G. Wells",
+        "Jules Verne",
+        "Aldous Huxley",
+        "E.M. Forster"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 38,
+      "question": "In “A Rose for Emily,” what does the townspeople find in the room after Emily Grierson’s death?",
+      "options": [
+        "A wedding dress",
+        "A decomposing body and a strand of grey hair",
+        "A treasure chest",
+        "A portrait of her father"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 39,
+      "question": "The short story “The Bet” by Anton Chekhov involves a wager between:",
+      "options": [
+        "A doctor and a patient",
+        "A banker and a lawyer",
+        "A priest and a soldier",
+        "A teacher and a student"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 40,
+      "question": "The protagonist of “The Door in the Wall” by H.G. Wells is haunted by the memory of:",
+      "options": [
+        "A locked attic",
+        "An enchanted garden",
+        "A secret library",
+        "A forgotten childhood friend"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 41,
+      "question": "“Lihaaf” (“The Quilt”) by Ismat Chughtai was prosecuted for:",
+      "options": [
+        "Sedition",
+        "Obscenity",
+        "Blasphemy",
+        "Slander"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 42,
+      "question": "In “Hills Like White Elephants,” the couple’s conversation revolves around:",
+      "options": [
+        "A lost child",
+        "An impending abortion",
+        "A broken marriage",
+        "A hunting trip"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 43,
+      "question": "The short story “The Secret Sharer” by Joseph Conrad is told from the perspective of:",
+      "options": [
+        "A young captain",
+        "A first mate",
+        "A stowaway",
+        "A lighthouse keeper"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 44,
+      "question": "In James Joyce’s “Eveline,” the title character is prevented from leaving Dublin because:",
+      "options": [
+        "Her father locks her in her room",
+        "She is paralysed by indecision at the quayside",
+        "Her lover abandons her",
+        "The ship sinks"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 45,
+      "question": "“The Darling” by Anton Chekhov follows Olenka, a woman who:",
+      "options": [
+        "Adopts the opinions of the men in her life",
+        "Fights for women’s education",
+        "Betrays her husband",
+        "Abandons her children"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 46,
+      "question": "The short story “The Summer of the Beautiful White Horse” is from the collection:",
+      "options": [
+        "My Name Is Aram",
+        "The Human Comedy",
+        "The Daring Young Man on the Flying Trapeze",
+        "In Our Time"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 47,
+      "question": "Who wrote “The Killers,” in which two hitmen arrive at a diner to murder Ole Andreson?",
+      "options": [
+        "F. Scott Fitzgerald",
+        "John Steinbeck",
+        "Ernest Hemingway",
+        "Raymond Chandler"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 48,
+      "question": "The short story “The Nightingale and the Rose” by Oscar Wilde criticises:",
+      "options": [
+        "Industrialisation",
+        "Superficial love and intellectualism",
+        "War and violence",
+        "Religious hypocrisy"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 49,
+      "question": "Which Franz Kafka short story features a character who wakes up transformed into a giant insect?",
+      "options": [
+        "“The Judgment”",
+        "“The Metamorphosis”",
+        "“In the Penal Colony”",
+        "“A Hunger Artist”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 50,
+      "question": "In Katherine Mansfield’s “The Garden Party,” the Sheridan family’s celebration contrasts with the death of:",
+      "options": [
+        "A young woman",
+        "A carter who lived nearby",
+        "A child",
+        "An old gardener"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 51,
+      "question": "The short story “The Diamond as Big as the Ritz” by F. Scott Fitzgerald is a satire on:",
+      "options": [
+        "The American Dream and wealth",
+        "British colonialism",
+        "Religious fundamentalism",
+        "The Jazz Age music scene"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 52,
+      "question": "“The Ones Who Walk Away from Omelas” by Ursula K. Le Guin is best described as a:",
+      "options": [
+        "Space opera",
+        "Utopian allegory",
+        "Gothic horror",
+        "Detective fiction"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 53,
+      "question": "In Mulk Raj Anand’s “The Lost Child,” the child ultimately wants:",
+      "options": [
+        "A toy",
+        "A sweet",
+        "His parents",
+        "A ride on the merry-go-round"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 54,
+      "question": "The short story “Sonny’s Blues” by James Baldwin is primarily about:",
+      "options": [
+        "A father-son conflict",
+        "Two brothers and the power of music",
+        "A prison escape",
+        "A romance in Harlem"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 55,
+      "question": "Who wrote “The Swimmer,” in which Neddy Merrill decides to swim home through his neighbours’ pools?",
+      "options": [
+        "John Updike",
+        "John Cheever",
+        "Raymond Carver",
+        "Richard Ford"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 56,
+      "question": "In “The Pit and the Pendulum,” the narrator is a prisoner of the:",
+      "options": [
+        "French Revolution",
+        "Spanish Inquisition",
+        "Salem Witch Trials",
+        "Roman Colosseum"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 57,
+      "question": "“The Monkey’s Paw” by W.W. Jacobs is an example of:",
+      "options": [
+        "A detective story",
+        "A supernatural horror story",
+        "A comic farce",
+        "A dystopian sci-fi"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 58,
+      "question": "Which of the following short stories by Rabindranath Tagore features a young bride who writes letters to her husband?",
+      "options": [
+        "“The Postmaster”",
+        "“Kabuliwala”",
+        "“The Wife’s Letter”",
+        "“The Hungry Stones”"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 59,
+      "question": "The short story “The Tell-Tale Heart” is narrated by:",
+      "options": [
+        "An omniscient observer",
+        "The old man",
+        "The murderer himself",
+        "A detective"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 60,
+      "question": "In Flannery O’Connor’s “Good Country People,” the Bible salesman Manley Pointer steals:",
+      "options": [
+        "Hulga’s wooden leg",
+        "Mrs. Hopewell’s savings",
+        "A valuable painting",
+        "A family heirloom"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 61,
+      "question": "The short story “The Most Dangerous Game” takes place on:",
+      "options": [
+        "An African safari",
+        "A Caribbean island",
+        "A ship in the Pacific",
+        "A castle in the Alps"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 62,
+      "question": "Which short story by Gabriel García Márquez describes a winged old man found in a courtyard after a storm?",
+      "options": [
+        "“The Handsomest Drowned Man in the World”",
+        "“A Very Old Man with Enormous Wings”",
+        "“Chronicle of a Death Foretold”",
+        "“Love in the Time of Cholera”"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 63,
+      "question": "The narrator of “Araby” lives on which street in Dublin?",
+      "options": [
+        "Eccles Street",
+        "North Richmond Street",
+        "Grafton Street",
+        "Usher’s Island"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 64,
+      "question": "In “The Lagoon” by Joseph Conrad, the dying woman is named:",
+      "options": [
+        "Nina",
+        "Diamelen",
+        "Aissa",
+        "Jewel"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 65,
+      "question": "“The Cop and the Anthem” by O. Henry features a vagrant named:",
+      "options": [
+        "Bob Cratchit",
+        "Soapy",
+        "Dodger",
+        "Rip Van Winkle"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 66,
+      "question": "Which American writer created the detective C. Auguste Dupin in short stories such as “The Murders in the Rue Morgue”?",
+      "options": [
+        "Arthur Conan Doyle",
+        "Edgar Allan Poe",
+        "Raymond Chandler",
+        "Dashiell Hammett"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 67,
+      "question": "“The Iceberg Theory” of narrative is most associated with:",
+      "options": [
+        "James Joyce",
+        "Ernest Hemingway",
+        "Virginia Woolf",
+        "Henry James"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 68,
+      "question": "The short story “Kabuliwala” ends with the protagonist:",
+      "options": [
+        "Returning to Afghanistan",
+        "Being reunited with his own daughter through a meeting with Mini",
+        "Dying in prison",
+        "Opening a shop in Calcutta"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 69,
+      "question": "In “The Story of an Hour,” Louise Mallard’s cause of death according to the doctors is:",
+      "options": [
+        "Heart disease – of the joy that kills",
+        "A sudden stroke",
+        "Poison",
+        "A broken neck"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 70,
+      "question": "The collection Winesburg, Ohio, a cycle of interconnected short stories about a small town, was written by:",
+      "options": [
+        "Sinclair Lewis",
+        "Sherwood Anderson",
+        "F. Scott Fitzgerald",
+        "John Dos Passos"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 71,
+      "question": "The short story “The Garden of Forking Paths” by Jorge Luis Borges explores themes of:",
+      "options": [
+        "Time and infinite possibilities",
+        "Colonial conquest",
+        "Religious epiphany",
+        "Romantic betrayal"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 72,
+      "question": "In Anton Chekhov’s “The Lady with the Dog,” what ultimately prevents Gurov and Anna from being together openly?",
+      "options": [
+        "Their different social classes",
+        "Their respective marriages",
+        "Gurov’s job",
+        "Anna’s illness"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 73,
+      "question": "Who wrote the short story “The Fly” in which a boss torments a fly after recalling his son’s death in war?",
+      "options": [
+        "James Joyce",
+        "Virginia Woolf",
+        "Katherine Mansfield",
+        "D.H. Lawrence"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 74,
+      "question": "The short story “A Clean, Well-Lighted Place” by Ernest Hemingway takes place in a:",
+      "options": [
+        "Train station",
+        "Café",
+        "Hospital room",
+        "Barracks"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 75,
+      "question": "Which Indian English short story collection includes “The Lost Child,” “The Barber’s Trade Union,” and “The Price of Bananas”?",
+      "options": [
+        "Malgudi Days",
+        "The Lost Child and Other Stories",
+        "The Mark of Vishnu and Other Stories",
+        "Games at Twilight and Other Stories"
+      ],
+      "answer": "B"
+    }
+  ]
+}
