@@ -974,6 +974,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "6c164b4b814b3db57ee346067eeeb28e": {
+      "title": "UGC NET English Literature (Short Story Master Test)",
+      "slug": "ugc-net-english-literature-short-story-master-test",
+      "type": "paper",
+      "date": "2026-07-26",
+      "posted_at": "2026-07-27T12:53:23.322856+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "32ecbd7e6ed71328b25cf985852af5af": {
+      "title": "Bertolt Brecht The Good Woman Of Setzuan",
+      "slug": "bertolt-brecht-the-good-woman-of-setzuan",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-27T12:53:24.104896+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "8db40499557c3830794c5115dfefeae3": {
+      "title": "Marxism Short Notes",
+      "slug": "marxism-short-notes",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-27T12:53:24.889084+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "cbd021f73e7da9e146da6edc4188d91e": {
+      "title": "Belinda",
+      "slug": "belinda",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-27T12:53:25.783585+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "22d5f3098c8a651063968fb14785a73c": {
+      "title": "Ecocriticism A Study",
+      "slug": "ecocriticism-a-study",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-27T12:53:26.462850+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
