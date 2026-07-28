@@ -1039,6 +1039,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "cc4c8f2fb106a3b5ae988c21df0bd410": {
+      "title": "Marxism (Study Guide)",
+      "slug": "marxism-study-guide",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-28T11:53:46.854315+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "7d683a6e8aa9410fd142ee2a41cf43a1": {
+      "title": "Literary Criticism and Theory for UGC NET",
+      "slug": "literary-criticism-and-theory-for-ugc-net",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-28T11:53:47.564222+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "d30c666add82f5793dd5f8e6f9be457c": {
+      "title": "Girish Karnads Tughlaq 1964",
+      "slug": "girish-karnads-tughlaq-1964",
+      "type": "video",
+      "date": "",
+      "posted_at": "2026-07-28T11:53:48.106698+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "71fcb08b5cc88baa15abbcf9997945b3": {
+      "title": "Harry Satqa",
+      "slug": "harry-satqa",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-28T11:53:49.029499+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "82d0fc77250e5f4bf75132753c736806": {
+      "title": "Fractured Selves: Narrative Identity in Postmodern Fiction",
+      "slug": "postmodern-narrative",
+      "type": "video",
+      "date": "2026-07-07",
+      "posted_at": "2026-07-28T11:53:49.620770+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
