@@ -1234,6 +1234,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "1ee9b5408f87e688431858bdd284c7d3": {
+      "title": "Macbeth Mcq Test",
+      "slug": "macbeth-mcq-test",
+      "type": "creative-writing",
+      "date": "2026-07-09",
+      "posted_at": "2026-07-31T11:55:02.565211+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "afa549c38dd25d14dc56257bb316ef32": {
+      "title": "Autumn Whispers",
+      "slug": "autumn-whispers",
+      "type": "creative-writing",
+      "date": "",
+      "posted_at": "2026-07-31T11:55:03.114215+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "fd030875149da2d66ab453801cbc209a": {
+      "title": "Modernism Resource",
+      "slug": "modernism-resource",
+      "type": "externa",
+      "date": "",
+      "posted_at": "2026-07-31T11:55:04.692611+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "a71dca5a23f606ac5983df73a073eacc": {
+      "title": "Ugc Net English (Code 30) \u2013 Paper 2",
+      "slug": "ugc-net-english-code-30-paper-2",
+      "type": "test",
+      "date": "2026-07-08",
+      "posted_at": "2026-07-31T11:55:05.646122+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "da965038bc2fc488cb5449a1893f6fa2": {
+      "title": "UGC NET English (Paper 2) - 100 Question Model Test",
+      "slug": "ugc-net-english-100-question-model-test",
+      "type": "test",
+      "date": "2026-07-16",
+      "posted_at": "2026-07-31T11:55:06.599245+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
