@@ -1299,6 +1299,45 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "6a57bf0236dc59e40182d07c03809b2c": {
+      "title": "Macbeth Mcq Test",
+      "slug": "macbeth-mcq-test",
+      "type": "test",
+      "date": "2026-07-09",
+      "posted_at": "2026-08-01T11:13:08.421483+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "0ac158b6e5436c0daa2931fbd7d5ff97": {
+      "title": "UGC NET English Literature (Short Story Master Test)",
+      "slug": "ugc-net-english-literature-short-story-master-test",
+      "type": "test",
+      "date": "2026-07-26",
+      "posted_at": "2026-08-01T11:13:09.042056+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "b171926513ac0c0758c081a431733a76": {
+      "title": "200 Question Ugc Net English (Paper 2) Model Test",
+      "slug": "200-question-ugc-net-english-paper-2-model-test",
+      "type": "test",
+      "date": "2026-07-08",
+      "posted_at": "2026-08-01T11:13:09.694984+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
