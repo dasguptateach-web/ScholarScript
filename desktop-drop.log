@@ -576,3 +576,41 @@
 [2026-08-02 10:41:35]   Output: C:\Users\81\ScholarScript\public
 [2026-08-02 10:41:35]   
 [2026-08-02 10:41:35] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-08-02 10:41:49]   Pushed!
+[2026-08-02 10:41:49] === STEP 8/8: Done! ===
+[2026-08-02 10:41:49] Files: CONTEMPORARY INDIAN WRITING IN ENGLISH - Copy.docx
+[2026-08-02 10:41:49] Archived to _Processed
+[2026-08-02 10:48:32] STAGE CONTEMPORARY INDIAN WRITING IN ENGLISH.docx
+[2026-08-02 10:48:32] COPY CONTEMPORARY INDIAN WRITING IN ENGLISH.docx
+[2026-08-02 10:48:32] === STEP 1/7: Ingesting documents ===
+[2026-08-02 10:48:35]   Checking uploads folder...
+[2026-08-02 10:48:35]   Processed 1 file(s):
+[2026-08-02 10:48:35]     Success: 1
+[2026-08-02 10:48:35]     Errors:  0
+[2026-08-02 10:48:35]     [OK] CONTEMPORARY INDIAN WRITING IN ENGLISH.docx -> C:\Users\81\ScholarScript\content\creative-writing\contemporary-indian-writing-in-english.md (creative-writing)
+[2026-08-02 10:48:35]   
+[2026-08-02 10:48:35]   Run 'scholarscript build' to rebuild the site.
+[2026-08-02 10:48:35]   
+[2026-08-02 10:48:35] === STEP 2/7: Fixing table formatting ===
+[2026-08-02 10:48:35]     No tables needed fixing.
+[2026-08-02 10:48:35]   
+[2026-08-02 10:48:35] === STEP 3/8: Formatting MCQs ===
+[2026-08-02 10:48:37]     No MCQs needed reformatting.
+[2026-08-02 10:48:37]   
+[2026-08-02 10:48:37] === STEP 4/8: Building interactive tests ===
+[2026-08-02 10:48:37]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-08-02 10:48:37]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-08-02 10:48:37]     Created 2 test(s)
+[2026-08-02 10:48:37]   
+[2026-08-02 10:48:37] === STEP 5/8: Matching YouTube videos ===
+[2026-08-02 10:49:00]   Found 44 papers
+[2026-08-02 10:49:00]   
+[2026-08-02 10:49:00]   
+[2026-08-02 10:49:00]   Done! Created: 0, Skipped: 43, Failed: 1
+[2026-08-02 10:49:00]   
+[2026-08-02 10:49:00] === STEP 6/8: Building site ===
+[2026-08-02 10:49:06]   Building site...
+[2026-08-02 10:49:06]   Built 97 items in 2.72s
+[2026-08-02 10:49:06]   Output: C:\Users\81\ScholarScript\public
+[2026-08-02 10:49:06]   
+[2026-08-02 10:49:06] === STEP 7/8: Committing and pushing to GitHub ===
