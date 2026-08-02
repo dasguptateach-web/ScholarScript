@@ -1338,6 +1338,58 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "64ac8364a68d331d86992a9ceca6b176": {
+      "title": "Contemporary Indian Writing In English MCQ Test",
+      "slug": "contemporary-indian-writing-in-english-mcq-test",
+      "type": "paper",
+      "date": "2026-08-02",
+      "posted_at": "2026-08-02T11:13:25.833283+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "22344b0b1d4d542408775c667b2134ca": {
+      "title": "Contemporary Indian Writing In English",
+      "slug": "contemporary-indian-writing-in-english",
+      "type": "creative-writing",
+      "date": "2026-08-02",
+      "posted_at": "2026-08-02T11:13:26.481238+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1de29ad5eddd3429bdc92b460ba841ff": {
+      "title": "Contemporary Indian Writing In English Copy",
+      "slug": "contemporary-indian-writing-in-english-copy",
+      "type": "creative-writing",
+      "date": "2026-08-02",
+      "posted_at": "2026-08-02T11:13:27.237679+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1557cc5ba450552b61f28bbe03526d94": {
+      "title": "Contemporary Indian Writing In English MCQ Test",
+      "slug": "contemporary-indian-writing-in-english-mcq-test",
+      "type": "test",
+      "date": "2026-08-02",
+      "posted_at": "2026-08-02T11:13:27.895740+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
