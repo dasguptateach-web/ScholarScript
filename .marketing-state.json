@@ -1390,6 +1390,32 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "09ccb95f7bb3b08f174603d32aa286eb": {
+      "title": "UGC NET English Practice Test Contemporary Indian Writing In English",
+      "slug": "ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test",
+      "type": "paper",
+      "date": "2026-08-09",
+      "posted_at": "2026-08-09T10:28:44.381021+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "1e1dae2a2a9402cd2aade19969102e35": {
+      "title": "UGC NET English Practice Test Contemporary Indian Writing In English",
+      "slug": "ugc-net-english-practice-test-contemporary-indian-writing-in-english",
+      "type": "test",
+      "date": "2026-08-09",
+      "posted_at": "2026-08-09T10:28:45.093478+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
