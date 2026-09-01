@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#07060f">
+<title>Elsinore — Literature Through Games · ScholarScript</title>
+<meta name="description" content="Walk Hamlet's tragedy in 3D. A cinematic literary adventure through Elsinore Castle — part of Literature Through Games on ScholarScript.">
+<link rel="icon" type="image/svg+xml" href="https://dasguptateach-web.github.io/ScholarScript/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#e8c872; --gold2:#f5d98a; --violet:#7c3aed; --ink:#f4efe4; --mute:#b7a98a;
+  --panel:rgba(10,8,18,.82); --line:rgba(232,200,114,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;height:100dvh;overflow:hidden;background:#07060f;color:var(--ink);font-family:Inter,system-ui,sans-serif;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+canvas{display:block;width:100%;height:100%;position:fixed;inset:0;z-index:0;touch-action:none}
+button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.serif{font-family:"Playfair Display",Georgia,serif}
+
+#vignette{position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(ellipse at 50% 42%,transparent 62%,rgba(0,0,0,.4) 100%)}
+#grain{position:fixed;inset:-40%;pointer-events:none;z-index:9;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>");animation:g 0.45s steps(4) infinite}
+@keyframes g{0%{transform:translate(0,0)}100%{transform:translate(3%,-2%)}}
+.letterbox{position:fixed;left:0;right:0;height:7vh;background:#000;z-index:12;pointer-events:none;transition:height .8s}
+.letterbox.t{top:0}.letterbox.b{bottom:0}
+.letterbox.off{height:0}
+#fade{position:fixed;inset:0;background:#000;z-index:14;pointer-events:none;opacity:0}
+
+#loader,#title,#hud,#prompt,#panel,#journal,#pause,#win,#touch{position:fixed;z-index:20}
+#loader{inset:0;display:grid;place-items:center;background:#07060f;z-index:40}
+.ld-inner{text-align:center;padding:2rem}
+.ld-kicker{letter-spacing:.42em;text-transform:uppercase;font-size:.68rem;color:var(--gold);margin-bottom:1.1rem}
+.ld-quote{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.3rem,3.4vw,2.1rem);max-width:22ch;margin:0 auto 1.6rem;line-height:1.35}
+.bar{width:220px;height:3px;margin:0 auto;background:#1c1730;border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--gold));transition:width .4s}
+
+#title{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 1.4rem max(7vh, calc(env(safe-area-inset-bottom) + 1.2rem));background:linear-gradient(180deg,transparent 18%,rgba(7,6,15,.55) 52%,rgba(7,6,15,.94) 100%);text-align:center;overflow:auto}
+.title-badge{display:inline-flex;gap:.5rem;align-items:center;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:.42rem .95rem;border-radius:99px;background:rgba(232,200,114,.08);margin-bottom:1.1rem}
+.t-main{font-family:"Playfair Display",serif;font-weight:800;font-size:clamp(3.2rem,12vw,7.4rem);letter-spacing:.08em;line-height:.86;background:linear-gradient(180deg,#fff6d8,var(--gold) 55%,#9a6b1a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 10px 28px rgba(232,200,114,.25))}
+.t-sub{margin-top:.85rem;font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1rem,2.4vw,1.35rem);color:var(--mute)}
+.orn{display:flex;align-items:center;gap:.7rem;width:min(280px,70vw);margin:.9rem auto 1.1rem;color:var(--gold)}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.t-copy{max-width:540px;color:#d9d0b8;font-size:.95rem;line-height:1.65;margin-bottom:1.5rem}
+.acts{display:flex;gap:.45rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.6rem}
+.acts span{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border:1px solid rgba(255,255,255,.12);padding:.32rem .65rem;border-radius:99px}
+.row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.55rem;border:none;padding:.95rem 1.7rem;border-radius:14px;font-weight:800;font-size:1rem;letter-spacing:.02em;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-g{background:linear-gradient(135deg,#c9a227,#e8c872);color:#1a1204;box-shadow:0 12px 32px rgba(232,200,114,.32)}
+.btn-g:hover{box-shadow:0 16px 40px rgba(232,200,114,.45)}
+.btn-o{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+.hint{margin-top:1rem;font-size:.78rem;color:#8d8168}
+.ss{margin-top:.7rem;font-size:.75rem;color:#8d8168}
+.ss a{color:var(--gold);text-decoration:none}
+
+#hud{top:0;left:0;right:0;display:none;padding:1rem 1.2rem;pointer-events:none;background:linear-gradient(180deg,rgba(7,6,15,.65),transparent)}
+.hud-in{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;max-width:1200px;margin:0 auto}
+.act-name{font-family:"Playfair Display",serif;font-size:1.15rem;font-weight:700}
+.act-k{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.dots{display:flex;gap:6px;margin-top:.45rem}
+.dots i{width:22px;height:4px;border-radius:99px;background:rgba(255,255,255,.15)}
+.dots i.on{background:var(--gold)}
+.dots i.done{background:#7c3aed}
+.stats{display:flex;gap:1.1rem;font-variant-numeric:tabular-nums;font-size:.92rem}
+.stats b{display:block;font-size:1.05rem}
+.stats small{color:var(--mute);letter-spacing:.08em;text-transform:uppercase;font-size:.62rem}
+
+#prompt{left:50%;bottom:11vh;transform:translateX(-50%);display:none;pointer-events:none;text-align:center}
+.pr{background:rgba(10,8,18,.72);border:1px solid var(--line);backdrop-filter:blur(10px);padding:.7rem 1.15rem;border-radius:12px;font-size:.88rem}
+.pr kbd{display:inline-block;min-width:1.4em;padding:.05rem .35rem;margin:0 .15rem;border:1px solid var(--gold);border-radius:5px;color:var(--gold);font-family:inherit;font-size:.78rem}
+
+#panel{inset:0;display:none;align-items:flex-end;justify-content:center;padding:1.2rem;padding-bottom:max(1.2rem,env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.72));z-index:25}
+.card{width:min(680px,100%);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.35rem 1.45rem 1.3rem;backdrop-filter:blur(16px);box-shadow:0 24px 70px rgba(0,0,0,.5);max-height:min(78vh,78dvh);overflow:auto;-webkit-overflow-scrolling:touch;-webkit-user-select:text;user-select:text}
+.who{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.line{font-family:"Playfair Display",serif;font-style:italic;font-size:1.22rem;line-height:1.45;margin-bottom:.85rem}
+.note{font-size:.9rem;line-height:1.6;color:#d7ccb4;margin-bottom:1rem}
+.q{font-weight:700;font-size:1.02rem;margin:.4rem 0 .75rem;line-height:1.45}
+.choices{display:grid;gap:.5rem}
+.ch{text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(232,200,114,.18);color:var(--ink);padding:.75rem .9rem;border-radius:11px;font-size:.9rem;line-height:1.4;transition:.15s}
+.ch:hover{border-color:var(--gold);background:rgba(232,200,114,.08)}
+.ch.good{border-color:#34d399;background:rgba(16,185,129,.15)}
+.ch.bad{border-color:#f43f5e;background:rgba(244,63,94,.12)}
+.scholar{margin-top:.9rem;padding:.85rem 1rem;border-left:3px solid var(--violet);background:rgba(124,58,237,.12);font-size:.86rem;line-height:1.55;color:#ddd4f5;display:none}
+.card-act{display:flex;justify-content:flex-end;gap:.5rem;margin-top:1rem}
+
+#journal,#pause,#win{inset:0;display:none;align-items:center;justify-content:center;background:rgba(4,3,10,.78);backdrop-filter:blur(8px);z-index:30;padding:1.2rem}
+.sheet{width:min(640px,100%);background:#110e1c;border:1px solid var(--line);border-radius:18px;padding:1.6rem;max-height:84vh;overflow:auto}
+.sheet h2{font-family:"Playfair Display",serif;font-size:1.7rem;margin-bottom:.3rem}
+.verse{margin:.7rem 0;padding:.8rem 1rem;border:1px solid rgba(232,200,114,.15);border-radius:12px;font-family:"Playfair Display",serif;font-style:italic}
+.verse.empty{opacity:.35}
+.keys{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;font-size:.88rem;color:#d7ccb4;margin:1rem 0}
+.keys b{color:var(--gold);font-weight:700}
+
+#win{text-align:center}
+#win h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,6vw,3.4rem);background:linear-gradient(180deg,#fff6d8,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.5rem}
+.bigscore{font-size:2.2rem;font-weight:800;color:var(--gold);margin:.4rem 0}
+
+#cross{position:fixed;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;z-index:10;pointer-events:none;display:none;opacity:.55}
+#cross:before,#cross:after{content:"";position:absolute;background:var(--gold)}
+#cross:before{left:4px;top:0;width:2px;height:10px}
+#cross:after{left:0;top:4px;width:10px;height:2px}
+
+#touch{display:none;inset:0;pointer-events:auto;z-index:18;touch-action:none}
+.joy{position:absolute;z-index:2;left:max(1rem,env(safe-area-inset-left));bottom:max(1.2rem,env(safe-area-inset-bottom));width:132px;height:132px;border-radius:50%;background:rgba(255,255,255,.10);border:1px solid rgba(232,200,114,.35)}
+.knob{position:absolute;width:54px;height:54px;border-radius:50%;background:rgba(232,200,114,.7);left:39px;top:39px}
+#btnE{position:absolute;z-index:2;right:max(1.1rem,env(safe-area-inset-right));bottom:max(1.4rem,env(safe-area-inset-bottom));width:78px;height:78px;border-radius:50%;border:1px solid var(--gold);background:rgba(232,200,114,.22);color:var(--gold);font-weight:800;font-size:1rem}
+#btnLookHint{position:absolute;right:max(1.1rem,env(safe-area-inset-right));bottom:calc(max(1.4rem,env(safe-area-inset-bottom)) + 92px);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(232,200,114,.7);pointer-events:none}
+
+@media(max-width:720px){
+  .t-copy{font-size:.86rem}
+  .card{padding:1.05rem}
+  .line{font-size:1.05rem}
+  .t-main{font-size:clamp(2.6rem,16vw,4.4rem)}
+  .btn{min-height:48px;padding:1rem 1.5rem}
+  #prompt{bottom:calc(22vh + env(safe-area-inset-bottom))}
+  #grain{display:none}
+}
+</style>
+</head>
+<body>
+<div id="vignette"></div>
+<div id="grain"></div>
+<div class="letterbox t" id="lbT"></div>
+<div class="letterbox b" id="lbB"></div>
+<div id="fade"></div>
+<div id="cross"></div>
+
+<div id="loader">
+  <div class="ld-inner">
+    <div class="ld-kicker">Literature Through Games</div>
+    <p class="ld-quote serif">“There are more things in heaven and earth, Horatio, than are dreamt of in your philosophy.”</p>
+    <div class="bar"><i id="ldBar"></i></div>
+  </div>
+</div>
+
+<div id="title" hidden>
+  <div class="title-badge">ScholarScript · Literature Through Games</div>
+  <h1 class="t-main">ELSINORE</h1>
+  <p class="t-sub">A midnight descent into Hamlet</p>
+  <div class="orn">◆</div>
+  <p class="t-copy">Denmark, midnight. You are a scholar summoned to Elsinore. Walk the five acts of the tragedy, speak with spirits, gather the soliloquies, and prove you understand the play that still haunts the world.</p>
+  <div class="acts">
+    <span>I Night Watch</span><span>II The Play</span><span>III The Closet</span><span>IV Yorick</span><span>V Silence</span>
+  </div>
+  <div class="row">
+    <button class="btn btn-g" id="btnStart">Enter Elsinore</button>
+    <button class="btn btn-o" id="btnHow">How to walk</button>
+  </div>
+  <p class="hint" id="hintLine">Phone: left stick walk · drag right to look · Speak button. Desktop: WASD + mouse.</p>
+  <p class="ss"><a href="https://dasguptateach-web.github.io/ScholarScript/" target="_blank" rel="noopener">← ScholarScript</a></p>
+</div>
+
+<div id="hud">
+  <div class="hud-in">
+    <div>
+      <div class="act-k" id="actK">Act I</div>
+      <div class="act-name" id="actN">The Night Watch</div>
+      <div id="obj" style="font-size:.76rem;color:var(--mute);margin-top:.28rem;max-width:36ch">Seek the Ghost upon the battlements.</div>
+      <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="stats">
+      <div><small>Insight</small><b id="sc">0</b></div>
+      <div><small>Verses</small><b id="vs">0/5</b></div>
+    </div>
+  </div>
+</div>
+
+<div id="prompt"><div class="pr" id="prTxt"></div></div>
+
+<div id="panel"><div class="card" id="card"></div></div>
+
+<div id="journal">
+  <div class="sheet">
+    <div class="act-k">Commonplace Book</div>
+    <h2>The Five Soliloquies</h2>
+    <p class="note" style="margin:.4rem 0 1rem">Gather Hamlet’s inner weather as you walk the castle.</p>
+    <div id="verses"></div>
+    <div class="card-act"><button class="btn btn-o" id="jClose">Close · J</button></div>
+  </div>
+</div>
+
+<div id="pause">
+  <div class="sheet">
+    <div class="act-k">Paused</div>
+    <h2>The rest is not silence yet</h2>
+    <div class="keys">
+      <b>WASD</b><span>Walk the castle</span>
+      <b>Mouse</b><span>Look · click to lock cursor</span>
+      <b>E</b><span>Speak / examine</span>
+      <b>J</b><span>Commonplace book</span>
+      <b>Esc</b><span>Pause</span>
+    </div>
+    <div class="row">
+      <button class="btn btn-g" id="pResume">Resume</button>
+      <button class="btn btn-o" id="pMenu">Title</button>
+    </div>
+  </div>
+</div>
+
+<div id="win">
+  <div class="sheet">
+    <div class="act-k">The tragedy is complete</div>
+    <h1>The rest is silence</h1>
+    <p class="t-sub" style="margin-bottom:1rem">You have walked Elsinore and read the play from the inside.</p>
+    <div class="bigscore" id="winScore">0</div>
+    <p class="note" id="winNote"></p>
+    <div class="row" style="margin-top:1.2rem">
+      <button class="btn btn-g" id="wAgain">Walk again</button>
+      <a class="btn btn-o" href="https://dasguptateach-web.github.io/ScholarScript/" style="text-decoration:none">ScholarScript</a>
+    </div>
+  </div>
+</div>
+
+<div id="touch">
+  <div class="joy" id="joy"><div class="knob" id="knob"></div></div>
+  <div id="btnLookHint">drag to look</div>
+  <button id="btnE" type="button">Speak</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script>if(!window.THREE){document.write('<script src="three.min.js"><\/script>')}</script>
+<script>
+(function(){
+"use strict";
+window.addEventListener("error", function(ev){
+  var el=document.getElementById("errbox");
+  if(!el){ el=document.createElement("div"); el.id="errbox";
+    el.style.cssText="position:fixed;bottom:10px;left:10px;right:10px;z-index:999;background:#4a1020;color:#ffe4e8;padding:12px 14px;border-radius:10px;font:13px/1.4 Inter,sans-serif";
+    document.body.appendChild(el);
+  }
+  el.textContent=(ev.message||"Error")+"  ·  line "+(ev.lineno||"?");
+});
+
+const ACTS = [
+  {
+    id:"battlements", kicker:"Act I", name:"The Night Watch",
+    spawn:[0,0,8], yaw:0, objective:"Seek the Ghost upon the battlements.",
+    verses:[{id:"flesh", text:"O that this too too solid flesh would melt, / Thaw, and resolve itself into a dew…", speaker:"Hamlet I.ii"}]
+  },
+  {
+    id:"hall", kicker:"Act II–III", name:"The Play’s the Thing",
+    spawn:[0,0,12], yaw:0, objective:"Watch the Mousetrap catch a king.",
+    verses:[{id:"be", text:"To be, or not to be — that is the question…", speaker:"Hamlet III.i"}]
+  },
+  {
+    id:"closet", kicker:"Act III", name:"The Queen’s Closet",
+    spawn:[0,0,5], yaw:0, objective:"The arras hides more than dust.",
+    verses:[{id:"play", text:"The play’s the thing wherein I’ll catch the conscience of the king.", speaker:"Hamlet II.ii"}]
+  },
+  {
+    id:"yard", kicker:"Act V", name:"Alas, Poor Yorick",
+    spawn:[0,0,10], yaw:0, objective:"Hold a skull. Remember a jester.",
+    verses:[{id:"occasions", text:"How all occasions do inform against me, / And spur my dull revenge…", speaker:"Hamlet IV.iv"}]
+  },
+  {
+    id:"throne", kicker:"Act V", name:"The Rest is Silence",
+    spawn:[0,0,10], yaw:0, objective:"The poisoned court awaits its end.",
+    verses:[{id:"silence", text:"The rest is silence.", speaker:"Hamlet V.ii"}]
+  }
+];
+
+const INTERACT = {
+  battlements:[
+    {
+      id:"ghost", pos:[-1.2,1.5,-9], r:2.8, who:"The Ghost of King Hamlet",
+      lines:"I am thy father’s spirit, doomed for a certain term to walk the night, and for the day confined to fast in fires. If thou didst ever thy dear father love — revenge his foul and most unnatural murder.",
+      q:"How was King Hamlet murdered?",
+      choices:["Stabbed by Fortinbras in single combat","Poison poured in his ear while sleeping in the orchard","Strangled by Polonius behind an arras","Drowned, like Ophelia, in a brook"],
+      a:1,
+      note:"Shakespeare inherits the Senecan revenge-ghost, then troubles it with Reformation dread: is this spirit from Purgatory, or a devil baiting Hamlet toward damnation? The orchard-poison (unique, almost sacramental) turns kingship, communion, and the body politic into one wound."
+    },
+    {
+      id:"rotten", pos:[6,1.2,2], r:2.2, who:"Marcellus",
+      lines:"Something is rotten in the state of Denmark.",
+      q:"Marcellus’s line is best read as:",
+      choices:["A report of plague in Copenhagen","A diagnosis of political and moral corruption at court","Proof that Hamlet is already mad","A weather note before the storm"],
+      a:1,
+      note:"The line migrates from body to body-politic. ‘State’ means both condition and kingdom. From the opening watch, Elsinore is a sick organism — and Hamlet will spend five acts deciding whether he is physician, disease, or both."
+    }
+  ],
+  hall:[
+    {
+      id:"mousetrap", pos:[0,1.4,-6], r:2.6, who:"Hamlet",
+      lines:"The play’s the thing wherein I’ll catch the conscience of the king.",
+      q:"Why does Hamlet stage The Murder of Gonzago?",
+      choices:["To amuse Gertrude and delay the revenge","To test whether the Ghost told truth, by watching Claudius","To court Ophelia in public","To insult Polonius as a failed actor"],
+      a:1,
+      note:"Metatheatre as epistemology. Hamlet cannot trust the Ghost, his senses, or language — so he builds a laboratory of performance. ‘Conscience’ here is inward knowledge made visible. The court watches a play; Hamlet watches the court."
+    },
+    {
+      id:"tobe", pos:[-8,1.3,4], r:2.4, who:"Hamlet",
+      lines:"To be, or not to be — that is the question: whether ’tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles…",
+      q:"The soliloquy is primarily a meditation on:",
+      choices:["Romantic despair over Ophelia","Whether to kill Claudius that night","Action versus endurance in a world that may not reward virtue","Fortinbras’s military campaign"],
+      a:2,
+      note:"Not a suicide note so much as a philosophy of paralysis. ‘Conscience does make cowards of us all’ — thought itself becomes the tragic engine. The speech sits at the play’s centre because Hamlet’s delay is not cowardice alone, but the cost of too much mind."
+    }
+  ],
+  closet:[
+    {
+      id:"arras", pos:[5.5,1.3,-1], r:2.4, who:"The Arras",
+      lines:"How now? A rat? Dead for a ducat, dead!",
+      q:"Hamlet kills Polonius because he believes the figure behind the arras is:",
+      choices:["Rosencrantz","Claudius","Laertes","The Ghost"],
+      a:1,
+      note:"Appearance versus reality, staged as furniture. The closet scene is where private feeling (mother, grief, sexuality) collides with public crime. Freud read Oedipus here; political critics read a failed assassination — Hamlet finally acts, and kills the wrong man."
+    },
+    {
+      id:"gertrude", pos:[-4,1.3,-5], r:2.3, who:"Hamlet, to Gertrude",
+      lines:"I must be cruel only to be kind. Thus bad begins, and worse remains behind.",
+      q:"Hamlet’s purpose in the closet scene is chiefly to:",
+      choices:["Confess his love for Ophelia","Force Gertrude to see her marriage as moral corruption","Plan the English voyage","Crown Fortinbras"],
+      a:1,
+      note:"‘Glass’ and ‘portrait’ dominate the scene: Hamlet would make Gertrude look. Whether we read misogyny, filial agony, or Reformation iconoclasm, the Queen becomes the play’s contested mirror — and after this night she is never simply Claudius’s creature again."
+    }
+  ],
+  yard:[
+    {
+      id:"yorick", pos:[0,1.2,-4], r:2.5, who:"Hamlet",
+      lines:"Alas, poor Yorick! I knew him, Horatio: a fellow of infinite jest, of most excellent fancy…",
+      q:"The skull of Yorick primarily figures:",
+      choices:["Hamlet’s nostalgia for childhood, and death as the leveller of kings and clowns","A comic prop with no serious meaning","Evidence that Ophelia was murdered","Hamlet’s proof of Claudius’s guilt"],
+      a:0,
+      note:"Memento mori in the age of the danse macabre: Alexander and Yorick end as dust. The graveyard is where tragedy learns to laugh — and where Hamlet, holding a jester, finally accepts the body’s joke on every crown."
+    },
+    {
+      id:"ophelia", pos:[7,1.2,3], r:2.3, who:"Gertrude (reported)",
+      lines:"There is a willow grows aslant a brook… Her clothes spread wide, and mermaid-like awhile they bore her up…",
+      q:"Ophelia’s death is presented as:",
+      choices:["A clearly staged murder by Claudius","An ambiguous drowning — accident, despair, or something the court cannot name","Death in single combat","Poison in a cup"],
+      a:1,
+      note:"Gertrude’s speech aestheticizes the body it cannot save. The play never lets us watch Ophelia die; we receive a painting. Critics still argue: suicide, mishap, or a court that prefers a beautiful story to a girl’s agency."
+    }
+  ],
+  throne:[
+    {
+      id:"duel", pos:[0,1.4,-2], r:2.6, who:"The Poisoned Court",
+      lines:"The point envenomed too? Then, venom, to thy work.",
+      q:"Who dies in the final movement of the play?",
+      choices:["Only Claudius and Hamlet","Gertrude, Claudius, Laertes, and Hamlet","Hamlet and Ophelia only","The whole of Denmark, including Horatio"],
+      a:1,
+      note:"Revenge tragedy as chain reaction: the unbated, envenomed rapier and the pearl in the cup turn ceremony into slaughter. Fortinbras inherits a stage piled with bodies — politics rushing in where ethics could not finish the work."
+    },
+    {
+      id:"silence", pos:[-6,1.3,6], r:2.3, who:"Hamlet",
+      lines:"O, I die, Horatio. The potent poison quite o’ercrows my spirit… the rest is silence.",
+      q:"Hamlet’s last charge to Horatio is to:",
+      choices:["Flee to Wittenberg","Tell Hamlet’s story, so the truth survives him","Crown Laertes","Burn Elsinore"],
+      a:1,
+      note:"‘Silence’ is both death and the failure of language. Yet Hamlet begs narrative: Horatio must speak. The scholar’s task — your task — is that charge. Literature is how the rest refuses to stay silent."
+    }
+  ]
+};
+
+let renderer, scene, camera, clock;
+let world, colliders=[], interactables=[], anims=[];
+let player, keys={}, locked=false, looking=false;
+let state="boot", act=0, score=0, verses={}, tried={};
+let near=null, fade=1, fadeDir=-1, pendingRoom=null;
+let titleT=0, audioCtx=null, drone=null;
+let joy={active:false,x:0,y:0}, lookTouch=null, lookLast=null, dragging=false;
+let moonLit, hemi, flash=0, rainSys, ghostMesh;
+let textures={};
+const UA = navigator.userAgent||"";
+const isIOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform==="MacIntel" && (navigator.maxTouchPoints||0)>1);
+const isAndroid = /Android/i.test(UA);
+const isTouch = isIOS || isAndroid || ((navigator.maxTouchPoints||0)>0 && matchMedia("(hover:none)").matches);
+const MOBILE = isTouch;
+let lightCount=0;
+
+const $ = id => document.getElementById(id);
+
+function loadBar(p){ $("ldBar").style.width = (p*100)+"%"; }
+
+function noiseTex(w,h,fn){
+  const c=document.createElement("canvas"); c.width=w; c.height=h;
+  const g=c.getContext("2d"); const d=g.createImageData(w,h);
+  for(let i=0;i<w*h;i++){
+    const x=i%w, y=(i/w)|0, v=fn(x,y);
+    d.data[i*4]=v[0]; d.data[i*4+1]=v[1]; d.data[i*4+2]=v[2]; d.data[i*4+3]=v[3];
+  }
+  g.putImageData(d,0,0);
+  const t=new THREE.CanvasTexture(c); t.wrapS=t.wrapT=THREE.RepeatWrapping; return t;
+}
+function n2(x,y){ return (Math.sin(x*12.9898+y*78.233)*43758.5453)%1; }
+
+function makeTextures(){
+  textures.stone = noiseTex(256,256,(x,y)=>{
+    const g=140+n2(x*.2,y*.2)*40+(n2(x,y)*18)|0;
+    const mortar=((x%32)<2||(y%20)<2)?70:0;
+    const v=g-mortar; return [v*.9,v*.88,v*.98,255];
+  });
+  textures.stone.repeat.set(4,2);
+  textures.wood = noiseTex(256,256,(x,y)=>{
+    const grain=Math.sin(y*.35+n2(x*.1,y*.05)*4)*12;
+    const v=78+grain+n2(x,y)*20; return [v*1.1,v*.7,v*.4,255];
+  });
+  textures.wood.repeat.set(2,6);
+  textures.cobble = noiseTex(256,256,(x,y)=>{
+    const v=50+n2(x*.15,y*.15)*35+n2(x,y)*20; return [v*.7,v*.72,v*.55,255];
+  });
+  textures.cobble.repeat.set(8,8);
+  textures.flame = (()=>{
+    const c=document.createElement("canvas"); c.width=c.height=64;
+    const g=c.getContext("2d");
+    const grd=g.createRadialGradient(32,32,0,32,32,32);
+    grd.addColorStop(0,"rgba(255,240,180,1)");
+    grd.addColorStop(.35,"rgba(255,140,40,.8)");
+    grd.addColorStop(1,"rgba(0,0,0,0)");
+    g.fillStyle=grd; g.fillRect(0,0,64,64);
+    return new THREE.CanvasTexture(c);
+  })();
+  textures.glow = textures.flame;
+  textures.star = (()=>{
+    const c=document.createElement("canvas"); c.width=c.height=32;
+    const g=c.getContext("2d");
+    const grd=g.createRadialGradient(16,16,0,16,16,16);
+    grd.addColorStop(0,"#fff"); grd.addColorStop(1,"rgba(255,255,255,0)");
+    g.fillStyle=grd; g.fillRect(0,0,32,32);
+    return new THREE.CanvasTexture(c);
+  })();
+}
+
+function mat(tex, color, shin=8){
+  if(MOBILE) return new THREE.MeshLambertMaterial({map:tex||null, color:color||0xffffff});
+  return new THREE.MeshPhongMaterial({map:tex||null, color:color||0xffffff, shininess:shin});
+}
+
+function addMesh(geo, material, x,y,z, rx,ry,rz, sx,sy,sz, shadow=true){
+  const m=new THREE.Mesh(geo, material);
+  m.position.set(x,y,z);
+  if(rx||ry||rz) m.rotation.set(rx||0,ry||0,rz||0);
+  if(sx) m.scale.set(sx,sy==null?sx:sy,sz==null?sx:sz);
+  m.castShadow=shadow; m.receiveShadow=true;
+  world.add(m); return m;
+}
+function wall(x,z,w,d,h, y, material){
+  const m=addMesh(new THREE.BoxBufferGeometry(w,h,d), material||mat(textures.stone,0x8a8498), x,(y==null?h/2:y),z);
+  colliders.push({x,z,w:w/2+.15,d:d/2+.15});
+  return m;
+}
+function torch(x,y,z){
+  const g=new THREE.Group(); g.position.set(x,y,z);
+  const hold=new THREE.Mesh(new THREE.CylinderBufferGeometry(.04,.05,.4,6), new THREE.MeshPhongMaterial({color:0x4a3020}));
+  g.add(hold);
+  const pts=[]; for(let i=0;i<24;i++) pts.push((Math.random()-.5)*.25,(Math.random())*.55,(Math.random()-.5)*.25);
+  const pg=new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.Float32BufferAttribute(pts,3));
+  const fl=new THREE.Points(pg, new THREE.PointsMaterial({map:textures.flame, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, size:.55, color:0xffaa44}));
+  fl.position.y=.35; g.add(fl);
+  let lit=null;
+  if(!MOBILE || lightCount<4){
+    lit=new THREE.PointLight(0xffb060, MOBILE?1.2:1.6, 12, 2); lit.position.y=.4; g.add(lit); lightCount++;
+  }
+  world.add(g);
+  anims.push(t=>{
+    if(lit) lit.intensity=.65+Math.sin(t*11+x)* .18 + Math.random()*.08;
+    const a=pg.attributes.position.array;
+    for(let i=1;i<a.length;i+=3){ a[i]+=.01; if(a[i]>.55) a[i]=0; }
+    pg.attributes.position.needsUpdate=true;
+  });
+  return g;
+}
+function glowOrb(x,y,z, color){
+  const m=new THREE.Mesh(new THREE.SphereBufferGeometry(.22,16,16), new THREE.MeshBasicMaterial({color, transparent:true, opacity:.85}));
+  m.position.set(x,y,z); world.add(m);
+  const s=new THREE.Sprite(new THREE.SpriteMaterial({map:textures.glow, color, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false}));
+  s.scale.set(1.6,1.6,1); s.position.copy(m.position); world.add(s);
+  anims.push(t=>{ m.position.y=y+Math.sin(t*2+x)*.12; s.position.copy(m.position); m.rotation.y=t; });
+  return m;
+}
+function spirit(x,y,z, color, tall){
+  const g=new THREE.Group(); g.position.set(x,y,z);
+  const body=new THREE.Mesh(new THREE.ConeBufferGeometry(.45, tall||2.4, 7), new THREE.MeshBasicMaterial({color, transparent:true, opacity:.38, blending:THREE.AdditiveBlending, depthWrite:false, side:THREE.DoubleSide}));
+  body.position.y=(tall||2.4)/2; g.add(body);
+  const head=new THREE.Mesh(new THREE.SphereBufferGeometry(.28,12,12), new THREE.MeshBasicMaterial({color, transparent:true, opacity:.55, blending:THREE.AdditiveBlending, depthWrite:false}));
+  head.position.y=(tall||2.4)+.05; g.add(head);
+  if(!MOBILE && lightCount<8){ const lit=new THREE.PointLight(color, .9, 8); lit.position.y=1.6; g.add(lit); lightCount++; }
+  world.add(g);
+  anims.push(t=>{
+    g.position.y=y+Math.sin(t*1.4+x)*.18;
+    g.rotation.y=Math.sin(t*.5)*.15;
+    body.material.opacity=.28+.12*Math.sin(t*3);
+  });
+  return g;
+}
+function portal(x,y,z){
+  const g=new THREE.Group(); g.position.set(x,y,z);
+  const ring=new THREE.Mesh(new THREE.TorusBufferGeometry(1.15,.07,8,48), new THREE.MeshBasicMaterial({color:0xe8c872, transparent:true, opacity:.9}));
+  g.add(ring);
+  const disc=new THREE.Mesh(new THREE.CircleBufferGeometry(1.05,32), new THREE.MeshBasicMaterial({color:0x7c3aed, transparent:true, opacity:.28, side:THREE.DoubleSide, blending:THREE.AdditiveBlending, depthWrite:false}));
+  g.add(disc);
+  world.add(g);
+  anims.push(t=>{ ring.rotation.z=t*.7; disc.material.opacity=.18+.12*Math.sin(t*3); g.rotation.y=Math.sin(t)*.2; });
+  interactables.push({id:"portal", pos:[x,y,z], r:1.6, portal:true});
+  return g;
+}
+function stars(){
+  const n=MOBILE?180:700, pos=new Float32Array(n*3);
+  for(let i=0;i<n;i++){
+    const r=80+Math.random()*80, th=Math.random()*Math.PI*2, ph=Math.random()*.7;
+    pos[i*3]=Math.cos(th)*Math.sin(ph+1.1)*r;
+    pos[i*3+1]=20+Math.cos(ph)*r*.45;
+    pos[i*3+2]=Math.sin(th)*Math.sin(ph+1.1)*r;
+  }
+  const geo=new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  world.add(new THREE.Points(geo, new THREE.PointsMaterial({map:textures.star, transparent:true, depthWrite:false, size:1.1, sizeAttenuation:true, color:0xe8f0ff})));
+}
+function moon(){
+  const m=new THREE.Mesh(new THREE.SphereBufferGeometry(3.2,24,24), new THREE.MeshBasicMaterial({color:0xe8eef8}));
+  m.position.set(-22,28,-40); world.add(m);
+  const s=new THREE.Sprite(new THREE.SpriteMaterial({map:textures.glow, color:0xc9d8ff, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false, opacity:.7}));
+  s.position.copy(m.position); s.scale.set(14,14,1); world.add(s);
+}
+function rain(){
+  if(MOBILE) return;
+  const n=900, pos=new Float32Array(n*3);
+  for(let i=0;i<n;i++){ pos[i*3]=(Math.random()-.5)*50; pos[i*3+1]=Math.random()*18; pos[i*3+2]=(Math.random()-.5)*40; }
+  const geo=new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  rainSys=new THREE.Points(geo, new THREE.PointsMaterial({color:0x88aacc, size:.06, transparent:true, opacity:.45}));
+  world.add(rainSys);
+  anims.push((t,dt)=>{
+    const a=geo.attributes.position.array;
+    const fall=8*(dt||0.016);
+    for(let i=1;i<a.length;i+=3){ a[i]-=fall; if(a[i]<0) a[i]=16; }
+    geo.attributes.position.needsUpdate=true;
+  });
+}
+function banner(x,y,z, rot, color){
+  const m=addMesh(new THREE.PlaneBufferGeometry(1.4,2.2), new THREE.MeshLambertMaterial({color, side:THREE.DoubleSide}), x,y,z, 0,rot,0);
+  anims.push(t=>{ m.rotation.z=Math.sin(t*1.5+x)*.04; });
+}
+
+function resetWorld(){
+  if(world) scene.remove(world);
+  world=new THREE.Group(); scene.add(world);
+  colliders=[]; interactables=[]; anims=[]; rainSys=null; ghostMesh=null; lightCount=0;
+}
+
+function buildSky(){
+  stars(); moon();
+  const sea=addMesh(new THREE.PlaneBufferGeometry(220,220,20,20), new THREE.MeshPhongMaterial({color:0x0b1a2a, shininess:80, specular:0x224466}), 0,-.6,-40, -Math.PI/2,0,0,1,1,1,false);
+  sea.receiveShadow=true;
+  anims.push(t=>{
+    const pos=sea.geometry.attributes.position;
+    if(!pos) return;
+  });
+}
+
+function buildBattlements(){
+  const stone=mat(textures.stone,0x9a94aa,6);
+  const floor=addMesh(new THREE.BoxBufferGeometry(28, .4, 22), stone, 0,-.2,0); floor.receiveShadow=true;
+  wall(0,-11,28,.8,4.2); wall(0,11,28,.8,3.2); wall(-14,0,.8,22,4); wall(14,0,.8,22,4);
+  for(let i=-12;i<=12;i+=2.2){
+    addMesh(new THREE.BoxBufferGeometry(1.1,1.5,1.1), stone, i,4.7,-11);
+    addMesh(new THREE.BoxBufferGeometry(1.1,1.3,1.1), stone, i,4.4,11);
+  }
+  addMesh(new THREE.CylinderBufferGeometry(2.4,2.7,9,10), stone, -13,4.2,-10);
+  addMesh(new THREE.CylinderBufferGeometry(2.4,2.7,9,10), stone, 13,4.2,-10);
+  addMesh(new THREE.CylinderBufferGeometry(2.8,2.8,.4,10), stone, -13,8.8,-10);
+  addMesh(new THREE.CylinderBufferGeometry(2.8,2.8,.4,10), stone, 13,8.8,-10);
+  [[-10,2.4,-10],[10,2.4,-10],[-10,2.4,8],[10,2.4,8],[-6,2.4,0],[6,2.4,-6]].forEach(p=>torch(p[0],p[1],p[2]));
+  ghostMesh=spirit(-1.2,0,-9, 0x9fe8ff, 2.6);
+  glowOrb(6,1.35,2, 0xe8c872);
+  rain();
+  const keep=addMesh(new THREE.BoxBufferGeometry(18,14,14), mat(textures.stone,0x6a6578), 0,6,-22);
+  banner(-4,5.5,-14.9,0,0x6b1230); banner(4,5.5,-14.9,0,0x6b1230);
+}
+
+function buildHall(){
+  const stone=mat(textures.stone,0x8e889c,6);
+  const wood=mat(textures.wood,0xc4a070,18);
+  addMesh(new THREE.BoxBufferGeometry(26,.4,32), wood, 0,-.2,0);
+  wall(0,-16,26,.7,8); wall(0,16,26,.7,8); wall(-13,0,.7,32,8); wall(13,0,.7,32,8);
+  addMesh(new THREE.BoxBufferGeometry(26,.3,32), stone, 0,8.1,0,0,0,0,1,1,1,false);
+  for(let z=-10;z<=10;z+=8){
+    addMesh(new THREE.CylinderBufferGeometry(.45,.5,8,8), stone, -8,4,z);
+    addMesh(new THREE.CylinderBufferGeometry(.45,.5,8,8), stone, 8,4,z);
+  }
+  addMesh(new THREE.BoxBufferGeometry(3.5,.7,14), wood, 0,1.05,-1);
+  for(let i=-5;i<=5;i++){
+    addMesh(new THREE.BoxBufferGeometry(.5,.08,.5), new THREE.MeshBasicMaterial({color:0xffcc88}), 0,1.44,i*1.15);
+  }
+  addMesh(new THREE.BoxBufferGeometry(2.2,2.6,1.6), mat(null,0x5a1020), 0,1.4,-13);
+  banner(-10,5,-15.6,0,0x7c1d3a); banner(10,5,-15.6,0,0x1d3a7c);
+  banner(-12.6,5,0,Math.PI/2,0xc9a227); banner(12.6,5,0,-Math.PI/2,0xc9a227);
+  [[-11,3,-8],[11,3,-8],[-11,3,8],[11,3,8],[0,3,12]].forEach(p=>torch(p[0],p[1],p[2]));
+  spirit(0,0,-6,0xe8c872,2.2);
+  spirit(-3.2,0,-6,0xb8c4d8,1.9);
+  spirit(3.2,0,-6,0xb8c4d8,1.9);
+  glowOrb(-8,1.4,4,0x7c3aed);
+  const winCol=[0x2244aa,0xaa2244,0xca9a22];
+  for(let i=0;i<3;i++){
+    addMesh(new THREE.PlaneBufferGeometry(1.6,3.2), new THREE.MeshBasicMaterial({color:winCol[i], transparent:true, opacity:.55}), -12.64,4.2,-6+i*6,0,Math.PI/2,0,1,1,1,false);
+    addMesh(new THREE.PlaneBufferGeometry(1.6,3.2), new THREE.MeshBasicMaterial({color:winCol[i], transparent:true, opacity:.55}), 12.64,4.2,-6+i*6,0,-Math.PI/2,0,1,1,1,false);
+  }
+}
+
+function buildCloset(){
+  const stone=mat(textures.stone,0x7a7488);
+  const wood=mat(textures.wood,0xb08958,20);
+  addMesh(new THREE.BoxBufferGeometry(16,.35,16), wood, 0,-.15,0);
+  wall(0,-8,16,.55,6); wall(0,8,16,.55,6); wall(-8,0,.55,16,6); wall(8,0,.55,16,6);
+  addMesh(new THREE.BoxBufferGeometry(16,.25,16), stone, 0,6.1,0);
+  addMesh(new THREE.BoxBufferGeometry(3.2,.4,2.2), wood, -4,1.1,-5);
+  addMesh(new THREE.BoxBufferGeometry(3.4,1.8,.12), wood, -4,2.4,-6.1);
+  addMesh(new THREE.BoxBufferGeometry(.12,2.4,.12), wood, -5.6,2.2,-5);
+  addMesh(new THREE.BoxBufferGeometry(.12,2.4,.12), wood, -2.4,2.2,-5);
+  const arras=addMesh(new THREE.PlaneBufferGeometry(3.4,4.2), new THREE.MeshPhongMaterial({color:0x5b1a3a, side:THREE.DoubleSide}), 5.6,2.2,-1,0,-Math.PI/2,0);
+  anims.push(t=>{ arras.rotation.y=-Math.PI/2+Math.sin(t*1.2)*.04; });
+  addMesh(new THREE.BoxBufferGeometry(1.4,1.8,.8), new THREE.MeshPhongMaterial({color:0x3a2418}), 5.5,.9,-1);
+  spirit(-4,0,-5,0xf0c0d0,2);
+  glowOrb(5.5,1.5,-1,0xe8c872);
+  torch(-6,2.4,5); torch(6,2.4,5); torch(0,2.4,-6.5);
+  addMesh(new THREE.PlaneBufferGeometry(1.4,2.4), new THREE.MeshBasicMaterial({color:0xa8c4ff, transparent:true, opacity:.35}), 0,3.2,-7.7);
+  const shaft=addMesh(new THREE.PlaneBufferGeometry(1.6,5), new THREE.MeshBasicMaterial({color:0x9bb7ff, transparent:true, opacity:.08, side:THREE.DoubleSide, depthWrite:false}), 0,3,-5, .4,0,0,1,1,1,false);
+  anims.push(t=>{ shaft.material.opacity=.06+.04*Math.sin(t); });
+}
+
+function buildYard(){
+  const dirt=mat(textures.cobble,0x6a7058,4);
+  addMesh(new THREE.CircleBufferGeometry(22,24), dirt, 0,-.02,0, -Math.PI/2,0,0);
+  for(let i=0;i<14;i++){
+    const a=i/14*Math.PI*2, r=6+((i*3)%5);
+    const x=Math.cos(a)*r, z=Math.sin(a)*r-2;
+    addMesh(new THREE.BoxBufferGeometry(.7,1.1,.18), new THREE.MeshPhongMaterial({color:0x8a8674}), x,.55,z,0,a,0);
+    addMesh(new THREE.BoxBufferGeometry(.22,1.6,.12), new THREE.MeshPhongMaterial({color:0x7a7666}), x,.8,z+.8,0,a,0);
+  }
+  const trunk=addMesh(new THREE.CylinderBufferGeometry(.28,.4,4.5,7), new THREE.MeshPhongMaterial({color:0x3a2a1a}), -8,2.2,4);
+  for(let i=0;i<7;i++){
+    const br=addMesh(new THREE.CylinderBufferGeometry(.06,.14,2.2,5), new THREE.MeshPhongMaterial({color:0x3a2a1a}), -8,4.4,4, .6, i, .3);
+    br.position.set(-8+Math.cos(i)*.4, 4.2, 4+Math.sin(i)*.4);
+  }
+  const leaf=new THREE.Mesh(new THREE.SphereBufferGeometry(2.2,8,8), new THREE.MeshPhongMaterial({color:0x1e3318, transparent:true, opacity:.75}));
+  leaf.position.set(-8,5.6,4); leaf.scale.set(1.3,.7,1.1); world.add(leaf);
+  const skull=new THREE.Group(); skull.position.set(0,1.05,-4);
+  skull.add(new THREE.Mesh(new THREE.SphereBufferGeometry(.28,12,10), new THREE.MeshPhongMaterial({color:0xe8dcc0, shininess:30})));
+  const jaw=new THREE.Mesh(new THREE.BoxBufferGeometry(.22,.08,.2), new THREE.MeshPhongMaterial({color:0xd9cdb0})); jaw.position.set(0,-.22,.06); skull.add(jaw);
+  world.add(skull);
+  anims.push(t=>{ skull.rotation.y=Math.sin(t*.7)*.2; skull.position.y=1.05+Math.sin(t*1.2)*.04; });
+  spirit(0,.2,-4,0xe8c872,1.8);
+  glowOrb(7,1.3,3,0x88ccee);
+  spirit(7,0,3,0xaad4e8,1.7);
+  torch(-10,2,8); torch(10,2,8); torch(0,2,10);
+  rain();
+}
+
+function buildThrone(){
+  const stone=mat(textures.stone,0x7a6a7a);
+  const wood=mat(textures.wood,0xa07050);
+  addMesh(new THREE.BoxBufferGeometry(24,.4,28), stone, 0,-.2,0);
+  addMesh(new THREE.BoxBufferGeometry(3.2,.08,22), new THREE.MeshPhongMaterial({color:0x6b1230}), 0,.05,-1);
+  wall(0,-14,24,.7,9); wall(0,14,24,.7,9); wall(-12,0,.7,28,9); wall(12,0,.7,28,9);
+  addMesh(new THREE.BoxBufferGeometry(24,.3,28), stone, 0,9.1,0);
+  addMesh(new THREE.BoxBufferGeometry(2.8,3.2,1.8), new THREE.MeshPhongMaterial({color:0x5a1024}), 0,1.7,-11);
+  addMesh(new THREE.BoxBufferGeometry(2.4,1.2,.5), new THREE.MeshPhongMaterial({color:0xc9a227}), 0,3.5,-11.2);
+  banner(-8,5.5,-13.6,0,0x6b1230); banner(8,5.5,-13.6,0,0x6b1230);
+  addMesh(new THREE.BoxBufferGeometry(.08,1.2,.08), new THREE.MeshPhongMaterial({color:0xc0c4cc, shininess:80}), -1.6,1.1,0, 0,0,.4);
+  addMesh(new THREE.BoxBufferGeometry(.08,1.2,.08), new THREE.MeshPhongMaterial({color:0xc0c4cc, shininess:80}), 1.6,1.1,0, 0,0,-.4);
+  const cup=addMesh(new THREE.CylinderBufferGeometry(.12,.16,.28,10), new THREE.MeshPhongMaterial({color:0xc9a227, shininess:90, emissive:0x331100}), 2.4,1.05,-8);
+  anims.push(t=>{ cup.material.emissiveIntensity=.4+.4*Math.sin(t*4); });
+  glowOrb(2.4,1.5,-8,0xaa2244);
+  spirit(0,0,-2,0xe8c872,2.3);
+  spirit(-2.5,0,-1,0x88aacc,2);
+  spirit(2.5,0,-1,0xcc8888,2);
+  spirit(0,0,-11,0x664466,2.1);
+  [[-10,3,-8],[10,3,-8],[-10,3,8],[10,3,8]].forEach(p=>torch(p[0],p[1],p[2]));
+  glowOrb(-6,1.4,6,0x7c3aed);
+}
+
+function placeInteractables(id){
+  INTERACT[id].forEach(it=>{
+    interactables.push(Object.assign({done:false}, it));
+  });
+}
+
+function maybePortal(){
+  const room=ACTS[act].id;
+  if(interactables.filter(i=>!i.portal && !i.done).length) return;
+  if(interactables.some(i=>i.portal)) return;
+  const loc={battlements:[0,1.4,8], hall:[0,1.4,13], closet:[0,1.4,6], yard:[0,1.4,10], throne:[0,1.4,10]}[room];
+  portal(loc[0],loc[1],loc[2]);
+  chime(880,.12); chime(1320,.18);
+}
+
+function buildRoom(i){
+  resetWorld();
+  buildSky();
+  act=i;
+  const A=ACTS[i];
+  ({battlements:buildBattlements, hall:buildHall, closet:buildCloset, yard:buildYard, throne:buildThrone})[A.id]();
+  placeInteractables(A.id);
+  player.x=A.spawn[0]; player.y=1.62; player.z=A.spawn[2]; player.yaw=A.yaw; player.pitch=0;
+  $("actK").textContent=A.kicker;
+  $("actN").textContent=A.name;
+  $("obj").textContent=A.objective;
+  [...$("dots").children].forEach((d,k)=>{ d.className=k<i?"done":k===i?"on":""; });
+  if(A.verses) A.verses.forEach(v=>{ if(!verses[v.id]){ verses[v.id]=v; score+=50; }});
+  updateHUD();
+}
+
+function updateHUD(){
+  $("sc").textContent=score;
+  $("vs").textContent=Object.keys(verses).length+"/5";
+  renderVerses();
+}
+function renderVerses(){
+  const ids=["flesh","be","play","occasions","silence"];
+  const names={flesh:"I.ii  Flesh", be:"III.i  To be", play:"II.ii  The play", occasions:"IV.iv  Occasions", silence:"V.ii  Silence"};
+  $("verses").innerHTML=ids.map(id=>{
+    const v=verses[id];
+    return v?`<div class="verse">“${v.text}”<div style="margin-top:.4rem;font-style:normal;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)">${v.speaker}</div></div>`
+            :`<div class="verse empty">${names[id]} — not yet found</div>`;
+  }).join("");
+}
+
+function initThree(){
+  renderer=new THREE.WebGLRenderer({antialias:!MOBILE, powerPreference:MOBILE?"low-power":"high-performance"});
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1, MOBILE?1.25:1.75));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setClearColor(0x1a1730);
+  renderer.shadowMap.enabled=false;
+  document.body.prepend(renderer.domElement);
+
+  scene=new THREE.Scene();
+  scene.fog=new THREE.FogExp2(0x1a1730, .012);
+  camera=new THREE.PerspectiveCamera(68, innerWidth/innerHeight, .08, 220);
+  clock=new THREE.Clock();
+
+  scene.add(new THREE.AmbientLight(0x9aa8c8, .85));
+  hemi=new THREE.HemisphereLight(0xc5d4f0, 0x3a3228, 1.15); scene.add(hemi);
+  moonLit=new THREE.DirectionalLight(0xf0f4ff, 1.35);
+  moonLit.position.set(-12,28,-10);
+  scene.add(moonLit);
+
+  player={x:0,y:1.62,z:10, yaw:Math.PI, pitch:0, vy:0};
+}
+
+function collide(nx,nz){
+  for(const c of colliders){
+    if(Math.abs(nx-c.x)<c.w+.28 && Math.abs(nz-c.z)<c.d+.28) return true;
+  }
+  return false;
+}
+
+function nearest(){
+  let best=null, bd=9;
+  for(const it of interactables){
+    if(it.done && !it.portal) continue;
+    const dx=player.x-it.pos[0], dz=player.z-it.pos[2];
+    const d=Math.hypot(dx,dz);
+    if(d<it.r && d<bd){ bd=d; best=it; }
+  }
+  return best;
+}
+
+function speak(text){
+  try{
+    if(!speechSynthesis) return;
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.rate=.88; u.pitch=.72; u.lang="en-GB";
+    const vs=speechSynthesis.getVoices();
+    const brit=vs.find(v=>/GB|UK|Daniel|Male/i.test(v.lang+" "+v.name));
+    if(brit) u.voice=brit;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+function ensureAudio(){
+  if(audioCtx) return;
+  audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  const osc=audioCtx.createOscillator();
+  const f=audioCtx.createBiquadFilter();
+  const g=audioCtx.createGain();
+  osc.type="sine"; osc.frequency.value=55;
+  f.type="lowpass"; f.frequency.value=180;
+  g.gain.value=.028;
+  osc.connect(f); f.connect(g); g.connect(audioCtx.destination);
+  osc.start(); drone={osc,g};
+  const buf=audioCtx.createBuffer(1, audioCtx.sampleRate*2, audioCtx.sampleRate);
+  const d=buf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*.4;
+  const n=audioCtx.createBufferSource(); n.buffer=buf; n.loop=true;
+  const nf=audioCtx.createBiquadFilter(); nf.type="bandpass"; nf.frequency.value=400; nf.Q.value=.4;
+  const ng=audioCtx.createGain(); ng.gain.value=.02;
+  n.connect(nf); nf.connect(ng); ng.connect(audioCtx.destination); n.start();
+}
+function chime(f, dur){
+  if(!audioCtx) return;
+  const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+  o.frequency.value=f; o.type="sine";
+  g.gain.setValueAtTime(.08, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime+(dur||.2));
+  o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+(dur||.2)+.05);
+}
+function thunder(){
+  if(!audioCtx) return;
+  const o=audioCtx.createOscillator(), g=audioCtx.createGain(), f=audioCtx.createBiquadFilter();
+  o.type="sawtooth"; o.frequency.value=40; f.type="lowpass"; f.frequency.value=120;
+  g.gain.setValueAtTime(.12, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime+1.4);
+  o.connect(f); f.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+1.5);
+  flash=1;
+}
+
+function setOverlay(id, on){ $(id).style.display=on?"flex":"none"; }
+
+function showPrompt(it){
+  if(!it){ $("prompt").style.display="none"; return; }
+  $("prompt").style.display="block";
+  if(it.portal) $("prTxt").innerHTML=isTouch?(act<4?"Step through the gold ring":"Step through — end the tragedy"):(act<4?`Step through · <kbd>E</kbd>  Next act`:`Step through · <kbd>E</kbd>  End the tragedy`);
+  else $("prTxt").innerHTML=isTouch?`Tap Speak — ${it.who}`:`Speak · <kbd>E</kbd>  ${it.who}`;
+}
+
+function openInteract(it){
+  if(it.portal){ beginTransition(act+1); return; }
+  locked=false; document.exitPointerLock&&document.exitPointerLock();
+  state="panel";
+  speak(it.lines);
+  const tries=tried[it.id]|0;
+  $("card").innerHTML=`
+    <div class="who">${it.who}</div>
+    <p class="line">“${it.lines}”</p>
+    <p class="q">${it.q}</p>
+    <div class="choices">${it.choices.map((c,i)=>`<button class="ch" data-i="${i}">${String.fromCharCode(65+i)}.  ${c}</button>`).join("")}</div>
+    <div class="scholar" id="sch"></div>
+    <div class="card-act"><button class="btn btn-o" id="skipSpeak">Hush voice</button></div>`;
+  setOverlay("panel", true);
+  $("card").onclick=e=>{
+    const b=e.target.closest(".ch"); if(!b) return;
+    const i=+b.dataset.i;
+    if(it.done) return;
+    if(i===it.a){
+      b.classList.add("good");
+      it.done=true;
+      const pts=tries?40:100; score+=pts; updateHUD();
+      chime(660,.1); setTimeout(()=>chime(990,.16),90);
+      const sch=$("sch"); sch.style.display="block";
+      sch.innerHTML=`<strong>Scholar’s note.</strong> ${it.note}<br><em style="opacity:.8">+${pts} insight</em>`;
+      $("card").querySelectorAll(".ch").forEach(x=>x.disabled=true);
+      const actn=document.createElement("div"); actn.className="card-act";
+      actn.innerHTML=`<button class="btn btn-g" id="cont">Continue</button>`;
+      $("card").appendChild(actn);
+      $("cont").onclick=closePanel;
+      maybePortal();
+    } else {
+      b.classList.add("bad"); b.disabled=true; tried[it.id]=tries+1; chime(120,.2);
+    }
+  };
+  $("skipSpeak").onclick=()=>{ try{speechSynthesis.cancel();}catch(e){} };
+}
+
+function closePanel(){
+  setOverlay("panel", false); state="play";
+  try{speechSynthesis.cancel();}catch(e){}
+  lockPtr();
+}
+
+function beginTransition(next){
+  if(next>=ACTS.length){ winGame(); return; }
+  fadeDir=1; pendingRoom=next; state="fade";
+  $("lbT").classList.remove("off"); $("lbB").classList.remove("off");
+}
+
+function winGame(){
+  state="win"; locked=false; document.exitPointerLock&&document.exitPointerLock();
+  setOverlay("hud", false); setOverlay("prompt", false); $("cross").style.display="none";
+  $("winScore").textContent=score+" insight";
+  const n=Object.keys(verses).length;
+  $("winNote").textContent=n===5
+    ? "Perfect commonplace: all five soliloquies gathered. Horatio would be proud — you have told Hamlet’s story."
+    : "You walked the five acts. Return to gather every verse, as Horatio gathers the tale.";
+  setOverlay("win", true);
+  speak("The rest is silence.");
+}
+
+function startGame(){
+  ensureAudio(); if(audioCtx&&audioCtx.state==="suspended") audioCtx.resume();
+  $("title").hidden=true;
+  $("lbT").classList.add("off"); $("lbB").classList.add("off");
+  setOverlay("hud", true);
+  $("cross").style.display=isTouch?"none":"block";
+  if(isTouch) $("touch").style.display="block";
+  verses={}; tried={}; score=0; act=0;
+  buildRoom(0);
+  state="play"; fade=0; fadeDir=-1; pendingRoom=null;
+  lockPtr();
+}
+
+function loop(){
+  requestAnimationFrame(loop);
+  const dt=Math.min(clock.getDelta(), .05);
+  const t=clock.elapsedTime;
+  anims.forEach(fn=>fn(t, dt));
+  $("fade").style.opacity=String(Math.max(0,Math.min(1,fade)));
+
+  if(flash>0){ hemi.intensity=.55+flash*1.8; flash-=dt*1.6; if(flash<0) flash=0; }
+  else if((state==="title"||state==="play") && Math.random()<dt*.018) thunder();
+
+  if(state==="title"){
+    titleT+=dt*.18;
+    camera.position.set(Math.sin(titleT)*10, 5.2, 13+Math.cos(titleT)*3);
+    camera.lookAt(-1, 2.2, -6);
+  }
+
+  if(state==="play"){
+    let fx=0, fz=0;
+    if(keys.KeyW||keys.ArrowUp) fz-=1;
+    if(keys.KeyS||keys.ArrowDown) fz+=1;
+    if(keys.KeyA||keys.ArrowLeft) fx-=1;
+    if(keys.KeyD||keys.ArrowRight) fx+=1;
+    if(joy.active){ fx+=joy.x; fz+=joy.y; }
+    const moving=Math.hypot(fx,fz)>0;
+    const sp=(keys.ShiftLeft||keys.ShiftRight?9:5.2)*dt;
+    const sl=Math.hypot(fx,fz)||1; fx/=sl; fz/=sl;
+    const sy=Math.sin(player.yaw), cy=Math.cos(player.yaw);
+    const dx=(fx*cy+fz*sy)*sp, dz=(-fx*sy+fz*cy)*sp;
+    if(!collide(player.x+dx, player.z)) player.x+=dx;
+    if(!collide(player.x, player.z+dz)) player.z+=dz;
+    player.x=Math.max(-20,Math.min(20,player.x));
+    player.z=Math.max(-20,Math.min(20,player.z));
+    const bob=moving?Math.sin(t*10)*0.035:0;
+    camera.position.set(player.x, player.y+bob, player.z);
+    camera.rotation.set(player.pitch, player.yaw, moving?Math.sin(t*10)*0.008:0, "YXZ");
+    near=nearest();
+    showPrompt(near);
+  } else if(state==="panel"||state==="pause"||state==="journal"){
+    camera.position.set(player.x, player.y, player.z);
+    camera.rotation.set(player.pitch, player.yaw, 0, "YXZ");
+  }
+
+  if(state==="fade"){
+    fade+=fadeDir*dt*1.4;
+    if(fadeDir>0 && fade>=1){
+      fade=1;
+      if(pendingRoom!=null){ buildRoom(pendingRoom); pendingRoom=null; fadeDir=-1; }
+    }
+    if(fadeDir<0 && fade<=0){ fade=0; state="play"; $("lbT").classList.add("off"); $("lbB").classList.add("off"); lockPtr(); }
+    camera.position.set(player.x, player.y, player.z);
+    camera.rotation.set(player.pitch, player.yaw, 0, "YXZ");
+  }
+
+  renderer.render(scene, camera);
+}
+
+function onLook(mx,my){
+  if(state!=="play" && state!=="fade") return;
+  const s=isTouch?0.0048:0.0022;
+  player.yaw -= mx*s;
+  player.pitch -= my*s;
+  player.pitch=Math.max(-1.25, Math.min(1.25, player.pitch));
+}
+function lockPtr(){
+  try{ if(!isTouch && renderer) renderer.domElement.requestPointerLock(); }catch(e){}
+}
+
+function bind(){
+  function fit(){
+    const w=(window.visualViewport&&visualViewport.width)||innerWidth;
+    const h=(window.visualViewport&&visualViewport.height)||innerHeight;
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+  addEventListener("resize", fit);
+  if(window.visualViewport) visualViewport.addEventListener("resize", fit);
+  addEventListener("keydown", e=>{
+    keys[e.code]=true;
+    if(e.code==="Escape"){
+      if(state==="play"){ state="pause"; setOverlay("pause",true); document.exitPointerLock&&document.exitPointerLock(); }
+      else if(state==="pause"){ state="play"; setOverlay("pause",false); lockPtr(); }
+      else if(state==="journal"){ state="play"; setOverlay("journal",false); lockPtr(); }
+    }
+    if(e.code==="KeyJ" && (state==="play"||state==="journal")){
+      if(state==="journal"){ state="play"; setOverlay("journal",false); lockPtr(); }
+      else { state="journal"; setOverlay("journal",true); document.exitPointerLock&&document.exitPointerLock(); }
+    }
+    if(e.code==="KeyE" && state==="play" && near) openInteract(near);
+  });
+  addEventListener("keyup", e=> keys[e.code]=false);
+
+  renderer.domElement.addEventListener("mousedown", e=>{
+    if(e.button!==0) return;
+    dragging=true;
+    if(state==="play"||state==="fade") lockPtr();
+  });
+  addEventListener("mouseup", ()=>{ dragging=false; });
+  document.addEventListener("pointerlockchange", ()=>{ locked=document.pointerLockElement===renderer.domElement; });
+  document.addEventListener("mousemove", e=>{
+    if(locked || dragging) onLook(e.movementX||0, e.movementY||0);
+  });
+
+  $("btnStart").onclick=startGame;
+  $("btnHow").onclick=()=>{ setOverlay("pause", true); };
+  $("pResume").onclick=()=>{
+    setOverlay("pause", false);
+    if($("title").hidden){ state="play"; lockPtr(); }
+  };
+  $("pMenu").onclick=()=>{ setOverlay("pause",false); $("title").hidden=false; setOverlay("hud",false); $("touch").style.display="none"; $("cross").style.display="none"; state="title"; fade=0; buildRoom(0); };
+  $("jClose").onclick=()=>{ setOverlay("journal",false); if($("title").hidden){ state="play"; lockPtr(); }};
+  $("wAgain").onclick=()=>{ setOverlay("win",false); startGame(); };
+  $("btnE").onclick=()=>{ if(state==="play" && near) openInteract(near); };
+
+  const joyEl=$("joy"), knob=$("knob"), touchEl=$("touch");
+  function joyAt(cx,cy){
+    const r=joyEl.getBoundingClientRect();
+    let x=(cx-r.left-r.width/2)/(r.width/2), y=(cy-r.top-r.height/2)/(r.height/2);
+    const m=Math.hypot(x,y)||1; if(m>1){ x/=m; y/=m; }
+    joy.x=x; joy.y=y; knob.style.left=(39+x*32)+"px"; knob.style.top=(39+y*32)+"px";
+  }
+  function resetJoy(){ joy.active=false; joy.x=joy.y=0; knob.style.left="39px"; knob.style.top="39px"; }
+  let joyId=null;
+  touchEl.addEventListener("touchstart", e=>{
+    if(state!=="play" && state!=="fade") return;
+    for(let i=0;i<e.changedTouches.length;i++){
+      const t=e.changedTouches[i];
+      const el=document.elementFromPoint(t.clientX,t.clientY);
+      if(el && (el.id==="btnE" || (el.closest && el.closest("#btnE")))) continue;
+      if(el && (el.id==="joy" || el.id==="knob" || (el.closest && el.closest("#joy")))){
+        joyId=t.identifier; joy.active=true; joyAt(t.clientX,t.clientY);
+      } else if(lookTouch==null){
+        lookTouch=t.identifier; lookLast={x:t.clientX,y:t.clientY};
+      }
+    }
+    e.preventDefault();
+  }, {passive:false});
+  touchEl.addEventListener("touchmove", e=>{
+    for(let i=0;i<e.touches.length;i++){
+      const t=e.touches[i];
+      if(t.identifier===joyId) joyAt(t.clientX,t.clientY);
+      else if(t.identifier===lookTouch && lookLast){
+        onLook(t.clientX-lookLast.x, t.clientY-lookLast.y);
+        lookLast={x:t.clientX,y:t.clientY};
+      }
+    }
+    e.preventDefault();
+  }, {passive:false});
+  function endTouch(e){
+    for(let i=0;i<e.changedTouches.length;i++){
+      const id=e.changedTouches[i].identifier;
+      if(id===joyId){ joyId=null; resetJoy(); }
+      if(id===lookTouch){ lookTouch=null; lookLast=null; }
+    }
+  }
+  touchEl.addEventListener("touchend", endTouch);
+  touchEl.addEventListener("touchcancel", endTouch);
+  document.addEventListener("touchmove", e=>{
+    if(state==="play"||state==="fade"||state==="title") e.preventDefault();
+  }, {passive:false});
+}
+
+function boot(){
+  loadBar(.15);
+  makeTextures(); loadBar(.4);
+  initThree(); loadBar(.65);
+  player={x:0,y:1.62,z:10,yaw:Math.PI,pitch:0};
+  buildRoom(0); loadBar(1);
+  bind();
+  setTimeout(()=>{
+    $("loader").style.opacity="0"; $("loader").style.transition="opacity .6s";
+    $("title").hidden=false;
+    setTimeout(()=> $("loader").remove(), 700);
+    state="title"; fade=0;
+  }, 500);
+  loop();
+}
+
+if(!window.THREE){
+  $("loader").innerHTML="<p class='ld-quote'>Could not load the 3D engine. Keep <b>three.min.js</b> in the same folder as this file and reopen it.</p>";
+} else if(!window.WebGLRenderingContext){
+  $("loader").innerHTML="<p class='ld-quote'>This hall requires WebGL.</p>";
+} else {
+  try{ boot(); }catch(e){ $("loader").innerHTML="<p class='ld-quote'>"+(e&&e.message?e.message:e)+"</p>"; }
+}
+})();
+</script>
+</body>
+</html>
