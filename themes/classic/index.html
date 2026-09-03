@@ -74,6 +74,13 @@
     .ssg-tags span{font-size:.7rem;padding:.3rem .75rem;border:1px solid rgba(232,200,114,.35);border-radius:99px;color:#e8c872;letter-spacing:.05em}
     .ssg-actions{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
     .ssg-note{font-size:.78rem;color:#9a8f74;margin-left:.4rem}
+    .ssg-duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
+    .ssg-duo .ssg-card{margin-top:0;grid-template-columns:150px 1fr}
+    .ssg-duo .ssg-title{font-size:clamp(1.08rem,2.2vw,1.42rem)}
+    .ssg-duo .ssg-cover{min-height:150px}
+    .ssg-duo .ssg-desc{font-size:.86rem}
+    .ssg-duo .ssg-body{padding:1.15rem 1.2rem}
+    @media(max-width:900px){.ssg-duo{grid-template-columns:1fr}}
     @media(max-width:760px){.ssg-card{grid-template-columns:1fr}.ssg-body{padding:1.25rem 1.15rem}.ssg-cover{min-height:170px}}
   </style>
   <div class="ssg-card" data-aos="zoom-in">
@@ -116,7 +123,8 @@
       </div>
     </div>
   </div>
-  <div class="ssg-card" data-aos="zoom-in" style="margin-top:1.4rem">
+  <div class="ssg-duo">
+  <div class="ssg-card" data-aos="zoom-in">
     <div class="ssg-cover">
       <svg viewBox="0 0 290 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A cauldron glows green beneath a floating dagger and lightning">
         <defs>
@@ -155,6 +163,44 @@
         <span class="ssg-note">Free forever · works on Windows, Android &amp; iPhone</span>
       </div>
     </div>
+  </div>
+  <div class="ssg-card" data-aos="zoom-in">
+    <div class="ssg-cover">
+      <svg viewBox="0 0 290 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A moonlit enchanted wood with fireflies and glowing mushrooms">
+        <defs>
+          <linearGradient id="msh" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0c1e24"/><stop offset="60%" stop-color="#0a141a"/><stop offset="100%" stop-color="#060a09"/></linearGradient>
+          <radialGradient id="mshm" cx="26%" cy="22%" r="20%"><stop offset="0%" stop-color="#f0f4ff"/><stop offset="100%" stop-color="#a8c8ff" stop-opacity="0"/></radialGradient>
+          <filter id="mshg"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect width="290" height="300" fill="url(#msh)"/>
+        <circle cx="76" cy="66" r="30" fill="url(#mshm)"/>
+        <circle cx="76" cy="66" r="15" fill="#e8f0ff" opacity=".9"/>
+        <polygon points="0,300 L0,140 L24,168 L48,132 L74,176 L100,128 L126,172 L152,136 L178,178 L206,134 L234,174 L262,142 L290,180 L290,300" fill="#0e2016"/>
+        <polygon points="0,300 L0,200 L30,226 L62,196 L94,228 L128,198 L160,230 L194,200 L226,232 L258,204 L290,232 L290,300" fill="#132c1c"/>
+        <g filter="url(#mshg)">
+          <circle cx="60" cy="100" r="3" fill="#ffe9a0"/><circle cx="104" cy="70" r="2.2" fill="#d8ffb8"/><circle cx="150" cy="104" r="2.6" fill="#ffe9a0"/><circle cx="196" cy="66" r="2" fill="#b39bff"/><circle cx="236" cy="96" r="2.6" fill="#ffe9a0"/><circle cx="262" cy="64" r="2" fill="#9fffc8"/><circle cx="42" cy="128" r="2.2" fill="#d8ffb8"/><circle cx="218" cy="130" r="2" fill="#ffe9a0"/>
+        </g>
+        <g transform="translate(145,238)">
+          <rect x="-5" y="-20" width="10" height="22" rx="3" fill="#d8d4c4"/>
+          <ellipse cx="0" cy="-22" rx="17" ry="10" fill="#6ac89a"/>
+          <ellipse cx="30" cy="-8" rx="14" ry="8" fill="#9a7ac8"/>
+          <ellipse cx="-28" cy="-4" rx="12" ry="7" fill="#6ac89a"/>
+        </g>
+        <text x="145" y="288" text-anchor="middle" fill="#a8e6c8" font-family="Georgia,serif" font-size="18" letter-spacing="6">DREAM</text>
+      </svg>
+    </div>
+    <div class="ssg-body">
+      <div class="ssg-kicker">New · A Midsummer Night's Dream in 3D</div>
+      <div class="ssg-title">A Midsummer Wood — A Dream in Five Visions</div>
+      <p class="ssg-desc">Athens, past midnight. Puck leads you into the wood where fairies quarrel, a weaver wakes wearing an ass's head, four lovers chase each other blind through the fog, and a man is hired to play the Wall. Fireflies, flower-glamour, and the most enchanted night in English.</p>
+      <div class="ssg-tags">
+        <span>Firefly Swarms</span><span>The Ass's Head</span><span>Pyramus &amp; Thisbe</span><span>Scholar's Notes</span><span>Phone + Desktop</span>
+      </div>
+      <div class="ssg-actions">
+        <a href="{{ base_url }}/games/midsummer.html" class="btn btn-primary"><i class="fas fa-moon"></i> Play A Midsummer Wood</a>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
