@@ -1416,6 +1416,32 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "0175bfc8aa294361a7b51354d58bafd5": {
+      "title": "The Final Solution Debojyoti Dasgupta Ebook",
+      "slug": "the-final-solution-debojyoti-dasgupta-ebook",
+      "type": "paper",
+      "date": "2026-09-17",
+      "posted_at": "2026-09-17T17:02:50.660996+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "f928301f7e89c71a98d6ddba171ec341": {
+      "title": "The Final Solution Debojyoti Dasgupta Ebook",
+      "slug": "the-final-solution-debojyoti-dasgupta-ebook",
+      "type": "video",
+      "date": "2026-09-17",
+      "posted_at": "2026-09-17T17:02:51.414621+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
