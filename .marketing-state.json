@@ -1442,6 +1442,45 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "7e0eb12dfc419b94493ab3a2f9deda5d": {
+      "title": "Marxism (Study Guide)",
+      "slug": "marxism-study-guide",
+      "type": "paper",
+      "date": "2026-06-04",
+      "posted_at": "2026-09-17T21:06:24.565149+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "79ad89a509871adaea942c1a571b5c2d": {
+      "title": "Marxism Short Notes",
+      "slug": "marxism-short-notes",
+      "type": "paper",
+      "date": "2026-06-04",
+      "posted_at": "2026-09-17T21:06:24.818280+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "92dcc034eff24243803feabd4b2ec338": {
+      "title": "Ecocriticism A Study",
+      "slug": "ecocriticism-a-study",
+      "type": "paper",
+      "date": "2026-06-19",
+      "posted_at": "2026-09-17T21:06:25.093098+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
