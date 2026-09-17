@@ -375,9 +375,14 @@
 <section class="section stats-section" data-aos="fade-up">
   <div class="section-divider"><i class="fas fa-chart-bar"></i></div>
   <h2 class="section-title"><i class="fas fa-bolt"></i> ScholarScript Impact</h2>
-  <p class="stats-subtitle">Everything here is 100% real — built from actual content on this site.</p>
+  <p class="stats-subtitle">Everything here is built from actual content and live traffic on this site.</p>
   <div class="stats-grid">
     {% set total = papers|length + videos|length + creative|length + links|length %}
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-users"></i></div>
+      <div class="stat-number" id="totalVisitors">—</div>
+      <div class="stat-label">Total Visitors</div>
+    </div>
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
       <div class="stat-number" data-target="{{ total }}">{{ total }}</div>
@@ -445,4 +450,5 @@
   els.forEach(function(el) { observer.observe(el); });
 })();
 </script>
+<script async src="{{ base_url }}/js/visitor-stats.js"></script>
 {% endblock %}

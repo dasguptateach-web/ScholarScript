@@ -77,6 +77,11 @@ class Engine:
                     dst = public_dir / sub
                     shutil.copytree(str(src), str(dst), dirs_exist_ok=True)
 
+        stats_src = Path("data") / "visitor-stats.json"
+        if stats_src.exists():
+            (public_dir / "data").mkdir(exist_ok=True)
+            shutil.copy(str(stats_src), str(public_dir / "data" / "visitor-stats.json"))
+
         # Build tag index
         tag_map = self._build_tag_map()
 

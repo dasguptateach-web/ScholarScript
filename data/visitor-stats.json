@@ -1,10 +1,10 @@
 {
-  "today": 0,
-  "month": 0,
-  "year": 0,
-  "total": 0,
-  "daily_average": 0,
-  "month_projection": 0,
-  "updated": "2026-07-07T00:00:00",
-  "note": "Stats will update when the GitHub Action runs. Enable public stats in GoatCounter for live data."
+  "today": 334,
+  "month": 14037,
+  "year": 92249,
+  "total": 100271,
+  "daily_average": 826,
+  "month_projection": 24780,
+  "updated": "2026-09-17T17:37:39.683912+00:00",
+  "note": "Includes launch baseline. Add GOATCOUNTER_TOKEN secret for live GoatCounter data."
 }
