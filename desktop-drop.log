@@ -538,3 +538,121 @@
 [2026-07-23 22:36:25] === STEP 8/8: Done! ===
 [2026-07-23 22:36:25] Files: verify-push.png
 [2026-07-23 22:36:25] Archived to _Processed
+[2026-07-24 22:05:31] [SUPERVISOR] Supervisor started (PID 13220) - keeping watcher alive 24x7
+[2026-07-24 22:05:31] [SUPERVISOR] Watcher not running - launching detached...
+[2026-07-24 22:05:31] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-07-24 22:05:31] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-24 22:05:49] [SUPERVISOR] Watcher confirmed up (PID 9116)
+[2026-07-31 21:32:08] [SUPERVISOR] Supervisor started (PID 5136) - keeping watcher alive 24x7
+[2026-07-31 21:32:08] [SUPERVISOR] Watcher not running - launching detached...
+[2026-07-31 21:32:08] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-07-31 21:32:09] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-31 21:32:20] [SUPERVISOR] Watcher confirmed up (PID 10196)
+[2026-07-31 21:53:08] [SUPERVISOR] Supervisor started (PID 2792) - keeping watcher alive 24x7
+[2026-07-31 21:53:08] [SUPERVISOR] Watcher not running - launching detached...
+[2026-07-31 21:53:08] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-07-31 21:53:08] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-31 21:53:20] [SUPERVISOR] Watcher confirmed up (PID 8800)
+[2026-07-31 22:04:33] [SUPERVISOR] Supervisor started (PID 7140) - keeping watcher alive 24x7
+[2026-07-31 22:04:33] [SUPERVISOR] Watcher not running - launching detached...
+[2026-07-31 22:04:33] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-07-31 22:04:33] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-31 22:04:45] [SUPERVISOR] Watcher confirmed up (PID 9956)
+[2026-07-31 22:45:28] [SUPERVISOR] Supervisor started (PID 11028) - keeping watcher alive 24x7
+[2026-07-31 22:45:28] [SUPERVISOR] Watcher not running - launching detached...
+[2026-07-31 22:45:28] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-07-31 22:45:28] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-07-31 22:45:40] [SUPERVISOR] Watcher confirmed up (PID 11244)
+[2026-08-01 22:28:54] [SUPERVISOR] Supervisor started (PID 7432) - keeping watcher alive 24x7
+[2026-08-01 22:28:54] [SUPERVISOR] Watcher not running - launching detached...
+[2026-08-01 22:28:54] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-08-01 22:28:55] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-08-01 22:29:06] [SUPERVISOR] Watcher confirmed up (PID 9900)
+[2026-08-01 22:34:36] [SUPERVISOR] Watcher not running - launching detached...
+[2026-08-01 22:34:36] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-08-01 22:34:37] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-08-01 22:34:48] [SUPERVISOR] Watcher confirmed up (PID 5672)
+[2026-08-02 22:20:29] [SUPERVISOR] Supervisor started (PID 7160) - keeping watcher alive 24x7
+[2026-08-02 22:20:29] [SUPERVISOR] Watcher not running - launching detached...
+[2026-08-02 22:20:29] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-08-02 22:20:30] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-08-02 22:20:41] [SUPERVISOR] Watcher confirmed up (PID 12764)
+[2026-08-24 10:28:33] [SUPERVISOR] Supervisor started (PID 7080) - keeping watcher alive 24x7
+[2026-08-24 10:28:33] [SUPERVISOR] Watcher not running - launching detached...
+[2026-08-24 10:28:33] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-08-24 10:28:34] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-08-24 10:28:45] [SUPERVISOR] Watcher confirmed up (PID 10816)
+[2026-08-31 22:00:01] [SUPERVISOR] Supervisor started (PID 7532) - keeping watcher alive 24x7
+[2026-08-31 22:00:01] [SUPERVISOR] Watcher not running - launching detached...
+[2026-08-31 22:00:01] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-08-31 22:00:04] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-08-31 22:00:14] [SUPERVISOR] Watcher confirmed up (PID 12028)
+[2026-09-01 11:24:54] [SUPERVISOR] Supervisor started (PID 1192) - keeping watcher alive 24x7
+[2026-09-01 11:24:55] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-01 11:24:55] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-01 11:25:00] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-01 11:25:07] [SUPERVISOR] Watcher confirmed up (PID 13248)
+[2026-09-01 18:49:37] [SUPERVISOR] Supervisor started (PID 13800) - keeping watcher alive 24x7
+[2026-09-01 18:49:37] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-01 18:49:38] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-01 18:49:38] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-01 18:49:52] [SUPERVISOR] Watcher confirmed up (PID 13960)
+[2026-09-03 19:21:54] [SUPERVISOR] Supervisor started (PID 13916) - keeping watcher alive 24x7
+[2026-09-03 19:21:54] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-03 19:21:54] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-03 19:21:56] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-03 19:22:06] [SUPERVISOR] Watcher confirmed up (PID 4940)
+[2026-09-16 20:18:05] [SUPERVISOR] Supervisor started (PID 14016) - keeping watcher alive 24x7
+[2026-09-16 20:18:06] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-16 20:18:06] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-16 20:18:09] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-16 20:18:18] [SUPERVISOR] Watcher confirmed up (PID 14572)
+[2026-09-17 09:58:20] [SUPERVISOR] Supervisor started (PID 5948) - keeping watcher alive 24x7
+[2026-09-17 09:58:20] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-17 09:58:20] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-17 09:58:21] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-17 09:58:32] [SUPERVISOR] Watcher confirmed up (PID 8008)
+[2026-09-17 21:54:47] [SUPERVISOR] Supervisor started (PID 3016) - keeping watcher alive 24x7
+[2026-09-17 21:54:47] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-17 21:54:48] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-17 21:54:48] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-17 21:55:01] [SUPERVISOR] Watcher confirmed up (PID 11372)
+[2026-09-17 22:13:32] [SUPERVISOR] Watcher not running - launching detached...
+[2026-09-17 22:13:32] [SUPERVISOR] Launched via Start Watcher.lnk
+[2026-09-17 22:13:32] Auto-Pipeline v2.0 started (project: D:\ScholarScript)
+[2026-09-17 22:13:33] STAGE The_Final_Solution_DEBOJYOTI_DASGUPTA_Ebook.pdf
+[2026-09-17 22:13:34] COPY The_Final_Solution_DEBOJYOTI_DASGUPTA_Ebook.pdf
+[2026-09-17 22:13:34] === STEP 1/7: Ingesting documents ===
+[2026-09-17 22:13:43]   Checking uploads folder...
+[2026-09-17 22:13:43]   Processed 1 file(s):
+[2026-09-17 22:13:43]     Success: 1
+[2026-09-17 22:13:43]     Errors:  0
+[2026-09-17 22:13:43]     [OK] The_Final_Solution_DEBOJYOTI_DASGUPTA_Ebook.pdf -> D:\ScholarScript\content\papers\the-final-solution-debojyoti-dasgupta-ebook.md (paper)
+[2026-09-17 22:13:43]   
+[2026-09-17 22:13:43]   Run 'scholarscript build' to rebuild the site.
+[2026-09-17 22:13:43]   
+[2026-09-17 22:13:43] === STEP 2/7: Fixing table formatting ===
+[2026-09-17 22:13:43]     No tables needed fixing.
+[2026-09-17 22:13:43]   
+[2026-09-17 22:13:43] === STEP 3/8: Formatting MCQs ===
+[2026-09-17 22:13:44] [SUPERVISOR] Watcher confirmed up (PID 9212)
+[2026-09-17 22:13:44]     No MCQs needed reformatting.
+[2026-09-17 22:13:44]   
+[2026-09-17 22:13:44] === STEP 4/8: Building interactive tests ===
+[2026-09-17 22:13:44]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-09-17 22:13:44]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-09-17 22:13:44]     Created 2 test(s)
+[2026-09-17 22:13:44]   
+[2026-09-17 22:13:44] === STEP 5/8: Matching YouTube videos ===
+[2026-09-17 22:14:13]   Found 44 papers
+[2026-09-17 22:14:13]   
+[2026-09-17 22:14:13]     [the-final-solution-debojyoti-dasgupta-ebook] -> y48WlxiLlNY (The Beauty Of Little Things - Helly Shah | English Poetry) [86,092 views]
+[2026-09-17 22:14:13]   
+[2026-09-17 22:14:13]   Done! Created: 1, Skipped: 43, Failed: 0
+[2026-09-17 22:14:13]   
+[2026-09-17 22:14:13] === STEP 6/8: Building site ===
+[2026-09-17 22:14:16]   Building site...
+[2026-09-17 22:14:16]   Built 96 items in 1.84s
+[2026-09-17 22:14:16]   Output: D:\ScholarScript\public
+[2026-09-17 22:14:16]   
+[2026-09-17 22:14:16] === STEP 7/8: Committing and pushing to GitHub ===
