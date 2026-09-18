@@ -1,12 +1,8 @@
-New scholarly paper: "The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers"
+New scholarly paper: "UGC NET English Paper II - Advanced Practice Test"
 
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+(50 MCQs x 2 marks = 100 marks)
 
-## 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
 
-Dr. James Sheppa
-
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/
-
-#sheppard #christie #ackroyd #novel #poirot
+#line #iambic #spondee #sonnet #rhyme
 #ScholarScript #EnglishLiterature #FreeEducation
