@@ -1,14 +1,10 @@
-Scholarly Paper: "The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers"
+Scholarly Paper: "The City in Victorian Poetry"
 
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-## 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 
-Dr. James Sheppa
-
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/
-
-#sheppard | #christie | #ackroyd | #novel | #poirot
+#victorian | #poetry | #urban | #industrial | #tennyson
 
 ---
 
