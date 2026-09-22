@@ -1,12 +1,4 @@
 --- Tweet 1 ---
- Paper: "UGC NET English Paper II - Advanced Practice Test"
-
-(50 MCQs x 2 marks = 100 marks)
-
-https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
-#line #iambic #spondee
-
---- Tweet 2 ---
  Paper: "The City in Victorian Poetry"
 
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
@@ -14,7 +6,7 @@ Exploring representations of the Victorian city in the poetry of Tennyson, Arnol
 https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 #victorian #poetry #urban
 
---- Tweet 3 ---
+--- Tweet 2 ---
  Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
@@ -25,7 +17,7 @@ https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 
 https://dasguptateach-web.github.io/ScholarScrip
 
---- Tweet 4 ---
+--- Tweet 3 ---
  Paper: "The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers"
 
 The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
@@ -33,6 +25,14 @@ The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & 
 ## 1. Why is Dr. Sheppard considered one of the most remarkable
 
 https://dasguptateach-web.githu
+
+--- Tweet 4 ---
+ Paper: "UGC NET English Paper II - Advanced Practice Test"
+
+(50 MCQs x 2 marks = 100 marks)
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+#line #iambic #spondee
 
 --- Tweet 5 ---
  Paper: "Ugc Net English (Code 30) - Paper 2"
