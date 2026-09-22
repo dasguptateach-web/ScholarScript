@@ -2,17 +2,6 @@
 
 Here's what's new on ScholarScript:
 
-## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-*Type: Scholarly Paper*
-
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-
- 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
-
-Dr. James Sheppard
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
-
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
 
@@ -80,6 +69,17 @@ Short answer type questions and answers on Pope's The Rape of the Lock (Cantos 1
 An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor to the dramatic monologue, examining the speaker's psychological c...
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
+
+## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+*Type: Scholarly Paper*
+
+The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+
+ 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+
+Dr. James Sheppard
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
 
 ## The British Essay Origin Trends Practitioners
 *Type: Scholarly Paper*
