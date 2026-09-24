@@ -1,10 +1,16 @@
-Scholarly Paper: "UGC NET English Paper II - Advanced Practice Test"
+Scholarly Paper: "UGC NET English Literature (Short Story Master Test)"
 
-(50 MCQs x 2 marks = 100 marks)
+## UGC NET English Literature
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+## SHORT STORY MASTER TEST – 75 MCQs
 
-#line | #iambic | #spondee | #sonnet | #rhyme
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each que
+
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
+
+#short-story | #ugc-net | #english-literature | #mcq | #master-test
 
 ---
 
