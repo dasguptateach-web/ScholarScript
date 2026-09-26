@@ -9,6 +9,15 @@ from .models import ContentItem
 from .parser import slugify
 
 
+# ── Markdown formatting patterns for pasted/extracted text ──────────────
+_BULLET_RE = re.compile(r'^[•●▪◦‣∙·※*+–—-]\s+(.+)$')
+_NUM_ITEM_RE = re.compile(r'^(\d+)[\.\)]\s+(.+)$')
+_LABEL_RE = re.compile(r"^([A-Z][A-Za-z'’\-]*(?:\s+[A-Za-z][A-Za-z'’\-]*){0,3})\s*:\s+(.+)$")
+_STRUCT_HEAD_RE = re.compile(
+    r'^(?:Stanza|Chapter|Section|Part|Act|Scene|Book|Appendix|Module|Unit|Topic)\b',
+    re.IGNORECASE)
+
+
 # Optional import guards
 _HAS_DOCX = False
 _HAS_PDF = False
@@ -137,6 +146,11 @@ class IngestionEngine:
                 if len(words) > 10:
                     derived_title += "..."
                 derived_title = derived_title.title()
+
+            # Strip a balanced pair of wrapping quotes from the title
+            if (len(derived_title) >= 2 and derived_title[0] in '"“\''
+                    and derived_title[-1] in '"”\''):
+                derived_title = derived_title[1:-1].strip()
 
             body = "\n".join(lines[body_start:]).strip() if body_start else text.strip()
 
@@ -465,11 +479,13 @@ class IngestionEngine:
         words = re.findall(r'\b[a-zA-Z]{3,}\b', text.lower())
         stopwords = {
             "the", "and", "for", "are", "but", "not", "you", "all", "can",
-            "had", "her", "was", "one", "our", "out", "has", "have", "been",
+            "had", "her", "his", "him", "she", "its", "who", "was", "one",
+            "our", "out", "has", "have", "been", "being", "were", "whom",
             "some", "them", "then", "than", "that", "this", "which", "what",
             "when", "where", "with", "will", "their", "there", "would",
             "about", "could", "should", "also", "into", "over", "such",
-            "very", "just", "from", "they", "been", "more", "these", "those",
+            "very", "just", "from", "they", "more", "these", "those",
+            "upon", "within", "whose", "each",
         }
         words = [w for w in words if w not in stopwords and len(w) > 2]
         counter = Counter(words)
@@ -546,81 +562,223 @@ class IngestionEngine:
         return "\n\n".join(blocks)
 
     def _text_to_markdown(self, text: str, source_ext: str = "") -> str:
-        """Convert extracted text to Markdown, preserving original paragraph structure.
+        """Convert pasted/extracted text to clean, structured Markdown.
 
-        Handles two cases:
-        - Proper paragraph text (each line = one paragraph, e.g. from docx)
-        - Reflowable text (lines within a paragraph broken by newlines, e.g. from PDF)
-        Preserves question-answer patterns, poetry line breaks, and list structure.
+        Handles:
+        - blank-line-separated documents (docx/PDF extraction)
+        - single-newline Word-style pastes (each line = full paragraph)
+        - hard-wrapped PDF-style pastes (reflowed into paragraphs)
+
+        Produces proper section headings (##/###), bullet and numbered
+        lists, bold lead-ins ("Context:" ...), blockquoted poem excerpts
+        and hard line breaks where line structure matters.
         """
-        raw_blocks = re.split(r'\n\n+', text.strip())
-        md_blocks = []
+        text = text.replace('\r\n', '\n').replace('\r', '\n').strip()
+        if not text:
+            return ""
 
-        for block in raw_blocks:
-            lines = [ln.strip() for ln in block.split("\n") if ln.strip()]
+        # Single-newline text (no blank lines at all)
+        if "\n" in text and not re.search(r'\n[ \t]*\n', text):
+            lines = [l.strip() for l in text.split("\n") if l.strip()]
+            if lines and max(len(l) for l in lines) > 120:
+                # Word-style paste: each line is a full paragraph
+                text = "\n\n".join(self._group_single_newline(lines))
+            else:
+                # Hard-wrapped paste: reflow into paragraphs first
+                text = self._reflow_pdf_text(text)
+
+        blocks = re.split(r'\n[ \t]*\n', text)
+        md_parts = []
+
+        for block in blocks:
+            lines = [l.strip() for l in block.split("\n") if l.strip()]
             if not lines:
                 continue
 
-            first_line = lines[0]
-            joined = " ".join(lines)
-            joined = re.sub(r'\s+', ' ', joined).strip()
-            total_words = len(joined.split())
-            ends_with_period = joined.rstrip().endswith(('.', '!', '?'))
-            starts_with_q = bool(re.match(r'^(?:Q|Question|Ans|Answer|Solution)[\.\:\s]', first_line, re.IGNORECASE))
-            has_numbered_lines = all(bool(re.match(r'^[\d\(\)\[\]\.\s]{1,6}\S', l) or l.startswith(('Q.', 'A.', 'Q:', 'A:'))) for l in lines[:5])
-
-            # Detect heading: short, all-caps, numbered, or standalone title-like line
-            is_heading = (
-                total_words <= 12
-                and first_line == first_line.upper()
-                and total_words >= 2
-                and not ends_with_period
-            ) or (
-                total_words <= 15
-                and re.match(r'^(?:CHAPTER|Chapter|SECTION|Section|\d+[\.\)])\s', first_line, re.IGNORECASE)
-            ) or (
-                total_words <= 8
-                and not ends_with_period
-                and total_words >= 1
-                and (first_line[0].isupper() if first_line else False)
-            ) or (
-                total_words <= 12
-                and not ends_with_period
-                and total_words >= 2
-                and all(w[0].isupper() for w in first_line.split() if w)
-            )
-
-            if is_heading:
-                md_blocks.append(f"## {joined}")
-                md_blocks.append("")
+            if len(lines) == 1:
+                md_parts.append(self._format_paragraph(lines[0]))
+                md_parts.append("")
                 continue
 
-            # Preserve QA pairs, numbered lists, and multi-line structure
-            if starts_with_q or has_numbered_lines:
-                md_blocks.append("\n".join(lines))
-                md_blocks.append("")
-                continue
+            plain = [l for l in lines
+                     if not self._is_bullet(l) and not _NUM_ITEM_RE.match(l)]
+            long_ended = sum(
+                1 for l in plain
+                if len(l) > 60 and l.rstrip().endswith(('.', '!', '?', '”', '"')))
+            word_style = bool(plain) and long_ended / len(plain) >= 0.5
 
-            # Sub-heading: bold lead-in (e.g. "Introduction." at start)
-            if total_words <= 20 and ends_with_period and joined.count(' ') <= 6:
-                if not ends_with_period or joined.rstrip().endswith('?'):
-                    md_blocks.append(joined)
+            if word_style:
+                # Each line is its own paragraph
+                for l in lines:
+                    md_parts.append(self._format_paragraph(l))
+                    md_parts.append("")
+            else:
+                # Poem / list / Q&A: keep lines together with hard breaks
+                md_parts.extend(self._format_structured_lines(lines))
+                md_parts.append("")
+
+        while md_parts and not md_parts[-1].strip():
+            md_parts.pop()
+        return "\n".join(md_parts) + "\n"
+
+    # ── Markdown formatting helpers ─────────────────────────────
+
+    def _is_bullet(self, s: str) -> bool:
+        return bool(_BULLET_RE.match(s.strip()))
+
+    def _looks_num_heading(self, s: str) -> bool:
+        m = _NUM_ITEM_RE.match(s.strip())
+        if not m:
+            return False
+        rest = m.group(2).strip()
+        return len(rest.split()) <= 12 and not rest.rstrip().endswith(('.', '!', '?'))
+
+    def _is_subheading(self, s: str) -> bool:
+        words = s.split()
+        if not (2 <= len(words) <= 12):
+            return False
+        if s.rstrip().endswith(('.', '!', '?', ',', ';', ':', '”', '"', "'")):
+            return False
+        if not s[:1].isalpha() or not s[:1].isupper():
+            return False
+        if s.startswith(('"', "'", '“', '#', '*', '(', '[', '•', '·', '–', '—')):
+            return False
+        if _STRUCT_HEAD_RE.match(s):
+            return True
+        caps = sum(1 for w in words if w[:1].isupper())
+        if caps / len(words) >= 0.6:
+            return True
+        return s == s.upper() and len(s) >= 5
+
+    def _is_poem_line(self, s: str) -> bool:
+        if not s:
+            return False
+        if self._is_bullet(s) or _NUM_ITEM_RE.match(s):
+            return False
+        if len(s) > 90:
+            return False
+        if s.rstrip().endswith(('!', '?')):
+            return False
+        # Short period-ended lines can be verse (stanza endings);
+        # long ones are prose paragraphs
+        if s.rstrip().endswith('.') and len(s) > 60:
+            return False
+        if s[:1] in ('"', '“', '#', '*'):
+            return False
+        if self._is_subheading(s):
+            return False
+        return True
+
+    def _format_bullet(self, s: str) -> str:
+        m = _BULLET_RE.match(s.strip())
+        if not m:
+            return s.strip()
+        item = m.group(1).strip()
+        lm = _LABEL_RE.match(item)
+        if lm and len(lm.group(1)) <= 32 and len(lm.group(2)) >= 10:
+            return f"- **{lm.group(1)}:** {lm.group(2)}"
+        return f"- {item}"
+
+    def _format_paragraph(self, s: str) -> str:
+        s = s.strip()
+        if self._is_bullet(s):
+            return self._format_bullet(s)
+        m = _NUM_ITEM_RE.match(s)
+        if m:
+            rest = m.group(2).strip()
+            if len(rest.split()) <= 12 and not rest.rstrip().endswith(('.', '!', '?')):
+                return f"## {s}"
+            return s
+        if self._is_subheading(s):
+            return f"### {s}"
+        m = _LABEL_RE.match(s)
+        if m and len(m.group(2)) >= 20:
+            return f"**{m.group(1)}:** {m.group(2)}"
+        return s
+
+    def _group_single_newline(self, lines: list) -> list:
+        """Group Word-style single-newline lines into logical blocks.
+
+        Consecutive bullet lines, numbered items, quoted lines and
+        poem-like lines stay together as one block; every other line
+        becomes its own paragraph block.
+        """
+        blocks = []
+        i, n = 0, len(lines)
+        while i < n:
+            l = lines[i].strip()
+            if self._is_bullet(l):
+                j = i
+                while j < n and self._is_bullet(lines[j].strip()):
+                    j += 1
+                blocks.append("\n".join(x.strip() for x in lines[i:j]))
+                i = j
+            elif _NUM_ITEM_RE.match(l) and not self._looks_num_heading(l):
+                j = i
+                while (j < n and _NUM_ITEM_RE.match(lines[j].strip())
+                       and not self._looks_num_heading(lines[j].strip())):
+                    j += 1
+                blocks.append("\n".join(x.strip() for x in lines[i:j]))
+                i = j
+            elif l[:1] in ('"', '“'):
+                # Multi-line quotation: first line opens with a quote mark,
+                # verse-like lines follow, last line closes with a quote mark
+                j = i + 1
+                closed = l.rstrip().endswith(('"', '”')) and len(l) > 1
+                while j < n and not closed:
+                    nxt = lines[j].strip()
+                    if nxt[:1] not in ('"', '“') and not self._is_poem_line(nxt):
+                        break
+                    if nxt.rstrip().endswith(('"', '”')):
+                        closed = True
+                    j += 1
+                blocks.append("\n".join(x.strip() for x in lines[i:j]))
+                i = j
+            elif self._is_poem_line(l):
+                j = i
+                while j < n and self._is_poem_line(lines[j].strip()):
+                    j += 1
+                if j - i >= 3:
+                    blocks.append("\n".join(x.strip() for x in lines[i:j]))
                 else:
-                    md_blocks.append(f"**{joined}**")
-                md_blocks.append("")
+                    blocks.extend(x.strip() for x in lines[i:j])
+                i = j
+            else:
+                blocks.append(l)
+                i += 1
+        return blocks
+
+    def _format_structured_lines(self, lines: list) -> list:
+        """Format a poem/list/Q&A block: keep line structure with hard breaks."""
+        out = []
+
+        # Multi-line quotation (>= 2 lines): blockquote the whole block
+        if len(lines) >= 2 and lines[0].strip()[:1] in ('"', '“'):
+            for q in lines:
+                out.append("> " + q.strip() + "  ")
+            out.append("")
+            return out
+
+        i, n = 0, len(lines)
+        while i < n:
+            l = lines[i].strip()
+            if self._is_bullet(l):
+                while i < n and self._is_bullet(lines[i].strip()):
+                    out.append(self._format_bullet(lines[i].strip()))
+                    i += 1
+                out.append("")
                 continue
+            f = self._format_paragraph(l)
+            if f.startswith("##") or f.startswith("- ") or _NUM_ITEM_RE.match(f):
+                out.append(f)
+            else:
+                out.append(f + "  ")
+            i += 1
+        return out
 
-            # Preserve multi-line structure if lines are short or start with dashes/numbers
-            if len(lines) > 1 and any(len(l) < 60 for l in lines):
-                md_blocks.append("\n".join(lines))
-                md_blocks.append("")
-                continue
-
-            # Regular paragraph
-            md_blocks.append(joined)
-            md_blocks.append("")
-
-        return "\n".join(md_blocks)
+    @staticmethod
+    def _yaml_escape(s: str) -> str:
+        return s.replace('\\', '\\\\').replace('"', '\\"')
 
     @staticmethod
     def _yaml_quote(value: str) -> str:
@@ -631,11 +789,11 @@ class IngestionEngine:
                             content_type: str, paper_url: str = "",
                             author: str = "") -> str:
         lines = ["---"]
-        lines.append(f"title: {self._yaml_quote(title)}")
+        lines.append(f'title: "{self._yaml_escape(title)}"')
         lines.append(f"date: {date}")
         lines.append(f"type: {content_type}")
         if author:
-            lines.append(f"author: \"{author}\"")
+            lines.append(f'author: "{self._yaml_escape(author)}"')
         if tags:
             lines.append(f"tags: [{', '.join(tags)}]")
         if paper_url:
