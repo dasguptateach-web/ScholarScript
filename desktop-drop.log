@@ -750,3 +750,43 @@
 [2026-09-26 15:43:49]   Output: C:\Users\81\ScholarScript\public
 [2026-09-26 15:43:49]   
 [2026-09-26 15:43:49] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-09-26 15:43:54]   Pushed!
+[2026-09-26 15:43:54] === STEP 8/8: Done! ===
+[2026-09-26 15:43:54] Files: DRY SEPT ESSAY TYPE.docx
+[2026-09-26 15:43:54] Archived to _Processed
+[2026-09-26 15:43:58] STAGE Study Guide Robert Browning, “My Last Duchess”.pdf
+[2026-09-26 15:43:58] COPY Study Guide Robert Browning, “My Last Duchess”.pdf
+[2026-09-26 15:43:58] === STEP 1/7: Ingesting documents ===
+[2026-09-26 15:44:03]   Checking uploads folder...
+[2026-09-26 15:44:03]   Processed 1 file(s):
+[2026-09-26 15:44:03]     Success: 1
+[2026-09-26 15:44:03]     Errors:  0
+[2026-09-26 15:44:03]     [OK] Study Guide Robert Browning, ôMy Last Duchessö.pdf -> C:\Users\81\ScholarScript\content\papers\study-guide-robert-browning-my-last-duchess.md (paper)
+[2026-09-26 15:44:03]   
+[2026-09-26 15:44:03]   Run 'scholarscript build' to rebuild the site.
+[2026-09-26 15:44:03]   
+[2026-09-26 15:44:03] === STEP 2/7: Fixing table formatting ===
+[2026-09-26 15:44:04]     No tables needed fixing.
+[2026-09-26 15:44:04]   
+[2026-09-26 15:44:04] === STEP 3/8: Formatting MCQs ===
+[2026-09-26 15:44:05]     No MCQs needed reformatting.
+[2026-09-26 15:44:05]   
+[2026-09-26 15:44:05] === STEP 4/8: Building interactive tests ===
+[2026-09-26 15:44:06]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-09-26 15:44:06]     [TEST] contemporary-indian-writing-in-english-mcq-test.md -> data/tests/contemporary-indian-writing-in-english-mcq-test.json
+[2026-09-26 15:44:06]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-09-26 15:44:06]     [TEST] ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test.md -> data/tests/ugc-net-english-practice-test-contemporary-indian-writing-in-english.json
+[2026-09-26 15:44:06]     Created 4 test(s)
+[2026-09-26 15:44:06]   
+[2026-09-26 15:44:06] === STEP 5/8: Matching YouTube videos ===
+[2026-09-26 15:44:34]   Found 50 papers
+[2026-09-26 15:44:34]   
+[2026-09-26 15:44:34]   
+[2026-09-26 15:44:34]   Done! Created: 0, Skipped: 44, Failed: 6
+[2026-09-26 15:44:34]   
+[2026-09-26 15:44:34] === STEP 6/8: Building site ===
+[2026-09-26 15:44:38]   Building site...
+[2026-09-26 15:44:38]   Built 108 items in 2.04s
+[2026-09-26 15:44:38]   Output: C:\Users\81\ScholarScript\public
+[2026-09-26 15:44:38]   
+[2026-09-26 15:44:38] === STEP 7/8: Committing and pushing to GitHub ===
