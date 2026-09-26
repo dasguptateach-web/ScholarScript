@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="content-page">
-  <div class="article-header">
+{% if item.type == 'paper' %}  <div class="paper-watermark" aria-hidden="true"></div>
+{% endif %}  <div class="article-header">
     <h2 class="notranslate">{{ item.title }}</h2>
     <p class="article-meta notranslate">
       <i class="fas fa-calendar-alt"></i> {{ item.date }}

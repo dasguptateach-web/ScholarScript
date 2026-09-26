@@ -83,6 +83,111 @@ class IngestionEngine:
 
         return self.results
 
+    def ingest_text(self, text: str, title: str = "", author: str = "",
+                    content_type: str = "") -> dict:
+        """Process raw pasted text through the same pipeline as uploaded files.
+
+        Cleans the text, derives title/tags/DOI, converts to formatted
+        Markdown and saves it to /content (papers or creative-writing).
+        """
+        from .cleaners import clean_text as ct
+
+        result = {
+            "file": "(pasted text)",
+            "status": "pending",
+            "title": "",
+            "type": content_type or "paper",
+            "output": "",
+            "error": "",
+        }
+
+        try:
+            text = ct(text or "")
+            if not text.strip():
+                result["status"] = "error"
+                result["error"] = "Pasted text is empty"
+                return result
+
+            # Re-join hyphenated line-breaks (common when pasting from PDFs)
+            text = re.sub(r"(\w)-\n([a-z])", r"\1\2", text)
+
+            lines = text.strip().split("\n")
+
+            # Derive title from the text itself unless one was supplied
+            derived_title = (title or "").strip()
+            body_start = 0
+            if not derived_title:
+                for i, line in enumerate(lines[:5]):
+                    s = line.strip()
+                    if not s:
+                        continue
+                    if re.match(r"^#{1,3}\s+\S", s):
+                        derived_title = re.sub(r"^#{1,3}\s+", "", s).strip()
+                        body_start = i + 1
+                        break
+                    if len(s) <= 90 and not s.rstrip().endswith((".", ",", ";", ":")):
+                        derived_title = s
+                        body_start = i + 1
+                        break
+                    break
+            if not derived_title:
+                first_sentence = re.split(r"(?<=[.!?])\s+", text.strip(), maxsplit=1)[0]
+                words = first_sentence.split()
+                derived_title = " ".join(words[:10]).rstrip(".,;:")
+                if len(words) > 10:
+                    derived_title += "..."
+                derived_title = derived_title.title()
+
+            body = "\n".join(lines[body_start:]).strip() if body_start else text.strip()
+
+            content_type = content_type or self._detect_type(body)
+            tags = self._extract_keywords(body, max_keywords=5)
+            paper_url = self._extract_doi_or_link(text)
+            date = datetime.now().strftime("%Y-%m-%d")
+            md_body = self._text_to_markdown(body)
+
+            # Drop a duplicate leading heading that repeats the title
+            first_heading = re.match(r"^##\s+(.+)$", md_body, re.MULTILINE)
+            if first_heading and first_heading.group(1).strip().lower() == derived_title.strip().lower():
+                md_body = md_body[first_heading.end():].lstrip("\n")
+
+            front_matter = self._build_front_matter(
+                title=derived_title,
+                date=date,
+                tags=tags,
+                content_type=content_type,
+                paper_url=paper_url,
+                author=author,
+            )
+
+            if content_type == "creative-writing":
+                out_dir = self.content_dir / "creative-writing"
+            else:
+                out_dir = self.content_dir / "papers"
+            out_dir.mkdir(exist_ok=True)
+
+            slug = slugify(derived_title)
+            out_path = out_dir / f"{slug}.md"
+            n = 2
+            while out_path.exists():
+                out_path = out_dir / f"{slug}-{n}.md"
+                n += 1
+
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(front_matter)
+                f.write("\n")
+                f.write(md_body)
+
+            result["status"] = "success"
+            result["title"] = derived_title
+            result["type"] = content_type
+            result["output"] = str(out_path)
+        except Exception as e:
+            result["status"] = "error"
+            result["error"] = str(e)
+
+        return result
+
     def _process_single(self, filepath: Path) -> dict:
         result = {
             "file": filepath.name,
@@ -518,11 +623,14 @@ class IngestionEngine:
         return "\n".join(md_blocks)
 
     def _build_front_matter(self, title: str, date: str, tags: list,
-                            content_type: str, paper_url: str = "") -> str:
+                            content_type: str, paper_url: str = "",
+                            author: str = "") -> str:
         lines = ["---"]
         lines.append(f"title: \"{title}\"")
         lines.append(f"date: {date}")
         lines.append(f"type: {content_type}")
+        if author:
+            lines.append(f"author: \"{author}\"")
         if tags:
             lines.append(f"tags: [{', '.join(tags)}]")
         if paper_url:

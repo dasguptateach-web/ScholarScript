@@ -167,6 +167,67 @@ def ingest(ctx):
         click.echo("Run 'scholarscript build' to rebuild the site.")
 
 
+def _read_clipboard() -> str:
+    """Read plain text from the system clipboard (Windows/macOS/Linux)."""
+    try:
+        if sys.platform == "win32":
+            cmd = ("[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; "
+                   "Get-Clipboard -Raw")
+            res = subprocess.run(
+                ["powershell.exe", "-NoProfile", "-Command", cmd],
+                capture_output=True, timeout=30,
+            )
+            return res.stdout.decode("utf-8", errors="replace")
+        elif sys.platform == "darwin":
+            res = subprocess.run(["pbpaste"], capture_output=True, timeout=30)
+            return res.stdout.decode("utf-8", errors="replace")
+        else:
+            res = subprocess.run(
+                ["xclip", "-o", "-selection", "clipboard"],
+                capture_output=True, timeout=30,
+            )
+            return res.stdout.decode("utf-8", errors="replace")
+    except Exception:
+        return ""
+
+
+@cli.command()
+@click.option("--title", default="", help="Title for the paper (auto-detected if omitted)")
+@click.option("--author", default="D. Dasgupta", help="Author name recorded in front matter")
+@click.option("--type", "content_type", default="",
+              type=click.Choice(["", "paper", "creative-writing"]),
+              help="Force content type (auto-detected if omitted)")
+@click.option("--file", "file_path", default="", type=click.Path(),
+              help="Read the manuscript from a file instead of the clipboard")
+@click.pass_context
+def paste(ctx, title, author, content_type, file_path):
+    """Paste a manuscript from the clipboard, format it, and save it as content."""
+    cfg = _get_config(ctx, None, None)
+
+    if file_path:
+        text = Path(file_path).read_text(encoding="utf-8", errors="replace")
+        click.echo(f"Reading manuscript from {file_path}...")
+    else:
+        click.echo("Reading clipboard...")
+        text = _read_clipboard()
+
+    if not text or not text.strip():
+        click.echo("Clipboard is empty. Copy your manuscript first, or use --file.")
+        return
+
+    engine = IngestionEngine(cfg.get_uploads_dir(), cfg.get_content_dir())
+    result = engine.ingest_text(
+        text, title=title, author=author, content_type=content_type
+    )
+
+    if result["status"] == "success":
+        click.echo(f"[OK] \"{result['title']}\" -> {result['output']} ({result['type']})")
+        click.echo("")
+        click.echo("Run 'scholarscript build' to rebuild, or paste-paper.ps1 to publish.")
+    else:
+        click.echo(f"[ERR] {result['error']}")
+
+
 @cli.command()
 @click.argument("url")
 @click.option("--profile", default="default", help="Clone profile name")

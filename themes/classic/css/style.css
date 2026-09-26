@@ -424,7 +424,23 @@ body.nav-open { overflow: hidden; }
 main { padding: 0 2rem; }
 .content-page {
   max-width: var(--max-w-narrow); margin: 0 auto; padding: 3rem 0;
+  position: relative;
 }
+
+/* ---- D.Dasgupta manuscript watermark (paper pages) ---- */
+.paper-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='220'%3E%3Ctext x='150' y='110' text-anchor='middle' dominant-baseline='middle' transform='rotate(-28 150 110)' font-family='Georgia, serif' font-size='22' letter-spacing='2' fill='%23000000' fill-opacity='0.05'%3ED.Dasgupta%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+html.dark .paper-watermark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='220'%3E%3Ctext x='150' y='110' text-anchor='middle' dominant-baseline='middle' transform='rotate(-28 150 110)' font-family='Georgia, serif' font-size='22' letter-spacing='2' fill='%23ffffff' fill-opacity='0.055'%3ED.Dasgupta%3C/text%3E%3C/svg%3E");
+}
+.content-page > *:not(.paper-watermark) { position: relative; z-index: 1; }
 .content-page .article-header {
   margin-bottom: 2rem;
 }
