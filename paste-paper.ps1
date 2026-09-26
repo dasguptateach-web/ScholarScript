@@ -26,7 +26,7 @@ if (-not $clip -or -not $clip.Trim()) {
     exit 1
 }
 $wordCount = ($clip.Trim() -split '\s+').Count
-Write-Host "Clipboard loaded ($wordCount words)." -ForegroundColor DarkCyan
+Write-Host "Clipboard loaded ($wordCount words) - running automatically." -ForegroundColor DarkCyan
 
 # -- 2. Save to temp UTF-8 file (stable encoding, survives clipboard changes) --
 $tmp = Join-Path $env:TEMP ("scholarscript-paste-" + (Get-Date -Format 'yyyyMMdd-HHmmss') + ".txt")
