@@ -710,3 +710,43 @@
 [2026-09-26 15:24:10]   Output: C:\Users\81\ScholarScript\public
 [2026-09-26 15:24:10]   
 [2026-09-26 15:24:10] === STEP 7/8: Committing and pushing to GitHub ===
+[2026-09-26 15:24:26]   Pushed!
+[2026-09-26 15:24:26] === STEP 8/8: Done! ===
+[2026-09-26 15:24:26] Files: THE GIRL WHO CAN.pdf
+[2026-09-26 15:24:26] Archived to _Processed
+[2026-09-26 15:43:12] STAGE DRY SEPT ESSAY TYPE.docx
+[2026-09-26 15:43:12] COPY DRY SEPT ESSAY TYPE.docx
+[2026-09-26 15:43:12] === STEP 1/7: Ingesting documents ===
+[2026-09-26 15:43:14]   Checking uploads folder...
+[2026-09-26 15:43:14]   Processed 1 file(s):
+[2026-09-26 15:43:14]     Success: 1
+[2026-09-26 15:43:14]     Errors:  0
+[2026-09-26 15:43:14]     [OK] DRY SEPT ESSAY TYPE.docx -> C:\Users\81\ScholarScript\content\papers\three-of-the-most-important-15-mark-essay-type-questions-from-william-faulkners-dry-september.md (paper)
+[2026-09-26 15:43:14]   
+[2026-09-26 15:43:14]   Run 'scholarscript build' to rebuild the site.
+[2026-09-26 15:43:14]   
+[2026-09-26 15:43:14] === STEP 2/7: Fixing table formatting ===
+[2026-09-26 15:43:16]     [FIXED] ugc-net-english-practice-test-contemporay-indian-writing-in-english.md
+[2026-09-26 15:43:16]   
+[2026-09-26 15:43:16] === STEP 3/8: Formatting MCQs ===
+[2026-09-26 15:43:17]     No MCQs needed reformatting.
+[2026-09-26 15:43:17]   
+[2026-09-26 15:43:17] === STEP 4/8: Building interactive tests ===
+[2026-09-26 15:43:18]     [TEST] 200-question-ugc-net-english-paper-2-model-test.md -> data/tests/200-question-ugc-net-english-paper-2-model-test.json
+[2026-09-26 15:43:18]     [TEST] contemporary-indian-writing-in-english-mcq-test.md -> data/tests/contemporary-indian-writing-in-english-mcq-test.json
+[2026-09-26 15:43:18]     [TEST] macbeth-mcq-test.md -> data/tests/macbeth-mcq-test.json
+[2026-09-26 15:43:18]     [TEST] ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test.md -> data/tests/ugc-net-english-practice-test-contemporary-indian-writing-in-english.json
+[2026-09-26 15:43:18]     Created 4 test(s)
+[2026-09-26 15:43:18]   
+[2026-09-26 15:43:18] === STEP 5/8: Matching YouTube videos ===
+[2026-09-26 15:43:45]   Found 49 papers
+[2026-09-26 15:43:45]   
+[2026-09-26 15:43:45]   
+[2026-09-26 15:43:45]   Done! Created: 0, Skipped: 44, Failed: 5
+[2026-09-26 15:43:45]   
+[2026-09-26 15:43:45] === STEP 6/8: Building site ===
+[2026-09-26 15:43:49]   Building site...
+[2026-09-26 15:43:49]   Built 107 items in 2.43s
+[2026-09-26 15:43:49]   Output: C:\Users\81\ScholarScript\public
+[2026-09-26 15:43:49]   
+[2026-09-26 15:43:49] === STEP 7/8: Committing and pushing to GitHub ===
