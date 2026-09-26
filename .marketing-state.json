@@ -1689,6 +1689,32 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "bb3d9120ce3810268d1bb3e10a65743b": {
+      "title": "Ugc Net English Practice Test Contemporay Indian Writing In English",
+      "slug": "ugc-net-english-practice-test-contemporay-indian-writing-in-english",
+      "type": "creative-writing",
+      "date": "2026-08-09",
+      "posted_at": "2026-09-26T16:03:40.781709+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "362c80dd668a8c3fe9579403cabfc38a": {
+      "title": "UGC NET English Paper 2: Most Probable Question Paper (December 2026)",
+      "slug": "ugc-net-english-paper-2-most-probable-question-paper-december-2026",
+      "type": "test",
+      "date": "2026-09-26",
+      "posted_at": "2026-09-26T16:03:41.631794+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
