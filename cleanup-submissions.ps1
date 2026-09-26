@@ -1,7 +1,7 @@
 # ScholarScript Submissions Cleanup
 # Deletes submission files older than 3 days from Desktop folder.
 # Runs daily via Windows Scheduled Task.
-$submissionsDir = "$env:USERPROFILE\Desktop\ScholarScript Submissions"
+$submissionsDir = Join-Path ([Environment]::GetFolderPath('Desktop')) "ScholarScript Submissions"
 $logFile = "$PSScriptRoot\cleanup-submissions.log"
 $maxAgeDays = 3
 
@@ -21,6 +21,6 @@ Get-ChildItem -LiteralPath $submissionsDir -File | Where-Object { $_.LastWriteTi
 }
 
 if ($deleted -eq 0) {
-    $msg = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Cleanup ran — no files older than $maxAgeDays days"
+    $msg = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Cleanup ran - no files older than $maxAgeDays days"
     Add-Content -Path $logFile -Value $msg
 }

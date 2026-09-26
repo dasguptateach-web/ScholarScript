@@ -2,18 +2,34 @@
 # Drop any document on your Desktop → auto-ingest → YouTube match → build → deploy
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $uploadsDir = "$projectDir\uploads"
-$desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
+$desktopDrop = Join-Path ([Environment]::GetFolderPath('Desktop')) "ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
 $processedDir = "$desktopDrop\_Processed"
+$mediaDir = "$projectDir\themes\classic\media"
 $logFile = "$projectDir\desktop-drop.log"
 $lockFile = "$env:TEMP\scholarscript-drop.lock"
 
 Set-Location $projectDir
 
-# Auto-detect Python
-$pythonExe = (Get-Command python -ErrorAction SilentlyContinue).Source
-if (-not $pythonExe) { $pythonExe = "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe" }
-if (-not $pythonExe) { $pythonExe = "C:\Python310\python.exe" }
+# Refresh PATH (git may have been installed after this session started)
+$machinePath = [Environment]::GetEnvironmentVariable("PATH","Machine")
+$userPath = [Environment]::GetEnvironmentVariable("PATH","User")
+$env:PATH = "$machinePath;$userPath"
+
+# Auto-detect Python (skip the Windows Store stub in WindowsApps)
+$pythonExe = $null
+$cands = @(
+  "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe",
+  "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe",
+  "$env:LOCALAPPDATA\Programs\Python\Python311\python.exe",
+  "C:\Python313\python.exe", "C:\Python312\python.exe", "C:\Python311\python.exe", "C:\Python310\python.exe"
+)
+foreach ($c in $cands) { if (Test-Path $c) { $pythonExe = $c; break } }
+if (-not $pythonExe) {
+  $found = Get-Command python -ErrorAction SilentlyContinue
+  if ($found -and $found.Source -notlike '*WindowsApps*') { $pythonExe = $found.Source }
+}
+if (-not $pythonExe) { $pythonExe = "python" }
 
 $tokenFile = "$projectDir\.github_token"
 if (Test-Path $tokenFile) { $env:GITHUB_TOKEN = (Get-Content $tokenFile -Raw).Trim() }
@@ -99,9 +115,18 @@ function Get-Timestamp { return Get-Date -Format "yyyyMMdd-HHmmss" }
 function Process-Batch {
     $allFileNames = @()
     $staged = @()
+    $hasMedia = $false
+    $mediaExts = '.jpg','.jpeg','.png','.gif','.webp','.svg','.bmp','.mp4','.mov','.webm','.mkv','.avi','.mpg','.mpeg','.m4v','.mp3','.wav','.aac','.flac'
     Get-ChildItem -LiteralPath $desktopDrop -File | Where-Object { $_.Name -notmatch '^_' } | ForEach-Object {
         $f = $_.FullName; $name = $_.Name
         $ext = [IO.Path]::GetExtension($name).ToLower()
+        if ($ext -in $mediaExts) {
+            if (Wait-FileReady $f) {
+                if (-not (Test-Path $mediaDir)) { New-Item -ItemType Directory -Path $mediaDir -Force | Out-Null }
+                if (Safe-Move $f "$mediaDir\$name") { Log "MEDIA $name -> themes\classic\media"; $allFileNames += $name; $hasMedia = $true }
+            } else { Log "TIMEOUT $name (still in use)" }
+            return
+        }
         if ($ext -notin '.pdf','.doc','.docx','.txt','.tex','.odt','.rtf') {
             Safe-Move $f "$stagingDir\$name" | Out-Null; Log "SKIP $name (unsupported)"; return
         }
@@ -109,7 +134,7 @@ function Process-Batch {
             if (Safe-Move $f "$stagingDir\$name") { Log "STAGE $name"; $staged += "$stagingDir\$name"; $allFileNames += $name }
         } else { Log "TIMEOUT $name (still in use)" }
     }
-    if ($staged.Count -eq 0) { return }
+    if ($staged.Count -eq 0 -and -not $hasMedia) { return }
 
     foreach ($s in $staged) {
         $name = Split-Path $s -Leaf

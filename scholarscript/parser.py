@@ -66,6 +66,7 @@ def parse_content_file(filepath: Path) -> Optional[ContentItem]:
         og_image=meta.get("og_image"),
         canonical_url=meta.get("canonical_url"),
         hreflang=meta.get("hreflang"),
+        ebook_url=meta.get("ebook_url"),
     )
     return item
 

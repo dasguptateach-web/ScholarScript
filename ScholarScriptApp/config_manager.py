@@ -3,6 +3,24 @@ import os
 from pathlib import Path
 
 
+def _default_drop_folder() -> str:
+    desktop = Path.home() / "Desktop"
+    try:
+        import winreg
+
+        with winreg.OpenKey(
+            winreg.HKEY_CURRENT_USER,
+            r"Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders",
+        ) as key:
+            value, _ = winreg.QueryValueEx(key, "Desktop")
+            resolved = Path(os.path.expandvars(value))
+            if resolved.is_dir():
+                desktop = resolved
+    except Exception:
+        pass
+    return str(desktop / "ScholarScript Drop")
+
+
 CONFIG_FILE = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local")) / "ScholarScript" / "settings.json"
 
 
@@ -10,7 +28,7 @@ DEFAULT_CONFIG = {
     "github_token": "",
     "github_repo": "dasguptateach-web/ScholarScript",
     "github_branch": "main",
-    "drop_folder": str(Path.home() / "Desktop" / "ScholarScript Drop"),
+    "drop_folder": _default_drop_folder(),
     "project_dir": "",
     "auto_deploy": True,
     "start_minimized": False,

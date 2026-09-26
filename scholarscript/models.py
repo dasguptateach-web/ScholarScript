@@ -27,6 +27,7 @@ class ContentItem:
     og_image: Optional[str] = None
     canonical_url: Optional[str] = None
     hreflang: Optional[str] = None
+    ebook_url: Optional[str] = None
 
 
 @dataclass

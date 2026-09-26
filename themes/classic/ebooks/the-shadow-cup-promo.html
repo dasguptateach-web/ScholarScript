@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shadow Cup — Free Illustrated eBook by Debojyoti Dasgupta</title>
+<meta name="description" content="A free 9-chapter illustrated story about grief, belief, and a tournament for nations that never existed. Read online, free, forever.">
+<meta property="og:title" content="The Shadow Cup — Free Illustrated eBook">
+<meta property="og:description" content="A grieving footballer. A girl who draws the future. A tournament for nations that never existed.">
+<meta property="og:image" content="https://dasguptateach-web.github.io/ScholarScript/ebooks/the-shadow-cup-og.jpg">
+<meta property="og:url" content="https://dasguptateach-web.github.io/ScholarScript/ebooks/">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Shadow Cup — Free Illustrated eBook">
+<meta name="twitter:description" content="9 chapters. 11 illustrations. A story about belief, loss, and the nations that exist between worlds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070b16;color:#e6e2dc;font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#1a2540,#0d1322 50%,#070b16 100%)}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%}
+.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(80px)}
+.hero-bg .orb:nth-child(1){width:400px;height:400px;background:rgba(201,168,76,.06);top:-100px;left:-100px}
+.hero-bg .orb:nth-child(2){width:500px;height:500px;background:rgba(61,111,168,.04);bottom:-150px;right:-150px}
+.hero-bg .orb:nth-child(3){width:300px;height:300px;background:rgba(201,168,76,.04);top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px}
+.badge{display:inline-block;padding:.4rem 1.2rem;border:1px solid rgba(201,168,76,.3);border-radius:20px;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;margin-bottom:2rem}
+.hero h1{font-family:Cinzel,serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:800;letter-spacing:4px;color:#e8c965;text-shadow:0 0 60px rgba(201,168,76,.2);line-height:1.08;margin-bottom:1rem}
+.hero .divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#c9a84c,transparent)}
+.hero .subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:#9ba3b5;font-style:italic;letter-spacing:1px;margin-bottom:2.5rem}
+.hero .author{font-size:.85rem;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;opacity:.8;margin-bottom:3rem}
+.actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.9rem 2rem;border-radius:50px;font-size:.9rem;font-weight:600;text-decoration:none;letter-spacing:1px;transition:transform .3s}
+.btn{padding:1rem 2.5rem}
+.btn-primary{background:linear-gradient(135deg,#e8c965,#c9a84c);color:#070b16}
+.btn-outline{border:1.5px solid rgba(201,168,76,.4);color:#c9a84c}
+.btn:hover{transform:translateY(-3px)}
+section{padding:5rem 2rem;max-width:1000px;margin:0 auto}
+.section-title{text-align:center;font-family:Cinzel,serif;font-size:2rem;font-weight:600;color:#e8c965;margin-bottom:1rem;letter-spacing:2px}
+.section-sub{text-align:center;color:#9ba3b5;font-size:1.1rem;margin-bottom:3rem}
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:3rem 0}
+.quote-card{background:#11182b;border:1px solid rgba(201,168,76,.1);border-radius:12px;padding:2rem;position:relative}
+.quote-card::before{content:'\201C';font-size:4rem;color:#c9a84c;opacity:.2;position:absolute;top:.5rem;left:1rem;font-family:Georgia,serif}
+.quote-card p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;line-height:1.6;color:#e6e2dc;padding-top:.5rem}
+.quote-card .ref{font-family:Inter,sans-serif;font-size:.75rem;color:#6a7188;margin-top:1rem;font-style:normal}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin:3rem 0}
+.feature{text-align:center;padding:1.5rem}
+.feature .num{font-family:Cinzel,serif;font-size:2.5rem;font-weight:700;color:#c9a84c}
+.feature .label{color:#9ba3b5;font-size:.9rem;margin-top:.5rem}
+.story-summary{max-width:700px;margin:0 auto;text-align:center;line-height:1.9;color:#9ba3b5;font-size:1.05rem}
+.cta-section{text-align:center;padding:4rem 2rem;background:linear-gradient(180deg,transparent,rgba(201,168,76,.03),transparent)}
+.cta-section h2{font-family:Cinzel,serif;font-size:2rem;color:#e8c965;margin-bottom:1rem}
+.cta-section p{color:#9ba3b5;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+.footer{text-align:center;padding:2rem;color:#6a7188;font-size:.8rem;border-top:1px solid rgba(201,168,76,.08);max-width:1000px;margin:0 auto}
+.footer a{color:#c9a84c;text-decoration:none}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="hero-bg"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+<div class="hero-content">
+<div class="badge">New Release &middot; Free Illustrated eBook</div>
+<h1>THE SHADOW CUP</h1>
+<div class="divider"></div>
+<div class="subtitle">A story of belief, memory, and the nations that exist between worlds</div>
+<div class="author">by Debojyoti Dasgupta</div>
+<div class="actions">
+<a href="https://dasguptateach-web.github.io/ScholarScript/ebooks/the-shadow-cup.html" class="btn btn-primary">&#9733; Read the Illustrated eBook</a>
+<a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/the-shadow-cup/" class="btn btn-outline">Read on ScholarScript</a>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">About the Story</h2>
+<div class="story-summary">
+<p>When Luka Morozov&mdash;a once-promising Croatian striker shattered by the loss of his wife and daughter&mdash;is recruited by a mysterious man named Kael to play for the Republic of Meridian, a nation that doesn't exist on any map, he enters the <strong>Shadow Cup</strong>: a tournament played in a stadium woven from mist and memory, between nations that were erased, displaced, or simply dreamed too hard.</p>
+<p style="margin-top:1.5rem">There, he finds a team of the disappeared&mdash;a Brazilian midfielder who faked his own death, a Syrian goalkeeper repaying debts to the dead, a Nigerian winger erased for speaking truth. And a twelve-year-old girl named Ana, who draws the future before it happens.</p>
+<p style="margin-top:1.5rem">Nine chapters. Eleven original illustrations. A story about grief, belief, and the impossible idea that hoping hard enough can make something real.</p>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Memorable Lines</h2>
+<p class="section-sub">Glimpses from the story</p>
+<div class="quote-grid">
+<div class="quote-card"><p>The sea remembers everything. That's the problem with the sea.</p></div>
+<div class="quote-card"><p>Some cracks go deeper than worlds. Some cracks are where the light gets in.</p></div>
+<div class="quote-card"><p>Belief is physics. The drawing is the question; the belief is the answer.</p></div>
+<div class="quote-card"><p>The net was not an adversary but a destination, and I was not a stranger to it but a pilgrim returning to a shrine I'd always known.</p></div>
+<div class="quote-card"><p>Courage isn't the absence of shaking. It's the hands that shake and hold the ball anyway.</p></div>
+<div class="quote-card"><p>The sea can't stay inside the lines, but it keeps trying, and that's what makes it beautiful.</p></div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">The eBook</h2>
+<div class="features">
+<div class="feature"><div class="num">9</div><div class="label">Chapters</div></div>
+<div class="feature"><div class="num">11</div><div class="label">Custom Illustrations</div></div>
+<div class="feature"><div class="num">63</div><div class="label">Minute Read</div></div>
+<div class="feature"><div class="num">100%</div><div class="label">Free</div></div>
+</div>
+</section>
+
+<div class="cta-section">
+<h2>Read The Shadow Cup</h2>
+<p>Available free on ScholarScript &mdash; no registration, no paywall, forever.</p>
+<div class="actions">
+<a href="https://dasguptateach-web.github.io/ScholarScript/ebooks/the-shadow-cup.html" class="btn btn-primary">&#9733; Open Illustrated eBook</a>
+<a href="https://dasguptateach-web.github.io/ScholarScript/creative-writing/the-shadow-cup/" class="btn btn-outline">Read on ScholarScript</a>
+</div>
+</div>
+
+<footer class="footer">
+<p>&copy; 2026 <a href="https://dasguptateach-web.github.io/ScholarScript/">ScholarScript</a> &middot; The Shadow Cup by Debojyoti Dasgupta &middot; Free for everyone. Forever.</p>
+</footer>
+</body>
+</html>

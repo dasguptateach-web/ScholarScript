@@ -37,6 +37,9 @@
 {% if item.external_url %}
   <p style="margin-top:1.5rem;"><a href="{{ item.external_url }}" target="_blank" rel="noopener" class="btn">Visit Resource</a></p>
 {% endif %}
+{% if item.ebook_url %}
+  <p style="margin-top:1.5rem;"><a href="{{ item.ebook_url }}" class="btn">&#9733; Read Illustrated eBook</a></p>
+{% endif %}
 
 {% if related %}
   <section class="related">

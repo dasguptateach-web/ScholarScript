@@ -26,7 +26,7 @@ foreach ($d in @("$dropFolder\_staging", "$dropFolder\_Processed")) {
 
 # 1. Scheduled Task - auto-start at login
 Write-Host "[1/6] Creating scheduled task (auto-start at login)..." -ForegroundColor Yellow
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -WindowStyle Hidden -File ""$projectDir\desktop-drop.ps1"""
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -WindowStyle Hidden -File ""$projectDir\watcher-supervisor.ps1"""
 $trigger = New-ScheduledTaskTrigger -AtLogOn
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1) -Hidden
 $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -RunLevel Highest
@@ -42,7 +42,7 @@ try {
     $wshell = New-Object -ComObject WScript.Shell
     $s = $wshell.CreateShortcut($shortcutPath)
     $s.TargetPath = "powershell.exe"
-    $s.Arguments = "-ExecutionPolicy Bypass -WindowStyle Hidden -File ""$projectDir\desktop-drop.ps1"""
+    $s.Arguments = "-ExecutionPolicy Bypass -WindowStyle Hidden -File ""$projectDir\watcher-supervisor.ps1"""
     $s.WorkingDirectory = $projectDir
     $s.Description = "ScholarScript auto-pipeline: watches Desktop\ScholarScript Drop"
     $s.Save()
@@ -79,9 +79,9 @@ cd /d "%~dp0"
 echo Starting ScholarScript Auto-Pipeline...
 echo.
 echo Pipeline: Ingest -> YouTube Match -> Build -> Deploy
-echo Drop files into: %USERPROFILE%\Desktop\ScholarScript Drop
+echo Drop files into the "ScholarScript Drop" folder on your Desktop.
 echo.
-start /B powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "%~dp0desktop-drop.ps1"
+start /B powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "%~dp0watcher-supervisor.ps1"
 echo Pipeline started!
 timeout /t 3 /nobreak >nul
 "@ | Set-Content -Path $batPath -Force
