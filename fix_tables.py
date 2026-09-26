@@ -22,6 +22,31 @@ def is_table_line(line: str) -> bool:
     return len(parts) >= 3 and all(len(p) > 0 for p in parts)
 
 
+def is_separator_row(line: str) -> bool:
+    """Check if a line is a markdown table separator row (|---|---|)."""
+    s = line.strip()
+    return bool(re.match(r"^\|[\s:\-|]+\|?$", s)) and "---" in s
+
+
+def proper_table_indices(lines: list) -> set:
+    """Return indices of lines belonging to proper markdown tables
+    (a | header row followed by a |---| separator row and | data rows).
+    These must never be merged into single lines."""
+    proper = set()
+    i = 0
+    n = len(lines)
+    while i < n:
+        if lines[i].lstrip().startswith("|") and i + 1 < n and is_separator_row(lines[i + 1]):
+            j = i
+            while j < n and lines[j].lstrip().startswith("|"):
+                proper.add(j)
+                j += 1
+            i = j
+        else:
+            i += 1
+    return proper
+
+
 def fix_tables_in_file(filepath: Path) -> bool:
     """Fix pipe-delimited tables in a single markdown file."""
     text = filepath.read_text(encoding="utf-8")
@@ -29,15 +54,20 @@ def fix_tables_in_file(filepath: Path) -> bool:
     lines = text.splitlines(keepends=False)
 
     # First pass: merge continuation lines that start with "|"
-    # (if a table row was broken across lines)
+    # (if a table row was broken across lines) — but never merge lines
+    # belonging to a proper markdown table (header + |---| + rows)
+    proper = proper_table_indices(lines)
     merged = []
     i = 0
     while i < len(lines):
         line = lines[i]
-        if line.strip().startswith("|") and merged and merged[-1].strip().startswith("|"):
-            merged[-1] += " " + line.strip()
-        else:
+        if (
+            i in proper
+            or not (line.strip().startswith("|") and merged and merged[-1].strip().startswith("|"))
+        ):
             merged.append(line)
+        else:
+            merged[-1] += " " + line.strip()
         i += 1
     lines = merged
 
