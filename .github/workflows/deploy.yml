@@ -32,3 +32,29 @@ jobs:
           path: public
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Auto-promote new content (Bluesky, IndexNow, social drafts)
+        env:
+          SITE_URL: "https://dasguptateach-web.github.io/ScholarScript"
+          SITE_NAME: "ScholarScript"
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          pip install httpx
+          python .github/scripts/marketing_agent.py
+        continue-on-error: true
+
+      - name: Commit marketing state
+        run: |
+          git config user.email "scholarscript@users.noreply.github.com"
+          git config user.name "ScholarScript Bot"
+          git add .marketing-state.json social-posts/
+          git diff --staged --quiet || git commit -m "Marketing agent update [skip ci]"
+          for i in 1 2 3; do
+            git fetch origin main
+            git merge -X ours origin/main --no-edit || git merge --abort || true
+            if git push; then break; fi
+            sleep 10
+          done
+        continue-on-error: true
