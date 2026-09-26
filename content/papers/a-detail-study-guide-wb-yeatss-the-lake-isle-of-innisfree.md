@@ -2,6 +2,7 @@
 title: "A Detail Study Guide: W.B. Yeats's \"The Lake Isle of Innisfree\""
 date: 2026-09-26
 type: paper
+timestamp: 2026-09-26T19:42:11
 author: "D. Dasgupta"
 tags: [poem, innisfree, yeats, stanza, life]
 ---

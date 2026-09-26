@@ -35,6 +35,12 @@ def parse_content_file(filepath: Path) -> Optional[ContentItem]:
     if isinstance(tags, str):
         tags = [t.strip() for t in tags.split(",")]
 
+    timestamp = meta.get("timestamp", "")
+    if hasattr(timestamp, "isoformat"):
+        timestamp = timestamp.isoformat(timespec="seconds")
+    elif timestamp is None:
+        timestamp = ""
+
     html = markdown.markdown(
         body,
         extensions=["extra", "codehilite", "toc", "sane_lists"],
@@ -48,6 +54,7 @@ def parse_content_file(filepath: Path) -> Optional[ContentItem]:
         slug=meta.get("slug", slugify(title)),
         type=content_type,
         date=date,
+        timestamp=timestamp,
         tags=tags,
         author=meta.get("author"),
         author_email=meta.get("author_email"),
@@ -99,9 +106,19 @@ def load_all_content(content_dir: Path) -> Tuple[List[ContentItem], List[Content
                             ("creative-writing", creative), ("external-links", external)]:
         d = content_dir / subdir
         if d.exists():
+            entries = []
             for f in d.glob("*.md"):
                 item = parse_content_file(f)
                 if item:
-                    bucket.append(item)
-            bucket.sort(key=lambda i: i.date, reverse=True)
+                    try:
+                        mtime = f.stat().st_mtime
+                    except OSError:
+                        mtime = 0.0
+                    entries.append((mtime, item))
+            # Newest first: publish timestamp breaks same-date ties
+            entries.sort(
+                key=lambda e: (e[1].date, e[1].timestamp or "", e[0]),
+                reverse=True,
+            )
+            bucket.extend(item for _, item in entries)
     return papers, videos, creative, external

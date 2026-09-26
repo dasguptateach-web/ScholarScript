@@ -9,6 +9,7 @@ class ContentItem:
     slug: str
     type: str  # paper, video, external-link, creative-writing
     date: str
+    timestamp: str = ""  # publish timestamp (iso) - tiebreaker within same date
     tags: list = field(default_factory=list)
     author: Optional[str] = None
     author_email: Optional[str] = None

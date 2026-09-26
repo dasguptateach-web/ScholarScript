@@ -172,6 +172,7 @@ class IngestionEngine:
                 content_type=content_type,
                 paper_url=paper_url,
                 author=author,
+                timestamp=datetime.now().isoformat(timespec="seconds"),
             )
 
             if content_type == "creative-writing":
@@ -232,6 +233,7 @@ class IngestionEngine:
                 tags=tags,
                 content_type=content_type,
                 paper_url=paper_url,
+                timestamp=datetime.now().isoformat(timespec="seconds"),
             )
 
             if content_type == "creative-writing":
@@ -787,11 +789,13 @@ class IngestionEngine:
 
     def _build_front_matter(self, title: str, date: str, tags: list,
                             content_type: str, paper_url: str = "",
-                            author: str = "") -> str:
+                            author: str = "", timestamp: str = "") -> str:
         lines = ["---"]
         lines.append(f'title: "{self._yaml_escape(title)}"')
         lines.append(f"date: {date}")
         lines.append(f"type: {content_type}")
+        if timestamp:
+            lines.append(f"timestamp: {timestamp}")
         if author:
             lines.append(f'author: "{self._yaml_escape(author)}"')
         if tags:
