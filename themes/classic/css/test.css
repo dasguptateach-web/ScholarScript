@@ -74,6 +74,26 @@
 .test-loading { text-align: center; padding: 4rem 0; color: var(--text-muted); }
 .test-error { text-align: center; padding: 4rem 0; color: var(--red, #dc2626); }
 
+/* Candidate details (intro screen) */
+.test-desc { color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem; }
+.test-candidate-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 0 auto; max-width: 560px; }
+.test-candidate-card h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem; }
+.test-candidate-card h3 i { color: var(--primary); }
+.test-candidate-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.test-candidate-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.test-candidate-field span { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.375rem; }
+.test-candidate-field em { color: var(--red, #dc2626); font-style: normal; }
+.test-candidate-field input {
+  width: 100%; padding: 0.7rem 0.875rem; font-size: 0.95rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg-alt); color: var(--text); outline: none;
+  transition: border-color 0.15s ease;
+}
+.test-candidate-field input:focus { border-color: var(--primary); }
+.test-candidate-error { text-align: center; color: var(--red, #dc2626); font-size: 0.85rem; margin-top: 0.75rem; min-height: 1.2rem; }
+.test-candidate-chip { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+.test-candidate-chip i { color: var(--primary); font-size: 0.8rem; }
+
 /* Button styles for test page */
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease; text-decoration: none; }
 .btn-primary { background: var(--primary); color: #fff; }
@@ -136,6 +156,7 @@
   .test-score-card { flex-direction: column; text-align: center; }
   .test-actions { flex-direction: column; align-items: stretch; }
   .test-actions .btn { justify-content: center; }
+  .test-candidate-fields { grid-template-columns: 1fr; }
   .test-palette-btn { bottom: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; font-size: 1rem; }
   .test-palette-grid { grid-template-columns: repeat(6, 1fr); }
 }

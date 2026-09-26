@@ -11,6 +11,7 @@
   }
 
   var state = {
+    candidate: null,
     answers: {},
     submitted: false,
     score: null,
@@ -20,9 +21,47 @@
   function render() {
     if (state.submitted) {
       renderResults();
+    } else if (!state.candidate) {
+      renderIntro();
     } else {
       renderQuestions();
     }
+  }
+
+  function renderIntro() {
+    var html = '<div class="test-header">';
+    html += '<h2><i class="fas fa-clipboard-check"></i> ' + escapeHtml(testData.title) + '</h2>';
+    html += '<p class="test-meta">' + testData.questions.length + ' questions &middot; auto-scored</p>';
+    if (testData.description) html += '<p class="test-desc">' + escapeHtml(testData.description) + '</p>';
+    html += '</div>';
+    html += '<form id="candidateForm" class="test-candidate-card" data-aos="fade-up">';
+    html += '<h3><i class="fas fa-user"></i> Candidate Details</h3>';
+    html += '<p class="test-candidate-note">Enter your name and email ID to begin. Your result will be submitted with these details.</p>';
+    html += '<div class="test-candidate-fields">';
+    html += '<label class="test-candidate-field"><span>Full Name <em>*</em></span>';
+    html += '<input type="text" id="candidateName" placeholder="Your full name" autocomplete="name" required></label>';
+    html += '<label class="test-candidate-field"><span>Email ID <em>*</em></span>';
+    html += '<input type="email" id="candidateEmail" placeholder="you@example.com" autocomplete="email" required></label>';
+    html += '</div>';
+    html += '<div class="test-actions">';
+    html += '<button type="submit" class="btn btn-primary test-submit-btn"><i class="fas fa-play"></i> Start Test</button>';
+    html += '</div>';
+    html += '<div id="candidateError" class="test-candidate-error"></div>';
+    html += '</form>';
+    app.innerHTML = html;
+
+    var form = document.getElementById('candidateForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = (document.getElementById('candidateName').value || '').trim();
+      var email = (document.getElementById('candidateEmail').value || '').trim();
+      var err = document.getElementById('candidateError');
+      if (!name) { err.textContent = 'Please enter your full name.'; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; return; }
+      err.textContent = '';
+      state.candidate = { name: name, email: email };
+      renderQuestions();
+    });
   }
 
   function renderQuestions() {
@@ -42,7 +81,7 @@
       var labels = ['A', 'B', 'C', 'D'];
       html += '<div class="test-question" id="q-' + q.id + '" data-qid="' + q.id + '" data-aos="fade-up">';
       html += '<div class="test-q-header"><span class="test-q-num">' + q.id + '.</span>';
-      html += '<div class="test-q-text">' + escapeHtml(q.question) + '</div></div>';
+      html += '<div class="test-q-text">' + renderQText(q.question) + '</div></div>';
       html += '<div class="test-options">';
       for (var j = 0; j < q.options.length; j++) {
         var val = labels[j];
@@ -209,6 +248,9 @@
     var html = '<div class="test-results" data-aos="fade-up">';
     html += '<div class="test-results-header">';
     html += '<h2><i class="fas fa-check-circle"></i> Your Results</h2>';
+    if (state.candidate) {
+      html += '<p class="test-candidate-chip"><i class="fas fa-user"></i> ' + escapeHtml(state.candidate.name) + ' &lt;' + escapeHtml(state.candidate.email) + '&gt;</p>';
+    }
     html += '</div>';
 
     html += '<div class="test-score-card ' + gradeClass + '" data-aos="fade-up">';
@@ -234,7 +276,7 @@
       html += '<div class="test-review-q ' + statusClass + '" data-aos="fade-up">';
       html += '<div class="test-review-q-header">';
       html += '<span class="test-review-q-num">' + r.id + '.</span>';
-      html += '<span class="test-review-q-text">' + escapeHtml(r.question) + '</span>';
+      html += '<span class="test-review-q-text">' + renderQText(r.question) + '</span>';
       html += '<span class="test-review-status"><i class="fas ' + statusIcon + '"></i></span>';
       html += '</div>';
       html += '<div class="test-review-options">';
@@ -274,8 +316,11 @@
     }
 
     var pct = Math.round((state.score / state.total) * 100);
+    var cand = state.candidate || { name: 'Unknown Candidate', email: 'not-provided' };
     var message = 'Test Results\n';
     message += '=============\n';
+    message += 'Candidate Name: ' + cand.name + '\n';
+    message += 'Candidate Email: ' + cand.email + '\n';
     message += 'Test: ' + testData.title + '\n';
     message += 'URL: ' + window.location.href + '\n';
     message += 'Date: ' + new Date().toLocaleDateString() + '\n';
@@ -313,13 +358,16 @@
         'Please email your score manually: ' + pct + '% (' + state.score + '/' + state.total + ')';
     };
     xhr.send(JSON.stringify({
-      _subject: 'Test Results: ' + testData.title,
+      _subject: 'Test Results: ' + testData.title + ' — ' + cand.name + ' (' + pct + '%)',
       _captcha: 'false',
-      name: 'ScholarScript Test Taker',
-      email: email,
+      _replyto: cand.email,
+      name: cand.name,
+      email: cand.email,
       message: message,
       score: state.score + '/' + state.total,
       percentage: pct + '%',
+      candidate_name: cand.name,
+      candidate_email: cand.email,
     }));
   }
 
@@ -328,6 +376,10 @@
     var div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+  }
+
+  function renderQText(text) {
+    return escapeHtml(text).replace(/\n/g, '<br>');
   }
 
   render();
