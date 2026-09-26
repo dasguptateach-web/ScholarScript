@@ -28,7 +28,9 @@ jobs:
           pip install yt-dlp
           python youtube_agent.py
         continue-on-error: true
-      - run: python -m scholarscript build
+      - run: |
+          python -m scholarscript build
+          cp indexnow-key.txt public/indexnow-key.txt
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:

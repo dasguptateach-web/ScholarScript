@@ -231,12 +231,23 @@ def post_to_linkedin(text):
 
 # ─── Search Engine Indexing ────────────────────────────────────────
 
+def _load_indexnow_key():
+    """IndexNow key: env override, else the committed indexnow-key.txt."""
+    key = os.environ.get("INDEXNOW_KEY", "").strip()
+    if key:
+        return key
+    kf = Path("indexnow-key.txt")
+    if kf.exists():
+        return kf.read_text(encoding="utf-8").strip()
+    return ""
+
+
 def ping_search_engines(new_items=None):
-    """Submit URLs to IndexNow (Google/Bing sitemap pings are deprecated)."""
+    """Submit URLs to IndexNow (Bing, Yandex) - Google/Bing pings are deprecated."""
     results = {}
-    key = os.environ.get("INDEXNOW_KEY", "")
+    key = _load_indexnow_key()
     if not key:
-        print("  [IndexNow] SKIP — INDEXNOW_KEY not set")
+        print("  [IndexNow] SKIP — no key (env or indexnow-key.txt)")
         return results
 
     urls = [SITE_URL]
