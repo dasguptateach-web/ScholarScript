@@ -1,7 +1,8 @@
 ---
-title: "Study Guide: Khuswant Singh’s Train to Pakistan"
+title: "Study Guide: Khuswant Singh's Train to Pakistan"
 date: 2026-09-26
 type: paper
+timestamp: 2026-09-26T19:59:44
 author: "D. Dasgupta"
 tags: [novel, train, mano, majra, village]
 ---
