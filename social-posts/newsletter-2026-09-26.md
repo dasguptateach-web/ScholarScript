@@ -2,6 +2,58 @@
 
 Here's what's new on ScholarScript:
 
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+*Type: Scholarly Paper*
+
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## The City in Victorian Poetry
+*Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+*Type: Scholarly Paper*
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+
+## UGC NET English Practice Test Contemporary Indian Writing In English
+*Type: Scholarly Paper*
+
+ UGC NET English Practice Test Contemporary Indian Writing In English
+
+75 questions (75 with answer keys)
+
+1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
+
+## UGC NET English Paper II - Advanced Practice Test
+*Type: Scholarly Paper*
+
+(50 MCQs x 2 marks = 100 marks)
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
+
 ## UGC NET English Literature (Short Story Master Test)
 *Type: Scholarly Paper*
 
@@ -15,13 +67,25 @@ Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
-## The City in Victorian Poetry
+## The Girl Who Can
 *Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+A Comprehensive Study Guide for WBSU English Honours (Semester VII) — Ama Ata Aidoo's "The Girl Who Can"
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+ Introduction: A Voice from the Continent
+
+Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-girl-who-can/)
+
+## Tonight I Can Write
+*Type: Scholarly Paper*
+
+ 1. Introduction: The Poet and the Poem
+
+Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
 
 ## The Solitude Of Alexander Selkirk As A Dramatic Monologue
 *Type: Scholarly Paper*
@@ -44,69 +108,6 @@ Choose the correct option.
 1. The phrase "memory of the offence" is central to which Shake
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
-
-## The Rape of the Lock (Cantos 1-3)
-*Type: Scholarly Paper*
-
-Short answer type questions and answers on Pope's The Rape of the Lock (Cantos 1-3), covering mock-epic conventions, the sylph machinery, the card ...
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-rape-of-the-lock-cantos-13/)
-
-## UGC NET English Practice Test Contemporary Indian Writing In English
-*Type: Scholarly Paper*
-
- UGC NET English Practice Test Contemporary Indian Writing In English
-
-75 questions (75 with answer keys)
-
-1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
-
-## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-*Type: Scholarly Paper*
-
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-
- 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
-
-Dr. James Sheppard
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
-
-## UGC NET English Paper II - Advanced Practice Test
-*Type: Scholarly Paper*
-
-(50 MCQs x 2 marks = 100 marks)
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
-
-## Suggestive Question Paper
-*Type: Scholarly Paper*
-
-SUGGESTIVE QUESTION PAPER
-WEST BENGAL STATE UNIVERSITY
-B.A. HONOURS IN ENGLISH, SEMESTER IV EXAMINATION, AUGUST 2026
-DS 7: INDIAN WRITING IN ENGLISH (ENGDSC407T)
-
- Full Marks: 50 Time: 2 Hours
-
-Candid
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/suggestive-question-paper/)
-
-## The Final Solution Debojyoti Dasgupta Ebook
-*Type: Scholarly Paper*
-
- Manik Bandopadhyay's "The Final Solution" — A Comprehensive Study Guide
-
-Debojyoti Dasgupta · Advanced Academic Edition
-
-Partition · Refugee Crisis · Women's Agency · Violence · Gender · Class
-
- Cont
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-final-solution-debojyoti-dasgupta-ebook/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
