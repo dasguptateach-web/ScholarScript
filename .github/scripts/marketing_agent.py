@@ -45,8 +45,13 @@ def load_content():
                     body = parts[2]
             title = meta.get("title", f.stem.replace("-", " ").title())
             tags = meta.get("tags", [])
+            if tags is None:
+                tags = []
             if isinstance(tags, str):
                 tags = [t.strip() for t in tags.split(",")]
+            if not isinstance(tags, list):
+                tags = [tags]
+            tags = [str(t) for t in tags if t is not None]
             summary = meta.get("summary", "") or re.sub(r'[#*_\[\]`>\|]', '', body.strip()[:250])
             item_type = meta.get("type", subdir.rstrip("s").rstrip("-link"))
             items.append({
@@ -91,7 +96,7 @@ def make_post_texts(item):
     meta = TYPE_META.get(item["type"], {"emoji": "", "label": item["type"]})
     emoji = meta["emoji"]
     label = meta["label"]
-    tags_str = " ".join(f"#{re.sub(r'[^a-zA-Z0-9]', '', t)}" for t in item["tags"][:4]) if item["tags"] else ""
+    tags_str = " ".join(f"#{re.sub(r'[^a-zA-Z0-9]', '', str(t))}" for t in item["tags"][:4]) if item["tags"] else ""
     author_str = f" by {item['author']}" if item["author"] else ""
     url = f"{SITE_URL}/{item['type']}/{item['slug']}/"
     summary = item["summary"][:200]
@@ -226,33 +231,33 @@ def post_to_linkedin(text):
 
 # ─── Search Engine Indexing ────────────────────────────────────────
 
-def ping_search_engines():
-    sitemap_url = f"{SITE_URL}/sitemap.xml"
-    engines = {
-        "Google":  f"https://www.google.com/ping?sitemap={sitemap_url}",
-        "Bing":    f"https://www.bing.com/ping?sitemap={sitemap_url}",
-        "IndexNow": "https://api.indexnow.org/indexnow",
-    }
+def ping_search_engines(new_items=None):
+    """Submit URLs to IndexNow (Google/Bing sitemap pings are deprecated)."""
     results = {}
-    for name, url in engines.items():
-        try:
-            if name == "IndexNow":
-                payload = json.dumps({
-                    "host": urllib.parse.urlparse(SITE_URL).hostname,
-                    "key": os.environ.get("INDEXNOW_KEY", ""),
-                    "keyLocation": f"{SITE_URL}/indexnow-key.txt",
-                    "urlList": [SITE_URL],
-                }).encode()
-                req = urllib.request.Request(url, data=payload,
-                    headers={"Content-Type": "application/json"}, method="POST")
-            else:
-                req = urllib.request.Request(url, method="GET")
-            with urllib.request.urlopen(req, timeout=10) as r:
-                results[name] = r.status
-            print(f"  [Ping {name}] OK ({results[name]})")
-        except Exception as e:
-            results[name] = str(e)
-            print(f"  [Ping {name}] {e}")
+    key = os.environ.get("INDEXNOW_KEY", "")
+    if not key:
+        print("  [IndexNow] SKIP — INDEXNOW_KEY not set")
+        return results
+
+    urls = [SITE_URL]
+    if new_items:
+        urls += [f"{SITE_URL}/{i['type']}/{i['slug']}/" for i in new_items]
+    try:
+        payload = json.dumps({
+            "host": urllib.parse.urlparse(SITE_URL).hostname,
+            "key": key,
+            "keyLocation": f"{SITE_URL}/indexnow-key.txt",
+            "urlList": urls[:1000],
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.indexnow.org/indexnow", data=payload,
+            headers={"Content-Type": "application/json"}, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as r:
+            results["IndexNow"] = r.status
+        print(f"  [IndexNow] OK ({results['IndexNow']}) — {len(urls)} URL(s) submitted")
+    except Exception as e:
+        results["IndexNow"] = str(e)
+        print(f"  [IndexNow] {e}")
     return results
 
 # ─── Draft Generation ──────────────────────────────────────────────
@@ -386,9 +391,9 @@ def main():
     # Generate drafts for all new items
     generate_drafts(new_items)
 
-    # Ping search engines (once per run, not per item)
+    # Ping search engines with all new URLs
     print("\n  ── Search Engine Ping ──")
-    ping_search_engines()
+    ping_search_engines(new_items)
 
     # Generate newsletter
     generate_newsletter(items)

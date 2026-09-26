@@ -2,7 +2,7 @@
 title: "Ugc Net English Practice Test Contemporay Indian Writing In English"
 date: 2026-08-09
 type: creative-writing
-tags: [collection, list, correct, true, indian]
+tags: [ugc-net, contemporary-indian-writing, mcq, practice-test]
 ---
 ## UGC NET English Practice Test
 

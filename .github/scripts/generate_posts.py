@@ -38,8 +38,13 @@ def load_content():
                     body = parts[2]
             title = meta.get("title", f.stem.replace("-", " ").title())
             tags = meta.get("tags", [])
+            if tags is None:
+                tags = []
             if isinstance(tags, str):
                 tags = [t.strip() for t in tags.split(",")]
+            if not isinstance(tags, list):
+                tags = [tags]
+            tags = [str(t) for t in tags if t is not None]
             summary = meta.get("summary", "") or body.strip()[:200]
             item_type = meta.get("type", subdir.rstrip("s").rstrip("-link"))
             author = meta.get("author", "")
