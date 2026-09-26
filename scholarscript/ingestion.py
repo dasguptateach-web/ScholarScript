@@ -517,15 +517,20 @@ class IngestionEngine:
 
         return "\n".join(md_blocks)
 
+    @staticmethod
+    def _yaml_quote(value: str) -> str:
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        return f'"{escaped}"'
+
     def _build_front_matter(self, title: str, date: str, tags: list,
                             content_type: str, paper_url: str = "") -> str:
         lines = ["---"]
-        lines.append(f"title: \"{title}\"")
+        lines.append(f"title: {self._yaml_quote(title)}")
         lines.append(f"date: {date}")
         lines.append(f"type: {content_type}")
         if tags:
             lines.append(f"tags: [{', '.join(tags)}]")
         if paper_url:
-            lines.append(f"paper_url: \"{paper_url}\"")
+            lines.append(f"paper_url: {self._yaml_quote(paper_url)}")
         lines.append("---")
         return "\n".join(lines)

@@ -8,6 +8,15 @@ def _strip_prefix(s: str) -> str:
     return re.sub(r'^(?:#+\s|\*\*\s*)+', '', s).strip()
 
 
+CID_ARTIFACT = re.compile(r"\(cid:\d+\)")
+
+
+def _normalize_head_foot(line: str) -> str:
+    s = CID_ARTIFACT.sub(" ", line)
+    s = re.sub(r"[\s\u00b7\u2022]*\d+\s*$", "", s)
+    return re.sub(r"\s{2,}", " ", s).strip()
+
+
 PAGE_NUMBER_PATTERNS = [
     re.compile(r'^\s*\d+\s*$'),
     re.compile(r'(?i)^\s*page\s+\d+(\s+of\s+\d+)?\s*$'),
@@ -65,9 +74,21 @@ def detect_repeating_lines(pages: List[str], threshold: float = 0.4) -> Set[Tupl
             continue
         first_counts[lines[0]] += 1
         last_counts[lines[-1]] += 1
+        norm_first = _normalize_head_foot(lines[0])
+        norm_last = _normalize_head_foot(lines[-1])
+        if norm_first and norm_first != lines[0]:
+            first_counts[norm_first] += 1
+        if norm_last and norm_last != lines[-1]:
+            last_counts[norm_last] += 1
         if len(lines) >= 3:
             second_counts[lines[1]] += 1
             second_last_counts[lines[-2]] += 1
+            norm_second = _normalize_head_foot(lines[1])
+            norm_second_last = _normalize_head_foot(lines[-2])
+            if norm_second and norm_second != lines[1]:
+                second_counts[norm_second] += 1
+            if norm_second_last and norm_second_last != lines[-2]:
+                second_last_counts[norm_second_last] += 1
     repeating: Set[Tuple[str, str]] = set()
     n = len(pages)
     for line, count in first_counts.items():
@@ -103,13 +124,13 @@ def clean_pdf_pages(page_texts: List[str]) -> List[str]:
                 continue
             if is_page_number(s):
                 continue
-            if idx < 4 and s in top_repeat:
+            if idx < 4 and (s in top_repeat or _normalize_head_foot(s) in top_repeat):
                 continue
-            if len(lines) - idx <= 4 and s in bottom_repeat:
+            if len(lines) - idx <= 4 and (s in bottom_repeat or _normalize_head_foot(s) in bottom_repeat):
                 continue
             if any(pat.match(s) for pat in HEADER_FOOTER_PATTERNS):
                 continue
-            filtered.append(s)
+            filtered.append(CID_ARTIFACT.sub(" ", s))
         cleaned.append("\n".join(filtered))
     return cleaned
 
@@ -140,5 +161,5 @@ def clean_text(text: str, pages: List[str] = None) -> str:
             continue
         stripped = strip_inline_page_number(s)
         if stripped:
-            filtered.append(stripped)
+            filtered.append(CID_ARTIFACT.sub(" ", stripped))
     return "\n".join(filtered)

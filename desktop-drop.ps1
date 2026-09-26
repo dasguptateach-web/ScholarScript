@@ -2,7 +2,7 @@
 # Drop any document on your Desktop → auto-ingest → YouTube match → build → deploy
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $uploadsDir = "$projectDir\uploads"
-$desktopDrop = "$env:USERPROFILE\Desktop\ScholarScript Drop"
+$desktopDrop = Join-Path ([Environment]::GetFolderPath('Desktop')) "ScholarScript Drop"
 $stagingDir = "$desktopDrop\_staging"
 $processedDir = "$desktopDrop\_Processed"
 $mediaDir = "$projectDir\themes\classic\media"
