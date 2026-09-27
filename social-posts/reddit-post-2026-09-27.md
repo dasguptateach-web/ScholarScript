@@ -1,10 +1,16 @@
-Scholarly Paper: "The City in Victorian Poetry"
+Scholarly Paper: "UGC NET English Literature (Short Story Master Test)"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+## UGC NET English Literature
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+## SHORT STORY MASTER TEST – 75 MCQs
 
-#victorian | #poetry | #urban | #industrial | #tennyson
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each que
+
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
+
+#short-story | #ugc-net | #english-literature | #mcq | #master-test
 
 ---
 
