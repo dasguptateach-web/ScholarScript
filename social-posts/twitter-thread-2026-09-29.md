@@ -31,16 +31,6 @@ https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 #victorian #poetry #urban
 
 --- Tweet 4 ---
- Paper: "Tonight I Can Write"
-
-## 1. Introduction: The Poet and the Poem
-
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most 
-
-https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/
-#love #poem #lines
-
---- Tweet 5 ---
  Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
 
 ﻿---
@@ -50,4 +40,19 @@ type: paper
 tags: [ugc-net, english, paper-2, mcq
 
 https://dasguptateach-web.github.io/ScholarScript/
+
+--- Tweet 5 ---
+ Paper: "Ugc Net English (Code 30) - Paper 2"
+
+## UGC NET ENGLISH (Code 30) - PAPER 2
+
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+
+**Choose the correct option.**
+
+### Unit 1: Drama
+
+**1.
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-p
 
