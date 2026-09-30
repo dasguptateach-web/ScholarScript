@@ -1,16 +1,16 @@
-Scholarly Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
+Scholarly Paper: "UGC NET English Literature (Short Story Master Test)"
 
-## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+## UGC NET English Literature
 
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+## SHORT STORY MASTER TEST – 75 MCQs
 
-Time: 2 Hours
-Total Marks: 150 (75 Questions x 2 Marks)
-Negat
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/
+Instructions: Choose the most appropriate answer for each que
 
-#ugc-net | #english | #paper-2 | #mcq | #practice-test
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
+
+#short-story | #ugc-net | #english-literature | #mcq | #master-test
 
 ---
 
