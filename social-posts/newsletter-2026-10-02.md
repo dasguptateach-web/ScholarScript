@@ -2,14 +2,6 @@
 
 Here's what's new on ScholarScript:
 
-## The City in Victorian Poetry
-*Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
-
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
 ## UGC NET English Literature (Short Story Master Test)
 *Type: Scholarly Paper*
 
@@ -35,6 +27,14 @@ Total Marks: 150 (75 Questions x 2 Marks)
 Negativ
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## The City in Victorian Poetry
+*Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
 ## Tonight I Can Write
 *Type: Scholarly Paper*
