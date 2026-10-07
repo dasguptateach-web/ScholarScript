@@ -1897,6 +1897,19 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "ff07093bdb4ddf1a5c8d8f8b3da40eed": {
+      "title": "Study Guide: Sherman Alexie's \"Crow Testament\"",
+      "slug": "study-guide-sherman-alexies-crow-testament-2",
+      "type": "creative-writing",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-07T20:06:49.011955+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
