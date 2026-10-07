@@ -104,6 +104,12 @@ Write-Host "[2/4] Fixing tables & MCQ formatting..." -ForegroundColor Yellow
 & $pythonExe fix_tables.py 2>&1 | Out-Null
 & $pythonExe format_mcqs.py 2>&1 | Out-Null
 
+# Figure out the URL of the paper that was just created (newest file in content\papers)
+$paperUrl = $null
+$newPaper = Get-ChildItem "$projectDir\content\papers" -Filter *.md -ErrorAction SilentlyContinue |
+    Sort-Object LastWriteTime -Descending | Select-Object -First 1
+if ($newPaper) { $paperUrl = "https://dasguptateach-web.github.io/ScholarScript/paper/$($newPaper.BaseName)/" }
+
 # ===== STEP 5: BUILD =========================================================
 Write-Host "[3/4] Building site..." -ForegroundColor Yellow
 & $pythonExe -m scholarscript build
@@ -124,33 +130,41 @@ if ($out -match 'nothing to commit|nothing changed') {
     Write-Host "Nothing new to push." -ForegroundColor Yellow
 } else {
     $pushed = $false
-    for ($attempt = 0; $attempt -lt 3 -and -not $pushed; $attempt++) {
-        if ($attempt -gt 0) { Start-Sleep -Seconds 3; Write-Host "  Retry $($attempt+1)..." -ForegroundColor DarkYellow }
+    $lastPushError = ""
+    for ($attempt = 1; $attempt -le 5 -and -not $pushed; $attempt++) {
+        if ($attempt -gt 1) { Start-Sleep -Seconds (3 * $attempt); Write-Host "  Retry $attempt of 5..." -ForegroundColor DarkYellow }
         try {
             git fetch origin 2>&1 | Out-Null
             git merge -X ours origin/main --no-edit 2>&1 | Out-Null
-            $out = git push origin main 2>&1
-            if ($LASTEXITCODE -eq 0) { $pushed = $true }
-            elseif ($out -match 'Everything up-to-date') { $pushed = $true }
-            elseif ($out -match 'rejected|non-fast-forward') {
-                Write-Host "  Behind remote - pulling..." -ForegroundColor DarkYellow
-                git pull --no-rebase origin main --no-edit 2>$null
-            } else { Write-Host "  PUSH ERROR: $out" -ForegroundColor DarkYellow }
-        } catch { Write-Host "  GIT EX: $_" -ForegroundColor DarkYellow }
+            $out = (git push origin main 2>&1) -join "`n"
+            if ($LASTEXITCODE -eq 0 -or $out -match 'Everything up-to-date') {
+                $pushed = $true
+            } elseif ($out -match 'rejected|non-fast-forward|fetch first') {
+                $lastPushError = $out
+                Write-Host "  Remote moved ahead (bot commits) - pulling and retrying..." -ForegroundColor DarkYellow
+                git pull --no-rebase origin main --no-edit 2>&1 | Out-Null
+            } else {
+                $lastPushError = $out
+                Write-Host "  PUSH ERROR: $out" -ForegroundColor DarkYellow
+            }
+        } catch { Write-Host "  GIT EX: $_" -ForegroundColor DarkYellow; $lastPushError = "$_" }
     }
     if ($env:GITHUB_TOKEN) {
         git remote set-url origin "https://github.com/dasguptateach-web/ScholarScript.git" 2>&1 | Out-Null
     }
     if ($pushed) {
+        $liveUrl = $paperUrl
+        if (-not $liveUrl) { $liveUrl = "https://dasguptateach-web.github.io/ScholarScript/paper/" }
         Write-Host ""
         Write-Host "========================================" -ForegroundColor Green
         Write-Host "  Published!" -ForegroundColor Green
-        Write-Host "  https://dasguptateach-web.github.io/ScholarScript/papers/" -ForegroundColor Green
+        Write-Host "  $liveUrl" -ForegroundColor Green
         Write-Host "  (GitHub Pages updates in ~1-2 minutes)" -ForegroundColor Green
         Write-Host "========================================" -ForegroundColor Green
-        [void][System.Windows.Forms.MessageBox]::Show("Published! Your paper is live in ~1-2 minutes at:`nhttps://dasguptateach-web.github.io/ScholarScript/papers/", "Published", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+        [void][System.Windows.Forms.MessageBox]::Show("Published! Your paper is live in ~1-2 minutes at:`n$liveUrl", "Published", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
     } else {
-        [void][System.Windows.Forms.MessageBox]::Show("Push failed - check internet connection. Details in the console window.", "Publish failed", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        Write-Host "  FINAL PUSH FAILURE: $lastPushError" -ForegroundColor Red
+        [void][System.Windows.Forms.MessageBox]::Show("Push failed after 5 attempts - the paper is saved and committed locally, but not on GitHub.`nRun paste-paper.bat again (it will push the saved paper), or check the console for the exact git error.", "Publish failed", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
     }
 }
 
