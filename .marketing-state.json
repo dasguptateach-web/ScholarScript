@@ -1910,6 +1910,32 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "37a6e2a503b04b47b7c9f99b97f0d698": {
+      "title": "Study Guide: Sherman Alexie's \"Crow Testament\"",
+      "slug": "study-guide-sherman-alexies-crow-testament",
+      "type": "paper",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-07T21:00:37.406478+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "124d0bafb4c9e1122e0a6a9409333de2": {
+      "title": "Study Guide Sherman Alexies Crow Testament",
+      "slug": "study-guide-sherman-alexies-crow-testament",
+      "type": "video",
+      "date": "",
+      "posted_at": "2026-10-07T21:00:37.644138+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
