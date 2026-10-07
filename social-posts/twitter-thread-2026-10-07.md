@@ -1,15 +1,11 @@
 --- Tweet 1 ---
- Paper: "UGC NET English Literature (Short Story Master Test)"
+ Paper: "Ulysses by Tennyson as a Dramatic Monologue"
 
-## UGC NET English Literature
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-## SHORT STORY MASTER TEST – 75 MCQs
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
 
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instruction
-
-https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-
+https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
 --- Tweet 2 ---
  Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
@@ -31,23 +27,21 @@ https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 #victorian #poetry #urban
 
 --- Tweet 4 ---
- Paper: "Tonight I Can Write"
+ Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
-## 1. Introduction: The Poet and the Poem
+## UGC NET English Practice Test Contemporary Indian Writing In English
 
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most 
+**75 questions** (75 with answer keys)
 
-https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/
-#love #poem #lines
+**1.** The three stories that form th
+
+https://dasguptateach-web.github.io/ScholarScrip
 
 --- Tweet 5 ---
- Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
+ Paper: "UGC NET English Paper II - Advanced Practice Test"
 
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: [ugc-net, english, paper-2, mcq
+(50 MCQs x 2 marks = 100 marks)
 
-https://dasguptateach-web.github.io/ScholarScript/
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+#line #iambic #spondee
 
