@@ -451,24 +451,37 @@ class IngestionEngine:
         if total_words < 10:
             return "paper"
 
+        lower = text.lower()
+        # Unmistakable analytical/study-guide phrases always mean a paper,
+        # even when the guide quotes a full poem line-by-line.
+        analytical_phrases = (
+            "study guide", "study notes", "critical analysis", "close reading",
+            "detailed study", "questions and answers", "exam questions",
+            "ugc net", "introduction and conclusion",
+        )
+        if any(phrase in lower for phrase in analytical_phrases):
+            return "paper"
+
         # Check for poetic patterns (short lines, rhyming patterns)
         poetic_indicators = 0
         long_prose_lines = 0
-        for line in lines[:50]:
+        non_empty_lines = 0
+        for line in lines[:80]:
             stripped = line.strip()
             if not stripped:
                 continue
+            non_empty_lines += 1
             word_count = len(stripped.split())
             if word_count <= 8:
                 poetic_indicators += 1
             elif word_count > 20:
                 long_prose_lines += 1
 
-        sample_lines = min(len(lines[:50]), 50)
-        if sample_lines > 0:
-            poetry_ratio = poetic_indicators / sample_lines
-            prose_ratio = long_prose_lines / sample_lines
-            if poetry_ratio > 0.4 and prose_ratio < 0.2:
+        if non_empty_lines > 0:
+            poetry_ratio = poetic_indicators / non_empty_lines
+            # A study guide that quotes a poem still has long analytical
+            # paragraphs; a pure poem/creative piece has none.
+            if poetry_ratio > 0.4 and long_prose_lines == 0:
                 return "creative-writing"
 
         return "paper"

@@ -1,10 +1,10 @@
 ---
 title: "Study Guide: Sherman Alexie's \"Crow Testament\""
 date: 2026-10-08
-type: creative-writing
-timestamp: 2026-10-08T01:35:31
+type: paper
+timestamp: 2026-10-08T01:33:15
 author: "D. Dasgupta"
-tags: [crow, damn, says, native, hindi]
+tags: [sherman-alexie, crow-testament, native-american-poetry, poetry, study-guide]
 ---
 Introduction
 
