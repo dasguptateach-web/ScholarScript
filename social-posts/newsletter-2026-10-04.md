@@ -1,4 +1,4 @@
-# ScholarScript — New Content (2026-09-26)
+# ScholarScript — New Content (2026-10-04)
 
 Here's what's new on ScholarScript:
 

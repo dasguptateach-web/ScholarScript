@@ -1,4 +1,4 @@
-# ScholarScript — New Content (2026-09-26)
+# ScholarScript — New Content (2026-09-27)
 
 Here's what's new on ScholarScript:
 
@@ -22,19 +22,6 @@ Negativ
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
-## Ugc Net English Paper 2 Most Probable Question Paper December 2026
-*Type: Scholarly Paper*
-
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: ugc-net, english, paper-2, mcq, practice-test
----
- 75 Questions Â· 150 Marks (2 M
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -86,6 +73,19 @@ Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
 Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
+
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+*Type: Scholarly Paper*
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
 ## The Final Solution Debojyoti Dasgupta Ebook
 *Type: Scholarly Paper*
