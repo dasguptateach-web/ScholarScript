@@ -2,19 +2,6 @@
 
 Here's what's new on ScholarScript:
 
-## UGC NET English Literature (Short Story Master Test)
-*Type: Scholarly Paper*
-
- UGC NET English Literature
-
- SHORT STORY MASTER TEST – 75 MCQs
-
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instructions: Choose the most appropriate answer for each questio
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
 ## Ulysses by Tennyson as a Dramatic Monologue
 *Type: Scholarly Paper*
 *By: D. Dasgupta*
@@ -76,6 +63,19 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 (50 MCQs x 2 marks = 100 marks)
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
+
+## UGC NET English Literature (Short Story Master Test)
+*Type: Scholarly Paper*
+
+ UGC NET English Literature
+
+ SHORT STORY MASTER TEST – 75 MCQs
+
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each questio
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
 ## The Girl Who Can
 *Type: Scholarly Paper*
