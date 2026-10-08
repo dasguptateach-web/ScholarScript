@@ -160,8 +160,10 @@ if ($out -match 'nothing to commit|nothing changed') {
         Write-Host "  Published!" -ForegroundColor Green
         Write-Host "  $liveUrl" -ForegroundColor Green
         Write-Host "  (GitHub Pages updates in ~1-2 minutes)" -ForegroundColor Green
+        Write-Host "  IMPORTANT: your browser caches pages for up to 10 minutes." -ForegroundColor Green
+        Write-Host "  If the paper is not visible yet, press Ctrl+F5 (hard refresh)." -ForegroundColor Green
         Write-Host "========================================" -ForegroundColor Green
-        [void][System.Windows.Forms.MessageBox]::Show("Published! Your paper is live in ~1-2 minutes at:`n$liveUrl", "Published", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+        [void][System.Windows.Forms.MessageBox]::Show("Published! Your paper is live in ~1-2 minutes at:`n$liveUrl`n`nNOTE: your browser caches the site for up to 10 minutes. If you do not see the paper yet, press Ctrl+F5 (hard refresh) on the site page.", "Published", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
     } else {
         Write-Host "  FINAL PUSH FAILURE: $lastPushError" -ForegroundColor Red
         [void][System.Windows.Forms.MessageBox]::Show("Push failed after 5 attempts - the paper is saved and committed locally, but not on GitHub.`nRun paste-paper.bat again (it will push the saved paper), or check the console for the exact git error.", "Publish failed", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
