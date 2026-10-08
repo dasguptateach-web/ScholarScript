@@ -1,14 +1,10 @@
-New scholarly paper: "UGC NET English Literature (Short Story Master Test)"
+New scholarly paper by D. Dasgupta: "Ulysses by Tennyson as a Dramatic Monologue"
 
-## UGC NET English Literature
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-## SHORT STORY MASTER TEST – 75 MCQs
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
 
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
 
-Instructions: Choose the most appropriate answer for each que
-
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
-
-#shortstory #ugcnet #englishliterature #mcq #mastertest
+#dramatic #poem #monologue #ulysses #tennyson
 #ScholarScript #EnglishLiterature #FreeEducation
