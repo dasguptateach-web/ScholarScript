@@ -1,10 +1,8 @@
-New scholarly paper by D. Dasgupta: "Ulysses by Tennyson as a Dramatic Monologue"
+New scholarly paper by Dr. Mark Rivera: "The City in Victorian Poetry"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
-
-#dramatic #poem #monologue #ulysses #tennyson
+#victorian #poetry #urban #industrial #tennyson #arnold
 #ScholarScript #EnglishLiterature #FreeEducation
