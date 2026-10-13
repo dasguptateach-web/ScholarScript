@@ -274,7 +274,7 @@
       <div class="step-number">1</div>
       <div class="step-content">
         <h3>Browse or Search</h3>
-        <p>Explore our library of 32+ scholarly papers on English Literature — from Shakespeare to Postmodernism, Victorian Poetry to Ecocriticism. Use the search bar to find exactly what you need.</p>
+        <p>Explore our library of {{ papers|length }} scholarly papers on English Literature — from Shakespeare to Postmodernism, Victorian Poetry to Ecocriticism. Use the search bar to find exactly what you need.</p>
       </div>
     </div>
     <div class="step" data-aos="fade-up" data-aos-delay="100">
@@ -310,8 +310,8 @@
       <h3>Your Complete English Literature Companion</h3>
       <p>ScholarScript is more than a website — it's an intelligent study platform that grows with you. From exam preparation with UGC NET practice tests to deep dives into literary theory, from Shakespearean analysis to eco-criticism, every resource is designed to help you succeed.</p>
       <ul class="showcase-list">
-        <li><i class="fas fa-check-circle"></i> <strong>32+ Research Papers</strong> — Covering every major period and movement</li>
-        <li><i class="fas fa-check-circle"></i> <strong>31 Video Lectures</strong> — Auto-matched to each paper by AI</li>
+        <li><i class="fas fa-check-circle"></i> <strong>{{ papers|length }} Research Papers</strong> — Covering every major period and movement</li>
+        <li><i class="fas fa-check-circle"></i> <strong>{{ videos|length }} Video Lectures</strong> — Auto-matched to each paper by AI</li>
         <li><i class="fas fa-check-circle"></i> <strong>Multi-Language TTS</strong> — Read aloud in English + 20 Indian languages</li>
         <li><i class="fas fa-check-circle"></i> <strong>UGC NET Prep</strong> — Specialized practice tests and study guides</li>
         <li><i class="fas fa-check-circle"></i> <strong>Creative Writing</strong> — Original poetry and prose from our community</li>
