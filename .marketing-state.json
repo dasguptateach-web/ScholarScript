@@ -2001,6 +2001,71 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "316c4de506d4a144efc55513ae168571": {
+      "title": "UGC NET English Literature (Short Story Master Test)",
+      "slug": "ugc-net-english-literature-short-story-master-test",
+      "type": "video",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-08T06:59:53.017240+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "66c4fd5ca89842309aae14af3f60e4c0": {
+      "title": "Tonight I Can Write",
+      "slug": "tonight-i-can-write",
+      "type": "video",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-08T06:59:53.633291+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "b70c32747d699c2fb75595ffa099bfad": {
+      "title": "The Postcolonial Gaze in Wide Sargasso Sea",
+      "slug": "the-postcolonial-gaze-in-wide-sargasso-sea",
+      "type": "video",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-08T06:59:54.259103+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "0cc02039714b21abe778eafb9d2ef925": {
+      "title": "The Girl Who Can",
+      "slug": "the-girl-who-can",
+      "type": "video",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-08T06:59:54.859344+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
+    },
+    "7ac84dc5577a469bcc3b34fa72b39f3c": {
+      "title": "Study Guide Robert Browning, \u201cMy Last Duchess\u201d",
+      "slug": "study-guide-robert-browning-my-last-duchess",
+      "type": "video",
+      "date": "2026-10-08",
+      "posted_at": "2026-10-08T06:59:55.483711+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}
