@@ -12,6 +12,19 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+*Type: Scholarly Paper*
+
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
 ## The City in Victorian Poetry
 *Type: Scholarly Paper*
 *By: Dr. Mark Rivera*
@@ -50,19 +63,6 @@ Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
 Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
-## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
-*Type: Scholarly Paper*
-
- 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
-
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
-
-Time: 2 Hours
-Total Marks: 150 (75 Questions x 2 Marks)
-Negativ
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
 
 ## Tonight I Can Write
 *Type: Scholarly Paper*
