@@ -1,10 +1,10 @@
 {
-  "today": 340,
-  "month": 14258,
-  "year": 93701,
-  "total": 101849,
+  "today": 346,
+  "month": 14259,
+  "year": 93707,
+  "total": 101856,
   "daily_average": 713,
   "month_projection": 22103,
-  "updated": "2026-10-20T20:22:23.328384+00:00",
+  "updated": "2026-10-20T23:43:04.016629+00:00",
   "note": "Includes launch baseline. Add GOATCOUNTER_TOKEN secret for live GoatCounter data."
 }
