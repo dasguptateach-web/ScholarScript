@@ -15,31 +15,15 @@ Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
-## UGC NET English Practice Test Contemporary Indian Writing In English
+## Ulysses by Tennyson as a Dramatic Monologue
 *Type: Scholarly Paper*
+*By: D. Dasgupta*
 
- UGC NET English Practice Test Contemporary Indian Writing In English
+ Introduction: The Dramatic Monologue and Victorian Anxiety
 
-75 questions (75 with answer keys)
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
 
-1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
-
-## Ugc Net English (Code 30) - Paper 2
-*Type: Scholarly Paper*
-
- UGC NET ENGLISH (Code 30) - PAPER 2
-
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
-
-Choose the correct option.
-
- Unit 1: Drama
-
-1. The phrase "memory of the offence" is central to which Shake
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
 ## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
@@ -54,15 +38,13 @@ Negativ
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
 
-## Ulysses by Tennyson as a Dramatic Monologue
+## The City in Victorian Poetry
 *Type: Scholarly Paper*
-*By: D. Dasgupta*
+*By: Dr. Mark Rivera*
 
- Introduction: The Dramatic Monologue and Victorian Anxiety
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
 ## Ugc Net English Paper 2 Most Probable Question Paper December 2026
 *Type: Scholarly Paper*
@@ -77,13 +59,16 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
-## The City in Victorian Poetry
+## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+ UGC NET English Practice Test Contemporary Indian Writing In English
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+75 questions (75 with answer keys)
+
+1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
 
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
@@ -92,19 +77,38 @@ Exploring representations of the Victorian city in the poetry of Tennyson, Arnol
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
-## The Solitude Of Alexander Selkirk As A Dramatic Monologue
+## The Girl Who Can
 *Type: Scholarly Paper*
 
-An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor to the dramatic monologue, examining the speaker's psychological c...
+A Comprehensive Study Guide for WBSU English Honours (Semester VII) — Ama Ata Aidoo's "The Girl Who Can"
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
+ Introduction: A Voice from the Continent
 
-## The Rape of the Lock (Cantos 1-3)
+Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-girl-who-can/)
+
+## Tonight I Can Write
 *Type: Scholarly Paper*
 
-Short answer type questions and answers on Pope's The Rape of the Lock (Cantos 1-3), covering mock-epic conventions, the sylph machinery, the card ...
+ 1. Introduction: The Poet and the Poem
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-rape-of-the-lock-cantos-13/)
+Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
+
+## The Final Solution Debojyoti Dasgupta Ebook
+*Type: Scholarly Paper*
+
+ Manik Bandopadhyay's "The Final Solution" — A Comprehensive Study Guide
+
+Debojyoti Dasgupta · Advanced Academic Edition
+
+Partition · Refugee Crisis · Women's Agency · Violence · Gender · Class
+
+ Cont
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-final-solution-debojyoti-dasgupta-ebook/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
