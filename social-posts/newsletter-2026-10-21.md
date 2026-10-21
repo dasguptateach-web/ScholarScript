@@ -15,58 +15,16 @@ Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
-## Ulysses by Tennyson as a Dramatic Monologue
-*Type: Scholarly Paper*
-*By: D. Dasgupta*
-
- Introduction: The Dramatic Monologue and Victorian Anxiety
-
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
-
-## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
 
- 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+ UGC NET English Practice Test Contemporary Indian Writing In English
 
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+75 questions (75 with answer keys)
 
-Time: 2 Hours
-Total Marks: 150 (75 Questions x 2 Marks)
-Negativ
+1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
-
-## The City in Victorian Poetry
-*Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
-
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
-## Tonight I Can Write
-*Type: Scholarly Paper*
-
- 1. Introduction: The Poet and the Poem
-
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
-
-## Ugc Net English Paper 2 Most Probable Question Paper December 2026
-*Type: Scholarly Paper*
-
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: ugc-net, english, paper-2, mcq, practice-test
----
- 75 Questions Â· 150 Marks (2 M
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
 
 ## Ugc Net English (Code 30) - Paper 2
 *Type: Scholarly Paper*
@@ -83,16 +41,49 @@ Choose the correct option.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
 
-## UGC NET English Practice Test Contemporary Indian Writing In English
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
 
- UGC NET English Practice Test Contemporary Indian Writing In English
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
 
-75 questions (75 with answer keys)
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 
-1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## Ulysses by Tennyson as a Dramatic Monologue
+*Type: Scholarly Paper*
+*By: D. Dasgupta*
+
+ Introduction: The Dramatic Monologue and Victorian Anxiety
+
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+*Type: Scholarly Paper*
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+
+## The City in Victorian Poetry
+*Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
@@ -101,16 +92,19 @@ Choose the correct option.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
-## The Girl Who Can
+## The Solitude Of Alexander Selkirk As A Dramatic Monologue
 *Type: Scholarly Paper*
 
-A Comprehensive Study Guide for WBSU English Honours (Semester VII) — Ama Ata Aidoo's "The Girl Who Can"
+An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor to the dramatic monologue, examining the speaker's psychological c...
 
- Introduction: A Voice from the Continent
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
 
-Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
+## The Rape of the Lock (Cantos 1-3)
+*Type: Scholarly Paper*
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-girl-who-can/)
+Short answer type questions and answers on Pope's The Rape of the Lock (Cantos 1-3), covering mock-epic conventions, the sylph machinery, the card ...
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-rape-of-the-lock-cantos-13/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
