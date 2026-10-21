@@ -1,16 +1,14 @@
-Scholarly Paper: "UGC NET English Literature (Short Story Master Test)"
+Scholarly Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
-## UGC NET English Literature
+## UGC NET English Practice Test Contemporary Indian Writing In English
 
-## SHORT STORY MASTER TEST – 75 MCQs
+**75 questions** (75 with answer keys)
 
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+**1.** The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's U
 
-Instructions: Choose the most appropriate answer for each que
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
-
-#short-story | #ugc-net | #english-literature | #mcq | #master-test
+#test | #mcq | #practice | #ugc-net | #indian-writing
 
 ---
 
