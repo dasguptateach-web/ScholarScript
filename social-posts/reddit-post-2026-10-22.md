@@ -1,12 +1,14 @@
-Scholarly Paper: "Ulysses by Tennyson as a Dramatic Monologue"
+Scholarly Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+## UGC NET English Practice Test Contemporary Indian Writing In English
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
+**75 questions** (75 with answer keys)
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
+**1.** The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's U
 
-#dramatic | #poem | #monologue | #ulysses | #tennyson
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/
+
+#test | #mcq | #practice | #ugc-net | #indian-writing
 
 ---
 

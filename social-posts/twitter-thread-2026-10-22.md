@@ -1,11 +1,13 @@
 --- Tweet 1 ---
- Paper: "Ulysses by Tennyson as a Dramatic Monologue"
+ Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+## UGC NET English Practice Test Contemporary Indian Writing In English
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
+**75 questions** (75 with answer keys)
 
-https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
+**1.** The three stories that form th
+
+https://dasguptateach-web.github.io/ScholarScrip
 
 --- Tweet 2 ---
  Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
@@ -19,12 +21,13 @@ Time: 2 Hou
 https://dasguptateach-web.github.io/ScholarScript/paper
 
 --- Tweet 3 ---
- Paper: "The City in Victorian Poetry"
+ Paper: "Ulysses by Tennyson as a Dramatic Monologue"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
-#victorian #poetry #urban
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
 --- Tweet 4 ---
  Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
@@ -38,13 +41,10 @@ tags: [ugc-net, english, paper-2, mcq
 https://dasguptateach-web.github.io/ScholarScript/
 
 --- Tweet 5 ---
- Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
+ Paper: "The City in Victorian Poetry"
 
-## UGC NET English Practice Test Contemporary Indian Writing In English
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-**75 questions** (75 with answer keys)
-
-**1.** The three stories that form th
-
-https://dasguptateach-web.github.io/ScholarScrip
+https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+#victorian #poetry #urban
 
