@@ -1,13 +1,11 @@
 --- Tweet 1 ---
- Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
+ Paper: "Ulysses by Tennyson as a Dramatic Monologue"
 
-## UGC NET English Practice Test Contemporary Indian Writing In English
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-**75 questions** (75 with answer keys)
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
 
-**1.** The three stories that form th
-
-https://dasguptateach-web.github.io/ScholarScrip
+https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
 --- Tweet 2 ---
  Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
@@ -21,13 +19,12 @@ Time: 2 Hou
 https://dasguptateach-web.github.io/ScholarScript/paper
 
 --- Tweet 3 ---
- Paper: "Ulysses by Tennyson as a Dramatic Monologue"
+ Paper: "The City in Victorian Poetry"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
-
-https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
+https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+#victorian #poetry #urban
 
 --- Tweet 4 ---
  Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
@@ -41,10 +38,13 @@ tags: [ugc-net, english, paper-2, mcq
 https://dasguptateach-web.github.io/ScholarScript/
 
 --- Tweet 5 ---
- Paper: "The City in Victorian Poetry"
+ Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+## UGC NET English Practice Test Contemporary Indian Writing In English
 
-https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
-#victorian #poetry #urban
+**75 questions** (75 with answer keys)
+
+**1.** The three stories that form th
+
+https://dasguptateach-web.github.io/ScholarScrip
 
