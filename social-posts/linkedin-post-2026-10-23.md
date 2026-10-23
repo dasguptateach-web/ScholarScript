@@ -1,14 +1,8 @@
-New scholarly paper: "UGC NET English Literature (Short Story Master Test)"
+New scholarly paper by Dr. Mark Rivera: "The City in Victorian Poetry"
 
-## UGC NET English Literature
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-## SHORT STORY MASTER TEST – 75 MCQs
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instructions: Choose the most appropriate answer for each que
-
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/
-
-#shortstory #ugcnet #englishliterature #mcq #mastertest
+#victorian #poetry #urban #industrial #tennyson #arnold
 #ScholarScript #EnglishLiterature #FreeEducation
