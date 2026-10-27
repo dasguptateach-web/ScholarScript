@@ -2,15 +2,12 @@
 
 Here's what's new on ScholarScript:
 
-## Ulysses by Tennyson as a Dramatic Monologue
+## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
-*By: D. Dasgupta*
 
- Introduction: The Dramatic Monologue and Victorian Anxiety
+(50 MCQs x 2 marks = 100 marks)
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
 ## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
@@ -25,6 +22,21 @@ Negativ
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
 
+## Ugc Net English (Code 30) - Paper 2
+*Type: Scholarly Paper*
+
+ UGC NET ENGLISH (Code 30) - PAPER 2
+
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+
+Choose the correct option.
+
+ Unit 1: Drama
+
+1. The phrase "memory of the offence" is central to which Shake
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
+
 ## The City in Victorian Poetry
 *Type: Scholarly Paper*
 *By: Dr. Mark Rivera*
@@ -33,18 +45,24 @@ Exploring representations of the Victorian city in the poetry of Tennyson, Arnol
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
-## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+## Ulysses by Tennyson as a Dramatic Monologue
+*Type: Scholarly Paper*
+*By: D. Dasgupta*
+
+ Introduction: The Dramatic Monologue and Victorian Anxiety
+
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+
+## Tonight I Can Write
 *Type: Scholarly Paper*
 
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: ugc-net, english, paper-2, mcq, practice-test
----
- 75 Questions Â· 150 Marks (2 M
+ 1. Introduction: The Poet and the Poem
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -56,13 +74,6 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
-
-## UGC NET English Paper II - Advanced Practice Test
-*Type: Scholarly Paper*
-
-(50 MCQs x 2 marks = 100 marks)
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
 ## UGC NET English Literature (Short Story Master Test)
 *Type: Scholarly Paper*
@@ -77,32 +88,29 @@ Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
-## The Girl Who Can
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
 *Type: Scholarly Paper*
 
-A Comprehensive Study Guide for WBSU English Honours (Semester VII) — Ama Ata Aidoo's "The Girl Who Can"
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
 
- Introduction: A Voice from the Continent
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
-Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-girl-who-can/)
-
-## Tonight I Can Write
+## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
 *Type: Scholarly Paper*
 
- 1. Introduction: The Poet and the Poem
+The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
 
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+ 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
+Dr. James Sheppard
 
-## The Solitude Of Alexander Selkirk As A Dramatic Monologue
-*Type: Scholarly Paper*
-
-An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor to the dramatic monologue, examining the speaker's psychological c...
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
