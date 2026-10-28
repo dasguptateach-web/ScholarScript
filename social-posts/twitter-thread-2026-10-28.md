@@ -1,11 +1,10 @@
 --- Tweet 1 ---
- Paper: "Ulysses by Tennyson as a Dramatic Monologue"
+ Paper: "UGC NET English Paper II - Advanced Practice Test"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+(50 MCQs x 2 marks = 100 marks)
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
-
-https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+#line #iambic #spondee
 
 --- Tweet 2 ---
  Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
@@ -27,15 +26,13 @@ https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 #victorian #poetry #urban
 
 --- Tweet 4 ---
- Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
+ Paper: "Ulysses by Tennyson as a Dramatic Monologue"
 
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: [ugc-net, english, paper-2, mcq
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-https://dasguptateach-web.github.io/ScholarScript/
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic 
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
 --- Tweet 5 ---
  Paper: "UGC NET English Practice Test Contemporary Indian Writing In English"

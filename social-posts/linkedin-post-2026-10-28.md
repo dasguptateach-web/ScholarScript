@@ -1,10 +1,8 @@
-New scholarly paper by D. Dasgupta: "Ulysses by Tennyson as a Dramatic Monologue"
+New scholarly paper: "UGC NET English Paper II - Advanced Practice Test"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+(50 MCQs x 2 marks = 100 marks)
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
-
-#dramatic #poem #monologue #ulysses #tennyson
+#line #iambic #spondee #sonnet #rhyme
 #ScholarScript #EnglishLiterature #FreeEducation
