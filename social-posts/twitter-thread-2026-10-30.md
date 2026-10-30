@@ -1,12 +1,4 @@
 --- Tweet 1 ---
- Paper: "The City in Victorian Poetry"
-
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
-
-https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
-#victorian #poetry #urban
-
---- Tweet 2 ---
  Paper: "UGC NET English Paper II - Advanced Practice Test"
 
 (50 MCQs x 2 marks = 100 marks)
@@ -14,7 +6,7 @@ https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
 #line #iambic #spondee
 
---- Tweet 3 ---
+--- Tweet 2 ---
  Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
 
 ## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
@@ -25,7 +17,7 @@ Time: 2 Hou
 
 https://dasguptateach-web.github.io/ScholarScript/paper
 
---- Tweet 4 ---
+--- Tweet 3 ---
  Paper: "Ugc Net English (Code 30) - Paper 2"
 
 ## UGC NET ENGLISH (Code 30) - PAPER 2
@@ -39,6 +31,14 @@ Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
 **1.
 
 https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-p
+
+--- Tweet 4 ---
+ Paper: "The City in Victorian Poetry"
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+#victorian #poetry #urban
 
 --- Tweet 5 ---
  Paper: "Ulysses by Tennyson as a Dramatic Monologue"
