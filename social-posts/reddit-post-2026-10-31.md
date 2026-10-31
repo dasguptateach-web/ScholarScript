@@ -1,10 +1,10 @@
-Scholarly Paper: "The City in Victorian Poetry"
+Scholarly Paper: "UGC NET English Paper II - Advanced Practice Test"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+(50 MCQs x 2 marks = 100 marks)
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
 
-#victorian | #poetry | #urban | #industrial | #tennyson
+#line | #iambic | #spondee | #sonnet | #rhyme
 
 ---
 
