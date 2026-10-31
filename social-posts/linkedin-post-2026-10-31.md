@@ -1,8 +1,8 @@
-New scholarly paper: "UGC NET English Paper II - Advanced Practice Test"
+New scholarly paper by Dr. Mark Rivera: "The City in Victorian Poetry"
 
-(50 MCQs x 2 marks = 100 marks)
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 
-#line #iambic #spondee #sonnet #rhyme
+#victorian #poetry #urban #industrial #tennyson #arnold
 #ScholarScript #EnglishLiterature #FreeEducation
