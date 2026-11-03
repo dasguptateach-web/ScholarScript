@@ -12,16 +12,6 @@ Instruction
 https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-
 
 --- Tweet 2 ---
- Paper: "Tonight I Can Write"
-
-## 1. Introduction: The Poet and the Poem
-
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most 
-
-https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/
-#love #poem #lines
-
---- Tweet 3 ---
  Paper: "Ulysses by Tennyson as a Dramatic Monologue"
 
 ### Introduction: The Dramatic Monologue and Victorian Anxiety
@@ -30,7 +20,7 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 
 https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
---- Tweet 4 ---
+--- Tweet 3 ---
  Paper: "The City in Victorian Poetry"
 
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
@@ -38,11 +28,22 @@ Exploring representations of the Victorian city in the poetry of Tennyson, Arnol
 https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
 #victorian #poetry #urban
 
---- Tweet 5 ---
+--- Tweet 4 ---
  Paper: "UGC NET English Paper II - Advanced Practice Test"
 
 (50 MCQs x 2 marks = 100 marks)
 
 https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
 #line #iambic #spondee
+
+--- Tweet 5 ---
+ Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: [ugc-net, english, paper-2, mcq
+
+https://dasguptateach-web.github.io/ScholarScript/
 
