@@ -12,35 +12,16 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
-## The City in Victorian Poetry
-*Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
-
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
-## UGC NET English Literature (Short Story Master Test)
+## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
 
- UGC NET English Literature
+ UGC NET English Practice Test Contemporary Indian Writing In English
 
- SHORT STORY MASTER TEST – 75 MCQs
+75 questions (75 with answer keys)
 
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
 
-Instructions: Choose the most appropriate answer for each questio
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
-## Tonight I Can Write
-*Type: Scholarly Paper*
-
- 1. Introduction: The Poet and the Poem
-
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
 
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
@@ -49,16 +30,26 @@ Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Par
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
-## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+## The City in Victorian Poetry
+*Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
 
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
 
- 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 
-Dr. James Sheppard
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
 
 ## Three of the most important 15-mark essay-type questions from William Faulkner's "Dry September"
 *Type: Scholarly Paper*
@@ -78,19 +69,6 @@ An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
 
-## Ugc Net English Paper 2 Most Probable Question Paper December 2026
-*Type: Scholarly Paper*
-
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: ugc-net, english, paper-2, mcq, practice-test
----
- 75 Questions Â· 150 Marks (2 M
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
-
 ## Ugc Net English (Code 30) - Paper 2
 *Type: Scholarly Paper*
 
@@ -105,6 +83,28 @@ Choose the correct option.
 1. The phrase "memory of the offence" is central to which Shake
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
+
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+*Type: Scholarly Paper*
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+
+## Tonight I Can Write
+*Type: Scholarly Paper*
+
+ 1. Introduction: The Poet and the Poem
+
+Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
