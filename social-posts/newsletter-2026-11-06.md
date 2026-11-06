@@ -2,6 +2,35 @@
 
 Here's what's new on ScholarScript:
 
+## Ulysses by Tennyson as a Dramatic Monologue
+*Type: Scholarly Paper*
+*By: D. Dasgupta*
+
+ Introduction: The Dramatic Monologue and Victorian Anxiety
+
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+
+## UGC NET English Practice Test Contemporary Indian Writing In English
+*Type: Scholarly Paper*
+
+ UGC NET English Practice Test Contemporary Indian Writing In English
+
+75 questions (75 with answer keys)
+
+1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
+
+## The City in Victorian Poetry
+*Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
+
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+
 ## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
 
@@ -26,16 +55,6 @@ Question 1: Critically examine the theme of racial prejudice and mob mentality i
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/three-of-the-most-important-15-mark-essay-type-questions-from-william-faulkners-dry-september/)
 
-## Ulysses by Tennyson as a Dramatic Monologue
-*Type: Scholarly Paper*
-*By: D. Dasgupta*
-
- Introduction: The Dramatic Monologue and Victorian Anxiety
-
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
-
 ## Ugc Net English (Code 30) - Paper 2
 *Type: Scholarly Paper*
 
@@ -50,17 +69,6 @@ Choose the correct option.
 1. The phrase "memory of the offence" is central to which Shake
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
-
-## UGC NET English Practice Test Contemporary Indian Writing In English
-*Type: Scholarly Paper*
-
- UGC NET English Practice Test Contemporary Indian Writing In English
-
-75 questions (75 with answer keys)
-
-1. The three stories that form the 'Hema and Kaushik' sequence in Jhumpa Lahiri's Unaccustome
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
 
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
@@ -90,14 +98,6 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
-
-## The City in Victorian Poetry
-*Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
-
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
 ## UGC NET English Literature (Short Story Master Test)
 *Type: Scholarly Paper*
