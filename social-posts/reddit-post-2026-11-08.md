@@ -1,12 +1,16 @@
-Scholarly Paper: "Ulysses by Tennyson as a Dramatic Monologue"
+Scholarly Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
 
-### Introduction: The Dramatic Monologue and Victorian Anxiety
+## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negat
 
-#dramatic | #poem | #monologue | #ulysses | #tennyson
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/
+
+#ugc-net | #english | #paper-2 | #mcq | #practice-test
 
 ---
 
