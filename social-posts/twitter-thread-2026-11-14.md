@@ -38,10 +38,13 @@ https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii
 #line #iambic #spondee
 
 --- Tweet 5 ---
- Paper: "The City in Victorian Poetry"
+ Paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: [ugc-net, english, paper-2, mcq
 
-https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
-#victorian #poetry #urban
+https://dasguptateach-web.github.io/ScholarScript/
 
