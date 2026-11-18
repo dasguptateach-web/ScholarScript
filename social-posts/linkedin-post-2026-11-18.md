@@ -1,14 +1,10 @@
-New scholarly paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
+New scholarly paper by D. Dasgupta: "Ulysses by Tennyson as a Dramatic Monologue"
 
-## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+### Introduction: The Dramatic Monologue and Victorian Anxiety
 
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as 
 
-Time: 2 Hours
-Total Marks: 150 (75 Questions x 2 Marks)
-Negat
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/
-
-#ugcnet #english #paper2 #mcq #practicetest
+#dramatic #poem #monologue #ulysses #tennyson
 #ScholarScript #EnglishLiterature #FreeEducation
