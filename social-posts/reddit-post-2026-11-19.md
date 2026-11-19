@@ -1,10 +1,16 @@
-Scholarly Paper: "The City in Victorian Poetry"
+Scholarly Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 
-#victorian | #poetry | #urban | #industrial | #tennyson
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negat
+
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/
+
+#ugc-net | #english | #paper-2 | #mcq | #practice-test
 
 ---
 

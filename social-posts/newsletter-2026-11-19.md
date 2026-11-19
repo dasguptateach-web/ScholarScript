@@ -2,13 +2,28 @@
 
 Here's what's new on ScholarScript:
 
-## The City in Victorian Poetry
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
-*By: Dr. Mark Rivera*
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## Ulysses by Tennyson as a Dramatic Monologue
+*Type: Scholarly Paper*
+*By: D. Dasgupta*
+
+ Introduction: The Dramatic Monologue and Victorian Anxiety
+
+Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -21,15 +36,12 @@ Exploring representations of the Victorian city in the poetry of Tennyson, Arnol
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-practice-test-contemporay-indian-writing-in-english-mcq-test/)
 
-## Ulysses by Tennyson as a Dramatic Monologue
+## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
-*By: D. Dasgupta*
 
- Introduction: The Dramatic Monologue and Victorian Anxiety
+(50 MCQs x 2 marks = 100 marks)
 
-Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
 ## Ugc Net English Paper 2 Most Probable Question Paper December 2026
 *Type: Scholarly Paper*
@@ -44,25 +56,13 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
-## UGC NET English Paper II - Advanced Practice Test
+## The City in Victorian Poetry
 *Type: Scholarly Paper*
+*By: Dr. Mark Rivera*
 
-(50 MCQs x 2 marks = 100 marks)
+Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
-
-## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
-*Type: Scholarly Paper*
-
- 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
-
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
-
-Time: 2 Hours
-Total Marks: 150 (75 Questions x 2 Marks)
-Negativ
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
 
 ## UGC NET English Literature (Short Story Master Test)
 *Type: Scholarly Paper*
@@ -77,39 +77,36 @@ Instructions: Choose the most appropriate answer for each questio
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
 
-## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+## The Final Solution Debojyoti Dasgupta Ebook
 *Type: Scholarly Paper*
 
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+ Manik Bandopadhyay's "The Final Solution" — A Comprehensive Study Guide
 
- 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+Debojyoti Dasgupta · Advanced Academic Edition
 
-Dr. James Sheppard
+Partition · Refugee Crisis · Women's Agency · Violence · Gender · Class
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
+ Cont
 
-## The Postcolonial Gaze in Wide Sargasso Sea
-*Type: Scholarly Paper*
-*By: D. Dasgupta*
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-final-solution-debojyoti-dasgupta-ebook/)
 
-Jean Rhys's Wide Sargasso Sea (1966) reimagines Charlotte Bronte's Jane Eyre from the perspective of the silenced Creole woman, Antoinette Cosway. This paper argues that Rhys deploys the postcolonial 
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-postcolonial-gaze-in-wide-sargasso-sea/)
-
-## Ugc Net English (Code 30) - Paper 2
+## Three of the most important 15-mark essay-type questions from William Faulkner's "Dry September"
 *Type: Scholarly Paper*
 
- UGC NET ENGLISH (Code 30) - PAPER 2
+Question 1: Critically examine the theme of racial prejudice and mob mentality in Faulkner's "Dry September." How does the story expose the terrifying power of a community's irrationality?
 
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+ Answer:
 
-Choose the correct option.
 
- Unit 1: Drama
 
-1. The phrase "memory of the offence" is central to which Shake
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/three-of-the-most-important-15-mark-essay-type-questions-from-william-faulkners-dry-september/)
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
+## The Solitude Of Alexander Selkirk As A Dramatic Monologue
+*Type: Scholarly Paper*
+
+An analysis of William Cowper's The Solitude of Alexander Selkirk as a precursor to the dramatic monologue, examining the speaker's psychological c...
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-solitude-of-alexander-selkirk-as-a-dramatic-monologue/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
