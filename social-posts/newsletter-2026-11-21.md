@@ -2,19 +2,6 @@
 
 Here's what's new on ScholarScript:
 
-## UGC NET English Literature (Short Story Master Test)
-*Type: Scholarly Paper*
-
- UGC NET English Literature
-
- SHORT STORY MASTER TEST – 75 MCQs
-
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instructions: Choose the most appropriate answer for each questio
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
 ## The City in Victorian Poetry
 *Type: Scholarly Paper*
 *By: Dr. Mark Rivera*
@@ -22,21 +9,6 @@ Instructions: Choose the most appropriate answer for each questio
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
-## Ugc Net English (Code 30) - Paper 2
-*Type: Scholarly Paper*
-
- UGC NET ENGLISH (Code 30) - PAPER 2
-
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
-
-Choose the correct option.
-
- Unit 1: Drama
-
-1. The phrase "memory of the offence" is central to which Shake
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -58,6 +30,34 @@ Choose the correct option.
 Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dramatic monologue, a form that Robert Langbaum defines as a p
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
+
+## UGC NET English Literature (Short Story Master Test)
+*Type: Scholarly Paper*
+
+ UGC NET English Literature
+
+ SHORT STORY MASTER TEST – 75 MCQs
+
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each questio
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
+
+## Ugc Net English (Code 30) - Paper 2
+*Type: Scholarly Paper*
+
+ UGC NET ENGLISH (Code 30) - PAPER 2
+
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+
+Choose the correct option.
+
+ Unit 1: Drama
+
+1. The phrase "memory of the offence" is central to which Shake
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
 
 ## Ugc Net English Paper 2 Most Probable Question Paper December 2026
 *Type: Scholarly Paper*
