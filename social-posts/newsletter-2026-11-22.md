@@ -2,19 +2,6 @@
 
 Here's what's new on ScholarScript:
 
-## UGC NET English Literature (Short Story Master Test)
-*Type: Scholarly Paper*
-
- UGC NET English Literature
-
- SHORT STORY MASTER TEST – 75 MCQs
-
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instructions: Choose the most appropriate answer for each questio
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
 ## The City in Victorian Poetry
 *Type: Scholarly Paper*
 *By: Dr. Mark Rivera*
@@ -22,21 +9,6 @@ Instructions: Choose the most appropriate answer for each questio
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
-
-## Ugc Net English (Code 30) - Paper 2
-*Type: Scholarly Paper*
-
- UGC NET ENGLISH (Code 30) - PAPER 2
-
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
-
-Choose the correct option.
-
- Unit 1: Drama
-
-1. The phrase "memory of the offence" is central to which Shake
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -59,45 +31,12 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
-## Ugc Net English Paper 2 Most Probable Question Paper December 2026
-*Type: Scholarly Paper*
-
-﻿---
-title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
-date: 2026-09-26
-type: paper
-tags: ugc-net, english, paper-2, mcq, practice-test
----
- 75 Questions Â· 150 Marks (2 M
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
-
 ## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
 
 (50 MCQs x 2 marks = 100 marks)
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
-
-## Tonight I Can Write
-*Type: Scholarly Paper*
-
- 1. Introduction: The Poet and the Poem
-
-Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
-
-## Three of the most important 15-mark essay-type questions from William Faulkner's "Dry September"
-*Type: Scholarly Paper*
-
-Question 1: Critically examine the theme of racial prejudice and mob mentality in Faulkner's "Dry September." How does the story expose the terrifying power of a community's irrationality?
-
- Answer:
-
-
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/three-of-the-most-important-15-mark-essay-type-questions-from-william-faulkners-dry-september/)
 
 ## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
 *Type: Scholarly Paper*
@@ -111,6 +50,62 @@ Total Marks: 150 (75 Questions x 2 Marks)
 Negativ
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## UGC NET English Literature (Short Story Master Test)
+*Type: Scholarly Paper*
+
+ UGC NET English Literature
+
+ SHORT STORY MASTER TEST – 75 MCQs
+
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each questio
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
+
+## The Postcolonial Gaze in Wide Sargasso Sea
+*Type: Scholarly Paper*
+*By: D. Dasgupta*
+
+Jean Rhys's Wide Sargasso Sea (1966) reimagines Charlotte Bronte's Jane Eyre from the perspective of the silenced Creole woman, Antoinette Cosway. This paper argues that Rhys deploys the postcolonial 
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-postcolonial-gaze-in-wide-sargasso-sea/)
+
+## Ugc Net English (Code 30) - Paper 2
+*Type: Scholarly Paper*
+
+ UGC NET ENGLISH (Code 30) - PAPER 2
+
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+
+Choose the correct option.
+
+ Unit 1: Drama
+
+1. The phrase "memory of the offence" is central to which Shake
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
+
+## Ugc Net English Paper 2 Most Probable Question Paper December 2026
+*Type: Scholarly Paper*
+
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: ugc-net, english, paper-2, mcq, practice-test
+---
+ 75 Questions Â· 150 Marks (2 M
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
+
+## The Rape of the Lock (Cantos 1-3)
+*Type: Scholarly Paper*
+
+Short answer type questions and answers on Pope's The Rape of the Lock (Cantos 1-3), covering mock-epic conventions, the sylph machinery, the card ...
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-rape-of-the-lock-cantos-13/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
