@@ -2131,6 +2131,19 @@
         "mastodon": false,
         "linkedin": false
       }
+    },
+    "a935e3f5dac773ccfad9ee32247648c8": {
+      "title": "Study Guide: Toba Tek Singh by Gulzar (trans. Anisur Rahman)",
+      "slug": "study-guide-toba-tek-singh-by-gulzar-trans-anisur-rahman",
+      "type": "paper",
+      "date": "2026-11-22",
+      "posted_at": "2026-11-22T17:34:05.398808+00:00",
+      "results": {
+        "bluesky": true,
+        "twitter": false,
+        "mastodon": false,
+        "linkedin": false
+      }
     }
   },
   "indexed": {}

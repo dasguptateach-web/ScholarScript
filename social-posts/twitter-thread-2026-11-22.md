@@ -27,21 +27,30 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennys
 
 --- Tweet 4 ---
- Paper: "UGC NET English Paper II - Advanced Practice Test"
+ Paper: "UGC NET English Literature (Short Story Master Test)"
 
-(50 MCQs x 2 marks = 100 marks)
+## UGC NET English Literature
 
-https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/
-#line #iambic #spondee
+## SHORT STORY MASTER TEST – 75 MCQs
+
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instruction
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-
 
 --- Tweet 5 ---
- Paper: "UGC NET English Paper 2: Most Probable Question Paper (Set 2)"
+ Paper: "Ugc Net English (Code 30) - Paper 2"
 
-## 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+## UGC NET ENGLISH (Code 30) - PAPER 2
 
-UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
 
-Time: 2 Hou
+**Choose the correct option.**
 
-https://dasguptateach-web.github.io/ScholarScript/paper
+### Unit 1: Drama
+
+**1.
+
+https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-p
 
