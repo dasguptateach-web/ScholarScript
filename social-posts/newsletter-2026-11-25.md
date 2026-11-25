@@ -2,6 +2,19 @@
 
 Here's what's new on ScholarScript:
 
+## UGC NET English Literature (Short Story Master Test)
+*Type: Scholarly Paper*
+
+ UGC NET English Literature
+
+ SHORT STORY MASTER TEST – 75 MCQs
+
+Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
+
+Instructions: Choose the most appropriate answer for each questio
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
+
 ## The City in Victorian Poetry
 *Type: Scholarly Paper*
 *By: Dr. Mark Rivera*
@@ -9,6 +22,21 @@ Here's what's new on ScholarScript:
 Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/)
+
+## Ugc Net English (Code 30) - Paper 2
+*Type: Scholarly Paper*
+
+ UGC NET ENGLISH (Code 30) - PAPER 2
+
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+
+Choose the correct option.
+
+ Unit 1: Drama
+
+1. The phrase "memory of the offence" is central to which Shake
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
 
 ## UGC NET English Practice Test Contemporary Indian Writing In English
 *Type: Scholarly Paper*
@@ -31,60 +59,6 @@ Alfred Lord Tennyson's "Ulysses" (1842) stands as the prototypical Victorian dra
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ulysses-by-tennyson-as-a-dramatic-monologue/)
 
-## UGC NET English Paper II - Advanced Practice Test
-*Type: Scholarly Paper*
-
-(50 MCQs x 2 marks = 100 marks)
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
-
-## UGC NET English Literature (Short Story Master Test)
-*Type: Scholarly Paper*
-
- UGC NET English Literature
-
- SHORT STORY MASTER TEST – 75 MCQs
-
-Based on 20 Years of Exam Patterns • 2 Marks Each • Total: 150 Marks
-
-Instructions: Choose the most appropriate answer for each questio
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-literature-short-story-master-test/)
-
-## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-*Type: Scholarly Paper*
-
-The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
-
- 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
-
-Dr. James Sheppard
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
-
-## The Postcolonial Gaze in Wide Sargasso Sea
-*Type: Scholarly Paper*
-*By: D. Dasgupta*
-
-Jean Rhys's Wide Sargasso Sea (1966) reimagines Charlotte Bronte's Jane Eyre from the perspective of the silenced Creole woman, Antoinette Cosway. This paper argues that Rhys deploys the postcolonial 
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-postcolonial-gaze-in-wide-sargasso-sea/)
-
-## Ugc Net English (Code 30) - Paper 2
-*Type: Scholarly Paper*
-
- UGC NET ENGLISH (Code 30) - PAPER 2
-
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
-
-Choose the correct option.
-
- Unit 1: Drama
-
-1. The phrase "memory of the offence" is central to which Shake
-
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/)
-
 ## Ugc Net English Paper 2 Most Probable Question Paper December 2026
 *Type: Scholarly Paper*
 
@@ -98,16 +72,45 @@ tags: ugc-net, english, paper-2, mcq, practice-test
 
 [Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/)
 
-## The Girl Who Can
+## UGC NET English Paper II - Advanced Practice Test
 *Type: Scholarly Paper*
 
-A Comprehensive Study Guide for WBSU English Honours (Semester VII) — Ama Ata Aidoo's "The Girl Who Can"
+(50 MCQs x 2 marks = 100 marks)
 
- Introduction: A Voice from the Continent
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-ii/)
 
-Ama Ata Aidoo (1942-2023) was a seminal Ghanaian au
+## Tonight I Can Write
+*Type: Scholarly Paper*
 
-[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-girl-who-can/)
+ 1. Introduction: The Poet and the Poem
+
+Pablo Neruda (1904–1973), born Ricardo Eliécer Neftalí Reyes Basoalto in Parral, Chile, is one of the most widely read and beloved poets of the twentieth centu
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/tonight-i-can-write/)
+
+## UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+*Type: Scholarly Paper*
+
+ 75 Questions · 150 Marks (2 Marks Each) · 2 Hours · No Negative Marking
+
+UGC NET English Paper 2: Most Probable Question Paper (Set 2)
+
+Time: 2 Hours
+Total Marks: 150 (75 Questions x 2 Marks)
+Negativ
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-set-2/)
+
+## The Murder Of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+*Type: Scholarly Paper*
+
+The Murder of Roger Ackroyd – 10 Most Important Short Answer Type Questions & Answers
+
+ 1. Why is Dr. Sheppard considered one of the most remarkable narrators in detective fiction?
+
+Dr. James Sheppard
+
+[Read more](https://dasguptateach-web.github.io/ScholarScript/paper/the-murder-of-roger-ackroyd-10-most-important-short-answer-type-questions-answers/)
 
 ---
 *Automatically generated by ScholarScript Marketing Agent*
