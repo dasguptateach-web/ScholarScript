@@ -1,10 +1,18 @@
-Scholarly Paper: "The City in Victorian Poetry"
+Scholarly Paper: "Ugc Net English (Code 30) - Paper 2"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+## UGC NET ENGLISH (Code 30) - PAPER 2
 
-Read more: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
 
-#victorian | #poetry | #urban | #industrial | #tennyson
+**Choose the correct option.**
+
+### Unit 1: Drama
+
+**1.** The phrase "memory of the offence" is central t
+
+Read more: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/
+
+#unit | #who | #english | #term | #author
 
 ---
 

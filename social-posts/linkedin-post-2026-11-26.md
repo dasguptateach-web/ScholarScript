@@ -1,8 +1,16 @@
-New scholarly paper by Dr. Mark Rivera: "The City in Victorian Poetry"
+New scholarly paper: "Ugc Net English (Code 30) - Paper 2"
 
-Exploring representations of the Victorian city in the poetry of Tennyson, Arnold, and Browning.
+## UGC NET ENGLISH (Code 30) - PAPER 2
 
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/victorian-poetry/
+Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
 
-#victorian #poetry #urban #industrial #tennyson #arnold
+**Choose the correct option.**
+
+### Unit 1: Drama
+
+**1.** The phrase "memory of the offence" is central t
+
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/
+
+#unit #who #english #term #author
 #ScholarScript #EnglishLiterature #FreeEducation
