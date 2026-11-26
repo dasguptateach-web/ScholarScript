@@ -1,16 +1,14 @@
-New scholarly paper: "Ugc Net English (Code 30) - Paper 2"
+New scholarly paper: "Ugc Net English Paper 2 Most Probable Question Paper December 2026"
 
-## UGC NET ENGLISH (Code 30) - PAPER 2
+﻿---
+title: "UGC NET English Paper 2: Most Probable Question Paper (December 2026)"
+date: 2026-09-26
+type: paper
+tags: [ugc-net, english, paper-2, mcq, practice-test]
+---
+## 75 Questions Â· 150 Marks 
 
-Model Question Paper (100 MCQs x 2 Marks = 200 Marks)
+Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-paper-2-most-probable-question-paper-december-2026/
 
-**Choose the correct option.**
-
-### Unit 1: Drama
-
-**1.** The phrase "memory of the offence" is central t
-
-Read the full article for free: https://dasguptateach-web.github.io/ScholarScript/paper/ugc-net-english-code-30-paper-2/
-
-#unit #who #english #term #author
+#
 #ScholarScript #EnglishLiterature #FreeEducation
